@@ -1,0 +1,360 @@
+<?php
+
+namespace tests\codeception\unit;
+
+use humhub\modules\content\models\Content;
+use humhub\modules\content\notifications\ContentCreated as ContentCreatedNotification;
+use humhub\modules\notification\models\Notification;
+use humhub\modules\notification\models\forms\NotificationSettings;
+use humhub\modules\post\models\Post;
+use Yii;
+use tests\codeception\_support\HumHubDbTestCase;
+use Codeception\Specify;
+use humhub\modules\space\models\Space;
+use humhub\modules\user\models\User;
+
+class ContentCreatedTest extends HumHubDbTestCase
+{
+    use Specify;
+
+    /**
+     * Test CreateContent notification for a space follower with send_notification setting (see user_follow fixture)
+     */
+    public function testFollowContentNotification()
+    {
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 2]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(1);
+    }
+
+    public function testSilentContentCreation()
+    {
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->silentContentCreation = true;
+        $post->content->setContainer(Space::findOne(['id' => 2]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(0);
+    }
+
+    /**
+     * Disable mail notifications for a follower.
+     */
+    public function testFollowerDisableMailNotification()
+    {
+        // Admin is following space
+        $admin = User::findOne(['id' => 1]);
+
+        // Disable $user1 notification settings.
+        Yii::$app->getModule('notification')->settings->user($admin)->set('notification.content_created_email', 0);
+
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 2]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        $this->assertMailSent(0);
+    }
+
+    /**
+     * Test the notifyUsersOfNewContent field when creating new content.
+     */
+    public function testNotifyUsersOfNewContent()
+    {
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 2]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        // Add User1
+        $post->content->notifyUsersOfNewContent = [User::findOne(['id' => 2])];
+        $post->save();
+
+        // We expect two notification mails one for following User1 and one for notifyUserOfNewContent User3.
+        $this->assertMailSent(2);
+    }
+
+    /**
+     * Check that space follower are not notified about private content.
+     */
+    public function testExcludeFollowerForPrivateCotnentNotification()
+    {
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 2]));
+        // Add User1
+        $post->content->notifyUsersOfNewContent = [User::findOne(['id' => 2])];
+        $post->content->visibility = Content::VISIBILITY_PRIVATE;
+        $post->save();
+
+        // We expect two notification mails one for following User1 and one for notifyUserOfNewContent User3.
+        $this->assertMailSent(1);
+    }
+
+    /**
+     * Make sure we do not send duplicate notification if we set an space follower again as notifyUserofNewContent.
+     */
+    public function testNotifyDuplicatedUser()
+    {
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 2]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        // Add an already following user again in the notifyUser field.
+        $post->content->notifyUsersOfNewContent = [User::findOne(['id' => 1])];
+        $post->save();
+
+        // We only one notification
+        $this->assertMailSent(1);
+    }
+
+    /**
+     * Check that unauthorized explicit notify users are excluded for private profile content.
+     */
+    public function testExcludeUnauthorizedExplicitNotifyUserOnPrivateProfileContent()
+    {
+        $this->becomeUser('Admin');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(User::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PRIVATE;
+        $post->content->notifyUsersOfNewContent = [User::findOne(['id' => 4])];
+        $this->assertTrue($post->save());
+
+        $this->assertMailSent(0);
+        $this->assertEquals(0, Notification::find()->where([
+            'class' => ContentCreatedNotification::class,
+            'user_id' => 4,
+            'source_class' => Post::class,
+            'source_pk' => $post->id,
+        ])->count());
+    }
+
+    /**
+     * Check that notification preview is suppressed for unauthorized recipients.
+     */
+    public function testSuppressPreviewForUnauthorizedRecipient()
+    {
+        $this->becomeUser('Admin');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(User::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PRIVATE;
+        $this->assertTrue($post->save());
+
+        $recipient = User::findOne(['id' => 4]);
+        $notification = ContentCreatedNotification::instance()->from(User::findOne(['id' => 1]))->about($post);
+
+        $this->assertTrue($notification->isBlockedForUser($recipient));
+        $notification->send($recipient);
+
+        $this->assertNull(Notification::find()->where([
+            'class' => ContentCreatedNotification::class,
+            'user_id' => $recipient->id,
+            'source_class' => Post::class,
+            'source_pk' => $post->id,
+        ])->one());
+    }
+
+    /**
+     * Check the sending of notifications for space_members with active send_notifications setting.
+     */
+    public function testSpaceMemberNotification()
+    {
+        $this->becomeUser('User3');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 3]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        $this->assertMailSent(1);
+    }
+
+    /**
+     * Make sure the originator of a new content does not receive a notification himself.
+     */
+    public function testDontSendNotificationToOriginator()
+    {
+        $this->becomeUser('User1');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 3]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        $this->assertMailSent(0);
+    }
+
+    /**
+     * Test the deactivation of the mail target for new content.
+     */
+    public function testDeactivateMailNotificationAsSpaceMember()
+    {
+        $this->becomeUser('User3');
+
+        // Disable $user1 notification settings.
+        Yii::$app->getModule('notification')->settings->user(User::findOne(['id' => 2]))->set('notification.content_created_email', 0);
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 3]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        $this->assertMailSent(0);
+    }
+
+    /**
+     * Admin and User2 are member of Space1 -> Space1 is set to default notification space.
+     * After User2 posts new content Admin user should automatically be notified.
+     */
+    public function testDefaultSpaceFollowPrivatePostNotification()
+    {
+        $this->becomeUser('User2');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PRIVATE;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(1);
+    }
+
+    /**
+     * Admin and User2 are member of Space1 -> Space1 is set to default notification space.
+     * Admin explicitly removes the default notification space.
+     */
+    public function testExplicitlyDisableDefaultNotificationSpace()
+    {
+        $this->becomeUser('Admin');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+
+        // Setting empty spaceguids settings
+        $settings = new NotificationSettings(['user' => User::findOne(['id' => 1])]);
+        $settings->save();
+
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PRIVATE;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(0);
+    }
+
+    /**
+     * After User2 posts new public post Admin all other users should be notified.
+     */
+    public function testDefaultSpaceFollowPublicPostNotification()
+    {
+        $this->becomeUser('User2');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(4);
+    }
+
+    /**
+     * Disable space as member and post public content.
+     */
+    public function testExplicitlyDisableDefaultNotificationPublicMember()
+    {
+        $this->becomeUser('Admin');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+
+        // Setting empty spaceguids settings
+        $settings = new NotificationSettings(['user' => User::findOne(['id' => 1])]);
+        $settings->save();
+
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(3);
+    }
+
+    /**
+     * Disable space as member and post public content.
+     */
+    public function testExplicitlyDisableDefaultNotificationPublic()
+    {
+        $this->becomeUser('User1');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+
+        // Setting empty spaceguids settings
+        $settings = new NotificationSettings(['user' => User::findOne(['id' => 2])]);
+        $settings->save();
+
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(3);
+    }
+
+    /**
+     * Disable space as member and post public content.
+     */
+    public function testExplicitlyDisableDefaultNotificationPublic2()
+    {
+        $this->becomeUser('User1');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+
+        // Setting empty spaceguids settings
+        $settings = new NotificationSettings(['user' => User::findOne(['id' => 2])]);
+        $settings->save();
+
+        $this->becomeUser('Admin');
+
+        Yii::$app->notification->setSpaces(['5396d499-20d6-4233-800b-c6c86e5fa34a']);
+
+        // Setting empty spaceguids settings
+        $settings = new NotificationSettings(['user' => User::findOne(['id' => 1])]);
+        $settings->save();
+
+        $this->becomeUser('User2');
+
+        $post = new Post(['message' => 'MyTestContent']);
+        $post->content->setContainer(Space::findOne(['id' => 1]));
+        $post->content->visibility = Content::VISIBILITY_PUBLIC;
+        $post->save();
+
+        // Note Admin is following Space2 so we expect one notification mail.
+        $this->assertMailSent(2);
+    }
+}

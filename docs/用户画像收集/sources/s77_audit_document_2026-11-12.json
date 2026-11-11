@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "document": "docs/用户画像收集/39_S77独立验收.md",
+  "relative_links_checked": 21,
+  "missing_links": [],
+  "code_fences_balanced": true,
+  "final_equals_original_first_pass": true,
+  "http_evidence_sha256": "7d94b6b557efa9e039f85b865f7ebaf2ff887773ae68f9d844233dbbf7ace88c",
+  "cleanup_export_exact_targets_and_main_preservation": true,
+  "database_connections": 0,
+  "network_calls": 0
+}

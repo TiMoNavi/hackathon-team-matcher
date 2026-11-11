@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "backend/deploy/profile_s76_cleanup.py",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s76_regression.py",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s76_docs_check.py",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s76.php",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s76_preservation.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-onboarding/tests/integration/s76_http_bootstrap.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-onboarding/tests/integration/s76_http_router.php",
+      "passed": true
+    }
+  ]
+}

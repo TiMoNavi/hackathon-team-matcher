@@ -1,0 +1,268 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "label": "native login page 1",
+      "passed": true
+    },
+    {
+      "label": "native username step 1",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "native password page 1",
+      "passed": true
+    },
+    {
+      "label": "native password authentication 1",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "ordinary native user has no admin access 1",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "label": "real session selects current event",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "create authorized conversation event-switch",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "real session selects current event",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "cross-request current-event switch rejects old conversation before model",
+      "passed": true,
+      "status": 409
+    },
+    {
+      "label": "real session selects current event",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "switching back does not restore old selection context",
+      "passed": true
+    },
+    {
+      "label": "create authorized conversation direct-revoke",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "prepare real source-backed response",
+      "passed": true
+    },
+    {
+      "label": "fixture body actually cites unselected sent participant",
+      "passed": true
+    },
+    {
+      "label": "direct submit rechecks revoked unselected source without prior GET",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "revoked source never enters provider or visible history on direct submit",
+      "passed": true
+    },
+    {
+      "label": "create authorized conversation before-provider",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "permission removal after budget reservation blocks provider response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "only planning provider ran before candidate authorization failed",
+      "passed": true,
+      "provider_calls": 1,
+      "model_calls_used": 2
+    },
+    {
+      "label": "create authorized conversation pause-before-model",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "runtime pause at platform boundary blocks all provider calls",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "create authorized conversation pause-during-response",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "runtime pause inside provider prevents publishing late result",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "in-flight pause does not trigger hidden provider retry",
+      "passed": true
+    },
+    {
+      "label": "resume preserves in-flight invalidation",
+      "passed": true
+    }
+  ],
+  "http_responses": [
+    {
+      "path": "/user/auth/login",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/dashboard/dashboard",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/admin",
+      "method": "GET",
+      "status": 403,
+      "error": null
+    },
+    {
+      "path": "/api/v1/me/current-event",
+      "method": "PUT",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/me/current-event",
+      "method": "PUT",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-8fabf2e4cd168b6094d6cde2907e4d3e18d3d92e2afec86742291c5a1e61730f",
+      "method": "GET",
+      "status": 409,
+      "error": {
+        "code": "VERSION_CONFLICT",
+        "message": "The current session or activity does not allow this request.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/me/current-event",
+      "method": "PUT",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-8fabf2e4cd168b6094d6cde2907e4d3e18d3d92e2afec86742291c5a1e61730f",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-3b71150da1dcbba1ab7ab8e4ecf472e4cd422dc0fa2b7b5c300077064d7fd5b8/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-3b71150da1dcbba1ab7ab8e4ecf472e4cd422dc0fa2b7b5c300077064d7fd5b8/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-c76d8e96c8ae1282e928f4e78bfdf960c3e88c99d2f6d3c47ad03b5ffbfb71ef/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-76eb87ce8cc3def3666b6b3e6d6027edf65c6076af0c6d21648ec32822693ce4/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-7012b3b1a9fdaa46b9c5cd6752512e98f7f0f0ecc3ad45e5f01e720ad99a8a2c/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-7012b3b1a9fdaa46b9c5cd6752512e98f7f0f0ecc3ad45e5f01e720ad99a8a2c",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    }
+  ],
+  "external_model_calls": 0
+}

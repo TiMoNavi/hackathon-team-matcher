@@ -1,0 +1,18 @@
+{
+  "passed": 13,
+  "checks": [
+    "native_account_page",
+    "native_file_widget_upload",
+    "crop_token_updates_without_reload",
+    "delete_token_updates_without_reload",
+    "upload_token_updates_without_reload",
+    "blueimp_cached_url_updated",
+    "native_crop_modal_opens",
+    "native_crop_confirmed",
+    "crop_result_keeps_native_profile_working",
+    "native_delete_http_success",
+    "native_delete_confirmed",
+    "native_delete_matches_identity_api",
+    "no_browser_runtime_errors"
+  ]
+}

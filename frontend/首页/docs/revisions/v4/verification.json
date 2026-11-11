@@ -1,0 +1,253 @@
+{
+  "checks": [
+    {
+      "name": "Five sections in requested order",
+      "passed": true
+    },
+    {
+      "name": "Community, activity and AI reasons use light surfaces",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "#community",
+          "color": "rgb(247, 245, 255)",
+          "light": true
+        },
+        {
+          "selector": "#demo-event",
+          "color": "rgb(255, 255, 255)",
+          "light": true
+        },
+        {
+          "selector": "[aria-label=\"AI 推荐理由\"]",
+          "color": "rgb(247, 245, 255)",
+          "light": true
+        }
+      ]
+    },
+    {
+      "name": "Reference-library collision beams are active",
+      "passed": true
+    },
+    {
+      "name": "Bricolage Grotesque actually renders",
+      "passed": true
+    },
+    {
+      "name": "Inter actually renders",
+      "passed": true
+    },
+    {
+      "name": "Chinese glyphs render in a CJK font",
+      "passed": true
+    },
+    {
+      "name": "Hero marquee moves",
+      "passed": true
+    },
+    {
+      "name": "Global pause stops marquee",
+      "passed": true,
+      "detail": {
+        "before": "matrix(1, 0, 0, 1, -170.352, 0)",
+        "after": "matrix(1, 0, 0, 1, -170.352, 0)"
+      }
+    },
+    {
+      "name": "Pause freezes light field and gradient text",
+      "passed": true
+    },
+    {
+      "name": "Paused title stays fully readable",
+      "passed": true
+    },
+    {
+      "name": "Global pause stops collision beam loops",
+      "passed": true
+    },
+    {
+      "name": "Global pause freezes the role wheel",
+      "passed": true
+    },
+    {
+      "name": "Person detail opens",
+      "passed": true
+    },
+    {
+      "name": "Person interaction stays a demo",
+      "passed": true
+    },
+    {
+      "name": "Escape closes detail",
+      "passed": true
+    },
+    {
+      "name": "Profile source switches",
+      "passed": true
+    },
+    {
+      "name": "Global pause freezes profile orbit",
+      "passed": true
+    },
+    {
+      "name": "Profile preview opens",
+      "passed": true
+    },
+    {
+      "name": "Profile confirmation is explicit",
+      "passed": true
+    },
+    {
+      "name": "Recommendation changes card and reasons",
+      "passed": true
+    },
+    {
+      "name": "Recommendation keyboard works",
+      "passed": true
+    },
+    {
+      "name": "User can send a local chat message",
+      "passed": true
+    },
+    {
+      "name": "AI demo gives a visible response",
+      "passed": true
+    },
+    {
+      "name": "Event join is visibly a demo",
+      "passed": true
+    },
+    {
+      "name": "Reference-library role wheel advances",
+      "passed": true
+    },
+    {
+      "name": "Profile orbit resumes",
+      "passed": true
+    },
+    {
+      "name": "Profile swap starts a crossfade",
+      "passed": true
+    },
+    {
+      "name": "Profile crossfade releases size lock",
+      "passed": true
+    },
+    {
+      "name": "Recommendation card responds to pointer",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow at 1440",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440
+      }
+    },
+    {
+      "name": "No horizontal overflow at 768",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "No horizontal overflow at 390",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "No horizontal overflow at 320",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "document": 320
+      }
+    },
+    {
+      "name": "Mobile navigation opens",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation closes after selection",
+      "passed": true
+    },
+    {
+      "name": "Mobile chat switches rooms",
+      "passed": true
+    },
+    {
+      "name": "Mobile input works",
+      "passed": true
+    },
+    {
+      "name": "System reduced motion respected",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion disables new background effects",
+      "passed": true
+    },
+    {
+      "name": "No page runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No broken loaded images",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "fonts": {
+    "font-test-heading": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 12
+      }
+    ],
+    "font-test-body": [
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 17
+      }
+    ],
+    "font-test-chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 13
+      }
+    ]
+  },
+  "widths": [
+    {
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "passed": true
+}

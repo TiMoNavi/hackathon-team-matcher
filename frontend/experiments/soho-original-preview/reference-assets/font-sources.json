@@ -1,0 +1,58 @@
+[
+  {
+    "family": "DM Sans",
+    "file": "c3cb240f9c892514-s.163v2i5cux7-c.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/c3cb240f9c892514-s.163v2i5cux7-c.woff2",
+    "bytes": 18192,
+    "sha256": "219b02c7d8884817d3d6ad4c8771f2c000ce4c5669a67ef4e2e5617ffa25c4cc"
+  },
+  {
+    "family": "DM Sans",
+    "file": "5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+    "bytes": 36980,
+    "sha256": "468d56b6b25b05b70190b6c233d773f6f1770e8579827ce022a57f03fa8002fb"
+  },
+  {
+    "family": "Geist Mono",
+    "file": "5ce348bf30bf5439-s.0zgw-jeven.3w.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2",
+    "bytes": 6204,
+    "sha256": "e27f657e38d52887baa3b6b2f812bef93dfdd356f0810e40edd4ee284cc7e9f6"
+  },
+  {
+    "family": "Geist Mono",
+    "file": "4fa387ec64143e14-s.0wkzw~je483f-.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/4fa387ec64143e14-s.0wkzw~je483f-.woff2",
+    "bytes": 12872,
+    "sha256": "75b3bedbebc35f347c0ae3b416aa871941555357e7b0f83767eb5987875589ed"
+  },
+  {
+    "family": "Geist Mono",
+    "file": "6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2",
+    "bytes": 5892,
+    "sha256": "d67e4a94ba498635f764ddca7d1ec4271f5642f032eb24b426764480f66f8497"
+  },
+  {
+    "family": "Geist Mono",
+    "file": "7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2",
+    "bytes": 7728,
+    "sha256": "16e1d48b6dd29eb240aec5db36184eb182933c082cd43de7f35af686d58087d2"
+  },
+  {
+    "family": "Geist Mono",
+    "file": "bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2",
+    "bytes": 14712,
+    "sha256": "745994b5cd950ec201b66526375f057d540847cccfc70f4f24f5f571d26d3923"
+  },
+  {
+    "family": "Geist Mono",
+    "file": "797e433ab948586e-s.p.08e28id.o-okb.woff2",
+    "url": "https://soho.shadcnuikit.com/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
+    "bytes": 23108,
+    "sha256": "5f3d6ad60f29d6cb708414ec6887163d63bf197377ef5417d2483ff31ace6c3b"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "canonical_root": "/Users/550m/code/hackathon-team-matcher/references/用户画像处理",
+  "migrations": [
+    {
+      "from": "/Users/550m/code/user-profile-lab",
+      "to": "/Users/550m/code/hackathon-team-matcher/references/用户画像处理",
+      "compatibility_symlink": true
+    },
+    {
+      "from": "/Users/550m/code/resume-matcher-onboarding-trial",
+      "to": "/Users/550m/code/hackathon-team-matcher/references/用户画像处理/historical-trials/resume-matcher-onboarding-trial",
+      "compatibility_symlink": true
+    }
+  ],
+  "frozen_document_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+  "method": "same-filesystem rename; no credential or resume content read",
+  "files_overwritten": false
+}

@@ -1,0 +1,9 @@
+{
+  "id": "matcher-onboarding-ai",
+  "name": "用户画像 AI 增强",
+  "description": "可选的有界模型适配、资料证据提取、选项补问和可编辑画像建议；不确认用户资料。",
+  "version": "0.1.0",
+  "humhub": {"minVersion": "1.19.4", "modules": {"matcher-user-profile": {"minVersion": "0.7.0"}, "matcher-onboarding": {"minVersion": "0.3.0"}}},
+  "keywords": ["profile", "onboarding", "ai"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

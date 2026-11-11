@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "purpose": "offline_design_only",
+  "bindings": [
+    {"logical_key": "topic_text", "native_internal_name": "about", "expected_type": "TextArea", "normalizer": "plain_text", "usage": "confirmed_projection_only"},
+    {"logical_key": "profession_hint", "native_internal_name": "title", "expected_type": "Text", "normalizer": "plain_text", "usage": "confirmed_projection_only"},
+    {"logical_key": "city", "native_internal_name": "city", "expected_type": "Text", "normalizer": "casefold_text", "usage": "explicit_location_preference_only"},
+    {"logical_key": "country", "native_internal_name": "country", "expected_type": "CountrySelect", "normalizer": "enum_token", "usage": "explicit_location_preference_only"}
+  ],
+  "proposed_inputs": ["interests", "offered_skills", "wanted_contributions", "collaboration_goal", "availability", "collaboration_style"],
+  "ranking": {
+    "weights": {"topic": 0.35, "contribution": 0.35, "availability": 0.15, "collaboration_style": 0.15},
+    "candidate_limit": 200,
+    "llm_candidate_limit": 24,
+    "final_limit": 5
+  }
+}

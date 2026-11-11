@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "viewport": 1440,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "viewport": 1100,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "viewport": 1024,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "viewport": 901,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "viewport": 768,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "viewport": 390,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "viewport": 320,
+      "bars": 8,
+      "overflow": false,
+      "collisions": []
+    },
+    {
+      "entryDetails": true,
+      "focusRestoration": true,
+      "manualRotation": true
+    },
+    {
+      "citationPreviewAndDetail": true,
+      "viewerContexts": 3,
+      "localDraft": true
+    },
+    {
+      "ideaDetails": true,
+      "bookmark": true,
+      "activityFilterCounts": [
+        1,
+        2
+      ],
+      "historyLabel": true
+    },
+    {
+      "contentStates": [
+        "sparse",
+        "long",
+        "no-photo"
+      ],
+      "stateWidths": [
+        1440,
+        390,
+        320
+      ]
+    },
+    {
+      "mobileNavigation": true,
+      "mobileEvidenceDialog": true
+    },
+    {
+      "reducedMotion": true
+    },
+    {
+      "platformFonts": {
+        ".world-heading h1": [
+          {
+            "familyName": "Bricolage Grotesque 96pt ExtraBold",
+            "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          },
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 3
+          }
+        ],
+        ".message-value": [
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Medium",
+            "isCustomFont": false,
+            "glyphCount": 6
+          },
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_Medium",
+            "isCustomFont": true,
+            "glyphCount": 3
+          }
+        ],
+        ".hero-breadcrumb": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_Medium",
+            "isCustomFont": true,
+            "glyphCount": 18
+          }
+        ],
+        ".portrait-copy p": [
+          {
+            "familyName": "Bricolage Grotesque 96pt ExtraBold",
+            "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+            "isCustomFont": true,
+            "glyphCount": 11
+          }
+        ]
+      }
+    },
+    {
+      "motionSeconds": 61,
+      "uniqueEntries": 27,
+      "phases": [
+        "holding",
+        "retracting",
+        "hidden",
+        "growing"
+      ],
+      "clipStates": 308,
+      "hoverPause": true,
+      "focusPause": true,
+      "dialogPause": true,
+      "offscreenPause": true
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}

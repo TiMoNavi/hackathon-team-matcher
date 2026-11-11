@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "passed": 78,
+  "checks": [
+    "formal_space_session_created",
+    "materials_panel_visible",
+    "new_session_rules_mode",
+    "new_session_zero_model_calls",
+    "five_stages_present",
+    "existing_project_loaded_from_ordinary_profile",
+    "ordinary_pending_headline_not_silently_imported",
+    "material_save_stays_unconfirmed",
+    "materials_reload_restores_saved_input",
+    "review_includes_existing_project",
+    "review_preserves_existing_friend_contact",
+    "batch_contains_three_to_eight_questions",
+    "saved_questions_have_stable_ids_and_reasons",
+    "prepared_batch_rules_mode",
+    "prepared_batch_zero_model_calls",
+    "review_confirmation_reaches_ordinary_profile",
+    "other_user_cannot_read_session",
+    "other_user_cannot_read_batch",
+    "other_user_cannot_read_draft",
+    "previous_button_enabled_after_answer",
+    "previous_question_restores_selected_option",
+    "return_edit_versions_answer_and_keeps_batch",
+    "save_exit_resumes_batch_and_position",
+    "all_question_answers_persisted",
+    "multiple_choice_answer_persisted",
+    "explicit_skip_persisted",
+    "free_text_answer_persisted",
+    "option_answer_keeps_free_supplement",
+    "single_choice_question_was_exercised",
+    "synthesis_first_space_rules_mode",
+    "synthesis_first_space_zero_model_calls",
+    "synthesis_keeps_existing_confirmed_project",
+    "synthesis_does_not_publish_answers",
+    "draft_edit_saved_before_confirmation",
+    "return_to_questions_keeps_saved_answers",
+    "unchanged_answers_reopen_existing_drafts",
+    "resynthesis_keeps_saved_draft_versions",
+    "resynthesis_keeps_user_edited_text",
+    "draft_supports_additional_project_record",
+    "draft_delete_preserves_other_project",
+    "authenticated_preview_hides_private_and_friends_values",
+    "authenticated_preview_keeps_confirmed_public_project",
+    "friends_preview_adds_friend_fields_and_contacts",
+    "owner_preview_includes_private_draft",
+    "preference_codes_render_as_chinese_labels",
+    "preview_does_not_publish_private_draft",
+    "mobile_privacy_has_no_horizontal_overflow",
+    "keyboard_completion_saves_session",
+    "confirmed_privacy_ranges_persist",
+    "actual_space_visitor_cannot_read_private_or_friend_fields",
+    "actual_space_visitor_cannot_read_friend_contact",
+    "global_habit_has_no_space_scope",
+    "first_space_goal_saved_separately",
+    "ordinary_manual_draft_preserved",
+    "ordinary_editor_reads_same_confirmed_bio",
+    "ordinary_editor_reads_same_confirmed_global_habit",
+    "new_space_keeps_global_introduction",
+    "new_space_starts_with_empty_context",
+    "synthesis_second_space_rules_mode",
+    "synthesis_second_space_zero_model_calls",
+    "space_goal_code_renders_as_chinese_label",
+    "second_space_gets_its_own_goal",
+    "first_space_goal_survives_second_completion",
+    "global_habit_survives_second_completion",
+    "synthesis_empty_global_rules_mode",
+    "synthesis_empty_global_zero_model_calls",
+    "all_skipped_answers_produce_no_invented_facts",
+    "all_optional_global_flow_can_finish_empty",
+    "synthesis_conflict_global_rules_mode",
+    "synthesis_conflict_global_zero_model_calls",
+    "parallel_edit_surfaces_conflict",
+    "parallel_edit_keeps_local_input",
+    "parallel_edit_does_not_overwrite_new_confirmed_value",
+    "explicit_reconcile_reads_latest_confirmed_profile",
+    "no_ai_endpoints_called_by_browser",
+    "no_external_or_main_preview_requests",
+    "no_browser_javascript_errors",
+    "no_server_500s"
+  ],
+  "javascript_errors": 0,
+  "server_errors": 0,
+  "blocked_origins": [],
+  "api_request_count": 126,
+  "environment": {
+    "kind": "isolated_s4_clone",
+    "browser": "Microsoft Edge Chromium via Playwright",
+    "origin": "http://127.0.0.1:8097",
+    "desktop_viewport": [
+      1280,
+      900
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ]
+  },
+  "visual_review": [
+    {
+      "file": "s4-privacy-desktop.png",
+      "size": [
+        1280,
+        4432
+      ],
+      "sha256": "c579121ac12e4a6e497ed0dfd50cd39d920d9fdbc26c32b8d8e5f3ed90f4e9ce",
+      "reviewed": true
+    },
+    {
+      "file": "s4-completed-mobile.png",
+      "size": [
+        390,
+        1391
+      ],
+      "sha256": "5358f0ed1178cb638c26bce92dbd7716281f4b862df93025171e32fb846b9527",
+      "reviewed": true
+    },
+    {
+      "file": "s4-reconcile-desktop.png",
+      "size": [
+        1280,
+        1408
+      ],
+      "sha256": "369a75b63db047d134c12ba89c1f65ff86e8ca35ab5be8c6770c4f066a12093a",
+      "reviewed": true
+    },
+    {
+      "file": "s4-resynthesis-draft.png",
+      "size": [
+        1280,
+        6514
+      ],
+      "sha256": "26d4dc632ca5f07aed900ed5ddc17d4e0bdd288e6b206d45efce26ee95190430",
+      "reviewed": true
+    }
+  ],
+  "zero_llm_evidence": [
+    "Rules HTTP DTOs return generation_mode=rules and llm_calls=0",
+    "QuestionService and local providers reviewed; P2 module injects profile workflow and SQL repository without a model client",
+    "No browser request reached another origin; this is separate from the server call-chain check"
+  ],
+  "followup_regression": "Return from a saved edited draft to questions, keep answers unchanged, synthesize again, return to the same global/Space drafts with versions and edited text preserved."
+}

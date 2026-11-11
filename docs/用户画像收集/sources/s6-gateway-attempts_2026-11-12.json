@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "scope": "synthetic source material; complete workflow and separately recorded earlier protocol/compatibility probes",
+  "workflow_requests": 5,
+  "workflow_successful_operations": 3,
+  "workflow_failed_requests": 2,
+  "workflow_reported_tokens": 24743,
+  "workflow_unreported_usage_requests": 2,
+  "prior_diagnostic_requests": 6,
+  "total_model_request_attempts": 11,
+  "total_known_reported_tokens": 24965,
+  "total_attempts_with_unknown_token_usage": 6,
+  "prior_diagnostics": [
+    {
+      "purpose": "minimal protocol probe",
+      "attempts": 1,
+      "outcome": "JSONDecodeError",
+      "usage_known": false
+    },
+    {
+      "purpose": "JSON object protocol probe",
+      "attempts": 1,
+      "outcome": "succeeded",
+      "reported_tokens": 103
+    },
+    {
+      "purpose": "PHP HTTP/1.1 probe",
+      "attempts": 1,
+      "outcome": "succeeded",
+      "reported_tokens": 119
+    },
+    {
+      "purpose": "pre-fix complete extraction and transport diagnosis",
+      "attempts": 3,
+      "outcome": "curl_close deprecation converted to AI_NETWORK_ERROR by Yii",
+      "usage_known": false
+    }
+  ],
+  "retained_failures": [
+    {
+      "phase": "first_pre_fix_attempt",
+      "error": "extract_real_model_succeeded",
+      "metrics": [
+        {
+          "operation": "extract",
+          "execution_status": "failed",
+          "error_code": "AI_NETWORK_ERROR",
+          "model": "gemini-3.8-flash",
+          "usage": {
+            "reported": false,
+            "total_tokens": null,
+            "prompt_tokens": null,
+            "completion_tokens": null
+          },
+          "llm_calls": 1,
+          "duration_ms": 21970,
+          "accounting_complete": true
+        }
+      ]
+    },
+    {
+      "phase": "before_php85_fix",
+      "error": "extract_real_model_succeeded",
+      "metrics": [
+        {
+          "operation": "extract",
+          "execution_status": "failed",
+          "error_code": "AI_NETWORK_ERROR",
+          "model": "gemini-3.8-flash",
+          "usage": {
+            "reported": false,
+            "total_tokens": null,
+            "prompt_tokens": null,
+            "completion_tokens": null
+          },
+          "llm_calls": 1,
+          "duration_ms": 12453,
+          "accounting_complete": true
+        }
+      ]
+    },
+    {
+      "phase": "test_client_missing_existing_attribute_id",
+      "error": "('/api/v1/me/profile/drafts/9f2eec49-f4e4-410b-a85f-f79dd82ccdbb', 422, 'PROFILE_VALIDATION_FAILED')",
+      "metrics": [
+        {
+          "operation": "extract",
+          "execution_status": "succeeded",
+          "error_code": null,
+          "model": "gemini-3.8-flash",
+          "usage": {
+            "reported": true,
+            "total_tokens": 5078,
+            "prompt_tokens": 2819,
+            "completion_tokens": 2259
+          },
+          "llm_calls": 1,
+          "duration_ms": 18171,
+          "accounting_complete": true
+        }
+      ]
+    },
+    {
+      "phase": "compose_provider_timeout",
+      "error": "compose_real_model_succeeded",
+      "metrics": [
+        {
+          "operation": "extract",
+          "execution_status": "succeeded",
+          "error_code": null,
+          "model": "gemini-3.8-flash",
+          "usage": {
+            "reported": true,
+            "total_tokens": 5078,
+            "prompt_tokens": 2819,
+            "completion_tokens": 2259
+          },
+          "llm_calls": 1,
+          "duration_ms": 18171,
+          "accounting_complete": true
+        },
+        {
+          "operation": "questions",
+          "execution_status": "succeeded",
+          "error_code": null,
+          "model": "gemini-3.8-flash",
+          "usage": {
+            "reported": true,
+            "total_tokens": 7553,
+            "prompt_tokens": 4871,
+            "completion_tokens": 2682
+          },
+          "llm_calls": 1,
+          "duration_ms": 13447,
+          "accounting_complete": true
+        },
+        {
+          "operation": "compose",
+          "execution_status": "failed",
+          "error_code": "AI_TIMEOUT",
+          "model": "gemini-3.8-flash",
+          "usage": {
+            "reported": false,
+            "total_tokens": null,
+            "prompt_tokens": null,
+            "completion_tokens": null
+          },
+          "llm_calls": 1,
+          "duration_ms": 45009,
+          "accounting_complete": true
+        }
+      ]
+    }
+  ],
+  "compose_timeout_transport": {
+    "request_bytes": 22032,
+    "response_bytes": 0,
+    "http_status": 0,
+    "curl_errno": 28,
+    "curl_error_category": "Timeout was reached",
+    "curl_diagnostic": "Operation timed out after 45001 milliseconds with 0 bytes received",
+    "http_version": 0,
+    "elapsed_ms": 45002,
+    "connect_ms": 324,
+    "start_transfer_ms": 0,
+    "tls_verified": true
+  },
+  "scope_note": "Known token sum excludes unknown usage; no billing amount or provider stability inference. Prior probes were observed during this session and are not repeated in the successful workflow count."
+}

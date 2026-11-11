@@ -1,0 +1,72 @@
+/* V4: compositions of AffectUI TextReveal, GradientText and EmptyCalendar.
+ * Signalry tokens remain the source of color, scale and corner geometry. */
+.kinetic-heading-group { position: relative; width: fit-content; max-width: 100%; padding-bottom: 12px; }
+.kinetic-heading .kinetic-line { display: block; }
+.kinetic-heading .kinetic-line + .kinetic-line { margin-top: .1em; }
+.kinetic-heading .ui-trv__w { display: inline; white-space: normal; }
+.kinetic-heading .ui-trv { --ui-trv-rise: .48em; --ui-trv-blur: 12px; }
+.kinetic-ink .ui-trv__p {
+  color: var(--primary);
+  background-image: linear-gradient(110deg, var(--primary), color-mix(in srgb,var(--primary) 54%,var(--foreground)) 38%, var(--primary) 63%, color-mix(in srgb,var(--primary) 72%,var(--background)) 78%, var(--primary));
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+@supports (background-clip: text) { .kinetic-ink .ui-trv__p { color: transparent; } }
+.kinetic-heading .kinetic-ink[data-shown] .ui-trv__p {
+  animation: ui-trv-in var(--ui-trv-duration) var(--ui-trv-ease) both, kinetic-pigment 9s ease-in-out infinite alternate;
+  animation-delay: calc(var(--ui-trv-delay) + var(--ui-trv-i) * var(--ui-trv-stagger)), calc(var(--ui-trv-i) * -130ms);
+}
+.kinetic-replay { display: inline-flex; align-items: center; gap: 6px; position: absolute; right: 3px; bottom: -20px; min-height: 32px; padding: 4px 7px; border-radius: 8px; color: var(--muted-foreground); font-size: 11px; opacity: .65; transition: opacity .2s, color .2s; }
+.kinetic-replay:hover, .kinetic-replay:focus-visible { opacity: 1; color: var(--primary); }
+.kinetic-replay:disabled { opacity: .35; cursor: default; }
+.kinetic-replay svg { transition: transform .4s; }
+.kinetic-replay:hover:not(:disabled) svg { transform: rotate(-45deg); }
+@keyframes kinetic-pigment { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+/* A partial, tinted lower edge. The top stays open and the content stays still. */
+.material-surface { position: relative; isolation: isolate; border-radius: 24px; --surface-x: 45%; --surface-y: 35%; box-shadow: 0 4px 10px -8px color-mix(in srgb,var(--foreground) 12%,transparent), 0 24px 54px -38px color-mix(in srgb,var(--primary) 30%,transparent); }
+.material-surface::before { content: ""; position: absolute; z-index: 3; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none; background: linear-gradient(155deg,transparent 38%,color-mix(in srgb,var(--primary) 16%,transparent) 60%,color-mix(in srgb,var(--primary) 48%,transparent) 78%,var(--lime) 88%,transparent 100%); background-size: 120% 120%; mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); mask-composite: exclude; animation: surface-edge 12s ease-in-out infinite alternate; }
+.material-surface::after { content: ""; pointer-events: none; position: absolute; z-index: -1; left: 12%; right: 12%; bottom: -12px; height: 40px; border-radius: 50%; background: linear-gradient(90deg,var(--secondary),color-mix(in srgb,var(--primary) 16%,transparent),color-mix(in srgb,var(--lime) 45%,transparent)); filter: blur(20px); opacity: .7; animation: surface-glow 10s ease-in-out infinite alternate; }
+.material-reflection { pointer-events: none; position: absolute; z-index: 2; inset: 0; border-radius: inherit; background: radial-gradient(ellipse 65% 45% at var(--surface-x) var(--surface-y),color-mix(in srgb,var(--background) 60%,transparent),transparent 80%); opacity: .18; transition: opacity .45s; }
+.material-surface:hover > .material-reflection { opacity: .6; }
+.material-surface[data-surface-still="true"]::before, .material-surface[data-surface-still="true"]::after { animation-play-state: paused; }
+.material-surface[data-surface-still="true"] > .material-reflection { opacity: .18; transition: none; }
+@keyframes surface-edge { from { background-position: 0% 0%; } to { background-position: 25% 25%; } }
+@keyframes surface-glow { from { transform: translateX(-5%) scaleX(.86); opacity: .45; } to { transform: translateX(5%) scaleX(1.06); opacity: .75; } }
+
+.people-person-card { background: linear-gradient(145deg,var(--background),color-mix(in srgb,var(--muted) 65%,var(--background))); }
+.people-person-card:nth-child(even) { background: linear-gradient(150deg,var(--muted),var(--background) 70%); }
+.people-looking, .recommendation-looking { position: relative; }
+.people-looking::before, .recommendation-looking::before { content: ""; position: absolute; left: 0; top: 0; height: 1px; width: 70%; background: linear-gradient(90deg,color-mix(in srgb,var(--primary) 22%,transparent),transparent); }
+.recommendation-looking::before { left: 15%; }
+.people-skills [data-slot="badge"] { background: transparent; border: 0; padding: 0 9px 0 0; color: var(--muted-foreground); border-radius: 0; }
+.people-skills [data-slot="badge"] + [data-slot="badge"]::before { content: "·"; margin-right: 7px; color: color-mix(in srgb,var(--primary) 45%,transparent); }
+.profile-material { display: flex; flex-direction: column; background: var(--background); }
+.profile-material .profile-preview { flex: 1; background: linear-gradient(145deg,var(--background) 55%,var(--muted)); }
+.recommendation-toolbar { border-bottom: 1px solid color-mix(in srgb,var(--border) 60%,transparent); }
+.recommendation-deck { position: relative; isolation: isolate; }
+.recommendation-deck::before { content: ""; pointer-events: none; position: absolute; z-index: -1; inset: 15% 0 5%; background: radial-gradient(ellipse,var(--secondary),transparent 65%); }
+.recommendation-opener { position: relative; }
+.recommendation-opener::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; border-radius: 2px; background: linear-gradient(var(--primary),var(--secondary)); }
+.recommendation-reasons { align-self: stretch; }
+.recommendation-reasons aside { background-image: linear-gradient(150deg,var(--background),transparent 65%); }
+.community-scene .community-event-panel.material-surface { box-shadow: 0 18px 60px -40px color-mix(in srgb,var(--primary) 28%,transparent); }
+
+@media (max-width:767px) {
+  .kinetic-heading.section-heading { font-size: clamp(28px,8.4vw,34px); }
+  .kinetic-replay { font-size: 10px; bottom: -17px; }
+  .recommendation-story { padding-block: 4px 16px; }
+  .material-surface::after { opacity: .4; filter: blur(15px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .kinetic-heading .kinetic-ink[data-shown] .ui-trv__p { animation: none; opacity: 1; transform: none; filter: none; }
+  .material-surface::before, .material-surface::after { animation: none; }
+  .material-reflection, .kinetic-replay svg { transition: none; }
+}
+[data-motion="paused"] .material-surface::before, [data-motion="paused"] .material-surface::after { animation-play-state: paused; }
+
+@media (min-width:1024px) and (max-width:1279px) {
+  .people-section .kinetic-heading { font-size: clamp(32px,3.65vw,46px); }
+  #profile-title { font-size: 44px; }
+}

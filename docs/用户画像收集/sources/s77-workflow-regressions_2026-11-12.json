@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-12",
+  "status": "passed",
+  "scope": "A workflow offline acceptance; no production code edits",
+  "results": {
+    "s77_workflow": {
+      "path": "backend/protected/modules/matcher-onboarding/tests/s77_workflow.php",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "summary": {
+        "status": "passed",
+        "suite": "s77_workflow",
+        "date": "2026-11-12",
+        "s77_checks": 231,
+        "inherited_s4_s5_s6_checks": 117,
+        "synthetic_engine_calls": 18,
+        "real_model_calls": 0,
+        "network_calls": 0,
+        "database_calls": 0,
+        "production_changes": [],
+        "module_versions": {
+          "matcher-user-profile": "0.10.0",
+          "matcher-onboarding": "0.4.0"
+        }
+      },
+      "sha256": "f4d11cfa7fe64a46f2e65498d2ce19c3e51d57750d0a7d52bf6ca49ffdee2cf4"
+    },
+    "s76_flow_progress": {
+      "path": "backend/protected/modules/matcher-onboarding/tests/unit/s76_flow_progress.php",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "summary": {
+        "status": "passed",
+        "s76_flow_checks": 97,
+        "database_calls": 0,
+        "network_calls": 0,
+        "real_llm_calls": 0,
+        "fixtures": "fabricated materials with in-memory repositories and synthetic engines"
+      },
+      "sha256": "5d9ccddbc6858cc8750495e841d6a964ad9959c98420accb328297cbc3f324f4"
+    },
+    "s6_worker_recovery": {
+      "path": "backend/protected/modules/matcher-onboarding/tests/unit/s6_worker_recovery.php",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "summary": {
+        "s6_worker_recovery_checks": 11,
+        "passed": true,
+        "real_llm_calls": 0
+      },
+      "sha256": "4ce3724684048c4139408a30f646d30538b8cde0e354f8aaba6d64a37253578c"
+    },
+    "s76_task_progress": {
+      "path": "backend/protected/modules/matcher-user-profile/tests/s76_task_progress.php",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "summary": {
+        "status": "passed",
+        "passed": 136,
+        "external_requests": 0,
+        "real_llm_calls": 0,
+        "engine_resolutions": 0,
+        "reader_resolutions": 0,
+        "sqlite": "temporary memory only",
+        "mysql": "not exercised in this offline test",
+        "scope": "P1 S7.6 task/source progress; HTTP/real MySQL are independently tested"
+      },
+      "sha256": "d760b2a9ec5e541cc56da0c9a2cffd26a0db49df6306ca21b7536f3c21f782f5"
+    },
+    "s6_audit_jobs": {
+      "path": "backend/protected/modules/matcher-user-profile/tests/unit/s6_audit_jobs.php",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "summary": {
+        "status": "passed",
+        "passed": 67,
+        "external_requests": 0,
+        "real_llm_calls": 0,
+        "scope": "Independent ProfileAiJobService ports: synthetic workflow and engine; actual SQL/HTTP checked separately"
+      },
+      "sha256": "088e36746bef63451b1fedd86b519f4799e73c944fb22c45acb6fb7f9c093992"
+    }
+  },
+  "lint": "No syntax errors detected in backend/protected/modules/matcher-onboarding/tests/s77_workflow.php",
+  "network_calls": 0,
+  "real_model_calls": 0,
+  "production_fingerprints": {
+    "backend/protected/modules/matcher-onboarding/application/OnboardingService.php": "bcdbf796598e0cbe6b913b9bd04d43790da3efcbf2a9cdb5b76dbb49383fe9c6",
+    "backend/protected/modules/matcher-onboarding/application/OnboardingAiWorkflow.php": "26397dd4fec21cf354bf4044d055dc50787b0a68342f4328787a7cba663dd245",
+    "backend/protected/modules/matcher-user-profile/application/ProfileAiJobService.php": "eb5b9531357a457ef76673e7190d58eff8e20ffad8ef5c8816b6c88e77b1ceba",
+    "backend/protected/modules/matcher-user-profile/application/ProfileService.php": "e36c89d8a15c569619d017c73418dd28d1ae43d68a8f9f97160e24bcc968d58d",
+    "backend/protected/modules/matcher-user-profile/application/QuestionService.php": "c66908ee3fe1e67eddecd1d8e4e7c6aca208a6ba879c7ea245440a1da3fe8086"
+  },
+  "main_workflow_suite_database_connections": 0,
+  "persistent_database_connections": 0,
+  "temporary_sqlite_regression": "The existing P1 s76_task_progress.php additionally opens sqlite::memory: at lines 240-256 to verify its SQL query; no application configuration or persistent database was used."
+}

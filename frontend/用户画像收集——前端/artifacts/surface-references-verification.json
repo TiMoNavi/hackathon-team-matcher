@@ -1,0 +1,658 @@
+{
+  "checkedAt": "2026-11-11T17:17:06.758Z",
+  "views": [
+    {
+      "slug": "kit-beams",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-beams",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-beams",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-beams",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-radar",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-radar",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-radar",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-radar",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-particles",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-particles",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-particles",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-particles",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-selection",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-selection",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-cards-hover",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-cards-hover",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-selection",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-selection",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-cluster",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-cluster",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-grid",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-grid",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-cards-hover",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "outreach-branches",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "kit-cards-hover",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "outreach-branches",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-cluster",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "model-wheel",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-grid",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-cluster",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "model-wheel",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "side-folder",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "outreach-branches",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-grid",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "side-folder",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "empty-calendar",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "model-wheel",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "outreach-branches",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "empty-calendar",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-card",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "model-wheel",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "side-folder",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-card",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "notification-stack",
+      "width": 768,
+      "scroll": 768,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "side-folder",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "empty-calendar",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "notification-stack",
+      "width": 320,
+      "scroll": 320,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "smart-recommendation",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "empty-calendar",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "smart-recommendation",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tips-panel",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-card",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tips-panel",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "shimmer-loader",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "notification-stack",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-card",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "shimmer-loader",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "number-ticker",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "notification-stack",
+      "width": 390,
+      "scroll": 390,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "number-ticker",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "testimonial-wall",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "smart-recommendation",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "testimonial-wall",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-marquee",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tips-panel",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "smart-recommendation",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-marquee",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "background-composer",
+      "width": 768,
+      "scroll": 768,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "shimmer-loader",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tips-panel",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "background-composer",
+      "width": 320,
+      "scroll": 320,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "border-composer",
+      "width": 768,
+      "scroll": 768,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "number-ticker",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "shimmer-loader",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "border-composer",
+      "width": 320,
+      "scroll": 320,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "card-reveal-scene",
+      "width": 768,
+      "scroll": 768,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "testimonial-wall",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "number-ticker",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "card-reveal-scene",
+      "width": 320,
+      "scroll": 320,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "testimonial-wall",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-marquee",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "background-composer",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "logo-marquee",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "background-composer",
+      "width": 390,
+      "scroll": 390,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "border-composer",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "card-reveal-scene",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "border-composer",
+      "width": 390,
+      "scroll": 390,
+      "children": 3,
+      "brokenImages": 0
+    },
+    {
+      "slug": "card-reveal-scene",
+      "width": 390,
+      "scroll": 390,
+      "children": 3,
+      "brokenImages": 0
+    }
+  ],
+  "checks": [
+    "19 copied original components retain recorded hashes",
+    "Background controls and transparent grid/color-light composition",
+    "Border modes switch between selection, bottom glow and reflective card",
+    "Selected outline follows keyboard activation",
+    "Hover cards support keyboard and narrow-screen click selection",
+    "Project card expands, task state changes and status selection works",
+    "Three notification patterns dismiss and reset",
+    "Suggestion accept and undo update local state",
+    "Tip completion updates displayed count",
+    "Number ticker updates and decrements",
+    "Skeleton preview switches to and from result card",
+    "Profile reveal completes and reset cancels pending timer",
+    "Looping Kit scenes pause with loaded static frames and respect reduced motion",
+    "Representative scenes render in dark mode",
+    "48-item library, 22 additions, recommendations, filters, search, deep link and theme toggle",
+    "Recorded actual rendered English and Chinese fonts"
+  ],
+  "errors": [],
+  "fonts": {
+    "english": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_SemiBold",
+        "isCustomFont": true,
+        "glyphCount": 14
+      }
+    ],
+    "chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 19
+      }
+    ]
+  }
+}

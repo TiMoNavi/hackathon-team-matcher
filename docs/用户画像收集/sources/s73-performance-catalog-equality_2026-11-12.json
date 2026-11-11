@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": 4,
+  "checks_passed": [
+    "Reconstructed original source exactly matches the pre-change measured SHA256",
+    "All 37 complete field definitions are deeply equal",
+    "Serialized full definitions are byte-identical",
+    "Only immutable schema construction was memoized"
+  ],
+  "baseline_source_sha256": "9184135f0e4a11231754fdcb836d6ef7b783ff2a8a1fc285b4beb0ad49bd5b61",
+  "current_source_sha256": "1cf5cca85451d391d719e786b2b34e9c040e9984c7ebc626b31c66b0163d1b36",
+  "field_count": 37,
+  "complete_definitions_sha256": "f3d619286dba6b1928d94767879bf434684a914cd2f034cc6c3f20b29a212216",
+  "database_connections": 0,
+  "network_calls": 0,
+  "model_calls": 0
+}

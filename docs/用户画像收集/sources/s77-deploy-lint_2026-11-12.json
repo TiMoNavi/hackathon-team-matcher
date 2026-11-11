@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "backend/deploy/profile_s77_docs_check.py",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s77_cleanup.py",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s77_regression.py",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s77_preservation.php",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s77.php",
+      "passed": true
+    },
+    {
+      "path": "backend/deploy/profile_s77_live_worker.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-onboarding/tests/integration/s77_http_bootstrap.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-onboarding/tests/integration/s77_http_router.php",
+      "passed": true
+    }
+  ]
+}

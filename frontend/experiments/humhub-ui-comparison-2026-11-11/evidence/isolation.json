@@ -1,0 +1,37 @@
+{
+  "humhub_root": "/private/tmp/humhub-ui-compare.6qn_jdwx/humhub",
+  "database": "fresh isolated server and generated credentials",
+  "database_source": "not copied from main preview",
+  "runtime_binaries": "shared read-only installation",
+  "original_port": 8090,
+  "comparison_port": 8193,
+  "browser_origin": "http://localhost:8193",
+  "distribution_sha256": "a562df0ad5718d19dbda322dd229bdb4fa92e0afd7ae310b9ea98983bb5b05ca",
+  "distribution_repair": {
+    "description": "Bundled archive omitted dependency dist directories; missing vendor files copied from the same installed HumHub dependency tree into the isolated instance only.",
+    "dist_directories": [
+      "bower-asset/inputmask/dist",
+      "npm-asset/altcha/dist",
+      "npm-asset/swiped-events/dist",
+      "npm-asset/socket.io-client/dist",
+      "npm-asset/jquery/dist",
+      "npm-asset/driver.js/dist",
+      "npm-asset/clipboard-polyfill/dist",
+      "npm-asset/humhub-prosemirror-richtext/dist",
+      "npm-asset/jplayer/dist",
+      "npm-asset/select2/dist",
+      "npm-asset/altcha--crypto/dist",
+      "npm-asset/altcha--crypto/cjs/dist",
+      "npm-asset/jquery-knob/dist",
+      "npm-asset/jquery-ui/dist",
+      "twbs/bootstrap/dist",
+      "twbs/bootstrap/js/dist",
+      "paragonie/random_compat/dist",
+      "select2/select2/dist"
+    ]
+  },
+  "registered_modules": [
+    "comparison-native",
+    "comparison-react"
+  ]
+}

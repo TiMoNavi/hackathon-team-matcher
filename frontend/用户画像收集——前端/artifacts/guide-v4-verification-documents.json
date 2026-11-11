@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-11T21:30:11.731Z",
+  "phase": "all",
+  "passed": true,
+  "checks": [
+    "1440: 25 fields, nearly 20k characters, full inline growth, visible editor, single focus editor, exact save/reload and outline jump",
+    "390: 25 fields, nearly 20k characters, full inline growth, visible editor, single focus editor, exact save/reload and outline jump",
+    "Typing the first nickname character retains all three editable fields",
+    "Imported text without a nickname has an editable nickname and can continue",
+    "Final review contains one profile, with working field privacy and audience previews",
+    "Timed information changes; pause, resume, hover pause, full reading and candidate-change timer cancellation work without social side effects",
+    "1280×720: friend action stays visible and clear of docked mascot",
+    "1440×900: friend action stays visible and clear of docked mascot"
+  ],
+  "views": [],
+  "errors": []
+}

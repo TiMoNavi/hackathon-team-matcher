@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
+
+namespace humhub\assets;
+
+use humhub\components\assets\AssetBundle;
+use humhub\components\View;
+use yii\jui\JuiAsset;
+
+/**
+ * select2
+ *
+ * @author buddha
+ */
+class JuiBootstrapBridgeAsset extends AssetBundle
+{
+    /**
+     * @inheritdoc
+     */
+    public $sourcePath = '@humhub/resources';
+
+    /**
+     * @inheritdoc
+     */
+    public $defer = false;
+
+    /**
+     * @inheritdoc
+     */
+    public $jsPosition = View::POS_HEAD;
+
+    /**
+     * @inheritdoc
+     */
+    public $js = ['js/jui.bootstrap.bridge.js'];
+
+    public $depends = [
+        JuiAsset::class,
+    ];
+
+}

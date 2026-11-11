@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
+<title id="title">内容访问：权限判断与内容生命周期</title>
+<desc id="desc">帖子正文由 Post 管理，通用 Content 负责归属、状态与可见性。读取、编辑和状态转换是不同检查，页面显示与否不能替代服务端判断。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<rect width="1280" height="100%" fill="#ffffff"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="50" y="45" font-size="25" font-weight="650" fill="#16243b" text-anchor="start">内容访问：权限判断与内容生命周期</text>
+<text x="50" y="77" font-size="14" font-weight="400" fill="#53657b" text-anchor="start">上半部分是简化访问链；下半部分是常见状态路径，不是完整控制流。</text>
+<polyline points="330,220 450,220" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="745,220 905,220" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="970,330 970,375 595,375 595,435" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1120,330 1120,435" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="300,785 355,785" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="605,785 660,785" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="910,785 965,785" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="175,845 175,925 785,925 785,845" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="50" y="160" width="280" height="120" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="67" y="191" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">请求入口</text>
+<text x="67" y="219" font-size="14" font-weight="400" fill="#334155" text-anchor="start">身份 / 操作权限</text>
+<text x="67" y="241" font-size="14" font-weight="400" fill="#334155" text-anchor="start">由对应 Controller 处理</text>
+<rect x="450" y="160" width="295" height="120" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="467" y="191" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">加载 Post / Content</text>
+<text x="467" y="219" font-size="14" font-weight="400" fill="#334155" text-anchor="start">归属个人或 Space</text>
+<text x="467" y="241" font-size="14" font-weight="400" fill="#334155" text-anchor="start">作者、状态、可见性</text>
+<rect x="905" y="160" width="320" height="170" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="922" y="191" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">服务端访问判断</text>
+<text x="922" y="219" font-size="14" font-weight="400" fill="#334155" text-anchor="start">canView：能否读取</text>
+<text x="922" y="241" font-size="14" font-weight="400" fill="#334155" text-anchor="start">canEdit：能否编辑</text>
+<text x="922" y="263" font-size="14" font-weight="400" fill="#334155" text-anchor="start">结合身份、状态、容器规则</text>
+<rect x="450" y="435" width="295" height="110" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="467" y="466" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">允许对应操作</text>
+<text x="467" y="494" font-size="14" font-weight="400" fill="#334155" text-anchor="start">通过校验后读取或修改</text>
+<rect x="905" y="435" width="320" height="110" rx="12" fill="#f2f4f7" stroke="#778397" stroke-width="1.8"/>
+<text x="922" y="466" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">拒绝 / 不返回无权内容</text>
+<text x="922" y="494" font-size="14" font-weight="400" fill="#334155" text-anchor="start">具体响应由入口决定</text>
+<rect x="50" y="730" width="250" height="115" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="67" y="761" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">草稿</text>
+<text x="67" y="789" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATE_DRAFT = 10</text>
+<rect x="355" y="730" width="250" height="115" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="372" y="761" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">定时发布</text>
+<text x="372" y="789" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATE_SCHEDULED = 20</text>
+<text x="372" y="811" font-size="14" font-weight="400" fill="#334155" text-anchor="start">需要 scheduled_at</text>
+<rect x="660" y="730" width="250" height="115" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="677" y="761" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">已发布</text>
+<text x="677" y="789" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATE_PUBLISHED = 1</text>
+<rect x="965" y="730" width="265" height="115" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="982" y="761" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">已删除状态</text>
+<text x="982" y="789" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATE_DELETED = 100</text>
+<text x="982" y="811" font-size="14" font-weight="400" fill="#334155" text-anchor="start">不等于已经物理删除</text>
+<rect x="760.5" y="342" width="39.0" height="22" rx="4" fill="white"/>
+<text x="780" y="357" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">通过</text>
+<rect x="1147.25" y="370" width="51.5" height="22" rx="4" fill="white"/>
+<text x="1173" y="385" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">不通过</text>
+<rect x="366.75" y="891" width="226.5" height="22" rx="4" fill="white"/>
+<text x="480" y="906" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">也可直接发布；具体操作仍须校验权限</text>
+<rect x="50" y="960" width="1180" height="96" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="68" y="987" font-size="14" font-weight="650" fill="#334155" text-anchor="start">读图提醒</text>
+<text x="68" y="1011" font-size="13" font-weight="400" fill="#53657b" text-anchor="start">1. canView 涉及访客、作者、内容状态和容器权限等分支；本图压缩显示，不能当作逐行实现或完整安全审计。</text>
+<text x="68" y="1033" font-size="13" font-weight="400" fill="#53657b" text-anchor="start">2. 未发布内容存在编辑者访问规则，查询层还会过滤状态；不要只靠前端隐藏草稿。</text>
+<path d="M 50 1214 H 1230" stroke="#e2e8f0"/>
+<rect x="50" y="1236" width="14" height="14" rx="3" fill="#edf5ff" stroke="#3975ba"/>
+<text x="72" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">原版源码已有</text>
+<rect x="295" y="1236" width="14" height="14" rx="3" fill="#f5f0ff" stroke="#8870bd"/>
+<text x="317" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">独立扩展，未下载</text>
+<rect x="540" y="1236" width="14" height="14" rx="3" fill="#fff6e6" stroke="#ba7b20"/>
+<text x="562" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">本项目待开发</text>
+<rect x="785" y="1236" width="14" height="14" rx="3" fill="#f2f4f7" stroke="#778397"/>
+<text x="807" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">运行环境 / 外部</text>
+<text x="1230" y="1269" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="end">HumHub v1.19.4 · b8881d5ea7ee · 源码阅读图，未运行验证</text>
+</g></svg>

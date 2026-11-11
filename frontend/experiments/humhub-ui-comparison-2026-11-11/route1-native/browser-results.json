@@ -1,0 +1,247 @@
+{
+  "tested_at": "2026-11-11T13:42:59.735Z",
+  "url": "http://localhost:8193/comparison-native/home/index",
+  "checks": [
+    {
+      "name": "HTTP 200",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "PHP server-rendered member cards",
+      "passed": true,
+      "detail": "Fixture markup present in initial HTTP response"
+    },
+    {
+      "name": "Desktop no horizontal overflow",
+      "passed": true,
+      "detail": 1440
+    },
+    {
+      "name": "Four initial members",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "Role filter 前端",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "Role filter 后端",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "Role filter 设计",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "Role filter 产品",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "Name search",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "Case insensitive skill search",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "Empty state",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "Reset filters",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "Member dialog",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Escape closes dialog",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "Close button closes dialog",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "name": "Follow toggles on",
+      "passed": true,
+      "detail": "true"
+    },
+    {
+      "name": "Follow toggles off",
+      "passed": true,
+      "detail": "false"
+    },
+    {
+      "name": "Two ideas",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "Synthetic disclaimer visible",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Mobile no horizontal overflow",
+      "passed": true,
+      "detail": 390
+    },
+    {
+      "name": "Mobile navigation visible",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Mobile dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 16,
+        "y": 189.609375,
+        "width": 358,
+        "height": 464.765625
+      }
+    },
+    {
+      "name": "No browser JS errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "desktop": {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "height": 1544,
+    "resources": [
+      {
+        "name": "http://localhost:8193/assets/e234a310/resources/css/theme.css?v=1794404235",
+        "initiatorType": "link",
+        "transferSize": 405882,
+        "encodedBodySize": 405582,
+        "decodedBodySize": 405582
+      },
+      {
+        "name": "http://localhost:8193/assets/768d230c/js/humhub-app.js?v=1794404236",
+        "initiatorType": "link",
+        "transferSize": 646933,
+        "encodedBodySize": 646633,
+        "decodedBodySize": 646633
+      },
+      {
+        "name": "http://localhost:8193/assets/768d230c/css/humhub-app.css?v=1794404235",
+        "initiatorType": "link",
+        "transferSize": 163207,
+        "encodedBodySize": 162907,
+        "decodedBodySize": 162907
+      },
+      {
+        "name": "http://localhost:8193/assets/c7138b97/css/native-home.css?v=1794404424",
+        "initiatorType": "link",
+        "transferSize": 30596,
+        "encodedBodySize": 30296,
+        "decodedBodySize": 30296
+      },
+      {
+        "name": "http://localhost:8193/clean-theme-config-css?v=2.5.3-0",
+        "initiatorType": "link",
+        "transferSize": 4061,
+        "encodedBodySize": 3761,
+        "decodedBodySize": 3761
+      },
+      {
+        "name": "http://localhost:8193/assets/768d230c/js/humhub-bundle.js?v=1794404235",
+        "initiatorType": "script",
+        "transferSize": 2506777,
+        "encodedBodySize": 2506477,
+        "decodedBodySize": 2506477
+      },
+      {
+        "name": "http://localhost:8193/assets/7863bc9a/js/humhub.cleanTheme.topNavigation.js?v=1794404424",
+        "initiatorType": "script",
+        "transferSize": 8882,
+        "encodedBodySize": 8582,
+        "decodedBodySize": 8582
+      },
+      {
+        "name": "http://localhost:8193/assets/7f485d54/locales/jquery.timeago.zh-CN.js?v=1794404424",
+        "initiatorType": "script",
+        "transferSize": 1059,
+        "encodedBodySize": 759,
+        "decodedBodySize": 759
+      },
+      {
+        "name": "http://localhost:8193/assets/c7138b97/js/native-home.js?v=1794404424",
+        "initiatorType": "script",
+        "transferSize": 7357,
+        "encodedBodySize": 7057,
+        "decodedBodySize": 7057
+      },
+      {
+        "name": "http://localhost:8193/assets/7863bc9a/js/humhub.cleanTheme.js?v=1794404424",
+        "initiatorType": "script",
+        "transferSize": 563,
+        "encodedBodySize": 263,
+        "decodedBodySize": 263
+      },
+      {
+        "name": "http://localhost:8193/assets/768d230c/build/20fa3ba6/fonts/fontawesome-webfont.woff2?v=4.7.0",
+        "initiatorType": "css",
+        "transferSize": 77460,
+        "encodedBodySize": 77160,
+        "decodedBodySize": 77160
+      },
+      {
+        "name": "http://localhost:8193/i18n/translations?category=CommentModule.base%2CContentModule.base%2CContentModule.richtexteditor%2CNotificationModule.base%2CSpaceModule.chooser%2CUiModule.base%2Cbase",
+        "initiatorType": "xmlhttprequest",
+        "transferSize": 7551,
+        "encodedBodySize": 7251,
+        "decodedBodySize": 7251
+      },
+      {
+        "name": "http://localhost:8193/assets/_/a40b6e0b/default_icon_012ffac7.png?t=1794404424",
+        "initiatorType": "other",
+        "transferSize": 1015,
+        "encodedBodySize": 715,
+        "decodedBodySize": 715
+      }
+    ],
+    "scripts": [
+      "http://localhost:8193/assets/768d230c/js/humhub-app.js?v=1794404236",
+      "http://localhost:8193/assets/768d230c/js/humhub-bundle.js?v=1794404235",
+      "http://localhost:8193/assets/7863bc9a/js/humhub.cleanTheme.topNavigation.js?v=1794404424",
+      "http://localhost:8193/assets/7f485d54/locales/jquery.timeago.zh-CN.js?v=1794404424",
+      "http://localhost:8193/assets/c7138b97/js/native-home.js?v=1794404424",
+      "http://localhost:8193/assets/7863bc9a/js/humhub.cleanTheme.js?v=1794404424"
+    ],
+    "stylesheets": [
+      "http://localhost:8193/assets/768d230c/css/humhub-app.css?v=1794404235",
+      "http://localhost:8193/assets/e234a310/resources/css/theme.css?v=1794404235",
+      "http://localhost:8193/assets/c7138b97/css/native-home.css?v=1794404424",
+      "http://localhost:8193/clean-theme-config-css?v=2.5.3-0"
+    ],
+    "hasJquery": true,
+    "hasBootstrap": true
+  },
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 2266
+  },
+  "errors": [],
+  "failedRequests": []
+}

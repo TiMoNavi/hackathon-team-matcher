@@ -1,0 +1,163 @@
+{
+  "route": "route3-standalone",
+  "name": "独立 Next.js 前端",
+  "url": "http://localhost:3193",
+  "checked_on": "2026-11-11T13:46:38.398Z",
+  "browser": "157.0.4341.42",
+  "scope": "same synthetic homepage and interactions; not production API/authentication acceptance",
+  "checks": [
+    {
+      "name": "homepage_http_200",
+      "passed": true,
+      "details": 200
+    },
+    {
+      "name": "four_initial_members",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "name": "synthetic_data_label",
+      "passed": true
+    },
+    {
+      "name": "role_filter_frontend",
+      "passed": true
+    },
+    {
+      "name": "skill_search_python",
+      "passed": true
+    },
+    {
+      "name": "empty_search_zero_members",
+      "passed": true
+    },
+    {
+      "name": "clear_search_restores_members",
+      "passed": true
+    },
+    {
+      "name": "follow_state_toggles",
+      "passed": true,
+      "details": {
+        "before": {
+          "text": "关注",
+          "pressed": "false",
+          "label": null
+        },
+        "after": {
+          "text": "已关注",
+          "pressed": "true",
+          "label": null
+        }
+      }
+    },
+    {
+      "name": "member_detail_dialog",
+      "passed": true
+    },
+    {
+      "name": "escape_closes_detail",
+      "passed": true
+    },
+    {
+      "name": "desktop_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "no_native_frontend_assets",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile_role_filter",
+      "passed": true
+    },
+    {
+      "name": "mobile_detail_open_close",
+      "passed": true
+    },
+    {
+      "name": "no_javascript_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "no_asset_http_errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "javascript_errors": [],
+  "asset_errors": [],
+  "navigation_ms": 726,
+  "desktop": {
+    "viewport": 1440,
+    "document": 1440,
+    "body": 1440,
+    "hasHumhub": false,
+    "hasJquery": false,
+    "hasPjax": false,
+    "hasNativeTopbar": false,
+    "stylesheets": [
+      "http://localhost:3193/_next/static/chunks/3nxm2xsuly999.css"
+    ]
+  },
+  "resources": [
+    {
+      "url": "http://localhost:3193/_next/static/chunks/3nxm2xsuly999.css",
+      "initiator": "link",
+      "decoded_bytes": 38682,
+      "encoded_bytes": 8570
+    },
+    {
+      "url": "http://localhost:3193/_next/static/chunks/3l04zcqx63h3y.js",
+      "initiator": "link",
+      "decoded_bytes": 16797,
+      "encoded_bytes": 5863
+    },
+    {
+      "url": "http://localhost:3193/_next/static/chunks/0cegfsgm6lvdz.js",
+      "initiator": "script",
+      "decoded_bytes": 183103,
+      "encoded_bytes": 48411
+    },
+    {
+      "url": "http://localhost:3193/_next/static/chunks/02fh7_m5mrih8.js",
+      "initiator": "script",
+      "decoded_bytes": 229156,
+      "encoded_bytes": 71628
+    },
+    {
+      "url": "http://localhost:3193/_next/static/chunks/turbopack-1duz3do6vhzwz.js",
+      "initiator": "script",
+      "decoded_bytes": 9688,
+      "encoded_bytes": 3836
+    },
+    {
+      "url": "http://localhost:3193/_next/static/chunks/3fntmmi971322.js",
+      "initiator": "script",
+      "decoded_bytes": 14377,
+      "encoded_bytes": 3661
+    },
+    {
+      "url": "http://localhost:3193/_next/static/chunks/34sw86ii7uird.js",
+      "initiator": "script",
+      "decoded_bytes": 57613,
+      "encoded_bytes": 18927
+    }
+  ],
+  "initial_resource_decoded_bytes": 549416,
+  "bootstrap_css_detected": false,
+  "mobile": {
+    "viewport": 390,
+    "document": 390,
+    "body": 390
+  },
+  "passed": true,
+  "passed_count": 17,
+  "check_count": 17
+}

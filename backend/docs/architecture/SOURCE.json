@@ -1,0 +1,19 @@
+{
+  "upstream": "https://github.com/humhub/humhub.git",
+  "tag": "v1.19.4",
+  "commit": "b8881d5ea7ee27384a33adeaa23100c73472c4ce",
+  "date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "reference_directory": "../../../references/humhub",
+  "backend_directory": "../..",
+  "scope": "Source copy plus documentation only; no application changes or execution",
+  "optional_modules_installed": [],
+  "diagrams": [
+    "01-runtime",
+    "02-data",
+    "03-friendship",
+    "04-space",
+    "05-content",
+    "06-boundaries"
+  ]
+}

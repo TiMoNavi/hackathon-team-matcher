@@ -1,0 +1,452 @@
+/* The explicit initial theme is light, independently of the OS setting.
+   html.dark also covers portalled drawers, dialogs and emoji popovers. */
+:root {
+  color-scheme: light;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 12px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--body);
+  font-size: 12px;
+}
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+}
+.theme-toggle:hover {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+.theme-toggle:disabled {
+  cursor: default;
+}
+html.dark {
+  color-scheme: dark;
+  --background: #100e18;
+  --foreground: #f1edf8;
+  --card: #1b1727;
+  --card-foreground: #f1edf8;
+  --popover: #211b2f;
+  --popover-foreground: #f1edf8;
+  --primary: #7254ef;
+  --primary-foreground: #ffffff;
+  --secondary: #302345;
+  --secondary-foreground: #cbb9ff;
+  --muted: #251e33;
+  --muted-foreground: #b3a5c6;
+  --accent: #302345;
+  --accent-foreground: #d6c9ff;
+  --border: #3a2e4b;
+  --input: #443654;
+  --ring: #b09aff;
+  --sidebar: #181321;
+  --sidebar-foreground: #e9e1f3;
+  --sidebar-primary: #7254ef;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #302345;
+  --sidebar-accent-foreground: #d6c9ff;
+  --sidebar-border: #3a2e4b;
+  --sidebar-ring: #b09aff;
+  --body: #d2c6e1;
+  --night: #100e18;
+}
+.dark .conversation-page {
+  background:
+    radial-gradient(ellipse at 13% 3%, #34205d70, transparent 42%),
+    radial-gradient(ellipse at 89% 94%, #3b43241f, transparent 34%),
+    var(--background);
+}
+.dark .conversation-page::before {
+  background-image:
+    linear-gradient(#a090cb0a 1px, transparent 1px),
+    linear-gradient(90deg, #a090cb0a 1px, transparent 1px);
+}
+.dark .conversation-page::after {
+  background: #5c3f8d4d;
+}
+.dark .app-header {
+  background: #211a2ed9;
+  border-color: #3c2e4c;
+  box-shadow: 0 3px 22px #0002;
+}
+.dark .conversation-shell {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 18px 65px #0003;
+}
+.dark .conversation-list,
+.dark .active-conversation {
+  background: var(--card);
+}
+.dark .navigation-rail {
+  background: var(--sidebar);
+}
+.dark .home-link,
+.dark .detail-button,
+.dark .message-composer {
+  background: #211a2d;
+  color: var(--body);
+  border-color: var(--border);
+}
+.dark .home-link:hover,
+.dark .detail-button:hover {
+  color: #e4d8ff;
+  border-color: #8670ae;
+}
+.dark .header-note,
+.dark .preview-label,
+.dark .eyebrow,
+.dark .list-section-label,
+.dark .list-section-label > span,
+.dark .rail-self,
+.dark .page-caption {
+  color: #ae9dbf;
+}
+.dark .preview-label > span {
+  background: #b99bdc;
+}
+.dark .rail-spark {
+  color: #bea6ff;
+}
+.dark .rail-item {
+  color: #b4a3c6;
+}
+.dark .rail-item[aria-pressed="true"] {
+  color: white;
+}
+.dark .rail-item:hover:not([aria-pressed="true"]),
+.dark .icon-button:hover {
+  color: #dbcaff;
+  background: var(--secondary);
+}
+.dark .icon-button {
+  color: #bba9ce;
+}
+.dark .icon-button[aria-pressed="true"] {
+  color: #c7b0ff;
+  background: var(--secondary);
+}
+.dark .new-button {
+  color: #cebaff;
+  background: #35264d;
+  border-color: #473461;
+}
+.dark .list-heading h1 > span {
+  background: var(--muted);
+  color: #c4aadd;
+}
+.dark .chat-search {
+  background: #241c32;
+  border-color: var(--border);
+}
+.dark .chat-search > svg,
+.dark .chat-search button {
+  color: #ac96c0;
+}
+.dark .chat-search input::placeholder {
+  color: #ab96bd;
+}
+.dark .filter-tabs button {
+  color: #b9a5c9;
+}
+.dark .filter-tabs button[aria-pressed="true"] {
+  color: #dccdff;
+  background: #35264c;
+}
+.dark .filter-tabs button:hover {
+  color: #e5d7ff;
+}
+.dark .chat-list-item:hover {
+  background: #261d35;
+}
+.dark .chat-list-item[aria-current="true"] {
+  background: #312344;
+  border-color: #4c356a;
+}
+.dark .chat-item-name strong {
+  color: #eee5fa;
+}
+.dark .chat-item-name time,
+.dark .chat-item-context {
+  color: #b09ac4;
+}
+.dark .chat-item-context > span {
+  background: #b08ed6;
+}
+.dark .chat-item-preview {
+  color: #baa8ca;
+}
+.dark .chat-item-preview em {
+  color: #ccb1ff;
+}
+.dark .item-markers > svg {
+  color: #bca3d0;
+}
+.dark .person-avatar {
+  background: #302340;
+  color: #cfb8ff;
+}
+.dark .group-avatar {
+  background: linear-gradient(145deg, #493267, #302241);
+  border-color: #5a4079;
+}
+.dark .online-dot {
+  border-color: var(--card);
+  background: #abd28b;
+}
+.dark .new-conversation-card {
+  background: linear-gradient(110deg, #30213f, #293023);
+  border-color: #45334f;
+}
+.dark .new-conversation-card > span {
+  background: #38284c;
+  color: #cfb2ee;
+}
+.dark .new-conversation-card strong {
+  color: #dbcae9;
+}
+.dark .new-conversation-card p,
+.dark .new-conversation-card > svg {
+  color: #b59bc9;
+}
+.dark .list-empty,
+.dark .list-empty > svg {
+  color: #b9a0cf;
+}
+.dark .list-empty button {
+  color: #c8afff;
+}
+.dark .thread-header {
+  border-color: var(--border);
+}
+.dark .thread-heading p {
+  color: #b9a4cc;
+}
+.dark .context-divider {
+  background: #584363;
+}
+.dark .presence {
+  background: #96849f;
+}
+.dark .presence.is-online {
+  background: #a9cf85;
+}
+.dark .conversation-context {
+  background: linear-gradient(110deg, #2c203e, #252a21);
+  border-color: #46334e;
+}
+.dark .idea-mark {
+  background: #3c4b25;
+  color: #d9f194;
+}
+.dark .conversation-context small,
+.dark .conversation-context > svg {
+  color: #b09ac3;
+}
+.dark .conversation-context strong {
+  color: #d9c9e6;
+}
+.dark .history-date,
+.dark .group-welcome {
+  color: #ac96c0;
+}
+.dark .history-date > span {
+  background: #40304f;
+}
+.dark .message-author {
+  color: #c7afd8;
+}
+.dark .message-author time {
+  color: #b49bc6;
+}
+.dark .message-bubble > [data-slot="bubble-content"] {
+  background: #2a2038;
+  color: #e8dcf2;
+  border-color: #493456;
+  box-shadow: 0 2px 5px #0001;
+}
+.dark .message-own .message-bubble > [data-slot="bubble-content"] {
+  background: var(--primary);
+  color: white;
+  border-color: #8768f9;
+  box-shadow: 0 5px 14px #0002;
+}
+.dark .message-status,
+.dark .message-status svg {
+  color: #bfa2d3;
+}
+.dark .file-attachment,
+.dark .message-own .file-attachment {
+  background: #31253f;
+  color: #e4cef2;
+  border-color: #5a4069;
+}
+.dark .file-attachment > span:first-child {
+  background: #48305e;
+}
+.dark .file-attachment small {
+  color: #bfa6d1;
+}
+.dark .thread-empty,
+.dark .thread-empty > svg {
+  color: #b89acc;
+}
+.dark .thread-empty h3 {
+  color: #decbec;
+}
+.dark .thread-empty button {
+  color: #c6aaff;
+}
+.dark .group-notice {
+  color: #bba2cc;
+}
+.dark .message-composer:focus-within {
+  border-color: #a78bd9;
+  box-shadow: 0 0 0 3px #ab78ed14;
+}
+.dark .message-composer textarea {
+  color: #e8daf2;
+}
+.dark .message-composer textarea::placeholder {
+  color: #b39bc6;
+}
+.dark .composer-tools .icon-button {
+  color: #bca2cf;
+}
+.dark .keyboard-hint,
+.dark .demo-footnote {
+  color: #b49cc7;
+}
+.dark .pending-file {
+  background: #342541;
+  color: #e0c8ef;
+}
+.dark .send-button:disabled {
+  opacity: 0.6;
+}
+.dark .emoji-picker {
+  border-color: var(--border);
+}
+.dark .emoji-picker p {
+  color: #c0a5d1;
+}
+.dark .page-caption svg {
+  color: #bca1d3;
+}
+.dark .feedback > span {
+  background: #30233f;
+  border: 1px solid #5a3c72;
+}
+.dark [data-slot="dialog-overlay"],
+.dark [data-slot="drawer-overlay"] {
+  background: #05030999;
+}
+.dark .details-drawer,
+.dark .new-dialog {
+  background: var(--popover);
+  border-color: var(--border);
+}
+.dark .details-drawer [data-slot="drawer-description"],
+.dark .new-dialog [data-slot="dialog-description"],
+.dark .detail-identity p {
+  color: #bda4ce;
+}
+.dark .event-pill {
+  background: #332440;
+  border-color: #513961;
+  color: #ccb0de;
+}
+.dark .event-pill > span {
+  background: #c298e4;
+}
+.dark .detail-notice {
+  background: linear-gradient(125deg, #322140, #292d23);
+  border-color: #4a3653;
+}
+.dark .detail-notice h4 {
+  color: #dfc7ee;
+}
+.dark .detail-notice p {
+  color: #c9b0da;
+}
+.dark .detail-toggles {
+  border-color: var(--border);
+}
+.dark .detail-toggles button {
+  color: #dac3ea;
+}
+.dark .detail-toggles svg {
+  color: #bda0d2;
+}
+.dark .detail-toggles i {
+  background: #5c466c;
+}
+.dark .detail-toggles i.toggle-on {
+  background: var(--primary);
+}
+.dark .member-section h4 {
+  color: #c7a9d9;
+}
+.dark .member-row strong {
+  color: #e2cdef;
+}
+.dark .member-row div span {
+  color: #bfa3d1;
+}
+.dark .member-row > small {
+  color: #b5d995;
+}
+.dark .detail-boundary {
+  background: #2d2039;
+  color: #c1a5d3;
+}
+.dark .dialog-tabs {
+  background: #191220;
+}
+.dark .dialog-tabs button {
+  color: #bca1ce;
+}
+.dark .dialog-tabs button[aria-pressed="true"] {
+  background: #3e2852;
+  color: #dec7ff;
+}
+.dark .group-name-field,
+.dark .create-group-footer p {
+  color: #c9abda;
+}
+.dark .group-name-field input {
+  background: #291c35;
+  color: #eddef7;
+}
+.dark .contact-choice:hover {
+  background: #34233f;
+}
+.dark .contact-choice strong {
+  color: #e8d4f4;
+}
+.dark .contact-choice small,
+.dark .contact-choice > svg {
+  color: #bfa1d1;
+}
+@media (max-width: 600px) {
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 10px;
+  }
+  .theme-toggle > span {
+    display: none;
+  }
+  .header-actions .preview-label {
+    display: none;
+  }
+}

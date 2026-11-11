@@ -1,0 +1,27 @@
+<?php
+
+return [
+    '%moduleName% - Set as default module' => '%moduleName% - Imposta come modulo predefinito',
+    'Always activated' => 'Sempre attivato',
+    'Could not find requested module!' => 'Non posso trovare il modulo richiesto!',
+    'Deactivated' => 'Disattivato',
+    'Deactivation of this module has not been completed yet. Please retry in a few minutes.' => 'La disattivazione di questo modulo non è ancora stata completata. Riprovare tra qualche minuto.',
+    'Enable module...' => 'Abilita modulo...',
+    'Enabled' => 'Attivato',
+    'Here you can choose whether or not a module should be automatically activated on a space or user profile. If the module should be activated, choose "always activated".' => 'Qui puoi scegliere se un modulo deve essere attivato automaticamente o meno su uno spazio o profilo utente. Se il modulo deve essere attivato, scegli "sempre attivato".',
+    'Module deactivation in progress. This process may take a moment.' => 'Disattivazione del modulo in corso. Questo processo potrebbe richiedere un pò di tempo.',
+    'Module path %path% is not writeable!' => 'Il module con il path %path% non è scrivibile!',
+    'Not available' => 'Non disponibile',
+    'Save' => 'Salva',
+    'Space default state' => 'Stato predefinito dello spazio',
+    'Spaces' => 'Space',
+    'User default state' => 'Stato predefinito dell\'utente',
+    'Users' => 'Persone',
+    'Disable Module' => '',
+    'Disabling the <strong>{moduleName}</strong> module will permanently delete <strong>all</strong> module-related content.' => '',
+    'Module uninstall in progress. This process may take a moment.' => '',
+    'The module is currently being used by {nbContainers} users or spaces. If you change its availability, all content created with the module will be lost. Proceed?' => '',
+    'Uninstall Module' => '',
+    'Uninstallation of this module has not been completed yet. It will be removed in a few minutes.' => '',
+    'Uninstalling the <strong>{moduleName}</strong> module will permanently delete <strong>all</strong> module-related content.' => '',
+];

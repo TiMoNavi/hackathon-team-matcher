@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-12",
+  "status": "passed",
+  "document_links": 13,
+  "broken_document_links": [],
+  "markdown_fences_balanced": true,
+  "php_audit_files_linted": 4,
+  "python_audit_parses": true,
+  "evidence_json_valid": {
+    "s72_audit_http_2026-11-12.json": 157,
+    "s72_audit_presentation_2026-11-12.json": 17,
+    "s72_audit_relations_2026-11-12.json": 48,
+    "s72_audit_routes_2026-11-12.json": 504,
+    "s72_audit_sql_after_2026-11-12.json": "ok",
+    "s72_audit_sql_before_2026-11-12.json": "ok"
+  },
+  "reviewed_product_files": [
+    {
+      "path": "backend/protected/modules/matcher-user-profile/application/ProfilePresentationService.php",
+      "sha256": "3349b9acb70f12925470a331a3af7dfcf8a2b7210f2ae076bc649b8f24590380"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfilePresentationRepository.php",
+      "sha256": "51f0572fe1fdebd9e932c8a8ff63d6b383891923e0fc34b89802db8055745453"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/config.php",
+      "sha256": "32ac98aa020d5ee8a681b89218b45c5e1d036a93161f86d3c8987cc315f45655"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/application/ProfileOverviewService.php",
+      "sha256": "bbce9a8b1d38a7d3587895b7ad7fae26ee68d35d88e4814c2cdc02298a2bc1ed"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/application/ProfileRelationService.php",
+      "sha256": "cf2766548e5d80393ede113aaae23af32df5e14aea838ab70928cdbcdff3d32f"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeCurrentProfileEntry.php",
+      "sha256": "758fada15494f12613a18a5daa38d294504b8f7c490f5acb228753c83997bbad"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeRelationCandidateSource.php",
+      "sha256": "d1bd0c248c11d97dc6fabc7ce660ae160902d0bbc5820a6389932ba617a713d9"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/controllers/ApiController.php",
+      "sha256": "70e5389a5b746fae24fb42f901db340c074063cf6d10468c82cf957983120d4b"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/domain/RelationCursor.php",
+      "sha256": "79a59e4d4bbc2a696c0279d48e3b3dc074262f90ffebb32d3a10dc31376cb1b5"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/Module.php",
+      "sha256": "c691c789daaa6a500d851039fc5485884ffd469aadbbd01fabd99ee94f103ef4"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/config.php",
+      "sha256": "e2cdc62f5817d0a679ec1392b38339d21a6c3d7cab58ba2b8f3a96160b727a6a"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/application/IdeaService.php",
+      "sha256": "6ca4919cb2a1d9ee4a76ed732cd60fc3dd55084d09d6764e41a17844419b3d94"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/application/IdeaDraftService.php",
+      "sha256": "c2d692bdc09017ec34cbdb7ac97faabe1ac4dd9c5d1a533a13cc858280365e03"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/application/IdeaRelationSource.php",
+      "sha256": "550a32cae17cba42f43c60e0b1ddd3a939578f505e58589495b3751f2b0408a9"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/adapters/native/NativeIdeaRelations.php",
+      "sha256": "c0192ddf5c748fe028a2dfda9ae81348e8582e98677cacba4718ecfa4acedc0c"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/adapters/native/NativeCurrentSpaceFactory.php",
+      "sha256": "f7b106dec662b43772a311289f3df83912f313d4dd2883987b8a146b9a5e935a"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/adapters/persistence/SqlIdeaRepository.php",
+      "sha256": "719cf0b622cd2ded5f1222d97ab2c8340e2807aa70c66595f6c02e9f1cd53e91"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/controllers/ApiController.php",
+      "sha256": "09f94fab750be9413e45eaca5eba2a2164d27318977c140ffdecf1ebf5fc55c7"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/Module.php",
+      "sha256": "9d5fd21742f3622d436277afd114daedcfc0fcda67451a31b4a516b190fa794b"
+    },
+    {
+      "path": "backend/protected/modules/matcher-ideas/config.php",
+      "sha256": "fa985d97987596997f70fb306ce42e79c15240830718af9292b0f13387ab3499"
+    }
+  ],
+  "edited_product_files": 0,
+  "database_target": "humhub_profile_s72_test_audit_b0c7d9a2",
+  "http_origin": "http://127.0.0.1:8101"
+}

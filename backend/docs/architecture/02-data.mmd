@@ -1,0 +1,27 @@
+%% 核心数据关系：人、关系、空间与内容
+%% 与 SVG 使用同一节点和关系数据；布局由 Mermaid 决定。
+flowchart TB
+  user["user · 用户<br/>账号、身份、资料入口"]:::core
+  membership["space_membership<br/>user_id + space_id<br/>成员状态与空间角色"]:::core
+  space["space · 协作空间<br/>自己的成员、权限和内容流"]:::core
+  profile["profile · 用户资料<br/>通过 user_id 关联用户<br/>字段可由管理员配置"]:::core
+  container["contentcontainer<br/>关联 User 或 Space<br/>统一承载内容归属"]:::core
+  friend["user_friendship<br/>A → B：发送申请<br/>A → B + B → A：好友"]:::core
+  content["content · 通用内容信息<br/>容器、作者、状态、可见性<br/>object_model / object_id"]:::core
+  post["post · 帖子正文<br/>title / message 等<br/>继承 ContentActiveRecord"]:::core
+  fields["profile_field · 字段定义<br/>类型、必填、可改、可搜索<br/>属于配置，不是个人授权"]:::core
+  addons["comment / like<br/>通过 content_id 关联<br/>评论还可以有父评论"]:::core
+  user -->|"1 → 多"| membership
+  space -->|"1 → 多"| membership
+  user -->|"1 → 1"| profile
+  user --> friend
+  user -->|"个人内容容器"| container
+  space -->|"空间内容容器"| container
+  container -->|"承载多条内容"| content
+  content -->|"多态关联"| post
+  content -->|"1 → 多"| addons
+  fields -.-> profile
+  classDef core fill:#edf5ff,stroke:#3975ba,color:#1c304b
+  classDef optional fill:#f5f0ff,stroke:#8870bd,color:#1c304b
+  classDef planned fill:#fff6e6,stroke:#ba7b20,color:#1c304b
+  classDef external fill:#f2f4f7,stroke:#778397,color:#1c304b

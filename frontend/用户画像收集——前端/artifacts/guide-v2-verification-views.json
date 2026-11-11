@@ -1,0 +1,365 @@
+{
+  "checkedAt": "2026-11-11T18:58:59.197Z",
+  "phase": "views",
+  "passed": true,
+  "checks": [
+    "All ten stages fit four widths; mobile cards/detail navigation works",
+    "Seven dark scenes use the original orange character",
+    "Actual fonts checked and the 48-item reference library still loads"
+  ],
+  "views": [
+    {
+      "step": 1,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "从你已经有的开始。从你已经有的开始。",
+      "mascot": "hero",
+      "images": 0
+    },
+    {
+      "step": 1,
+      "width": 320,
+      "scroll": 320,
+      "title": "从你已经有的开始。从你已经有的开始。",
+      "mascot": "hero",
+      "images": 0
+    },
+    {
+      "step": 1,
+      "width": 390,
+      "scroll": 390,
+      "title": "从你已经有的开始。从你已经有的开始。",
+      "mascot": "hero",
+      "images": 0
+    },
+    {
+      "step": 1,
+      "width": 768,
+      "scroll": 768,
+      "title": "从你已经有的开始。从你已经有的开始。",
+      "mascot": "hero",
+      "images": 0
+    },
+    {
+      "step": 2,
+      "width": 768,
+      "scroll": 768,
+      "title": "让我把这些线索，连起来。让我把这些线索，连起来。",
+      "mascot": "loading",
+      "images": 0
+    },
+    {
+      "step": 2,
+      "width": 320,
+      "scroll": 320,
+      "title": "让我把这些线索，连起来。让我把这些线索，连起来。",
+      "mascot": "loading",
+      "images": 0
+    },
+    {
+      "step": 2,
+      "width": 390,
+      "scroll": 390,
+      "title": "让我把这些线索，连起来。让我把这些线索，连起来。",
+      "mascot": "loading",
+      "images": 0
+    },
+    {
+      "step": 2,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "让我把这些线索，连起来。让我把这些线索，连起来。",
+      "mascot": "loading",
+      "images": 0
+    },
+    {
+      "step": 3,
+      "width": 768,
+      "scroll": 768,
+      "title": "这是我初步认识的你。这是我初步认识的你。",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 3,
+      "width": 320,
+      "scroll": 320,
+      "title": "这是我初步认识的你。这是我初步认识的你。",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 4,
+      "width": 768,
+      "scroll": 768,
+      "title": "再靠近你一点点。再靠近你一点点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 4,
+      "width": 320,
+      "scroll": 320,
+      "title": "再靠近你一点点。再靠近你一点点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 3,
+      "width": 390,
+      "scroll": 390,
+      "title": "这是我初步认识的你。这是我初步认识的你。",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 5,
+      "width": 320,
+      "scroll": 320,
+      "title": "现在，这张卡片像你了吗？现在，这张卡片像你了吗？",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 5,
+      "width": 768,
+      "scroll": 768,
+      "title": "现在，这张卡片像你了吗？现在，这张卡片像你了吗？",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 3,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "这是我初步认识的你。这是我初步认识的你。",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 6,
+      "width": 320,
+      "scroll": 320,
+      "title": "你想和别人，一起做点什么？你想和别人，一起做点什么？",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 6,
+      "width": 768,
+      "scroll": 768,
+      "title": "你想和别人，一起做点什么？你想和别人，一起做点什么？",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 4,
+      "width": 390,
+      "scroll": 390,
+      "title": "再靠近你一点点。再靠近你一点点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 7,
+      "width": 320,
+      "scroll": 320,
+      "title": "让这个想法，有一个起点。让这个想法，有一个起点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 7,
+      "width": 768,
+      "scroll": 768,
+      "title": "让这个想法，有一个起点。让这个想法，有一个起点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 4,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "再靠近你一点点。再靠近你一点点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 5,
+      "width": 390,
+      "scroll": 390,
+      "title": "现在，这张卡片像你了吗？现在，这张卡片像你了吗？",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 8,
+      "width": 320,
+      "scroll": 320,
+      "title": "最后，看一眼你的故事。最后，看一眼你的故事。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 8,
+      "width": 768,
+      "scroll": 768,
+      "title": "最后，看一眼你的故事。最后，看一眼你的故事。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 5,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "现在，这张卡片像你了吗？现在，这张卡片像你了吗？",
+      "mascot": "reader",
+      "images": 0
+    },
+    {
+      "step": 9,
+      "width": 320,
+      "scroll": 320,
+      "title": "寻找可以一起出发的人。寻找可以一起出发的人。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 9,
+      "width": 768,
+      "scroll": 768,
+      "title": "寻找可以一起出发的人。寻找可以一起出发的人。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 6,
+      "width": 390,
+      "scroll": 390,
+      "title": "你想和别人，一起做点什么？你想和别人，一起做点什么？",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 10,
+      "width": 320,
+      "scroll": 320,
+      "title": "这些人，是你想遇见的吗？这些人，是你想遇见的吗？",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 10,
+      "width": 768,
+      "scroll": 768,
+      "title": "这些人，是你想遇见的吗？这些人，是你想遇见的吗？",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 7,
+      "width": 390,
+      "scroll": 390,
+      "title": "让这个想法，有一个起点。让这个想法，有一个起点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 6,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "你想和别人，一起做点什么？你想和别人，一起做点什么？",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 8,
+      "width": 390,
+      "scroll": 390,
+      "title": "最后，看一眼你的故事。最后，看一眼你的故事。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 7,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "让这个想法，有一个起点。让这个想法，有一个起点。",
+      "mascot": "avatar",
+      "images": 0
+    },
+    {
+      "step": 8,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "最后，看一眼你的故事。最后，看一眼你的故事。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 9,
+      "width": 390,
+      "scroll": 390,
+      "title": "寻找可以一起出发的人。寻找可以一起出发的人。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 9,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "寻找可以一起出发的人。寻找可以一起出发的人。",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 10,
+      "width": 390,
+      "scroll": 390,
+      "title": "这些人，是你想遇见的吗？这些人，是你想遇见的吗？",
+      "mascot": "dock",
+      "images": 0
+    },
+    {
+      "step": 10,
+      "width": 1440,
+      "scroll": 1440,
+      "title": "这些人，是你想遇见的吗？这些人，是你想遇见的吗？",
+      "mascot": "dock",
+      "images": 0
+    }
+  ],
+  "errors": [],
+  "fonts": {
+    "display": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 16
+      }
+    ],
+    "body": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 4
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 24
+      }
+    ],
+    "chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 1
+      }
+    ]
+  }
+}

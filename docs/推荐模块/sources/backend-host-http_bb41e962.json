@@ -1,0 +1,1032 @@
+{
+  "status": "passed",
+  "run": "bb41e962",
+  "checks": [
+    {
+      "label": "isolated dataset contains exactly 28 fictional users",
+      "passed": true
+    },
+    {
+      "label": "anonymous rejected before model",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "label": "native login page 1",
+      "passed": true
+    },
+    {
+      "label": "native username step 1",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "native password page 1",
+      "passed": true
+    },
+    {
+      "label": "native password authentication 1",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "ordinary native user has no admin access 1",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "label": "real session selects current event",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "persistent switch disabled returns 503",
+      "passed": true,
+      "status": 503
+    },
+    {
+      "label": "response is private no-store",
+      "passed": true
+    },
+    {
+      "label": "native missing authoritative history returns 503",
+      "passed": true,
+      "status": 503
+    },
+    {
+      "label": "disabled and native history failure use zero model calls",
+      "passed": true
+    },
+    {
+      "label": "write without CSRF rejected",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "label": "extra query viewer rejected",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "label": "extra body viewer rejected",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "label": "member of two events cannot use noncurrent event",
+      "passed": true,
+      "status": 409
+    },
+    {
+      "label": "native login page 2",
+      "passed": true
+    },
+    {
+      "label": "native username step 2",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "native password page 2",
+      "passed": true
+    },
+    {
+      "label": "native password authentication 2",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "ordinary native user has no admin access 2",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "label": "real session selects current event",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "nonmember cannot use other event",
+      "passed": true,
+      "status": 409
+    },
+    {
+      "label": "create authorized conversation main",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "create idempotency persists across requests",
+      "passed": true
+    },
+    {
+      "label": "another authenticated owner cannot read conversation",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "label": "conversation restores on independent HTTP request",
+      "passed": true
+    },
+    {
+      "label": "turn HTTP returns view",
+      "passed": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "label": "real adapters produce synthetic provider result",
+      "passed": true,
+      "view": {
+        "conversation_id": "conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03",
+        "version": 8,
+        "event_id": 1,
+        "requirements_version": 1,
+        "pending_confirmation": null,
+        "interaction_status": "completed",
+        "execution_status": "succeeded",
+        "applicability": "current",
+        "model_calls_used": 2,
+        "current_run_id": "run-4bef0ccbe116eb7bc3d44bc021b43870",
+        "message": "Synthetic result using the authorized shared topic. Unselected synthetic participant 3 also has the confirmed shared social topic.",
+        "confirmed_conditions": [],
+        "items": [
+          {
+            "id": "2",
+            "reason": "Synthetic shared topic.",
+            "gaps": [
+              "Actual collaboration remains to be confirmed."
+            ],
+            "rule_score": 1,
+            "ai_rank": 1
+          }
+        ],
+        "events": [
+          {
+            "type": "model_attempt_reserved",
+            "stage": "plan"
+          },
+          {
+            "type": "tool_started",
+            "tool": "search_candidates",
+            "message": "正在查询本次活动中有权推荐的人。"
+          },
+          {
+            "type": "tool_completed",
+            "tool": "search_candidates",
+            "candidate_count": 20,
+            "model_candidate_count": 20,
+            "message": "本次活动检索完成，正在核对任务依据与未知项。"
+          },
+          {
+            "type": "model_attempt_reserved",
+            "stage": "respond"
+          }
+        ],
+        "turns": [
+          {
+            "turn_id": "turn-0406285a1932434695720266ca454eb6",
+            "user_message": "Find synthetic common-topic teammates.",
+            "command": "recommend",
+            "run_id": "run-4bef0ccbe116eb7bc3d44bc021b43870",
+            "batch_id": "batch-84dbf339c8cfd305e6879b0f125ac34e",
+            "message": "Synthetic result using the authorized shared topic. Unselected synthetic participant 3 also has the confirmed shared social topic.",
+            "calls_used": 2,
+            "status": "completed",
+            "items": [
+              {
+                "id": "2",
+                "reason": "Synthetic shared topic.",
+                "gaps": [
+                  "Actual collaboration remains to be confirmed."
+                ],
+                "rule_score": 1,
+                "ai_rank": 1
+              }
+            ],
+            "events": [
+              {
+                "type": "model_attempt_reserved",
+                "stage": "plan"
+              },
+              {
+                "type": "tool_started",
+                "tool": "search_candidates",
+                "message": "正在查询本次活动中有权推荐的人。"
+              },
+              {
+                "type": "tool_completed",
+                "tool": "search_candidates",
+                "candidate_count": 20,
+                "model_candidate_count": 20,
+                "message": "本次活动检索完成，正在核对任务依据与未知项。"
+              },
+              {
+                "type": "model_attempt_reserved",
+                "stage": "respond"
+              }
+            ],
+            "error": null
+          }
+        ],
+        "current_batch": {
+          "batch_id": "batch-84dbf339c8cfd305e6879b0f125ac34e",
+          "display_version": 1,
+          "ordered_ids": [
+            "2"
+          ],
+          "items": [
+            {
+              "id": "2",
+              "reason": "Synthetic shared topic.",
+              "gaps": [
+                "Actual collaboration remains to be confirmed."
+              ],
+              "rule_score": 1,
+              "ai_rank": 1
+            }
+          ]
+        },
+        "error": null
+      }
+    },
+    {
+      "label": "successful recommendation uses exactly plan and response",
+      "passed": true
+    },
+    {
+      "label": "actual model candidate pool populated",
+      "passed": true,
+      "candidate_ids": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21"
+      ]
+    },
+    {
+      "label": "pool excludes self friend history private friends draft blocked and other-event",
+      "passed": true,
+      "candidate_ids": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21"
+      ]
+    },
+    {
+      "label": "turn replay same key has no model call",
+      "passed": true
+    },
+    {
+      "label": "same turn key altered body conflicts",
+      "passed": true,
+      "status": 409
+    },
+    {
+      "label": "stale conversation version rejects before model",
+      "passed": true,
+      "status": 409
+    },
+    {
+      "label": "stale requirement version rejected",
+      "passed": true,
+      "status": 409
+    },
+    {
+      "label": "client cannot forge origin",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "label": "trusted HTTP confirmation succeeds",
+      "passed": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "label": "confirm idempotency has no repeat model",
+      "passed": true
+    },
+    {
+      "label": "confirmed complete snapshot is exposed without internal origin",
+      "passed": true
+    },
+    {
+      "label": "unselected sent candidate revocation invalidates response",
+      "passed": true,
+      "status": 200,
+      "view": {
+        "conversation_id": "conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03",
+        "version": 17,
+        "event_id": 1,
+        "requirements_version": 2,
+        "pending_confirmation": null,
+        "interaction_status": "failed",
+        "execution_status": "failed",
+        "applicability": "revoked",
+        "model_calls_used": 4,
+        "current_run_id": "run-46bab4f58676da92e2ad71cd059aef90",
+        "message": "本轮处理未完成（context_invalidated），没有产生新的推荐。",
+        "confirmed_conditions": [],
+        "items": [],
+        "events": [
+          {
+            "type": "model_attempt_reserved",
+            "stage": "plan"
+          },
+          {
+            "type": "tool_started",
+            "tool": "search_candidates",
+            "message": "正在查询本次活动中有权推荐的人。"
+          },
+          {
+            "type": "tool_completed",
+            "tool": "search_candidates",
+            "candidate_count": 19,
+            "model_candidate_count": 19,
+            "message": "本次活动检索完成，正在核对任务依据与未知项。"
+          },
+          {
+            "type": "model_attempt_reserved",
+            "stage": "respond"
+          }
+        ],
+        "turns": [
+          {
+            "turn_id": "turn-0406285a1932434695720266ca454eb6",
+            "user_message": "[该轮涉及的候选已失效]",
+            "command": "recommend",
+            "run_id": "run-4bef0ccbe116eb7bc3d44bc021b43870",
+            "batch_id": "batch-84dbf339c8cfd305e6879b0f125ac34e",
+            "message": "",
+            "calls_used": 2,
+            "status": "completed",
+            "items": [],
+            "events": [
+              {
+                "type": "model_attempt_reserved",
+                "stage": "plan"
+              },
+              {
+                "type": "tool_started",
+                "tool": "search_candidates",
+                "message": "正在查询本次活动中有权推荐的人。"
+              },
+              {
+                "type": "tool_completed",
+                "tool": "search_candidates",
+                "candidate_count": 20,
+                "model_candidate_count": 20,
+                "message": "本次活动检索完成，正在核对任务依据与未知项。"
+              },
+              {
+                "type": "model_attempt_reserved",
+                "stage": "respond"
+              }
+            ],
+            "error": null
+          },
+          {
+            "turn_id": "turn-135b79a6cc406b5f9036941e231860fd",
+            "user_message": "[该轮涉及的候选已失效]",
+            "command": "refresh",
+            "run_id": "run-46bab4f58676da92e2ad71cd059aef90",
+            "batch_id": "batch-b765b351314c394bb2699b568ca923b4",
+            "message": "本轮处理未完成（context_invalidated），没有产生新的推荐。",
+            "calls_used": 2,
+            "status": "failed",
+            "items": [],
+            "events": [
+              {
+                "type": "model_attempt_reserved",
+                "stage": "plan"
+              },
+              {
+                "type": "tool_started",
+                "tool": "search_candidates",
+                "message": "正在查询本次活动中有权推荐的人。"
+              },
+              {
+                "type": "tool_completed",
+                "tool": "search_candidates",
+                "candidate_count": 19,
+                "model_candidate_count": 19,
+                "message": "本次活动检索完成，正在核对任务依据与未知项。"
+              },
+              {
+                "type": "model_attempt_reserved",
+                "stage": "respond"
+              }
+            ],
+            "error": {
+              "code": "VERSION_CONFLICT",
+              "message": "The conversation is no longer applicable.",
+              "retryable": false,
+              "details": {
+                "reason": "context_invalidated"
+              }
+            }
+          }
+        ],
+        "current_batch": null,
+        "error": {
+          "code": "VERSION_CONFLICT",
+          "message": "The conversation is no longer applicable.",
+          "retryable": false,
+          "details": {
+            "reason": "context_invalidated"
+          }
+        }
+      }
+    },
+    {
+      "label": "revocation read never reruns model",
+      "passed": true
+    },
+    {
+      "label": "create authorized conversation during-revoke",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "post-model candidate revoke blocks publication",
+      "passed": true,
+      "status": 200,
+      "view": {
+        "conversation_id": "conversation-d0326de99cec6bfc2e70911092ec73f2a74e8af9082282b6fac8eda64a9ad543",
+        "version": 8,
+        "event_id": 1,
+        "requirements_version": 1,
+        "pending_confirmation": null,
+        "interaction_status": "failed",
+        "execution_status": "failed",
+        "applicability": "revoked",
+        "model_calls_used": 2,
+        "current_run_id": "run-830826f3ff22b39df8064bce86b8d0ce",
+        "message": "本轮处理未完成（context_invalidated），没有产生新的推荐。",
+        "confirmed_conditions": [],
+        "items": [],
+        "events": [
+          {
+            "type": "model_attempt_reserved",
+            "stage": "plan"
+          },
+          {
+            "type": "tool_started",
+            "tool": "search_candidates",
+            "message": "正在查询本次活动中有权推荐的人。"
+          },
+          {
+            "type": "tool_completed",
+            "tool": "search_candidates",
+            "candidate_count": 19,
+            "model_candidate_count": 19,
+            "message": "本次活动检索完成，正在核对任务依据与未知项。"
+          },
+          {
+            "type": "model_attempt_reserved",
+            "stage": "respond"
+          }
+        ],
+        "turns": [
+          {
+            "turn_id": "turn-8a575d95f132b02166dd61898c8aad42",
+            "user_message": "Find synthetic common-topic teammates.",
+            "command": "recommend",
+            "run_id": "run-830826f3ff22b39df8064bce86b8d0ce",
+            "batch_id": null,
+            "message": "本轮处理未完成（context_invalidated），没有产生新的推荐。",
+            "calls_used": 2,
+            "status": "failed",
+            "items": [],
+            "events": [
+              {
+                "type": "model_attempt_reserved",
+                "stage": "plan"
+              },
+              {
+                "type": "tool_started",
+                "tool": "search_candidates",
+                "message": "正在查询本次活动中有权推荐的人。"
+              },
+              {
+                "type": "tool_completed",
+                "tool": "search_candidates",
+                "candidate_count": 19,
+                "model_candidate_count": 19,
+                "message": "本次活动检索完成，正在核对任务依据与未知项。"
+              },
+              {
+                "type": "model_attempt_reserved",
+                "stage": "respond"
+              }
+            ],
+            "error": {
+              "code": "VERSION_CONFLICT",
+              "message": "The conversation is no longer applicable.",
+              "retryable": false,
+              "details": {
+                "reason": "context_invalidated"
+              }
+            }
+          }
+        ],
+        "current_batch": null,
+        "error": {
+          "code": "VERSION_CONFLICT",
+          "message": "The conversation is no longer applicable.",
+          "retryable": false,
+          "details": {
+            "reason": "context_invalidated"
+          }
+        }
+      }
+    },
+    {
+      "label": "create authorized conversation platform-deny",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "platform denial reported as failed turn",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "label": "platform denial has zero model and conservative durable reservation",
+      "passed": true
+    },
+    {
+      "label": "create authorized conversation old-runtime",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "pause blocks old conversation read",
+      "passed": true,
+      "status": 503
+    },
+    {
+      "label": "resume never revives old conversation",
+      "passed": true
+    },
+    {
+      "label": "create authorized conversation missing-provider",
+      "passed": true,
+      "status": 201,
+      "error": null
+    },
+    {
+      "label": "unconfigured provider fails closed",
+      "passed": true
+    },
+    {
+      "label": "ordinary discovery remains usable with AI disabled",
+      "passed": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "label": "AI-disabled ordinary discovery uses zero model",
+      "passed": true
+    },
+    {
+      "label": "native AI disable/re-enable never revives old conversation",
+      "passed": true
+    }
+  ],
+  "http_responses": [
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 401,
+      "error": {
+        "code": "AUTH_REQUIRED",
+        "message": "The current session or activity does not allow this request.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/dashboard/dashboard",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/admin",
+      "method": "GET",
+      "status": 403,
+      "error": null
+    },
+    {
+      "path": "/api/v1/me/current-event",
+      "method": "PUT",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 503,
+      "error": {
+        "code": "AI_UNAVAILABLE",
+        "message": "A required recommendation capability is unavailable.",
+        "retryable": false,
+        "details": {
+          "reason": "disabled"
+        }
+      }
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 503,
+      "error": {
+        "code": "AI_UNAVAILABLE",
+        "message": "A required recommendation capability is unavailable.",
+        "retryable": false,
+        "details": {
+          "reason": "history_unavailable"
+        }
+      }
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 400,
+      "error": {
+        "code": "INVALID_REQUEST",
+        "message": "The request or CSRF token is invalid.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 400,
+      "error": {
+        "code": "INVALID_REQUEST",
+        "message": "Query fields are not accepted.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 400,
+      "error": {
+        "code": "INVALID_REQUEST",
+        "message": "Provide exactly the documented request fields.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/events/2/recommendation-conversations",
+      "method": "POST",
+      "status": 409,
+      "error": {
+        "code": "VERSION_CONFLICT",
+        "message": "The current session or activity does not allow this request.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/dashboard/dashboard",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/admin",
+      "method": "GET",
+      "status": 403,
+      "error": null
+    },
+    {
+      "path": "/api/v1/me/current-event",
+      "method": "PUT",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/2/recommendation-conversations",
+      "method": "POST",
+      "status": 409,
+      "error": {
+        "code": "VERSION_CONFLICT",
+        "message": "The current session or activity does not allow this request.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03",
+      "method": "GET",
+      "status": 404,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Conversation not found.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/turns",
+      "method": "POST",
+      "status": 409,
+      "error": {
+        "code": "IDEMPOTENCY_CONFLICT",
+        "message": "This idempotency key belongs to a different request.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/turns",
+      "method": "POST",
+      "status": 409,
+      "error": {
+        "code": "VERSION_CONFLICT",
+        "message": "Reload the current conversation version.",
+        "retryable": false,
+        "details": {
+          "reason": "run_conflict"
+        }
+      }
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/requirements/confirm",
+      "method": "POST",
+      "status": 409,
+      "error": {
+        "code": "VERSION_CONFLICT",
+        "message": "Reload the current conversation version.",
+        "retryable": false,
+        "details": {
+          "reason": "run_conflict"
+        }
+      }
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/requirements/confirm",
+      "method": "POST",
+      "status": 400,
+      "error": {
+        "code": "INVALID_REQUEST",
+        "message": "Only feature, operator, value and strength are accepted.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/requirements/confirm",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03/requirements/confirm",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-a188b8bc9e7298caf2682cc88338bc802036dd0b46c4045bb6b555d574473d03",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-d0326de99cec6bfc2e70911092ec73f2a74e8af9082282b6fac8eda64a9ad543/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-35ed6211cb55c3ca29d91d2ab5d9ef095af23434dab8041db5b2c977fe23c7cc/turns",
+      "method": "POST",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-e82bc0ae2e7472ecf787acc8f956c5b45b749b5e1bb2586f4bc31240692f78d9",
+      "method": "GET",
+      "status": 503,
+      "error": {
+        "code": "AI_UNAVAILABLE",
+        "message": "A required recommendation capability is unavailable.",
+        "retryable": false,
+        "details": {
+          "reason": "disabled"
+        }
+      }
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-e82bc0ae2e7472ecf787acc8f956c5b45b749b5e1bb2586f4bc31240692f78d9",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 201,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-263deac98113de3beac5d72bef8e0a326708a1fe235673ffd60a1e6ad9e290d7",
+      "method": "GET",
+      "status": 503,
+      "error": {
+        "code": "AI_UNAVAILABLE",
+        "message": "A required recommendation capability is unavailable.",
+        "retryable": false,
+        "details": {
+          "reason": "provider_unconfigured"
+        }
+      }
+    },
+    {
+      "path": "/api/v1/events/1/discovery",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/api/v1/recommendation-conversations/conversation-263deac98113de3beac5d72bef8e0a326708a1fe235673ffd60a1e6ad9e290d7",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    }
+  ],
+  "synthetic_model_calls": 6,
+  "external_model_calls": 0,
+  "initial": {
+    "runtime": {
+      "revision": 1,
+      "enabled": false,
+      "provider_id": null,
+      "provider_revision": null
+    },
+    "budget": {
+      "revision": 1,
+      "allowance": 0,
+      "reserved": 0
+    },
+    "users": 28,
+    "queue_rows": 3
+  },
+  "final": {
+    "runtime": {
+      "revision": 6,
+      "enabled": true,
+      "provider_id": "matcher-recommendation-ai",
+      "provider_revision": "audit-config-v1"
+    },
+    "budget": {
+      "revision": 2,
+      "allowance": 500,
+      "reserved": 7
+    },
+    "users": 28,
+    "queue_rows": 3
+  }
+}

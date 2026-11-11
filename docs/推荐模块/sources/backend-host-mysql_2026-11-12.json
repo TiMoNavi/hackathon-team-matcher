@@ -1,0 +1,157 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "label": "runtime enabled for real MySQL race",
+      "passed": true
+    },
+    {
+      "label": "exactly seven of twenty concurrent processes reserve",
+      "passed": true,
+      "results": [
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "reserved"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        },
+        {
+          "outcome": "rejected",
+          "reason": "budget_exhausted"
+        }
+      ]
+    },
+    {
+      "label": "thirteen excess attempts fail without retries",
+      "passed": true
+    },
+    {
+      "label": "MySQL conditional update never overshoots quota",
+      "passed": true,
+      "before": {
+        "revision": 2,
+        "allowance": 500,
+        "reserved": 7
+      },
+      "after": {
+        "revision": 3,
+        "allowance": 14,
+        "reserved": 14
+      }
+    },
+    {
+      "label": "atomic reservation and permit ledger stay consistent",
+      "passed": true
+    },
+    {
+      "label": "duplicate permit rolls back quota increment",
+      "passed": true
+    },
+    {
+      "label": "native repeated migration completes without new changes",
+      "passed": true
+    },
+    {
+      "label": "repeat migration preserves conversations runtime budget and ledger",
+      "passed": true
+    },
+    {
+      "label": "all 28 accounts lack native global administrator group membership",
+      "passed": true
+    }
+  ],
+  "before": {
+    "runtime": {
+      "revision": 6,
+      "enabled": true,
+      "provider_id": "matcher-recommendation-ai",
+      "provider_revision": "audit-config-v1"
+    },
+    "budget": {
+      "revision": 2,
+      "allowance": 500,
+      "reserved": 7
+    },
+    "users": 28,
+    "queue_rows": 3
+  },
+  "after": {
+    "runtime": {
+      "revision": 6,
+      "enabled": true,
+      "provider_id": "matcher-recommendation-ai",
+      "provider_revision": "audit-config-v1"
+    },
+    "budget": {
+      "revision": 3,
+      "allowance": 14,
+      "reserved": 14
+    },
+    "users": 28,
+    "queue_rows": 3
+  },
+  "network_calls": 0
+}

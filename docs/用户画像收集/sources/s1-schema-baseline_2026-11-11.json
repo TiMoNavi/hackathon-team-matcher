@@ -1,0 +1,1052 @@
+{
+  "captured_at_utc": "2026-11-11T09:29:17+00:00",
+  "humhub_version": "1.19.4",
+  "database_version": "9.7.4",
+  "table_prefix": "",
+  "database_charset": "utf8mb4",
+  "database_collation": "utf8mb4_unicode_ci",
+  "profile_field_count": 27,
+  "profile_fields": [
+    {
+      "internal_name": "about",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\TextArea",
+      "field_type_config": "{\"type\":\"textarea\",\"fieldTypes\":[],\"isVirtual\":false,\"canBeDirectoryFilter\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "birthday",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Birthday",
+      "field_type_config": "{\"type\":\"datetime\",\"defaultHideAge\":\"0\",\"fieldTypes\":[],\"isVirtual\":false,\"canBeDirectoryFilter\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "city",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":100,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "country",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\CountrySelect",
+      "field_type_config": "{\"type\":\"dropdownlist\",\"options\":null,\"canBeDirectoryFilter\":true,\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "email_virtual",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\UserEmail",
+      "field_type_config": "{\"type\":\"hidden\",\"isVirtual\":true,\"fieldTypes\":[],\"canBeDirectoryFilter\":false}",
+      "required": 0,
+      "visible": 0,
+      "editable": 0,
+      "show_at_registration": 0,
+      "searchable": 0
+    },
+    {
+      "internal_name": "fax",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":100,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "firstname",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":20,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": 1,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": 1,
+      "searchable": 1
+    },
+    {
+      "internal_name": "gender",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Select",
+      "field_type_config": "{\"type\":\"dropdownlist\",\"options\":\"male=>Male\\nfemale=>Female\\ndiverse=>Diverse\",\"canBeDirectoryFilter\":true,\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "im_xmpp",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"email\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "lastname",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":30,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": 1,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": 1,
+      "searchable": 1
+    },
+    {
+      "internal_name": "mobile",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":100,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "phone_private",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":100,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "phone_work",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":100,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "state",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":100,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "street",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":150,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "title",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":50,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_facebook",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_instagram",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_linkedin",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_mastodon",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_tiktok",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_twitter",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_vimeo",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_xing",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "url_youtube",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":255,\"validator\":\"url\",\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    },
+    {
+      "internal_name": "zip",
+      "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+      "field_type_config": "{\"minLength\":null,\"maxLength\":10,\"validator\":null,\"default\":null,\"regexp\":null,\"regexpErrorMessage\":null,\"canBeDirectoryFilter\":true,\"linkPrefix\":null,\"type\":\"text\",\"fieldTypes\":[],\"isVirtual\":false}",
+      "required": null,
+      "visible": 1,
+      "editable": 1,
+      "show_at_registration": null,
+      "searchable": 1
+    }
+  ],
+  "tables": {
+    "user": {
+      "exists": true,
+      "primary_key": [
+        "id"
+      ],
+      "columns": {
+        "id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": true,
+          "default": null
+        },
+        "guid": {
+          "db_type": "varchar(45)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "status": {
+          "db_type": "tinyint",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "username": {
+          "db_type": "varchar(50)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "email": {
+          "db_type": "char(150)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "user_source": {
+          "db_type": "varchar(50)",
+          "nullable": false,
+          "primary_key": false,
+          "default": "local"
+        },
+        "language": {
+          "db_type": "varchar(20)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "last_login": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "visibility": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": 1
+        },
+        "time_zone": {
+          "db_type": "varchar(100)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "contentcontainer_id": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "auth_key": {
+          "db_type": "varchar(32)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        }
+      },
+      "row_count": 3,
+      "foreign_keys": []
+    },
+    "profile": {
+      "exists": true,
+      "primary_key": [
+        "user_id"
+      ],
+      "columns": {
+        "user_id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": true,
+          "default": null
+        },
+        "firstname": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "lastname": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "title": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "gender": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "street": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "zip": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "city": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "country": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "state": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "birthday_hide_year": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "birthday": {
+          "db_type": "date",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "about": {
+          "db_type": "text",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "phone_private": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "phone_work": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "mobile": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "fax": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "im_xmpp": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_facebook": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_linkedin": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_instagram": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_xing": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_youtube": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_vimeo": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_tiktok": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_twitter": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "url_mastodon": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        }
+      },
+      "row_count": 3,
+      "foreign_keys": {
+        "fk_profile-user_id": {
+          "0": "user",
+          "user_id": "id"
+        }
+      }
+    },
+    "profile_field": {
+      "exists": true,
+      "primary_key": [
+        "id"
+      ],
+      "columns": {
+        "id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": true,
+          "default": null
+        },
+        "profile_field_category_id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "module_id": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "field_type_class": {
+          "db_type": "varchar(255)",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "field_type_config": {
+          "db_type": "text",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "internal_name": {
+          "db_type": "varchar(100)",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "title": {
+          "db_type": "varchar(255)",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "description": {
+          "db_type": "text",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "sort_order": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": false,
+          "default": 100
+        },
+        "required": {
+          "db_type": "tinyint",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "show_at_registration": {
+          "db_type": "tinyint",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "editable": {
+          "db_type": "tinyint",
+          "nullable": false,
+          "primary_key": false,
+          "default": 1
+        },
+        "visible": {
+          "db_type": "tinyint",
+          "nullable": false,
+          "primary_key": false,
+          "default": 1
+        },
+        "created_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "ldap_attribute": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "translation_category": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "is_system": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "searchable": {
+          "db_type": "tinyint(1)",
+          "nullable": true,
+          "primary_key": false,
+          "default": 1
+        },
+        "directory_filter": {
+          "db_type": "tinyint(1)",
+          "nullable": false,
+          "primary_key": false,
+          "default": 0
+        }
+      },
+      "row_count": 27,
+      "foreign_keys": {
+        "fk_profile_field-profile_field_category_id": {
+          "0": "profile_field_category",
+          "profile_field_category_id": "id"
+        }
+      }
+    },
+    "profile_field_category": {
+      "exists": true,
+      "primary_key": [
+        "id"
+      ],
+      "columns": {
+        "id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": true,
+          "default": null
+        },
+        "title": {
+          "db_type": "varchar(255)",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "description": {
+          "db_type": "text",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "sort_order": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": false,
+          "default": 100
+        },
+        "module_id": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "visibility": {
+          "db_type": "tinyint",
+          "nullable": false,
+          "primary_key": false,
+          "default": 1
+        },
+        "created_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "translation_category": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "is_system": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        }
+      },
+      "row_count": 3,
+      "foreign_keys": []
+    },
+    "space": {
+      "exists": true,
+      "primary_key": [
+        "id"
+      ],
+      "columns": {
+        "id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": true,
+          "default": null
+        },
+        "guid": {
+          "db_type": "varchar(45)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "name": {
+          "db_type": "varchar(45)",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "description": {
+          "db_type": "text",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "about": {
+          "db_type": "text",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "join_policy": {
+          "db_type": "tinyint",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "visibility": {
+          "db_type": "tinyint",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "status": {
+          "db_type": "tinyint",
+          "nullable": false,
+          "primary_key": false,
+          "default": 1
+        },
+        "sort_order": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": false,
+          "default": 100
+        },
+        "created_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "ldap_dn": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "auto_add_new_members": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "contentcontainer_id": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "default_content_visibility": {
+          "db_type": "tinyint(1)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "color": {
+          "db_type": "varchar(7)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "members_can_leave": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": 1
+        },
+        "url": {
+          "db_type": "varchar(45)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        }
+      },
+      "row_count": 2,
+      "foreign_keys": []
+    },
+    "space_membership": {
+      "exists": true,
+      "primary_key": [
+        "id"
+      ],
+      "columns": {
+        "space_id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "user_id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": false,
+          "default": null
+        },
+        "originator_user_id": {
+          "db_type": "varchar(45)",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "status": {
+          "db_type": "tinyint",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "request_message": {
+          "db_type": "text",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "last_visit": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "created_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_at": {
+          "db_type": "datetime",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "updated_by": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": null
+        },
+        "group_id": {
+          "db_type": "varchar(255)",
+          "nullable": true,
+          "primary_key": false,
+          "default": "member"
+        },
+        "show_at_dashboard": {
+          "db_type": "tinyint(1)",
+          "nullable": true,
+          "primary_key": false,
+          "default": 1
+        },
+        "can_cancel_membership": {
+          "db_type": "int",
+          "nullable": true,
+          "primary_key": false,
+          "default": 1
+        },
+        "send_notifications": {
+          "db_type": "tinyint(1)",
+          "nullable": true,
+          "primary_key": false,
+          "default": 0
+        },
+        "id": {
+          "db_type": "int",
+          "nullable": false,
+          "primary_key": true,
+          "default": null
+        }
+      },
+      "row_count": 4,
+      "foreign_keys": {
+        "fk_space_membership-space_id": {
+          "0": "space",
+          "space_id": "id"
+        },
+        "fk_space_membership-user_id": {
+          "0": "user",
+          "user_id": "id"
+        }
+      }
+    },
+    "matcher_profile_state": {
+      "exists": false
+    },
+    "matcher_profile_attribute": {
+      "exists": false
+    },
+    "matcher_profile_revision": {
+      "exists": false
+    },
+    "matcher_profile_draft": {
+      "exists": false
+    }
+  }
+}

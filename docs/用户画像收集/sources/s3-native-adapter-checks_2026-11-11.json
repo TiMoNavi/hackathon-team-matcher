@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-11",
+  "scope": "S3 P8 PHP + coordinated P1 persistence/identity files + native output audit links",
+  "php_lint_checked": 41,
+  "php_lint_failures": [],
+  "document": "docs/用户画像收集/11_S3原生出口适配登记.md",
+  "broken_relative_links": [],
+  "native_integration_passed": 57,
+  "native_integration_runner": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_native.php",
+  "entry_links_browser_passed": 33,
+  "entry_links_browser_result_reported_by": "s3_privacy_policy",
+  "s2_unchanged_runners_passed": {
+    "sql": 28,
+    "native": 25,
+    "concurrency": 10,
+    "timezone_race": 4
+  },
+  "limits": [
+    "CSV/XLSX output statically audited, no download parsing test in native adapter subtask",
+    "Notification templates statically audited; no external email sent",
+    "No external CalDAV client sync test"
+  ]
+}

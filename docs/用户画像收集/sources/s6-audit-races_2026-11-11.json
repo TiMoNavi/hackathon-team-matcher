@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "passed": 24,
+  "checks": [
+    {
+      "name": "race_questions_worker_succeeds",
+      "passed": true
+    },
+    {
+      "name": "answer_change_blocks_late_compose",
+      "passed": true
+    },
+    {
+      "name": "superseded_compose_creates_no_drafts",
+      "passed": true
+    },
+    {
+      "name": "new_answer_snapshot_can_compose",
+      "passed": true
+    },
+    {
+      "name": "new_answer_value_reaches_draft",
+      "passed": true
+    },
+    {
+      "name": "recompose_with_manual_draft_succeeds",
+      "passed": true
+    },
+    {
+      "name": "recompose_preserves_unconfirmed_manual_text_and_scope",
+      "passed": true
+    },
+    {
+      "name": "draft_conflict_returned_for_manual_resolution",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_invalidates_completed_job",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_and_reads_do_not_call_model",
+      "passed": true
+    },
+    {
+      "name": "old_question_batch_blocked_after_privacy_change",
+      "passed": true
+    },
+    {
+      "name": "stale_session_still_readable_for_reconcile",
+      "passed": true
+    },
+    {
+      "name": "text_refresh_cannot_change_source_identity",
+      "passed": true
+    },
+    {
+      "name": "source_refresh_supersedes_running_job",
+      "passed": true
+    },
+    {
+      "name": "source_refresh_supersedes_completed_job",
+      "passed": true
+    },
+    {
+      "name": "sql_get_recovers_expired_running_job",
+      "passed": true
+    },
+    {
+      "name": "sql_late_worker_only_backfills_usage",
+      "passed": true
+    },
+    {
+      "name": "sql_expired_job_explicit_retry_succeeds",
+      "passed": true
+    },
+    {
+      "name": "actual_idle_watch_recovers_expired_sql_job",
+      "passed": true
+    },
+    {
+      "name": "idle_watch_recovery_zero_model_calls",
+      "passed": true
+    },
+    {
+      "name": "actual_worker_log_keeps_unknown_accounting",
+      "passed": true
+    },
+    {
+      "name": "unknown_worker_error_is_sanitized",
+      "passed": true
+    },
+    {
+      "name": "unknown_worker_state_is_explicit",
+      "passed": true
+    },
+    {
+      "name": "all_race_model_boundaries_outside_sql_transaction",
+      "passed": true
+    }
+  ],
+  "http_requests": 44,
+  "real_llm_calls": 0,
+  "synthetic_engine_calls": 9,
+  "model_boundary_cumulative": {
+    "entered": 33,
+    "completed": 30,
+    "active_transactions": 0
+  },
+  "worker_unknown_log": {
+    "job_id": "ebc21de8-e2af-4ff1-a171-351993a1cbcf",
+    "status": "failed",
+    "applicability": "current",
+    "llm_calls": null,
+    "accounting_complete": false
+  },
+  "scope": "Actual HTTP/SQL answer/privacy/source races, real idle watch recovery and CLI unknown accounting with synthetic engines"
+}

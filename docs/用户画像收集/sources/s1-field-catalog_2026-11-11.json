@@ -1,0 +1,1582 @@
+{
+    "schema_version": 1,
+    "native_fields": {
+        "matcher_nickname": {
+            "label": "昵称",
+            "field_type": "Text",
+            "min_length": 2,
+            "max_length": 32,
+            "internal_name": "matcher_nickname",
+            "options": []
+        },
+        "matcher_age_range": {
+            "label": "年龄段",
+            "field_type": "Select",
+            "options": {
+                "under_18": "18 岁以下",
+                "18_24": "18–24 岁",
+                "25_34": "25–34 岁",
+                "35_44": "35–44 岁",
+                "45_54": "45–54 岁",
+                "55_plus": "55 岁及以上"
+            },
+            "internal_name": "matcher_age_range",
+            "min_length": null,
+            "max_length": null
+        },
+        "matcher_mbti": {
+            "label": "MBTI（本人自述）",
+            "field_type": "Select",
+            "options": {
+                "INTJ": "INTJ",
+                "INTP": "INTP",
+                "ENTJ": "ENTJ",
+                "ENTP": "ENTP",
+                "INFJ": "INFJ",
+                "INFP": "INFP",
+                "ENFJ": "ENFJ",
+                "ENFP": "ENFP",
+                "ISTJ": "ISTJ",
+                "ISFJ": "ISFJ",
+                "ESTJ": "ESTJ",
+                "ESFJ": "ESFJ",
+                "ISTP": "ISTP",
+                "ISFP": "ISFP",
+                "ESTP": "ESTP",
+                "ESFP": "ESFP"
+            },
+            "internal_name": "matcher_mbti",
+            "min_length": null,
+            "max_length": null
+        },
+        "matcher_seeking": {
+            "label": "长期合作期待",
+            "field_type": "TextArea",
+            "max_length": 1000,
+            "internal_name": "matcher_seeking",
+            "min_length": null,
+            "options": []
+        }
+    },
+    "native_bindings": {
+        "nickname": {
+            "table": "profile",
+            "columns": [
+                "matcher_nickname"
+            ]
+        },
+        "age_range": {
+            "table": "profile",
+            "columns": [
+                "matcher_age_range"
+            ]
+        },
+        "mbti": {
+            "table": "profile",
+            "columns": [
+                "matcher_mbti"
+            ]
+        },
+        "seeking": {
+            "table": "profile",
+            "columns": [
+                "matcher_seeking"
+            ]
+        },
+        "headline": {
+            "table": "profile",
+            "columns": [
+                "title"
+            ]
+        },
+        "bio": {
+            "table": "profile",
+            "columns": [
+                "about"
+            ]
+        },
+        "real_name": {
+            "table": "profile",
+            "columns": [
+                "firstname",
+                "lastname"
+            ]
+        },
+        "city": {
+            "table": "profile",
+            "columns": [
+                "city"
+            ]
+        },
+        "timezone": {
+            "table": "user",
+            "columns": [
+                "time_zone"
+            ]
+        },
+        "primary_portfolio_link": {
+            "table": "profile",
+            "columns": [
+                "url"
+            ]
+        }
+    },
+    "fields": {
+        "real_name": {
+            "key": "real_name",
+            "label": "真实姓名",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "real_name",
+            "storage_kind": "native",
+            "display_order": 1,
+            "editable": true
+        },
+        "age_range": {
+            "key": "age_range",
+            "label": "年龄段",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "enum": [
+                    "under_18",
+                    "18_24",
+                    "25_34",
+                    "35_44",
+                    "45_54",
+                    "55_plus"
+                ]
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "age_range",
+            "storage_kind": "native",
+            "display_order": 2,
+            "editable": true
+        },
+        "mbti": {
+            "key": "mbti",
+            "label": "MBTI（本人自述）",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "enum": [
+                    "INTJ",
+                    "INTP",
+                    "ENTJ",
+                    "ENTP",
+                    "INFJ",
+                    "INFP",
+                    "ENFJ",
+                    "ENFP",
+                    "ISTJ",
+                    "ISFJ",
+                    "ESTJ",
+                    "ESFJ",
+                    "ISTP",
+                    "ISFP",
+                    "ESTP",
+                    "ESFP"
+                ]
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "mbti",
+            "storage_kind": "native",
+            "display_order": 3,
+            "editable": true
+        },
+        "personality": {
+            "key": "personality",
+            "label": "性格与做事风格（本人自述）",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "traits": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 40
+                        },
+                        "maxItems": 10,
+                        "uniqueItems": true
+                    },
+                    "self_description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 4,
+            "editable": true
+        },
+        "headline": {
+            "key": "headline",
+            "label": "一句话自述",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "headline",
+            "storage_kind": "native",
+            "display_order": 5,
+            "editable": true
+        },
+        "bio": {
+            "key": "bio",
+            "label": "自我介绍",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "bio",
+            "storage_kind": "native",
+            "display_order": 6,
+            "editable": true
+        },
+        "direction": {
+            "key": "direction",
+            "label": "关注方向",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    },
+                    "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [
+                    "code",
+                    "label"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 7,
+            "editable": true
+        },
+        "skill": {
+            "key": "skill",
+            "label": "技能",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    },
+                    "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    },
+                    "self_level": {
+                        "type": "string",
+                        "enum": [
+                            "learning",
+                            "working",
+                            "proficient",
+                            "expert"
+                        ]
+                    }
+                },
+                "required": [
+                    "code",
+                    "label"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 8,
+            "editable": true
+        },
+        "role": {
+            "key": "role",
+            "label": "可贡献角色",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    },
+                    "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [
+                    "code",
+                    "label"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 9,
+            "editable": true
+        },
+        "interest": {
+            "key": "interest",
+            "label": "兴趣领域",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    },
+                    "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [
+                    "code",
+                    "label"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 10,
+            "editable": true
+        },
+        "seeking": {
+            "key": "seeking",
+            "label": "长期合作期待",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "seeking",
+            "storage_kind": "native",
+            "display_order": 11,
+            "editable": true
+        },
+        "language": {
+            "key": "language",
+            "label": "沟通语言",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 32
+                    },
+                    "self_level": {
+                        "type": "string",
+                        "enum": [
+                            "basic",
+                            "conversational",
+                            "working",
+                            "fluent",
+                            "native"
+                        ]
+                    }
+                },
+                "required": [
+                    "code"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 12,
+            "editable": true
+        },
+        "city": {
+            "key": "city",
+            "label": "常驻城市",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "city",
+            "storage_kind": "native",
+            "display_order": 13,
+            "editable": true
+        },
+        "timezone": {
+            "key": "timezone",
+            "label": "时区",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "format": "timezone"
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": "timezone",
+            "storage_kind": "native",
+            "display_order": 14,
+            "editable": true
+        },
+        "collaboration_preference": {
+            "key": "collaboration_preference",
+            "label": "协作方式",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "free_text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 15,
+            "editable": true
+        },
+        "communication_preference": {
+            "key": "communication_preference",
+            "label": "沟通习惯",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "free_text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 16,
+            "editable": true
+        },
+        "education": {
+            "key": "education",
+            "label": "学业经历",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "school": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "major": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "degree": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "summary": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    },
+                    "start": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "end": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "school"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 17,
+            "editable": true
+        },
+        "project": {
+            "key": "project",
+            "label": "项目经历",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "role": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "contribution": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 3000
+                    },
+                    "tech_codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "http-url",
+                            "maxLength": 2048
+                        },
+                        "maxItems": 10,
+                        "uniqueItems": true
+                    },
+                    "outcome": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 3000
+                    },
+                    "start": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "end": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "title"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 18,
+            "editable": true
+        },
+        "work_experience": {
+            "key": "work_experience",
+            "label": "工作与实习经历",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "organization": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "role": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "summary": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 3000
+                    },
+                    "start": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "end": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "organization"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 19,
+            "editable": true
+        },
+        "award": {
+            "key": "award",
+            "label": "获奖与成果",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "issuer": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "date": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "format": "partial-date"
+                            },
+                            "precision": {
+                                "type": "string",
+                                "enum": [
+                                    "year",
+                                    "month",
+                                    "day"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "precision"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 3000
+                    }
+                },
+                "required": [
+                    "title"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 20,
+            "editable": true
+        },
+        "portfolio_link": {
+            "key": "portfolio_link",
+            "label": "作品与证明链接",
+            "scope": "global",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "format": "http-url",
+                        "maxLength": 2048
+                    },
+                    "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "project_ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    }
+                },
+                "required": [
+                    "url",
+                    "label"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 21,
+            "editable": true,
+            "alternate_native_binding": "primary_portfolio_link",
+            "native_url_max_length": 255
+        },
+        "event_goal": {
+            "key": "event_goal",
+            "label": "本次活动目标",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "free_text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 22,
+            "editable": true
+        },
+        "event_seeking": {
+            "key": "event_seeking",
+            "label": "本次需要的帮助",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "role_codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "skill_codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "free_text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 23,
+            "editable": true
+        },
+        "event_role": {
+            "key": "event_role",
+            "label": "本次承担角色",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    },
+                    "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [
+                    "code",
+                    "label"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 24,
+            "editable": true
+        },
+        "event_contribution": {
+            "key": "event_contribution",
+            "label": "本次提供的帮助",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "skill_codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "free_text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 25,
+            "editable": true
+        },
+        "event_time_commitment": {
+            "key": "event_time_commitment",
+            "label": "可投入时间",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "hours_min": {
+                        "type": "number",
+                        "minimum": 0
+                    },
+                    "hours_max": {
+                        "type": "number",
+                        "minimum": 0
+                    },
+                    "period": {
+                        "type": "string",
+                        "enum": [
+                            "event",
+                            "day",
+                            "week"
+                        ]
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [
+                    "period"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 26,
+            "editable": true
+        },
+        "event_availability": {
+            "key": "event_availability",
+            "label": "可以参加的时段",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "starts_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "ends_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "timezone": {
+                        "type": "string",
+                        "format": "timezone"
+                    }
+                },
+                "required": [
+                    "starts_at",
+                    "ends_at",
+                    "timezone"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "many",
+            "max_items": 100,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 27,
+            "editable": true
+        },
+        "event_collaboration_mode": {
+            "key": "event_collaboration_mode",
+            "label": "本次协作方式",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "mode": {
+                        "type": "string",
+                        "enum": [
+                            "onsite",
+                            "online",
+                            "hybrid"
+                        ]
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [
+                    "mode"
+                ],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 28,
+            "editable": true
+        },
+        "event_presence": {
+            "key": "event_presence",
+            "label": "本次参与安排",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "location_label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "note": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 29,
+            "editable": true
+        },
+        "event_contact_preference": {
+            "key": "event_contact_preference",
+            "label": "本次沟通偏好",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "object",
+                "properties": {
+                    "codes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 64
+                        },
+                        "maxItems": 30,
+                        "uniqueItems": true
+                    },
+                    "free_text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 30,
+            "editable": true
+        },
+        "event_constraint": {
+            "key": "event_constraint",
+            "label": "本次协作说明",
+            "scope": "event",
+            "kind": "profile",
+            "schema_version": 1,
+            "value_schema": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+            },
+            "cardinality": "one",
+            "max_items": 1,
+            "required_when": [],
+            "visibility_choices": [
+                "authenticated",
+                "friends",
+                "private"
+            ],
+            "default_visibility": "private",
+            "native_binding": null,
+            "storage_kind": "inline",
+            "display_order": 31,
+            "editable": true
+        }
+    },
+    "identities": {
+        "nickname": {
+            "key": "nickname",
+            "label": "昵称",
+            "kind": "identity",
+            "scope": "global",
+            "value_schema": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 32
+            },
+            "native_binding": "nickname",
+            "required_when": [
+                "confirm_identity",
+                "social_action"
+            ],
+            "version_field": "identity_version"
+        },
+        "avatar_ref": {
+            "key": "avatar_ref",
+            "label": "头像",
+            "kind": "identity",
+            "scope": "global",
+            "value_schema": {
+                "type": "string",
+                "maxLength": 255
+            },
+            "resource": "native_avatar",
+            "representation": "opaque_resource_reference",
+            "required_when": [],
+            "version_field": "identity_version"
+        }
+    },
+    "relations": {
+        "idea_groups": {
+            "kind": "relation",
+            "editable": false,
+            "source": "IdeaActivity -> Messenger Message",
+            "summary_source": "idea_description",
+            "adapter_status": "pending"
+        },
+        "activities": {
+            "kind": "relation",
+            "editable": false,
+            "source": "Space + verified Membership",
+            "summary_source": "space.description",
+            "adapter_status": "pending"
+        }
+    }
+}

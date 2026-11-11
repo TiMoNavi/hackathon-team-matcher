@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-10T17:16:29.532708+00:00",
+  "status": "passed",
+  "real_people_samples": 10,
+  "source_files_hash_verified": 108,
+  "unique_primary_resume_hashes": 10,
+  "primary_resume_characters_total": 112708,
+  "full_source_truncation": false,
+  "dialogue_cases": 3,
+  "initial_dialogue_characters": {
+    "dialogue-A": 1693,
+    "dialogue-B": 1346,
+    "dialogue-C": 1285
+  },
+  "candidate_readmes_truncated": 10,
+  "attributed_commit_samples": 26,
+  "samples_without_attributed_commits": [
+    "09"
+  ],
+  "private_files_mode": "600",
+  "private_directories_mode": "700",
+  "local_markdown_links": "passed",
+  "llm_quality_evaluation": "not_run",
+  "application_tests": "not_run",
+  "external_model_upload": false
+}

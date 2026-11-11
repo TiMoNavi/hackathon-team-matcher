@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "php_syntax": [
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/ErrorHandler.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/TestPorts.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/bootstrap.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/console.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/control.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/router.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/seed.php",
+      "passed": true
+    }
+  ],
+  "python_syntax": [
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/cleanup.py",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/harness.py",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/lifecycle.py",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/mysql_race.py",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/provision.py",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/conversation_host/run.py",
+      "passed": true
+    }
+  ],
+  "document_links_checked": 20,
+  "json_evidence_checked": 8,
+  "trailing_whitespace_files": [],
+  "code_scope": "matcher-recommendation/tests/conversation_host only",
+  "production_code_modified_by_auditor": false,
+  "no_real_model_calls": true,
+  "private_config_absent": true,
+  "own_http_port_free": true,
+  "functional_assertions": {
+    "http": 55,
+    "mysql": 9,
+    "lifecycle": 25,
+    "total_includes_repeated_setup": 89
+  },
+  "test_provider_calls": {
+    "plan": 6,
+    "respond": 5,
+    "total": 11
+  },
+  "frozen_document_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+  "files": {
+    "docs/推荐模块/18_隔离后端接入验收.md": "e570a95d454337b59182f921e6ab896c291a4ee730fed48858982faf95710450",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/control.php": "5ebd2cfbf2dd028a488a65f11267a89bcf411d313f27383b2902fe18cdeed030",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/TestPorts.php": "0256572c0f288ca6188747812d5803f8e193774d6186a6622738f19fcf6b3215",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/bootstrap.php": "c678dfe735ee896da84562ecfcde7c91577c975cd138f2762d5932ecf46e5c13",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/console.php": "9052734f7f58cfb2bb5026f62ab1d0c4852c1e7994a9e0e638c2e1fa19bd8c4d",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/seed.php": "21072120841ed8dcde8cfa43c3c49f1ad8ff2b885e4d376b3a6fef76fffad532",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/router.php": "8a484173b40cf95935d9d8739f3f116dd05e34b319f544c69e23f3315fd6398c",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/ErrorHandler.php": "8d1cf003a9e2b206b1c8fae24deabe24d1a4257d66b9c60a8df322af33f8adf8",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/run.py": "ff32b03969981b022915879cd6b17f61a35702f5cbf123ba6c06b973b347cd66",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/harness.py": "29f9b46bf4fc14ac649db6ee3c345a0a7f61bf9525df08253eca9f827797738b",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/cleanup.py": "654168649da86484f550922ebb396667d42a0affe0c7ec6249a5ebde62cf30fd",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/provision.py": "8ef4662bda0d94da35e067251dca20f8ca117b6e293c3b44535dc8c253d8d915",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/mysql_race.py": "6d3fde5ad1a4cc84bc353f41304a6762ccf1b128a5d4f9af065b1976dc108e2f",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_host/lifecycle.py": "f961de6f96c498b25a83b9bfcfe8d54d06a2649bf2690af0623d99bb86623731"
+  }
+}

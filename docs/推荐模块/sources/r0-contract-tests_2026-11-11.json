@@ -1,0 +1,248 @@
+{
+  "date": "2026-11-11",
+  "scope": "R0 pure structural contracts and synthetic fake adapters only; no application bootstrap, database migration or production integration acceptance.",
+  "command": "backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+  "exit_code": 0,
+  "result": {
+    "status": "passed",
+    "phase": "R0 synthetic contracts only",
+    "checks": 57,
+    "database_calls": 0,
+    "network_calls": 0,
+    "model_calls": 0,
+    "production_adapters_executed": false,
+    "checks_passed": [
+      "server-selected Space accepted",
+      "requested other Space rejected",
+      "DTO construction is not authorization",
+      "invalid actor ID rejected",
+      "global Space and identity versions remain separate",
+      "evidence retains stable attribute ID",
+      "unknown feature stays explicit",
+      "another candidate evidence rejected",
+      "cross-Space versions rejected",
+      "stale evidence revision rejected",
+      "stale evidence permission version rejected",
+      "known feature cannot also be unknown",
+      "unknown null cannot masquerade as known evidence",
+      "idea cannot reuse person evidence type",
+      "explicit hard requirement retained",
+      "AI draft cannot self-confirm hard requirement",
+      "interpreted soft preference retained",
+      "query cannot carry injected activity authority",
+      "unknown target type rejected",
+      "recursive JSON array rejected before recursive walk",
+      "excessive JSON depth rejected",
+      "nested object is not plain JSON transport data",
+      "200-ID batch accepted",
+      "201-ID batch rejected",
+      "duplicate candidate IDs rejected",
+      "empty explicit batch remains empty",
+      "purpose allowlist excludes authenticated contacts and unmapped fields",
+      "private and draft values excluded by fake projection",
+      "new catalog field stays disabled regardless of catalog order",
+      "renamed source is inactive until its binding is explicitly updated",
+      "explicit new binding restores the same logical feature",
+      "field catalog schema can change independently",
+      "empty ID request never becomes all users",
+      "person reader rejects idea target",
+      "dependency failure is not empty success",
+      "membership change invalidates old context despite unchanged P1 versions",
+      "current relationships remain available without AI-only history",
+      "missing history is not an all-false history map",
+      "idea candidates use separate projection and evidence",
+      "idea reader rejects person target",
+      "relationship reader preserves empty request",
+      "relationship reader never returns an unrequested candidate",
+      "idea reader never returns an unrequested candidate",
+      "relationship reader rejects idea target",
+      "idea reader rejects cross-Space context",
+      "relationship reader rejects cross-Space context",
+      "idea reader rejects stale access context",
+      "relationship reader rejects stale access context",
+      "autoload CurrentEventAccess",
+      "autoload ProfileFieldCatalog",
+      "autoload CandidateProjectionReader",
+      "autoload ContactEligibilityReader",
+      "autoload AuthorizedIdeaReader",
+      "autoload IdeaCandidateProjectionReader",
+      "autoload CandidateRetriever",
+      "autoload QueryInterpreter",
+      "autoload CandidateReranker"
+    ]
+  },
+  "lint": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ContractShape.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/QueryIntent.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/QueryIntent.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/AuthorizedIdeaReader.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/AuthorizedIdeaReader.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateReranker.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/CandidateReranker.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateRetriever.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/CandidateRetriever.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ContactEligibilityReader.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/ContactEligibilityReader.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/IdeaCandidateProjectionReader.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/IdeaCandidateProjectionReader.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/QueryInterpreter.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/contracts/ports/QueryInterpreter.php",
+      "error": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+      "error": ""
+    }
+  ],
+  "source_files": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php",
+      "sha256": "d1747bf334798551c2392ab8fa9a87c6ad3b2bb99b696cb0715c0647e764dcf9"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php",
+      "sha256": "332d18b999fcd8c4dfeed5f8863960a55d8638972beb3693cc977bada7acfb7a"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php",
+      "sha256": "fdb54ede239dd1e2238a9510b4a9dd36e2c150fa1542831e8f77314febb930c2"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php",
+      "sha256": "ba99b81d94a2cb5ef2bdc27b934470b51e445a14e7ee6b700df712990ccc01a3"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php",
+      "sha256": "2fad64568663587c896b811f5a089b56f003e037786286ec398a6d86214c1b55"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php",
+      "sha256": "c3599d0b00cbf5543d99d1c646de71d904d1725ae6938b26f9d158afcfc4cbbc"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/QueryIntent.php",
+      "sha256": "dab642675129e9012d48837f5eea5fffc66c51b79cf23cb5280246ac680b3016"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/AuthorizedIdeaReader.php",
+      "sha256": "6cb82159f764fb144c9f3d3b54af817643a1191d8ebdfb11dda21b62837a4b48"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php",
+      "sha256": "f745b33212fa4ba6f475f39ff5a84ea75e47f069726d5a6c989c7ed3c3e641ae"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateReranker.php",
+      "sha256": "7cca37ee78e027b463a4952022da7df20d8a4694ba26c29ab3d8f16f490cc671"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateRetriever.php",
+      "sha256": "c34202bdf6bf58a860a625c791afc2b9bbb939463e0739fa31ff919ea4286a30"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ContactEligibilityReader.php",
+      "sha256": "d4301d0bc46272a624c26d1491a8373eed6a2bfeb06c3d2578b276fe6bb495a1"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php",
+      "sha256": "eae43c8748b0eea1f737bf836b9f89bf98a81f3768371548845188392a1c572d"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/IdeaCandidateProjectionReader.php",
+      "sha256": "9fc5157d4f39485c020d6db1a5535e284c42664f0f5a9ba69b9d4b17c062b08d"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php",
+      "sha256": "a04be6f1b03e585f1293bd9968825cf191459910cd57e094fcec31b1b8aff4ee"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/QueryInterpreter.php",
+      "sha256": "90ef9de424415533d2eba52e5bb57f1515dc5447a43f65c062e1a65f317cf7d4"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+      "sha256": "ed1e40d82b24a63875e6021433800f9e2979c349b2bf2b012a980f888db08e45"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-12",
+  "baseline_comparison": {
+    "matcher-recommendation": {
+      "existing_changed": [],
+      "missing": [],
+      "new_files": [
+        "backend/protected/modules/matcher-recommendation/contracts/ports/ConversationStore.php",
+        "backend/protected/modules/matcher-recommendation/contracts/ports/ConversationProvider.php",
+        "backend/protected/modules/matcher-recommendation/tests/s7_audit_http.py",
+        "backend/protected/modules/matcher-recommendation/tests/s72_audit_relations.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_audit_oracle.py",
+        "backend/protected/modules/matcher-recommendation/tests/s7_audit_dataset.py",
+        "backend/protected/modules/matcher-recommendation/tests/s73_audit_http.py",
+        "backend/protected/modules/matcher-recommendation/tests/s72_audit_routes.php",
+        "backend/protected/modules/matcher-recommendation/tests/s72_audit_sql.php",
+        "backend/protected/modules/matcher-recommendation/tests/s72_audit_http.py",
+        "backend/protected/modules/matcher-recommendation/tests/s72_audit_presentation.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_audit_sql.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_audit_rules.py",
+        "backend/protected/modules/matcher-recommendation/tests/s73_audit_rules.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_performance/probe_test.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_performance/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_performance/QueryProbe.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_performance/catalog_contract.php",
+        "backend/protected/modules/matcher-recommendation/tests/s73_performance/scenarios.json",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_integration/Fixtures.php",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_integration/safety.php",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_integration/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_core/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/browse/http_smoke.py",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_store/race.php",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_store/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/conversation_store/restore.php",
+        "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationStorageSchema.php",
+        "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationStorageException.php",
+        "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoConversationStore.php",
+        "backend/protected/modules/matcher-recommendation/adapters/conversation/InMemoryConversationStore.php",
+        "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationSnapshotCodec.php",
+        "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+        "backend/protected/modules/matcher-recommendation/domain/conversation/ConversationCandidateSummaries.php",
+        "backend/protected/modules/matcher-recommendation/domain/conversation/ConversationLimits.php",
+        "backend/protected/modules/matcher-recommendation/domain/conversation/ConversationInput.php"
+      ]
+    },
+    "matcher-recommendation-ai": {
+      "existing_changed": [],
+      "missing": [],
+      "new_files": [
+        "backend/protected/modules/matcher-recommendation-ai/tests/conversation_provider/Fixtures.php",
+        "backend/protected/modules/matcher-recommendation-ai/tests/conversation_provider/run.php",
+        "backend/protected/modules/matcher-recommendation-ai/tests/conversation_provider/integration.php",
+        "backend/protected/modules/matcher-recommendation-ai/tests/conversation_demo/review.py",
+        "backend/protected/modules/matcher-recommendation-ai/tests/conversation_demo/run.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/conversation/ConversationProtocol.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/conversation/ChatConversationProvider.php"
+      ]
+    },
+    "matcher-user-profile": {
+      "existing_changed": [
+        "backend/protected/modules/matcher-user-profile/config.php",
+        "backend/protected/modules/matcher-user-profile/Module.php",
+        "backend/protected/modules/matcher-user-profile/module.json",
+        "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+        "backend/protected/modules/matcher-user-profile/domain/ports/ProfileRelationReader.php"
+      ],
+      "missing": [],
+      "new_files": [
+        "backend/protected/modules/matcher-user-profile/migrations/m261112_000007_profile_presentation.php",
+        "backend/protected/modules/matcher-user-profile/tests/integration/s2_root_acceptance.py",
+        "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_http.py",
+        "backend/protected/modules/matcher-user-profile/tests/integration/s2_http_test.py",
+        "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfilePresentationRepository.php",
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/PresentationSchemaInstaller.php",
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfilePresentationRepository.php",
+        "backend/protected/modules/matcher-user-profile/application/ProfilePresentationService.php",
+        "backend/protected/modules/matcher-user-profile/domain/ports/ProfilePresentationRepository.php"
+      ]
+    },
+    "matcher-profile-privacy": {
+      "existing_changed": [
+        "backend/protected/modules/matcher-profile-privacy/config.php",
+        "backend/protected/modules/matcher-profile-privacy/Module.php",
+        "backend/protected/modules/matcher-profile-privacy/module.json",
+        "backend/protected/modules/matcher-profile-privacy/controllers/ApiController.php"
+      ],
+      "missing": [],
+      "new_files": [
+        "backend/protected/modules/matcher-profile-privacy/migrations/m261112_000002_relation_sharing.php",
+        "backend/protected/modules/matcher-profile-privacy/tests/unit/s72_relations.php",
+        "backend/protected/modules/matcher-profile-privacy/tests/unit/s72_sqlite.php",
+        "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_root_acceptance.py",
+        "backend/protected/modules/matcher-profile-privacy/adapters/memory/InMemoryRelationSharingRepository.php",
+        "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeCurrentProfileEntry.php",
+        "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeRelationCandidateSource.php",
+        "backend/protected/modules/matcher-profile-privacy/adapters/persistence/RelationSharingSchemaInstaller.php",
+        "backend/protected/modules/matcher-profile-privacy/adapters/persistence/SqlRelationSharingRepository.php",
+        "backend/protected/modules/matcher-profile-privacy/application/ProfileOverviewService.php",
+        "backend/protected/modules/matcher-profile-privacy/application/ProfileRelationService.php",
+        "backend/protected/modules/matcher-profile-privacy/domain/RelationCursor.php",
+        "backend/protected/modules/matcher-profile-privacy/domain/ports/CurrentProfileEntry.php",
+        "backend/protected/modules/matcher-profile-privacy/domain/ports/RelationCandidateSource.php",
+        "backend/protected/modules/matcher-profile-privacy/domain/ports/RelationSharingRepository.php"
+      ]
+    }
+  },
+  "frozen_draft_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+  "frozen_draft_unchanged": true
+}

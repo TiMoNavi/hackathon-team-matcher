@@ -1,0 +1,1491 @@
+{
+  "schema_version": 1,
+  "synthetic_only": true,
+  "date": "2026-11-12",
+  "purpose": "Fixed before live conversation execution. Forty invented profiles: 36 current event and four other event; repeated archetypes are explicitly synthetic. Not real accounts, not a production performance benchmark.",
+  "viewer": {
+    "id": 1,
+    "event_id": 7,
+    "team_contribution": [
+      "产品协调",
+      "组织用户测试",
+      "前端开发"
+    ],
+    "delivery_goal": "两天内校园问答工具可供同学试用"
+  },
+  "sources": "All facts are authored synthetic confirmed projections. experience contains explicit invented delivery statements; skills alone is never proof of production experience. Names are a test-only identity map.",
+  "users": [
+    {
+      "id": "5001",
+      "display_name": "虚构林原",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过FastAPI接口",
+          "给社团工具做过登录接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5002",
+      "display_name": "虚构许禾",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "做过社团资料清洗脚本",
+          "参与过问答原型开发"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5003",
+      "display_name": "虚构周遥",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "TypeScript",
+          "Node.js"
+        ],
+        "experience": [
+          "独立部署过Node.js接口",
+          "给知识库做过日志与备份"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5004",
+      "display_name": "虚构程朔",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "模型评估",
+          "技术指导"
+        ],
+        "skills": [
+          "Python",
+          "PyTorch"
+        ],
+        "experience": [
+          "参加过模型效果评测"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5005",
+      "display_name": "虚构唐可",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "Docker"
+        ],
+        "experience": [
+          "独立部署过检索问答服务"
+        ],
+        "topics": [
+          "校园问答"
+        ],
+        "preferences": [
+          "结对开发"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T09:00:00+08:00",
+            "ends_at": "2026-11-15T17:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5006",
+      "display_name": "虚构苏桥",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "前端开发"
+        ],
+        "skills": [
+          "React"
+        ],
+        "experience": [
+          "给教育社团做过网页"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5007",
+      "display_name": "虚构顾澄",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发"
+        ],
+        "skills": [
+          "Python"
+        ],
+        "experience": [
+          "完成过Python入门课程"
+        ],
+        "topics": [
+          "校园问答"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5008",
+      "display_name": "虚构温序",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "资料处理",
+          "模型评估"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "给开放知识库做过去重与清洗"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5009",
+      "display_name": "虚构沈南",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "产品验证",
+          "商业访谈"
+        ],
+        "skills": [
+          "访谈设计"
+        ],
+        "experience": [
+          "在校园项目中访谈过12名同学"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5010",
+      "display_name": "虚构江岚",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Go",
+          "Docker"
+        ],
+        "experience": [
+          "独立部署过活动报名API"
+        ],
+        "topics": [
+          "社区服务"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5011",
+      "display_name": "虚构叶辰",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python"
+        ],
+        "experience": [
+          "把CSV整理流程做成过内部接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "结对开发"
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5012",
+      "display_name": "虚构陆青",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过公益项目API",
+          "做过开放数据入库脚本"
+        ],
+        "topics": [
+          "社区服务"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5013",
+      "display_name": "虚构林原2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过FastAPI接口",
+          "给社团工具做过登录接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5014",
+      "display_name": "虚构许禾2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "做过社团资料清洗脚本",
+          "参与过问答原型开发"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5015",
+      "display_name": "虚构周遥2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "TypeScript",
+          "Node.js"
+        ],
+        "experience": [
+          "独立部署过Node.js接口",
+          "给知识库做过日志与备份"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5016",
+      "display_name": "虚构程朔2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "模型评估",
+          "技术指导"
+        ],
+        "skills": [
+          "Python",
+          "PyTorch"
+        ],
+        "experience": [
+          "参加过模型效果评测"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5017",
+      "display_name": "虚构唐可2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "Docker"
+        ],
+        "experience": [
+          "独立部署过检索问答服务"
+        ],
+        "topics": [
+          "校园问答"
+        ],
+        "preferences": [
+          "结对开发"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T09:00:00+08:00",
+            "ends_at": "2026-11-15T17:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5018",
+      "display_name": "虚构苏桥2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "前端开发"
+        ],
+        "skills": [
+          "React"
+        ],
+        "experience": [
+          "给教育社团做过网页"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5019",
+      "display_name": "虚构顾澄2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发"
+        ],
+        "skills": [
+          "Python"
+        ],
+        "experience": [
+          "完成过Python入门课程"
+        ],
+        "topics": [
+          "校园问答"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5020",
+      "display_name": "虚构温序2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "资料处理",
+          "模型评估"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "给开放知识库做过去重与清洗"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5021",
+      "display_name": "虚构沈南2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "产品验证",
+          "商业访谈"
+        ],
+        "skills": [
+          "访谈设计"
+        ],
+        "experience": [
+          "在校园项目中访谈过12名同学"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5022",
+      "display_name": "虚构江岚2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Go",
+          "Docker"
+        ],
+        "experience": [
+          "独立部署过活动报名API"
+        ],
+        "topics": [
+          "社区服务"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5023",
+      "display_name": "虚构叶辰2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python"
+        ],
+        "experience": [
+          "把CSV整理流程做成过内部接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "结对开发"
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5024",
+      "display_name": "虚构陆青2",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过公益项目API",
+          "做过开放数据入库脚本"
+        ],
+        "topics": [
+          "社区服务"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5025",
+      "display_name": "虚构林原3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过FastAPI接口",
+          "给社团工具做过登录接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": true,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5026",
+      "display_name": "虚构许禾3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "做过社团资料清洗脚本",
+          "参与过问答原型开发"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": true,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5027",
+      "display_name": "虚构周遥3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "TypeScript",
+          "Node.js"
+        ],
+        "experience": [
+          "独立部署过Node.js接口",
+          "给知识库做过日志与备份"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": true
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5028",
+      "display_name": "虚构程朔3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "模型评估",
+          "技术指导"
+        ],
+        "skills": [
+          "Python",
+          "PyTorch"
+        ],
+        "experience": [
+          "参加过模型效果评测"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": true
+    },
+    {
+      "id": "5029",
+      "display_name": "虚构唐可3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "Docker"
+        ],
+        "experience": [
+          "独立部署过检索问答服务"
+        ],
+        "topics": [
+          "校园问答"
+        ],
+        "preferences": [
+          "结对开发"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T09:00:00+08:00",
+            "ends_at": "2026-11-15T17:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5030",
+      "display_name": "虚构苏桥3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "前端开发"
+        ],
+        "skills": [
+          "React"
+        ],
+        "experience": [
+          "给教育社团做过网页"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5031",
+      "display_name": "虚构顾澄3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发"
+        ],
+        "skills": [
+          "Python"
+        ],
+        "experience": [
+          "完成过Python入门课程"
+        ],
+        "topics": [
+          "校园问答"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5032",
+      "display_name": "虚构温序3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "资料处理",
+          "模型评估"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "给开放知识库做过去重与清洗"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5033",
+      "display_name": "虚构沈南3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "产品验证",
+          "商业访谈"
+        ],
+        "skills": [
+          "访谈设计"
+        ],
+        "experience": [
+          "在校园项目中访谈过12名同学"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5034",
+      "display_name": "虚构江岚3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Go",
+          "Docker"
+        ],
+        "experience": [
+          "独立部署过活动报名API"
+        ],
+        "topics": [
+          "社区服务"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5035",
+      "display_name": "虚构叶辰3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python"
+        ],
+        "experience": [
+          "把CSV整理流程做成过内部接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "结对开发"
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5036",
+      "display_name": "虚构陆青3",
+      "event_id": 7,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过公益项目API",
+          "做过开放数据入库脚本"
+        ],
+        "topics": [
+          "社区服务"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5037",
+      "display_name": "虚构林原4",
+      "event_id": 8,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "Python",
+          "FastAPI"
+        ],
+        "experience": [
+          "独立部署过FastAPI接口",
+          "给社团工具做过登录接口"
+        ],
+        "topics": [
+          "开发者工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5038",
+      "display_name": "虚构许禾4",
+      "event_id": 8,
+      "features": {
+        "offers": [
+          "后端开发",
+          "资料处理"
+        ],
+        "skills": [
+          "Python",
+          "SQL"
+        ],
+        "experience": [
+          "做过社团资料清洗脚本",
+          "参与过问答原型开发"
+        ],
+        "topics": [
+          "校园问答",
+          "教育工具"
+        ],
+        "preferences": [
+          "每日短会"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5039",
+      "display_name": "虚构周遥4",
+      "event_id": 8,
+      "features": {
+        "offers": [
+          "后端开发",
+          "API部署"
+        ],
+        "skills": [
+          "TypeScript",
+          "Node.js"
+        ],
+        "experience": [
+          "独立部署过Node.js接口",
+          "给知识库做过日志与备份"
+        ],
+        "topics": [
+          "知识检索"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    },
+    {
+      "id": "5040",
+      "display_name": "虚构程朔4",
+      "event_id": 8,
+      "features": {
+        "offers": [
+          "模型评估",
+          "技术指导"
+        ],
+        "skills": [
+          "Python",
+          "PyTorch"
+        ],
+        "experience": [
+          "参加过模型效果评测"
+        ],
+        "topics": [
+          "教育工具"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false
+    }
+  ]
+}

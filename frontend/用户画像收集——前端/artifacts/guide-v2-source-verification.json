@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-11-12",
+  "passed": true,
+  "count": 12,
+  "components": [
+    {
+      "file": "components/reference-originals/glow-cloud.tsx",
+      "exports": [
+        "GlowCloud"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/experience.tsx"
+      ],
+      "sha256": "5c2602055a147dd94df18e22040ead1cbc00c4990a5b17ba7e576d60766b98db",
+      "source": "../vendor/affectui/affectui-illustrations/glow-cloud.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/affectui/text-area-clean.tsx",
+      "exports": [
+        "TextArea"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/experience.tsx",
+        "components/onboarding/profile-steps.tsx"
+      ],
+      "sha256": "a812262a62528def4a015c59aaadc9905fc3a6c8e8b036c0e4d4953bf89f347e",
+      "source": "AffectUI MCP get_source, CollectUI, 2026-11-12",
+      "verification": "Matches the previously recorded MCP source checksum; no duplicate vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/affectui/thinking-loader-clean.tsx",
+      "exports": [
+        "ThinkingLoader"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/experience.tsx",
+        "components/onboarding/processing.tsx"
+      ],
+      "sha256": "459869b68f0b163262cb183b5d1b1261d3fe621c3551826c06aae136e7047d76",
+      "source": "../vendor/affectui/affectui-components/thinking-loader-clean.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/affectui/ai-answer-clean.tsx",
+      "exports": [
+        "AIAnswer"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/experience.tsx"
+      ],
+      "sha256": "ae1e0315b90cce5eff91481a93520c881d1a2e360f589194eac98135d64740e5",
+      "source": "../vendor/affectui/affectui-components/ai-answer-clean.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/text-reveal.tsx",
+      "exports": [
+        "TextReveal"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/experience.tsx",
+        "components/onboarding/guide.tsx"
+      ],
+      "sha256": "9b3aefc8310c71fd66f3d9dc29779ebaf6c0e064766ff6619c8fedb84121ee19",
+      "source": "../vendor/affectui/affectui-motion/text-reveal.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/affectui/button-clean.tsx",
+      "exports": [
+        "Button"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/guide.tsx",
+        "components/onboarding/final-steps.tsx",
+        "components/onboarding/idea-steps.tsx",
+        "components/onboarding/processing.tsx",
+        "components/onboarding/profile-steps.tsx"
+      ],
+      "sha256": "b5863cfe612e6db5c0f2f21cc3d84df3cb4c0a1ff23534c1b8fe6ddb843c53d3",
+      "source": "../vendor/affectui/affectui-components/button-clean.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/grid-background.tsx",
+      "exports": [
+        "GridBackground"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/guide.tsx"
+      ],
+      "sha256": "c9c7936cffc22cf08f3c786ad2f09509ada9f2901aed0a89ceaa0037f43ae394",
+      "source": "../vendor/affectui/affectui-motion/grid-background.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/gradient-floor.tsx",
+      "exports": [
+        "GradientFloor"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/guide.tsx"
+      ],
+      "sha256": "df01c384627d3c66b2fa91ed3981212c71832124f92b4f0262d4937359c400d9",
+      "source": "../vendor/affectui/affectui-motion/gradient-floor.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/integration-beam.tsx",
+      "exports": [
+        "IntegrationBeam"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/processing.tsx"
+      ],
+      "sha256": "7782094da606b8ea48f88e980ab26e88e8f0863e0de57e54d9919dc575ede41a",
+      "source": "../vendor/affectui/affectui-illustrations/integration-beam.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/agent-trail.tsx",
+      "exports": [
+        "AgentTrail"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/processing.tsx"
+      ],
+      "sha256": "2968a4a3254a691f8afa1c7d26fb1732db1b1ee63091f2adb47b08c37ad474b3",
+      "source": "AffectUI MCP get_source, 2026-11-12",
+      "verification": "Matches the previously recorded MCP source checksum; no duplicate vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/gradient-text.tsx",
+      "exports": [
+        "GradientText"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/processing.tsx"
+      ],
+      "sha256": "45e5c18b337ce322268f821185b5e384e20a953ee2af0b652c1d7646957659ef",
+      "source": "../vendor/affectui/affectui-motion/gradient-text.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/glass-folder.tsx",
+      "exports": [
+        "GlassFolder"
+      ],
+      "provider": "AffectUI",
+      "used_by": [
+        "components/onboarding/profile-steps.tsx"
+      ],
+      "sha256": "96edbd88efd40e771822737e0b4f21c0f05cce33e081bc6005be542bbb71d02f",
+      "source": "../vendor/affectui/affectui-illustrations/glass-folder.tsx",
+      "verification": "Byte-identical to the saved vendor snapshot",
+      "original_file_modified": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "matcher-onboarding",
+    "name": "用户画像填写引导",
+    "description": "复用普通用户资料的规则题库、答案、画像草稿与五阶段填写进度；无需 AI 即可完成。",
+    "version": "0.4.0",
+    "humhub": {
+        "minVersion": "1.19.4",
+        "modules": {
+            "matcher-user-profile": {
+                "minVersion": "0.10.0"
+            }
+        }
+    },
+    "keywords": [
+        "profile",
+        "onboarding",
+        "team-matching"
+    ],
+    "authors": [
+        {
+            "name": "Hackathon Team Matcher"
+        }
+    ]
+}

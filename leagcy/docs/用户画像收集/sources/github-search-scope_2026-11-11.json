@@ -1,0 +1,19 @@
+{
+  "as_of": "2026-11-11",
+  "method": "GitHub repository search, sort=stars, order=desc, per_page=8",
+  "queries": [
+    {
+      "q": "github profile analyzer ai in:name,description",
+      "total_count": 161,
+      "top_result": "shreyashpatel5506/githubanalyzer",
+      "top_stars": 16
+    },
+    {
+      "q": "github profile analysis llm in:description",
+      "total_count": 11,
+      "top_result": "Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING",
+      "top_stars": 2
+    }
+  ],
+  "limitation": "Review of these searches, not an exhaustive claim about GitHub."
+}

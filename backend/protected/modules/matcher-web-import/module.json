@@ -1,0 +1,9 @@
+{
+  "id": "matcher-web-import",
+  "name": "个人网站与文字资料导入",
+  "description": "有界读取本人静态网页或粘贴文字，保留私有正文、定位段落及明确字段候选。",
+  "version": "0.1.1",
+  "humhub": {"minVersion": "1.19.4", "modules": {"matcher-user-profile": {"minVersion": "0.6.0"}}},
+  "keywords": ["profile", "website", "text", "import"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

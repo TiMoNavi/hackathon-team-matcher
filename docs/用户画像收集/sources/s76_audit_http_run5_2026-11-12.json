@@ -1,0 +1,277 @@
+{
+  "status": "failed",
+  "passed": 65,
+  "failed": 1,
+  "checks": [
+    {
+      "name": "preconnect_guard_empty",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_preview",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_profile_s76_test_root_e25c8a91",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_profile_s76_test_audit_6b49d027_other",
+      "passed": true
+    },
+    {
+      "name": "exact_fixture_target",
+      "passed": true
+    },
+    {
+      "name": "original_100_synthetic_people_present",
+      "passed": true
+    },
+    {
+      "name": "session_materials_schema",
+      "passed": true
+    },
+    {
+      "name": "session_materials_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_materials_stage",
+      "passed": true
+    },
+    {
+      "name": "session_materials_dto_compatible",
+      "passed": true
+    },
+    {
+      "name": "session_starts_without_ai_tasks",
+      "passed": true
+    },
+    {
+      "name": "anonymous_progress_denied",
+      "passed": true
+    },
+    {
+      "name": "other_owner_progress_not_found",
+      "passed": true
+    },
+    {
+      "name": "outsider_session_start_denied",
+      "passed": true
+    },
+    {
+      "name": "progress_only_allows_get",
+      "passed": true
+    },
+    {
+      "name": "session_review_schema",
+      "passed": true
+    },
+    {
+      "name": "session_review_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_review_stage",
+      "passed": true
+    },
+    {
+      "name": "session_review_dto_compatible",
+      "passed": true
+    },
+    {
+      "name": "session_questions_schema",
+      "passed": true
+    },
+    {
+      "name": "session_questions_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_questions_stage",
+      "passed": true
+    },
+    {
+      "name": "session_questions_dto_compatible",
+      "passed": true
+    },
+    {
+      "name": "saved_question_count_is_actual",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_1",
+      "passed": true
+    },
+    {
+      "name": "answer_changes_token_without_session_version",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_2",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_3",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_4",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_5",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_6",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_7",
+      "passed": true
+    },
+    {
+      "name": "question_count_after_8",
+      "passed": true
+    },
+    {
+      "name": "save_exit_restores_session_answers_and_position",
+      "passed": true
+    },
+    {
+      "name": "session_draft_schema",
+      "passed": true
+    },
+    {
+      "name": "session_draft_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_draft_stage",
+      "passed": true
+    },
+    {
+      "name": "session_draft_dto_compatible",
+      "passed": true
+    },
+    {
+      "name": "save_exit_retains_manual_output_edit",
+      "passed": true
+    },
+    {
+      "name": "answer_change_requires_explicit_resynthesis",
+      "passed": true
+    },
+    {
+      "name": "session_privacy_schema",
+      "passed": true
+    },
+    {
+      "name": "session_privacy_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_privacy_stage",
+      "passed": true
+    },
+    {
+      "name": "session_privacy_dto_compatible",
+      "passed": true
+    },
+    {
+      "name": "privacy_stage_is_not_completed_before_confirmation",
+      "passed": true
+    },
+    {
+      "name": "session_completed_schema",
+      "passed": true
+    },
+    {
+      "name": "session_completed_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_completed_stage",
+      "passed": true
+    },
+    {
+      "name": "session_completed_dto_compatible",
+      "passed": true
+    },
+    {
+      "name": "explicit_complete_stops_polling",
+      "passed": true
+    },
+    {
+      "name": "terminal_progress_is_persistently_read_only",
+      "passed": true
+    },
+    {
+      "name": "rules_flow_server_reports_zero_model_calls",
+      "passed": true
+    },
+    {
+      "name": "ordinary_profile_edit_marks_saved_flow_changed",
+      "passed": true
+    },
+    {
+      "name": "p8_hides_private_fields",
+      "passed": true
+    },
+    {
+      "name": "p8_contacts_keep_separate_scope",
+      "passed": true
+    },
+    {
+      "name": "explicit_reconcile_restores_review",
+      "passed": true
+    },
+    {
+      "name": "source_running_schema",
+      "passed": true
+    },
+    {
+      "name": "source_running_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "source_running_projects_reading_source",
+      "passed": true
+    },
+    {
+      "name": "source_ready_schema",
+      "passed": true
+    },
+    {
+      "name": "source_ready_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "source_ready_stops_polling",
+      "passed": true
+    },
+    {
+      "name": "source_progress_owner_only",
+      "passed": true
+    },
+    {
+      "name": "source_failed_schema",
+      "passed": true
+    },
+    {
+      "name": "source_failed_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "source_failure_stops_polling",
+      "passed": false
+    }
+  ],
+  "http_requests": 77,
+  "real_llm_calls": 0,
+  "error_type": "AssertionError",
+  "error": "source_failure_stops_polling",
+  "database": "humhub_profile_s76_test_audit_6b49d027",
+  "origin": "http://127.0.0.1:8105"
+}

@@ -1,0 +1,27 @@
+{
+  "version": "V5",
+  "date": "2026-11-12",
+  "widths": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "desktopAndMobileReviewed": true,
+  "screenshots": "screenshots/v5",
+  "reviewed": [
+    "1440-top.png",
+    "1440-profile.png",
+    "1440-recommendations.png",
+    "1440-community.png",
+    "1440-invitation.png",
+    "390-invitation.png"
+  ],
+  "presentationChecks": 61,
+  "regressionChecks": 41,
+  "materialChecks": 22,
+  "uiPrimitivesComparedToSignalry": 15,
+  "changedUiPrimitives": 0,
+  "passed": true
+}

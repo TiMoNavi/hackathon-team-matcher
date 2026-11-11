@@ -1,0 +1,13 @@
+{
+    "status": "passed",
+    "target": "https://example.com/",
+    "final_url": "https://example.com/",
+    "network_requests": 1,
+    "downloaded_bytes": 577,
+    "elapsed_ms": 240,
+    "text_bytes": 156,
+    "sections": 1,
+    "body_sha256": "25ddf2c883e0d1958ea971d279a7e4f0fd446724ee3db7db19dadabd4a62e484",
+    "llm_calls": 0,
+    "profile_written": false
+}

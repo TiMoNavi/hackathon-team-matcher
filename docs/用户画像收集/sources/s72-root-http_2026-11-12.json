@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "environment": "isolated_root_s72_clone",
+  "checks": 15,
+  "checks_passed": [
+    "synthetic owner login succeeds",
+    "synthetic owner login succeeds",
+    "selected synthetic school and main homepage appear",
+    "global and current Space profile remain separate",
+    "formal shared idea relation appears",
+    "relation contains synthetic formal metadata without raw conversation id",
+    "authorized metadata detail agrees with relation summary",
+    "explicit clearing leaves both overview references empty",
+    "owner private choice removes participation disclosure",
+    "fixture replay preserves owner-cleared presentation",
+    "fixture replay preserves owner-private relation",
+    "replay does not republish owner participation",
+    "same long-term idea has distinct current Space relation",
+    "primary and secondary IdeaActivity ids are distinct",
+    "stale Space overview cannot override current selection"
+  ],
+  "llm_calls": 0
+}

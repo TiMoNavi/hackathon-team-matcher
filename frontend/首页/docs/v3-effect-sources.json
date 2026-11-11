@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-12",
+  "sources": [
+    {
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/用户画像收集——前端/components/reference-originals/model-wheel.tsx",
+      "target": "components/effects/model-wheel.tsx",
+      "mode": "adapted",
+      "sourceSha256": "96392e718a3e22c6af7190b6a562fb1f8aaa35281d3ba9470e10bd149a10f00a"
+    },
+    {
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/用户画像收集——前端/components/reference-kit/kit-beams.tsx",
+      "target": "components/effects/kit-beams.tsx",
+      "mode": "adapted",
+      "sourceSha256": "3fa41feb35fd73e3cdb05d225d6cf86d17d7f1abffde4c8c4b4a7bbbd06a3e57"
+    },
+    {
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/用户画像收集——前端/components/reference-kit/kit-selection.tsx",
+      "target": "components/effects/animated-selection.tsx",
+      "mode": "adapted",
+      "sourceSha256": "ad825ebfbb4b545a0edc7e3bf397eedb63416f6449347da50a9176255a3aba5d"
+    }
+  ]
+}

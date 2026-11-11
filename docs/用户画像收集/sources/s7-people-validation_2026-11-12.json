@@ -1,0 +1,59 @@
+{
+    "status": "passed",
+    "database_connections": 0,
+    "network_requests": 0,
+    "llm_calls": 0,
+    "dataset_id": "s7-people_2026-11-12",
+    "sha256": "7ab26a247d8cfd1daa06022feaacec73dbff16cc3a52975edb57562af02cc77d",
+    "people": 100,
+    "space_members": {
+        "primary": 100,
+        "secondary": 20
+    },
+    "discoverable": {
+        "primary": 90,
+        "secondary": 18
+    },
+    "confirmed_attributes": 3948,
+    "draft_attributes": 32,
+    "visibility": {
+        "authenticated": 3899,
+        "friends": 22,
+        "private": 27
+    },
+    "field_counts": {
+        "age_range": 100,
+        "award": 20,
+        "bio": 100,
+        "city": 100,
+        "collaboration_preference": 100,
+        "communication_preference": 100,
+        "contact_email": 20,
+        "direction": 100,
+        "education": 100,
+        "event_availability": 240,
+        "event_collaboration_mode": 120,
+        "event_constraint": 120,
+        "event_contact_preference": 120,
+        "event_contribution": 120,
+        "event_goal": 120,
+        "event_presence": 120,
+        "event_role": 139,
+        "event_seeking": 120,
+        "event_time_commitment": 120,
+        "headline": 100,
+        "interest": 200,
+        "language": 200,
+        "mbti": 100,
+        "personality": 100,
+        "portfolio_link": 125,
+        "project": 100,
+        "real_name": 100,
+        "role": 200,
+        "seeking": 100,
+        "skill": 411,
+        "timezone": 100,
+        "work_experience": 33
+    },
+    "owner_workflows": 220
+}

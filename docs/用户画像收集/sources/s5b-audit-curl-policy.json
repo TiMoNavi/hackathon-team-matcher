@@ -1,0 +1,97 @@
+{
+    "status": "passed",
+    "passed": 22,
+    "failed": 0,
+    "checks": [
+        {
+            "name": "real_adapter_get_returns_bounded_body",
+            "passed": true
+        },
+        {
+            "name": "approved_address_is_dns_pinned",
+            "passed": true
+        },
+        {
+            "name": "url_hostname_preserves_tls_sni",
+            "passed": true
+        },
+        {
+            "name": "automatic_redirects_disabled",
+            "passed": true
+        },
+        {
+            "name": "only_http_https_protocols",
+            "passed": true
+        },
+        {
+            "name": "environment_proxy_and_netrc_disabled",
+            "passed": true
+        },
+        {
+            "name": "tls_peer_and_host_validated",
+            "passed": true
+        },
+        {
+            "name": "approved_connection_not_reused",
+            "passed": true
+        },
+        {
+            "name": "timeout_propagated_to_connection",
+            "passed": true
+        },
+        {
+            "name": "request_is_get_without_credentials",
+            "passed": true
+        },
+        {
+            "name": "headers_are_fixed_and_no_authorization",
+            "passed": true
+        },
+        {
+            "name": "compression_not_requested",
+            "passed": true
+        },
+        {
+            "name": "wrong_actual_address_rejected",
+            "passed": true
+        },
+        {
+            "name": "response_size_callback_aborts",
+            "passed": true
+        },
+        {
+            "name": "duplicate_content_type_rejected",
+            "passed": true
+        },
+        {
+            "name": "duplicate_location_rejected",
+            "passed": true
+        },
+        {
+            "name": "header_control_character_rejected",
+            "passed": true
+        },
+        {
+            "name": "malformed_header_rejected",
+            "passed": true
+        },
+        {
+            "name": "header_limit_enforced",
+            "passed": true
+        },
+        {
+            "name": "curl_timeout_sanitized",
+            "passed": true
+        },
+        {
+            "name": "curl_network_error_sanitized",
+            "passed": true
+        },
+        {
+            "name": "ipv6_pin_has_required_brackets",
+            "passed": true
+        }
+    ],
+    "network_requests": 0,
+    "scope": "real CurlHttpTransport with namespaced cURL function shims; options and callbacks, not an actual socket"
+}

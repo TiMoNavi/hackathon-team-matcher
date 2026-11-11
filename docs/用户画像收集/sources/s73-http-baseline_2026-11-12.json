@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "stage": "baseline",
+  "scope": "loopback PHP development server, real 400-person MySQL Space, single sequential client; includes HTTP/session selection reads and response transfer; not a concurrency benchmark",
+  "synthetic_people": 400,
+  "optin": 360,
+  "dataset_sha256": "90bc52cf4df27b27af97068f875c870a636ebbc4e073d127bd0b050464297fe6",
+  "scenarios": {
+    "recent_first": {
+      "repetitions": 3,
+      "median_http_ms": 7511.549,
+      "ordered_result_sha256": "7d003837b5225d31f2789f6283bc87636a78c1507978943a2d4e5c51d8e72789",
+      "samples": [
+        {
+          "elapsed_ms": 8579.287,
+          "response_bytes": 223122,
+          "items": 24
+        },
+        {
+          "elapsed_ms": 7511.549,
+          "response_bytes": 223122,
+          "items": 24
+        },
+        {
+          "elapsed_ms": 6232.084,
+          "response_bytes": 223122,
+          "items": 24
+        }
+      ]
+    },
+    "rare_last_person": {
+      "repetitions": 3,
+      "median_http_ms": 5610.643,
+      "ordered_result_sha256": "6f5ee070ffc36e0b8aa986d10f333de1ae11398905501c1de145d6985ca21d23",
+      "samples": [
+        {
+          "elapsed_ms": 5809.965,
+          "response_bytes": 9898,
+          "items": 1
+        },
+        {
+          "elapsed_ms": 5420.669,
+          "response_bytes": 9898,
+          "items": 1
+        },
+        {
+          "elapsed_ms": 5610.643,
+          "response_bytes": 9898,
+          "items": 1
+        }
+      ]
+    },
+    "empty_filter": {
+      "repetitions": 3,
+      "median_http_ms": 4871.412,
+      "ordered_result_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "samples": [
+        {
+          "elapsed_ms": 5015.742,
+          "response_bytes": 186,
+          "items": 0
+        },
+        {
+          "elapsed_ms": 4871.412,
+          "response_bytes": 186,
+          "items": 0
+        },
+        {
+          "elapsed_ms": 4808.844,
+          "response_bytes": 186,
+          "items": 0
+        }
+      ]
+    }
+  },
+  "llm_calls": 0
+}

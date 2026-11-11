@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-11",
+  "scope": "Original code trees and anchors against R1 start; pre-existing/concurrent P1 changes are not attributed to this task.",
+  "trees": [
+    {
+      "path": "backend/protected/humhub",
+      "files": 11259,
+      "sha256": "3682cfd5ec7dc971639ecec15b66d488913011ee2464f3af9d921ddfa5fb2d00",
+      "unchanged": true
+    },
+    {
+      "path": "backend/protected/vendor",
+      "files": 15408,
+      "sha256": "91d2b0c4ddf88a2a2a623dd6e4996305b43f61b42e80c674ae021a569a46c346",
+      "unchanged": true
+    }
+  ],
+  "anchors": [
+    {
+      "path": "backend/deploy/profile-fields.json",
+      "sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "unchanged": true
+    },
+    {
+      "path": "docs/首次注册与开场引导_用户原稿_冻结.md",
+      "sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "unchanged": true
+    }
+  ],
+  "module_ignore_change_is_exact_append": true,
+  "native_git_diff_paths": [],
+  "native_git_diff_exit_code": 0,
+  "persistent_module_enable": false,
+  "database_migrations": false
+}

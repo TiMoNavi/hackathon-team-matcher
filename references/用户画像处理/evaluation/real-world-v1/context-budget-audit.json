@@ -1,0 +1,112 @@
+{
+  "type": "executed local pure context builder; no model or network calls",
+  "upstream_commit": "8b6000573f1e2ffd7e8ad698d1eeaec5c17a981d",
+  "method_sha256": "43a7acff73b6a4b3c52298d698dc6893cf09fbe58a45d890d9c6f0862007994d",
+  "configured_output_max_tokens": [
+    200
+  ],
+  "samples": [
+    {
+      "sample_id": "01",
+      "project": "mschrimpf/dbimpl",
+      "readme_source": ".private/real-world-v1/01-mschrimpf/project/README.md",
+      "complete_readme_characters": 2539,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 1539,
+      "retained_fraction": 0.3939,
+      "local_context_path": ".private/real-world-v1/01-mschrimpf/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "02",
+      "project": "liweitianux/fg21sim",
+      "readme_source": ".private/real-world-v1/02-liweitianux/project/README.rst",
+      "complete_readme_characters": 4034,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 3034,
+      "retained_fraction": 0.2479,
+      "local_context_path": ".private/real-world-v1/02-liweitianux/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "03",
+      "project": "cies/htoml",
+      "readme_source": ".private/real-world-v1/03-cies/project/README.md",
+      "complete_readme_characters": 8781,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 7781,
+      "retained_fraction": 0.1139,
+      "local_context_path": ".private/real-world-v1/03-cies/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "04",
+      "project": "dpseidel/stmove",
+      "readme_source": ".private/real-world-v1/04-dpseidel/project/README.md",
+      "complete_readme_characters": 3342,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 2342,
+      "retained_fraction": 0.2992,
+      "local_context_path": ".private/real-world-v1/04-dpseidel/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "05",
+      "project": "vaibhavsagar/duffer",
+      "readme_source": ".private/real-world-v1/05-vaibhavsagar/project/README.md",
+      "complete_readme_characters": 2117,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 1117,
+      "retained_fraction": 0.4724,
+      "local_context_path": ".private/real-world-v1/05-vaibhavsagar/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "06",
+      "project": "FlorentRevest/Raspcopter",
+      "readme_source": ".private/real-world-v1/06-FlorentRevest/project/README.md",
+      "complete_readme_characters": 2989,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 1989,
+      "retained_fraction": 0.3346,
+      "local_context_path": ".private/real-world-v1/06-FlorentRevest/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "07",
+      "project": "trallard/airflow-tutorial",
+      "readme_source": ".private/real-world-v1/07-trallard/project/README.md",
+      "complete_readme_characters": 1453,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 453,
+      "retained_fraction": 0.6882,
+      "local_context_path": ".private/real-world-v1/07-trallard/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "08",
+      "project": "rainsworth/eMERLIN-IRIS",
+      "readme_source": ".private/real-world-v1/08-rainsworth/project/README.md",
+      "complete_readme_characters": 4293,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 3293,
+      "retained_fraction": 0.2329,
+      "local_context_path": ".private/real-world-v1/08-rainsworth/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "09",
+      "project": "wu-kan/HPL-AI",
+      "readme_source": ".private/real-world-v1/09-wu-kan/project/README",
+      "complete_readme_characters": 4686,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 3686,
+      "retained_fraction": 0.2134,
+      "local_context_path": ".private/real-world-v1/09-wu-kan/candidate-readme-context.txt"
+    },
+    {
+      "sample_id": "10",
+      "project": "sc932/ALE",
+      "readme_source": ".private/real-world-v1/10-sc932/project/README",
+      "complete_readme_characters": 2989,
+      "readme_characters_in_context": 1000,
+      "dropped_characters": 1989,
+      "retained_fraction": 0.3346,
+      "local_context_path": ".private/real-world-v1/10-sc932/candidate-readme-context.txt"
+    }
+  ],
+  "truncated_count": 10,
+  "model_evaluation": "not_run"
+}

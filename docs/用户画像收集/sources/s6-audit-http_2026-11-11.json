@@ -1,0 +1,270 @@
+{
+  "status": "passed",
+  "passed": 64,
+  "checks": [
+    {
+      "name": "anonymous_capabilities_rejected",
+      "passed": true
+    },
+    {
+      "name": "synthetic_ai_capability_available",
+      "passed": true
+    },
+    {
+      "name": "submit_requires_login",
+      "passed": true
+    },
+    {
+      "name": "submit_requires_csrf",
+      "passed": true
+    },
+    {
+      "name": "submit_requires_key",
+      "passed": true
+    },
+    {
+      "name": "foreign_session_rejected",
+      "passed": true
+    },
+    {
+      "name": "submission_cannot_set_confirmation",
+      "passed": true
+    },
+    {
+      "name": "wrong_source_version_rejected",
+      "passed": true
+    },
+    {
+      "name": "foreign_section_rejected",
+      "passed": true
+    },
+    {
+      "name": "extract_returns_queued_202",
+      "passed": true
+    },
+    {
+      "name": "same_key_returns_same_job",
+      "passed": true
+    },
+    {
+      "name": "key_payload_conflict",
+      "passed": true
+    },
+    {
+      "name": "submit_and_reads_make_zero_calls",
+      "passed": true
+    },
+    {
+      "name": "foreign_task_read_not_found",
+      "passed": true
+    },
+    {
+      "name": "foreign_task_cancel_not_found",
+      "passed": true
+    },
+    {
+      "name": "foreign_task_retry_not_found",
+      "passed": true
+    },
+    {
+      "name": "extract_worker_succeeds",
+      "passed": true
+    },
+    {
+      "name": "extract_carries_review_items",
+      "passed": true
+    },
+    {
+      "name": "extract_has_expected_evidenced_fields",
+      "passed": true
+    },
+    {
+      "name": "job_does_not_expose_raw_material",
+      "passed": true
+    },
+    {
+      "name": "model_did_not_confirm",
+      "passed": true
+    },
+    {
+      "name": "foreign_adoption_not_found",
+      "passed": true
+    },
+    {
+      "name": "arbitrary_candidate_rejected",
+      "passed": true
+    },
+    {
+      "name": "adoption_replay_is_stable",
+      "passed": true
+    },
+    {
+      "name": "adoption_preserves_manual_private_bio",
+      "passed": true
+    },
+    {
+      "name": "adoption_preserves_contact_privacy",
+      "passed": true
+    },
+    {
+      "name": "new_adopted_fields_default_authenticated",
+      "passed": true
+    },
+    {
+      "name": "adoption_still_not_confirmed",
+      "passed": true
+    },
+    {
+      "name": "only_explicit_review_confirms_facts",
+      "passed": true
+    },
+    {
+      "name": "ai_questions_succeed",
+      "passed": true
+    },
+    {
+      "name": "saved_batch_is_ai",
+      "passed": true
+    },
+    {
+      "name": "questions_are_three_to_eight",
+      "passed": true
+    },
+    {
+      "name": "every_question_has_final_free_entry",
+      "passed": true
+    },
+    {
+      "name": "free_entry_is_not_a_fake_option",
+      "passed": true
+    },
+    {
+      "name": "unknown_option_rejected",
+      "passed": true
+    },
+    {
+      "name": "free_answer_cannot_embed_selected_option",
+      "passed": true
+    },
+    {
+      "name": "overlong_free_answer_rejected",
+      "passed": true
+    },
+    {
+      "name": "foreign_answer_rejected",
+      "passed": true
+    },
+    {
+      "name": "options_and_free_text_persist",
+      "passed": true
+    },
+    {
+      "name": "ai_compose_succeeds",
+      "passed": true
+    },
+    {
+      "name": "compose_provides_editable_draft",
+      "passed": true
+    },
+    {
+      "name": "compose_keeps_handwritten_profile_and_contact",
+      "passed": true
+    },
+    {
+      "name": "derived_headline_inherits_strict_privacy",
+      "passed": true
+    },
+    {
+      "name": "free_answer_maps_to_draft",
+      "passed": true
+    },
+    {
+      "name": "compose_does_not_confirm_generated_fields",
+      "passed": true
+    },
+    {
+      "name": "explicit_privacy_completion_succeeds",
+      "passed": true
+    },
+    {
+      "name": "user_edit_and_scope_survive_confirmation",
+      "passed": true
+    },
+    {
+      "name": "nonfriend_visible_profile_omits_private_and_friends",
+      "passed": true
+    },
+    {
+      "name": "raw_material_never_enters_visible_projection",
+      "passed": true
+    },
+    {
+      "name": "new_space_has_empty_specific_context",
+      "passed": true
+    },
+    {
+      "name": "active_budget_rejects_third",
+      "passed": true
+    },
+    {
+      "name": "queued_cancel_revokes",
+      "passed": true
+    },
+    {
+      "name": "cancelled_worker_is_noop",
+      "passed": true
+    },
+    {
+      "name": "running_cancel_blocks_late_result",
+      "passed": true
+    },
+    {
+      "name": "draft_edit_supersedes_late_result",
+      "passed": true
+    },
+    {
+      "name": "model_failure_is_explicit",
+      "passed": true
+    },
+    {
+      "name": "explicit_retry_recovers",
+      "passed": true
+    },
+    {
+      "name": "prior_failure_superseded_by_retry",
+      "passed": true
+    },
+    {
+      "name": "source_delete_revokes_late_result",
+      "passed": true
+    },
+    {
+      "name": "deleted_source_invalidates_successful_retry",
+      "passed": true
+    },
+    {
+      "name": "space_revoke_blocks_late_result",
+      "passed": true
+    },
+    {
+      "name": "sql_invalidated_jobs_scrub_input_and_result",
+      "passed": true
+    },
+    {
+      "name": "every_sql_model_boundary_outside_transaction",
+      "passed": true
+    },
+    {
+      "name": "rules_complete_with_zero_model_calls",
+      "passed": true
+    }
+  ],
+  "http_requests": 95,
+  "real_llm_calls": 0,
+  "model_boundary": {
+    "entered": 9,
+    "completed": 8,
+    "active_transactions": 0
+  },
+  "scope": "Real HTTP session/CSRF, SQL persistence and concurrent CLI worker; synthetic validated model only; no real gateway or browser"
+}

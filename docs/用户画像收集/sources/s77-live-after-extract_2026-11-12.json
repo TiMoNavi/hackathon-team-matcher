@@ -1,0 +1,181 @@
+{
+  "status": "awaiting_manual_worker",
+  "database": "humhub_profile_s77_test_root_f3a9d621",
+  "origin": "http://127.0.0.1:8106",
+  "passed": 24,
+  "checks": [
+    {
+      "name": "job_fcdec25a-30c4-4841-a598-89ed88094a71_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "job_fcdec25a-30c4-4841-a598-89ed88094a71_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_fcdec25a-30c4-4841-a598-89ed88094a71_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "session_fcdec25a-30c4-4841-a598-89ed88094a71_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "source_3220a1e2-0889-465a-ac35-ac0187de0493_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "source_3220a1e2-0889-465a-ac35-ac0187de0493_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "stable_GET_metrics_fcdec25a-30c4-4841-a598-89ed88094a71",
+      "passed": true
+    },
+    {
+      "name": "extract_durable_queued",
+      "passed": true
+    },
+    {
+      "name": "extract_foreign_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "extract_anonymous_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "extract_production_P6_success",
+      "passed": true
+    },
+    {
+      "name": "extract_accounting_explicit",
+      "passed": true
+    },
+    {
+      "name": "extract_review_items_present",
+      "passed": true
+    },
+    {
+      "name": "extraction_supported_candidates",
+      "passed": true
+    },
+    {
+      "name": "extraction_does_not_publish",
+      "passed": true
+    },
+    {
+      "name": "explicit_review_before_questions",
+      "passed": true
+    },
+    {
+      "name": "job_72250154-136e-4854-ae34-15cb627b92de_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "job_72250154-136e-4854-ae34-15cb627b92de_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_72250154-136e-4854-ae34-15cb627b92de_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "session_72250154-136e-4854-ae34-15cb627b92de_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "stable_GET_metrics_72250154-136e-4854-ae34-15cb627b92de",
+      "passed": true
+    },
+    {
+      "name": "questions_durable_queued",
+      "passed": true
+    },
+    {
+      "name": "questions_foreign_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "questions_anonymous_job_hidden",
+      "passed": true
+    }
+  ],
+  "http_requests": 92,
+  "workflow_http_requests": 40,
+  "observer_http_requests": 52,
+  "model_operations": [
+    {
+      "job_id": "fcdec25a-30c4-4841-a598-89ed88094a71",
+      "operation": "extract",
+      "execution_status": "succeeded",
+      "applicability": "current",
+      "error_code": null,
+      "attempt": 1,
+      "retry_of": null,
+      "metrics": {
+        "model": "gemini-3.8-flash",
+        "llm_calls": 1,
+        "duration_ms": 31166,
+        "usage": {
+          "prompt_tokens": 2789,
+          "completion_tokens": 4151,
+          "total_tokens": 6940,
+          "reported": true
+        },
+        "accounting_complete": true
+      },
+      "worker_status": "finished"
+    },
+    {
+      "job_id": "72250154-136e-4854-ae34-15cb627b92de",
+      "operation": "questions",
+      "execution_status": "queued",
+      "applicability": "current",
+      "error_code": null,
+      "attempt": 1,
+      "retry_of": null,
+      "metrics": {
+        "model": null,
+        "usage": {
+          "reported": false,
+          "total_tokens": null,
+          "prompt_tokens": null,
+          "completion_tokens": null
+        },
+        "llm_calls": 0,
+        "duration_ms": 0,
+        "accounting_complete": true
+      }
+    }
+  ],
+  "known_llm_calls": 1,
+  "unknown_call_records": 0,
+  "worker_attempts_reserved": 1,
+  "hard_request_limit": 6,
+  "planned_calls": 3,
+  "late_accounting_updates": [],
+  "progress_observations": {
+    "fcdec25a-30c4-4841-a598-89ed88094a71": {
+      "states": [
+        "queued",
+        "ready",
+        "running"
+      ],
+      "samples": 53
+    },
+    "72250154-136e-4854-ae34-15cb627b92de": {
+      "states": [
+        "queued"
+      ],
+      "samples": 1
+    }
+  },
+  "pending_job": {
+    "job_id": "72250154-136e-4854-ae34-15cb627b92de",
+    "operation": "questions"
+  },
+  "synthetic_only": true,
+  "raw_material_in_report": false,
+  "automatic_retries": 0
+}

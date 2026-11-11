@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-11T18:02:09.823Z",
+  "phase": "all",
+  "checks": [
+    "Leaving a running task cancels late step transitions",
+    "Questions require Continue, allow custom and skipped answers; audience previews filter each field without regenerating"
+  ],
+  "views": [],
+  "errors": []
+}

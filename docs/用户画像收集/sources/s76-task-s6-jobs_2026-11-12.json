@@ -1,0 +1,278 @@
+{
+  "status": "passed",
+  "passed": 67,
+  "checks": [
+    {
+      "name": "unsupported_operation",
+      "passed": true
+    },
+    {
+      "name": "missing_request_key",
+      "passed": true
+    },
+    {
+      "name": "unavailable_is_explicit",
+      "passed": true
+    },
+    {
+      "name": "unavailable_created_no_job_or_model_call",
+      "passed": true
+    },
+    {
+      "name": "submit_is_queued_and_does_not_generate",
+      "passed": true
+    },
+    {
+      "name": "owner_view_omits_private_input",
+      "passed": true
+    },
+    {
+      "name": "reads_do_not_generate",
+      "passed": true
+    },
+    {
+      "name": "same_request_key_returns_same_job",
+      "passed": true
+    },
+    {
+      "name": "changed_request_key_payload_conflicts",
+      "passed": true
+    },
+    {
+      "name": "foreign_get",
+      "passed": true
+    },
+    {
+      "name": "foreign_cancel",
+      "passed": true
+    },
+    {
+      "name": "foreign_retry",
+      "passed": true
+    },
+    {
+      "name": "foreign_apply",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "work_persists_success_and_actual_metrics",
+      "passed": true
+    },
+    {
+      "name": "worker_claim_is_idempotent",
+      "passed": true
+    },
+    {
+      "name": "generation_does_not_adopt",
+      "passed": true
+    },
+    {
+      "name": "explicit_adoption_replay_does_not_duplicate",
+      "passed": true
+    },
+    {
+      "name": "changed_adoption_receipt_conflicts",
+      "passed": true
+    },
+    {
+      "name": "cancel_is_idempotent_and_prevents_work",
+      "passed": true
+    },
+    {
+      "name": "cancelled_job_cannot_retry",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "late_cancel_cannot_install_or_expose_result",
+      "passed": true
+    },
+    {
+      "name": "late_cancel_retains_actual_call_metric",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "late_version_cannot_install_or_expose_result",
+      "passed": true
+    },
+    {
+      "name": "late_version_retains_actual_call_metric",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "late_revoke_cannot_install_or_expose_result",
+      "passed": true
+    },
+    {
+      "name": "late_revoke_retains_actual_call_metric",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "late_owner_denied_cannot_install_or_expose_result",
+      "passed": true
+    },
+    {
+      "name": "late_owner_denied_retains_actual_call_metric",
+      "passed": true
+    },
+    {
+      "name": "preflight_version_prevents_model",
+      "passed": true
+    },
+    {
+      "name": "preflight_revoke_prevents_model",
+      "passed": true
+    },
+    {
+      "name": "preflight_owner_denied_prevents_model",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "failure_is_explicit_and_accounted",
+      "passed": true
+    },
+    {
+      "name": "failed_read_does_not_retry",
+      "passed": true
+    },
+    {
+      "name": "retry_2_new_job_and_supersedes_old",
+      "passed": true
+    },
+    {
+      "name": "retry_2_same_key_replays",
+      "passed": true
+    },
+    {
+      "name": "model_call_2_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "retry_3_new_job_and_supersedes_old",
+      "passed": true
+    },
+    {
+      "name": "retry_3_same_key_replays",
+      "passed": true
+    },
+    {
+      "name": "model_call_3_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "retry_budget_has_no_fourth_attempt",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "unexpected_exception_is_sanitized",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "install_failure_keeps_call_accounting_without_result",
+      "passed": true
+    },
+    {
+      "name": "active_budget_blocks_third",
+      "passed": true
+    },
+    {
+      "name": "cancel_releases_active_budget",
+      "passed": true
+    },
+    {
+      "name": "cancel_does_not_bypass_daily_budget",
+      "passed": true
+    },
+    {
+      "name": "model_call_1_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "lease_not_expired_before_120_seconds",
+      "passed": true
+    },
+    {
+      "name": "lease_expires_exactly_at_120_seconds",
+      "passed": true
+    },
+    {
+      "name": "interrupted_usage_is_unknown",
+      "passed": true
+    },
+    {
+      "name": "expiry_read_does_not_call_again",
+      "passed": true
+    },
+    {
+      "name": "expired_job_can_only_queue_explicit_retry",
+      "passed": true
+    },
+    {
+      "name": "late_worker_cannot_install_after_expiry_retry",
+      "passed": true
+    },
+    {
+      "name": "late_worker_backfills_actual_accounting",
+      "passed": true
+    },
+    {
+      "name": "model_call_2_outside_all_transactions",
+      "passed": true
+    },
+    {
+      "name": "new_worker_installs_retry_only",
+      "passed": true
+    },
+    {
+      "name": "submit_recovers_own_expired_active_budget",
+      "passed": true
+    },
+    {
+      "name": "submit_recovery_is_owner_scoped",
+      "passed": true
+    },
+    {
+      "name": "expired_budget_recovery_issues_no_model_calls",
+      "passed": true
+    },
+    {
+      "name": "worker_recovery_handles_remaining_owner",
+      "passed": true
+    }
+  ],
+  "external_requests": 0,
+  "real_llm_calls": 0,
+  "scope": "Independent ProfileAiJobService ports: synthetic workflow and engine; actual SQL/HTTP checked separately",
+  "exit_code": 0
+}

@@ -1,0 +1,12 @@
+{
+  "Inter": {
+    "file": "inter-latin.woff2",
+    "source": "experiments/signalry-original-preview/.next/dev/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+    "size": 48432
+  },
+  "Bricolage Grotesque": {
+    "file": "bricolage-grotesque-latin.woff2",
+    "source": "experiments/signalry-original-preview/.next/dev/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2",
+    "size": 41236
+  }
+}

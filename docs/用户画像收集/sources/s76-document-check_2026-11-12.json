@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "checks": {
+    "relative_links": true,
+    "markdown_fences": true,
+    "source_json": true,
+    "s76-task-verification": true,
+    "s76-regression": true,
+    "s76-root-upgrade": true,
+    "s76-root-upgrade-repeat": true,
+    "s76-main-upgrade": true,
+    "s76-main-browser": true,
+    "s76-main-preservation": true,
+    "s76_audit_http": true,
+    "s76-cleanup": true,
+    "main_browser_109_checks": true,
+    "original_data_preserved": true,
+    "installed_versions": true,
+    "private_backup_verified": true,
+    "frozen_and_datasets_unchanged": true,
+    "core_unchanged": true,
+    "frontend_unchanged": true,
+    "frontend_file_set_unchanged": true,
+    "reference_humhub_clean": true,
+    "task_counts": true,
+    "test_runtime_cleaned": true,
+    "no_credential_patterns": true
+  },
+  "broken_links": [],
+  "unclosed_fences": [],
+  "invalid_json": [],
+  "protected": {
+    "core": {
+      "files": 6412,
+      "changed": []
+    },
+    "frontend": {
+      "files": 10,
+      "changed": []
+    }
+  },
+  "completed_tasks": {
+    "S1": 8,
+    "S2": 9,
+    "S3": 9,
+    "S4": 9,
+    "S5": 7,
+    "S6": 6,
+    "S7": 4
+  },
+  "remaining_tasks": 3,
+  "credential_pattern_paths": []
+}

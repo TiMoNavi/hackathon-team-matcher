@@ -1,0 +1,19 @@
+{
+    "id": "matcher-user-profile",
+    "name": "团队匹配用户资料",
+    "description": "普通资料、Space 上下文、版本化草稿确认、基础编辑与会话 API，支持独立隐私策略、可选联系方式和受控头像/二维码资源。",
+    "version": "0.10.0",
+    "humhub": {
+        "minVersion": "1.19.4"
+    },
+    "keywords": [
+        "profile",
+        "team-matching",
+        "onboarding"
+    ],
+    "authors": [
+        {
+            "name": "Hackathon Team Matcher"
+        }
+    ]
+}

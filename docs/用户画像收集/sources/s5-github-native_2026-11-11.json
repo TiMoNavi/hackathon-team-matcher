@@ -1,0 +1,20 @@
+{
+    "status": "passed",
+    "passed": 11,
+    "checks": [
+        "unconfigured_login_reported",
+        "configured_unlinked_has_native_link_route",
+        "configuration_values_never_returned",
+        "native_auth_registration_creates_verified_id",
+        "does_not_use_humhub_username_as_github_login",
+        "console_has_no_claim_of_current_oauth_session",
+        "other_account_cannot_inherit_link",
+        "existing_verified_link_allows_public_read_without_current_oauth_config",
+        "ambiguous_identity_rejected",
+        "native_disconnect_immediately_removes_reader_access",
+        "synthetic_accounts_rolled_back"
+    ],
+    "isolated": true,
+    "oauth_callback_tested": false,
+    "external_network_calls": 0
+}

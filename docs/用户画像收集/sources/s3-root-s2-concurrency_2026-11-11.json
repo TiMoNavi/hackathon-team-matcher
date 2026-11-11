@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": 10,
+  "passed": [
+    "clone_starts_without_profile_state",
+    "concurrent_first_creation_returns_one_state",
+    "concurrent_creation_unique_constraint_holds",
+    "two_connections_allow_only_one_old_base_confirmation",
+    "race_advances_revision_once",
+    "race_creates_one_snapshot",
+    "formal_membership_lock_prevents_mid_write_removal",
+    "failed_projection_stays_pending",
+    "successful_projection_retry_clears_flag",
+    "projection_retry_does_not_duplicate_revision"
+  ],
+  "separate_worker_connections": true,
+  "preview_database_connected": false
+}

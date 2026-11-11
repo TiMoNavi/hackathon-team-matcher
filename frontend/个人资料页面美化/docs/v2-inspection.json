@@ -1,0 +1,515 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bars": [
+        {
+          "text": "技能\n交互设计 · 熟练",
+          "rect": {
+            "x": 521.234375,
+            "y": 302.09375,
+            "width": 641.75,
+            "height": 48,
+            "top": 302.09375,
+            "right": 1162.984375,
+            "bottom": 350.09375,
+            "left": 521.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "方向\nAI 应用 × 创意工具",
+          "rect": {
+            "x": 569.234375,
+            "y": 360.09375,
+            "width": 534.578125,
+            "height": 48,
+            "top": 360.09375,
+            "right": 1103.8125,
+            "bottom": 408.09375,
+            "left": 569.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "本次寻找\n全栈伙伴，一起做出第一版",
+          "rect": {
+            "x": 537.234375,
+            "y": 418.09375,
+            "width": 742.21875,
+            "height": 48,
+            "top": 418.09375,
+            "right": 1279.453125,
+            "bottom": 466.09375,
+            "left": 537.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "项目\n漫游地图 · 产品与交互原型",
+          "rect": {
+            "x": 589.234375,
+            "y": 476.09375,
+            "width": 618.90625,
+            "height": 48,
+            "top": 476.09375,
+            "right": 1208.140625,
+            "bottom": 524.09375,
+            "left": 589.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "本次投入\n每周 8–12 小时",
+          "rect": {
+            "x": 525.234375,
+            "y": 534.09375,
+            "width": 548.5625,
+            "height": 48,
+            "top": 534.09375,
+            "right": 1073.796875,
+            "bottom": 582.09375,
+            "left": 525.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "协作\n小步原型，异步推进",
+          "rect": {
+            "x": 559.234375,
+            "y": 592.09375,
+            "width": 674.890625,
+            "height": 48,
+            "top": 592.09375,
+            "right": 1234.125,
+            "bottom": 640.09375,
+            "left": 559.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "技能\nReact / TypeScript · 可独立完成",
+          "rect": {
+            "x": 533.234375,
+            "y": 650.09375,
+            "width": 762.109375,
+            "height": 48,
+            "top": 650.09375,
+            "right": 1295.34375,
+            "bottom": 698.09375,
+            "left": 533.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "教育\n江南设计学院 · 交互设计",
+          "rect": {
+            "x": 573.234375,
+            "y": 708.09375,
+            "width": 585.78125,
+            "height": 48,
+            "top": 708.09375,
+            "right": 1159.015625,
+            "bottom": 756.09375,
+            "left": 573.234375
+          },
+          "height": 46,
+          "scrollHeight": 46
+        }
+      ],
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "bars": [
+        {
+          "text": "技能\n交互设计 · 熟练",
+          "rect": {
+            "x": 297.828125,
+            "y": 286.578125,
+            "width": 438.171875,
+            "height": 48,
+            "top": 286.578125,
+            "right": 736,
+            "bottom": 334.578125,
+            "left": 297.828125
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "方向\nAI 应用 × 创意工具",
+          "rect": {
+            "x": 314.625,
+            "y": 344.578125,
+            "width": 421.375,
+            "height": 48,
+            "top": 344.578125,
+            "right": 736,
+            "bottom": 392.578125,
+            "left": 314.625
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "本次寻找\n全栈伙伴，一起做出第一版",
+          "rect": {
+            "x": 303.421875,
+            "y": 402.578125,
+            "width": 432.578125,
+            "height": 48,
+            "top": 402.578125,
+            "right": 736,
+            "bottom": 450.578125,
+            "left": 303.421875
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "项目\n漫游地图 · 产品与交互原型",
+          "rect": {
+            "x": 321.625,
+            "y": 460.578125,
+            "width": 414.375,
+            "height": 48,
+            "top": 460.578125,
+            "right": 736,
+            "bottom": 508.578125,
+            "left": 321.625
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "本次投入\n每周 8–12 小时",
+          "rect": {
+            "x": 299.21875,
+            "y": 518.578125,
+            "width": 436.78125,
+            "height": 48,
+            "top": 518.578125,
+            "right": 736,
+            "bottom": 566.578125,
+            "left": 299.21875
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "协作\n小步原型，异步推进",
+          "rect": {
+            "x": 311.125,
+            "y": 576.578125,
+            "width": 424.875,
+            "height": 48,
+            "top": 576.578125,
+            "right": 736,
+            "bottom": 624.578125,
+            "left": 311.125
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "技能\nReact / TypeScript · 可独立完成",
+          "rect": {
+            "x": 302.015625,
+            "y": 634.578125,
+            "width": 433.984375,
+            "height": 48,
+            "top": 634.578125,
+            "right": 736,
+            "bottom": 682.578125,
+            "left": 302.015625
+          },
+          "height": 46,
+          "scrollHeight": 46
+        },
+        {
+          "text": "教育\n江南设计学院 · 交互设计",
+          "rect": {
+            "x": 316.015625,
+            "y": 692.578125,
+            "width": 419.984375,
+            "height": 48,
+            "top": 692.578125,
+            "right": 736,
+            "bottom": 740.578125,
+            "left": 316.015625
+          },
+          "height": 46,
+          "scrollHeight": 46
+        }
+      ],
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "bars": [
+        {
+          "text": "技能\n交互设计 · 熟练",
+          "rect": {
+            "x": 30,
+            "y": 733.1875,
+            "width": 340,
+            "height": 54,
+            "top": 733.1875,
+            "right": 370,
+            "bottom": 787.1875,
+            "left": 30
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "方向\nAI 应用 × 创意工具",
+          "rect": {
+            "x": 38.625,
+            "y": 796.1875,
+            "width": 331.375,
+            "height": 54,
+            "top": 796.1875,
+            "right": 370,
+            "bottom": 850.1875,
+            "left": 38.625
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "本次寻找\n全栈伙伴，一起做出第一版",
+          "rect": {
+            "x": 32.875,
+            "y": 859.1875,
+            "width": 337.125,
+            "height": 54,
+            "top": 859.1875,
+            "right": 370,
+            "bottom": 913.1875,
+            "left": 32.875
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "项目\n漫游地图 · 产品与交互原型",
+          "rect": {
+            "x": 42.234375,
+            "y": 922.1875,
+            "width": 327.765625,
+            "height": 54,
+            "top": 922.1875,
+            "right": 370,
+            "bottom": 976.1875,
+            "left": 42.234375
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "本次投入\n每周 8–12 小时",
+          "rect": {
+            "x": 30.71875,
+            "y": 985.1875,
+            "width": 339.28125,
+            "height": 54,
+            "top": 985.1875,
+            "right": 370,
+            "bottom": 1039.1875,
+            "left": 30.71875
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "协作\n小步原型，异步推进",
+          "rect": {
+            "x": 36.828125,
+            "y": 1048.1875,
+            "width": 333.171875,
+            "height": 54,
+            "top": 1048.1875,
+            "right": 370,
+            "bottom": 1102.1875,
+            "left": 36.828125
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "技能\nReact / TypeScript · 可独立完成",
+          "rect": {
+            "x": 32.15625,
+            "y": 1111.1875,
+            "width": 337.84375,
+            "height": 54,
+            "top": 1111.1875,
+            "right": 370,
+            "bottom": 1165.1875,
+            "left": 32.15625
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "教育\n江南设计学院 · 交互设计",
+          "rect": {
+            "x": 39.359375,
+            "y": 1174.1875,
+            "width": 330.640625,
+            "height": 54,
+            "top": 1174.1875,
+            "right": 370,
+            "bottom": 1228.1875,
+            "left": 39.359375
+          },
+          "height": 52,
+          "scrollHeight": 52
+        }
+      ],
+      "overflow": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "bars": [
+        {
+          "text": "技能\n交互设计 · 熟练",
+          "rect": {
+            "x": 26,
+            "y": 685.875,
+            "width": 278,
+            "height": 54,
+            "top": 685.875,
+            "right": 304,
+            "bottom": 739.875,
+            "left": 26
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "方向\nAI 应用 × 创意工具",
+          "rect": {
+            "x": 34.625,
+            "y": 748.875,
+            "width": 269.375,
+            "height": 54,
+            "top": 748.875,
+            "right": 304,
+            "bottom": 802.875,
+            "left": 34.625
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "本次寻找\n全栈伙伴，一起做出第一版",
+          "rect": {
+            "x": 28.875,
+            "y": 811.875,
+            "width": 275.125,
+            "height": 54,
+            "top": 811.875,
+            "right": 304,
+            "bottom": 865.875,
+            "left": 28.875
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "项目\n漫游地图 · 产品与交互原型",
+          "rect": {
+            "x": 38.234375,
+            "y": 874.875,
+            "width": 265.765625,
+            "height": 54,
+            "top": 874.875,
+            "right": 304,
+            "bottom": 928.875,
+            "left": 38.234375
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "本次投入\n每周 8–12 小时",
+          "rect": {
+            "x": 26.71875,
+            "y": 937.875,
+            "width": 277.28125,
+            "height": 54,
+            "top": 937.875,
+            "right": 304,
+            "bottom": 991.875,
+            "left": 26.71875
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "协作\n小步原型，异步推进",
+          "rect": {
+            "x": 32.828125,
+            "y": 1000.875,
+            "width": 271.171875,
+            "height": 54,
+            "top": 1000.875,
+            "right": 304,
+            "bottom": 1054.875,
+            "left": 32.828125
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "技能\nReact / TypeScript · 可独立完成",
+          "rect": {
+            "x": 28.15625,
+            "y": 1063.875,
+            "width": 275.84375,
+            "height": 54,
+            "top": 1063.875,
+            "right": 304,
+            "bottom": 1117.875,
+            "left": 28.15625
+          },
+          "height": 52,
+          "scrollHeight": 52
+        },
+        {
+          "text": "教育\n江南设计学院 · 交互设计",
+          "rect": {
+            "x": 35.359375,
+            "y": 1126.875,
+            "width": 268.640625,
+            "height": 54,
+            "top": 1126.875,
+            "right": 304,
+            "bottom": 1180.875,
+            "left": 35.359375
+          },
+          "height": 52,
+          "scrollHeight": 52
+        }
+      ],
+      "overflow": [
+        {}
+      ]
+    }
+  ],
+  "errors": []
+}

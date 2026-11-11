@@ -1,0 +1,158 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "placement": {
+      "mascot": {
+        "x": 1336,
+        "y": 793,
+        "w": 104,
+        "h": 104
+      },
+      "save": {
+        "x": 1072,
+        "y": 840,
+        "w": 188,
+        "h": 46
+      },
+      "overlap": 0,
+      "buttonInViewport": true,
+      "overflow": 0
+    },
+    "privacy": [
+      {
+        "audience": "其他登录用户",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      },
+      {
+        "audience": "好友",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      }
+    ],
+    "self": {
+      "activityControls": 4,
+      "role": "PRIVATE_ACTIVITY_ROLE_MARKER"
+    }
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "placement": {
+      "mascot": {
+        "x": 1176,
+        "y": 613,
+        "w": 104,
+        "h": 104
+      },
+      "save": {
+        "x": 972,
+        "y": 660,
+        "w": 188,
+        "h": 46
+      },
+      "overlap": 0,
+      "buttonInViewport": true,
+      "overflow": 0
+    },
+    "privacy": [
+      {
+        "audience": "其他登录用户",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      },
+      {
+        "audience": "好友",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      }
+    ],
+    "self": {
+      "activityControls": 4,
+      "role": "PRIVATE_ACTIVITY_ROLE_MARKER"
+    }
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "placement": {
+      "mascot": {
+        "x": 314,
+        "y": 765,
+        "w": 76,
+        "h": 76
+      },
+      "save": {
+        "x": 18,
+        "y": 790,
+        "w": 290,
+        "h": 44
+      },
+      "overlap": 0,
+      "buttonInViewport": true,
+      "overflow": 0
+    },
+    "privacy": [
+      {
+        "audience": "其他登录用户",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      },
+      {
+        "audience": "好友",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      }
+    ],
+    "self": {
+      "activityControls": 4,
+      "role": "PRIVATE_ACTIVITY_ROLE_MARKER"
+    }
+  },
+  {
+    "width": 320,
+    "height": 844,
+    "placement": {
+      "mascot": {
+        "x": 244,
+        "y": 765,
+        "w": 76,
+        "h": 76
+      },
+      "save": {
+        "x": 18,
+        "y": 790,
+        "w": 220,
+        "h": 44
+      },
+      "overlap": 0,
+      "buttonInViewport": true,
+      "overflow": 0
+    },
+    "privacy": [
+      {
+        "audience": "其他登录用户",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      },
+      {
+        "audience": "好友",
+        "privateProfileVisible": false,
+        "activityControlCount": 0,
+        "indexActivityCount": 0
+      }
+    ],
+    "self": {
+      "activityControls": 4,
+      "role": "PRIVATE_ACTIVITY_ROLE_MARKER"
+    }
+  }
+]

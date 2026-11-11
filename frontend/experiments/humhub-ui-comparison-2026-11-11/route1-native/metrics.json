@@ -1,0 +1,147 @@
+{
+  "route": 1,
+  "route_name": "HumHub native PHP view/theme-style upgrade",
+  "status": "verified",
+  "url": "http://localhost:8193/comparison-native/home/index",
+  "framework": {
+    "humhub": "1.19.4",
+    "rendering": "PHP / Yii server-rendered HTML",
+    "native_assets": [
+      "HumHub AppAsset",
+      "AppDynamicAsset",
+      "CoreBundleAsset",
+      "Bootstrap 5",
+      "jQuery",
+      "PJAX",
+      "FontAwesome 4.7",
+      "active Clean Theme assets"
+    ],
+    "react": false,
+    "new_npm_dependencies": 0,
+    "new_composer_dependencies": 0,
+    "build_step": false
+  },
+  "files": [
+    {
+      "path": "module/Module.php",
+      "bytes": 231,
+      "lines": 11,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/assets/NativeAsset.php",
+      "bytes": 388,
+      "lines": 11,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/config.php",
+      "bytes": 264,
+      "lines": 9,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/controllers/HomeController.php",
+      "bytes": 981,
+      "lines": 26,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/module.json",
+      "bytes": 296,
+      "lines": 8,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/resources/css/native-home.css",
+      "bytes": 30296,
+      "lines": 1625,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/resources/data/demo-data.json",
+      "bytes": 2228,
+      "lines": 90,
+      "copied_fixture": true
+    },
+    {
+      "path": "module/resources/js/native-home.js",
+      "bytes": 7057,
+      "lines": 102,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/views/home/index.php",
+      "bytes": 13289,
+      "lines": 85,
+      "copied_fixture": false
+    },
+    {
+      "path": "module/views/layouts/main.php",
+      "bytes": 694,
+      "lines": 25,
+      "copied_fixture": false
+    }
+  ],
+  "implementation_files": 10,
+  "authored_files_excluding_fixture": 9,
+  "source_lines_including_fixture": 1992,
+  "source_bytes_including_fixture": 55724,
+  "authored_source_lines_excluding_fixture": 1902,
+  "authored_source_bytes_excluding_fixture": 53496,
+  "assets": {
+    "own_css_bytes": 30296,
+    "own_js_bytes": 7057,
+    "first_load_resource_count": 13,
+    "first_load_resource_totals": {
+      "transferSize": 3861343,
+      "encodedBodySize": 3857443,
+      "decodedBodySize": 3857443
+    },
+    "measurement_note": "Local PHP development server with no HTTP gzip; encoded and decoded sizes equal. Excludes document HTML. Includes native framework/theme/font/translation resources. Not directly comparable with gzip production bundles."
+  },
+  "reuse": {
+    "direct_react_source_reused": false,
+    "visual_references": [
+      "vendor/shadcnuikit/dashboard/app/dashboard/(auth)/pages/profile/components/profile-card.tsx",
+      "vendor/affectui/affectui-components/progress-tracker.tsx"
+    ],
+    "method": "Translate card/badge/avatar/checklist concepts into PHP HTML, scoped CSS and ordinary DOM JS."
+  },
+  "timing": {
+    "implementation_started_at": "2026-11-11T13:34:45.895566+00:00",
+    "implementation_started_epoch": 1794404085.8962162,
+    "measurement_note": "Starts at first file creation; excludes initial source inspection.",
+    "first_browser_verification_at": "2026-11-11T13:40:40.715+00:00",
+    "first_write_to_first_browser_pass_seconds": 354.82,
+    "latest_browser_verification_at": "2026-11-11T13:42:59.735Z",
+    "note": "Wall clock from first module write, excluding initial inspection. Includes shared runtime provisioning and browser troubleshooting. Not an engineering estimate for production conversion."
+  },
+  "checks": {
+    "php_lint_files_passed": 6,
+    "plain_js_syntax": "passed",
+    "browser_checks_passed": 23,
+    "browser_checks_total": 23,
+    "desktop_viewport": [
+      1440,
+      1000
+    ],
+    "desktop_scroll_width": 1440,
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "mobile_scroll_width": 390,
+    "browser_js_errors": [],
+    "failed_requests": [],
+    "jquery_detected": true,
+    "bootstrap_detected": true
+  },
+  "boundaries": [
+    "Synthetic fixture and in-memory follow state only; refresh resets state.",
+    "Native-technology homepage proof delivered as isolated module and custom PHP layout to avoid original project edits; not a completed installable site-wide theme.",
+    "Existing HumHub pages, login, permissions, Space context, stream, notification business behavior and full PJAX navigation are not acceptance-tested.",
+    "Registry paid package download rights and full package completeness are outside this test.",
+    "Shared runtime setup effort excluded from route-specific source change count."
+  ]
+}

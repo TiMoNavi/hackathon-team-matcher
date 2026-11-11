@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-11",
+  "scope": "Documentation relocation and implementation planning only. No recommendation backend source, dependencies, databases, running services or model configuration were changed; no application or performance tests were run.",
+  "checks": {
+    "markdown_files": 7,
+    "resolved_local_links": 62,
+    "broken_local_links": [],
+    "unclosed_markdown_fences": [],
+    "parsed_existing_json_files": 11,
+    "unchecked_implementation_tasks": 60,
+    "task_ids_unique": true,
+    "checked_implementation_tasks": 0,
+    "relocations": [
+      {
+        "source": "backend-research/examples/friend-recommendation/config.draft.json",
+        "destination": "docs/推荐模块/examples/field-mapping/config.draft.json",
+        "source_absent": true,
+        "destination_sha256_matches_manifest": true
+      },
+      {
+        "source": "backend-research/examples/friend-recommendation/validate_config.py",
+        "destination": "docs/推荐模块/examples/field-mapping/validate_config.py",
+        "source_absent": true,
+        "destination_sha256_matches_manifest": true
+      },
+      {
+        "source": "backend-research/evidence/friend-recommendation-config-checks-2026-11-11.json",
+        "destination": "docs/推荐模块/sources/field-mapping-checks_2026-11-11.json",
+        "source_absent": true,
+        "destination_sha256_matches_manifest": true
+      },
+      {
+        "source": "backend-research/evidence/recommendation-repositories-2026-11-11.json",
+        "destination": "docs/推荐模块/sources/initial-repository-research_2026-11-11.json",
+        "source_absent": true,
+        "destination_sha256_matches_manifest": true
+      },
+      {
+        "source": "backend-research/HumHub好友推荐插件与动态字段配置方案.md",
+        "destination": "docs/推荐模块/history/旧研究导航_2026-11-11.md",
+        "source_absent": true,
+        "destination_sha256_matches_manifest": true
+      }
+    ],
+    "inbound_links_to_moved_sources_outside_work_area": [],
+    "frozen_original_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+    "frozen_original_unchanged": true
+  },
+  "offline_metadata_validation": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 docs/推荐模块/examples/field-mapping/validate_config.py",
+    "exit_code": 0,
+    "metadata_valid": true,
+    "runtime_ready": false,
+    "errors": [],
+    "note": "Reads a native field-definition snapshot only; does not validate runtime authorization or execute a recommendation engine."
+  },
+  "independent_review": {
+    "reviewer": "/root/recommendation_backend_readiness",
+    "mode": "read-only static review",
+    "initial_substantive_findings": 1,
+    "correction": "Added IdeaCandidateProjectionReader, R3.9 and target-specific acceptance; separated current-relationship requirements from AI-only sent-request history.",
+    "final_result": "Passed static re-review; no further substantive issues reported."
+  },
+  "git_diff_limitation": "The workspace root is not a Git repository; no whole-workspace Git diff verification is claimed. Other work may be ongoing concurrently.",
+  "write_scope": "New and edited documentation remained in docs/推荐模块. Five explicitly requested relocation sources were removed by rename, as recorded in document-relocation_2026-11-11.json.",
+  "not_executed": [
+    "Backend recommendation implementation",
+    "HumHub/plugin installation or migration",
+    "Application or integration tests",
+    "Database queries or performance tests",
+    "LLM or embedding requests"
+  ]
+}

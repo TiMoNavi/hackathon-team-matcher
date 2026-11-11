@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
+<title id="title">Space：成员状态、角色与加入策略</title>
+<desc id="desc">Space 拥有成员、权限和内容流。成员状态决定是否正式加入；角色决定加入后能做什么。加入策略与空间可见性也是分别配置的概念。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<rect width="1280" height="100%" fill="#ffffff"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="50" y="45" font-size="25" font-weight="650" fill="#16243b" text-anchor="start">Space：成员状态、角色与加入策略</text>
+<text x="50" y="77" font-size="14" font-weight="400" fill="#53657b" text-anchor="start">Space 更接近社群 / 项目协作小组，不等同于活动或即时聊天群。</text>
+<polyline points="325,210 475,210" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="325,240 385,240 385,470 475,470" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="785,215 1070,215 1070,410" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="785,470 925,470" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="190,155 190,110 1195,110 1195,410" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="325,515 475,515" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<polyline points="1080,555 1080,710" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="980,555 980,640 630,640 630,710" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1230,490 1260,490 1260,930 20,930 20,210 50,210" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="50" y="155" width="275" height="110" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="67" y="186" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">没有成员关系</text>
+<text x="67" y="214" font-size="14" font-weight="400" fill="#334155" text-anchor="start">尚未加入该 Space</text>
+<rect x="475" y="155" width="310" height="125" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="492" y="186" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">被邀请</text>
+<text x="492" y="214" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATUS_INVITED = 1</text>
+<text x="492" y="236" font-size="14" font-weight="400" fill="#334155" text-anchor="start">等待被邀请人处理</text>
+<rect x="475" y="410" width="310" height="125" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="492" y="441" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">申请加入</text>
+<text x="492" y="469" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATUS_APPLICANT = 2</text>
+<text x="492" y="491" font-size="14" font-weight="400" fill="#334155" text-anchor="start">等待空间管理员处理</text>
+<rect x="925" y="410" width="305" height="145" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="942" y="441" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">正式成员</text>
+<text x="942" y="469" font-size="14" font-weight="400" fill="#334155" text-anchor="start">STATUS_MEMBER = 3</text>
+<text x="942" y="491" font-size="14" font-weight="400" fill="#334155" text-anchor="start">成员关系与角色共同生效</text>
+<rect x="50" y="410" width="275" height="145" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="67" y="441" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">加入与可见性策略</text>
+<text x="67" y="469" font-size="14" font-weight="400" fill="#334155" text-anchor="start">JOIN_POLICY_*</text>
+<text x="67" y="491" font-size="14" font-weight="400" fill="#334155" text-anchor="start">VISIBILITY_*</text>
+<text x="67" y="513" font-size="14" font-weight="400" fill="#334155" text-anchor="start">由入口与模型共同约束</text>
+<rect x="475" y="710" width="310" height="145" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="492" y="741" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">成员变化联动</text>
+<text x="492" y="769" font-size="14" font-weight="400" fill="#334155" text-anchor="start">通知、活动记录</text>
+<text x="492" y="791" font-size="14" font-weight="400" fill="#334155" text-anchor="start">成员缓存更新</text>
+<text x="492" y="813" font-size="14" font-weight="400" fill="#334155" text-anchor="start">加入 / 移除事件</text>
+<rect x="925" y="710" width="305" height="145" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="942" y="741" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">空间角色</text>
+<text x="942" y="769" font-size="14" font-weight="400" fill="#334155" text-anchor="start">owner / admin</text>
+<text x="942" y="791" font-size="14" font-weight="400" fill="#334155" text-anchor="start">moderator / member</text>
+<text x="942" y="813" font-size="14" font-weight="400" fill="#334155" text-anchor="start">决定管理与内容权限</text>
+<rect x="361.75" y="175" width="76.5" height="22" rx="4" fill="white"/>
+<text x="400" y="190" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">授权者邀请</text>
+<rect x="400.5" y="435" width="39.0" height="22" rx="4" fill="white"/>
+<text x="420" y="450" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">申请</text>
+<rect x="901.0" y="180" width="64.0" height="22" rx="4" fill="white"/>
+<text x="933" y="195" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">接受邀请</text>
+<rect x="823.0" y="433" width="64.0" height="22" rx="4" fill="white"/>
+<text x="855" y="448" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">批准申请</text>
+<rect x="614.0625" y="79" width="197.875" height="22" rx="4" fill="white"/>
+<text x="713" y="94" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">自由加入 / 授权管理员直接添加</text>
+<rect x="513.5625" y="895" width="272.875" height="22" rx="4" fill="white"/>
+<text x="650" y="910" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">符合规则时退出 / 移除；申请与邀请也可取消</text>
+<rect x="50" y="965" width="1180" height="96" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="68" y="992" font-size="14" font-weight="650" fill="#334155" text-anchor="start">读图提醒</text>
+<text x="68" y="1016" font-size="13" font-weight="400" fill="#53657b" text-anchor="start">1. 加入策略包含不允许自助加入、申请加入、自由加入。私有空间会限制加入策略；实际操作还要经过入口权限判断。</text>
+<text x="68" y="1038" font-size="13" font-weight="400" fill="#53657b" text-anchor="start">2. 所有者、管理员、版主、普通成员是角色，不是新的成员申请状态。</text>
+<path d="M 50 1214 H 1230" stroke="#e2e8f0"/>
+<rect x="50" y="1236" width="14" height="14" rx="3" fill="#edf5ff" stroke="#3975ba"/>
+<text x="72" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">原版源码已有</text>
+<rect x="295" y="1236" width="14" height="14" rx="3" fill="#f5f0ff" stroke="#8870bd"/>
+<text x="317" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">独立扩展，未下载</text>
+<rect x="540" y="1236" width="14" height="14" rx="3" fill="#fff6e6" stroke="#ba7b20"/>
+<text x="562" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">本项目待开发</text>
+<rect x="785" y="1236" width="14" height="14" rx="3" fill="#f2f4f7" stroke="#778397"/>
+<text x="807" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">运行环境 / 外部</text>
+<text x="1230" y="1269" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="end">HumHub v1.19.4 · b8881d5ea7ee · 源码阅读图，未运行验证</text>
+</g></svg>

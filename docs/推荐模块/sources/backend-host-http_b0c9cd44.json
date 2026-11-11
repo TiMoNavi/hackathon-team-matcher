@@ -1,0 +1,73 @@
+{
+  "status": "failed",
+  "run": "b0c9cd44",
+  "checks": [
+    {
+      "label": "isolated dataset contains exactly 28 fictional users",
+      "passed": true
+    },
+    {
+      "label": "anonymous rejected before model",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "label": "native login page 1",
+      "passed": true
+    },
+    {
+      "label": "native username step 1",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "label": "native password page 1",
+      "passed": true
+    },
+    {
+      "label": "native password authentication 1",
+      "passed": false,
+      "status": 500
+    }
+  ],
+  "http_responses": [
+    {
+      "path": "/api/v1/events/1/recommendation-conversations",
+      "method": "POST",
+      "status": 401,
+      "error": {
+        "code": "AUTH_REQUIRED",
+        "message": "The current session or activity does not allow this request.",
+        "retryable": false,
+        "details": []
+      }
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/login",
+      "method": "POST",
+      "status": 302,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "GET",
+      "status": 200,
+      "error": null
+    },
+    {
+      "path": "/user/auth/password",
+      "method": "POST",
+      "status": 500,
+      "error": null
+    }
+  ],
+  "failure_type": "AssertionError",
+  "failure": "native password authentication 1",
+  "external_model_calls": 0
+}

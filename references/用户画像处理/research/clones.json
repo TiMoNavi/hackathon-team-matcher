@@ -1,0 +1,20 @@
+[
+  {
+    "repo": "therain2020/github-profiler",
+    "path": "/Users/550m/code/hackathon-team-matcher/references/用户画像处理/repos/github-profiler",
+    "commit": "ac3904fb0085be41a964237a249ae0e7aa63709b",
+    "status": "cloned"
+  },
+  {
+    "repo": "krittikasardar/skill-mining",
+    "path": "/Users/550m/code/hackathon-team-matcher/references/用户画像处理/repos/skill-mining",
+    "commit": "528d7135cdca30a723b13d92f3487959de8d32d8",
+    "status": "cloned"
+  },
+  {
+    "repo": "alexcfv/ai-recruiter-assistance",
+    "path": "/Users/550m/code/hackathon-team-matcher/references/用户画像处理/repos/ai-recruiter-assistance",
+    "commit": "8b6000573f1e2ffd7e8ad698d1eeaec5c17a981d",
+    "status": "cloned"
+  }
+]

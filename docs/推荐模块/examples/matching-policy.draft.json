@@ -1,0 +1,19 @@
+{
+  "schema_version": "design-1",
+  "status": "draft_not_runtime",
+  "profile_provider": "matcher-user-profile.confirmed_discovery_projection",
+  "policy_outside_configuration": ["server_current_event", "field_authorization", "contact_eligibility", "version_revalidation", "model_budget"],
+  "dimensions": {"topic": 0.35, "contribution": 0.35, "availability": 0.15, "collaboration_style": 0.15},
+  "rules": [
+    {"id": "shared_topic", "dimension": "topic", "operator": "similarity", "left": "query.confirmed_topics", "right": ["candidate.interest", "candidate.direction"], "activation": "explicit_topic_intent", "unknown": "report_unknown_no_positive_reason"},
+    {"id": "needed_contribution", "dimension": "contribution", "operator": "supply_demand", "left": "query.requested_contributions", "right": ["candidate.event_contribution", "candidate.event_role"], "activation": "explicit_project_or_collaboration_intent", "unknown": "do_not_infer_willingness_from_skill"},
+    {"id": "project_gap", "dimension": "contribution", "operator": "coverage_gain", "left": "authorized_idea.confirmed_gaps", "right": ["candidate.event_contribution"], "activation": "authorized_current_idea_and_explicit_gaps", "unknown": "do_not_invent_team_members_or_capacity"},
+    {"id": "style_preference", "dimension": "collaboration_style", "operator": "explicit_preference", "left": "query.acceptable_partner_styles", "right": ["candidate.collaboration_preference", "candidate.communication_preference"], "activation": "explicit_style_preference", "unknown": "report_unknown_no_positive_reason"},
+    {"id": "mbti_self_report_preference", "dimension": "collaboration_style", "operator": "explicit_preference", "left": "query.explicit_self_reported_type_preference", "right": ["candidate.mbti"], "activation": "user_explicitly_selects_type_preference", "unknown": "no_inference_no_default_pairing_matrix"},
+    {"id": "available_time", "dimension": "availability", "operator": "interval_overlap", "left": "query.confirmed_availability", "right": ["candidate.event_availability"], "activation": "explicit_time_requirement", "unknown": "unknown_cannot_satisfy_hard_requirement"}
+  ],
+  "aggregation": "versioned_dimension_evaluators_required_before_runtime",
+  "evidence_required": ["attribute_id_or_authorized_idea_reference", "content_version", "permission_version", "rule_id"],
+  "role_taxonomy_examples_only": ["coordination", "technical_delivery", "commercial_validation"],
+  "not_implemented": ["rule_executor", "field_value_transformers", "team_capacity_solver", "ai_provider", "runtime_configuration_publisher"]
+}

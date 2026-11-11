@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "disposable_databases_removed": 3,
+  "database_scoped_grants_revoked": 3,
+  "isolated_runtime_directories_removed": 3,
+  "test_ports_closed": [
+    8096,
+    8097,
+    8098
+  ],
+  "main_preview_8090_preserved": true,
+  "private_pre_upgrade_backup_preserved_and_verified": true,
+  "final_synthetic_screenshots_preserved": true
+}

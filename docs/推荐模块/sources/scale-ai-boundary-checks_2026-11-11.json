@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-11",
+  "scope": "Document and contract consistency only; no recommendation engine, model calls, integration tests or load tests executed.",
+  "checked_markdown_files": 7,
+  "resolved_local_links": 48,
+  "markdown_fences": "balanced",
+  "json": "parsed",
+  "candidate_budgets": "200 / 24 / 5 unchanged",
+  "model_input_limit": "24 KiB, per-candidate 768 bytes unchanged",
+  "initial_match_threshold": "0.35 unchanged; evidence required",
+  "core_ai_boundary": "core independent of AI provider; extension depends on core contracts",
+  "frozen_original_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+  "frozen_original": "unchanged"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "scope": "Independent offline fictional dataset audit; no database, HTTP, network or model calls.",
+  "checks": 30,
+  "checks_passed": [
+    "dataset explicitly declares wholly fictional people",
+    "exactly 100 people in stable numeric order",
+    "fixture_key is unique for every person",
+    "username is unique for every person",
+    "email is unique for every person",
+    "nickname is unique for every person",
+    "every nickname retains a visible simulation marker",
+    "simulation usernames and fixture keys use explicit stable namespace",
+    "all account emails use non-deliverable example.invalid",
+    "every biography explicitly identifies fictional content",
+    "primary and secondary memberships are exactly 100 and 20",
+    "primary and secondary opt-in counts are exactly 90 and 18",
+    "secondary memberships are people 81 through 100",
+    "primary opt-outs match declared boundary examples",
+    "secondary opt-outs match declared boundary examples",
+    "every dual-Space person has distinct activity context",
+    "actual attribute counts match 3948 confirmed fixture entries and 32 drafts",
+    "visibility distribution matches actual fixture entries",
+    "field count summary matches actual fixture entries",
+    "dataset includes varied skill and role codes",
+    "every entry has explicit supported visibility",
+    "only last person has the visible rare skill",
+    "private-sentinel-skill appears only on declared private or friends entries",
+    "private-sentinel-skill never appears in authenticated entries",
+    "friends-sentinel-skill appears only on declared private or friends entries",
+    "friends-sentinel-skill never appears in authenticated entries",
+    "unconfirmed examples stay in distinct draft collections",
+    "draft sentinel does not appear in confirmed fixture entries",
+    "all external-looking URLs are example.org fixtures without credentials",
+    "activity fields never leak into global fixture context"
+  ],
+  "distribution": {
+    "memberships": {
+      "primary": 100,
+      "secondary": 20
+    },
+    "optin": {
+      "primary": 90,
+      "secondary": 18
+    },
+    "confirmed_attributes": 3948,
+    "draft_attributes": 32,
+    "unique_skills": 63,
+    "unique_roles": 20
+  },
+  "model_calls": 0,
+  "network_calls": 0
+}

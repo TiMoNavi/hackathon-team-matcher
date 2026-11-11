@@ -1,0 +1,206 @@
+{
+  "status": "passed",
+  "passed": 49,
+  "checks": [
+    {
+      "name": "four_kinds_enabled",
+      "passed": true
+    },
+    {
+      "name": "local_readers_ready",
+      "passed": true
+    },
+    {
+      "name": "unlinked_github_still_requires_native_identity",
+      "passed": true
+    },
+    {
+      "name": "capabilities_does_not_fetch",
+      "passed": true
+    },
+    {
+      "name": "web_csrf_required",
+      "passed": true
+    },
+    {
+      "name": "web_declaration_required",
+      "passed": true
+    },
+    {
+      "name": "web_cannot_choose_another_owner",
+      "passed": true
+    },
+    {
+      "name": "rejected_requests_do_not_fetch",
+      "passed": true
+    },
+    {
+      "name": "web_import_with_real_parser_ready",
+      "passed": true
+    },
+    {
+      "name": "redirect_chain_fetches_each_target_once",
+      "passed": true
+    },
+    {
+      "name": "original_canonical_url_retained",
+      "passed": true
+    },
+    {
+      "name": "final_url_only_in_snapshot_metadata",
+      "passed": true
+    },
+    {
+      "name": "ownership_is_declaration",
+      "passed": true
+    },
+    {
+      "name": "no_script_or_style_in_text",
+      "passed": true
+    },
+    {
+      "name": "html_title_is_source_label",
+      "passed": true
+    },
+    {
+      "name": "explicit_candidates_are_mapped",
+      "passed": true
+    },
+    {
+      "name": "all_candidates_have_section_evidence",
+      "passed": true
+    },
+    {
+      "name": "web_import_zero_models",
+      "passed": true
+    },
+    {
+      "name": "list_omits_private_snapshot",
+      "passed": true
+    },
+    {
+      "name": "ordinary_source_reads_never_fetch",
+      "passed": true
+    },
+    {
+      "name": "duplicate_key_reuses_existing_source",
+      "passed": true
+    },
+    {
+      "name": "normalized_url_reuses_existing_snapshot",
+      "passed": true
+    },
+    {
+      "name": "changed_target_same_key_rejected",
+      "passed": true
+    },
+    {
+      "name": "deduplication_does_not_fetch",
+      "passed": true
+    },
+    {
+      "name": "other_user_read_not_found",
+      "passed": true
+    },
+    {
+      "name": "other_user_refresh_not_found",
+      "passed": true
+    },
+    {
+      "name": "other_user_delete_not_found",
+      "passed": true
+    },
+    {
+      "name": "refresh_cannot_change_url",
+      "passed": true
+    },
+    {
+      "name": "refresh_stale_version_rejected",
+      "passed": true
+    },
+    {
+      "name": "rejected_refreshes_never_fetch",
+      "passed": true
+    },
+    {
+      "name": "refresh_reuses_stored_original_url",
+      "passed": true
+    },
+    {
+      "name": "refresh_creates_versioned_snapshot",
+      "passed": true
+    },
+    {
+      "name": "refresh_retry_does_not_fetch",
+      "passed": true
+    },
+    {
+      "name": "web_candidates_adopted_into_existing_draft",
+      "passed": true
+    },
+    {
+      "name": "source_or_adoption_does_not_publish",
+      "passed": true
+    },
+    {
+      "name": "raw_material_not_copied_to_draft",
+      "passed": true
+    },
+    {
+      "name": "delete_revokes_and_scrubs_source",
+      "passed": true
+    },
+    {
+      "name": "deleted_source_is_inaccessible",
+      "passed": true
+    },
+    {
+      "name": "explicitly_adopted_draft_survives_deletion",
+      "passed": true
+    },
+    {
+      "name": "network_failure_retains_retry_target",
+      "passed": true
+    },
+    {
+      "name": "failed_import_not_implicitly_retried",
+      "passed": true
+    },
+    {
+      "name": "explicit_retry_recovers_same_source",
+      "passed": true
+    },
+    {
+      "name": "redirect_to_internal_address_rejected",
+      "passed": true
+    },
+    {
+      "name": "network_error_record_has_no_raw_text_or_trace",
+      "passed": true
+    },
+    {
+      "name": "text_reader_uses_same_source_pipeline",
+      "passed": true
+    },
+    {
+      "name": "existing_resume_upload_still_works",
+      "passed": true
+    },
+    {
+      "name": "resume_and_text_share_stable_candidate_mapping",
+      "passed": true
+    },
+    {
+      "name": "local_imports_do_not_fetch_websites",
+      "passed": true
+    },
+    {
+      "name": "web_text_resume_sources_coexist",
+      "passed": true
+    }
+  ],
+  "http_requests": 47,
+  "scope": "isolated real HTTP/session/CSRF/SQL; fixed DNS/HTTP, real HTML/text/resume parsers",
+  "llm_calls": 0,
+  "raw_material_in_report": false
+}

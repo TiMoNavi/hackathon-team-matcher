@@ -1,0 +1,9 @@
+{
+  "id": "matcher-ideas",
+  "name": "想法与获准关系摘要",
+  "description": "手工确认正式想法、按Space发布并显式关联既有Messenger会话。仅提供获准元数据，不创建聊天或加入成员。",
+  "version": "0.1.0",
+  "humhub": {"minVersion": "1.19.4", "modules": {"matcher-recommendation": {"minVersion": "0.2.0"}, "mail": {"minVersion": "3.4.6"}}},
+  "keywords": ["ideas", "space", "profile-relations"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

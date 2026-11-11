@@ -1,0 +1,51 @@
+{
+  "checked_on": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "records": [
+    {
+      "label": "HumHub dependencies",
+      "url": "https://raw.githubusercontent.com/humhub/humhub/v1.19.4/composer.json",
+      "status": 200,
+      "sha256": "03dc59b8dac43a1ae2a96bc7ee79002c99a59963b2501c8d3c597cecd4782e6b",
+      "matches_local": true,
+      "local": "backend/composer.json",
+      "stack": {
+        "php": ">=8.2",
+        "yiisoft/yii2": "^2.0.55",
+        "yiisoft/yii2-bootstrap5": "^2.0",
+        "npm-asset/jquery": "~3.7.1"
+      }
+    },
+    {
+      "label": "Clean Theme metadata",
+      "url": "https://raw.githubusercontent.com/cuzy-app/clean-theme/v2.5.3/module.json",
+      "status": 200,
+      "sha256": "081dec3b52f9ca69424a70716d3217a2b96b3bd16459c09037e6eb6815b7f3e9",
+      "matches_local": true,
+      "local": "backend/protected/modules/clean-theme/module.json",
+      "version": "2.5.3",
+      "humhub": {
+        "minVersion": "1.19.0",
+        "maxVersion": "1.19"
+      }
+    },
+    {
+      "label": "Clean Theme hooks",
+      "url": "https://raw.githubusercontent.com/cuzy-app/clean-theme/v2.5.3/Events.php",
+      "status": 200,
+      "sha256": "44e28de3554d153089267aeab3b45fac256eefa6d671b64a87af9b773b45ae61",
+      "matches_local": true,
+      "local": "backend/protected/modules/clean-theme/Events.php",
+      "core_bundle_dependency": true
+    },
+    {
+      "label": "Clean Theme base theme",
+      "url": "https://raw.githubusercontent.com/cuzy-app/clean-theme/v2.5.3/themes/Clean/scss/variables.scss",
+      "status": 200,
+      "sha256": "d52b0110ef620d19d6c0743c76244f2a365e5b3c8e1ea562afe9f66adf7dd027",
+      "matches_local": true,
+      "local": "backend/protected/modules/clean-theme/themes/Clean/scss/variables.scss",
+      "inherits_humhub": true
+    }
+  ]
+}

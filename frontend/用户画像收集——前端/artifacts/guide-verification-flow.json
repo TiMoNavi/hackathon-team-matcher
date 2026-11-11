@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-11T18:06:06.449Z",
+  "phase": "flow",
+  "checks": [
+    "Leaving a running task cancels late step transitions",
+    "Questions require Continue, allow custom and skipped answers; audience previews filter each field without regenerating",
+    "Idea inputs survive reload, separate ideas retain answers, manual edits cancel outdated synthesis, and result generation can be skipped",
+    "Activity answers and discovery remain separate, results never cross activities, friend requests stay pending, and save/resume completes the full flow"
+  ],
+  "views": [],
+  "errors": []
+}

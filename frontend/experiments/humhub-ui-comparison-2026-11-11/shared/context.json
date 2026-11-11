@@ -1,0 +1,13 @@
+{
+  "comparison_root": "/Users/550m/code/hackathon-team-matcher/frontend/experiments/humhub-ui-comparison-2026-11-11",
+  "isolated_runtime_root": "/tmp/humhub-ui-compare.6qn_jdwx",
+  "humhub_target": "/tmp/humhub-ui-compare.6qn_jdwx/humhub",
+  "humhub_port": 8193,
+  "standalone_port": 3193,
+  "gallery_port": 4193,
+  "original_humhub_do_not_modify": "/Users/550m/code/hackathon-team-matcher/backend",
+  "fixtures": "shared/demo-data.json",
+  "humhub_origin": "http://localhost:8193",
+  "standalone_origin": "http://localhost:3193",
+  "distribution_sha256": "a562df0ad5718d19dbda322dd229bdb4fa92e0afd7ae310b9ea98983bb5b05ca"
+}

@@ -1,0 +1,230 @@
+{
+  "status": "passed",
+  "review_type": "Independent read-only exported evidence reconciliation, not a repeated gateway or HTTP run",
+  "passed": 34,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "root_exact_target",
+      "passed": true
+    },
+    {
+      "name": "all_57_workflow_checks_pass",
+      "passed": true
+    },
+    {
+      "name": "profile_confirmation_privacy_and_resume_assertions_present",
+      "passed": true
+    },
+    {
+      "name": "no_pending_retry_unknown_or_late_accounting",
+      "passed": true
+    },
+    {
+      "name": "three_calls_within_authorized_six_slot_limit",
+      "passed": true
+    },
+    {
+      "name": "three_distinct_model_jobs",
+      "passed": true
+    },
+    {
+      "name": "final_report_contains_no_raw_payload_or_credential_fields",
+      "passed": true
+    },
+    {
+      "name": "extract_worker_and_http_job_match",
+      "passed": true
+    },
+    {
+      "name": "extract_successful_current_first_attempt",
+      "passed": true
+    },
+    {
+      "name": "extract_cumulative_worker_slot",
+      "passed": true
+    },
+    {
+      "name": "extract_exact_model_and_complete_usage",
+      "passed": true
+    },
+    {
+      "name": "extract_duration_and_token_total_match",
+      "passed": true
+    },
+    {
+      "name": "extract_independent_observer_saw_queued_running_ready",
+      "passed": true
+    },
+    {
+      "name": "extract_observer_and_merged_sample_counts",
+      "passed": true
+    },
+    {
+      "name": "extract_exported_worker_and_observer_have_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "questions_worker_and_http_job_match",
+      "passed": true
+    },
+    {
+      "name": "questions_successful_current_first_attempt",
+      "passed": true
+    },
+    {
+      "name": "questions_cumulative_worker_slot",
+      "passed": true
+    },
+    {
+      "name": "questions_exact_model_and_complete_usage",
+      "passed": true
+    },
+    {
+      "name": "questions_duration_and_token_total_match",
+      "passed": true
+    },
+    {
+      "name": "questions_independent_observer_saw_queued_running_ready",
+      "passed": true
+    },
+    {
+      "name": "questions_observer_and_merged_sample_counts",
+      "passed": true
+    },
+    {
+      "name": "questions_exported_worker_and_observer_have_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "compose_worker_and_http_job_match",
+      "passed": true
+    },
+    {
+      "name": "compose_successful_current_first_attempt",
+      "passed": true
+    },
+    {
+      "name": "compose_cumulative_worker_slot",
+      "passed": true
+    },
+    {
+      "name": "compose_exact_model_and_complete_usage",
+      "passed": true
+    },
+    {
+      "name": "compose_duration_and_token_total_match",
+      "passed": true
+    },
+    {
+      "name": "compose_independent_observer_saw_queued_running_ready",
+      "passed": true
+    },
+    {
+      "name": "compose_observer_and_merged_sample_counts",
+      "passed": true
+    },
+    {
+      "name": "compose_exported_worker_and_observer_have_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "http_count_reconciles_across_seven_exports",
+      "passed": true
+    },
+    {
+      "name": "sample_count_excludes_logins_and_includes_flow_probes",
+      "passed": true
+    },
+    {
+      "name": "token_and_duration_aggregates_match",
+      "passed": true
+    }
+  ],
+  "source_files": {
+    "s77-live-http_2026-11-12.json": {
+      "sha256": "05b9cc5fa2991a3b2f93e1179e1ef2ef57b861749dca2475b0f8661ba39ac323",
+      "bytes": 7993
+    },
+    "s77-live-extract-worker_2026-11-12.json": {
+      "sha256": "1b817de2e715328cfb9bcd8b1e9fce945734e00541ab43c3862af0c50ec1e7dd",
+      "bytes": 434
+    },
+    "s77-live-extract-observe_2026-11-12.json": {
+      "sha256": "e0ada0bfc35810fef3ab65c97610345bdec834261886f042113c0b93bcfb4a17",
+      "bytes": 222
+    },
+    "s77-live-questions-worker_2026-11-12.json": {
+      "sha256": "8d680e9f8f5ab70c5999f4eb07cbe671f2384881842785793456d4f29bcf3eca",
+      "bytes": 436
+    },
+    "s77-live-questions-observe_2026-11-12.json": {
+      "sha256": "533b43151fd374afd7cb15a3d35cb780a0503017dc5f164ac1a7bceb67623c94",
+      "bytes": 222
+    },
+    "s77-live-compose-worker_2026-11-12.json": {
+      "sha256": "72462c048525691f9ef70da494f6aef36b854832e24aaf31b9ce5b986f211992",
+      "bytes": 434
+    },
+    "s77-live-compose-observe_2026-11-12.json": {
+      "sha256": "c929d967bf1c46e810347df61adad12192a6b990849da8a5263163dc7de06418",
+      "bytes": 222
+    }
+  },
+  "verified_workflow_checks": 57,
+  "verified_http_requests": 221,
+  "verified_operations": [
+    {
+      "operation": "extract",
+      "duration_ms": 31166,
+      "usage": {
+        "prompt_tokens": 2789,
+        "completion_tokens": 4151,
+        "total_tokens": 6940,
+        "reported": true
+      },
+      "llm_calls": 1,
+      "attempt": 1
+    },
+    {
+      "operation": "questions",
+      "duration_ms": 24983,
+      "usage": {
+        "prompt_tokens": 4834,
+        "completion_tokens": 3076,
+        "total_tokens": 7910,
+        "reported": true
+      },
+      "llm_calls": 1,
+      "attempt": 1
+    },
+    {
+      "operation": "compose",
+      "duration_ms": 13931,
+      "usage": {
+        "prompt_tokens": 4886,
+        "completion_tokens": 2959,
+        "total_tokens": 7845,
+        "reported": true
+      },
+      "llm_calls": 1,
+      "attempt": 1
+    }
+  ],
+  "verified_live_totals": {
+    "prompt_tokens": 12509,
+    "completion_tokens": 10186,
+    "total_tokens": 22695,
+    "duration_ms": 70080,
+    "llm_calls": 3
+  },
+  "reviewer_real_model_calls": 0,
+  "reviewer_network_calls": 0,
+  "reviewer_database_connections": 0,
+  "material_scope": "synthetic_only in source report describes fabricated inputs; the recorded model path is production P6 and three actual gateway calls",
+  "limitations": [
+    "Does not independently repeat network execution or inspect gateway credentials.",
+    "Exported files retain checks and metrics, not original input or model response text.",
+    "Checks confirm evidence consistency; upstream workflow assertions are reported separately from these reconciliation checks."
+  ]
+}

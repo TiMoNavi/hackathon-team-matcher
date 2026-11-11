@@ -1,0 +1,204 @@
+{
+  "errors": [],
+  "views": [
+    {
+      "scene": "onboarding",
+      "width": 1440,
+      "scroll": 1440,
+      "height": 1080,
+      "body": 1080,
+      "animations": 59
+    },
+    {
+      "scene": "frost-cloud",
+      "width": 1440,
+      "scroll": 1440,
+      "height": 1080,
+      "body": 1080,
+      "animations": 0
+    },
+    {
+      "scene": "glow-keyboard",
+      "width": 1440,
+      "scroll": 1440,
+      "height": 1080,
+      "body": 1080,
+      "animations": 8
+    },
+    {
+      "scene": "enrichment-orbit",
+      "width": 1440,
+      "scroll": 1440,
+      "height": 1080,
+      "body": 1080,
+      "animations": 8
+    },
+    {
+      "scene": "agent-gallery",
+      "width": 1440,
+      "scroll": 1440,
+      "height": 1080,
+      "body": 1080,
+      "animations": 21
+    },
+    {
+      "scene": "gradient-floor",
+      "width": 1440,
+      "scroll": 1440,
+      "height": 1080,
+      "body": 1080,
+      "animations": 2
+    },
+    {
+      "scene": "onboarding",
+      "width": 768,
+      "scroll": 768,
+      "height": 1000,
+      "body": 1000,
+      "animations": 2
+    },
+    {
+      "scene": "frost-cloud",
+      "width": 768,
+      "scroll": 768,
+      "height": 1000,
+      "body": 1000,
+      "animations": 0
+    },
+    {
+      "scene": "glow-keyboard",
+      "width": 768,
+      "scroll": 768,
+      "height": 1000,
+      "body": 1000,
+      "animations": 8
+    },
+    {
+      "scene": "enrichment-orbit",
+      "width": 768,
+      "scroll": 768,
+      "height": 1000,
+      "body": 1000,
+      "animations": 8
+    },
+    {
+      "scene": "agent-gallery",
+      "width": 768,
+      "scroll": 768,
+      "height": 1000,
+      "body": 1000,
+      "animations": 21
+    },
+    {
+      "scene": "gradient-floor",
+      "width": 768,
+      "scroll": 768,
+      "height": 1000,
+      "body": 1000,
+      "animations": 2
+    },
+    {
+      "scene": "onboarding",
+      "width": 390,
+      "scroll": 390,
+      "height": 844,
+      "body": 844,
+      "animations": 2
+    },
+    {
+      "scene": "frost-cloud",
+      "width": 390,
+      "scroll": 390,
+      "height": 844,
+      "body": 844,
+      "animations": 0
+    },
+    {
+      "scene": "glow-keyboard",
+      "width": 390,
+      "scroll": 390,
+      "height": 844,
+      "body": 844,
+      "animations": 8
+    },
+    {
+      "scene": "enrichment-orbit",
+      "width": 390,
+      "scroll": 390,
+      "height": 844,
+      "body": 844,
+      "animations": 8
+    },
+    {
+      "scene": "agent-gallery",
+      "width": 390,
+      "scroll": 390,
+      "height": 844,
+      "body": 844,
+      "animations": 21
+    },
+    {
+      "scene": "gradient-floor",
+      "width": 390,
+      "scroll": 390,
+      "height": 844,
+      "body": 844,
+      "animations": 2
+    },
+    {
+      "scene": "onboarding",
+      "width": 320,
+      "scroll": 320,
+      "height": 740,
+      "body": 740,
+      "animations": 2
+    },
+    {
+      "scene": "frost-cloud",
+      "width": 320,
+      "scroll": 320,
+      "height": 740,
+      "body": 740,
+      "animations": 0
+    },
+    {
+      "scene": "glow-keyboard",
+      "width": 320,
+      "scroll": 320,
+      "height": 740,
+      "body": 740,
+      "animations": 8
+    },
+    {
+      "scene": "enrichment-orbit",
+      "width": 320,
+      "scroll": 320,
+      "height": 740,
+      "body": 740,
+      "animations": 8
+    },
+    {
+      "scene": "agent-gallery",
+      "width": 320,
+      "scroll": 320,
+      "height": 740,
+      "body": 740,
+      "animations": 21
+    },
+    {
+      "scene": "gradient-floor",
+      "width": 320,
+      "scroll": 320,
+      "height": 740,
+      "body": 740,
+      "animations": 2
+    }
+  ],
+  "checks": [
+    "Four-step flow, selected values, ready summary, finish feedback and back navigation",
+    "Scene selection, dark iframe, replay, cloud click and gallery controls",
+    "Glow Keyboard accepts user input and Enter",
+    "Cloud animation updates rendered geometry over time",
+    "Orbit respects reduced motion"
+  ]
+}

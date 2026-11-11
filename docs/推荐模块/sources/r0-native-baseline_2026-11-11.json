@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-11",
+  "purpose": "Before R0 edits; hashes of original framework/dependency files only; no database or credentials read.",
+  "trees": {
+    "backend/protected/humhub": {
+      "files": 11259,
+      "tree_sha256": "3682cfd5ec7dc971639ecec15b66d488913011ee2464f3af9d921ddfa5fb2d00"
+    },
+    "backend/protected/vendor": {
+      "files": 15408,
+      "tree_sha256": "91d2b0c4ddf88a2a2a623dd6e4996305b43f61b42e80c674ae021a569a46c346"
+    }
+  },
+  "anchors": {
+    "backend/protected/modules/.gitignore": "d861d13d3d9ef7fdd28ed31e6ea6de2c2f2cf3c9b8124859a8463e93e2e98e3a",
+    "backend/deploy/profile-fields.json": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+    "docs/首次注册与开场引导_用户原稿_冻结.md": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03"
+  }
+}

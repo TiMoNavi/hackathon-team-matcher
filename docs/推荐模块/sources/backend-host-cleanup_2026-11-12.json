@@ -1,0 +1,38 @@
+{
+  "database": "humhub_recommendation_it_audit_20261112_7f2c9a",
+  "server": "127.0.0.1:8112",
+  "environment": {
+    "php": "8.5.12",
+    "mysql": "9.7.4",
+    "humhub": "1.19.4",
+    "database": "humhub_recommendation_it_audit_20261112_7f2c9a"
+  },
+  "before_cleanup": {
+    "runtime": {
+      "revision": 10,
+      "enabled": true,
+      "provider_id": "matcher-recommendation-ai",
+      "provider_revision": "audit-config-v1"
+    },
+    "budget": {
+      "revision": 5,
+      "allowance": 500,
+      "reserved": 22
+    },
+    "users": 28,
+    "queue_rows": 3
+  },
+  "before_counts": {
+    "conversations": 10,
+    "ledger": 22,
+    "migrations": 236,
+    "native_admin_users": 0
+  },
+  "own_listener_stopped": true,
+  "wrong_database_refused_before_bootstrap": true,
+  "database_removed": true,
+  "temporary_user_removed": true,
+  "private_config_removed": true,
+  "session_files_removed": true,
+  "status": "passed"
+}

@@ -1,0 +1,145 @@
+{
+  "source": "conversation-live_2026-11-12-20261111T184647Z-949633.json",
+  "source_sha256": "32cba749f2406edc32347bdd3a4ab04fd75c038d3eeb83573f0b30c6051aec12",
+  "structural_status": "not_passed",
+  "semantic_status": "requires_separate_human_review",
+  "checks": [
+    {
+      "label": "all nine user turns complete successfully",
+      "passed": false
+    },
+    {
+      "label": "at most sixteen actual gateway requests",
+      "passed": true
+    },
+    {
+      "label": "complete wire requests at most 24KiB",
+      "passed": true
+    },
+    {
+      "label": "all turns remain within their model attempt limits",
+      "passed": true
+    },
+    {
+      "label": "A3 discusses or clarifies without retrieval",
+      "passed": false
+    },
+    {
+      "label": "A4 discusses or clarifies without retrieval",
+      "passed": false
+    },
+    {
+      "label": "A5 discusses or clarifies without retrieval",
+      "passed": false
+    },
+    {
+      "label": "A7 discusses or clarifies without retrieval",
+      "passed": false
+    },
+    {
+      "label": "A8 discusses or clarifies without retrieval",
+      "passed": false
+    },
+    {
+      "label": "A9 discusses or clarifies without retrieval",
+      "passed": false
+    },
+    {
+      "label": "A1 asks a real clarification before retrieval",
+      "passed": true
+    },
+    {
+      "label": "A2 continues original run with exactly one retrieval",
+      "passed": true
+    },
+    {
+      "label": "A6 explicitly retrieves a distinct batch",
+      "passed": false
+    },
+    {
+      "label": "request 3 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5002 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5007 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5014 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5019 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5031 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5001 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5003 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5010 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5012 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5013 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5015 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5022 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5024 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5034 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5036 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "durable call ledger matches actual unique gateway attempts",
+      "passed": true
+    },
+    {
+      "label": "recorded tool searches match actual backend retrievals",
+      "passed": true
+    }
+  ],
+  "turns_recorded": 2,
+  "generation_requests": 3,
+  "finish_reason_counts": {
+    "no_response": 1,
+    "stop": 2
+  },
+  "maximum_wire_bytes": 21809,
+  "gateway_reported_usage": {
+    "prompt_tokens": 4351,
+    "completion_tokens": 3433,
+    "total_tokens": 7784
+  },
+  "usage_note": "Upstream reported counters only; max_tokens is not treated as a verified billing limit."
+}

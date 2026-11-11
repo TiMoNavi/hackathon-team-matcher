@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-11",
+  "scope": "R1 completion documentation and saved acceptance evidence; no application tests rerun during documentation closeout.",
+  "status": "passed",
+  "markdown_files_checked": 9,
+  "relative_file_links_checked": 97,
+  "markdown_fences_balanced": true,
+  "json_files_parsed": 21,
+  "task_checked": [
+    "R0.1",
+    "R0.2",
+    "R0.3",
+    "R0.4",
+    "R0.5",
+    "R0.6",
+    "R0.7",
+    "R1.1",
+    "R1.2",
+    "R1.3",
+    "R1.4",
+    "R1.5",
+    "R1.6"
+  ],
+  "task_counts": {
+    "checked": 13,
+    "unchecked": 47
+  },
+  "recorded_test_results": {
+    "r0_contracts": {
+      "exit_code": 0,
+      "status": "passed",
+      "checks": 57,
+      "files_checked": null
+    },
+    "r1_unit": {
+      "exit_code": 0,
+      "status": "passed",
+      "checks": 102,
+      "files_checked": null
+    },
+    "native_registration": {
+      "exit_code": 0,
+      "status": "passed",
+      "checks": 24,
+      "files_checked": null
+    },
+    "architecture": {
+      "exit_code": 0,
+      "status": "passed",
+      "checks": null,
+      "files_checked": 27
+    }
+  },
+  "php_lint_files": 35,
+  "current_module_files_match_test_hashes": true,
+  "module_file_count": 36,
+  "r0_source_files_unchanged": true,
+  "saved_boundary_report_passed": true,
+  "independent_read_only_review": "recommendation_native_boundary_audit confirmed current module hashes, task test totals, exact ignore append and frozen/native field anchors; reused saved core/vendor tree comparison.",
+  "evidence": [
+    "sources/r1-test-results_2026-11-11.json",
+    "sources/r1-boundary-checks_2026-11-11.json",
+    "sources/r1-native-baseline_2026-11-11.json"
+  ],
+  "limits": [
+    "Relative file link targets and fenced code structure checked; external URLs and Markdown fragment anchors not revalidated.",
+    "Formal rules remain R2; real data and HTTP integration remain R3/R4.",
+    "No production module enable, migration, model call or real user data access."
+  ],
+  "issues": []
+}

@@ -1,0 +1,58 @@
+<?php
+
+use humhub\components\View;
+use humhub\modules\file\widgets\Upload;
+use humhub\widgets\bootstrap\Button;
+use humhub\widgets\modal\ModalButton;
+
+/* @var $this View */
+/* @var $upload Upload */
+/* @var $cropUrl string */
+/* @var $deleteUrl string */
+/* @var $hasImage string */
+/* @var $confirmBody string */
+/* @var $dropZone string */
+
+if (!isset($dropZone)) {
+    $dropZone = null;
+}
+
+if (!isset($confirmBody)) {
+    $confirmBody = null;
+}
+?>
+
+<div class="image-upload-buttons">
+
+    <?= $upload->button([
+        'cssButtonClass' => 'btn btn-accent btn-sm btn-icon-only profile-image-upload',
+        'tooltip' => false,
+        'dropZone' => $dropZone,
+        // Make the upload trigger keyboard-focusable: the real <input type="file"> is
+        // rendered with display:none (UploadInput::$visible = false) and the wrapping
+        // <span class="btn"> has no tabindex by default, so without this it is skipped
+        // by Tab entirely. Header.js adds the matching Enter/Space activation.
+        'buttonOptions' => ['tabindex' => 0, 'role' => 'button'],
+        'options' => ['class' => 'profile-upload-input']]) ?>
+
+    <?= ModalButton::accent()
+        ->sm()
+        ->load($cropUrl)
+        ->icon('edit')
+        ->options(['aria-label' => Yii::t('base', 'Edit')])
+        ->cssClass('profile-image-edit profile-image-crop' . ($hasImage ? '' : ' d-none')) ?>
+
+    <?= Button::danger()
+        ->icon('remove')
+        ->options(['aria-label' => Yii::t('base', 'Delete')])
+        ->action('delete', $deleteUrl)
+        ->sm()
+        ->loader(false)
+        ->cssClass('profile-image-edit profile-image-delete' . ($hasImage ? '' : ' d-none'))
+        ->confirm(
+            Yii::t('SpaceModule.base', '<strong>Confirm</strong> image deletion'),
+            $confirmBody,
+            Yii::t('SpaceModule.base', 'Delete'),
+            Yii::t('SpaceModule.base', 'Cancel'),
+        ) ?>
+</div>

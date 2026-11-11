@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "method": "Official GitHub repository API, default-branch commit and README. No code installation or execution.",
+  "repositories": [
+    {
+      "full_name": "humhub/example-basic",
+      "html_url": "https://github.com/humhub/example-basic",
+      "description": "Basic Module Example",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2026-11-04T17:15:22Z",
+      "stargazers_count": 3,
+      "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+      "commit_date": "2026-11-04T17:15:18Z",
+      "license_spdx": null,
+      "readme_url": "https://github.com/humhub/example-basic/blob/89605b11d09427e5ff1cc224392b926de4beb4ce/docs/README.md",
+      "readme_sha256": "8c3c2979d659b114bbe8d7c4d9392a2478bd4a2c41366445812cbe47a3a0d953"
+    },
+    {
+      "full_name": "harvard-hbs/team-formation",
+      "html_url": "https://github.com/harvard-hbs/team-formation",
+      "description": "A tool to form teams from a larger group based on clustering and diversity constraints",
+      "default_branch": "main",
+      "archived": false,
+      "pushed_at": "2026-10-27T18:28:18Z",
+      "stargazers_count": 4,
+      "commit": "ee2506cdc343de7d789d4c04cf86005c065827a4",
+      "commit_date": "2026-10-27T18:28:01Z",
+      "license_spdx": "MIT",
+      "readme_url": "https://github.com/harvard-hbs/team-formation/blob/ee2506cdc343de7d789d4c04cf86005c065827a4/README.md",
+      "readme_sha256": "acd81d7913c3278ca8f1d1348b589393cb22a3c34e324d1672e6f94f430862bb"
+    },
+    {
+      "repo": "rodrigoguirao/ai-hackathon-team-maker",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "full_name": "gorse-io/gorse",
+      "html_url": "https://github.com/gorse-io/gorse",
+      "description": "AI powered open source recommender system engine supports classical/LLM rankers and multimodal content via embedding",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2026-11-10T03:02:18Z",
+      "stargazers_count": 9919,
+      "commit": "2145bd0567f03b59f83f43ea2575a17a9bdaa016",
+      "commit_date": "2026-10-30T00:48:29Z",
+      "license_spdx": "Apache-2.0",
+      "readme_url": "https://github.com/gorse-io/gorse/blob/2145bd0567f03b59f83f43ea2575a17a9bdaa016/README.md",
+      "readme_sha256": "8605362fa09a5be2befc4cae95a5599374a0490e649d22227a49da954e2226dd"
+    },
+    {
+      "full_name": "TimefoldAI/timefold-solver",
+      "html_url": "https://github.com/TimefoldAI/timefold-solver",
+      "description": "The open source Solver AI for Java and Kotlin to optimize scheduling and routing. Solve the vehicle routing problem, employee rostering, task assignment, maintenance scheduling and other planning problems.",
+      "default_branch": "main",
+      "archived": false,
+      "pushed_at": "2026-11-11T06:29:22Z",
+      "stargazers_count": 1865,
+      "commit": "447e0491bac1ca36f531f715ad0e8bddf7e0105a",
+      "commit_date": "2026-11-11T06:29:21Z",
+      "license_spdx": "Apache-2.0",
+      "readme_url": "https://github.com/timefoldai/timefold-solver/blob/447e0491bac1ca36f531f715ad0e8bddf7e0105a/README.md",
+      "readme_sha256": "28bac9d9839b2de50338278306ca440eef3b54d146b3e1848e194cf333d60960"
+    },
+    {
+      "full_name": "google/or-tools",
+      "html_url": "https://github.com/google/or-tools",
+      "description": "Google's Operations Research tools:",
+      "default_branch": "stable",
+      "archived": false,
+      "pushed_at": "2026-11-10T15:36:01Z",
+      "stargazers_count": 14362,
+      "commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "commit_date": "2026-09-17T13:02:24Z",
+      "license_spdx": "Apache-2.0",
+      "readme_url": "https://github.com/google/or-tools/blob/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5/README.md",
+      "readme_sha256": "d4bcafffc5c1e42789bcf07143240de0bcf8e13ea08fa5f220f7a967d608af8c"
+    },
+    {
+      "full_name": "duolicious/duolicious",
+      "html_url": "https://github.com/duolicious/duolicious",
+      "description": "The internet's most popular open-source dating app",
+      "default_branch": "main",
+      "archived": false,
+      "pushed_at": "2026-11-11T04:47:39Z",
+      "stargazers_count": 197,
+      "commit": "72bcf85501ff87d565757023cffebecea65548a3",
+      "commit_date": "2026-11-11T04:47:37Z",
+      "license_spdx": "AGPL-3.0",
+      "readme_url": "https://github.com/duolicious/duolicious/blob/72bcf85501ff87d565757023cffebecea65548a3/README.md",
+      "readme_sha256": "4494a39520559789052ebffcb450011d379b662f787e2e3ca2ae3b980b890539"
+    },
+    {
+      "full_name": "googleforgames/open-match",
+      "html_url": "https://github.com/googleforgames/open-match",
+      "description": "Flexible, extensible, and scalable video game matchmaking.",
+      "default_branch": "main",
+      "archived": false,
+      "pushed_at": "2026-07-12T18:15:57Z",
+      "stargazers_count": 3429,
+      "commit": "d781be1a3ce1b6b7fce495345b23256089f55de9",
+      "commit_date": "2024-07-10T02:11:56Z",
+      "license_spdx": "Apache-2.0",
+      "readme_url": "https://github.com/googleforgames/open-match/blob/d781be1a3ce1b6b7fce495345b23256089f55de9/README.md",
+      "readme_sha256": "30924123ca5209bb4d6d17d9643dc313db1100db2217a872ff07983544a99a9f"
+    },
+    {
+      "full_name": "lyst/lightfm",
+      "html_url": "https://github.com/lyst/lightfm",
+      "description": "A Python implementation of LightFM, a hybrid recommendation algorithm.",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2024-07-24T18:48:54Z",
+      "stargazers_count": 5120,
+      "commit": "0c9c31e027b976beab2385e268b58010fff46096",
+      "commit_date": "2023-04-30T18:36:20Z",
+      "license_spdx": "Apache-2.0",
+      "readme_url": "https://github.com/lyst/lightfm/blob/0c9c31e027b976beab2385e268b58010fff46096/README.md",
+      "readme_sha256": "824fbab733e11dd3c73b46ca76349d5bf70e7df58eb5b76c68676c5694412b20"
+    }
+  ]
+}

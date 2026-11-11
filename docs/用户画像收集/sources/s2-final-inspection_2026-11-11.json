@@ -1,0 +1,95 @@
+{
+  "captured_at_utc": "2026-11-11T10:48:43+00:00",
+  "status": "passed",
+  "action": "inspect",
+  "environment": "local_preview",
+  "backup_checksum_verified": false,
+  "module_version": "0.2.0",
+  "installed_version": "0.2.0",
+  "humhub_version": "1.19.4",
+  "catalog_version": 2,
+  "ordinary_field_count": 37,
+  "profile_field_count": 31,
+  "visibility_default": "authenticated",
+  "native_rows_unchanged": true,
+  "native_row_counts": {
+    "user": 3,
+    "profile": 3,
+    "space": 2,
+    "space_membership": 4
+  },
+  "core_tables": {
+    "state": {
+      "rows": 0,
+      "columns": [
+        "id",
+        "user_id",
+        "scope_key",
+        "space_id",
+        "revision",
+        "permission_version",
+        "current_revision_id",
+        "identity_version",
+        "confirmed_avatar_ref",
+        "created_at",
+        "updated_at",
+        "projection_pending"
+      ]
+    },
+    "attribute": {
+      "rows": 0,
+      "columns": [
+        "attribute_id",
+        "state_id",
+        "scope_key",
+        "field_key",
+        "storage_kind",
+        "native_binding",
+        "value_json",
+        "display_label",
+        "record_group_id",
+        "sort_order",
+        "visibility",
+        "confirmation",
+        "last_confirmed_at",
+        "schema_version",
+        "value_code"
+      ]
+    },
+    "revision": {
+      "rows": 0,
+      "columns": [
+        "id",
+        "state_id",
+        "revision",
+        "snapshot_json",
+        "schema_version",
+        "confirmed_at",
+        "created_at"
+      ]
+    },
+    "draft": {
+      "rows": 0,
+      "columns": [
+        "id",
+        "state_id",
+        "draft_kind",
+        "base_revision",
+        "base_identity_version",
+        "draft_version",
+        "fields_json",
+        "origin",
+        "initiator_id",
+        "status",
+        "created_at",
+        "updated_at",
+        "confirmation_hash",
+        "confirmed_revision"
+      ]
+    }
+  },
+  "migrations": [
+    "m261111_000001_profile_foundation",
+    "m261111_000002_profile_service"
+  ]
+}

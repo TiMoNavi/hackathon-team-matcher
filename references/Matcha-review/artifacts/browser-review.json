@@ -1,0 +1,45 @@
+{
+  "landing": {
+    "title": "Matcha - Brewing your perfect hack team",
+    "headings": [
+      "Brewing yourperfect hack team",
+      "Stories",
+      "About Matcha"
+    ]
+  },
+  "login": {
+    "url": "http://127.0.0.1:5178/survey",
+    "apiRequests": [],
+    "storage": {
+      "keys": [
+        "matcha_users"
+      ],
+      "currentUser": null
+    }
+  },
+  "messaging": {
+    "autoReply": 1,
+    "team": [
+      {
+        "id": "review-peer",
+        "name": "ReviewPeer",
+        "avatar": "bg-matcha-green",
+        "skills": [],
+        "experience": "intermediate",
+        "role": "Hackathon Participant",
+        "addedAt": "2026-11-10T17:51:42.958Z",
+        "status": "accepted"
+      }
+    ],
+    "apiRequests": []
+  },
+  "afterReload": {
+    "url": "http://127.0.0.1:5178/login",
+    "currentUser": null
+  },
+  "mobile": {
+    "viewportWidth": 390,
+    "documentWidth": 885
+  },
+  "pageErrors": []
+}

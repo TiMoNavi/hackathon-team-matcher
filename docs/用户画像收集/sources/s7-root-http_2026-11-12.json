@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "environment": "isolated_root_clone",
+  "checks": 16,
+  "checks_passed": [
+    "test uses exact seeded root clone",
+    "synthetic owner login succeeds",
+    "synthetic owner login succeeds",
+    "four default pages contain exactly 89 distinct eligible others",
+    "all cards use current verified Space",
+    "last person rare skill survives full candidate scan",
+    "fresh synthetic fixtures have genuine no-relationship status",
+    "switching Space returns its 17 eligible others",
+    "old Space request cannot override current selection",
+    "explicit owner opt-out removes person before seed replay",
+    "replay creates no duplicate users",
+    "replay preserves owner opt-out separately for each Space",
+    "replay preserves later owner-confirmed nickname",
+    "replay preserves later owner discovery choice",
+    "completed fixture replay has no social or mail side effects",
+    "root synthetic choices restored after verification"
+  ],
+  "synthetic_people": 100,
+  "http_first_page_sample_ms": [
+    1047.7,
+    1046.94,
+    1072.89
+  ],
+  "sample_scope": "three local 100-person first-page observations; not a load or 300-400-person benchmark",
+  "llm_calls": 0
+}

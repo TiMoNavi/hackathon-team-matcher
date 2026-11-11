@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-11",
+  "checks": {
+    "markdown_files": 7,
+    "local_links_resolved": 82,
+    "fences": "balanced",
+    "json_files_parsed": 5,
+    "draft_rule_count": 6,
+    "rule_identifiers": "unique",
+    "draft_weight_sum": 1.0,
+    "runtime_guards": "kept outside policy configuration",
+    "frozen_original_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+    "frozen_original": "unchanged",
+    "source_files_inspected": 11
+  },
+  "scope": "Document navigation, JSON shape and draft invariants only. No rule engine execution, candidate recommendation, AI call, HumHub installation, migration or application tests."
+}

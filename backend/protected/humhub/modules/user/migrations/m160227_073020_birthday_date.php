@@ -1,0 +1,33 @@
+<?php
+
+use humhub\components\Migration;
+use yii\db\Schema;
+
+class m160227_073020_birthday_date extends Migration
+{
+    public function up()
+    {
+        $table = Yii::$app->db->schema->getTableSchema('profile');
+        if (isset($table->columns['birthday'])) {
+            $this->safeAlterColumn('profile', 'birthday', Schema::TYPE_DATE);
+        }
+    }
+
+    public function down()
+    {
+        echo "m160227_073020_birthday_date cannot be reverted.\n";
+
+        return false;
+    }
+
+    /*
+      // Use safeUp/safeDown to run migration code within a transaction
+      public function safeUp()
+      {
+      }
+
+      public function safeDown()
+      {
+      }
+     */
+}

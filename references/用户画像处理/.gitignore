@@ -1,0 +1,10 @@
+.private/
+outputs/
+.env*
+*.log
+
+repos/
+historical-trials/
+**/.local/
+**/.env*
+**/__pycache__/

@@ -1,0 +1,212 @@
+{
+  "status": "passed",
+  "checks": 72,
+  "checks_passed": [
+    "same explicitly allocated benchmark clone",
+    "same six scenario names",
+    "only catalog source hash changes among five measured components",
+    "recent_first preserves all three samples",
+    "recent_first keeps 66 queries",
+    "recent_first keeps 47644 returned rows including repeated reads",
+    "recent_first identical ordered owner IDs",
+    "recent_first two complete batched permission passes",
+    "recent_first two complete batched permission passes",
+    "recent_first two complete batched permission passes",
+    "recent_first two complete batched permission passes",
+    "recent_first two complete batched permission passes",
+    "recent_first two complete batched permission passes",
+    "last_person_late_skill preserves all three samples",
+    "last_person_late_skill keeps 66 queries",
+    "last_person_late_skill keeps 47644 returned rows including repeated reads",
+    "last_person_late_skill identical ordered owner IDs",
+    "last_person_late_skill two complete batched permission passes",
+    "last_person_late_skill two complete batched permission passes",
+    "last_person_late_skill two complete batched permission passes",
+    "last_person_late_skill two complete batched permission passes",
+    "last_person_late_skill two complete batched permission passes",
+    "last_person_late_skill two complete batched permission passes",
+    "role_skill_and preserves all three samples",
+    "role_skill_and keeps 66 queries",
+    "role_skill_and keeps 47644 returned rows including repeated reads",
+    "role_skill_and identical ordered owner IDs",
+    "role_skill_and two complete batched permission passes",
+    "role_skill_and two complete batched permission passes",
+    "role_skill_and two complete batched permission passes",
+    "role_skill_and two complete batched permission passes",
+    "role_skill_and two complete batched permission passes",
+    "role_skill_and two complete batched permission passes",
+    "seeking_array_second_third preserves all three samples",
+    "seeking_array_second_third keeps 66 queries",
+    "seeking_array_second_third keeps 47644 returned rows including repeated reads",
+    "seeking_array_second_third identical ordered owner IDs",
+    "seeking_array_second_third two complete batched permission passes",
+    "seeking_array_second_third two complete batched permission passes",
+    "seeking_array_second_third two complete batched permission passes",
+    "seeking_array_second_third two complete batched permission passes",
+    "seeking_array_second_third two complete batched permission passes",
+    "seeking_array_second_third two complete batched permission passes",
+    "availability_full_window preserves all three samples",
+    "availability_full_window keeps 66 queries",
+    "availability_full_window keeps 47644 returned rows including repeated reads",
+    "availability_full_window identical ordered owner IDs",
+    "availability_full_window two complete batched permission passes",
+    "availability_full_window two complete batched permission passes",
+    "availability_full_window two complete batched permission passes",
+    "availability_full_window two complete batched permission passes",
+    "availability_full_window two complete batched permission passes",
+    "availability_full_window two complete batched permission passes",
+    "empty_filter preserves all three samples",
+    "empty_filter keeps 66 queries",
+    "empty_filter keeps 47644 returned rows including repeated reads",
+    "empty_filter identical ordered owner IDs",
+    "empty_filter two complete batched permission passes",
+    "empty_filter two complete batched permission passes",
+    "empty_filter two complete batched permission passes",
+    "empty_filter two complete batched permission passes",
+    "empty_filter two complete batched permission passes",
+    "empty_filter two complete batched permission passes",
+    "same raw result for index hints",
+    "optimizer_default attribute plan is scan without chosen index",
+    "optimizer_default actual observed attribute iterator rows are labelled",
+    "use_state_indexes attribute plan is scan without chosen index",
+    "use_state_indexes actual observed attribute iterator rows are labelled",
+    "ignore_state_indexes attribute plan is scan without chosen index",
+    "ignore_state_indexes actual observed attribute iterator rows are labelled",
+    "four of six use-case median samples get slower, preventing uniform-improvement claim",
+    "reviewed current catalog matches measured final code"
+  ],
+  "scope": "Independent read-only review of benchmark code/evidence, not independent database benchmark rerun.",
+  "scenarios": {
+    "recent_first": {
+      "baseline_median_ms": 5436.793,
+      "final_median_ms": 5346.508,
+      "final_slower": false,
+      "baseline_samples_ms": [
+        5302.14,
+        5436.793,
+        5447.51
+      ],
+      "final_samples_ms": [
+        5566.764,
+        4913.545,
+        5346.508
+      ]
+    },
+    "last_person_late_skill": {
+      "baseline_median_ms": 5448.759,
+      "final_median_ms": 5270.933,
+      "final_slower": false,
+      "baseline_samples_ms": [
+        5415.928,
+        5448.759,
+        5577.139
+      ],
+      "final_samples_ms": [
+        4363.082,
+        5549.472,
+        5270.933
+      ]
+    },
+    "role_skill_and": {
+      "baseline_median_ms": 5592.414,
+      "final_median_ms": 7144.712,
+      "final_slower": true,
+      "baseline_samples_ms": [
+        5785.754,
+        5522.84,
+        5592.414
+      ],
+      "final_samples_ms": [
+        6500.361,
+        9119.664,
+        7144.712
+      ]
+    },
+    "seeking_array_second_third": {
+      "baseline_median_ms": 5552.467,
+      "final_median_ms": 6147.794,
+      "final_slower": true,
+      "baseline_samples_ms": [
+        5684.262,
+        5552.467,
+        5540.945
+      ],
+      "final_samples_ms": [
+        8092.896,
+        5116.137,
+        6147.794
+      ]
+    },
+    "availability_full_window": {
+      "baseline_median_ms": 5869.758,
+      "final_median_ms": 8908.991,
+      "final_slower": true,
+      "baseline_samples_ms": [
+        5657.332,
+        5869.758,
+        6656.219
+      ],
+      "final_samples_ms": [
+        6834.74,
+        9166.03,
+        8908.991
+      ]
+    },
+    "empty_filter": {
+      "baseline_median_ms": 9004.65,
+      "final_median_ms": 11087.217,
+      "final_slower": true,
+      "baseline_samples_ms": [
+        8336.395,
+        11940.177,
+        9004.65
+      ],
+      "final_samples_ms": [
+        6416.359,
+        11469.504,
+        11087.217
+      ]
+    }
+  },
+  "query_count": 66,
+  "returned_rows_including_rechecks": 47644,
+  "index_observations": {
+    "optimizer_default": {
+      "estimated_rows": 19019,
+      "actual_iterator_rows_per_loop": 20559,
+      "loops": 1,
+      "client_samples_ms": [
+        350.026662,
+        238.76901,
+        284.546355
+      ]
+    },
+    "use_state_indexes": {
+      "estimated_rows": 19019,
+      "actual_iterator_rows_per_loop": 20559,
+      "loops": 1,
+      "client_samples_ms": [
+        314.468003,
+        276.651758,
+        328.083649
+      ]
+    },
+    "ignore_state_indexes": {
+      "estimated_rows": 19019,
+      "actual_iterator_rows_per_loop": 20559,
+      "loops": 1,
+      "client_samples_ms": [
+        283.289675,
+        273.356862,
+        543.566672
+      ]
+    }
+  },
+  "conclusion": "Correctness/result invariants preserved; no consistent end-to-end speedup established. Existing state-index hints do not alter the observed attribute scan.",
+  "limits": [
+    "Single local development setup, three sequential samples per scenario; no production capacity inference.",
+    "20559 actual iterator rows is one observed 200-person attribute SELECT, not per-request rows_examined.",
+    "Handler_read are engine read operations and repeated returned rows are not exact scanned-row counts.",
+    "Initial unparsed EXPLAIN tree estimates were invalid; refreshed FORMAT=TRADITIONAL evidence is used."
+  ]
+}

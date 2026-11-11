@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-12",
+  "status": "specification_updated_product_not_accepted",
+  "user_decision": "rejected_prior_dialogue_demo",
+  "scope": "Recommendation documents and unexecuted acceptance scenarios only; no production feature implementation or new model request.",
+  "changes": [
+    "Explicit product rejection recorded without changing raw model evidence",
+    "Project-oriented natural clarification and grounded explanations specified",
+    "Server-backed tool progress and discussion/refresh boundaries specified",
+    "Persistent conversation/turn/run responsibilities and contract gaps documented",
+    "Eight-turn scenario plus partial/no-match and lifecycle tests defined as not_executed"
+  ],
+  "checks": {
+    "relative_links_checked": 70,
+    "missing_links": [],
+    "markdown_fence_errors": [],
+    "scenario_json_valid": true,
+    "scenario_status": "not_executed",
+    "continuous_scenario_turns": 8,
+    "raw_live_transcript_unchanged": true,
+    "frozen_document_unchanged": true,
+    "production_files_compared": 117,
+    "production_mismatches": [
+      "backend/protected/modules/matcher-recommendation/Module.php",
+      "backend/protected/modules/matcher-recommendation/config.php",
+      "backend/protected/modules/matcher-recommendation/module.json"
+    ],
+    "production_comparison_note": "Compared with the prior R6 acceptance manifest, three existing module-shell files differ. Read-only inspection shows ordinary-discovery composition/routes, outside this documentation task. No such changes were authored, reverted or accepted as conversational functionality here; no claim that the whole production tree stayed unchanged."
+  },
+  "new_live_model_requests": 0,
+  "new_product_tasks_completed": [
+    "R6.C0 documentation only"
+  ],
+  "unimplemented": [
+    "R6.C1",
+    "R6.C2",
+    "R6.C3",
+    "R6.C4",
+    "R6.C5"
+  ],
+  "files_sha256": {
+    "docs/推荐模块/14_对话式找队友改版与验收.md": "1f8f7f9b04339492e4d0d9f80ac199dbc3c13cefb614fba1fd8808b024d73c93",
+    "docs/推荐模块/13_批量虚构用户与真实AI对话测试.md": "3a5971a962a41e792a97c88f734a860e0f894da6574131b6d31ede9d739c7999",
+    "docs/推荐模块/task.md": "be64bb4cde54a05350077b49e904332ded3e40b86e848da6cdf7a1ff207c8e3d",
+    "docs/推荐模块/00_README.md": "b80f88d172b20ed1104d94b3b97ba87ef659a4d65ed62770183435a2196c9d1f",
+    "docs/推荐模块/examples/conversational-teammate-acceptance_2026-11-12.json": "883dd28c8299425c2f913aaa73c6657d34c0e6789e935c9ada41c13aada844ed",
+    "docs/推荐模块/sources/dialogue-demo-completion_2026-11-12.json": "90acfb1a46a5bd1cc2062e364c6b83834b4b11a3c6fe97a2769e399d798f48b7"
+  },
+  "scope_boundaries": {
+    "writes_by_this_task": "docs/推荐模块 only",
+    "production_writes_by_this_task": false,
+    "existing_parallel_code_changes_preserved": true,
+    "new_conversation_code_implemented": false,
+    "application_tests_claimed": false
+  }
+}

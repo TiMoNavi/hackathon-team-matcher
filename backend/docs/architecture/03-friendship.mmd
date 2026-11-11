@@ -1,0 +1,18 @@
+%% 好友流程：同一关系在 A、B 两侧的状态
+%% 与 SVG 使用同一节点和关系数据；布局由 Mermaid 决定。
+flowchart TB
+  none["无关系<br/>A：STATE_NONE<br/>B：STATE_NONE<br/>无对应方向记录"]:::core
+  pending["申请中 · 只有 A → B<br/>A：STATE_REQUEST_SENT<br/>B：STATE_REQUEST_RECEIVED<br/>两人尚未互相确认"]:::core
+  friends["已成为好友<br/>A、B：STATE_FRIENDS<br/>A → B 与 B → A 均存在"]:::core
+  controller["RequestController<br/>add：发起 / 接受<br/>delete：拒绝 / 取消 / 解除<br/>原版页面与 AJAX 入口"]:::core
+  effects["关系变化后的联动<br/>申请通知、接受或拒绝通知<br/>接受后清理原申请通知<br/>建立与解除好友事件"]:::core
+  none -->|"A 发起"| pending
+  pending -->|"B 接受"| friends
+  pending -->|"A 撤回 / B 拒绝"| none
+  friends -->|"解除好友关系"| none
+  controller -->|"调用模型"| effects
+  friends -.-> effects
+  classDef core fill:#edf5ff,stroke:#3975ba,color:#1c304b
+  classDef optional fill:#f5f0ff,stroke:#8870bd,color:#1c304b
+  classDef planned fill:#fff6e6,stroke:#ba7b20,color:#1c304b
+  classDef external fill:#f2f4f7,stroke:#778397,color:#1c304b

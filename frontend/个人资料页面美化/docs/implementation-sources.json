@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-12",
+  "copied_sources": "source-manifest.json",
+  "adaptations": [
+    {
+      "file": "components/facts-field.tsx",
+      "source": "Shadcn UI Kit hero14 motion pattern + ../首页/components/effects/kit-marquee.tsx; locally composed bounded layout",
+      "status": "adapted"
+    },
+    {
+      "file": "components/profile-stories.tsx",
+      "source": "Signalry card/container composition; locally drawn CSS/SVG illustrations",
+      "status": "adapted"
+    },
+    {
+      "file": "public/images/portrait.jpg",
+      "source_record": "public/images/SOURCES.json",
+      "status": "local demo asset"
+    }
+  ]
+}

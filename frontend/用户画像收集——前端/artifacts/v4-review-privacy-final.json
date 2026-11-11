@@ -1,0 +1,22 @@
+{
+  "overlap": {
+    "mascot": {
+      "x": 313,
+      "y": 754,
+      "w": 82,
+      "h": 82
+    },
+    "save": {
+      "x": 218,
+      "y": 790,
+      "w": 154,
+      "h": 44
+    },
+    "overlap": 2596
+  },
+  "privacy": {
+    "privateProfileVisible": false,
+    "activityControlCount": 0,
+    "indexActivityCount": 0
+  }
+}

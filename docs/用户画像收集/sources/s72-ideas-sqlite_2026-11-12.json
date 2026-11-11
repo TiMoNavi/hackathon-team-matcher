@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "execution_exit_code": 0,
+  "suite": "matcher-ideas-sqlite",
+  "checks": 37,
+  "passed": true,
+  "production_db_access": false,
+  "llm_calls": 0
+}

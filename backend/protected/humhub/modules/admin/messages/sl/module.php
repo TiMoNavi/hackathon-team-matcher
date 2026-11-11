@@ -1,0 +1,4 @@
+<?php
+return [
+  'Installed' => 'Nameščeno',
+];

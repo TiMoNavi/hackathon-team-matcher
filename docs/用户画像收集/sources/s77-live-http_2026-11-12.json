@@ -1,0 +1,343 @@
+{
+  "status": "passed",
+  "database": "humhub_profile_s77_test_root_f3a9d621",
+  "origin": "http://127.0.0.1:8106",
+  "passed": 57,
+  "checks": [
+    {
+      "name": "job_fcdec25a-30c4-4841-a598-89ed88094a71_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "job_fcdec25a-30c4-4841-a598-89ed88094a71_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_fcdec25a-30c4-4841-a598-89ed88094a71_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "session_fcdec25a-30c4-4841-a598-89ed88094a71_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "source_3220a1e2-0889-465a-ac35-ac0187de0493_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "source_3220a1e2-0889-465a-ac35-ac0187de0493_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "stable_GET_metrics_fcdec25a-30c4-4841-a598-89ed88094a71",
+      "passed": true
+    },
+    {
+      "name": "extract_durable_queued",
+      "passed": true
+    },
+    {
+      "name": "extract_foreign_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "extract_anonymous_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "extract_production_P6_success",
+      "passed": true
+    },
+    {
+      "name": "extract_accounting_explicit",
+      "passed": true
+    },
+    {
+      "name": "extract_review_items_present",
+      "passed": true
+    },
+    {
+      "name": "extraction_supported_candidates",
+      "passed": true
+    },
+    {
+      "name": "extraction_does_not_publish",
+      "passed": true
+    },
+    {
+      "name": "explicit_review_before_questions",
+      "passed": true
+    },
+    {
+      "name": "job_72250154-136e-4854-ae34-15cb627b92de_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "job_72250154-136e-4854-ae34-15cb627b92de_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_72250154-136e-4854-ae34-15cb627b92de_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "session_72250154-136e-4854-ae34-15cb627b92de_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "stable_GET_metrics_72250154-136e-4854-ae34-15cb627b92de",
+      "passed": true
+    },
+    {
+      "name": "questions_durable_queued",
+      "passed": true
+    },
+    {
+      "name": "questions_foreign_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "questions_anonymous_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "questions_production_P6_success",
+      "passed": true
+    },
+    {
+      "name": "questions_accounting_explicit",
+      "passed": true
+    },
+    {
+      "name": "questions_review_items_present",
+      "passed": true
+    },
+    {
+      "name": "three_to_eight_ai_questions",
+      "passed": true
+    },
+    {
+      "name": "stable_options_free_entry_last",
+      "passed": true
+    },
+    {
+      "name": "exit_relogin_restores_batch_and_answer",
+      "passed": true
+    },
+    {
+      "name": "exit_relogin_restores_question_position",
+      "passed": true
+    },
+    {
+      "name": "options_free_text_skip_saved",
+      "passed": true
+    },
+    {
+      "name": "all_questions_resolved_before_compose",
+      "passed": true
+    },
+    {
+      "name": "job_e9387a72-42a2-40a5-aaca-0c94bf2c6cf2_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "job_e9387a72-42a2-40a5-aaca-0c94bf2c6cf2_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "session_e9387a72-42a2-40a5-aaca-0c94bf2c6cf2_honest_percent",
+      "passed": true
+    },
+    {
+      "name": "session_e9387a72-42a2-40a5-aaca-0c94bf2c6cf2_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "stable_GET_metrics_e9387a72-42a2-40a5-aaca-0c94bf2c6cf2",
+      "passed": true
+    },
+    {
+      "name": "compose_durable_queued",
+      "passed": true
+    },
+    {
+      "name": "compose_foreign_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "compose_anonymous_job_hidden",
+      "passed": true
+    },
+    {
+      "name": "compose_production_P6_success",
+      "passed": true
+    },
+    {
+      "name": "compose_accounting_explicit",
+      "passed": true
+    },
+    {
+      "name": "compose_review_items_present",
+      "passed": true
+    },
+    {
+      "name": "ai_output_is_editable",
+      "passed": true
+    },
+    {
+      "name": "manual_private_input_preserved",
+      "passed": true
+    },
+    {
+      "name": "manual_output_survives_relogin",
+      "passed": true
+    },
+    {
+      "name": "ready_is_not_completed",
+      "passed": true
+    },
+    {
+      "name": "only_explicit_confirmation_completes",
+      "passed": true
+    },
+    {
+      "name": "authenticated_city_visible_via_authorized_entry",
+      "passed": true
+    },
+    {
+      "name": "private_bio_hidden_from_viewer",
+      "passed": true
+    },
+    {
+      "name": "contacts_excluded_from_ordinary_profile",
+      "passed": true
+    },
+    {
+      "name": "friends_contact_hidden_from_nonfriend",
+      "passed": true
+    },
+    {
+      "name": "next_space_keeps_global_and_starts_empty",
+      "passed": true
+    },
+    {
+      "name": "extract_observed_queued_running_ready",
+      "passed": true
+    },
+    {
+      "name": "questions_observed_queued_running_ready",
+      "passed": true
+    },
+    {
+      "name": "compose_observed_queued_running_ready",
+      "passed": true
+    }
+  ],
+  "http_requests": 221,
+  "workflow_http_requests": 90,
+  "observer_http_requests": 131,
+  "model_operations": [
+    {
+      "job_id": "fcdec25a-30c4-4841-a598-89ed88094a71",
+      "operation": "extract",
+      "execution_status": "succeeded",
+      "applicability": "current",
+      "error_code": null,
+      "attempt": 1,
+      "retry_of": null,
+      "metrics": {
+        "model": "gemini-3.8-flash",
+        "llm_calls": 1,
+        "duration_ms": 31166,
+        "usage": {
+          "prompt_tokens": 2789,
+          "completion_tokens": 4151,
+          "total_tokens": 6940,
+          "reported": true
+        },
+        "accounting_complete": true
+      },
+      "worker_status": "finished"
+    },
+    {
+      "job_id": "72250154-136e-4854-ae34-15cb627b92de",
+      "operation": "questions",
+      "execution_status": "succeeded",
+      "applicability": "current",
+      "error_code": null,
+      "attempt": 1,
+      "retry_of": null,
+      "metrics": {
+        "model": "gemini-3.8-flash",
+        "llm_calls": 1,
+        "duration_ms": 24983,
+        "usage": {
+          "prompt_tokens": 4834,
+          "completion_tokens": 3076,
+          "total_tokens": 7910,
+          "reported": true
+        },
+        "accounting_complete": true
+      },
+      "worker_status": "finished"
+    },
+    {
+      "job_id": "e9387a72-42a2-40a5-aaca-0c94bf2c6cf2",
+      "operation": "compose",
+      "execution_status": "succeeded",
+      "applicability": "current",
+      "error_code": null,
+      "attempt": 1,
+      "retry_of": null,
+      "metrics": {
+        "model": "gemini-3.8-flash",
+        "llm_calls": 1,
+        "duration_ms": 13931,
+        "usage": {
+          "prompt_tokens": 4886,
+          "completion_tokens": 2959,
+          "total_tokens": 7845,
+          "reported": true
+        },
+        "accounting_complete": true
+      },
+      "worker_status": "finished"
+    }
+  ],
+  "known_llm_calls": 3,
+  "unknown_call_records": 0,
+  "worker_attempts_reserved": 3,
+  "hard_request_limit": 6,
+  "planned_calls": 3,
+  "late_accounting_updates": [],
+  "progress_observations": {
+    "fcdec25a-30c4-4841-a598-89ed88094a71": {
+      "states": [
+        "queued",
+        "ready",
+        "running"
+      ],
+      "samples": 53
+    },
+    "72250154-136e-4854-ae34-15cb627b92de": {
+      "states": [
+        "queued",
+        "ready",
+        "running"
+      ],
+      "samples": 44
+    },
+    "e9387a72-42a2-40a5-aaca-0c94bf2c6cf2": {
+      "states": [
+        "queued",
+        "ready",
+        "running"
+      ],
+      "samples": 37
+    }
+  },
+  "pending_job": null,
+  "synthetic_only": true,
+  "raw_material_in_report": false,
+  "automatic_retries": 0
+}

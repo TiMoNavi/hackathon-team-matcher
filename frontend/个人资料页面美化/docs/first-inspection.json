@@ -1,0 +1,465 @@
+{
+  "result": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "facts": [
+        {
+          "text": "我擅长的\n从点子，到可用的界面\n设计与代码，都愿意再多走一步。\nFigma\nReact\n交互设计",
+          "rect": {
+            "x": 625.6503295898438,
+            "y": 429.1884460449219,
+            "width": 374.80291748046875,
+            "height": 144.84713745117188,
+            "top": 429.1884460449219,
+            "right": 1000.4532470703125,
+            "bottom": 574.0355834960938,
+            "left": 625.6503295898438
+          },
+          "height": 130,
+          "scrollHeight": 130
+        },
+        {
+          "text": "生活坐标\n生活在杭州\n线下见面，或在线相遇",
+          "rect": {
+            "x": 1014.2718505859375,
+            "y": 431.8184509277344,
+            "width": 268.1668701171875,
+            "height": 116.16897583007812,
+            "top": 431.8184509277344,
+            "right": 1282.438720703125,
+            "bottom": 547.9874267578125,
+            "left": 1014.2718505859375
+          },
+          "height": 105,
+          "scrollHeight": 105
+        },
+        {
+          "text": "做过的小作品\n把旅行灵感，装进地图\n从收藏夹到真正出发的那一步。\n产品设计\n交互原型",
+          "rect": {
+            "x": 573.0110473632812,
+            "y": 582.8037109375,
+            "width": 422.51348876953125,
+            "height": 134.20684814453125,
+            "top": 582.8037109375,
+            "right": 995.5245361328125,
+            "bottom": 717.0105590820312,
+            "left": 573.0110473632812
+          },
+          "height": 130,
+          "scrollHeight": 130
+        },
+        {
+          "text": "相处说明\n慢热，点子很多\n先认真听，再一起动手。",
+          "rect": {
+            "x": 1012.885498046875,
+            "y": 591.18603515625,
+            "width": 291.5042724609375,
+            "height": 113.521728515625,
+            "top": 591.18603515625,
+            "right": 1304.3897705078125,
+            "bottom": 704.707763671875,
+            "left": 1012.885498046875
+          },
+          "height": 110,
+          "scrollHeight": 110
+        },
+        {
+          "text": "想遇见这样的你\n你让它跑起来，\n我让它好用起来。",
+          "rect": {
+            "x": 599.5562133789062,
+            "y": 736.2236328125,
+            "width": 321.1114501953125,
+            "height": 132.990478515625,
+            "top": 736.2236328125,
+            "right": 920.6676635742188,
+            "bottom": 869.214111328125,
+            "left": 599.5562133789062
+          },
+          "height": 120,
+          "scrollHeight": 120
+        },
+        {
+          "text": "保持好奇\nAI、独立产品，还有远方\n好用的工具，值得走的路。\nAI × 设计\n城市漫游",
+          "rect": {
+            "x": 934.2244873046875,
+            "y": 742.919677734375,
+            "width": 368.9783935546875,
+            "height": 144.6436767578125,
+            "top": 742.919677734375,
+            "right": 1303.202880859375,
+            "bottom": 887.5633544921875,
+            "left": 934.2244873046875
+          },
+          "height": 130,
+          "scrollHeight": 130
+        }
+      ],
+      "fonts": [
+        {
+          "family": "body",
+          "status": "loaded"
+        },
+        {
+          "family": "body Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "display",
+          "status": "loaded"
+        },
+        {
+          "family": "display Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "facts": [
+        {
+          "text": "我擅长的\n从点子，到可用的界面\n设计与代码，都愿意再多走一步。\nFigma\nReact\n交互设计",
+          "rect": {
+            "x": 84.97218322753906,
+            "y": 784.5380249023438,
+            "width": 341.60162353515625,
+            "height": 155.665771484375,
+            "top": 784.5380249023438,
+            "right": 426.5738067626953,
+            "bottom": 940.2037963867188,
+            "left": 84.97218322753906
+          },
+          "height": 142,
+          "scrollHeight": 142
+        },
+        {
+          "text": "生活坐标\n生活在杭州\n线下见面，或在线相遇",
+          "rect": {
+            "x": 436.1853942871094,
+            "y": 794.1426391601562,
+            "width": 244.15017700195312,
+            "height": 115.330322265625,
+            "top": 794.1426391601562,
+            "right": 680.3355712890625,
+            "bottom": 909.4729614257812,
+            "left": 436.1853942871094
+          },
+          "height": 105,
+          "scrollHeight": 105
+        },
+        {
+          "text": "做过的小作品\n把旅行灵感，装进地图\n从收藏夹到真正出发的那一步。\n产品设计\n交互原型",
+          "rect": {
+            "x": 38.38588333129883,
+            "y": 951.1770629882812,
+            "width": 384.10809326171875,
+            "height": 146.00531005859375,
+            "top": 951.1770629882812,
+            "right": 422.4939765930176,
+            "bottom": 1097.182373046875,
+            "left": 38.38588333129883
+          },
+          "height": 142,
+          "scrollHeight": 142
+        },
+        {
+          "text": "相处说明\n慢热，点子很多\n先认真听，再一起动手。",
+          "rect": {
+            "x": 435.8235778808594,
+            "y": 965.71923828125,
+            "width": 264.9734191894531,
+            "height": 113.3828125,
+            "top": 965.71923828125,
+            "right": 700.7969970703125,
+            "bottom": 1079.10205078125,
+            "left": 435.8235778808594
+          },
+          "height": 110,
+          "scrollHeight": 110
+        },
+        {
+          "text": "想遇见这样的你\n你让它跑起来，\n我让它好用起来。",
+          "rect": {
+            "x": 62.02494430541992,
+            "y": 1128.3955078125,
+            "width": 292.25408935546875,
+            "height": 131.982666015625,
+            "top": 1128.3955078125,
+            "right": 354.2790336608887,
+            "bottom": 1260.378173828125,
+            "left": 62.02494430541992
+          },
+          "height": 120,
+          "scrollHeight": 120
+        },
+        {
+          "text": "保持好奇\nAI、独立产品，还有远方\n好用的工具，值得走的路。\nAI × 设计\n城市漫游",
+          "rect": {
+            "x": 363.62884521484375,
+            "y": 1127.9478759765625,
+            "width": 336.2454833984375,
+            "height": 155.4786376953125,
+            "top": 1127.9478759765625,
+            "right": 699.8743286132812,
+            "bottom": 1283.426513671875,
+            "left": 363.62884521484375
+          },
+          "height": 142,
+          "scrollHeight": 142
+        }
+      ],
+      "fonts": [
+        {
+          "family": "body",
+          "status": "loaded"
+        },
+        {
+          "family": "body Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "display",
+          "status": "loaded"
+        },
+        {
+          "family": "display Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "facts": [
+        {
+          "text": "我擅长的\n从点子，到可用的界面\n设计与代码，都愿意再多走一步。\nFigma\nReact\n交互设计",
+          "rect": {
+            "x": 20,
+            "y": 978.875,
+            "width": 350,
+            "height": 138.796875,
+            "top": 978.875,
+            "right": 370,
+            "bottom": 1117.671875,
+            "left": 20
+          },
+          "height": 137,
+          "scrollHeight": 137
+        },
+        {
+          "text": "生活坐标\n生活在杭州\n线下见面，或在线相遇",
+          "rect": {
+            "x": 20,
+            "y": 1130.671875,
+            "width": 168.5,
+            "height": 180,
+            "top": 1130.671875,
+            "right": 188.5,
+            "bottom": 1310.671875,
+            "left": 20
+          },
+          "height": 178,
+          "scrollHeight": 178
+        },
+        {
+          "text": "做过的小作品\n把旅行灵感，装进地图\n从收藏夹到真正出发的那一步。",
+          "rect": {
+            "x": 201.5,
+            "y": 1130.671875,
+            "width": 168.5,
+            "height": 180,
+            "top": 1130.671875,
+            "right": 370,
+            "bottom": 1310.671875,
+            "left": 201.5
+          },
+          "height": 178,
+          "scrollHeight": 178
+        },
+        {
+          "text": "想遇见这样的你\n你让它跑起来，\n我让它好用起来。",
+          "rect": {
+            "x": 20,
+            "y": 1323.671875,
+            "width": 350,
+            "height": 135,
+            "top": 1323.671875,
+            "right": 370,
+            "bottom": 1458.671875,
+            "left": 20
+          },
+          "height": 133,
+          "scrollHeight": 133
+        }
+      ],
+      "fonts": [
+        {
+          "family": "body",
+          "status": "loaded"
+        },
+        {
+          "family": "body Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "display",
+          "status": "loaded"
+        },
+        {
+          "family": "display Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "facts": [
+        {
+          "text": "我擅长的\n从点子，到可用的界面\n设计与代码，都愿意再多走一步。\nFigma\nReact\n交互设计",
+          "rect": {
+            "x": 16,
+            "y": 896.671875,
+            "width": 288,
+            "height": 138.796875,
+            "top": 896.671875,
+            "right": 304,
+            "bottom": 1035.46875,
+            "left": 16
+          },
+          "height": 137,
+          "scrollHeight": 137
+        },
+        {
+          "text": "生活坐标\n生活在杭州\n线下见面，或在线相遇",
+          "rect": {
+            "x": 16,
+            "y": 1048.46875,
+            "width": 288,
+            "height": 126,
+            "top": 1048.46875,
+            "right": 304,
+            "bottom": 1174.46875,
+            "left": 16
+          },
+          "height": 124,
+          "scrollHeight": 124
+        },
+        {
+          "text": "做过的小作品\n把旅行灵感，装进地图\n从收藏夹到真正出发的那一步。",
+          "rect": {
+            "x": 16,
+            "y": 1187.46875,
+            "width": 288,
+            "height": 126,
+            "top": 1187.46875,
+            "right": 304,
+            "bottom": 1313.46875,
+            "left": 16
+          },
+          "height": 124,
+          "scrollHeight": 124
+        },
+        {
+          "text": "想遇见这样的你\n你让它跑起来，\n我让它好用起来。",
+          "rect": {
+            "x": 16,
+            "y": 1326.46875,
+            "width": 288,
+            "height": 135,
+            "top": 1326.46875,
+            "right": 304,
+            "bottom": 1461.46875,
+            "left": 16
+          },
+          "height": 133,
+          "scrollHeight": 133
+        }
+      ],
+      "fonts": [
+        {
+          "family": "body",
+          "status": "loaded"
+        },
+        {
+          "family": "body Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "display",
+          "status": "loaded"
+        },
+        {
+          "family": "display Fallback",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "__nextjs-Geist",
+          "status": "loaded"
+        },
+        {
+          "family": "__nextjs-Geist Mono",
+          "status": "unloaded"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

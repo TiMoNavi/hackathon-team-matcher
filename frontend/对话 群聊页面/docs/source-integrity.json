@@ -1,0 +1,203 @@
+{
+  "checked_at": "2026-11-12",
+  "files": [
+    {
+      "category": "ui",
+      "path": "components/ui/alert-dialog.tsx",
+      "sha256": "e69ccd9d8bd38b22285be263f47bd08de72d2cf2b96bf5db93bb4093676edb2c",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/avatar.tsx",
+      "sha256": "357b2f9aac0192c071cb2ed65cb6e4c8ec01fa02fc15cf50d889b85731b75666",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/bubble.tsx",
+      "sha256": "c9c2f16fe9ebc6c7854674afcf7beb0c1d5d6606609b90f7f682a06bea2e9b8a",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/button.tsx",
+      "sha256": "320f828e18da487ef44a797dd20251022b4892cf4d78a33123fd7807c993fe66",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/card.tsx",
+      "sha256": "efc71e6f0d48db41c5d4ede88e8d85e6046e5f62a3a9221550c2bcde02aa6c15",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/carousel.tsx",
+      "sha256": "03f4fd8fdcd4cc407b268b087399a689756ca49791ab840ccf49d82d1a19bf88",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/checkbox.tsx",
+      "sha256": "cd07c0d92249cadba54c9bc327e0420d4fa532eb26fe06ea27eb05d3eb18aa93",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/dialog.tsx",
+      "sha256": "ebaf37457f7c44f7393a1bf8dca5704b3c195570de55e90fe5cb312025182c2f",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/drawer.tsx",
+      "sha256": "937ac7057a16501934b670b0fabf52df1ceb52d4b3f3582edf02653be12b8f44",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/dropdown-menu.tsx",
+      "sha256": "d7a933bbdfc0b00fd6c54edfc19a3a25b959573c1340ceacecf4f862d9d10824",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/empty.tsx",
+      "sha256": "98f56d81c34b7012044519963fffd9f4a198f64a26633e1f6714122268cf5bfd",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/field.tsx",
+      "sha256": "72bbd57b854cd11c618061bcf5b1baebbf6293c6e0a8dd6831f5641e0a20d983",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/input.tsx",
+      "sha256": "d5bc1c0043548d4a1aa8cf6085f6abaeacf2e13832b50ac53b6a22465847f56f",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/label.tsx",
+      "sha256": "7f19b8476658d25ff197c84030e58cd7395059d876a54630e025951e474ebdae",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/popover.tsx",
+      "sha256": "93e43e5b56a5fb402fa622677dd868bb5f5ac124cf540f4d571de0ade3a371e6",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/progress.tsx",
+      "sha256": "e7c886e8843c09ad1281540c7af9c9c84ef84fc37e7ad6353f1ff4acef489394",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/reel.tsx",
+      "sha256": "5bda1571fa7d5bbba5a57fe51dd9f6d8d5d501bb1f8198abdc910bf3d8f0f01d",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/scroll-area.tsx",
+      "sha256": "9cb27ee6ee571945edeaf465da966655656685ffcd57c452f04298f16c0c799f",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/separator.tsx",
+      "sha256": "75085bd84ff6965e4a356c53a4689799cabf65caa93c0bba064d5a0c6fa78f13",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/switch.tsx",
+      "sha256": "2bfad5eab6f4b733ba262ce6c42070b23d72e66af8a985af1594cc14b80314f2",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/tabs.tsx",
+      "sha256": "d77cc74abfffc01fd161008e214aa99b51eacb4e1e6a67c53593ccf9f5fe23d7",
+      "matches_source": true
+    },
+    {
+      "category": "ui",
+      "path": "components/ui/tooltip.tsx",
+      "sha256": "4657ecabe348b37fc8724a06a8e2419ff6891e78af7b5e1aa2c3b0578d301fc7",
+      "matches_source": true
+    },
+    {
+      "category": "font",
+      "path": "app/fonts/SOURCE.json",
+      "sha256": "560df0a2adac6c8c915aa80118eeb17c924a9bb268e12bfada3c44709d72e8a3",
+      "matches_source": true
+    },
+    {
+      "category": "font",
+      "path": "app/fonts/bricolage-grotesque-latin.woff2",
+      "sha256": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+      "matches_source": true
+    },
+    {
+      "category": "font",
+      "path": "app/fonts/inter-latin.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-1.jpg",
+      "sha256": "e8207ab1311461d67c604b12ca13048519b3ad632119a3ea8d3616caa0ac950c",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-2.jpg",
+      "sha256": "e9daf1364623ccd2f9b262cc6d45befd75392de675ce0d5b731537ab72d8e0bf",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-3.jpg",
+      "sha256": "e975b9950b170a2685cf63bf578c16973dab6c76d31b39abff57d61e7f2c5f5a",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-4.jpg",
+      "sha256": "3b94d4710d04d9fea9a88519deffeb08215762694bd6136c9173d808bcf6c717",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-5.jpg",
+      "sha256": "1657bf7a6e9aac5858f2efa08e4dbfdd4e6c2bdb1fc56f84058a586ed5a28415",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-6.jpg",
+      "sha256": "c08e0b105116906d4b57a065b71be125eaeb945bac1436071abdea80a2fae2a2",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-7.jpg",
+      "sha256": "f1bc992f8046636f260ceec0a69f3e5f601b05b7156db93a3871b32f0b7069af",
+      "matches_source": true
+    },
+    {
+      "category": "avatar",
+      "path": "public/avatars/avatar-8.jpg",
+      "sha256": "e8207ab1311461d67c604b12ca13048519b3ad632119a3ea8d3616caa0ac950c",
+      "matches_source": true
+    }
+  ]
+}

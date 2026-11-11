@@ -1,0 +1,1981 @@
+{
+  "date": "2026-11-12",
+  "checks": [
+    {
+      "name": "English display actually renders Bricolage Grotesque",
+      "passed": true
+    },
+    {
+      "name": "English body actually renders Inter",
+      "passed": true
+    },
+    {
+      "name": "Chinese actually renders a system Chinese font",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 1920",
+      "passed": true,
+      "detail": {
+        "actual": 1920
+      }
+    },
+    {
+      "name": "Navigation stays on one line 1920",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 1920",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Composer clears browsing controls 1920x1080",
+      "passed": true,
+      "detail": {
+        "controls": 747.296875,
+        "composer": 965.5
+      }
+    },
+    {
+      "name": "Sidebar has separate room 1920",
+      "passed": true,
+      "detail": {
+        "stage": {
+          "x": 171,
+          "y": 226.796875,
+          "width": 1196,
+          "height": 440.5,
+          "top": 226.796875,
+          "right": 1367,
+          "bottom": 667.296875,
+          "left": 171
+        },
+        "composer": {
+          "x": 479,
+          "y": 965.5,
+          "width": 580,
+          "height": 90.5,
+          "top": 965.5,
+          "right": 1059,
+          "bottom": 1056,
+          "left": 479
+        },
+        "panel": {
+          "x": 1544,
+          "y": 108,
+          "width": 352,
+          "height": 948,
+          "top": 108,
+          "right": 1896,
+          "bottom": 1056,
+          "left": 1544
+        }
+      }
+    },
+    {
+      "name": "Sidebar preserves branch text 1920",
+      "passed": true,
+      "detail": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 350,
+          "textWidth": 350
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "name": "Sidebar preserves controls above input 1920",
+      "passed": true,
+      "detail": {
+        "controls": 747.296875,
+        "composer": 965.5
+      }
+    },
+    {
+      "name": "No horizontal overflow 1440",
+      "passed": true,
+      "detail": {
+        "actual": 1440
+      }
+    },
+    {
+      "name": "Navigation stays on one line 1440",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 1440",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Composer clears browsing controls 1440x900",
+      "passed": true,
+      "detail": {
+        "controls": 747.296875,
+        "composer": 785.5
+      }
+    },
+    {
+      "name": "Sidebar has separate room 1440",
+      "passed": true,
+      "detail": {
+        "stage": {
+          "x": 32,
+          "y": 226.796875,
+          "width": 994,
+          "height": 452.296875,
+          "top": 226.796875,
+          "right": 1026,
+          "bottom": 679.09375,
+          "left": 32
+        },
+        "composer": {
+          "x": 239,
+          "y": 785.5,
+          "width": 580,
+          "height": 90.5,
+          "top": 785.5,
+          "right": 819,
+          "bottom": 876,
+          "left": 239
+        },
+        "panel": {
+          "x": 1064,
+          "y": 108,
+          "width": 352,
+          "height": 768,
+          "top": 108,
+          "right": 1416,
+          "bottom": 876,
+          "left": 1064
+        }
+      }
+    },
+    {
+      "name": "Sidebar preserves branch text 1440",
+      "passed": true,
+      "detail": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 350,
+          "textWidth": 350
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "name": "Sidebar preserves controls above input 1440",
+      "passed": true,
+      "detail": {
+        "controls": 759.09375,
+        "composer": 785.5
+      }
+    },
+    {
+      "name": "No horizontal overflow 1366",
+      "passed": true,
+      "detail": {
+        "actual": 1366
+      }
+    },
+    {
+      "name": "Navigation stays on one line 1366",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 1366",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Composer clears browsing controls 1366x768",
+      "passed": true,
+      "detail": {
+        "controls": 649.140625,
+        "composer": 670
+      }
+    },
+    {
+      "name": "Sidebar has separate room 1366",
+      "passed": true,
+      "detail": {
+        "stage": {
+          "x": 32,
+          "y": 201.640625,
+          "width": 920,
+          "height": 375.5,
+          "top": 201.640625,
+          "right": 952,
+          "bottom": 577.140625,
+          "left": 32
+        },
+        "composer": {
+          "x": 202,
+          "y": 670,
+          "width": 580,
+          "height": 80,
+          "top": 670,
+          "right": 782,
+          "bottom": 750,
+          "left": 202
+        },
+        "panel": {
+          "x": 990,
+          "y": 98,
+          "width": 352,
+          "height": 652,
+          "top": 98,
+          "right": 1342,
+          "bottom": 750,
+          "left": 990
+        }
+      }
+    },
+    {
+      "name": "Sidebar preserves branch text 1366",
+      "passed": true,
+      "detail": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 254,
+          "textWidth": 254
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "name": "Sidebar preserves controls above input 1366",
+      "passed": true,
+      "detail": {
+        "controls": 649.140625,
+        "composer": 670
+      }
+    },
+    {
+      "name": "No horizontal overflow 1280",
+      "passed": true,
+      "detail": {
+        "actual": 1280
+      }
+    },
+    {
+      "name": "Navigation stays on one line 1280",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 1280",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Composer clears browsing controls 1280x720",
+      "passed": true,
+      "detail": {
+        "controls": 615.390625,
+        "composer": 622
+      }
+    },
+    {
+      "name": "Sidebar has separate room 1280",
+      "passed": true,
+      "detail": {
+        "stage": {
+          "x": 32,
+          "y": 173.890625,
+          "width": 834,
+          "height": 375.5,
+          "top": 173.890625,
+          "right": 866,
+          "bottom": 549.390625,
+          "left": 32
+        },
+        "composer": {
+          "x": 159,
+          "y": 622,
+          "width": 580,
+          "height": 80,
+          "top": 622,
+          "right": 739,
+          "bottom": 702,
+          "left": 159
+        },
+        "panel": {
+          "x": 904,
+          "y": 98,
+          "width": 352,
+          "height": 604,
+          "top": 98,
+          "right": 1256,
+          "bottom": 702,
+          "left": 904
+        }
+      }
+    },
+    {
+      "name": "Sidebar preserves branch text 1280",
+      "passed": true,
+      "detail": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 230,
+          "textWidth": 230
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "name": "Sidebar preserves controls above input 1280",
+      "passed": true,
+      "detail": {
+        "controls": 615.390625,
+        "composer": 622
+      }
+    },
+    {
+      "name": "No horizontal overflow 1100",
+      "passed": true,
+      "detail": {
+        "actual": 1100
+      }
+    },
+    {
+      "name": "Navigation stays on one line 1100",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 1100",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Composer clears browsing controls 1100x900",
+      "passed": true,
+      "detail": {
+        "controls": 747.296875,
+        "composer": 785.5
+      }
+    },
+    {
+      "name": "Sidebar has separate room 1100",
+      "passed": true,
+      "detail": {
+        "stage": {
+          "x": 32,
+          "y": 216.796875,
+          "width": 654,
+          "height": 440.5,
+          "top": 216.796875,
+          "right": 686,
+          "bottom": 657.296875,
+          "left": 32
+        },
+        "composer": {
+          "x": 69,
+          "y": 785.5,
+          "width": 580,
+          "height": 90.5,
+          "top": 785.5,
+          "right": 649,
+          "bottom": 876,
+          "left": 69
+        },
+        "panel": {
+          "x": 724,
+          "y": 108,
+          "width": 352,
+          "height": 768,
+          "top": 108,
+          "right": 1076,
+          "bottom": 876,
+          "left": 724
+        }
+      }
+    },
+    {
+      "name": "Sidebar preserves branch text 1100",
+      "passed": true,
+      "detail": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 255,
+          "textWidth": 255
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 199,
+          "textWidth": 199
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 213,
+          "textWidth": 213
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 176,
+          "textWidth": 176
+        }
+      ]
+    },
+    {
+      "name": "Sidebar preserves controls above input 1100",
+      "passed": true,
+      "detail": {
+        "controls": 737.296875,
+        "composer": 785.5
+      }
+    },
+    {
+      "name": "No horizontal overflow 1024",
+      "passed": true,
+      "detail": {
+        "actual": 1024
+      }
+    },
+    {
+      "name": "Navigation stays on one line 1024",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 1024",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Composer clears browsing controls 1024x768",
+      "passed": true,
+      "detail": {
+        "controls": 649.140625,
+        "composer": 670
+      }
+    },
+    {
+      "name": "No horizontal overflow 768",
+      "passed": true,
+      "detail": {
+        "actual": 768
+      }
+    },
+    {
+      "name": "Navigation stays on one line 768",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 768",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal overflow 390",
+      "passed": true,
+      "detail": {
+        "actual": 390
+      }
+    },
+    {
+      "name": "Navigation stays on one line 390",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 390",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal overflow 320",
+      "passed": true,
+      "detail": {
+        "actual": 320
+      }
+    },
+    {
+      "name": "Navigation stays on one line 320",
+      "passed": true
+    },
+    {
+      "name": "Branch copy fits 320",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "林小满 能力与互补 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "林小满 兴趣与想法 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "林小满 时间与节奏 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "许知夏 能力与互补 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "许知夏 兴趣与想法 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "许知夏 时间与节奏 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "唐可 能力与互补 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "唐可 兴趣与想法 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "唐可 时间与节奏 has four readable branches",
+      "passed": true
+    },
+    {
+      "name": "Saving changes only local state",
+      "passed": true
+    },
+    {
+      "name": "Saved person stays saved when browsing",
+      "passed": true
+    },
+    {
+      "name": "Evidence opens with its source",
+      "passed": true
+    },
+    {
+      "name": "Evidence Escape restores branch focus",
+      "passed": true
+    },
+    {
+      "name": "Full profile includes three perspectives",
+      "passed": true
+    },
+    {
+      "name": "Composer submits to the reserved sidebar",
+      "passed": true
+    },
+    {
+      "name": "Assistant action updates the main stage",
+      "passed": true
+    },
+    {
+      "name": "Changing people retains conversation",
+      "passed": true
+    },
+    {
+      "name": "Assistant can change perspective",
+      "passed": true
+    },
+    {
+      "name": "Mobile sidebar is a modal",
+      "passed": true
+    },
+    {
+      "name": "Mobile modal focuses its own input",
+      "passed": true
+    },
+    {
+      "name": "Mobile Escape closes sidebar",
+      "passed": true
+    },
+    {
+      "name": "Mobile closing returns focus to launcher",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion prevents automatic cycling",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion has a disabled autoplay control",
+      "passed": true
+    },
+    {
+      "name": "Refresh resets local save state",
+      "passed": true
+    },
+    {
+      "name": "Branches grow toward a stable final width",
+      "passed": true,
+      "detail": [
+        {
+          "at": 100,
+          "state": [
+            {
+              "scale": 0.858431,
+              "rect": 653.6416015625
+            },
+            {
+              "scale": 0.842051,
+              "rect": 557.8060302734375
+            },
+            {
+              "scale": 0.84,
+              "rect": 588.43310546875
+            },
+            {
+              "scale": 0.84,
+              "rect": 473.30059814453125
+            }
+          ]
+        },
+        {
+          "at": 450,
+          "state": [
+            {
+              "scale": 0.549915,
+              "rect": 418.7261962890625
+            },
+            {
+              "scale": 0,
+              "rect": 0
+            },
+            {
+              "scale": 0,
+              "rect": 0
+            },
+            {
+              "scale": 0,
+              "rect": 0
+            }
+          ]
+        },
+        {
+          "at": 950,
+          "state": [
+            {
+              "scale": 0.979937,
+              "rect": 746.160400390625
+            },
+            {
+              "scale": 0.945706,
+              "rect": 626.4708251953125
+            },
+            {
+              "scale": 0.864656,
+              "rect": 605.705322265625
+            },
+            {
+              "scale": 0.666317,
+              "rect": 375.4384765625
+            }
+          ]
+        },
+        {
+          "at": 1800,
+          "state": [
+            {
+              "scale": 1,
+              "rect": 761.4375
+            },
+            {
+              "scale": 1,
+              "rect": 662.4375
+            },
+            {
+              "scale": 1,
+              "rect": 700.515625
+            },
+            {
+              "scale": 1,
+              "rect": 563.453125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Settled branches do not keep moving",
+      "passed": true
+    },
+    {
+      "name": "Autoplay changes perspective without changing person",
+      "passed": true
+    },
+    {
+      "name": "Hover freezes the reading perspective",
+      "passed": true
+    },
+    {
+      "name": "Manual perspective selection stops autoplay",
+      "passed": true
+    },
+    {
+      "name": "Animated sidebar settles with no overlap",
+      "passed": true
+    },
+    {
+      "name": "Six shared UI primitives remain unchanged",
+      "passed": true
+    },
+    {
+      "name": "No browser runtime or hydration errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "fonts": {
+    "chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 12
+      }
+    ],
+    "display": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 7
+      }
+    ],
+    "body": [
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ]
+  },
+  "layouts": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "stage": {
+        "x": 362,
+        "y": 226.796875,
+        "width": 1196,
+        "height": 440.5,
+        "top": 226.796875,
+        "right": 1558,
+        "bottom": 667.296875,
+        "left": 362
+      },
+      "card": {
+        "x": 388.265625,
+        "y": 238.78125,
+        "width": 330,
+        "height": 391.515625,
+        "top": 238.78125,
+        "right": 718.265625,
+        "bottom": 630.296875,
+        "left": 388.265625
+      },
+      "controls": {
+        "x": 362,
+        "y": 683.296875,
+        "width": 1196,
+        "height": 64,
+        "top": 683.296875,
+        "right": 1558,
+        "bottom": 747.296875,
+        "left": 362
+      },
+      "composer": {
+        "x": 635,
+        "y": 965.5,
+        "width": 650,
+        "height": 90.5,
+        "top": 965.5,
+        "right": 1285,
+        "bottom": 1056,
+        "left": 635
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 350,
+          "textWidth": 350
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "state": "assistant-open",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "scrollHeight": 1080,
+      "stage": {
+        "x": 171,
+        "y": 226.796875,
+        "width": 1196,
+        "height": 440.5,
+        "top": 226.796875,
+        "right": 1367,
+        "bottom": 667.296875,
+        "left": 171
+      },
+      "card": {
+        "x": 197.265625,
+        "y": 238.78125,
+        "width": 330,
+        "height": 391.515625,
+        "top": 238.78125,
+        "right": 527.265625,
+        "bottom": 630.296875,
+        "left": 197.265625
+      },
+      "controls": {
+        "x": 171,
+        "y": 683.296875,
+        "width": 1196,
+        "height": 64,
+        "top": 683.296875,
+        "right": 1367,
+        "bottom": 747.296875,
+        "left": 171
+      },
+      "composer": {
+        "x": 479,
+        "y": 965.5,
+        "width": 580,
+        "height": 90.5,
+        "top": 965.5,
+        "right": 1059,
+        "bottom": 1056,
+        "left": 479
+      },
+      "panel": {
+        "x": 1544,
+        "y": 108,
+        "width": 352,
+        "height": 948,
+        "top": 108,
+        "right": 1896,
+        "bottom": 1056,
+        "left": 1544
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 350,
+          "textWidth": 350
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 900,
+      "stage": {
+        "x": 122,
+        "y": 226.796875,
+        "width": 1196,
+        "height": 440.5,
+        "top": 226.796875,
+        "right": 1318,
+        "bottom": 667.296875,
+        "left": 122
+      },
+      "card": {
+        "x": 148.265625,
+        "y": 238.78125,
+        "width": 330,
+        "height": 391.515625,
+        "top": 238.78125,
+        "right": 478.265625,
+        "bottom": 630.296875,
+        "left": 148.265625
+      },
+      "controls": {
+        "x": 122,
+        "y": 683.296875,
+        "width": 1196,
+        "height": 64,
+        "top": 683.296875,
+        "right": 1318,
+        "bottom": 747.296875,
+        "left": 122
+      },
+      "composer": {
+        "x": 395,
+        "y": 785.5,
+        "width": 650,
+        "height": 90.5,
+        "top": 785.5,
+        "right": 1045,
+        "bottom": 876,
+        "left": 395
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 350,
+          "textWidth": 350
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "state": "assistant-open",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "scrollHeight": 906,
+      "stage": {
+        "x": 32,
+        "y": 226.796875,
+        "width": 994,
+        "height": 452.296875,
+        "top": 226.796875,
+        "right": 1026,
+        "bottom": 679.09375,
+        "left": 32
+      },
+      "card": {
+        "x": 48,
+        "y": 236.796875,
+        "width": 277.828125,
+        "height": 407.296875,
+        "top": 236.796875,
+        "right": 325.828125,
+        "bottom": 644.09375,
+        "left": 48
+      },
+      "controls": {
+        "x": 32,
+        "y": 695.09375,
+        "width": 994,
+        "height": 64,
+        "top": 695.09375,
+        "right": 1026,
+        "bottom": 759.09375,
+        "left": 32
+      },
+      "composer": {
+        "x": 239,
+        "y": 785.5,
+        "width": 580,
+        "height": 90.5,
+        "top": 785.5,
+        "right": 819,
+        "bottom": 876,
+        "left": 239
+      },
+      "panel": {
+        "x": 1064,
+        "y": 108,
+        "width": 352,
+        "height": 768,
+        "top": 108,
+        "right": 1416,
+        "bottom": 876,
+        "left": 1064
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 350,
+          "textWidth": 350
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "scrollWidth": 1366,
+      "scrollHeight": 773,
+      "stage": {
+        "x": 85,
+        "y": 201.640625,
+        "width": 1196,
+        "height": 375.5,
+        "top": 201.640625,
+        "right": 1281,
+        "bottom": 577.140625,
+        "left": 85
+      },
+      "card": {
+        "x": 111.265625,
+        "y": 216.921875,
+        "width": 330,
+        "height": 348.921875,
+        "top": 216.921875,
+        "right": 441.265625,
+        "bottom": 565.84375,
+        "left": 111.265625
+      },
+      "controls": {
+        "x": 85,
+        "y": 591.140625,
+        "width": 1196,
+        "height": 58,
+        "top": 591.140625,
+        "right": 1281,
+        "bottom": 649.140625,
+        "left": 85
+      },
+      "composer": {
+        "x": 358,
+        "y": 670,
+        "width": 650,
+        "height": 80,
+        "top": 670,
+        "right": 1008,
+        "bottom": 750,
+        "left": 358
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 308,
+          "textWidth": 308
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "state": "assistant-open",
+      "width": 1366,
+      "height": 768,
+      "scrollWidth": 1366,
+      "scrollHeight": 773,
+      "stage": {
+        "x": 32,
+        "y": 201.640625,
+        "width": 920,
+        "height": 375.5,
+        "top": 201.640625,
+        "right": 952,
+        "bottom": 577.140625,
+        "left": 32
+      },
+      "card": {
+        "x": 36,
+        "y": 218.28125,
+        "width": 288,
+        "height": 346.21875,
+        "top": 218.28125,
+        "right": 324,
+        "bottom": 564.5,
+        "left": 36
+      },
+      "controls": {
+        "x": 32,
+        "y": 591.140625,
+        "width": 920,
+        "height": 58,
+        "top": 591.140625,
+        "right": 952,
+        "bottom": 649.140625,
+        "left": 32
+      },
+      "composer": {
+        "x": 202,
+        "y": 670,
+        "width": 580,
+        "height": 80,
+        "top": 670,
+        "right": 782,
+        "bottom": 750,
+        "left": 202
+      },
+      "panel": {
+        "x": 990,
+        "y": 98,
+        "width": 352,
+        "height": 652,
+        "top": 98,
+        "right": 1342,
+        "bottom": 750,
+        "left": 990
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 254,
+          "textWidth": 254
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 739,
+      "stage": {
+        "x": 42,
+        "y": 173.890625,
+        "width": 1196,
+        "height": 375.5,
+        "top": 173.890625,
+        "right": 1238,
+        "bottom": 549.390625,
+        "left": 42
+      },
+      "card": {
+        "x": 68.265625,
+        "y": 189.171875,
+        "width": 330,
+        "height": 348.921875,
+        "top": 189.171875,
+        "right": 398.265625,
+        "bottom": 538.09375,
+        "left": 68.265625
+      },
+      "controls": {
+        "x": 42,
+        "y": 557.390625,
+        "width": 1196,
+        "height": 58,
+        "top": 557.390625,
+        "right": 1238,
+        "bottom": 615.390625,
+        "left": 42
+      },
+      "composer": {
+        "x": 315,
+        "y": 622,
+        "width": 650,
+        "height": 80,
+        "top": 622,
+        "right": 965,
+        "bottom": 702,
+        "left": 315
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 308,
+          "textWidth": 308
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "state": "assistant-open",
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 739,
+      "stage": {
+        "x": 32,
+        "y": 173.890625,
+        "width": 834,
+        "height": 375.5,
+        "top": 173.890625,
+        "right": 866,
+        "bottom": 549.390625,
+        "left": 32
+      },
+      "card": {
+        "x": 36,
+        "y": 190.53125,
+        "width": 257.890625,
+        "height": 346.21875,
+        "top": 190.53125,
+        "right": 293.890625,
+        "bottom": 536.75,
+        "left": 36
+      },
+      "controls": {
+        "x": 32,
+        "y": 557.390625,
+        "width": 834,
+        "height": 58,
+        "top": 557.390625,
+        "right": 866,
+        "bottom": 615.390625,
+        "left": 32
+      },
+      "composer": {
+        "x": 159,
+        "y": 622,
+        "width": 580,
+        "height": 80,
+        "top": 622,
+        "right": 739,
+        "bottom": 702,
+        "left": 159
+      },
+      "panel": {
+        "x": 904,
+        "y": 98,
+        "width": 352,
+        "height": 604,
+        "top": 98,
+        "right": 1256,
+        "bottom": 702,
+        "left": 904
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 230,
+          "textWidth": 230
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "width": 1100,
+      "height": 900,
+      "scrollWidth": 1100,
+      "scrollHeight": 900,
+      "stage": {
+        "x": 32,
+        "y": 226.796875,
+        "width": 1036,
+        "height": 440.5,
+        "top": 226.796875,
+        "right": 1068,
+        "bottom": 667.296875,
+        "left": 32
+      },
+      "card": {
+        "x": 48,
+        "y": 238.78125,
+        "width": 292.953125,
+        "height": 391.515625,
+        "top": 238.78125,
+        "right": 340.953125,
+        "bottom": 630.296875,
+        "left": 48
+      },
+      "controls": {
+        "x": 32,
+        "y": 683.296875,
+        "width": 1036,
+        "height": 64,
+        "top": 683.296875,
+        "right": 1068,
+        "bottom": 747.296875,
+        "left": 32
+      },
+      "composer": {
+        "x": 225,
+        "y": 785.5,
+        "width": 650,
+        "height": 90.5,
+        "top": 785.5,
+        "right": 875,
+        "bottom": 876,
+        "left": 225
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 274,
+          "textWidth": 274
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 266,
+          "textWidth": 266
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 251,
+          "textWidth": 251
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 201,
+          "textWidth": 201
+        }
+      ]
+    },
+    {
+      "state": "assistant-open",
+      "width": 1100,
+      "height": 900,
+      "scrollWidth": 1100,
+      "scrollHeight": 900,
+      "stage": {
+        "x": 32,
+        "y": 216.796875,
+        "width": 654,
+        "height": 440.5,
+        "top": 216.796875,
+        "right": 686,
+        "bottom": 657.296875,
+        "left": 32
+      },
+      "card": {
+        "x": 36,
+        "y": 229.21875,
+        "width": 219.515625,
+        "height": 392.15625,
+        "top": 229.21875,
+        "right": 255.515625,
+        "bottom": 621.375,
+        "left": 36
+      },
+      "controls": {
+        "x": 32,
+        "y": 673.296875,
+        "width": 654,
+        "height": 64,
+        "top": 673.296875,
+        "right": 686,
+        "bottom": 737.296875,
+        "left": 32
+      },
+      "composer": {
+        "x": 69,
+        "y": 785.5,
+        "width": 580,
+        "height": 90.5,
+        "top": 785.5,
+        "right": 649,
+        "bottom": 876,
+        "left": 69
+      },
+      "panel": {
+        "x": 724,
+        "y": 108,
+        "width": 352,
+        "height": 768,
+        "top": 108,
+        "right": 1076,
+        "bottom": 876,
+        "left": 724
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 255,
+          "textWidth": 255
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 199,
+          "textWidth": 199
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 213,
+          "textWidth": 213
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 176,
+          "textWidth": 176
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "scrollHeight": 773,
+      "stage": {
+        "x": 32,
+        "y": 201.640625,
+        "width": 960,
+        "height": 375.5,
+        "top": 201.640625,
+        "right": 992,
+        "bottom": 577.140625,
+        "left": 32
+      },
+      "card": {
+        "x": 36,
+        "y": 218.28125,
+        "width": 302,
+        "height": 346.21875,
+        "top": 218.28125,
+        "right": 338,
+        "bottom": 564.5,
+        "left": 36
+      },
+      "controls": {
+        "x": 32,
+        "y": 591.140625,
+        "width": 960,
+        "height": 58,
+        "top": 591.140625,
+        "right": 992,
+        "bottom": 649.140625,
+        "left": 32
+      },
+      "composer": {
+        "x": 187,
+        "y": 670,
+        "width": 650,
+        "height": 80,
+        "top": 670,
+        "right": 837,
+        "bottom": 750,
+        "left": 187
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 265,
+          "textWidth": 265
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 244,
+          "textWidth": 244
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "scrollHeight": 1024,
+      "stage": {
+        "x": 32,
+        "y": 216.796875,
+        "width": 704,
+        "height": 440.5,
+        "top": 216.796875,
+        "right": 736,
+        "bottom": 657.296875,
+        "left": 32
+      },
+      "card": {
+        "x": 36,
+        "y": 229.21875,
+        "width": 238.515625,
+        "height": 392.15625,
+        "top": 229.21875,
+        "right": 274.515625,
+        "bottom": 621.375,
+        "left": 36
+      },
+      "controls": {
+        "x": 32,
+        "y": 673.296875,
+        "width": 704,
+        "height": 64,
+        "top": 673.296875,
+        "right": 736,
+        "bottom": 737.296875,
+        "left": 32
+      },
+      "composer": {
+        "x": 59,
+        "y": 909.5,
+        "width": 650,
+        "height": 90.5,
+        "top": 909.5,
+        "right": 709,
+        "bottom": 1000,
+        "left": 59
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 255,
+          "textWidth": 255
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 199,
+          "textWidth": 199
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 213,
+          "textWidth": 213
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 176,
+          "textWidth": 176
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 1596,
+      "stage": {
+        "x": 20,
+        "y": 319.390625,
+        "width": 350,
+        "height": 952.703125,
+        "top": 319.390625,
+        "right": 370,
+        "bottom": 1272.09375,
+        "left": 20
+      },
+      "card": {
+        "x": 36,
+        "y": 329.390625,
+        "width": 318,
+        "height": 383.203125,
+        "top": 329.390625,
+        "right": 354,
+        "bottom": 712.59375,
+        "left": 36
+      },
+      "controls": {
+        "x": 20,
+        "y": 1298.09375,
+        "width": 350,
+        "height": 134,
+        "top": 1298.09375,
+        "right": 370,
+        "bottom": 1432.09375,
+        "left": 20
+      },
+      "composer": {
+        "x": 14,
+        "y": 741,
+        "width": 362,
+        "height": 89,
+        "top": 741,
+        "right": 376,
+        "bottom": 830,
+        "left": 14
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 223,
+          "textWidth": 223
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 221,
+          "textWidth": 221
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 226,
+          "textWidth": 226
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "scrollWidth": 320,
+      "scrollHeight": 1622,
+      "stage": {
+        "x": 20,
+        "y": 319.390625,
+        "width": 280,
+        "height": 978.59375,
+        "top": 319.390625,
+        "right": 300,
+        "bottom": 1297.984375,
+        "left": 20
+      },
+      "card": {
+        "x": 36,
+        "y": 329.390625,
+        "width": 248,
+        "height": 409.09375,
+        "top": 329.390625,
+        "right": 284,
+        "bottom": 738.484375,
+        "left": 36
+      },
+      "controls": {
+        "x": 20,
+        "y": 1323.984375,
+        "width": 280,
+        "height": 134,
+        "top": 1323.984375,
+        "right": 300,
+        "bottom": 1457.984375,
+        "left": 20
+      },
+      "composer": {
+        "x": 14,
+        "y": 637,
+        "width": 292,
+        "height": 89,
+        "top": 637,
+        "right": 306,
+        "bottom": 726,
+        "left": 14
+      },
+      "branches": [
+        {
+          "text": "最先值得认识的一面\n把想法做成可交互的作品\nReact / TypeScript / 界面交互",
+          "textFits": true,
+          "textScroll": 223,
+          "textWidth": 223
+        },
+        {
+          "text": "你们可以接上的一块\n你做 AI，TA 把体验接起来",
+          "textFits": true,
+          "textScroll": 206,
+          "textWidth": 206
+        },
+        {
+          "text": "做过的事\n一个能听懂碎碎念的旅行助手",
+          "textFits": true,
+          "textScroll": 217,
+          "textWidth": 217
+        },
+        {
+          "text": "可以从这里聊起\n先做一个能现场演示的小版本",
+          "textFits": true,
+          "textScroll": 188,
+          "textWidth": 188
+        }
+      ]
+    }
+  ],
+  "animation": [
+    {
+      "at": 100,
+      "state": [
+        {
+          "scale": 0.858431,
+          "rect": 653.6416015625
+        },
+        {
+          "scale": 0.842051,
+          "rect": 557.8060302734375
+        },
+        {
+          "scale": 0.84,
+          "rect": 588.43310546875
+        },
+        {
+          "scale": 0.84,
+          "rect": 473.30059814453125
+        }
+      ]
+    },
+    {
+      "at": 450,
+      "state": [
+        {
+          "scale": 0.549915,
+          "rect": 418.7261962890625
+        },
+        {
+          "scale": 0,
+          "rect": 0
+        },
+        {
+          "scale": 0,
+          "rect": 0
+        },
+        {
+          "scale": 0,
+          "rect": 0
+        }
+      ]
+    },
+    {
+      "at": 950,
+      "state": [
+        {
+          "scale": 0.979937,
+          "rect": 746.160400390625
+        },
+        {
+          "scale": 0.945706,
+          "rect": 626.4708251953125
+        },
+        {
+          "scale": 0.864656,
+          "rect": 605.705322265625
+        },
+        {
+          "scale": 0.666317,
+          "rect": 375.4384765625
+        }
+      ]
+    },
+    {
+      "at": 1800,
+      "state": [
+        {
+          "scale": 1,
+          "rect": 761.4375
+        },
+        {
+          "scale": 1,
+          "rect": 662.4375
+        },
+        {
+          "scale": 1,
+          "rect": 700.515625
+        },
+        {
+          "scale": 1,
+          "rect": 563.453125
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 84,
+    "failed": 0,
+    "errors": 0
+  }
+}

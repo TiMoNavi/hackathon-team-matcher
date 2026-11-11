@@ -1,0 +1,638 @@
+{
+  "checked_on": "2026-11-11",
+  "humhub": "1.19.4",
+  "price_eur": 0,
+  "modules": [
+    {
+      "id": "rest",
+      "version": "0.12.7",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/rest-v0.12.7.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/rest-v0.12.7.zip.sha256",
+      "sha256": "6a35a789bd430e44bf3e304afec8f9fa946ffc4b70b3682f7bdfe980234b911f",
+      "bytes": 385438,
+      "marketplace_id": "rest",
+      "package_metadata": {
+        "id": "rest",
+        "name": "RESTful API",
+        "description": "Provides a RESTful API to the HumHub installation",
+        "keywords": [
+          "api",
+          "rest"
+        ],
+        "version": "0.12.7",
+        "homepage": "https://github.com/humhub/rest",
+        "humhub": {
+          "minVersion": "1.19",
+          "maxVersion": "1.19"
+        },
+        "screenshots": []
+      }
+    },
+    {
+      "id": "calendar",
+      "version": "1.9.9",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/calendar-v1.9.9.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/calendar-v1.9.9.zip.sha256",
+      "sha256": "c01e4b79637587fb0cd15735cb8cb7c54f85c0b2328c1a9c1736510ea3423e43",
+      "bytes": 11028039,
+      "marketplace_id": "calendar",
+      "package_metadata": {
+        "id": "calendar",
+        "name": "Calendar",
+        "description": "Create one-time or recurring events, invite and manage attendees, and keep track of all your events with the Calendar module.",
+        "keywords": [
+          "calendar"
+        ],
+        "version": "1.9.9",
+        "humhub": {
+          "minVersion": "1.19",
+          "maxVersion": "1.19"
+        },
+        "homepage": "https://github.com/humhub/calendar",
+        "authors": [
+          {
+            "name": "Andreas Strobel"
+          },
+          {
+            "name": "Lucas Bartholemy"
+          },
+          {
+            "name": "Julian Harrer"
+          }
+        ],
+        "screenshots": [
+          "resources/screen1.png",
+          "resources/screen2.png",
+          "resources/screen3.png",
+          "resources/screen4.png",
+          "resources/screen5.png",
+          "resources/screen6.png",
+          "resources/screen7.png",
+          "resources/screen8.png",
+          "resources/screen9.png"
+        ]
+      }
+    },
+    {
+      "id": "mail",
+      "version": "3.4.6",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/mail-v3.4.6.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/mail-v3.4.6.zip.sha256",
+      "sha256": "333d40e5fa161bfffc4ec403c43e284628eab82162066ecd3971684e9fd4c809",
+      "bytes": 8339292,
+      "marketplace_id": "mail",
+      "package_metadata": {
+        "id": "mail",
+        "name": "Messenger",
+        "description": "Engage in private conversations with colleagues and teams through secure messaging.",
+        "keywords": [
+          "mail",
+          "messaging",
+          "messenger",
+          "communication"
+        ],
+        "version": "3.4.6",
+        "humhub": {
+          "minVersion": "1.19"
+        },
+        "homepage": "https://github.com/humhub/mail",
+        "authors": [
+          {
+            "name": "Andreas Strobel"
+          },
+          {
+            "name": "Lucas Bartholemy"
+          },
+          {
+            "name": "Julian Harrer"
+          }
+        ],
+        "screenshots": [
+          "resources/screenshot1.png",
+          "resources/screenshot2.png",
+          "resources/screenshot3.png",
+          "resources/screenshot4.png",
+          "resources/screenshot5.png",
+          "resources/screenshot6.png",
+          "resources/screenshot7.png"
+        ]
+      }
+    },
+    {
+      "id": "gallery",
+      "version": "1.9.1",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/gallery-v1.9.1.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/gallery-v1.9.1.zip.sha256",
+      "sha256": "171020c148bd8a304f9c7af7119e668643cf87f29c138c3c08d8c61fa3548c40",
+      "bytes": 5638705,
+      "marketplace_id": "gallery",
+      "package_metadata": {
+        "id": "gallery",
+        "name": "Gallery",
+        "description": "Adds galleries to Spaces and profiles.",
+        "keywords": [
+          "gallery",
+          "photo",
+          "organisation"
+        ],
+        "version": "1.9.1",
+        "humhub": {
+          "minVersion": "1.19"
+        },
+        "homepage": "https://github.com/humhub-contrib/gallery",
+        "authors": [
+          {
+            "name": "Sebastian Stumpf"
+          },
+          {
+            "name": "Lucas Bartholemy"
+          },
+          {
+            "name": "Julian Harrer"
+          }
+        ],
+        "screenshots": [
+          "resources/screen1.PNG",
+          "resources/screen2.PNG",
+          "resources/screen3.PNG",
+          "resources/screen4.PNG",
+          "resources/screen5.PNG",
+          "resources/screen6.PNG"
+        ]
+      }
+    },
+    {
+      "id": "questions",
+      "version": "1.1.6",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/questions-v1.1.6.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/questions-v1.1.6.zip.sha256",
+      "sha256": "7f181dd7d3584a2226a9f16d5ffc83e87de80e323d5164b0a1d5d0dbf6ede3b0",
+      "bytes": 2171585,
+      "marketplace_id": "questions",
+      "package_metadata": {
+        "id": "questions",
+        "name": "Q&A",
+        "description": "Users can ask questions, receive helpful answers, and engage in community discussions.",
+        "keywords": [
+          "Q&A",
+          "questions",
+          "answers"
+        ],
+        "version": "1.1.6",
+        "humhub": {
+          "minVersion": "1.19"
+        },
+        "homepage": "https://github.com/humhub/questions",
+        "authors": [
+          {
+            "name": "Lucas Bartholemy"
+          }
+        ],
+        "screenshots": [
+          "resources/screenshot1.png",
+          "resources/screenshot2.png",
+          "resources/screenshot3.png",
+          "resources/screenshot4.png",
+          "resources/screenshot5.png",
+          "resources/screenshot6.png",
+          "resources/screenshot7.png"
+        ]
+      }
+    },
+    {
+      "id": "linklist",
+      "version": "0.9.2",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/linklist-v0.9.2.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/linklist-v0.9.2.zip.sha256",
+      "sha256": "fd7a816aea63864a6453420fa3277626e620be9ad23c2e82f7c391f17b199cea",
+      "bytes": 92162,
+      "marketplace_id": "linklist",
+      "package_metadata": {
+        "id": "linklist",
+        "name": "Link List",
+        "description": "Adds a link list to spaces or user profiles.",
+        "keywords": [
+          "user",
+          "space",
+          "links",
+          "directory"
+        ],
+        "version": "0.9.2",
+        "homepage": "https://github.com/humhub-contrib/linklist",
+        "humhub": {
+          "minVersion": "1.18"
+        }
+      }
+    },
+    {
+      "id": "text-editor",
+      "version": "1.2.0",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/text-editor-v1.2.0.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/text-editor-v1.2.0.zip.sha256",
+      "sha256": "5c57dcb365e655b2eaa89c6ea64e6fd735703f4a9f76fdcef8fb11b1e306007f",
+      "bytes": 1464838,
+      "marketplace_id": "text-editor",
+      "package_metadata": {
+        "id": "text-editor",
+        "name": "Text editor",
+        "description": "Simple to use tool that enables viewing and editing of text files.",
+        "keywords": [
+          "text editor",
+          "text",
+          "editor",
+          "filehandler"
+        ],
+        "version": "1.2.0",
+        "humhub": {
+          "minVersion": "1.19"
+        },
+        "screenshots": [
+          "resources/screenshot1.png",
+          "resources/screenshot2.png",
+          "resources/screenshot3.png",
+          "resources/screenshot4.png"
+        ]
+      }
+    },
+    {
+      "id": "pdf-viewer",
+      "version": "1.1.8",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/pdf-viewer-v1.1.8.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/pdf-viewer-v1.1.8.zip.sha256",
+      "sha256": "10429158d50fe377a4358e5beaed5085761f885a281b579b240f721ffada8871",
+      "bytes": 7240836,
+      "marketplace_id": "pdf-viewer",
+      "package_metadata": {
+        "id": "pdf-viewer",
+        "name": "PDF Viewer",
+        "description": "PDF Viewer",
+        "keywords": [
+          "pdf",
+          "pdf viewer",
+          "pdf reader"
+        ],
+        "version": "1.1.8",
+        "humhub": {
+          "minVersion": "1.18"
+        },
+        "homepage": "https://github.com/humhub/pdf-viewer",
+        "authors": [
+          {
+            "name": "Lucas Bartholemy"
+          }
+        ],
+        "screenshots": [
+          "resources/screenshot1.png",
+          "resources/screenshot2.png",
+          "resources/screenshot3.png",
+          "resources/screenshot4.png"
+        ]
+      }
+    },
+    {
+      "id": "twofa",
+      "version": "1.4.3",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/twofa-v1.4.3.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/twofa-v1.4.3.zip.sha256",
+      "sha256": "3bd6457b82cad590c92d08c9e081e11ee4123d88667890953d579677ac9d507e",
+      "bytes": 650235,
+      "marketplace_id": "twofa",
+      "package_metadata": {
+        "id": "twofa",
+        "name": "Two-Factor Authentication (2FA)",
+        "description": "Enhance the security of your network with an additional layer of protection.",
+        "keywords": [
+          "2fa",
+          "two-factor authentication",
+          "security"
+        ],
+        "homepage": "https://github.com/humhub/humhub-modules-twofa",
+        "screenshots": [
+          "resources/screenshot1.png",
+          "resources/screenshot2.png",
+          "resources/screenshot3.png",
+          "resources/screenshot4.png"
+        ],
+        "version": "1.4.3",
+        "humhub": {
+          "minVersion": "1.19"
+        }
+      },
+      "pending_reason": "Enroll administrator second factor before enabling; local preview only."
+    },
+    {
+      "id": "clean-theme",
+      "version": "2.5.3",
+      "desired_enabled": true,
+      "url": "https://marketplace.humhub.com/downloads/free/clean-theme-v2.5.3.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/clean-theme-v2.5.3.zip.sha256",
+      "sha256": "07092aadc6dfd04865b3d8f129d6d189f6e02f12eb0f304d2bb15912d87ee26d",
+      "bytes": 1322205,
+      "marketplace_id": "clean-theme",
+      "package_metadata": {
+        "id": "clean-theme",
+        "name": "Clean Theme",
+        "description": "Modern, smooth and uncluttered theme.",
+        "keywords": [
+          "theme",
+          "clean",
+          "modern",
+          "smooth",
+          "uncluttered"
+        ],
+        "version": "2.5.3",
+        "humhub": {
+          "minVersion": "1.19.0",
+          "maxVersion": "1.19"
+        },
+        "homepage": "https://cuzy.app",
+        "authors": [
+          {
+            "name": "Marc FARRE",
+            "homepage": "https://marc.fun",
+            "role": "Developer"
+          }
+        ],
+        "screenshots": [
+          "resources/screen_1.png",
+          "resources/screen_2.png",
+          "resources/screen_3.png",
+          "resources/screen_4.png",
+          "resources/screen_5.png",
+          "resources/screen_6.png"
+        ]
+      }
+    },
+    {
+      "id": "auth-github",
+      "version": "1.1.1",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/auth-github-v1.1.1.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/auth-github-v1.1.1.zip.sha256",
+      "sha256": "f95d597af4698f8ea7f4fb11c74278e766eb390d0b9caee15984a52e026668b6",
+      "bytes": 25669,
+      "marketplace_id": "auth-github",
+      "package_metadata": {
+        "id": "auth-github",
+        "name": "GitHub Sign-In",
+        "description": "Integrating GitHub Sign-In (OAuth 2.0).",
+        "keywords": [],
+        "version": "1.1.1",
+        "homepage": "https://github.com/humhub-contrib/auth-github",
+        "humhub": {
+          "minVersion": "1.18"
+        }
+      }
+    },
+    {
+      "id": "auth-google",
+      "version": "1.1.1",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/auth-google-v1.1.1.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/auth-google-v1.1.1.zip.sha256",
+      "sha256": "675bdfe6ff94fc1c3eb92ee83ee32797a57d7b6109f7387fa0b31055132b297e",
+      "bytes": 36363,
+      "marketplace_id": "auth-google",
+      "package_metadata": {
+        "id": "auth-google",
+        "name": "Google Sign-In",
+        "description": "Integrating Google Sign-In (OAuth 2.0).",
+        "keywords": [],
+        "version": "1.1.1",
+        "homepage": "https://github.com/humhub-contrib/auth-google",
+        "humhub": {
+          "minVersion": "1.18"
+        }
+      }
+    },
+    {
+      "id": "jwt-sso",
+      "version": "1.2.1",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/jwt-sso-v1.2.1.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/jwt-sso-v1.2.1.zip.sha256",
+      "sha256": "2ede3a4583760d8a29a5735f4f55d03a3ac0a102bcf24cb24a7e53b1359d6fc8",
+      "bytes": 90177,
+      "marketplace_id": "jwt-sso",
+      "package_metadata": {
+        "id": "jwt-sso",
+        "name": "JWT SSO",
+        "description": "Single Sign On using JSON Web Tokens (JWT)",
+        "keywords": [
+          "jwt",
+          "sso",
+          "login"
+        ],
+        "version": "1.2.1",
+        "humhub": {
+          "minVersion": "1.19"
+        },
+        "homepage": "https://github.com/humhub/jwt-sso",
+        "screenshots": []
+      }
+    },
+    {
+      "id": "fcm-push",
+      "version": "2.3.2",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/fcm-push-v2.3.2.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/fcm-push-v2.3.2.zip.sha256",
+      "sha256": "fa85dae5b106e4e24bd0dc8326ae1d4f83cfea609ec525afe991b01d028c53f6",
+      "bytes": 22266611,
+      "marketplace_id": "fcm-push",
+      "package_metadata": {
+        "id": "fcm-push",
+        "name": "Push Notifications (Firebase)",
+        "description": "Enables your users to receive push notifications from your network.",
+        "keywords": [
+          "push",
+          "notifications",
+          "firebase"
+        ],
+        "homepage": "https://github.com/humhub/fcm-push",
+        "humhub": {
+          "minVersion": "1.19.0",
+          "maxVersion": "1.19"
+        },
+        "version": "2.3.2",
+        "screenshots": [
+          "resources/screenshot1.PNG",
+          "resources/screenshot2.PNG"
+        ]
+      }
+    },
+    {
+      "id": "move-content",
+      "version": "2.4.1",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/move-content-v2.4.1.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/move-content-v2.4.1.zip.sha256",
+      "sha256": "619299308e8a4adc4361df6cfb8b78b0517388553b727f8481600200048f806e",
+      "bytes": 469922,
+      "marketplace_id": "move-content",
+      "package_metadata": {
+        "id": "move-content",
+        "name": "Move content and users",
+        "description": "Transfer Content, Comments and Likes from one User or Space to another, and Users from one Group or Space to another.",
+        "keywords": [
+          "move",
+          "transfer",
+          "content",
+          "space",
+          "user"
+        ],
+        "version": "2.4.1",
+        "humhub": {
+          "minVersion": "1.18",
+          "maxVersion": "1.19"
+        },
+        "homepage": "https://github.com/cuzy-app/move-content",
+        "authors": [
+          {
+            "name": "Marc FARRE",
+            "homepage": "https://marc.fun",
+            "role": "Developer"
+          }
+        ],
+        "screenshots": [
+          "resources/screen_1.png",
+          "resources/screen_2.png"
+        ]
+      }
+    },
+    {
+      "id": "sharebetween",
+      "version": "1.2.1",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/sharebetween-v1.2.1.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/sharebetween-v1.2.1.zip.sha256",
+      "sha256": "5ffcb77835d0ad2ca83bb52c6fba8d8d2e48d98e37c8184140176261764d0c4a",
+      "bytes": 6307679,
+      "marketplace_id": "sharebetween",
+      "package_metadata": {
+        "id": "sharebetween",
+        "name": "Share content",
+        "description": "Share content between Spaces in the simplest way possible.",
+        "keywords": [
+          "share",
+          "between",
+          "content"
+        ],
+        "version": "1.2.1",
+        "humhub": {
+          "minVersion": "1.19"
+        },
+        "screenshots": [
+          "resources/screen1.png",
+          "resources/screen2.png",
+          "resources/screen3.png"
+        ]
+      }
+    },
+    {
+      "id": "online-users",
+      "version": "1.1.2",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/online-users-v1.1.2.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/online-users-v1.1.2.zip.sha256",
+      "sha256": "ad97a747d82e08197cd8e307e64f99fd7447e0e99c3079f494f8e3f1d47f31af",
+      "bytes": 496277,
+      "marketplace_id": "online-users",
+      "package_metadata": {
+        "id": "online-users",
+        "name": "Online Users",
+        "description": "The module displays online users directly on your dashboard in a snippet.",
+        "keywords": [
+          "online",
+          "users",
+          "snippet"
+        ],
+        "version": "1.1.2",
+        "humhub": {
+          "minVersion": "1.18"
+        },
+        "homepage": "https://github.com/humhub/online-users",
+        "authors": [
+          {
+            "name": "HumHub Team"
+          },
+          {
+            "name": "001101"
+          }
+        ],
+        "screenshots": [
+          "resources/screenshot1.png"
+        ]
+      }
+    },
+    {
+      "id": "suggestedFollowing",
+      "version": "1.0.0",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/suggestedfollowing-v1.0.0.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/suggestedfollowing-v1.0.0.zip.sha256",
+      "sha256": "79209c73d305e1a3e665d4b36faab41ea4819830d06beea2ec0822e130eb78d1",
+      "bytes": 1171329,
+      "marketplace_id": "suggestedfollowing",
+      "package_metadata": {
+        "id": "suggestedFollowing",
+        "name": "Suggested Following",
+        "description": "Suggests users to follow based on people you are already following.",
+        "keywords": [
+          "follow",
+          "suggestions",
+          "social",
+          "discovery"
+        ],
+        "version": "1.0.0",
+        "screenshots": [
+          "resources/Screenshot.png"
+        ],
+        "humhub": {
+          "minVersion": "1.18"
+        }
+      }
+    },
+    {
+      "id": "auto-follow",
+      "version": "1.1.0",
+      "desired_enabled": false,
+      "url": "https://marketplace.humhub.com/downloads/free/auto-follow-v1.1.0.zip",
+      "checksum_url": "https://marketplace.humhub.com/downloads/auto-follow-v1.1.0.zip.sha256",
+      "sha256": "4ae4e4478dafff6bf844a22d4c96dd7a09ee547d57b7039236f926d690a7f4b8",
+      "bytes": 85930,
+      "marketplace_id": "auto-follow",
+      "package_metadata": {
+        "id": "auto-follow",
+        "name": "Auto Follow",
+        "description": "Define an automatic following for new or existing users.",
+        "keywords": [
+          "files"
+        ],
+        "homepage": "https://github.com/humhub-contrib/auto-follow",
+        "version": "1.1.0",
+        "humhub": {
+          "minVersion": "1.18"
+        },
+        "screenshots": [
+          "resources/Screen1.PNG"
+        ]
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "id": "social_stats",
+      "reason": "Marketplace compatibility ends at 1.17; not verified on 1.19.4"
+    }
+  ]
+}

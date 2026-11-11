@@ -1,0 +1,1 @@
+{"status":"passed","checks":3,"checks_passed":["absent MySQL settings default to discoverable=false\/version=0","initial explicit opt-in creates version 1","stale expected_version=0 cannot replace initialized settings"]}

@@ -1,0 +1,1120 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//////////////////////////////////////////////////////////
+// Enums
+//////////////////////////////////////////////////////////
+
+enum PostKind {
+  POST // klassischer Bild-Post
+  REEL // Video (Reel)
+}
+
+//////////////////////////////////////////////////////////
+// Modelle
+//////////////////////////////////////////////////////////
+
+enum GroupLinkType {
+  FAMILY
+  UNI
+  BUSINESS
+  EVENT
+  COMMUNITY
+  DROP
+  OTHER
+}
+
+enum GroupLinkVisibility {
+  PRIVATE
+  PUBLIC
+}
+
+enum CommunityMembershipOrigin {
+  JOIN
+  OWNER
+  BACKFILL
+}
+
+enum CommunitySystemKey {
+  BVRLY
+}
+
+model GroupLink {
+  id    String        @id @default(cuid())
+  code  String        @unique // im DeepLink
+  title String
+  type  GroupLinkType @default(OTHER)
+  slug  String?       @unique
+  imageKey String?
+  visibility GroupLinkVisibility @default(PRIVATE)
+  systemKey CommunitySystemKey? @unique
+  context Context?
+
+  ownerId String
+  owner   Profile @relation("GroupLinkOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+
+  isActive Boolean @default(true)
+
+  createdAt DateTime  @default(now())
+  expiresAt DateTime?
+
+  members     GroupLinkMember[]
+  membershipHistory CommunityMembershipHistory[]
+  influenceSettlements CommunityInfluenceSettlement[]
+  influenceEvents CommunityInfluenceEvent[]
+  connections Connection[]
+
+  @@index([ownerId, createdAt])
+}
+
+model GroupLinkMember {
+  groupLinkId String
+  profileId   String
+  joinedAt    DateTime @default(now())
+
+  groupLink GroupLink @relation(fields: [groupLinkId], references: [id], onDelete: Cascade)
+  profile   Profile   @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@id([groupLinkId, profileId])
+  @@index([profileId, joinedAt])
+}
+
+// Separate from current membership: history never grants content access.
+model CommunityMembershipHistory {
+  groupLinkId String
+  profileId String
+  firstJoinedAt DateTime
+  seniorityAt DateTime
+  recordedAt DateTime @default(now())
+  origin CommunityMembershipOrigin
+  influenceEntryPosition Int?
+  influenceGrowthCount BigInt @default(0)
+
+  groupLink GroupLink @relation(fields: [groupLinkId], references: [id], onDelete: Cascade)
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  periods CommunityMembershipPeriod[]
+  influenceCredits CommunityInfluenceCredit[]
+  influenceSupport CommunityInfluenceSupport?
+
+  @@id([groupLinkId, profileId])
+  @@index([profileId, firstJoinedAt])
+}
+
+model CommunityMembershipPeriod {
+  id String @id @default(dbgenerated("(gen_random_uuid())::text"))
+  groupLinkId String
+  profileId String
+  startedAt DateTime
+  endedAt DateTime?
+  history CommunityMembershipHistory @relation(fields: [groupLinkId, profileId], references: [groupLinkId, profileId], onDelete: Cascade, map: "CommunityMembershipPeriod_history_fkey")
+
+  // The migration also enforces one open period per profile/community.
+  @@index([groupLinkId, profileId, startedAt])
+}
+
+// Internal accounting only. No automatic earning or ranking is enabled by these tables.
+model CommunityInfluenceSettlement {
+  id String @id @default(cuid())
+  groupLinkId String
+  periodStart DateTime
+  periodEnd DateTime
+  policyVersion String
+  evidenceHash String
+  inputHash String
+  budgetUnits BigInt
+  creditedUnits BigInt
+  createdAt DateTime @default(now())
+
+  groupLink GroupLink @relation(fields: [groupLinkId], references: [id], onDelete: Cascade)
+  credits CommunityInfluenceCredit[]
+
+  @@unique([groupLinkId, periodStart, periodEnd], map: "CommunityInfluenceSettlement_period_key")
+  @@unique([id, groupLinkId], map: "CommunityInfluenceSettlement_id_group_key")
+}
+
+model CommunityInfluenceCredit {
+  settlementId String
+  groupLinkId String
+  profileId String
+  units BigInt
+  communityUnits BigInt @default(0)
+  participationUnits BigInt @default(0)
+  resonanceUnits BigInt @default(0)
+  growthCount BigInt @default(0)
+
+  settlement CommunityInfluenceSettlement @relation(fields: [settlementId, groupLinkId], references: [id, groupLinkId], onDelete: Cascade, map: "CommunityInfluenceCredit_settlement_fkey")
+  history CommunityMembershipHistory @relation(fields: [groupLinkId, profileId], references: [groupLinkId, profileId], onDelete: Cascade, map: "CommunityInfluenceCredit_history_fkey")
+
+  @@id([settlementId, profileId])
+  @@index([groupLinkId, profileId])
+}
+
+// Installed inactive. Activation persists the policy before any events are captured.
+model CommunityInfluenceSettings {
+  id String @id
+  startsAt DateTime
+  policyVersion String
+  policy Json
+  createdAt DateTime @default(now())
+}
+
+// An assignment routes only this history's own credits; it never moves ledger entries.
+model CommunityInfluenceSupport {
+  groupLinkId String
+  profileId String
+  recipientId String?
+  updatedAt DateTime @updatedAt
+  history CommunityMembershipHistory @relation(fields: [groupLinkId, profileId], references: [groupLinkId, profileId], onDelete: Cascade, map: "CommunityInfluenceSupport_history_fkey")
+  recipient Profile? @relation("InfluenceRecipient", fields: [recipientId], references: [id], onDelete: SetNull)
+
+  @@id([groupLinkId, profileId])
+  @@index([recipientId])
+}
+
+enum CommunityInfluenceEventKind {
+  JOIN
+  INTERACTION
+}
+
+model CommunityInfluenceEvent {
+  id String @id @default(dbgenerated("(gen_random_uuid())::text"))
+  groupLinkId String
+  actorId String
+  authorId String?
+  postId String?
+  kind CommunityInfluenceEventKind
+  eventKey String
+  occurredAt DateTime @default(now())
+  groupLink GroupLink @relation(fields: [groupLinkId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  actor Profile @relation("InfluenceActor", fields: [actorId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  author Profile? @relation("InfluenceAuthor", fields: [authorId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  post Post? @relation(fields: [postId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([groupLinkId, eventKey])
+  @@index([groupLinkId, occurredAt])
+}
+
+model Connection {
+  // gerichtete Kante (für Symmetrie legst du A->B und B->A an)
+  fromId String
+  toId   String
+
+  // Herkunft (z.B. durch Link-Gruppe)
+  groupLinkId String?
+  groupLink   GroupLink? @relation(fields: [groupLinkId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+
+  from Profile @relation("ConnectionsFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  to   Profile @relation("ConnectionsTo", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@id([fromId, toId])
+  @@index([fromId, createdAt])
+  @@index([toId, createdAt])
+  @@index([groupLinkId])
+}
+
+// Login-Identität (E-Mail/Passwort, hält 1..N Profile)
+model Account {
+  id       String @id @default(cuid())
+  email    String? @unique
+  password String?
+
+  phoneNumber     String?   @unique
+  phoneVerifiedAt DateTime?
+
+  emailVerifiedAt      DateTime?
+  emailVerifyCodeHash  String?
+  emailVerifyExpiresAt DateTime?
+
+  passwordResetCodeHash  String?
+  passwordResetExpiresAt DateTime?
+  passwordResetSentAt    DateTime?
+
+  profiles Profile[]
+
+  createdAt DateTime @default(now())
+}
+
+model PhoneVerificationCode {
+  phoneNumber String @id
+  codeHash    String
+  expiresAt   DateTime
+  sentAt      DateTime @default(now())
+  attempts    Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+// Öffentliche Identität (ehemals "User")
+model Profile {
+  id             String  @id @default(cuid())
+  username       String  @unique
+  name           String?
+  avatarUrl      String?
+  avatarThumbKey String?
+  bio            String?
+
+  profileContexts ProfileContext[]
+
+  city        String?
+  cityLat     Float?
+  cityLng     Float?
+  cityRegion  String? // z.B. Bundesland/State: "Salzburg"
+  cityCountry String? // z.B. "Österreich"
+
+  educationLevel    String?
+  educationOrg      String?
+  educationField    String?
+  educationGradYear Int?
+
+  interests String[] @default([])
+
+  onboardingCompletedAt DateTime?
+
+  avatarJob AvatarProcessingJob?
+
+  // Inhalte
+  posts                 Post[]                @relation("ProfilePosts")
+  stories               Story[]               @relation("ProfileStories")
+  storyMentionsReceived StoryMention[]        @relation("StoryMentionMentionedProfile")
+  storyMentionClicks    StoryMentionClick[]   @relation("StoryMentionClickViewer")
+  storyLinkClicks       StoryLinkClick[]      @relation("StoryLinkClickViewer")
+  storyLocationClicks   StoryLocationClick[]  @relation("StoryLocationClickViewer")
+  storyPollClicks       StoryPollClick[]      @relation("StoryPollClickViewer")
+  storyQuestionAnswers  StoryQuestionAnswer[] @relation("StoryQuestionAnswerRespondent")
+
+  // Follow-Relationen
+  followers Follow[] @relation("Followers") // Nutzer, die MICH folgen
+  following Follow[] @relation("Following") // Nutzer, denen ICH folge
+
+  // Denormalisierte Zähler (für schnelle Profil-Header)
+  postCount      Int @default(0)
+  reelCount      Int @default(0)
+  followerCount  Int @default(0)
+  followingCount Int @default(0)
+
+  likes                Like[]
+  comments             Comment[]
+  postViews            PostView[]    @relation("PostViewViewer")
+  profileViewsReceived ProfileView[] @relation("ProfileViewTarget")
+  profileViewsSent     ProfileView[] @relation("ProfileViewViewer")
+
+  taggedIn PostTag[]
+
+  // Besitz
+  accountId String
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  // Hauptprofil-Flag (für deinen Switcher)
+  isPrimary Boolean @default(false)
+
+  createdAt  DateTime     @default(now())
+  Vlog       Vlog[]
+  VlogMember VlogMember[]
+
+  notificationsReceived Notification[] @relation("NotificationsToRecipient")
+  notificationsFrom     Notification[] @relation("NotificationsFromUser")
+  notificationsAsActor  Notification[] @relation("NotificationsActor")
+
+  pushToken          String?
+  pushTokenUpdatedAt DateTime?
+
+  termsVersionAccepted Int?
+  termsAcceptedAt      DateTime?
+
+  reportsByMe      Report[] @relation("ReportsByReporter")
+  reportsAgainstMe Report[] @relation("ReportTargetUser")
+
+  blocksByMe UserBlock[] @relation("BlocksBlocker")
+  blockedMe  UserBlock[] @relation("BlocksBlocked")
+
+  bannedUntil  DateTime? @db.Timestamptz(6)
+  bannedReason String?
+
+  role         Role           @default(USER)
+  ThreadMember ThreadMember[]
+  Message      Message[]
+  messageLikes MessageLike[]
+
+  followRequestsSent     FollowRequest[] @relation("FollowRequestsSent")
+  followRequestsReceived FollowRequest[] @relation("FollowRequestsReceived")
+  isPrivate              Boolean         @default(false)
+
+  storyViews StoryView[] @relation("StoryViewViewer")
+
+  notificationSettings Json?
+
+  ownedGroupLinks  GroupLink[]       @relation("GroupLinkOwner")
+  groupMemberships GroupLinkMember[]
+  communityMembershipHistory CommunityMembershipHistory[]
+  influenceActions CommunityInfluenceEvent[] @relation("InfluenceActor")
+  influenceResponses CommunityInfluenceEvent[] @relation("InfluenceAuthor")
+  influenceSupportReceived CommunityInfluenceSupport[] @relation("InfluenceRecipient")
+  connectionsFrom  Connection[]      @relation("ConnectionsFrom")
+  connectionsTo    Connection[]      @relation("ConnectionsTo")
+
+  @@index([username])
+  @@index([accountId])
+}
+
+enum ContextKind {
+  CITY
+  EDU_LEVEL
+  EDU_ORG
+  EDU_FIELD
+  INTEREST
+  HASHTAG
+  PLACE
+  VLOG
+  TOPIC
+}
+
+enum ContextSource {
+  SEED
+  POST
+  LIKE
+  FOLLOW
+  IMPORT
+}
+
+model Context {
+  id         String      @id @default(cuid())
+  key        String      @unique
+  kind       ContextKind
+  label      String
+  cityScoped Boolean     @default(true)
+  groupLinkId String? @unique
+  groupLink GroupLink? @relation(fields: [groupLinkId], references: [id], onDelete: SetNull)
+
+  profileLinks ProfileContext[]
+  postLinks    PostContext[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([kind])
+  @@index([key])
+}
+
+model ProfileContext {
+  profileId String
+  contextId String
+
+  weight    Float         @default(0)
+  source    ContextSource
+  updatedAt DateTime      @updatedAt
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  context Context @relation(fields: [contextId], references: [id], onDelete: Cascade)
+
+  @@id([profileId, contextId, source])
+  @@index([profileId])
+  @@index([contextId])
+}
+
+model PostContext {
+  postId    String
+  contextId String
+
+  weight Float         @default(1)
+  source ContextSource
+
+  post    Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  context Context @relation(fields: [contextId], references: [id], onDelete: Cascade)
+
+  @@id([postId, contextId, source])
+  @@index([postId])
+  @@index([contextId])
+}
+
+model AppConfig {
+  id                  Int @id @default(1)
+  currentTermsVersion Int @default(1)
+}
+
+model Follow {
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+
+  // beide Seiten zeigen auf Profile
+  follower  Profile @relation("Following", fields: [followerId], references: [id], onDelete: Cascade)
+  following Profile @relation("Followers", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@id([followerId, followingId]) // ein Paar darf nur einmal existieren
+  @@index([followingId])
+  @@index([followerId])
+}
+
+enum FollowRequestStatus {
+  PENDING
+}
+
+model FollowRequest {
+  requesterId String
+  targetId    String
+  status      FollowRequestStatus @default(PENDING)
+  createdAt   DateTime            @default(now())
+
+  requester Profile @relation("FollowRequestsSent", fields: [requesterId], references: [id], onDelete: Cascade)
+  target    Profile @relation("FollowRequestsReceived", fields: [targetId], references: [id], onDelete: Cascade)
+
+  @@id([requesterId, targetId])
+  @@index([targetId, createdAt])
+}
+
+model Post {
+  id String @id @default(cuid())
+
+  // Typ des Beitrags
+  kind PostKind @default(POST)
+
+  postContexts PostContext[]
+  influenceEvents CommunityInfluenceEvent[]
+
+  // Medien: für POST Bild, für REEL Video (+ Thumb empfohlen)
+  imageKey  String? // Bild-Datei (POST)
+  videoKey  String? // Video-Datei (REEL)
+  thumbKey  String? // Vorschau/Posterframe
+  image     String? // Legacy-Fallback (nicht mehr schreiben)
+  media     PostMedia[]
+  tagsVlogs PostVlogTag[]
+
+  caption         String?
+  location        String?
+  locationLat     Float?
+  locationLng     Float?
+  likeCount       Int        @default(0)
+  commentCount    Int        @default(0)
+  viewCount       Int        @default(0)
+  uniqueViewCount Int        @default(0)
+  likes           Like[]
+  comments        Comment[]
+  views           PostView[]
+
+  interests String[] @default([])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  hideFromGrid Boolean @default(false)
+
+  authorId String
+  author   Profile @relation("ProfilePosts", fields: [authorId], references: [id], onDelete: Cascade)
+
+  // Markierungen
+  tags          PostTag[]
+  notifications Notification[] @relation("NotificationPost")
+
+  hashtags PostHashtag[]
+
+  reports Report[] @relation("ReportsOnPost")
+
+  @@index([authorId, kind, createdAt])
+}
+
+model PostView {
+  postId   String
+  viewerId String
+  viewedAt DateTime @default(now())
+  count    Int      @default(1)
+
+  post   Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  viewer Profile @relation("PostViewViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@id([postId, viewerId])
+  @@index([viewerId, viewedAt])
+  @@index([postId, viewedAt])
+}
+
+model ProfileView {
+  targetId String
+  viewerId String
+  viewedAt DateTime  @default(now())
+  seenAt   DateTime?
+
+  target Profile @relation("ProfileViewTarget", fields: [targetId], references: [id], onDelete: Cascade)
+  viewer Profile @relation("ProfileViewViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@id([targetId, viewerId])
+  @@index([targetId, viewedAt])
+  @@index([viewerId, viewedAt])
+}
+
+model PostHashtag {
+  id        String   @id @default(cuid())
+  postId    String
+  tag       String // normalized, e.g. "parametricdesign"
+  createdAt DateTime @default(now())
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, tag])
+  @@index([tag])
+  @@index([postId])
+}
+
+model Like {
+  // Ein Like pro (userId, postId) — userId zeigt auf Profile
+  userId    String
+  postId    String
+  createdAt DateTime @default(now())
+
+  user Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([userId, postId]) // verhindert Doppel-Likes
+  @@index([postId])
+  @@index([userId])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  postId    String
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String   @db.Text
+
+  post   Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author Profile @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  reports Report[] @relation("ReportsOnComment")
+
+  @@index([postId, createdAt])
+  @@index([authorId, createdAt])
+}
+
+model PostTag {
+  // Wer wurde in welchem Post/Reel markiert
+  postId    String
+  userId    String
+  createdAt DateTime @default(now())
+
+  status        TagStatus @default(PENDING) // Anfrage-Status
+  showOnProfile Boolean   @default(false) // im Raster des getaggten Users zeigen?
+
+  post Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([postId, userId]) // ein User pro Post nur einmal
+  @@index([userId])
+}
+
+model Story {
+  id             String  @id @default(cuid())
+  mediaKey       String?
+  thumbKey       String?
+  mime           String
+  duration       Int?
+  isCloseFriends Boolean @default(false)
+
+  views           StoryView[]
+  mentions        StoryMention[]
+  linkClicks      StoryLinkClick[]
+  locationClicks  StoryLocationClick[]
+  pollClicks      StoryPollClick[]
+  questionAnswers StoryQuestionAnswer[]
+
+  createdAt     DateTime            @default(now())
+  editJson      String?             @db.Text
+  processingJob StoryProcessingJob?
+  authorId      String
+  author        Profile             @relation("ProfileStories", fields: [authorId], references: [id], onDelete: Cascade)
+  messages      Message[]
+
+  @@index([authorId, createdAt])
+}
+
+model StoryMention {
+  id              String   @id @default(cuid())
+  storyId         String
+  mentionedUserId String
+  username        String
+  createdAt       DateTime @default(now())
+
+  story         Story               @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  mentionedUser Profile             @relation("StoryMentionMentionedProfile", fields: [mentionedUserId], references: [id], onDelete: Cascade)
+  clicks        StoryMentionClick[]
+
+  @@unique([storyId, mentionedUserId])
+  @@index([mentionedUserId, createdAt])
+  @@index([storyId])
+}
+
+model StoryMentionClick {
+  id        String   @id @default(cuid())
+  mentionId String
+  viewerId  String
+  clickedAt DateTime @default(now())
+
+  mention StoryMention @relation(fields: [mentionId], references: [id], onDelete: Cascade)
+  viewer  Profile      @relation("StoryMentionClickViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@index([mentionId, clickedAt])
+  @@index([viewerId, clickedAt])
+}
+
+model StoryLinkClick {
+  id        String   @id @default(cuid())
+  storyId   String
+  overlayId String?
+  url       String
+  viewerId  String
+  clickedAt DateTime @default(now())
+
+  story  Story   @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  viewer Profile @relation("StoryLinkClickViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@index([storyId, clickedAt])
+  @@index([storyId, overlayId, clickedAt])
+  @@index([viewerId, clickedAt])
+}
+
+model StoryLocationClick {
+  id        String   @id @default(cuid())
+  storyId   String
+  overlayId String?
+  label     String
+  viewerId  String
+  clickedAt DateTime @default(now())
+
+  story  Story   @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  viewer Profile @relation("StoryLocationClickViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@index([storyId, clickedAt])
+  @@index([storyId, overlayId, clickedAt])
+  @@index([viewerId, clickedAt])
+}
+
+model StoryPollClick {
+  id          String   @id @default(cuid())
+  storyId     String
+  overlayId   String?
+  question    String
+  optionIndex Int
+  optionText  String
+  viewerId    String
+  clickedAt   DateTime @default(now())
+
+  story  Story   @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  viewer Profile @relation("StoryPollClickViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@index([storyId, clickedAt])
+  @@index([storyId, overlayId, clickedAt])
+  @@index([viewerId, clickedAt])
+}
+
+model StoryQuestionAnswer {
+  id           String   @id @default(cuid())
+  storyId      String
+  overlayId    String?
+  prompt       String
+  answer       String
+  respondentId String
+  createdAt    DateTime @default(now())
+
+  story      Story   @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  respondent Profile @relation("StoryQuestionAnswerRespondent", fields: [respondentId], references: [id], onDelete: Cascade)
+
+  @@index([storyId, createdAt])
+  @@index([storyId, overlayId, createdAt])
+  @@index([respondentId, createdAt])
+}
+
+model StoryView {
+  storyId  String
+  viewerId String
+  viewedAt DateTime @default(now())
+
+  story  Story   @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  viewer Profile @relation("StoryViewViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@id([storyId, viewerId])
+  @@index([storyId, viewedAt])
+  @@index([viewerId, viewedAt])
+}
+
+// ---------- Enums ----------
+enum VlogPrivacy {
+  PUBLIC
+  PRIVATE
+}
+
+enum VlogRole {
+  OWNER
+  ADMIN
+  MEMBER
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum MembershipStatus {
+  PENDING
+  ACCEPTED
+  INVITED
+  REJECTED
+}
+
+enum MediaKind {
+  IMAGE
+  VIDEO
+}
+
+enum TagStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+// ---------- Modelle ----------
+model Vlog {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  title       String
+  description String?
+  coverKey    String?
+  privacy     VlogPrivacy @default(PUBLIC)
+
+  ownerId  String
+  owner    Profile                 @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  coverJob VlogCoverProcessingJob?
+
+  // Stats
+  memberCount Int @default(1)
+  postCount   Int @default(0)
+
+  members       VlogMember[]
+  tags          PostVlogTag[] // Zuordnungen von Posts zu diesem Vlog
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  notifications Notification[] @relation("NotificationVlog")
+  lat           Float?
+  lng           Float?
+
+  @@index([ownerId, privacy])
+  @@index([lat, lng])
+}
+
+model VlogMember {
+  vlogId    String
+  userId    String
+  role      VlogRole         @default(MEMBER)
+  status    MembershipStatus @default(PENDING)
+  createdAt DateTime         @default(now())
+
+  vlog Vlog    @relation(fields: [vlogId], references: [id], onDelete: Cascade)
+  user Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([vlogId, userId])
+  @@index([userId, status])
+}
+
+model PostVlogTag {
+  postId    String
+  vlogId    String
+  status    TagStatus @default(PENDING)
+  createdAt DateTime  @default(now())
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  vlog Vlog @relation(fields: [vlogId], references: [id], onDelete: Cascade)
+
+  @@id([postId, vlogId])
+  @@index([vlogId, status])
+}
+
+enum MediaProcessStatus {
+  NONE
+  PENDING
+  PROCESSING
+  DONE
+  FAILED
+}
+
+model MediaProcessingJob {
+  id        String             @id @default(cuid())
+  mediaId   String             @unique
+  status    MediaProcessStatus @default(PENDING)
+  attempts  Int                @default(0)
+  lastError String?
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+
+  media PostMedia @relation("MediaJobToMedia", fields: [mediaId], references: [id], onDelete: Cascade)
+
+  @@index([status, createdAt])
+}
+
+model StoryProcessingJob {
+  id        String             @id @default(cuid())
+  storyId   String             @unique
+  status    MediaProcessStatus @default(PENDING)
+  attempts  Int                @default(0)
+  lastError String?
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+
+  story Story @relation(fields: [storyId], references: [id], onDelete: Cascade)
+
+  @@index([status, createdAt])
+}
+
+model AvatarProcessingJob {
+  id        String             @id @default(cuid())
+  profileId String             @unique
+  status    MediaProcessStatus @default(PENDING)
+  attempts  Int                @default(0)
+  lastError String?
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@index([status, createdAt])
+}
+
+model VlogCoverProcessingJob {
+  id        String             @id @default(cuid())
+  vlogId    String             @unique
+  status    MediaProcessStatus @default(PENDING)
+  attempts  Int                @default(0)
+  lastError String?
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+
+  vlog Vlog @relation(fields: [vlogId], references: [id], onDelete: Cascade)
+
+  @@index([status, createdAt])
+}
+
+model PostMedia {
+  id            String             @id @default(cuid())
+  postId        String
+  idx           Int
+  kind          MediaKind
+  key           String
+  thumbKey      String?
+  imageKey      String?
+  videoKey      String?
+  imageUrl      String?
+  videoUrl      String?
+  thumbUrl      String?
+  mime          String
+  width         Int?
+  height        Int?
+  durationS     Int?
+  order         Int                @default(0)
+  edit          Json?
+  processStatus MediaProcessStatus @default(NONE)
+  processError  String?
+  renderedKey   String?
+  renderedThumb String?
+
+  processingJob MediaProcessingJob? @relation("MediaJobToMedia")
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, idx])
+  @@index([postId])
+}
+
+enum NotificationKind {
+  VLOG_TAG_REQUEST // A fragt: “diesen Post in Vlog X aufnehmen?”
+  VLOG_TAG_APPROVED // Vlog-Owner/Admin hat es akzeptiert
+  VLOG_TAG_REJECTED
+  POST_SHARE_REQUEST
+  POST_SHARE_APPROVED
+  POST_SHARE_REJECTED
+  VLOG_NEW_POST
+  VLOG_DELETED
+  FOLLOW
+  LIKE
+  COMMENT
+  SYSTEM
+  FOLLOW_REQUEST
+  FOLLOW_REQUEST_ACCEPTED
+  STORY_POSTED
+  STORY_MENTION
+}
+
+enum NotificationChannel {
+  INBOX // Papierflieger (DM/Anfragen-artig)
+  ACTIVITY // Herz (Neuigkeiten)
+  BOTH
+}
+
+enum RequestStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+model Notification {
+  id String @id @default(cuid())
+
+  // -------- Ziel: Profile (Empfänger) --------
+  recipientId String
+  recipient   Profile @relation("NotificationsToRecipient", fields: [recipientId], references: [id], onDelete: Cascade)
+
+  // -------- Ziel: Profile (Absender/Anfragender) --------
+  fromUserId String?
+  fromUser   Profile? @relation("NotificationsFromUser", fields: [fromUserId], references: [id])
+
+  // -------- optional: weiterer Actor (wenn du "from" und "actor" getrennt halten willst)
+  actorId String?
+  actor   Profile? @relation("NotificationsActor", fields: [actorId], references: [id])
+
+  kind    NotificationKind
+  channel NotificationChannel @default(ACTIVITY)
+
+  // -------- Kontext --------
+  postId String?
+  post   Post?   @relation("NotificationPost", fields: [postId], references: [id], onDelete: Cascade)
+
+  vlogId String?
+  vlog   Vlog?   @relation("NotificationVlog", fields: [vlogId], references: [id], onDelete: Cascade)
+
+  payload   Json?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  requestStatus RequestStatus?
+  handledAt     DateTime?
+
+  @@index([recipientId, createdAt])
+  @@index([kind, channel])
+}
+
+enum ReportStatus {
+  OPEN
+  REVIEWED
+  ACTION_TAKEN
+  DISMISSED
+  RESOLVED
+}
+
+model Report {
+  id String @id @default(cuid())
+
+  reporterId String
+  reporter   Profile @relation("ReportsByReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+
+  // Ziel kann Post ODER User sein
+  postId String?
+  post   Post?   @relation("ReportsOnPost", fields: [postId], references: [id], onDelete: Cascade)
+
+  targetUserId String?
+  targetUser   Profile? @relation("ReportTargetUser", fields: [targetUserId], references: [id], onDelete: Cascade)
+
+  commentId String?
+  comment   Comment? @relation("ReportsOnComment", fields: [commentId], references: [id], onDelete: Cascade)
+
+  reason  String
+  details String?
+  status  ReportStatus @default(OPEN)
+
+  createdAt  DateTime  @default(now())
+  resolvedAt DateTime?
+
+  @@unique([reporterId, postId, commentId, targetUserId])
+  @@index([status, createdAt])
+}
+
+model UserBlock {
+  id String @id @default(cuid())
+
+  blockerId String
+  blocker   Profile @relation("BlocksBlocker", fields: [blockerId], references: [id], onDelete: Cascade)
+
+  blockedId String
+  blocked   Profile @relation("BlocksBlocked", fields: [blockedId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([blockerId, blockedId])
+}
+
+//////////////////////////////////////////////////////////
+// Chat
+//////////////////////////////////////////////////////////
+
+enum ThreadKind {
+  DM
+  GROUP
+  COMMUNITY
+  BROADCAST
+  DISABLED
+}
+
+model Thread {
+  id        String   @id @default(cuid())
+  title     String?
+  imageKey  String?
+  ownerId   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  kind      ThreadKind @default(DM)
+
+  dmKey    String? @unique
+  groupKey String? @unique
+
+  members  ThreadMember[]
+  messages Message[]
+}
+
+model ThreadMember {
+  id         String   @id @default(cuid())
+  thread     Thread   @relation(fields: [threadId], references: [id])
+  threadId   String
+  user       Profile  @relation(fields: [userId], references: [id])
+  userId     String
+  lastReadAt DateTime @default(now())
+
+  @@unique([threadId, userId])
+}
+
+model Message {
+  id         String        @id @default(cuid())
+  thread     Thread        @relation(fields: [threadId], references: [id])
+  threadId   String
+  sender     Profile       @relation(fields: [senderId], references: [id])
+  senderId   String
+  clientId   String?
+  kind       String // "text" | "image" | "video" | "file" | "emoji"
+  text       String?
+  s3Key      String?
+  mime       String?
+  width      Int?
+  height     Int?
+  durationMs Int?
+  replyToId  String?
+  createdAt  DateTime      @default(now())
+  editedAt   DateTime?
+  likes      MessageLike[]
+  storyId    String?
+  story      Story?        @relation(fields: [storyId], references: [id], onDelete: SetNull)
+
+  @@unique([threadId, senderId, clientId])
+}
+
+model MessageLike {
+  messageId String
+  userId    String
+  createdAt DateTime @default(now())
+
+  message Message @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  user    Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([messageId, userId]) // 1 Like pro User/Nachricht
+}

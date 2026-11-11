@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "report": [
+    {
+      "width": 1280,
+      "height": 720,
+      "bounds": [
+        {
+          "text": "暂停",
+          "overlap": false,
+          "bottom": 299.28125
+        },
+        {
+          "text": "展开全部",
+          "overlap": false,
+          "bottom": 299.28125
+        },
+        {
+          "text": "是的，想认识",
+          "overlap": false,
+          "bottom": 688.46875
+        },
+        {
+          "text": "不太合适",
+          "overlap": false,
+          "bottom": 688.46875
+        },
+        {
+          "text": "发送好友申请",
+          "overlap": false,
+          "bottom": 678.875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "bounds": [
+        {
+          "text": "暂停",
+          "overlap": false,
+          "bottom": 805.1875
+        },
+        {
+          "text": "展开全部",
+          "overlap": false,
+          "bottom": 805.1875
+        },
+        {
+          "text": "是的，想认识",
+          "overlap": false,
+          "bottom": 1305.78125
+        },
+        {
+          "text": "不太合适",
+          "overlap": false,
+          "bottom": 1305.78125
+        },
+        {
+          "text": "发送好友申请",
+          "overlap": false,
+          "bottom": 1363.78125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "bounds": [
+        {
+          "text": "暂停",
+          "overlap": false,
+          "bottom": 821.078125
+        },
+        {
+          "text": "展开全部",
+          "overlap": false,
+          "bottom": 821.078125
+        },
+        {
+          "text": "是的，想认识",
+          "overlap": false,
+          "bottom": 1348.796875
+        },
+        {
+          "text": "不太合适",
+          "overlap": false,
+          "bottom": 1348.796875
+        },
+        {
+          "text": "发送好友申请",
+          "overlap": false,
+          "bottom": 1406.796875
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+"use client";
+import { useState } from 'react';
+import { ArrowUpRight, CheckCheck, Code2, FileText, Fingerprint, Layers3, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Accordion,AccordionItem,AccordionTrigger,AccordionContent } from '@/components/ui/accordion';
+import { Separator } from '@/components/ui/separator';
+import { Tabs,TabsList,TabsTrigger,TabsContent } from '@/components/ui/tabs';
+import { CoverFlow } from '@/components/affect/cover-flow';
+import { ProjectCard } from '@/components/affect/project-card-clean';
+import { ProgressTracker } from '@/components/affect/progress-tracker-clean';
+import { AgentFindings } from '@/components/affect/agent-findings-clean';
+import { NotificationStack } from '@/components/affect/notification-stack';
+import { TextReveal } from '@/components/affect/text-reveal';
+import { NumberTicker } from '@/components/affect/number-ticker';
+import { ProjectArt } from '@/components/showcase-board';
+import { showcaseFor,type ShowcaseItem } from '@/lib/showcase';
+import { chapters,type Person } from '@/lib/people';
+
+export function ProfileDossier({person,onOpen,onAsk}:{person:Person;onOpen:(item:ShowcaseItem)=>void;onAsk:(message:string)=>void}) {
+  const items=showcaseFor(person);
+  const [view,setView]=useState('projects');
+  return <section id="person-details" className="profile-dossier" aria-labelledby="dossier-heading">
+    <div className="dossier-heading"><div><span className="section-kicker"><Fingerprint size={14}/>再往下，认识完整的 TA</span><TextReveal as="h2" text={person.name+'，以及 TA 认真做过的事。'} by="char" stagger={24}/><p>作品、经历和合作意愿，放在一起看，才像一个完整的人。</p></div><span className="dossier-count"><NumberTicker value={items.length} locale="zh-CN"/>个资料切片<small>均为本次原型的演示资料</small></span></div>
+    <Tabs value={view} onValueChange={setView} className="dossier-tabs"><TabsList><TabsTrigger value="projects"><Layers3 size={14}/>作品与想法</TabsTrigger><TabsTrigger value="experience"><FileText size={14}/>经历与贡献</TabsTrigger></TabsList>
+      <TabsContent value="projects"><div className="portfolio-showroom"><CoverFlow key={person.id} items={items.map(item=>({id:item.id,title:item.title,subtitle:item.kind,cover:<ProjectArt kind={item.art}/>}))} itemWidth={280} itemHeight={185} angle={35} reflection={false} defaultIndex={0} onSelect={(item)=>{const found=items.find(i=>i.id===item.id);if(found)onOpen(found);}} aria-label={person.name+'的作品与想法'}/></div><div className="portfolio-accordion"><Accordion type="single" collapsible defaultValue="main">{items.slice(0,4).map(item=><AccordionItem key={person.id+item.id} value={item.id}><AccordionTrigger><span><Badge variant="secondary">{item.kind}</Badge>{item.title}</span></AccordionTrigger><AccordionContent><p>{item.description}</p><span className="dossier-source"><CheckCheck size={13}/>{item.source}</span></AccordionContent></AccordionItem>)}</Accordion></div></TabsContent>
+      <TabsContent value="experience"><div className="experience-timeline relative space-y-12"><div className="bg-border absolute top-2 bottom-0 left-[7px] w-px md:left-[120px]"/>{[
+        {phase:'做过的事',title:person.chapters[0][2].title,text:person.chapters[0][2].detail,tags:['作品经历',person.tags[0]]},
+        {phase:'擅长的部分',title:person.chapters[0][0].title,text:person.chapters[0][0].detail,tags:person.tags},
+        {phase:'这一次想做',title:person.chapters[2][1].title,text:person.chapters[2][1].detail,tags:['周末造物场',person.chapters[2][0].note]},
+      ].map(entry=><div key={entry.phase} className="grid gap-8 md:grid-cols-[120px_1fr] md:gap-0"><div className="text-muted-foreground hidden pt-1 pr-8 text-right text-sm md:block">{entry.phase}</div><div className="relative pl-8 md:pl-12"><div className="bg-primary ring-background absolute top-2 left-[3px] size-2.5 rounded-full ring-4 md:left-[-5px]"/><div className="text-muted-foreground mb-2 text-sm md:hidden">{entry.phase}</div><h3>{entry.title}</h3><p>{entry.text}</p><div className="timeline-tags">{entry.tags.map(tag=><Badge key={tag} variant="outline">{tag}</Badge>)}</div></div></div>)}<p className="timeline-note">演示资料未包含学校、任职时间和完整履历，不补写未经确认的经历。</p></div></TabsContent>
+    </Tabs>
+    <Separator className="dossier-divider"/>
+    <div className="analysis-heading"><div><span className="section-kicker"><Sparkles size={14}/>AI 眼里的合作线索</span><h2>为什么，值得聊聊。</h2></div><Badge variant="secondary">预写分析演示</Badge></div>
+    <div className="analysis-columns"><div><div className="analysis-reasons">{chapters.map((chapter,i)=><article key={person.id+chapter.short}><span className="reason-symbol">{i===0?<Code2/>:i===1?<Sparkles/>:<CheckCheck/>}</span><div><h3>{chapter.short}</h3><p>{person.chapters[i][0].detail}</p></div></article>)}</div><AgentFindings key={person.id} className="profile-findings" title="已整理的资料依据 · 演示" agents={chapters.map((ch,i)=>({id:String(i),name:ch.short,step:'已整理示例资料',done:1,total:1,status:'done'}))} findings={chapters.map((ch,i)=>({id:person.id+i,agentId:String(i),title:person.chapters[i][0].title,severity:'note',location:'本人确认资料的演示',at:0}))} now={0} rows={3} onOpen={finding=>onAsk('想深入看看'+finding.title)}/></div><div className="analysis-side"><NotificationStack key={person.id} className="conversation-notes" notices={person.chapters.map((group,i)=>({id:person.id+i,badge:'可以问问 TA',title:group[3].title,text:group[3].detail,pattern:'orbit',action:{label:'带着这个问题聊聊',onClick:()=>onAsk(group[3].title)}}))}/><ProgressTracker key={'progress-'+person.id} className="reading-checklist" title="我的认识进度" steps={[{id:'work',label:'看过 TA 的作品'},{id:'schedule',label:'想好要确认的协作时段'},{id:'opener',label:'找到一个自然的开场话题'}]}/></div></div>
+    <div className="try-together"><div><span className="section-kicker"><Sparkles size={14}/>把好奇心往前推一点</span><h2>如果一起做，第一步是什么？</h2><p>留一个小清单，先想想你们能从哪里开始。</p><Button onClick={()=>onAsk('帮我想一个和'+person.name+'聊项目的开场')} className="dossier-ask">和 AI 想个开场<ArrowUpRight size={16}/></Button></div><ProjectCard key={'plan-'+person.id} className="collaboration-plan" title="一起做个能试的小版本" tasks={[{id:'topic',label:'选一个都感兴趣的具体场景'},{id:'split',label:'聊清各自能贡献的部分'},{id:'time',label:'约定第一次一起动手的时间'}]} statuses={[{id:'thinking',label:'先想一想',tone:'violet'},{id:'trying',label:'准备试试',tone:'blue'},{id:'ready',label:'已对齐',tone:'green'}]} status="thinking" trigger="click" defaultOpen hint="本地试想清单，刷新后重置" action={{label:'向助手聊聊这份清单',onClick:()=>onAsk('怎么把这个小版本的范围收小一点？')}}/></div>
+    <p className="dossier-boundary">这里只展示当前活动的演示资料。AI 分析是交流参考，具体经历、安排和分工仍由双方确认。</p>
+  </section>;
+}

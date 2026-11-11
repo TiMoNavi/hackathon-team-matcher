@@ -1,0 +1,100 @@
+name: Deploy Server
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-server
+  cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build server
+        run: pnpm --filter "{./apps/server}" build
+
+      - name: Prisma generate (server)
+        run: pnpm --filter "{./apps/server}" prisma generate
+
+      - name: Prepare deploy artifact
+        run: pnpm --filter "{./apps/server}" deploy --legacy --prod out
+
+      - name: Deploy to Server
+        env:
+          SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          USER: ${{ secrets.SERVER_USER }}
+          HOST: ${{ secrets.SERVER_HOST }}
+          TARGET: ${{ secrets.SERVER_PATH }}
+        run: |
+          set -euo pipefail
+
+          printf '%s\n' "$SSH_KEY" > key.pem
+          chmod 600 key.pem
+
+          # Ensure target exists
+          ssh -i key.pem -o StrictHostKeyChecking=no "$USER@$HOST" "mkdir -p \"$TARGET\""
+
+          # Rsync build (keep env & persistent data)
+          rsync -az --delete \
+            --exclude '.env' --exclude '.env.*' \
+            --exclude 'uploads/' --exclude 'logs/' \
+            -e "ssh -o StrictHostKeyChecking=no -i key.pem" \
+            ./out/ "$USER@$HOST:$TARGET"
+
+          # Remote commands (pass TARGET explicitly to remote shell)
+          ssh -i key.pem -o StrictHostKeyChecking=no "$USER@$HOST" "TARGET=\"$TARGET\" bash -s" << EOF
+          set -euo pipefail
+          cd "\$TARGET"
+
+          echo "▶ Loading environment variables"
+          set -a
+          if [ -f .env ]; then
+            . ./.env
+          elif [ -f .env.production ]; then
+            . ./.env.production
+          fi
+          set +a
+
+          if [ -z "\${DATABASE_URL:-}" ]; then
+            echo "❌ DATABASE_URL is not set"
+            exit 1
+          fi
+
+          echo "▶ Ensuring Prisma Client exists (Linux build)"
+          npx prisma generate
+
+          echo "▶ Running Prisma migrations"
+          npx prisma migrate deploy
+
+          echo "▶ Restarting PM2"
+          if command -v pm2 >/dev/null 2>&1; then
+            PM2=pm2
+          else
+            PM2='npx pm2'
+          fi
+
+          \$PM2 restart ig-server --cwd "\$TARGET" --update-env \
+            || \$PM2 start "\$TARGET/dist/index.js" --name ig-server --cwd "\$TARGET"
+
+          \$PM2 save || true
+          EOF

@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-11",
+  "repository": "humhub/example-basic",
+  "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+  "method": "Read public raw files at the previously selected fixed commit; no clone, install or upstream implementation copied into the recommendation module.",
+  "files": [
+    {
+      "path": "config.php",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/config.php",
+      "sha256": "0b588b706e783126ff2817e902beafd261810ff19638f0f33de93c198a8f517a",
+      "bytes": 484
+    },
+    {
+      "path": "Module.php",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/Module.php",
+      "sha256": "a8ac816d0f2b74ec7c6aacb8fac253730c053a7ba5c580bec65411e93b7c4598",
+      "bytes": 893
+    },
+    {
+      "path": "module.json",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/module.json",
+      "sha256": "6e9e2ec0b3d9a3b309321a4f437a60c33131a29614bc761aa4841ffd5019e58e",
+      "bytes": 261
+    },
+    {
+      "path": "models/Configuration.php",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/models/Configuration.php",
+      "sha256": "981bbbcf8356f4d299ce4ba930f64a15ed318872436dc5b96c38fefabae8a334",
+      "bytes": 1522
+    },
+    {
+      "path": "docs/README.md",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/docs/README.md",
+      "sha256": "8c3c2979d659b114bbe8d7c4d9392a2478bd4a2c41366445812cbe47a3a0d953",
+      "bytes": 1049
+    },
+    {
+      "path": "docs/LICENCE.md",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/docs/LICENCE.md",
+      "sha256": "6cb210a3d0cca95df31d2012cd252bcd6d7ee999cdc571032a62a8b5bbdaec0c",
+      "bytes": 65
+    },
+    {
+      "path": "docs/DEVELOPER.md",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/docs/DEVELOPER.md",
+      "sha256": "268f3c81990decd66d569912fe4cadf06b2db7825c0619673af17da4d066c460",
+      "bytes": 269
+    }
+  ],
+  "initial_path_checks": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/humhub/example-basic/89605b11d09427e5ff1cc224392b926de4beb4ce/LICENSE.md",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "tree_lookup": "https://api.github.com/repos/humhub/example-basic/git/trees/89605b11d09427e5ff1cc224392b926de4beb4ce?recursive=1",
+  "license_note": "Fixed commit docs/LICENCE.md is the upstream licence entry; no template implementation code copied in R0. Recheck applicable terms for concrete files before later copying or redistribution."
+}

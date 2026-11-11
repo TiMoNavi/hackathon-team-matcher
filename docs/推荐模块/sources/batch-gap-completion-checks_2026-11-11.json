@@ -1,0 +1,181 @@
+{
+  "date": "2026-11-11",
+  "verified_at": "2026-11-11T21:57:24+08:00",
+  "status": "passed_with_recorded_parallel_changes",
+  "scope": "Authorized batch-authorization repair; no advancement of original task, admin bypass or deployment.",
+  "test_summary": {
+    "assertions_total": 1293,
+    "new_gap_assertions": 246,
+    "regression_assertions": 1047,
+    "php_lint_files": 216,
+    "source_files": 229,
+    "sources_stable_during_tests": true
+  },
+  "owned_source_paths": [
+    "backend/protected/modules/matcher-profile-privacy/Module.php",
+    "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeDiscoveryRelations.php",
+    "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php",
+    "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php",
+    "backend/protected/modules/matcher-profile-privacy/domain/ports/DiscoveryRelations.php",
+    "backend/protected/modules/matcher-profile-privacy/tests/discovery_batch/legacy_capability.php",
+    "backend/protected/modules/matcher-profile-privacy/tests/discovery_batch/run.php",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CandidateProjectionReader.php",
+    "backend/protected/modules/matcher-recommendation/tests/batch_projection/integration.php",
+    "backend/protected/modules/matcher-recommendation/tests/batch_projection/run.php",
+    "backend/protected/modules/matcher-recommendation/tests/profile_adapter/run.php",
+    "backend/protected/modules/matcher-user-profile/Module.php",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlDiscoveryProfileBatchSource.php",
+    "backend/protected/modules/matcher-user-profile/application/DiscoveryProfileBatchReader.php",
+    "backend/protected/modules/matcher-user-profile/domain/DiscoveryProfileBatchRequest.php",
+    "backend/protected/modules/matcher-user-profile/domain/ports/DiscoveryProfileBatchSource.php",
+    "backend/protected/modules/matcher-user-profile/tests/discovery_batch/Fixtures.php",
+    "backend/protected/modules/matcher-user-profile/tests/discovery_batch/run.php"
+  ],
+  "owned_source_hashes_match_test_record": true,
+  "owned_added_files": [
+    "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeDiscoveryRelations.php",
+    "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php",
+    "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php",
+    "backend/protected/modules/matcher-profile-privacy/domain/ports/DiscoveryRelations.php",
+    "backend/protected/modules/matcher-profile-privacy/tests/discovery_batch/legacy_capability.php",
+    "backend/protected/modules/matcher-profile-privacy/tests/discovery_batch/run.php",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CandidateProjectionReader.php",
+    "backend/protected/modules/matcher-recommendation/tests/batch_projection/integration.php",
+    "backend/protected/modules/matcher-recommendation/tests/batch_projection/run.php",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlDiscoveryProfileBatchSource.php",
+    "backend/protected/modules/matcher-user-profile/application/DiscoveryProfileBatchReader.php",
+    "backend/protected/modules/matcher-user-profile/domain/DiscoveryProfileBatchRequest.php",
+    "backend/protected/modules/matcher-user-profile/domain/ports/DiscoveryProfileBatchSource.php",
+    "backend/protected/modules/matcher-user-profile/tests/discovery_batch/Fixtures.php",
+    "backend/protected/modules/matcher-user-profile/tests/discovery_batch/run.php"
+  ],
+  "owned_existing_files_modified": [
+    "backend/protected/modules/matcher-profile-privacy/Module.php",
+    "backend/protected/modules/matcher-recommendation/tests/profile_adapter/run.php",
+    "backend/protected/modules/matcher-user-profile/Module.php"
+  ],
+  "observed_other_changes": {
+    "added": [
+      "backend/protected/modules/matcher-user-profile/adapters/http/SourceJsonController.php",
+      "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileSourceRepository.php",
+      "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceSchemaInstaller.php",
+      "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfileSourceRepository.php",
+      "backend/protected/modules/matcher-user-profile/application/ProfileSourceService.php",
+      "backend/protected/modules/matcher-user-profile/controllers/SourceController.php",
+      "backend/protected/modules/matcher-user-profile/domain/ports/ProfileSourceReader.php",
+      "backend/protected/modules/matcher-user-profile/domain/ports/ProfileSourceRepository.php",
+      "backend/protected/modules/matcher-user-profile/migrations/m261111_000004_profile_sources.php",
+      "backend/protected/modules/matcher-user-profile/tests/integration/s5_sources_sql.php",
+      "backend/protected/modules/matcher-user-profile/tests/unit/s5_sources.php"
+    ],
+    "changed": [
+      "backend/protected/modules/matcher-user-profile/config.php",
+      "backend/protected/modules/matcher-user-profile/module.json"
+    ],
+    "removed": []
+  },
+  "shared_module_note": "P1 Module.php also contains concurrent source-import assembly outside this repair. Our patch added only the batch reader property/getter; other source-import additions/config/manifest changes are preserved and are not attributed to this repair. Test-time full source snapshots are evidence, not an authorship claim.",
+  "changes_after_test_snapshot": {
+    "added": [],
+    "changed": [],
+    "removed": []
+  },
+  "anchors": {
+    "backend/protected/modules/.gitignore": {
+      "before_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "after_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "unchanged": true
+    },
+    "backend/deploy/profile-fields.json": {
+      "before_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "after_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "unchanged": true
+    },
+    "docs/首次注册与开场引导_用户原稿_冻结.md": {
+      "before_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "after_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "unchanged": true
+    }
+  },
+  "core_vendor_trees": {
+    "backend/protected/humhub": {
+      "baseline": "r3-native-baseline_2026-11-11.json",
+      "before": {
+        "files": 11259,
+        "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+        "excluded_paths": []
+      },
+      "after": {
+        "files": 11259,
+        "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+        "excluded_paths": []
+      },
+      "unchanged": true
+    },
+    "backend/protected/vendor": {
+      "baseline": "r3-native-baseline_2026-11-11.json",
+      "before": {
+        "files": 15407,
+        "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+        "excluded_paths": [
+          "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+        ]
+      },
+      "after": {
+        "files": 15407,
+        "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+        "excluded_paths": [
+          "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+        ]
+      },
+      "unchanged": true
+    }
+  },
+  "task_counts": {
+    "checked": 24,
+    "unchecked": 36
+  },
+  "checked_task_ids": [
+    "R0.1",
+    "R0.2",
+    "R0.3",
+    "R0.4",
+    "R0.5",
+    "R0.6",
+    "R0.7",
+    "R1.1",
+    "R1.2",
+    "R1.3",
+    "R1.4",
+    "R1.5",
+    "R1.6",
+    "R2.1",
+    "R2.2",
+    "R2.3",
+    "R2.4",
+    "R2.5",
+    "R2.6",
+    "R2.7",
+    "R2.8",
+    "R2.9",
+    "R2.10",
+    "R2.11"
+  ],
+  "original_task_progress_unchanged": true,
+  "markdown_files_checked": 12,
+  "relative_file_links_checked": 129,
+  "json_files_parsed": 34,
+  "independent_review_status": "passed_for_scoped_batch_adapter_review",
+  "test_record_sha256": "4a053670cfa80d194ae875198b70e0b1ba73b7c11d992768a2bf1178c27c3b0d",
+  "independent_review_sha256": "abd184cc06575eaa1ee9e919de849036420fc6504b850bc047a500d9a3c4f5ef",
+  "existing_database_connected": false,
+  "module_enabled_or_deployed_by_this_task": false,
+  "production_index_writer_connected": false,
+  "complete_R3_M1": false,
+  "limitations": [
+    "Relative file targets and fences checked; fragment anchors and external URLs not revalidated.",
+    "Current P1 source-import additions are parallel workspace work; no authorship inferred from hashes.",
+    "SQLite fixtures and bounded revalidation do not prove production MySQL behavior, durable authorization epochs, public API readiness or recommendation quality."
+  ],
+  "issues": []
+}

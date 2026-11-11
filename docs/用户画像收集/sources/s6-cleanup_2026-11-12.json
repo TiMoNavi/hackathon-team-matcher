@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "removed_test_databases": [
+    "humhub_profile_s6_test_root_f3275ee6",
+    "humhub_profile_s6_test_audit_4bb8f090"
+  ],
+  "removed_scoped_grants": 2,
+  "isolated_runtime_directories_removed": true,
+  "test_ports_closed": [
+    8096,
+    8097
+  ],
+  "main_preview_8090_running": true,
+  "main_ai_worker_running": true,
+  "main_ai_job_count": 0,
+  "main_real_model_calls": 0,
+  "private_backup_preserved": true,
+  "resume_python_preserved": true,
+  "private_ai_configuration_present": true
+}

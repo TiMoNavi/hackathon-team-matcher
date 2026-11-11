@@ -1,0 +1,53 @@
+{
+  "originalFilesChecked": 12,
+  "checks": [
+    {
+      "file": "components/reference-originals/glow-cloud.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/grid-background.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/gradient-floor.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/glass-folder.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/integration-beam.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/agent-trail.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/blur-crossfade.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/tilt-card.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/tag-input.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/shimmer-loader.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/affectui/button-clean.tsx",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-kit/kit-selection.tsx",
+      "unchanged": true
+    }
+  ]
+}

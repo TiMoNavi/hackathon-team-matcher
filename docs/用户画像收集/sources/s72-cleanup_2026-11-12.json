@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "isolated_databases_removed": [
+    "humhub_profile_s72_test_root_23fd1b71",
+    "humhub_profile_s72_test_audit_b0c7d9a2"
+  ],
+  "scoped_grants_removed": true,
+  "test_ports_closed": [
+    8100,
+    8101
+  ],
+  "isolated_runtime_removed": true,
+  "main_services_running": {
+    "web": true,
+    "mysql": true,
+    "queue": true,
+    "scheduler": true,
+    "profile-ai": true
+  },
+  "main_presentation_anonymous_http": 401,
+  "main_example_journal_retained": true,
+  "pre_s72_backup_checksum_verified": true
+}

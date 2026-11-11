@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checks": 6,
+  "guard_cases": [
+    {
+      "target_class": "non_allocated",
+      "rejected_before_bootstrap": true
+    },
+    {
+      "target_class": "root_clone",
+      "rejected_before_bootstrap": true
+    },
+    {
+      "target_class": "empty",
+      "rejected_before_bootstrap": true
+    },
+    {
+      "target_class": "non_allocated",
+      "rejected_before_bootstrap": true
+    }
+  ],
+  "http_origin_fixed_to_allocated_loopback": true,
+  "no_environment_url_override": true,
+  "database_connections": 0
+}

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "removed_databases": [
+    "humhub_profile_s76_test_root_e25c8a91",
+    "humhub_profile_s76_test_audit_6b49d027"
+  ],
+  "removed_ports": [
+    8104,
+    8105
+  ],
+  "scoped_grants_removed": true,
+  "isolated_runtime_directories_removed": true,
+  "main_service_pids_unchanged": true,
+  "main_http_8090_available": true,
+  "main_accounts": 103,
+  "main_spaces": 4,
+  "backup_pointer_retained": true,
+  "synthetic_dataset_retained": true
+}

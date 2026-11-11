@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "scope": "original account identity fields, native profiles, Spaces and memberships, profile catalog/state/history/drafts, presentation/ideas/messages and source/onboarding/AI records",
+  "excluded_operational_fields": "login/activity timestamps and current Space selection",
+  "original_accounts": 103,
+  "original_spaces": 4,
+  "main_total_accounts": 103,
+  "main_total_spaces": 4,
+  "scale_accounts_on_main": 0,
+  "checks": [
+    {
+      "table": "user",
+      "original_rows": 103,
+      "unchanged": true
+    },
+    {
+      "table": "profile",
+      "original_rows": 103,
+      "unchanged": true
+    },
+    {
+      "table": "space",
+      "original_rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "space_membership",
+      "original_rows": 126,
+      "unchanged": true
+    },
+    {
+      "table": "profile_field",
+      "original_rows": 31,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_state",
+      "original_rows": 223,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_attribute",
+      "original_rows": 4048,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_revision",
+      "original_rows": 220,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_draft",
+      "original_rows": 345,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_presentation",
+      "original_rows": 3,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_relation_sharing",
+      "original_rows": 14,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_idea",
+      "original_rows": 3,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_idea_activity",
+      "original_rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_idea_conversation",
+      "original_rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_idea_draft",
+      "original_rows": 3,
+      "unchanged": true
+    },
+    {
+      "table": "message",
+      "original_rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "message_entry",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "user_message",
+      "original_rows": 9,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_question_batch",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_question_answer",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_onboarding_session",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_source",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_source_snapshot",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_source_job",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_ai_job",
+      "original_rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_recommendation_discovery_settings",
+      "original_rows": 120,
+      "unchanged": true
+    }
+  ]
+}

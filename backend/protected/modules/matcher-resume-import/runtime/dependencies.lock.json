@@ -1,0 +1,13 @@
+{
+  "verified_on": "2026-11-11",
+  "python": ">=3.9",
+  "packages": [
+    {"name":"pypdf","version":"6.13.2","license":"BSD-3-Clause","source":"https://pypi.org/pypi/pypdf/6.13.2/json","documentation":"https://pypdf.readthedocs.io/en/stable/user/extract-text.html","sha256":"6eeb9e57693f29d41bd01255d02660cbbb41fd7fc818a982677389a35e4f2083"},
+    {"name":"typing_extensions","version":"4.15.0","license":"PSF-2.0","source":"https://pypi.org/pypi/typing_extensions/4.15.0/json","condition":"python_version < 3.11","sha256":"f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"}
+  ],
+  "docx_parser":"Python standard library zipfile and ElementTree, text XML only",
+  "external_network_during_parsing":false,
+  "model_calls":0,
+  "ocr":false,
+  "retained_source":"Decoded/extracted text, paragraphs and evidence retained by P1; uploaded binary is temporary"
+}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-11",
+  "scope": "Static public application code and metadata only; not a P1 runtime or database acceptance.",
+  "files": [
+    {
+      "path": "backend/protected/modules/matcher-user-profile/Module.php",
+      "sha256": "334413db85d13b6c0881e1a60ca236ac17f957c52482356ff74549abf8488ebd"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/module.json",
+      "sha256": "ca12eccef967e5d87fb9286cbea0183d902ce1b3445aa088731450d1b9261777"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/config.php",
+      "sha256": "8278d7b750eb7ffbc47707856e0f7694d2ef707c388a9eb1785b28ff4966308e"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/application/ProfileService.php",
+      "sha256": "d518d49bef5ce92798ed6cc2e1d3da39f2fee5713c26906ca08ac757ead9ef05"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+      "sha256": "636e2e8738fc3d7a8729f53fa27799b6742e21789069680583b95cb08699c947"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/domain/ProfileScope.php",
+      "sha256": "c6d7093b0d328ac11609d3788a6b92a3d49422df410972cbe97ed6d59541f56b"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileAccessPolicy.php",
+      "sha256": "eccd1b532f8c87353ad430796b42ff696fc89be22e5b6f06a15eff86c42ae562"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileRelationReader.php",
+      "sha256": "a950e06a3bd460075f38719ab149a7f8795dcd36327b17fc31db276c88f5fc90"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/NativeProfileAccessPolicy.php",
+      "sha256": "a9a419afe85f16d69fc9dbd2be45bbd126a8e0bd6aa10863069a854a8ba3046c"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/adapters/http/IdempotencyGuard.php",
+      "sha256": "6261591aae652d84a94c686d8f836c9fa229dfba36b3fd6540fa27797307dfde"
+    },
+    {
+      "path": "docs/用户画像收集/07_S2实施约定.md",
+      "sha256": "6690a0a48dacb43e473b0de28655374bdeb6d14e7ecd1e6538bc0a72b969eb2b"
+    },
+    {
+      "path": "backend/protected/humhub/components/ModuleManager.php",
+      "sha256": "70cc06509702d5854f57aa3b2f92a3098c76d35d7af927fb47d3cac56118125a"
+    },
+    {
+      "path": "backend/protected/humhub/components/Module.php",
+      "sha256": "47f3e994f39375f2ddb9285516371fcde17f29a694dccbd8209baea644e4a407"
+    },
+    {
+      "path": "backend/protected/humhub/services/ModuleDependencyService.php",
+      "sha256": "d2c1d6d8945ed14d48fdf8ab393cb95853c6cd3bbbef4a9c0bc5ba793b5aae78"
+    },
+    {
+      "path": "backend/protected/modules/rest/components/BaseController.php",
+      "sha256": "55a6407f86350ec1b33303bca1070af336d92cf778539a47c0fbf0e062fcfdf3"
+    },
+    {
+      "path": "backend/composer.json",
+      "sha256": "03dc59b8dac43a1ae2a96bc7ee79002c99a59963b2501c8d3c597cecd4782e6b"
+    }
+  ],
+  "runtime": {
+    "php_path": "backend/.runtime/php-mysql/bin/php",
+    "php_version": "8.5.12",
+    "command": "backend/.runtime/php-mysql/bin/php -n -r 'echo PHP_VERSION, PHP_EOL;'",
+    "project_min_php": ">=8.2",
+    "database": "Not connected. P1 installer requires MySQL >=8.0.16 and rejects MariaDB; runtime database version/migrations not verified."
+  }
+}

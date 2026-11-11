@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-12",
+  "files": [
+    {
+      "target": "components/ui/tabs.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/tabs.tsx",
+      "sha256": "578f99a61842566f7e812a2f9af16f9fb8f1b35692801d226e9f1d202e036df3",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/card.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/card.tsx",
+      "sha256": "28dec8d76e1cf48bf822bf533acc00a9b389d2de804a40b27a24b869e4845ed7",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/label.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/label.tsx",
+      "sha256": "344bde38b8531615dbf8e14af3895517c24d8ef6ce56ddeda7e2e6fe4b5d0c00",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/dialog.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/dialog.tsx",
+      "sha256": "8ab651fb3207035f93fa3a9cc6bb09fd830b7a372879111229c1510313d7b67b",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/badge.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/badge.tsx",
+      "sha256": "befabd8ae03134b9175bd26fe8243dc2025f773d042ddfe82c764323ce87be6f",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/separator.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/separator.tsx",
+      "sha256": "b5b5460e5337c2d5f361c1512001615b2e5eacb38c7449a4418bb9ddb47c4bba",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/button.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/button.tsx",
+      "sha256": "ceb0806eefc388559b7dc1f4a28e164ac573cd870f8f783070042205964b5c21",
+      "matches_original": true
+    },
+    {
+      "target": "components/ui/input.tsx",
+      "source": "vendor/shadcnuikit/templates/signalry-nextjs/components/ui/input.tsx",
+      "sha256": "09f8799039f5ffcd3aba2130f59e8e8ef6447e01bd911a7f9010450d9d30f5e1",
+      "matches_original": true
+    },
+    {
+      "target": "components/effects/gradient-floor.tsx",
+      "source": "首页/components/effects/gradient-floor.tsx",
+      "sha256": "df01c384627d3c66b2fa91ed3981212c71832124f92b4f0262d4937359c400d9",
+      "matches_homepage": true
+    },
+    {
+      "target": "components/effects/tilt-card.tsx",
+      "source": "首页/components/effects/tilt-card.tsx",
+      "sha256": "69c24693d70581fbf169e71eedc4318897302539fb0a0f5cbc46c719d913d7ba",
+      "matches_homepage": true
+    },
+    {
+      "target": "components/blocks/segmented-control.tsx",
+      "source": "vendor/affectui/affectui-components/segmented-control.tsx",
+      "sha256": "e0fa2ad35afdad8124a63b030182849b21a20adde9499792774ae37a8ab417bf",
+      "adaptation": "useLayoutEffect 同步 latest ref；主题和尺寸在外层 CSS 适配"
+    },
+    {
+      "target": "docs/sources/agenda-view.tsx.txt",
+      "source": "Shadcn UI Kit MCP get_item_code; style=radix-vega",
+      "sha256": "8b5214618fe84e2a8a61466c0bd84a87ddbc5fdfa4d5ef00f21c9f9893ea8d6f"
+    },
+    {
+      "target": "docs/sources/social-media-post1.tsx.txt",
+      "source": "Shadcn UI Kit MCP get_item_code; style=radix-vega",
+      "sha256": "3b2824ab093847cf7798741320c6d1eddfb09e933371ae128be85229d5d8a918"
+    },
+    {
+      "target": "docs/sources/event-item.tsx.txt",
+      "source": "Shadcn UI Kit MCP get_item_code; style=radix-vega",
+      "sha256": "6af389b83f26180c5760ec901c7c0bf7ff200c6a7c0ca2e80011e0434a387b87"
+    },
+    {
+      "target": "app/fonts/bricolage-grotesque-latin.woff2",
+      "source": "首页/app/fonts/bricolage-grotesque-latin.woff2",
+      "sha256": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+      "matches_homepage": true
+    },
+    {
+      "target": "app/fonts/inter-latin.woff2",
+      "source": "首页/app/fonts/inter-latin.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "matches_homepage": true
+    },
+    {
+      "target": "app/icon.svg",
+      "source": "首页/app/icon.svg",
+      "sha256": "62b62e07fdf0bd8b832207833aa0accdf80be47c8c4ede9c44dcc095269473be",
+      "matches_homepage": true
+    },
+    {
+      "target": "components/ui/popover.tsx",
+      "source": "Shadcn UI Kit MCP get_item_code style=radix-vega, supplied popover base (unchanged)",
+      "sha256": "d9a05b7f21fbead34001d213a792e639ee47951e141d7a435b85d097d7f9b96a"
+    },
+    {
+      "target": "docs/sources/avatar15-and-card9.md",
+      "source": "Shadcn UI Kit MCP get_item_code avatar15, card9; style=radix-vega",
+      "sha256": "4bc37a04ef19277abb3b35fbe5672f4428aa8cd9c153efcf4717c59a143038f1"
+    },
+    {
+      "target": "docs/sources/chat-bubble2.md",
+      "source": "Shadcn UI Kit MCP get_item_code chat-bubble2; style=radix-vega",
+      "sha256": "89dbf06deb2c47006285938f2817bd76ea171e3b5026c7bceb8f2523e9120be2"
+    }
+  ]
+}

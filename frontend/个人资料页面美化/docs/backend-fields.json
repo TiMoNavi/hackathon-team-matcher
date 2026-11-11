@@ -1,0 +1,198 @@
+{
+  "source": "../../backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+  "fields": [
+    {
+      "key": "real_name",
+      "label": "真实姓名",
+      "scope": "global"
+    },
+    {
+      "key": "age_range",
+      "label": "年龄段",
+      "scope": "global"
+    },
+    {
+      "key": "mbti",
+      "label": "MBTI（本人自述）",
+      "scope": "global"
+    },
+    {
+      "key": "personality",
+      "label": "性格与做事风格（本人自述）",
+      "scope": "global"
+    },
+    {
+      "key": "headline",
+      "label": "一句话自述",
+      "scope": "global"
+    },
+    {
+      "key": "bio",
+      "label": "自我介绍",
+      "scope": "global"
+    },
+    {
+      "key": "direction",
+      "label": "关注方向",
+      "scope": "global"
+    },
+    {
+      "key": "skill",
+      "label": "技能",
+      "scope": "global"
+    },
+    {
+      "key": "role",
+      "label": "可贡献角色",
+      "scope": "global"
+    },
+    {
+      "key": "interest",
+      "label": "兴趣领域",
+      "scope": "global"
+    },
+    {
+      "key": "seeking",
+      "label": "长期合作期待",
+      "scope": "global"
+    },
+    {
+      "key": "language",
+      "label": "沟通语言",
+      "scope": "global"
+    },
+    {
+      "key": "city",
+      "label": "常驻城市",
+      "scope": "global"
+    },
+    {
+      "key": "timezone",
+      "label": "时区",
+      "scope": "global"
+    },
+    {
+      "key": "contact_wechat",
+      "label": "微信号",
+      "scope": "global"
+    },
+    {
+      "key": "contact_wechat_qr",
+      "label": "微信二维码",
+      "scope": "global"
+    },
+    {
+      "key": "contact_qq",
+      "label": "QQ 号",
+      "scope": "global"
+    },
+    {
+      "key": "contact_phone",
+      "label": "联系电话",
+      "scope": "global"
+    },
+    {
+      "key": "contact_email",
+      "label": "联系邮箱",
+      "scope": "global"
+    },
+    {
+      "key": "contact_other",
+      "label": "其他联系方式",
+      "scope": "global"
+    },
+    {
+      "key": "collaboration_preference",
+      "label": "协作方式",
+      "scope": "global"
+    },
+    {
+      "key": "communication_preference",
+      "label": "沟通习惯",
+      "scope": "global"
+    },
+    {
+      "key": "education",
+      "label": "学业经历",
+      "scope": "global"
+    },
+    {
+      "key": "project",
+      "label": "项目经历",
+      "scope": "global"
+    },
+    {
+      "key": "work_experience",
+      "label": "工作与实习经历",
+      "scope": "global"
+    },
+    {
+      "key": "award",
+      "label": "获奖与成果",
+      "scope": "global"
+    },
+    {
+      "key": "portfolio_link",
+      "label": "作品与证明链接",
+      "scope": "global"
+    },
+    {
+      "key": "event_goal",
+      "label": "本次活动目标",
+      "scope": "event"
+    },
+    {
+      "key": "event_seeking",
+      "label": "本次需要的帮助",
+      "scope": "event"
+    },
+    {
+      "key": "event_role",
+      "label": "本次承担角色",
+      "scope": "event"
+    },
+    {
+      "key": "event_contribution",
+      "label": "本次提供的帮助",
+      "scope": "event"
+    },
+    {
+      "key": "event_time_commitment",
+      "label": "可投入时间",
+      "scope": "event"
+    },
+    {
+      "key": "event_availability",
+      "label": "可以参加的时段",
+      "scope": "event"
+    },
+    {
+      "key": "event_collaboration_mode",
+      "label": "本次协作方式",
+      "scope": "event"
+    },
+    {
+      "key": "event_presence",
+      "label": "本次参与安排",
+      "scope": "event"
+    },
+    {
+      "key": "event_contact_preference",
+      "label": "本次沟通偏好",
+      "scope": "event"
+    },
+    {
+      "key": "event_constraint",
+      "label": "本次协作说明",
+      "scope": "event"
+    }
+  ],
+  "identities": [
+    "nickname",
+    "avatar_ref"
+  ],
+  "relations": [
+    "idea_groups",
+    "activities"
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "status": "passed",
+  "passed": 58,
+  "checks": [
+    {
+      "name": "anonymous_source_list_rejected",
+      "passed": true
+    },
+    {
+      "name": "anonymous_capabilities_rejected",
+      "passed": true
+    },
+    {
+      "name": "four_reader_kinds_enabled",
+      "passed": true
+    },
+    {
+      "name": "web_text_readers_available",
+      "passed": true
+    },
+    {
+      "name": "text_import_requires_login",
+      "passed": true
+    },
+    {
+      "name": "text_import_requires_csrf",
+      "passed": true
+    },
+    {
+      "name": "text_import_requires_request_key",
+      "passed": true
+    },
+    {
+      "name": "ownership_declaration_required",
+      "passed": true
+    },
+    {
+      "name": "third_party_ownership_rejected",
+      "passed": true
+    },
+    {
+      "name": "text_rejects_extra_url",
+      "passed": true
+    },
+    {
+      "name": "text_rejects_extra_owner_id",
+      "passed": true
+    },
+    {
+      "name": "text_rejects_extra_visibility",
+      "passed": true
+    },
+    {
+      "name": "oversized_json_rejected",
+      "passed": true
+    },
+    {
+      "name": "empty_text_rejected",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_loopback_literal",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_loopback_numeric",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_loopback_ipv6",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_credentials",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_file_scheme",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_unsupported_port",
+      "passed": true
+    },
+    {
+      "name": "web_rejects_text",
+      "passed": true
+    },
+    {
+      "name": "real_text_pipeline_ready",
+      "passed": true
+    },
+    {
+      "name": "chinese_newlines_preserved",
+      "passed": true
+    },
+    {
+      "name": "ownership_marked_self_declared",
+      "passed": true
+    },
+    {
+      "name": "source_zero_models",
+      "passed": true
+    },
+    {
+      "name": "text_canonical_url_null",
+      "passed": true
+    },
+    {
+      "name": "evidence_resolves_saved_sections",
+      "passed": true
+    },
+    {
+      "name": "explicit_fields_mapped",
+      "passed": true
+    },
+    {
+      "name": "import_does_not_publish",
+      "passed": true
+    },
+    {
+      "name": "same_key_replays_source",
+      "passed": true
+    },
+    {
+      "name": "same_text_reuses_snapshot",
+      "passed": true
+    },
+    {
+      "name": "same_key_changed_text_conflicts",
+      "passed": true
+    },
+    {
+      "name": "list_omits_raw_snapshot",
+      "passed": true
+    },
+    {
+      "name": "foreign_read_not_found",
+      "passed": true
+    },
+    {
+      "name": "foreign_delete_not_found",
+      "passed": true
+    },
+    {
+      "name": "foreign_refresh_not_found",
+      "passed": true
+    },
+    {
+      "name": "source_read_no_store",
+      "passed": true
+    },
+    {
+      "name": "foreign_adoption_not_found",
+      "passed": true
+    },
+    {
+      "name": "stale_source_adoption_rejected",
+      "passed": true
+    },
+    {
+      "name": "unrelated_candidate_rejected",
+      "passed": true
+    },
+    {
+      "name": "manual_private_field_preserved",
+      "passed": true
+    },
+    {
+      "name": "new_fields_default_authenticated",
+      "passed": true
+    },
+    {
+      "name": "adoption_does_not_publish",
+      "passed": true
+    },
+    {
+      "name": "raw_text_not_copied_to_draft",
+      "passed": true
+    },
+    {
+      "name": "text_retry_requires_original_content",
+      "passed": true
+    },
+    {
+      "name": "changed_text_cannot_replace_source",
+      "passed": true
+    },
+    {
+      "name": "text_refresh_versioned",
+      "passed": true
+    },
+    {
+      "name": "old_evidence_version_rejected",
+      "passed": true
+    },
+    {
+      "name": "delete_scrubs_identity_snapshot",
+      "passed": true
+    },
+    {
+      "name": "deleted_read_not_found",
+      "passed": true
+    },
+    {
+      "name": "deleted_adoption_not_found",
+      "passed": true
+    },
+    {
+      "name": "adopted_values_survive_source_deletion",
+      "passed": true
+    },
+    {
+      "name": "explicit_review_confirms_adopted_facts",
+      "passed": true
+    },
+    {
+      "name": "private_bio_hidden_from_member",
+      "passed": true
+    },
+    {
+      "name": "raw_source_absent_from_visible_profile",
+      "passed": true
+    },
+    {
+      "name": "imported_facts_reach_rules_draft",
+      "passed": true
+    },
+    {
+      "name": "full_backend_flow_without_model",
+      "passed": true
+    },
+    {
+      "name": "globals_preserved_next_space_empty",
+      "passed": true
+    }
+  ],
+  "http_requests": 64,
+  "scope": "isolated real HTTP/session/CSRF and SQL; real local text reader; no browser or AI",
+  "raw_source_in_report": false,
+  "llm_calls": 0
+}

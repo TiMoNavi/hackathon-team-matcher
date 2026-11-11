@@ -1,0 +1,24 @@
+{
+  "version": "V3",
+  "date": "2026-11-12",
+  "checks": [
+    {
+      "name": "Kit beams reach the floor and emit particles",
+      "passed": true
+    },
+    {
+      "name": "Selected background settles inside its source button",
+      "passed": true
+    },
+    {
+      "name": "Narrow mobile viewport has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors in final effect checks",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

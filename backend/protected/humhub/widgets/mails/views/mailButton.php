@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
+
+use humhub\components\View;
+use humhub\helpers\ScssHelper;
+use humhub\helpers\MailStyleHelper;
+
+/* @var $this View */
+/* @var $color string */
+/* @var $text string */
+/* @var $url string */
+
+$contrastColor = ScssHelper::getColorContrast($color);
+$fontWeight = ($contrastColor === '#000000') ? '600' : '500';
+?>
+<td width="auto"  align="center" valign="middle" height="32"
+    style="background-color:<?= $color ?>; border-radius:5px; background-clip: padding-box; font-size:14px; font-family:<?= MailStyleHelper::getFontFamily() ?>; text-align:center; padding: 5px 30px">
+    <span>
+        <a href="<?= $url ?>" style="text-decoration: none; color: <?= $contrastColor ?>; font-weight: <?= $fontWeight ?>">
+            <?= $text ?>
+        </a>
+    </span>
+</td>

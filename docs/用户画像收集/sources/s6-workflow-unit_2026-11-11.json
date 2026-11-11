@@ -1,0 +1,7 @@
+{
+  "s6_workflow_checks": 26,
+  "passed": true,
+  "status": "passed",
+  "assertion_count": 26,
+  "command_exit_code": 0
+}

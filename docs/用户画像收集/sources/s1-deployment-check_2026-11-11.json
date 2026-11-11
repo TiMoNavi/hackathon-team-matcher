@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "module_enabled": true,
+  "profile_fields_before": 27,
+  "profile_fields_after": 31,
+  "added_profile_columns": [
+    "matcher_age_range",
+    "matcher_mbti",
+    "matcher_nickname",
+    "matcher_seeking"
+  ],
+  "core_tables": {
+    "matcher_profile_state": 0,
+    "matcher_profile_attribute": 0,
+    "matcher_profile_revision": 0,
+    "matcher_profile_draft": 0
+  },
+  "native_values_unchanged": {
+    "user": true,
+    "profile": true,
+    "space": true,
+    "space_membership": true
+  },
+  "backup_restored_in_isolated_test": true,
+  "temporary_test_database_removed": true
+}

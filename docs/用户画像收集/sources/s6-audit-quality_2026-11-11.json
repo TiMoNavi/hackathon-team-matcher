@@ -1,0 +1,36 @@
+{
+  "syntax_checks": [
+    {
+      "file": "backend/protected/modules/matcher-onboarding-ai/tests/audit/independent.php",
+      "php_lint_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-user-profile/tests/unit/s6_audit_jobs.php",
+      "php_lint_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s6_audit_support.php",
+      "php_lint_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s6_audit_router.php",
+      "php_lint_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s6_audit_driver.php",
+      "php_lint_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s6_audit_http.py",
+      "python_parse_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s6_audit_races.py",
+      "python_parse_ok": true
+    }
+  ],
+  "report_links": 17,
+  "missing_links": [],
+  "fenced_blocks_even": true,
+  "status": "passed"
+}

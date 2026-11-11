@@ -1,0 +1,33 @@
+{
+  "status": "failed",
+  "passed": 5,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "preconnect_guard_empty",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_preview",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_profile_s76_test_root_e25c8a91",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_profile_s76_test_audit_6b49d027_other",
+      "passed": true
+    },
+    {
+      "name": "exact_fixture_target",
+      "passed": true
+    }
+  ],
+  "http_requests": 0,
+  "real_llm_calls": 0,
+  "error_type": "AssertionError",
+  "error": "S76 audit CLI failed: legacy (exit 1)",
+  "database": "humhub_profile_s76_test_audit_6b49d027",
+  "origin": "http://127.0.0.1:8105"
+}

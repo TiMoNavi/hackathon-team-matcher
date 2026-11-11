@@ -1,0 +1,35 @@
+name: PHP Codeception Tests
+
+# Lean per-push / per-PR run: full PHP matrix against the recommended
+# database only (MariaDB 11.8). Broader engine/version coverage runs in
+# the weekly DB-compat sweep (php-test-db-compat.yml).
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - master
+            - develop
+            - next
+            - bs5
+        paths-ignore:
+            - '*.md'
+            - 'docs/**'
+    pull_request:
+        branches:
+            - master
+            - develop
+            - next
+            - statable
+        paths-ignore:
+            - '*.md'
+            - 'docs/**'
+
+permissions:
+  contents: read
+
+jobs:
+    tests:
+        uses: ./.github/workflows/php-test-base.yml
+        with:
+            php: '["8.2", "8.3", "8.4", "8.5"]'
+            databases: '[{"engine": "mariadb", "version": "11.8"}]'

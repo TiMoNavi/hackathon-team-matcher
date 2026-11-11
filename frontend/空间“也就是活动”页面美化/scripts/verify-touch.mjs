@@ -1,0 +1,37 @@
+import {createRequire} from 'node:module';
+import {mkdirSync,writeFileSync} from 'node:fs';
+const require=createRequire(import.meta.url);const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const results={checks:[],errors:[]};const check=(name,passed)=>{results.checks.push({name,passed});console.log((passed?'PASS ':'FAIL ')+name);if(!passed)throw Error(name)};
+mkdirSync('.cache/touch-browser',{recursive:true});
+const context=await chromium.launchPersistentContext(process.cwd()+'/.cache/touch-browser',{headless:true,executablePath:process.env.CHROMIUM_EXECUTABLE,viewport:{width:390,height:844},hasTouch:true,isMobile:true,reducedMotion:'no-preference'});
+const page=await context.newPage();page.on('pageerror',e=>results.errors.push(e.message));page.setDefaultTimeout(12000);
+try{
+ await page.goto('http://127.0.0.1:4201/',{waitUntil:'networkidle'});
+ check('Decorative motion runs when allowed',await page.locator('.community-doodle').evaluate(el=>getComputedStyle(el).animationName!=='none'));
+ await page.getByRole('button',{name:'暂停页面动画',exact:true}).tap();
+ check('Touch pause stops CSS motion',await page.locator('.community-doodle').evaluate(el=>getComputedStyle(el).animationPlayState==='paused'));
+ await page.getByRole('tab',{name:'论坛',exact:true}).tap();check('Touch tab opens forum',await page.getByRole('tab',{name:'论坛',exact:true}).getAttribute('aria-selected')==='true');
+ await page.getByRole('button',{name:'发个帖子',exact:true}).tap();await page.getByLabel('你的想法',{exact:true}).fill('手机上也想一起做个小作品。');
+ check('Mobile input font avoids auto zoom',await page.getByLabel('你的想法',{exact:true}).evaluate(el=>parseFloat(getComputedStyle(el).fontSize)>=16));
+ await page.getByRole('button',{name:'关闭弹窗',exact:true}).tap();await page.getByRole('button',{name:'发个帖子',exact:true}).tap();check('Mobile draft survives close',await page.getByLabel('你的想法',{exact:true}).inputValue()==='手机上也想一起做个小作品。');await page.getByRole('button',{name:'关闭弹窗',exact:true}).tap();
+ await page.getByRole('tab',{name:'日程',exact:true}).tap();await page.getByRole('button',{name:'Day 2 11 月 15 日 打磨与分享',exact:true}).tap();check('Touch date switch works',await page.locator('.agenda-item').count()===3);
+ await page.getByTestId('schedule-s7').tap();check('Touch schedule details fit viewport',await page.getByRole('dialog').evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight}));await page.getByRole('button',{name:'关闭弹窗',exact:true}).tap();
+ await page.getByRole('tab',{name:'风采',exact:true}).tap();await page.locator('.gallery-card').first().tap();await page.getByRole('button',{name:'下一张照片',exact:true}).tap();check('Touch photo next works',await page.getByRole('dialog').getByText('从陌生，到一起开工',{exact:true}).count()>0);await page.getByRole('button',{name:'关闭弹窗',exact:true}).tap();
+ await page.getByRole('tab',{name:'论坛',exact:true}).tap();
+ await page.getByTestId('post-p1').locator('.post-header .member-avatar').tap();
+ check('Touch avatar opens basic profile',await page.locator('.member-popover').getByRole('heading',{name:'林小满',exact:true}).isVisible());
+ const [memberPage]=await Promise.all([context.waitForEvent('page'),page.locator('.member-popover').getByRole('link',{name:/查看个人主页/}).tap()]);await memberPage.waitForLoadState('networkidle');
+ check('Touch profile entry reaches matching personal page',memberPage.url().endsWith('/people/1')&&await memberPage.getByRole('heading',{name:'林小满',exact:true}).isVisible());await memberPage.close();
+ await page.getByRole('button',{name:'关闭资料卡',exact:true}).tap();
+ await page.getByTestId('post-p1').getByRole('button',{name:'查看林小满的帖子',exact:true}).tap();
+ await page.getByTestId('reply-c1').locator('.member-avatar').tap();
+ check('Touch reply avatar opens nested profile',await page.locator('.member-popover').getByRole('heading',{name:'陈序',exact:true}).isVisible());await page.getByRole('button',{name:'关闭资料卡',exact:true}).tap();
+ await page.getByRole('button',{name:'回复陈序的第1条讨论',exact:true}).tap();await page.getByLabel('写下你的回复',{exact:true}).fill('手机上也可以接着这个想法聊。');
+ await page.getByRole('button',{name:'发送演示回复',exact:true}).tap();
+ check('Touch quoted reply is sent with context',await page.locator('.own-reply .reply-quote').innerText().then(t=>t.includes('陈序'))&&await page.locator('.own-reply').innerText().then(t=>t.includes('手机上也可以')));
+ await page.locator('.event-dialog').evaluate(el=>el.scrollTop=el.scrollHeight);await page.screenshot({path:'docs/screenshots/polish/390-reply-composer.png',animations:'disabled'});
+ await page.getByRole('button',{name:'关闭弹窗',exact:true}).tap();
+ check('Touch page has no horizontal overflow',await page.evaluate(()=>document.documentElement.scrollWidth===innerWidth));
+ check('Touch session has no runtime errors',results.errors.length===0);results.passed=true;
+}catch(e){results.passed=false;results.failure=e.stack;console.error(e.stack)}finally{writeFileSync('docs/touch-verification.json',JSON.stringify(results,null,2));await context.close()}
+if(!results.passed)process.exit(1);

@@ -1,0 +1,731 @@
+{
+    "date": "2026-11-12",
+    "status": "passed",
+    "mode": "offline_fake_provider_checks",
+    "synthetic_only": true,
+    "existing_database_connected": false,
+    "real_accounts_created": false,
+    "corpus_sha256": "d678cfa43f2f71e88021860255fb7beeda34892f4d28aec847c3de2e2134be76",
+    "corpus_count": 40,
+    "viewer": {
+        "id": 1,
+        "event_id": 7,
+        "display_name": "虚构测试者"
+    },
+    "model_calls_cap": 12,
+    "recording_policy": "Only fixed synthetic inputs and visible assistant.content; no credentials/headers/private data/reasoning_content. Human turns are agent-authored test messages, not real participant conversations.",
+    "requests": [],
+    "scenarios": [
+        {
+            "id": "zero",
+            "result": {
+                "run_id": "2493c2f3914aa00329557b796f544aeff0620deae83d5772",
+                "version": 3,
+                "interaction_status": "completed",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "model_calls_used": 0,
+                "clarification_round": 0,
+                "search_calls_used": 1,
+                "repair_used": false,
+                "question": null,
+                "items": [],
+                "error": null,
+                "can_use_filters": false
+            },
+            "recall": {
+                "fixture_strategy": "In-memory synthetic preselection: current event only, authorized fixture projections, deterministic score, structured-route cap 80. Not production SQL/semantic search or a performance benchmark.",
+                "input_people": 0,
+                "current_event_people": 0,
+                "other_event_excluded": [],
+                "recalled_ids": [],
+                "recall_count": 0
+            },
+            "qualified_count": 0,
+            "model_summary_count": 0,
+            "fake_provider": true
+        },
+        {
+            "id": "single",
+            "result": {
+                "run_id": "5e8f9ce4ddff0ac53eb55e579bb8269365777ddc8703964e",
+                "version": 5,
+                "interaction_status": "completed",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "model_calls_used": 1,
+                "clarification_round": 0,
+                "search_calls_used": 1,
+                "repair_used": false,
+                "question": null,
+                "items": [
+                    {
+                        "id": "1001",
+                        "display_name": "虚构·林澄",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9333333333333333,
+                        "ai_rank": 1,
+                        "evidence_ids": [
+                            "e-4c2cf3ec59da55d7bdadb8b483390aed907e780ee92e382738d3991b707f9416"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    }
+                ],
+                "error": null,
+                "can_use_filters": false
+            },
+            "recall": {
+                "fixture_strategy": "In-memory synthetic preselection: current event only, authorized fixture projections, deterministic score, structured-route cap 80. Not production SQL/semantic search or a performance benchmark.",
+                "input_people": 1,
+                "current_event_people": 1,
+                "other_event_excluded": [],
+                "recalled_ids": [
+                    "1001"
+                ],
+                "recall_count": 1
+            },
+            "qualified_count": 1,
+            "model_summary_count": 1,
+            "fake_provider": true
+        },
+        {
+            "id": "current_36_plus_other_4",
+            "result": {
+                "run_id": "48367c5b3f40840bb0a7f153cc6add1961f230df98343137",
+                "version": 5,
+                "interaction_status": "completed",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "model_calls_used": 1,
+                "clarification_round": 0,
+                "search_calls_used": 1,
+                "repair_used": false,
+                "question": null,
+                "items": [
+                    {
+                        "id": "1001",
+                        "display_name": "虚构·林澄",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9333333333333333,
+                        "ai_rank": 1,
+                        "evidence_ids": [
+                            "e-4c2cf3ec59da55d7bdadb8b483390aed907e780ee92e382738d3991b707f9416"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    },
+                    {
+                        "id": "1009",
+                        "display_name": "虚构·顾栎",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9311827956989248,
+                        "ai_rank": 2,
+                        "evidence_ids": [
+                            "e-4b174a3dd4f992f70e8112aa597a6844949059cf3f3ac9a48f7e6a9a209f1fc3"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    },
+                    {
+                        "id": "1011",
+                        "display_name": "虚构·沈禾",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9291005291005292,
+                        "ai_rank": 3,
+                        "evidence_ids": [
+                            "e-300e1b85feb9a6887280813087960d06b0af5c7f312cacc5df2cde41426b1701"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    }
+                ],
+                "error": null,
+                "can_use_filters": false
+            },
+            "recall": {
+                "fixture_strategy": "In-memory synthetic preselection: current event only, authorized fixture projections, deterministic score, structured-route cap 80. Not production SQL/semantic search or a performance benchmark.",
+                "input_people": 40,
+                "current_event_people": 36,
+                "other_event_excluded": [
+                    "2001",
+                    "2002",
+                    "2003",
+                    "2004"
+                ],
+                "recalled_ids": [
+                    "1001",
+                    "1009",
+                    "1011",
+                    "1027",
+                    "1028",
+                    "1029",
+                    "1030",
+                    "1031",
+                    "1036",
+                    "1013",
+                    "1015",
+                    "1002",
+                    "1003",
+                    "1004",
+                    "1005",
+                    "1006",
+                    "1007",
+                    "1008",
+                    "1010",
+                    "1012",
+                    "1014",
+                    "1019",
+                    "1034",
+                    "1035",
+                    "1032",
+                    "1033",
+                    "1016",
+                    "1017",
+                    "1018",
+                    "1020",
+                    "1021",
+                    "1022",
+                    "1023",
+                    "1024",
+                    "1025",
+                    "1026"
+                ],
+                "recall_count": 36
+            },
+            "qualified_count": 18,
+            "model_summary_count": 18,
+            "fake_provider": true
+        },
+        {
+            "id": "large_400",
+            "result": {
+                "run_id": "790c56e62af9041fbe2060ef80bc29252e4dbb534a3118be",
+                "version": 5,
+                "interaction_status": "completed",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "model_calls_used": 1,
+                "clarification_round": 0,
+                "search_calls_used": 1,
+                "repair_used": false,
+                "question": null,
+                "items": [
+                    {
+                        "id": "3001",
+                        "display_name": "虚构扩展用户1",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9333333333333333,
+                        "ai_rank": 1,
+                        "evidence_ids": [
+                            "e-cb7b6386ec8d04dec7d254b8d1afa53be7391f63609cfd1bbcc49112ae86ae0f"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    },
+                    {
+                        "id": "3009",
+                        "display_name": "虚构扩展用户9",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9311827956989248,
+                        "ai_rank": 2,
+                        "evidence_ids": [
+                            "e-712d0b11f9fa4d15bdf8fef3f265accfd101b0c60b35965ff02dbb42fcb0aab0"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    },
+                    {
+                        "id": "3011",
+                        "display_name": "虚构扩展用户11",
+                        "name_source": "synthetic display mapping; not a production identity projection",
+                        "rule_score": 0.9291005291005292,
+                        "ai_rank": 3,
+                        "evidence_ids": [
+                            "e-66f208499995b940e5e62a276851194afddc6b85f2d1b70566bfedd25077690d"
+                        ],
+                        "backend_reasons": [
+                            "本次排序参考已确认事实：offers=\"后端开发\"。"
+                        ]
+                    }
+                ],
+                "error": null,
+                "can_use_filters": false
+            },
+            "recall": {
+                "fixture_strategy": "In-memory synthetic preselection: current event only, authorized fixture projections, deterministic score, structured-route cap 80. Not production SQL/semantic search or a performance benchmark.",
+                "input_people": 400,
+                "current_event_people": 400,
+                "other_event_excluded": [],
+                "recalled_ids": [
+                    "3001",
+                    "3009",
+                    "3011",
+                    "3027",
+                    "3028",
+                    "3029",
+                    "3030",
+                    "3031",
+                    "3036",
+                    "3037",
+                    "3045",
+                    "3047",
+                    "3063",
+                    "3064",
+                    "3065",
+                    "3066",
+                    "3067",
+                    "3072",
+                    "3073",
+                    "3081",
+                    "3083",
+                    "3099",
+                    "3100",
+                    "3101",
+                    "3102",
+                    "3103",
+                    "3108",
+                    "3109",
+                    "3117",
+                    "3119",
+                    "3135",
+                    "3136",
+                    "3137",
+                    "3138",
+                    "3139",
+                    "3144",
+                    "3145",
+                    "3153",
+                    "3155",
+                    "3171",
+                    "3172",
+                    "3173",
+                    "3174",
+                    "3175",
+                    "3180",
+                    "3181",
+                    "3189",
+                    "3191",
+                    "3207",
+                    "3208",
+                    "3209",
+                    "3210",
+                    "3211",
+                    "3216",
+                    "3217",
+                    "3225",
+                    "3227",
+                    "3243",
+                    "3244",
+                    "3245",
+                    "3246",
+                    "3247",
+                    "3252",
+                    "3253",
+                    "3261",
+                    "3263",
+                    "3279",
+                    "3280",
+                    "3281",
+                    "3282",
+                    "3283",
+                    "3288",
+                    "3289",
+                    "3297",
+                    "3299",
+                    "3315",
+                    "3316",
+                    "3317",
+                    "3318",
+                    "3319"
+                ],
+                "recall_count": 80
+            },
+            "qualified_count": 35,
+            "model_summary_count": 24,
+            "fake_provider": true
+        }
+    ],
+    "policy": {
+        "schema_version": 1,
+        "catalog_version": 2,
+        "bindings": {
+            "topics": {
+                "source_key": "synthetic_topics",
+                "scope": "global",
+                "cardinality": "many",
+                "value_schema": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                "transform": "identity",
+                "purpose": "topic",
+                "semantic": "topic"
+            },
+            "skills": {
+                "source_key": "synthetic_skills",
+                "scope": "global",
+                "cardinality": "many",
+                "value_schema": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 100
+                        },
+                        "label": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 100
+                        }
+                    },
+                    "required": [
+                        "code",
+                        "label"
+                    ],
+                    "additionalProperties": false
+                },
+                "transform": "code",
+                "purpose": "contribution",
+                "semantic": "capability"
+            },
+            "offers": {
+                "source_key": "synthetic_offers",
+                "scope": "event",
+                "cardinality": "one",
+                "value_schema": {
+                    "type": "object",
+                    "properties": {
+                        "codes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 100
+                            },
+                            "maxItems": 30,
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": [
+                        "codes"
+                    ],
+                    "additionalProperties": false
+                },
+                "transform": "codes",
+                "purpose": "contribution",
+                "semantic": "declared_contribution"
+            },
+            "preferences": {
+                "source_key": "synthetic_preferences",
+                "scope": "global",
+                "cardinality": "many",
+                "value_schema": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                "transform": "identity",
+                "purpose": "collaboration_style",
+                "semantic": "collaboration_preference"
+            },
+            "self_type": {
+                "source_key": "synthetic_type",
+                "scope": "global",
+                "cardinality": "one",
+                "value_schema": {
+                    "type": "string",
+                    "enum": [
+                        "INTJ",
+                        "ENFP"
+                    ]
+                },
+                "transform": "identity",
+                "purpose": "collaboration_style",
+                "semantic": "self_reported_type"
+            },
+            "availability": {
+                "source_key": "synthetic_availability",
+                "scope": "event",
+                "cardinality": "many",
+                "value_schema": {
+                    "type": "object",
+                    "properties": {
+                        "starts_at": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "ends_at": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "timezone": {
+                            "type": "string",
+                            "format": "timezone"
+                        }
+                    },
+                    "required": [
+                        "starts_at",
+                        "ends_at",
+                        "timezone"
+                    ],
+                    "additionalProperties": false
+                },
+                "transform": "interval",
+                "purpose": "availability",
+                "semantic": "availability"
+            }
+        },
+        "dimension_weights": {
+            "topic": 0.35,
+            "contribution": 0.35,
+            "availability": 0.15,
+            "collaboration_style": 0.15
+        },
+        "enabled_routes": [
+            "structured",
+            "fulltext"
+        ],
+        "route_weights": {
+            "structured": 0.4,
+            "fulltext": 0.2,
+            "semantic": 0.4
+        },
+        "minimum_match_score": 0.35,
+        "limits": {
+            "recall": 200,
+            "model_candidates": 24,
+            "final_results": 5,
+            "candidate_bytes": 768,
+            "request_bytes": 24576
+        },
+        "rules": [
+            {
+                "id": "topic_similarity",
+                "dimension": "topic",
+                "operator": "similarity",
+                "query_feature": "topics",
+                "candidate_features": [
+                    "topics"
+                ],
+                "aliases": []
+            },
+            {
+                "id": "skill_similarity",
+                "dimension": "contribution",
+                "operator": "similarity",
+                "query_feature": "skills",
+                "candidate_features": [
+                    "skills"
+                ],
+                "aliases": []
+            },
+            {
+                "id": "contribution_supply",
+                "dimension": "contribution",
+                "operator": "supply_demand",
+                "query_feature": "needs",
+                "candidate_features": [
+                    "offers"
+                ],
+                "aliases": []
+            },
+            {
+                "id": "contribution_coverage",
+                "dimension": "contribution",
+                "operator": "coverage_gain",
+                "query_feature": "gaps",
+                "candidate_features": [
+                    "offers"
+                ],
+                "aliases": []
+            },
+            {
+                "id": "style_explicit",
+                "dimension": "collaboration_style",
+                "operator": "explicit_preference",
+                "query_feature": "preferences",
+                "candidate_features": [
+                    "preferences"
+                ],
+                "aliases": []
+            },
+            {
+                "id": "type_explicit",
+                "dimension": "collaboration_style",
+                "operator": "explicit_preference",
+                "query_feature": "self_type",
+                "candidate_features": [
+                    "self_type"
+                ],
+                "aliases": []
+            },
+            {
+                "id": "availability_overlap",
+                "dimension": "availability",
+                "operator": "interval_overlap",
+                "query_feature": "availability",
+                "candidate_features": [
+                    "availability"
+                ],
+                "aliases": []
+            }
+        ],
+        "selection": {
+            "near_tie_delta": 0.05,
+            "exploration_slots": 1,
+            "max_results": 24
+        }
+    },
+    "eligibility_exclusions": [
+        {
+            "id": "1027",
+            "display_name": "虚构·齐墨",
+            "reasons": [
+                "blocked"
+            ]
+        },
+        {
+            "id": "1028",
+            "display_name": "虚构·安澈",
+            "reasons": [
+                "friend"
+            ]
+        },
+        {
+            "id": "1029",
+            "display_name": "虚构·魏泉",
+            "reasons": [
+                "pending_in"
+            ]
+        },
+        {
+            "id": "1030",
+            "display_name": "虚构·邵禾",
+            "reasons": [
+                "pending_out"
+            ]
+        },
+        {
+            "id": "1031",
+            "display_name": "虚构·梁溪",
+            "reasons": [
+                "ever_sent"
+            ]
+        },
+        {
+            "id": "2001",
+            "display_name": "虚构·韩汀",
+            "reasons": [
+                "other_event"
+            ]
+        },
+        {
+            "id": "2002",
+            "display_name": "虚构·宋杉",
+            "reasons": [
+                "other_event"
+            ]
+        },
+        {
+            "id": "2003",
+            "display_name": "虚构·郑弥",
+            "reasons": [
+                "other_event"
+            ]
+        },
+        {
+            "id": "2004",
+            "display_name": "虚构·杜弦",
+            "reasons": [
+                "other_event"
+            ]
+        }
+    ],
+    "checks": [
+        "zero completed",
+        "zero searches once",
+        "zero at most five",
+        "zero no repair",
+        "zero at most 24 summaries",
+        "single completed",
+        "single searches once",
+        "single at most five",
+        "single no repair",
+        "single at most 24 summaries",
+        "single candidate byte cap",
+        "single output eligibility",
+        "current_36_plus_other_4 completed",
+        "current_36_plus_other_4 searches once",
+        "current_36_plus_other_4 at most five",
+        "current_36_plus_other_4 no repair",
+        "current_36_plus_other_4 at most 24 summaries",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 candidate byte cap",
+        "current_36_plus_other_4 output eligibility",
+        "current_36_plus_other_4 output eligibility",
+        "current_36_plus_other_4 output eligibility",
+        "large_400 completed",
+        "large_400 searches once",
+        "large_400 at most five",
+        "large_400 no repair",
+        "large_400 at most 24 summaries",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 candidate byte cap",
+        "large_400 output eligibility",
+        "large_400 output eligibility",
+        "large_400 output eligibility",
+        "history failure before recall/model",
+        "hard contribution requires declared offer",
+        "hard contribution requires declared offer",
+        "hard contribution requires declared offer",
+        "zero matching evidence gives zero model calls"
+    ],
+    "passed": 75
+}

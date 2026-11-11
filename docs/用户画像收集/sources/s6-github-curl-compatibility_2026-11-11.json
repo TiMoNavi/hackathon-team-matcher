@@ -1,0 +1,11 @@
+{
+    "status": "passed",
+    "checks": {
+        "public_numeric_id_endpoint": true,
+        "public_personal_profile_shape": true
+    },
+    "api_version": "2022-11-28",
+    "network_calls": 1,
+    "oauth_tested": false,
+    "profile_data_persisted": false
+}

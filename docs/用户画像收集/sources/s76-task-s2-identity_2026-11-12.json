@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": 1,
+  "consistent_identity_read": true,
+  "returned_identity_version": 1,
+  "returned_nickname": "Synthetic version one",
+  "database_calls": 0,
+  "exit_code": 0
+}

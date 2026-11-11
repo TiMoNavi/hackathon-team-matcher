@@ -1,0 +1,722 @@
+<?php
+
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2016 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
+
+namespace humhub\modules\installer\controllers;
+
+use Exception;
+use humhub\compat\HForm;
+use humhub\components\access\ControllerAccess;
+use humhub\components\Controller;
+use humhub\libs\UUID;
+use humhub\modules\comment\models\Comment;
+use humhub\modules\content\models\Content;
+use humhub\modules\installer\forms\ConfigBasicForm;
+use humhub\modules\installer\forms\LocalisationForm;
+use humhub\modules\installer\forms\MailingSettingsForm;
+use humhub\modules\installer\forms\SampleDataForm;
+use humhub\modules\installer\forms\SecurityForm;
+use humhub\modules\installer\forms\UseCaseForm;
+use humhub\modules\installer\libs\InitialData;
+use humhub\modules\like\services\LikeService;
+use humhub\modules\marketplace\Module;
+use humhub\modules\post\models\Post;
+use humhub\modules\queue\driver\Sync;
+use humhub\modules\space\models\Space;
+use humhub\modules\user\models\Group;
+use humhub\modules\user\models\Password;
+use humhub\modules\user\models\User;
+use Yii;
+use yii\base\InvalidConfigException;
+use yii\web\HttpException;
+use yii\web\Response;
+
+/**
+ * ConfigController allows inital configuration of humhub.
+ * E.g. Name of Network, Root User
+ *
+ * ConfigController can only run after SetupController wrote the initial
+ * configuration.
+ *
+ * @author luke
+ */
+class ConfigController extends Controller
+{
+    /**
+     * Allow guest access independently from guest mode setting.
+     *
+     * @var string
+     */
+    public $access = ControllerAccess::class;
+
+    public const EVENT_INSTALL_SAMPLE_DATA = 'install_sample_data';
+
+    /**
+     * Use Cases
+     */
+    public const USECASE_SOCIAL_INTRANET = 'intranet';
+    public const USECASE_EDUCATION = 'education';
+    public const USECASE_CLUB = 'club';
+    public const USECASE_COMMUNITY = 'community';
+    public const USECASE_OTHER = 'other';
+
+    /**
+     * Before each config controller action check if
+     *  - Database Connection works
+     *  - Database Migrated Up
+     *  - Not already configured (e.g. update)
+     *
+     * @param bool
+     */
+    public function beforeAction($action)
+    {
+        if (parent::beforeAction($action)) {
+            // Database Connection seems not to work
+            if (!$this->module->checkDBConnection()) {
+                $this->redirect(['/installer/setup']);
+                return false;
+            }
+
+            // When not at index action, verify that database is not already configured
+            if ($action->id != 'finished') {
+                if ($this->module->isConfigured()) {
+                    $this->redirect(['finished']);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Index is only called on fresh databases, when there are already settings
+     * in database, the user will directly redirected to actionFinished()
+     */
+    public function actionIndex()
+    {
+        if (Yii::$app->settings->get('name') == "") {
+            Yii::$app->settings->set('name', "HumHub");
+        }
+
+        InitialData::bootstrap();
+
+        return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+    }
+
+    /**
+     * Basic Settings Form
+     */
+    public function actionBasic()
+    {
+        $form = new ConfigBasicForm();
+        $form->name = Yii::$app->settings->get('name');
+
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+            Yii::$app->settings->set('name', $form->name);
+            Yii::$app->settings->set('mailerSystemEmailName', $form->name);
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        return $this->render('basic', ['model' => $form]);
+    }
+
+    /**
+     * Mail (SMTP) transport configuration.
+     *
+     * Persists to the DB SettingsManager via the reused
+     * {@link MailingSettingsForm}; saved values are applied on the next request
+     * by ComponentLoader::setMailerConfig(). Delivery can be verified in-place
+     * via {@link actionMailTest()} without leaving the step. Continuing never
+     * blocks on the mail configuration.
+     */
+    public function actionMail()
+    {
+        // Skip the interactive step only when the mail transport is pinned via
+        // static config (HUMHUB_FIXED_SETTINGS__BASE__MAILER_*) — the
+        // managed-hosting case where mail delivery is provided centrally.
+        // Deliberately not gated on enableAutoSetup: that flag only automates
+        // the technical setup phase (SetupController); the config wizard still
+        // runs interactively, e.g. under Docker where the entrypoint enables
+        // it whenever DB credentials are passed via environment.
+        if (Yii::$app->settings->isFixed('mailerTransportType')) {
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        $form = new MailingSettingsForm();
+
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+            $form->save();
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        return $this->render('mail', [
+            'model' => $form,
+            'settings' => Yii::$app->settings,
+        ]);
+    }
+
+    /**
+     * Sends a test email using the transport values currently entered in the
+     * mail step, without persisting them. Called via AJAX by the "Test" button
+     * so the admin can verify delivery before continuing. Returns JSON
+     * {success: bool, message: string}.
+     */
+    public function actionMailTest()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        $form = new MailingSettingsForm();
+        $form->load(Yii::$app->request->post());
+
+        if (!$form->validate()) {
+            return ['success' => false, 'message' => implode(' ', $form->getFirstErrors())];
+        }
+
+        if (empty($form->testEmail)) {
+            return ['success' => false, 'message' => Yii::t('InstallerModule.base', 'Please enter an email address to send the test message to.')];
+        }
+
+        try {
+            $this->applyTestTransport($form);
+
+            $mail = Yii::$app->mailer->compose(['html' => '@humhub/views/mail/TextOnly'], [
+                'message' => Yii::t('InstallerModule.base', 'Test message'),
+            ]);
+            $mail->setFrom([$form->systemEmailAddress => $form->systemEmailName]);
+            if (!empty($form->systemEmailReplyTo)) {
+                $mail->setReplyTo($form->systemEmailReplyTo);
+            }
+            $mail->setTo($form->testEmail);
+            $mail->setSubject(Yii::t('InstallerModule.base', 'Test message'));
+
+            if ($mail->send()) {
+                return [
+                    'success' => true,
+                    'message' => Yii::t('InstallerModule.base', 'Test email successfully sent to: {address}', ['address' => $form->testEmail]),
+                ];
+            }
+
+            return ['success' => false, 'message' => Yii::t('InstallerModule.base', 'Could not send the test email.')];
+        } catch (\Throwable $e) {
+            return ['success' => false, 'message' => Yii::t('InstallerModule.base', 'Could not send the test email.') . ' ' . $e->getMessage()];
+        }
+    }
+
+    /**
+     * Configures the application mailer with the (unsaved) transport values from
+     * the given form for the duration of this request, mirroring the branches in
+     * ComponentLoader::setMailerConfig(). This is a throwaway override used only
+     * for the in-installer test send and is never persisted.
+     */
+    private function applyTestTransport(MailingSettingsForm $form): void
+    {
+        switch ($form->transportType) {
+            case MailingSettingsForm::TRANSPORT_SMTP:
+                $transport = [
+                    'scheme' => empty($form->useSmtps) ? 'smtp' : 'smtps',
+                    'host' => $form->hostname,
+                    'port' => (int)($form->port ?: 25),
+                ];
+                if ($form->username !== null && $form->username !== '') {
+                    $transport['username'] = $form->username;
+                }
+                // The password field renders empty; fall back to a previously
+                // stored password when the placeholder is submitted unchanged.
+                $password = $form->password === '---invisible---'
+                    ? Yii::$app->settings->get('mailerPassword')
+                    : $form->password;
+                if ($password !== null && $password !== '') {
+                    $transport['password'] = $password;
+                }
+                if (!empty($form->useSmtps) && !empty($form->allowSelfSignedCerts)) {
+                    $transport['options'] = ['verify_peer' => false];
+                }
+                Yii::$app->mailer->setTransport($transport);
+                break;
+            case MailingSettingsForm::TRANSPORT_DSN:
+                Yii::$app->mailer->setTransport(['dsn' => $form->dsn]);
+                break;
+            case MailingSettingsForm::TRANSPORT_PHP:
+                Yii::$app->mailer->setTransport(['dsn' => 'native://default']);
+                break;
+            case MailingSettingsForm::TRANSPORT_FILE:
+                Yii::$app->mailer->useFileTransport = true;
+                break;
+                // TRANSPORT_CONFIG: leave the mailer as configured via the config file.
+        }
+    }
+
+    /**
+     * Localisation
+     */
+    public function actionLocalisation()
+    {
+        $form = new LocalisationForm();
+
+        if ($form->load(Yii::$app->request->post()) && $form->save()) {
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        return $this->render('localisation', ['model' => $form]);
+    }
+
+    /**
+     * UseCase
+     */
+    public function actionUseCase()
+    {
+        $form = new UseCaseForm();
+        $form->useCase = Yii::$app->settings->get('useCase');
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+            Yii::$app->settings->set('useCase', $form->useCase);
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        return $this->render('useCase', ['model' => $form]);
+    }
+
+    /**
+     * Security
+     */
+    public function actionSecurity()
+    {
+        $form = new SecurityForm();
+
+        if (Yii::$app->settings->get("useCase") == self::USECASE_SOCIAL_INTRANET) {
+            $form->allowGuestAccess = false;
+            $form->internalRequireApprovalAfterRegistration = false;
+            $form->internalAllowAnonymousRegistration = false;
+            $form->canInviteExternalUsersByEmail = false;
+            $form->canInviteExternalUsersByLink = false;
+            $form->enableFriendshipModule = false;
+        }
+
+        if (Yii::$app->settings->get("useCase") == self::USECASE_EDUCATION) {
+            $form->allowGuestAccess = false;
+            $form->internalRequireApprovalAfterRegistration = true;
+            $form->internalAllowAnonymousRegistration = true;
+            $form->canInviteExternalUsersByEmail = false;
+            $form->canInviteExternalUsersByLink = false;
+            $form->enableFriendshipModule = false;
+        }
+
+        if (Yii::$app->settings->get("useCase") == self::USECASE_CLUB) {
+            $form->allowGuestAccess = false;
+            $form->internalRequireApprovalAfterRegistration = false;
+            $form->internalAllowAnonymousRegistration = false;
+            $form->canInviteExternalUsersByEmail = true;
+            $form->canInviteExternalUsersByLink = true;
+            $form->enableFriendshipModule = true;
+        }
+
+        if (Yii::$app->settings->get("useCase") == self::USECASE_COMMUNITY) {
+            $form->allowGuestAccess = true;
+            $form->internalRequireApprovalAfterRegistration = false;
+            $form->internalAllowAnonymousRegistration = true;
+            $form->canInviteExternalUsersByEmail = true;
+            $form->canInviteExternalUsersByLink = true;
+            $form->enableFriendshipModule = false;
+        }
+
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+            Yii::$app->getModule('user')->settings->set(
+                'auth.needApproval',
+                $form->internalRequireApprovalAfterRegistration,
+            );
+            Yii::$app->getModule('user')->settings->set(
+                'auth.anonymousRegistration',
+                $form->internalAllowAnonymousRegistration,
+            );
+            Yii::$app->getModule('user')->settings->set('auth.allowGuestAccess', $form->allowGuestAccess);
+            Yii::$app->getModule('user')->settings->set(
+                'auth.internalUsersCanInviteByEmail',
+                $form->canInviteExternalUsersByEmail,
+            );
+            Yii::$app->getModule('user')->settings->set(
+                'auth.internalUsersCanInviteByLink',
+                $form->canInviteExternalUsersByLink,
+            );
+            Yii::$app->getModule('friendship')->settings->set('enable', $form->enableFriendshipModule);
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        if (Yii::$app->settings->get("useCase") == self::USECASE_OTHER) {
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        } else {
+            return $this->render('security', ['model' => $form]);
+        }
+    }
+
+    /**
+     * Modules
+     */
+    public function actionModules()
+    {
+        /** @var Module $marketplaceModule */
+        $marketplaceModule = Yii::$app->getModule('marketplace');
+
+        $modules = $marketplaceModule->onlineModuleManager->getModules(false);
+        foreach ($modules as $i => $module) {
+            if (!isset($module['useCases']) || !str_contains(
+                $module['useCases'],
+                (string) Yii::$app->settings->get('useCase'),
+            )) {
+                unset($modules[$i]);
+            }
+        }
+
+        if (Yii::$app->request->method == 'POST') {
+            $enableModules = Yii::$app->request->post('enableModules');
+            if (is_array($enableModules)) {
+                foreach (array_keys($enableModules) as $moduleId) {
+                    // Skip the marketplace download when the module is already available
+                    // locally, e.g. via `moduleAutoloadPaths`
+                    if (!Yii::$app->moduleManager->hasModule($moduleId)) {
+                        $marketplaceModule->onlineModuleManager->install($moduleId);
+                    }
+                    $module = Yii::$app->moduleManager->getModule($moduleId);
+                    if ($module !== null) {
+                        $module->enable();
+                    }
+                }
+            }
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        /*
+          if (Yii::$app->request->get('ok') == 1) {
+          return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+          }
+         */
+        if (Yii::$app->settings->get("useCase") == self::USECASE_OTHER) {
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        } else {
+            return $this->render('modules', ['modules' => $modules]);
+        }
+    }
+
+
+    /**
+     * Sample Data
+     */
+    public function actionSampleData()
+    {
+        if (Yii::$app->getModule('installer')->settings->get('sampleData')) {
+            // Sample Data already created
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        $form = new SampleDataForm();
+
+        $form->sampleData = 1;
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+            Yii::$app->getModule('installer')->settings->set('sampleData', $form->sampleData);
+
+            if (Yii::$app->getModule('installer')->settings->get('sampleData')) {
+                // Add sample image to admin
+                /** @var User $admin */
+                $admin = Group::getAdminGroup()->getUsers()->one();
+                $admin->image->setByFile(Yii::getAlias("@humhub/resources/resources/installer/user_male_1.jpg"));
+
+                $usersGroup = Group::findOne(['name' => 'Users']);
+
+                // Create second user
+                $userModel = new User();
+                $userModel->scenario = User::SCENARIO_EDIT_ADMIN;
+                $profileModel = $userModel->profile;
+                $profileModel->scenario = 'registration';
+
+                $userModel->status = User::STATUS_ENABLED;
+                $userModel->username = "david1986";
+                $userModel->email = "david.roberts@example.com";
+                $userModel->language = '';
+                $userModel->tagsField = ['Microsoft Office', 'Marketing', 'SEM', 'Digital Native'];
+                $userModel->save();
+
+                $userModel->image->setByFile(Yii::getAlias("@humhub/resources/resources/installer/user_male_2.jpg"));
+
+                $profileModel->user_id = $userModel->id;
+                $profileModel->firstname = "David";
+                $profileModel->lastname = "Roberts";
+                $profileModel->title = "Late riser";
+                $profileModel->street = "2443 Queens Lane";
+                $profileModel->zip = "24574";
+                $profileModel->city = "Allwood";
+                $profileModel->country = "Virginia";
+                $profileModel->save();
+
+                if ($usersGroup !== null) {
+                    $usersGroup->addUser($userModel);
+                }
+
+                // Create third user
+                $userModel2 = new User();
+                $userModel2->scenario = User::SCENARIO_EDIT_ADMIN;
+                $profileModel2 = $userModel2->profile;
+                $profileModel2->scenario = 'registration';
+
+                $userModel2->status = User::STATUS_ENABLED;
+                $userModel2->username = "sara1989";
+                $userModel2->email = "sara.schuster@example.com";
+                $userModel2->language = '';
+                $userModel2->tagsField = ['Yoga', 'Travel', 'English', 'German', 'French'];
+                $userModel2->save();
+
+                $userModel2->image->setByFile(Yii::getAlias("@humhub/resources/resources/installer/user_female_1.jpg"));
+
+                $profileModel2->user_id = $userModel2->id;
+                $profileModel2->firstname = "Sara";
+                $profileModel2->lastname = "Schuster";
+                $profileModel2->title = "Do-gooder";
+                $profileModel2->street = "Schmarjestrasse 51";
+                $profileModel2->zip = "17095";
+                $profileModel2->city = "Friedland";
+                $profileModel2->country = "Niedersachsen";
+                $profileModel2->save();
+
+                if ($usersGroup !== null) {
+                    $usersGroup->addUser($userModel2);
+                }
+
+                // Switch to Sync queue while setting up example contents
+                // This is required to avoid sending e-mail notifications for sample data
+                try {
+                    Yii::$app->set('queue', new Sync());
+                } catch (InvalidConfigException $e) {
+                    Yii::error('Could not switch queue: ' . $e->getMessage());
+                }
+
+                // Switch Identity
+                Yii::$app->user->switchIdentity($admin);
+
+
+                $space = Space::find()->orderBy(['id' => SORT_ASC])->one();
+
+                // Create a sample post
+                $post = new Post();
+                $post->message = Yii::t(
+                    "InstallerModule.base",
+                    "We're looking for great slogans of famous brands. Maybe you can come up with some samples?",
+                );
+                $post->content->container = $space;
+                $post->content->visibility = Content::VISIBILITY_PRIVATE;
+                $post->save();
+
+                // Switch Identity
+                Yii::$app->user->switchIdentity($userModel);
+
+                $comment = new Comment();
+                $comment->message = Yii::t("InstallerModule.base", "Nike – Just buy it. :wink:");
+                $comment->content_id = $post->content->id;
+                $comment->save();
+
+                // Switch Identity
+                Yii::$app->user->switchIdentity($userModel2);
+
+                $comment2 = new Comment();
+                $comment2->message = Yii::t(
+                    "InstallerModule.base",
+                    "Calvin Klein – Between love and madness lies obsession.",
+                );
+                $comment2->content_id = $post->content->id;
+                $comment2->save();
+
+
+                (new LikeService($comment))->like();
+                (new LikeService($post))->like();
+
+                // trigger install sample data event
+                $this->trigger(self::EVENT_INSTALL_SAMPLE_DATA);
+            }
+
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        return $this->render('sample-data', ['model' => $form]);
+    }
+
+    /**
+     * Setup Administrative User
+     *
+     * This should be the last step, before the user is created also the
+     * application secret will created.
+     */
+    public function actionAdmin()
+    {
+        // Admin account already created
+        if (User::find()->count() > 0) {
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+
+        $userModel = new User();
+        $userModel->scenario = User::SCENARIO_EDIT_ADMIN;
+        $userPasswordModel = new Password();
+        $userPasswordModel->scenario = 'registration';
+        $profileModel = $userModel->profile;
+        $profileModel->scenario = 'registration';
+
+        // Build Form Definition
+        $definition = [];
+        $definition['elements'] = [];
+
+        // Add User Form
+        $definition['elements']['User'] = [
+            'type' => 'form',
+            'elements' => [
+                'username' => [
+                    'type' => 'text',
+                    'class' => 'form-control',
+                    'maxlength' => 25,
+                ],
+                'email' => [
+                    'type' => 'text',
+                    'class' => 'form-control',
+                    'maxlength' => 100,
+                ],
+            ],
+        ];
+
+        // Add User Password Form
+        $definition['elements']['Password'] = [
+            'type' => 'form',
+            'elements' => [
+                'newPassword' => [
+                    'type' => 'password',
+                    'class' => 'form-control',
+                    'maxlength' => 255,
+                ],
+                'newPasswordConfirm' => [
+                    'type' => 'password',
+                    'class' => 'form-control',
+                    'maxlength' => 255,
+                ],
+            ],
+        ];
+
+        // Add Profile Form
+        $definition['elements']['Profile'] = array_merge(['type' => 'form'], $profileModel->getFormDefinition());
+
+        // Get Form Definition
+        $definition['buttons'] = [
+            'save' => [
+                'type' => 'submit',
+                'class' => 'btn btn-primary',
+                'label' => Yii::t('InstallerModule.base', 'Create Admin Account'),
+            ],
+        ];
+
+        $form = new HForm($definition);
+        $form->models['User'] = $userModel;
+        $form->models['Password'] = $userPasswordModel;
+        $form->models['Profile'] = $profileModel;
+
+        if ($form->submitted('save') && $form->validate()) {
+            $form->models['User']->status = User::STATUS_ENABLED;
+            $form->models['User']->language = '';
+            $form->models['User']->tagsField = ['Administration', 'Support', 'HumHub'];
+            $form->models['User']->save();
+
+            $form->models['Profile']->user_id = $form->models['User']->id;
+            $form->models['Profile']->title = "System Administration";
+            $form->models['Profile']->save();
+
+            // Save User Password
+            $form->models['Password']->user_id = $form->models['User']->id;
+            $form->models['Password']->setPassword($form->models['Password']->newPassword);
+            $form->models['Password']->save();
+
+            $userId = $form->models['User']->id;
+
+            Group::getAdminGroup()->addUser($form->models['User']);
+
+
+            // Reload the admin as a fresh instance - by its real id, not a
+            // hardcoded 1 (which is null on a Galera cluster). The reload is
+            // required: the group membership added above is not visible to
+            // isSystemAdmin() on the existing instance, which reuses the user's
+            // already-populated (empty) groups relation, so the admin would not
+            // be allowed to create the public welcome space below.
+            $adminUser = User::findOne(['id' => $userId]);
+
+            // Auto-start the one-time welcome tour for the initial admin account.
+            // Flagging the account explicitly avoids assuming it has the id 1.
+            Yii::$app->getModule('tour')->settings->user($adminUser)->set('showWelcome', true);
+
+
+            // Switch Identity
+            Yii::$app->user->switchIdentity($adminUser);
+
+            // Create Welcome Space
+            $space = new Space();
+            $space->name = Yii::t("InstallerModule.base", "Welcome Space");
+            $space->description = Yii::t("InstallerModule.base", "Your first sample space to discover the platform.");
+            $space->join_policy = Space::JOIN_POLICY_FREE;
+            $space->visibility = Space::VISIBILITY_ALL;
+            $space->created_by = $adminUser->id;
+            $space->auto_add_new_members = 1;
+            $space->color = '#6fdbe8';
+            $space->save();
+            $space->refresh();
+
+            // activate all available modules for this space
+            foreach ($space->moduleManager->getAvailable() as $module) {
+                $space->moduleManager->enable($module->id);
+            }
+
+            // Add Some Post to the Space
+            $post = new Post();
+            $post->message = Yii::t("InstallerModule.base", "Yay! I've just installed HumHub :sunglasses:");
+            $post->content->container = $space;
+            $post->content->visibility = Content::VISIBILITY_PUBLIC;
+            $post->save();
+
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
+        }
+
+        return $this->render('admin', ['hForm' => $form]);
+    }
+
+    public function actionFinish()
+    {
+        Yii::$app->settings->reload();
+        $secret = Yii::$app->settings->get('secret');
+
+        if (empty($secret)) {
+            Yii::$app->settings->set('secret', UUID::v4());
+        }
+
+        return $this->redirect(['finished']);
+    }
+
+    /**
+     * Last Step, finish up the installation
+     */
+    public function actionFinished()
+    {
+        Yii::$app->settings->reload();
+        $secret = Yii::$app->settings->get('secret');
+
+        if (empty($secret)) { // Should not happen
+            throw new HttpException('Finished without secret setting!');
+        }
+
+        Yii::$app->settings->set('defaultTimeZone', Yii::$app->timeZone);
+
+        // Set to installed
+        Yii::$app->installationState->setInstalled();
+
+        try {
+            Yii::$app->user->logout();
+        } catch (Exception) {
+        }
+        return $this->render('finished');
+    }
+
+}

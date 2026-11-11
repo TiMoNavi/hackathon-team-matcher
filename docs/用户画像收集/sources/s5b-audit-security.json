@@ -1,0 +1,471 @@
+{
+    "status": "passed",
+    "passed": 115,
+    "failed": 0,
+    "checks": [
+        {
+            "name": "reject_nonpublic_ip_0",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_1",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_2",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_3",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_4",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_5",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_6",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_7",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_8",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_9",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_10",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_11",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_12",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_13",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_14",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_15",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_16",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_17",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_18",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_19",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_20",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_21",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_22",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_23",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_24",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_25",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_26",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_27",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_28",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_29",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_30",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_31",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_32",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_33",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_34",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_35",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_36",
+            "passed": true
+        },
+        {
+            "name": "reject_nonpublic_ip_37",
+            "passed": true
+        },
+        {
+            "name": "allow_public_unicast_0",
+            "passed": true
+        },
+        {
+            "name": "allow_public_unicast_1",
+            "passed": true
+        },
+        {
+            "name": "allow_public_unicast_2",
+            "passed": true
+        },
+        {
+            "name": "allow_public_unicast_3",
+            "passed": true
+        },
+        {
+            "name": "allow_public_unicast_4",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_0",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_1",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_2",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_3",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_4",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_5",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_6",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_7",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_8",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_9",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_10",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_11",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_12",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_13",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_14",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_15",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_16",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_17",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_18",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_19",
+            "passed": true
+        },
+        {
+            "name": "reject_unsafe_url_20",
+            "passed": true
+        },
+        {
+            "name": "url_normalizes_case_default_port_fragment",
+            "passed": true
+        },
+        {
+            "name": "relative_redirect_resolves_parent",
+            "passed": true
+        },
+        {
+            "name": "query_redirect_preserves_path",
+            "passed": true
+        },
+        {
+            "name": "mixed_dns_answers_rejected",
+            "passed": true
+        },
+        {
+            "name": "mixed_dns_rejected_before_transport",
+            "passed": true
+        },
+        {
+            "name": "mixed_ipv6_answer_rejected",
+            "passed": true
+        },
+        {
+            "name": "mapped_ipv6_never_transported",
+            "passed": true
+        },
+        {
+            "name": "redirect_private_dns_rejected",
+            "passed": true
+        },
+        {
+            "name": "unsafe_redirect_has_no_second_connection",
+            "passed": true
+        },
+        {
+            "name": "metadata_redirect_literal_rejected",
+            "passed": true
+        },
+        {
+            "name": "metadata_target_never_requested",
+            "passed": true
+        },
+        {
+            "name": "https_downgrade_rejected",
+            "passed": true
+        },
+        {
+            "name": "same_host_dns_rebinding_rejected_each_hop",
+            "passed": true
+        },
+        {
+            "name": "dns_rebinding_no_second_connection",
+            "passed": true
+        },
+        {
+            "name": "redirect_limit_is_bounded",
+            "passed": true
+        },
+        {
+            "name": "redirect_limit_max_four_requests",
+            "passed": true
+        },
+        {
+            "name": "fragment_redirect_loop_rejected",
+            "passed": true
+        },
+        {
+            "name": "actual_transport_receives_approved_ip",
+            "passed": true
+        },
+        {
+            "name": "redirect_byte_budget_decreases",
+            "passed": true
+        },
+        {
+            "name": "final_url_and_request_count_recorded",
+            "passed": true
+        },
+        {
+            "name": "aggregate_download_limit_enforced",
+            "passed": true
+        },
+        {
+            "name": "overall_clock_budget_enforced",
+            "passed": true
+        },
+        {
+            "name": "http_login_wall_401",
+            "passed": true
+        },
+        {
+            "name": "http_login_wall_403",
+            "passed": true
+        },
+        {
+            "name": "unsolicited_compression_rejected",
+            "passed": true
+        },
+        {
+            "name": "semantic_main_preserves_public_text",
+            "passed": true
+        },
+        {
+            "name": "hidden_script_template_and_chrome_excluded",
+            "passed": true
+        },
+        {
+            "name": "parser_does_not_keep_raw_html",
+            "passed": true
+        },
+        {
+            "name": "html_title_retained_separately",
+            "passed": true
+        },
+        {
+            "name": "external_entity_document_rejected_before_expansion",
+            "passed": true
+        },
+        {
+            "name": "unsupported_binary_media",
+            "passed": true
+        },
+        {
+            "name": "script_only_page_has_no_source",
+            "passed": true
+        },
+        {
+            "name": "markup_token_density_bounded_before_dom",
+            "passed": true
+        },
+        {
+            "name": "http200_login_prompt_is_plain_source_not_semantically_classified",
+            "passed": true
+        },
+        {
+            "name": "binary_mislabeled_plain_text_rejected",
+            "passed": true
+        },
+        {
+            "name": "unsupported_charset_rejected",
+            "passed": true
+        },
+        {
+            "name": "declared_chinese_charset_decoded",
+            "passed": true
+        },
+        {
+            "name": "text_bom_crlf_normalized",
+            "passed": true
+        },
+        {
+            "name": "self_declaration_not_verified_ownership",
+            "passed": true
+        },
+        {
+            "name": "plain_source_has_no_network_or_model",
+            "passed": true
+        },
+        {
+            "name": "normalization_preserves_source_identity",
+            "passed": true
+        },
+        {
+            "name": "text_without_ownership_rejected",
+            "passed": true
+        },
+        {
+            "name": "text_oversize_rejected",
+            "passed": true
+        },
+        {
+            "name": "text_null_byte_rejected",
+            "passed": true
+        },
+        {
+            "name": "long_unicode_line_split_without_loss",
+            "passed": true
+        },
+        {
+            "name": "identity_and_status_do_not_use_network",
+            "passed": true
+        },
+        {
+            "name": "redirect_does_not_change_source_canonical_url",
+            "passed": true
+        },
+        {
+            "name": "web_identity_stable_after_redirect",
+            "passed": true
+        },
+        {
+            "name": "web_candidates_have_local_evidence",
+            "passed": true
+        },
+        {
+            "name": "real_dns_process_wall_timeout",
+            "passed": true
+        },
+        {
+            "name": "dns_timeout_returns_before_sleep_finishes",
+            "passed": true
+        }
+    ],
+    "network_requests": 0,
+    "unsafe_targets": "injected DNS/HTTP only",
+    "real_adapter_execution": "DOM parser and bounded DNS child process timeout",
+    "llm_calls": 0
+}

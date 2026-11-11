@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "checks": 17,
+  "checks_passed": [
+    "missing preference preserves existing native primary only as initial choice",
+    "confirmed education and chosen portfolio store references with version one",
+    "stale first-save version cannot overwrite explicit selections",
+    "negative expected version is invalid",
+    "confirmed references must match the exact field kind",
+    "another owner education cannot become school overview",
+    "unconfirmed draft education cannot be selected",
+    "rejected selections do not advance settings version",
+    "owner may select private school while explicit null clears primary link",
+    "explicit null never reverts to native homepage default",
+    "authenticated projection hides private education",
+    "authenticated ordinary overview source strips contact values and field definitions",
+    "authenticated detail projection uses actual friends scope for portfolio",
+    "friends projection hides private education",
+    "friends ordinary overview source strips contact values and field definitions",
+    "friends detail projection uses actual friends scope for portfolio",
+    "discovery stays authenticated-only even for actual friends"
+  ],
+  "database_calls": 0,
+  "network_calls": 0,
+  "model_calls": 0
+}

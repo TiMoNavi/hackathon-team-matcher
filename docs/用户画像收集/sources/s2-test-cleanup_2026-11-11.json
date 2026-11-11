@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "isolated_databases_removed": 3,
+  "database_specific_grants_removed": 3,
+  "isolated_runtime_directories_removed": 2,
+  "test_servers_8091_8092_stopped": true,
+  "main_preview_http_status": 200,
+  "pre_s2_backup_retained_and_verified": true
+}

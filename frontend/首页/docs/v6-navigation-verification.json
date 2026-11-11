@@ -1,0 +1,795 @@
+{
+  "checks": [
+    {
+      "name": "Navigation and selected chapter match people",
+      "passed": true
+    },
+    {
+      "name": "Navigation and selected chapter match profile",
+      "passed": true
+    },
+    {
+      "name": "Navigation and selected chapter match recommendations",
+      "passed": true
+    },
+    {
+      "name": "Navigation and selected chapter match community",
+      "passed": true
+    },
+    {
+      "name": "Selection follows browser Back",
+      "passed": true
+    },
+    {
+      "name": "Selection follows wheel navigation",
+      "passed": true
+    },
+    {
+      "name": "Pointer light tracks the mouse",
+      "passed": true
+    },
+    {
+      "name": "Pause also stops navigation glow",
+      "passed": true
+    },
+    {
+      "name": "Header stays 88px and fits 1280",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "header": 88,
+        "stage": {
+          "x": 0,
+          "y": 88,
+          "width": 1280,
+          "height": 632,
+          "top": 88,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "nav": {
+          "x": 16,
+          "y": 16,
+          "width": 1248,
+          "height": 66,
+          "top": 16,
+          "right": 1264,
+          "bottom": 82,
+          "left": 16
+        },
+        "controls": [
+          {
+            "name": "同频首页",
+            "x": 39,
+            "right": 220.96875,
+            "height": 36
+          },
+          {
+            "name": "遇见队友",
+            "x": 425.75,
+            "right": 527.75,
+            "height": 44
+          },
+          {
+            "name": "AI 认识你",
+            "x": 531.75,
+            "right": 637.234375,
+            "height": 44
+          },
+          {
+            "name": "找到同频",
+            "x": 641.234375,
+            "right": 743.234375,
+            "height": 44
+          },
+          {
+            "name": "一起开工",
+            "x": 747.234375,
+            "right": 849.234375,
+            "height": 44
+          },
+          {
+            "name": "已按系统设置减少动画",
+            "x": 1067,
+            "right": 1111,
+            "height": 44
+          },
+          {
+            "name": "体验组队",
+            "x": 1119,
+            "right": 1241,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "Content height is preserved 1280",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops glow 1280",
+      "passed": true
+    },
+    {
+      "name": "Header stays 88px and fits 1024",
+      "passed": true,
+      "detail": {
+        "width": 1024,
+        "documentWidth": 1024,
+        "header": 88,
+        "stage": {
+          "x": 0,
+          "y": 88,
+          "width": 1024,
+          "height": 680,
+          "top": 88,
+          "right": 1024,
+          "bottom": 768,
+          "left": 0
+        },
+        "nav": {
+          "x": 16,
+          "y": 16,
+          "width": 992,
+          "height": 66,
+          "top": 16,
+          "right": 1008,
+          "bottom": 82,
+          "left": 16
+        },
+        "controls": [
+          {
+            "name": "同频首页",
+            "x": 35,
+            "right": 216.96875,
+            "height": 36
+          },
+          {
+            "name": "遇见队友",
+            "x": 315.75,
+            "right": 409.75,
+            "height": 44
+          },
+          {
+            "name": "AI 认识你",
+            "x": 413.75,
+            "right": 511.234375,
+            "height": 44
+          },
+          {
+            "name": "找到同频",
+            "x": 515.234375,
+            "right": 609.234375,
+            "height": 44
+          },
+          {
+            "name": "一起开工",
+            "x": 613.234375,
+            "right": 707.234375,
+            "height": 44
+          },
+          {
+            "name": "已按系统设置减少动画",
+            "x": 817,
+            "right": 861,
+            "height": 44
+          },
+          {
+            "name": "体验组队",
+            "x": 867,
+            "right": 989,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "Content height is preserved 1024",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops glow 1024",
+      "passed": true
+    },
+    {
+      "name": "Header stays 88px and fits 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "documentWidth": 768,
+        "header": 88,
+        "stage": {
+          "x": 0,
+          "y": 88,
+          "width": 768,
+          "height": 812,
+          "top": 88,
+          "right": 768,
+          "bottom": 900,
+          "left": 0
+        },
+        "nav": {
+          "x": 16,
+          "y": 16,
+          "width": 736,
+          "height": 66,
+          "top": 16,
+          "right": 752,
+          "bottom": 82,
+          "left": 16
+        },
+        "controls": [
+          {
+            "name": "同频首页",
+            "x": 39,
+            "right": 220.96875,
+            "height": 36
+          },
+          {
+            "name": "已按系统设置减少动画",
+            "x": 503,
+            "right": 547,
+            "height": 44
+          },
+          {
+            "name": "体验组队",
+            "x": 555,
+            "right": 677,
+            "height": 44
+          },
+          {
+            "name": "打开导航",
+            "x": 685,
+            "right": 729,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "Content height is preserved 768",
+      "passed": true
+    },
+    {
+      "name": "Mobile menu visible 768",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and navigates 768",
+      "passed": true
+    },
+    {
+      "name": "Keyboard focus returns to menu control 768",
+      "passed": true
+    },
+    {
+      "name": "Mobile active chapter is marked 768",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops glow 768",
+      "passed": true
+    },
+    {
+      "name": "Header stays 88px and fits 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "documentWidth": 390,
+        "header": 88,
+        "stage": {
+          "x": 0,
+          "y": 88,
+          "width": 390,
+          "height": 756,
+          "top": 88,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "nav": {
+          "x": 16,
+          "y": 16,
+          "width": 358,
+          "height": 66,
+          "top": 16,
+          "right": 374,
+          "bottom": 82,
+          "left": 16
+        },
+        "controls": [
+          {
+            "name": "同频首页",
+            "x": 31,
+            "right": 121.625,
+            "height": 36
+          },
+          {
+            "name": "已按系统设置减少动画",
+            "x": 265,
+            "right": 309,
+            "height": 44
+          },
+          {
+            "name": "打开导航",
+            "x": 315,
+            "right": 359,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "Content height is preserved 390",
+      "passed": true
+    },
+    {
+      "name": "Mobile menu visible 390",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and navigates 390",
+      "passed": true
+    },
+    {
+      "name": "Keyboard focus returns to menu control 390",
+      "passed": true
+    },
+    {
+      "name": "Mobile active chapter is marked 390",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops glow 390",
+      "passed": true
+    },
+    {
+      "name": "Header stays 88px and fits 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "documentWidth": 320,
+        "header": 88,
+        "stage": {
+          "x": 0,
+          "y": 88,
+          "width": 320,
+          "height": 652,
+          "top": 88,
+          "right": 320,
+          "bottom": 740,
+          "left": 0
+        },
+        "nav": {
+          "x": 16,
+          "y": 16,
+          "width": 288,
+          "height": 66,
+          "top": 16,
+          "right": 304,
+          "bottom": 82,
+          "left": 16
+        },
+        "controls": [
+          {
+            "name": "同频首页",
+            "x": 31,
+            "right": 121.625,
+            "height": 36
+          },
+          {
+            "name": "已按系统设置减少动画",
+            "x": 195,
+            "right": 239,
+            "height": 44
+          },
+          {
+            "name": "打开导航",
+            "x": 245,
+            "right": 289,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "Content height is preserved 320",
+      "passed": true
+    },
+    {
+      "name": "Mobile menu visible 320",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and navigates 320",
+      "passed": true
+    },
+    {
+      "name": "Keyboard focus returns to menu control 320",
+      "passed": true
+    },
+    {
+      "name": "Mobile active chapter is marked 320",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops glow 320",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Final production build preserves desktop heights and actual Chinese/Latin fonts",
+      "passed": true,
+      "detail": {
+        "header": 88,
+        "panels": [
+          {
+            "id": "top",
+            "client": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "client": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "client": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "client": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "client": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "client": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Open mobile menu keeps glow within row and avoids overlapping scroll hint",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "sizes": [
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "header": 88,
+      "stage": {
+        "x": 0,
+        "y": 88,
+        "width": 1280,
+        "height": 632,
+        "top": 88,
+        "right": 1280,
+        "bottom": 720,
+        "left": 0
+      },
+      "nav": {
+        "x": 16,
+        "y": 16,
+        "width": 1248,
+        "height": 66,
+        "top": 16,
+        "right": 1264,
+        "bottom": 82,
+        "left": 16
+      },
+      "controls": [
+        {
+          "name": "同频首页",
+          "x": 39,
+          "right": 220.96875,
+          "height": 36
+        },
+        {
+          "name": "遇见队友",
+          "x": 425.75,
+          "right": 527.75,
+          "height": 44
+        },
+        {
+          "name": "AI 认识你",
+          "x": 531.75,
+          "right": 637.234375,
+          "height": 44
+        },
+        {
+          "name": "找到同频",
+          "x": 641.234375,
+          "right": 743.234375,
+          "height": 44
+        },
+        {
+          "name": "一起开工",
+          "x": 747.234375,
+          "right": 849.234375,
+          "height": 44
+        },
+        {
+          "name": "已按系统设置减少动画",
+          "x": 1067,
+          "right": 1111,
+          "height": 44
+        },
+        {
+          "name": "体验组队",
+          "x": 1119,
+          "right": 1241,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "documentWidth": 1024,
+      "header": 88,
+      "stage": {
+        "x": 0,
+        "y": 88,
+        "width": 1024,
+        "height": 680,
+        "top": 88,
+        "right": 1024,
+        "bottom": 768,
+        "left": 0
+      },
+      "nav": {
+        "x": 16,
+        "y": 16,
+        "width": 992,
+        "height": 66,
+        "top": 16,
+        "right": 1008,
+        "bottom": 82,
+        "left": 16
+      },
+      "controls": [
+        {
+          "name": "同频首页",
+          "x": 35,
+          "right": 216.96875,
+          "height": 36
+        },
+        {
+          "name": "遇见队友",
+          "x": 315.75,
+          "right": 409.75,
+          "height": 44
+        },
+        {
+          "name": "AI 认识你",
+          "x": 413.75,
+          "right": 511.234375,
+          "height": 44
+        },
+        {
+          "name": "找到同频",
+          "x": 515.234375,
+          "right": 609.234375,
+          "height": 44
+        },
+        {
+          "name": "一起开工",
+          "x": 613.234375,
+          "right": 707.234375,
+          "height": 44
+        },
+        {
+          "name": "已按系统设置减少动画",
+          "x": 817,
+          "right": 861,
+          "height": 44
+        },
+        {
+          "name": "体验组队",
+          "x": 867,
+          "right": 989,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "header": 88,
+      "stage": {
+        "x": 0,
+        "y": 88,
+        "width": 768,
+        "height": 812,
+        "top": 88,
+        "right": 768,
+        "bottom": 900,
+        "left": 0
+      },
+      "nav": {
+        "x": 16,
+        "y": 16,
+        "width": 736,
+        "height": 66,
+        "top": 16,
+        "right": 752,
+        "bottom": 82,
+        "left": 16
+      },
+      "controls": [
+        {
+          "name": "同频首页",
+          "x": 39,
+          "right": 220.96875,
+          "height": 36
+        },
+        {
+          "name": "已按系统设置减少动画",
+          "x": 503,
+          "right": 547,
+          "height": 44
+        },
+        {
+          "name": "体验组队",
+          "x": 555,
+          "right": 677,
+          "height": 44
+        },
+        {
+          "name": "打开导航",
+          "x": 685,
+          "right": 729,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "header": 88,
+      "stage": {
+        "x": 0,
+        "y": 88,
+        "width": 390,
+        "height": 756,
+        "top": 88,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "nav": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 66,
+        "top": 16,
+        "right": 374,
+        "bottom": 82,
+        "left": 16
+      },
+      "controls": [
+        {
+          "name": "同频首页",
+          "x": 31,
+          "right": 121.625,
+          "height": 36
+        },
+        {
+          "name": "已按系统设置减少动画",
+          "x": 265,
+          "right": 309,
+          "height": 44
+        },
+        {
+          "name": "打开导航",
+          "x": 315,
+          "right": 359,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "header": 88,
+      "stage": {
+        "x": 0,
+        "y": 88,
+        "width": 320,
+        "height": 652,
+        "top": 88,
+        "right": 320,
+        "bottom": 740,
+        "left": 0
+      },
+      "nav": {
+        "x": 16,
+        "y": 16,
+        "width": 288,
+        "height": 66,
+        "top": 16,
+        "right": 304,
+        "bottom": 82,
+        "left": 16
+      },
+      "controls": [
+        {
+          "name": "同频首页",
+          "x": 31,
+          "right": 121.625,
+          "height": 36
+        },
+        {
+          "name": "已按系统设置减少动画",
+          "x": 195,
+          "right": 239,
+          "height": 44
+        },
+        {
+          "name": "打开导航",
+          "x": 245,
+          "right": 289,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "selector": ".site-nav-brand .font-heading > span",
+      "fonts": [
+        {
+          "familyName": "Bricolage Grotesque 96pt ExtraBold",
+          "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ]
+    },
+    {
+      "selector": ".site-nav-desktop .site-nav-link > span:last-child > span",
+      "fonts": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Medium",
+          "isCustomFont": false,
+          "glyphCount": 4
+        }
+      ]
+    },
+    {
+      "selector": ".site-nav-desktop a[href=\"#profile\"] > span:last-child > span",
+      "fonts": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Medium",
+          "isCustomFont": false,
+          "glyphCount": 3
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 3
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

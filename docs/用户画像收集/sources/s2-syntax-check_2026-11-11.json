@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "php_files": 58,
+  "php_lint_failures": [],
+  "javascript_files": 4,
+  "javascript_syntax_failures": []
+}

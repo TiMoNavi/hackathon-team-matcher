@@ -1,0 +1,12 @@
+{
+    "id": "matcher-recommendation-ai",
+    "name": "团队匹配推荐 AI 扩展",
+    "description": "显式启用的有限需求解释与候选重排，单向依赖推荐主模块契约。",
+    "version": "0.2.0",
+    "humhub": {
+        "minVersion": "1.19.4",
+        "modules": {"matcher-recommendation": {"minVersion": "0.3.0"}}
+    },
+    "keywords": ["recommendation", "optional-ai"],
+    "authors": [{"name": "Hackathon Team Matcher"}]
+}

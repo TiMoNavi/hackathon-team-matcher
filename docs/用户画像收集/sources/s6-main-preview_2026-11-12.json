@@ -1,0 +1,255 @@
+{
+  "scope": "S6 local preview read-only backend APIs and existing preview pages",
+  "checks": [
+    {
+      "name": "native_login_reaches_dashboard",
+      "passed": true
+    },
+    {
+      "name": "native_profile_edit_200",
+      "passed": true
+    },
+    {
+      "name": "native_profile_version_token_present",
+      "passed": true
+    },
+    {
+      "name": "native_identity_version_token_present",
+      "passed": true
+    },
+    {
+      "name": "firstname_remains_optional",
+      "passed": true
+    },
+    {
+      "name": "lastname_remains_optional",
+      "passed": true
+    },
+    {
+      "name": "native_settings_200",
+      "passed": true
+    },
+    {
+      "name": "native_timezone_has_profile_version_token",
+      "passed": true
+    },
+    {
+      "name": "native_profile_stream_200",
+      "passed": true
+    },
+    {
+      "name": "native_about_200",
+      "passed": true
+    },
+    {
+      "name": "profile_api_200",
+      "passed": true
+    },
+    {
+      "name": "profile_api_envelope",
+      "passed": true
+    },
+    {
+      "name": "profile_api_catalog_v2",
+      "passed": true
+    },
+    {
+      "name": "all_contact_fields_available_and_optional",
+      "passed": true
+    },
+    {
+      "name": "profile_api_private_no_store",
+      "passed": true
+    },
+    {
+      "name": "identity_api_200",
+      "passed": true
+    },
+    {
+      "name": "identity_version_is_numeric",
+      "passed": true
+    },
+    {
+      "name": "ordinary_editor_page_200",
+      "passed": true
+    },
+    {
+      "name": "ordinary_editor_global_catalog_complete",
+      "passed": true
+    },
+    {
+      "name": "ordinary_editor_has_three_preview_perspectives",
+      "passed": true
+    },
+    {
+      "name": "ordinary_editor_navigation_present",
+      "passed": true
+    },
+    {
+      "name": "ordinary_editor_has_no_error",
+      "passed": true
+    },
+    {
+      "name": "owner_preview_200",
+      "passed": true
+    },
+    {
+      "name": "owner_preview_is_simulated_and_private",
+      "passed": true
+    },
+    {
+      "name": "authenticated_preview_200",
+      "passed": true
+    },
+    {
+      "name": "authenticated_preview_is_simulated_and_private",
+      "passed": true
+    },
+    {
+      "name": "friends_preview_200",
+      "passed": true
+    },
+    {
+      "name": "friends_preview_is_simulated_and_private",
+      "passed": true
+    },
+    {
+      "name": "own_contacts_endpoint_200",
+      "passed": true
+    },
+    {
+      "name": "own_contacts_separate_projection",
+      "passed": true
+    },
+    {
+      "name": "native_account_menu_exposes_onboarding",
+      "passed": true
+    },
+    {
+      "name": "native_menu_click_opens_onboarding",
+      "passed": true
+    },
+    {
+      "name": "onboarding_has_five_steps",
+      "passed": true
+    },
+    {
+      "name": "onboarding_offers_global_and_valid_space_options",
+      "passed": true
+    },
+    {
+      "name": "onboarding_start_is_explicit",
+      "passed": true
+    },
+    {
+      "name": "onboarding_browse_does_not_create_session",
+      "passed": true
+    },
+    {
+      "name": "onboarding_page_has_no_error",
+      "passed": true
+    },
+    {
+      "name": "source_capabilities_200",
+      "passed": true
+    },
+    {
+      "name": "all_four_source_kinds_enabled",
+      "passed": true
+    },
+    {
+      "name": "web_and_text_readers_available",
+      "passed": true
+    },
+    {
+      "name": "web_declares_self_ownership_only",
+      "passed": true
+    },
+    {
+      "name": "web_network_budget_visible",
+      "passed": true
+    },
+    {
+      "name": "all_sources_remain_rule_based",
+      "passed": true
+    },
+    {
+      "name": "resume_parser_available",
+      "passed": true
+    },
+    {
+      "name": "source_status_exposes_no_secrets",
+      "passed": true
+    },
+    {
+      "name": "ai_capabilities_200_private_no_store",
+      "passed": true
+    },
+    {
+      "name": "ai_capability_get_zero_model_calls",
+      "passed": true
+    },
+    {
+      "name": "ai_configured_and_available",
+      "passed": true
+    },
+    {
+      "name": "ai_requested_model_enabled",
+      "passed": true
+    },
+    {
+      "name": "ai_all_three_operations_available",
+      "passed": true
+    },
+    {
+      "name": "ai_status_has_no_credentials_or_paths",
+      "passed": true
+    },
+    {
+      "name": "sources_list_200_private_no_store",
+      "passed": true
+    },
+    {
+      "name": "source_list_has_no_original_text",
+      "passed": true
+    },
+    {
+      "name": "anonymous_profile_api_401",
+      "passed": true
+    },
+    {
+      "name": "anonymous_/api/v1/me/profile/preview_401",
+      "passed": true
+    },
+    {
+      "name": "anonymous_/api/v1/me/contacts_401",
+      "passed": true
+    },
+    {
+      "name": "anonymous_/api/v1/me/profile/ai-capabilities_401",
+      "passed": true
+    },
+    {
+      "name": "anonymous_/api/v1/me/profile/sources_401",
+      "passed": true
+    },
+    {
+      "name": "anonymous_/api/v1/onboarding/sessions/00000000-0000-4000-8000-000000000000_401",
+      "passed": true
+    },
+    {
+      "name": "native_pages_have_no_javascript_errors",
+      "passed": true
+    }
+  ],
+  "javascript_error_count": 0,
+  "native_navigation_confirmations": 2,
+  "github_oauth_configured": false,
+  "current_account_github_linked": false,
+  "ai_capability": {
+    "available": true,
+    "configured": true,
+    "model": "gemini-3.8-flash"
+  },
+  "status": "passed"
+}

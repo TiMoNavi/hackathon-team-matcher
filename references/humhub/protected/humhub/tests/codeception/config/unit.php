@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Application configuration for unit tests
+ */
+$testConfig = [
+    'class' => 'humhub\components\Application',
+    'timeZone' => 'UTC',
+    'components' => [
+        'session' => [
+            'class' => \yii\web\CacheSession::class,
+        ],
+        'request' => [
+            'cookieValidationKey' => 'test',
+        ],
+        'user' => [
+            'enableSession' => false,
+        ],
+        'assetManager' => [
+            'basePath' => '@root/assets/',
+        ],
+    ],
+    'params' => [
+        'fixed-settings' => [
+            'base' => [
+                'baseUrl' => 'http://localhost',
+            ],
+        ],
+    ],
+];
+
+defined('YII_APP_BASE_PATH') or define('YII_APP_BASE_PATH', dirname(__DIR__, 4));
+return yii\helpers\ArrayHelper::merge(
+    // Common Config
+    require(YII_APP_BASE_PATH . '/humhub/config/common.php'),
+    // Web Config
+    require(YII_APP_BASE_PATH . '/humhub/config/web.php'),
+    // Test Common Config
+    require(__DIR__ . '/config.php'),
+    // Unit Test Config
+    $testConfig,
+);

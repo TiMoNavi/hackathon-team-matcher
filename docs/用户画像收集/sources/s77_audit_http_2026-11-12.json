@@ -1,0 +1,325 @@
+{
+  "status": "passed",
+  "passed": 72,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "preconnect_guard_empty",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_preview",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_profile_s77_test_root_f3a9d621",
+      "passed": true
+    },
+    {
+      "name": "preconnect_guard_humhub_profile_s77_test_audit_a8c52e14_other",
+      "passed": true
+    },
+    {
+      "name": "fixture_targets_exact_audit_environment",
+      "passed": true
+    },
+    {
+      "name": "extract_queued_schema",
+      "passed": true
+    },
+    {
+      "name": "extract_queued_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "queued_read_does_not_generate",
+      "passed": true
+    },
+    {
+      "name": "p6_transport_running_is_observable",
+      "passed": true
+    },
+    {
+      "name": "extraction_passes_real_p6_validation",
+      "passed": true
+    },
+    {
+      "name": "candidate_does_not_publish",
+      "passed": true
+    },
+    {
+      "name": "adoption_is_unconfirmed_only",
+      "passed": true
+    },
+    {
+      "name": "candidate_job_owner_only",
+      "passed": true
+    },
+    {
+      "name": "questions_real_p6_synthetic_transport_success",
+      "passed": true
+    },
+    {
+      "name": "ai_question_count_contract",
+      "passed": true
+    },
+    {
+      "name": "ai_free_option_last_and_outside_enum",
+      "passed": true
+    },
+    {
+      "name": "options_free_text_and_skip_saved",
+      "passed": true
+    },
+    {
+      "name": "ai_save_exit_restores_batch_answers",
+      "passed": true
+    },
+    {
+      "name": "compose_real_p6_synthetic_transport_success",
+      "passed": true
+    },
+    {
+      "name": "ai_private_inputs_remain_private",
+      "passed": true
+    },
+    {
+      "name": "ai_prose_inherits_stricter_global_scope",
+      "passed": true
+    },
+    {
+      "name": "ai_generation_does_not_confirm_new_role",
+      "passed": true
+    },
+    {
+      "name": "answer_change_marks_output_stale",
+      "passed": true
+    },
+    {
+      "name": "compose_real_p6_synthetic_transport_success",
+      "passed": true
+    },
+    {
+      "name": "ai_manual_output_survives_resume_or_recompose",
+      "passed": true
+    },
+    {
+      "name": "ai_privacy_is_not_final_confirmation",
+      "passed": true
+    },
+    {
+      "name": "ai_final_confirmation_updates_native_values_once",
+      "passed": true
+    },
+    {
+      "name": "ai_ordinary_public_read_uses_confirmed_scopes",
+      "passed": true
+    },
+    {
+      "name": "ai_completed_counts_match_saved_answers",
+      "passed": true
+    },
+    {
+      "name": "rules_question_count_contract",
+      "passed": true
+    },
+    {
+      "name": "options_free_text_and_skip_saved",
+      "passed": true
+    },
+    {
+      "name": "rules_save_exit_restores_batch_answers",
+      "passed": true
+    },
+    {
+      "name": "rules_private_inputs_remain_private",
+      "passed": true
+    },
+    {
+      "name": "rules_generation_does_not_confirm_new_role",
+      "passed": true
+    },
+    {
+      "name": "rules_manual_output_survives_resume_or_recompose",
+      "passed": true
+    },
+    {
+      "name": "rules_privacy_is_not_final_confirmation",
+      "passed": true
+    },
+    {
+      "name": "rules_final_confirmation_updates_native_values_once",
+      "passed": true
+    },
+    {
+      "name": "rules_ordinary_public_read_uses_confirmed_scopes",
+      "passed": true
+    },
+    {
+      "name": "rules_completed_counts_match_saved_answers",
+      "passed": true
+    },
+    {
+      "name": "rules_flow_zero_model_calls",
+      "passed": true
+    },
+    {
+      "name": "rules_ai_shared_invariant_city",
+      "passed": true
+    },
+    {
+      "name": "rules_ai_shared_invariant_bio",
+      "passed": true
+    },
+    {
+      "name": "rules_ai_shared_invariant_interest",
+      "passed": true
+    },
+    {
+      "name": "different_space_starts_with_empty_preferences",
+      "passed": true
+    },
+    {
+      "name": "different_space_confirmation_preserves_first_space",
+      "passed": true
+    },
+    {
+      "name": "questions_real_p6_synthetic_transport_success",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_hides_old_question_result",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_rejects_old_batch_answer",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_requires_explicit_reconcile",
+      "passed": true
+    },
+    {
+      "name": "questions_real_p6_synthetic_transport_success",
+      "passed": true
+    },
+    {
+      "name": "content_change_hides_old_question_result",
+      "passed": true
+    },
+    {
+      "name": "content_change_rejects_old_batch_answer",
+      "passed": true
+    },
+    {
+      "name": "content_change_requires_explicit_reconcile",
+      "passed": true
+    },
+    {
+      "name": "cancelled_job_never_reaches_transport",
+      "passed": true
+    },
+    {
+      "name": "transport_timeout_is_explicit_without_rules_fallback",
+      "passed": true
+    },
+    {
+      "name": "explicit_retry_has_new_job_and_single_request",
+      "passed": true
+    },
+    {
+      "name": "actual_p6_rejects_invalid_synthetic_output",
+      "passed": true
+    },
+    {
+      "name": "lease_timeout_records_unknown_accounting_without_resend",
+      "passed": true
+    },
+    {
+      "name": "late_worker_cannot_reinstall_but_records_actual_usage",
+      "passed": true
+    },
+    {
+      "name": "source_deletion_revokes_saved_result",
+      "passed": true
+    },
+    {
+      "name": "revoked_private_job_payloads_are_scrubbed",
+      "passed": true
+    },
+    {
+      "name": "space_revocation_blocks_late_result",
+      "passed": true
+    },
+    {
+      "name": "p6_disabled_saved_task_schema",
+      "passed": true
+    },
+    {
+      "name": "p6_disabled_saved_task_contains_no_private_payload",
+      "passed": true
+    },
+    {
+      "name": "disabled_p6_read_only_progress_remains_available",
+      "passed": true
+    },
+    {
+      "name": "disabled_p6_explicit_rules_still_generates_questions",
+      "passed": true
+    },
+    {
+      "name": "p6_reenabled_preserves_and_runs_existing_queue",
+      "passed": true
+    },
+    {
+      "name": "completed_profiles_and_progress_read_only",
+      "passed": true
+    },
+    {
+      "name": "authorized_discovery_and_profile_reads_zero_llm",
+      "passed": true
+    },
+    {
+      "name": "discovery_rejects_different_current_space",
+      "passed": true
+    },
+    {
+      "name": "original_preview_synthetic_100_unchanged",
+      "passed": true
+    },
+    {
+      "name": "all_transport_and_reader_calls_outside_transactions",
+      "passed": true
+    }
+  ],
+  "http_requests": 145,
+  "real_llm_calls": 0,
+  "synthetic_adapter_journal": {
+    "ai": {
+      "entered": 13,
+      "completed": 12,
+      "active_transactions": 0
+    },
+    "reader": {
+      "entered": 4,
+      "completed": 0,
+      "active_transactions": 0
+    }
+  },
+  "synthetic_adapter_run_delta": {
+    "ai": {
+      "entered": 13,
+      "completed": 12,
+      "active_transactions": 0
+    },
+    "reader": {
+      "entered": 4,
+      "completed": 0,
+      "active_transactions": 0
+    }
+  },
+  "database": "humhub_profile_s77_test_audit_a8c52e14",
+  "origin": "http://127.0.0.1:8107",
+  "fixture_user_count": 8,
+  "scope": "Actual native HTTP/CSRF/MySQL and real P6 StructuredProfileAiEngine with no-network ModelTransport; no real model, main database or production modification."
+}

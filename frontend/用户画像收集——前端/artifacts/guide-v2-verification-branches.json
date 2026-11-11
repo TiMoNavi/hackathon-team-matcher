@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-11T18:41:26.698Z",
+  "phase": "branches",
+  "passed": true,
+  "checks": [
+    "Skip opens browsing with no fabricated profile and no false completion",
+    "No-source and all-questions-skipped paths remain valid",
+    "Opaque files fail explicitly and never invent imported data",
+    "No event never searches globally; empty results and independent social actions remain explicit",
+    "Changing activities cancels old search; explicit retry recovers failed search",
+    "Save failure and corrupt storage do not pretend success or overwrite originals",
+    "Reduced motion preserves a static mascot without running animations"
+  ],
+  "views": [],
+  "errors": []
+}

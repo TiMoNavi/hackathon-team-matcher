@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "passed": 56,
+  "checks": [
+    "github_verified_native_link_detected",
+    "capability_check_does_not_fetch_github",
+    "no_existing_github_source_for_new_owner",
+    "page_browsing_does_not_import",
+    "explicit_start_automatically_reads_verified_github",
+    "github_login_needs_no_username_or_homepage_input",
+    "github_canonical_url_uses_verified_account",
+    "github_structured_readme_and_evidence_saved",
+    "personal_github_readme_included_independently",
+    "github_import_does_not_publish_profile",
+    "other_user_cannot_read_private_source",
+    "github_candidates_enter_existing_onboarding_draft",
+    "manual_input_survives_source_adoption",
+    "resume_existing_flow_does_not_refetch_github",
+    "explicit_refresh_creates_next_source_version",
+    "question_batch_after_import_15",
+    "imported_profile_rules_synthesis_15",
+    "github_import_reaches_confirmed_profile",
+    "github_raw_readme_not_in_public_profile",
+    "delete_removes_private_source_snapshot",
+    "delete_preserves_user_confirmed_profile",
+    "deleted_source_is_not_automatically_fetched_again",
+    "deleted_source_offers_explicit_reimport",
+    "unlinked_user_detected_without_external_request",
+    "unconfigured_login_has_honest_resume_fallback",
+    "resume_plugin_available_without_github_link",
+    "txt_real_upload_parses_chinese_sections",
+    "txt_produces_experience_and_skill_candidates",
+    "owner_can_review_original_structured_text",
+    "resume_import_is_not_profile_confirmation",
+    "resume_adoption_maps_into_same_profile_draft",
+    "same_file_upload_reuses_source",
+    "docx_real_upload_parses_document_xml",
+    "matching_second_source_does_not_duplicate_fields",
+    "pdf_real_upload_extracts_text_layer",
+    "markdown_real_upload_preserves_text",
+    "four_document_sources_share_snapshot_contract",
+    "stranger_cannot_read_resume_text",
+    "broken_pdf_keeps_explicit_failed_record",
+    "failed_parse_shows_retry_control",
+    "failed_document_retry_advances_version",
+    "failed_source_can_be_deleted",
+    "imported_project_is_editable_in_review",
+    "review_explicitly_confirms_imported_experiences",
+    "resume_import_continues_through_rules_synthesis",
+    "imported_private_bio_respects_preview",
+    "confirmed_experiences_appear_in_preview",
+    "mobile_imported_profile_has_no_horizontal_overflow",
+    "resume_flow_finishes_with_real_confirmed_profile",
+    "actual_viewer_cannot_see_private_imported_bio",
+    "source_raw_text_does_not_enter_public_projection",
+    "sources_remain_private_after_profile_confirmation",
+    "ordinary_profile_has_same_confirmed_education",
+    "no_browser_javascript_errors",
+    "no_http_server_errors",
+    "browser_restricted_to_isolated_origin"
+  ],
+  "javascript_errors": 0,
+  "server_errors": 0,
+  "blocked_origins": [],
+  "api_request_count": 136,
+  "screenshots": [
+    {
+      "file": "s5-github-materials-desktop.png",
+      "width": 1280,
+      "height": 2734,
+      "sha256": "c0b081f3a398dc07ccb341bb3494cd29b74b8f83316e8ed84310f2344245a8f1",
+      "reviewed": true,
+      "retained_file": "s5-github-materials-desktop_2026-11-11.png"
+    },
+    {
+      "file": "s5-resume-privacy-desktop.png",
+      "width": 1280,
+      "height": 4509,
+      "sha256": "0f788a60035a32a0a9b0fd9244e29703e62a0731148a2609d93134d37197bd90",
+      "reviewed": true,
+      "retained_file": "s5-resume-privacy-desktop_2026-11-11.png"
+    },
+    {
+      "file": "s5-resume-completed-mobile.png",
+      "width": 390,
+      "height": 1391,
+      "sha256": "07670260a8277e4b0f49c50caf90ffdc4a907a7a811031c7b614f0fa9bfb307c",
+      "reviewed": true,
+      "retained_file": "s5-resume-completed-mobile_2026-11-11.png"
+    }
+  ],
+  "environment": {
+    "kind": "isolated_s5_clone",
+    "browser": "Microsoft Edge Chromium via Playwright",
+    "origin": "http://127.0.0.1:8097",
+    "desktop": [
+      1280,
+      900
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "boundaries": {
+    "github_oauth_callback": "not exercised; native verified associations created through native service in isolated fixture",
+    "github_external_http": "fixed server-side adapter only; separate live public API smoke validates transport",
+    "document_conversion": "real TXT/MD/DOCX/PDF parsers and real multipart uploads",
+    "browser_api_mocking": false,
+    "llm_calls": 0
+  }
+}

@@ -1,0 +1,3028 @@
+{
+    "status": "passed",
+    "stage": "final",
+    "date_utc": "2026-11-11T19:03:59+00:00",
+    "database": "humhub_profile_s73_test_root_4a70f3d1",
+    "server_version": "9.7.4",
+    "scope": "ordinary discovery BrowsePeople with real native current-event gates, P1\/P8 and MySQL; fixed server-selection fixture excludes HTTP\/session selection SQL and response serialization",
+    "measurement_notes": [
+        "client query time includes PDO execute\/fetch and Yii command overhead",
+        "returned_rows counts fetchAll results including repeated authorization reads; not scanned rows",
+        "session Handler_read counters measure engine operations and are not exact rows examined",
+        "EXPLAIN rows are optimizer estimates, not ANALYZE actual rows",
+        "no SQL text, bound parameters, profile values, credentials or exception messages are exported",
+        "recommendation candidate indexes are outside this ordinary browse path"
+    ],
+    "source_sha256": {
+        "ordinary_source": "93aee7c504ce6056b5a2093f48c43115735cb0797cd1ba22588f4c1790a3f5a8",
+        "browse_use_case": "ada847d5eed7b31384eb3d4d88f08d97522e26d0fa2bf5d084d5c11f07caeaad",
+        "p1_field_catalog": "1cf5cca85451d391d719e786b2b34e9c040e9984c7ebc626b31c66b0163d1b36",
+        "p1_profile_batch": "beefe251312e21631dce46dcff5cae52c208236176d78d3bd7ebadfd0949e0db",
+        "p8_batch": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999"
+    },
+    "scenarios": {
+        "recent_first": {
+            "repetitions": 3,
+            "median_use_case_ms": 5346.508,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2040.34,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 8.705252,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 77.843755,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 141.653142,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1647.4204840000002,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 59.88966999999999,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 88.47401699999999,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 16.353571,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 5566.764,
+                    "non_query_elapsed_ms": 3526.424,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1474.543
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 948.771
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1224.12
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1129.177
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 44.017
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 31.075
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 46.582
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 32.797
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7d003837b5225d31f2789f6283bc87636a78c1507978943a2d4e5c51d8e72789"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1791.1,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 5.849813999999999,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 63.513336,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 106.09247899999998,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1453.720255,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 65.454481,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 83.79320999999999,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 12.676207,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 4913.545,
+                    "non_query_elapsed_ms": 3122.445,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1295.378
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 852.672
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1115.718
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 932.416
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 31.293
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 27.698
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 30.052
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 27.639
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7d003837b5225d31f2789f6283bc87636a78c1507978943a2d4e5c51d8e72789"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1763.461,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 6.1700729999999995,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 61.632679,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 134.426449,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1401.852485,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 59.473844,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 86.57865600000001,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 13.327153,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 5346.508,
+                    "non_query_elapsed_ms": 3583.047,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1610.807
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1041.391
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1123.245
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 883.101
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 54.44
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 25.343
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 36.031
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 29.989
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7d003837b5225d31f2789f6283bc87636a78c1507978943a2d4e5c51d8e72789"
+                }
+            ]
+        },
+        "last_person_late_skill": {
+            "repetitions": 3,
+            "median_use_case_ms": 5270.933,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1413.671,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 5.039572,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 64.984755,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 107.85055300000002,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1108.8836959999999,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 51.918516999999994,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 66.25438700000001,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 8.739229,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 4363.082,
+                    "non_query_elapsed_ms": 2949.411,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 720.494
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 840.351
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1165.078
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 890.97
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 20.747
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 27.643
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 30.746
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 38.713
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 1,
+                    "has_more": false,
+                    "owner_id_order_sha256": "6f5ee070ffc36e0b8aa986d10f333de1ae11398905501c1de145d6985ca21d23"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1802.519,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 6.838569,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 65.44914,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 119.34053999999999,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1447.5187460000002,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 62.26576000000002,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 87.14968400000001,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 13.95643,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 5549.472,
+                    "non_query_elapsed_ms": 3746.953,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1376.053
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1062.733
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1344.413
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 945.53
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 37.4
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 26.553
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 34.131
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 33.483
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 1,
+                    "has_more": false,
+                    "owner_id_order_sha256": "6f5ee070ffc36e0b8aa986d10f333de1ae11398905501c1de145d6985ca21d23"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1674.287,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 4.223371,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 67.59705199999999,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 121.409477,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1322.350802,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 64.47752,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 82.57363099999999,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 11.654812,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 5270.933,
+                    "non_query_elapsed_ms": 3596.646,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1326.034
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 898.299
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1260.396
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 979.92
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 34.514
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 28.616
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 36.88
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 35.352
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 1,
+                    "has_more": false,
+                    "owner_id_order_sha256": "6f5ee070ffc36e0b8aa986d10f333de1ae11398905501c1de145d6985ca21d23"
+                }
+            ]
+        },
+        "role_skill_and": {
+            "repetitions": 3,
+            "median_use_case_ms": 7144.712,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1986.67,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 7.363586999999999,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 76.980561,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 182.49589600000002,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1540.4635469999998,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 72.201796,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 95.696617,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 11.468454999999999,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 6500.361,
+                    "non_query_elapsed_ms": 4513.691,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1338.392
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 987.009
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1609.879
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1454.801
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 33.406
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 30.298
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 57.46
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 78.151
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7006cb19452781939a79e75402a1f871476e92b616bb22b384e199233db3aaf6"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2816.121,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 7.643276,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 112.799982,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 213.12226300000003,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 2221.200873,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 125.08621,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 122.256014,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 14.01226,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 9119.664,
+                    "non_query_elapsed_ms": 6303.543,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2190.603
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1781.746
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2016.697
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1826.229
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 66.56
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 51.594
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 68.406
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 46.966
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7006cb19452781939a79e75402a1f871476e92b616bb22b384e199233db3aaf6"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2286.859,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 7.464565,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 77.187579,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 129.939998,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1888.793058,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 70.49932799999999,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 100.539054,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 12.435521000000001,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 7144.712,
+                    "non_query_elapsed_ms": 4857.853,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2508.655
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1042.162
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1714.457
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1027.53
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 48.136
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 25.146
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 38.638
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 33.353
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7006cb19452781939a79e75402a1f871476e92b616bb22b384e199233db3aaf6"
+                }
+            ]
+        },
+        "seeking_array_second_third": {
+            "repetitions": 3,
+            "median_use_case_ms": 6147.794,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2483.139,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 6.212186,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 89.770386,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 232.90803300000002,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1908.067554,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 137.50497499999997,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 96.846681,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 11.828759,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 8092.896,
+                    "non_query_elapsed_ms": 5609.757,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1666.625
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1333.174
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2500.638
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1541.088
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 43.897
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 44.776
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 132.697
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 28.046
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "280b7520a21e68058f137dd4b30713eacd9a3d32581859c23fb6123849782abf"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1736.294,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 5.643663,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 70.83351,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 115.875473,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1333.042772,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 114.21536300000001,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 83.933001,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 12.749946,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 5116.137,
+                    "non_query_elapsed_ms": 3379.843,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1418.096
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 872.145
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1219.978
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 819.111
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 43.178
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 27.38
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 31.867
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 26.964
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "280b7520a21e68058f137dd4b30713eacd9a3d32581859c23fb6123849782abf"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2331.522,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 5.979574,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 63.265579,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 127.84577599999999,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1973.0726029999998,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 62.214909,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 88.446464,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 10.697498000000001,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 6147.794,
+                    "non_query_elapsed_ms": 3816.272,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1264.333
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 864.402
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2070.76
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1043.08
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 34.562
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 23.893
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 70.959
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 27.399
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "280b7520a21e68058f137dd4b30713eacd9a3d32581859c23fb6123849782abf"
+                }
+            ]
+        },
+        "availability_full_window": {
+            "repetitions": 3,
+            "median_use_case_ms": 8908.991,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 1863.049,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 4.626087,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 59.625600999999996,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 138.741302,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1488.1228120000003,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 71.052187,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 88.42446400000001,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 12.456518999999998,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 6834.74,
+                    "non_query_elapsed_ms": 4971.691,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1351.453
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1140.526
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1634.13
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1679.219
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 39.339
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 26.082
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 45.602
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 44.347
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "58e08376a85960ef9f079ba0500966f67ffad7c14a6115e8d4f52486ab5aacfb"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2729.098,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 8.981565,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 163.44532,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 261.738216,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 2080.514298,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 100.52722099999998,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 97.305202,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 16.586322,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 9166.03,
+                    "non_query_elapsed_ms": 6436.932,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1354.102
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1454.019
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2245.14
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 2698.176
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 37.115
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 38.08
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 163.629
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 36.003
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "58e08376a85960ef9f079ba0500966f67ffad7c14a6115e8d4f52486ab5aacfb"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2522.141,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 9.029826000000002,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 76.277033,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 152.26205099999999,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 2106.4469860000004,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 68.10784600000001,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 98.34009,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 11.677235,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 8908.991,
+                    "non_query_elapsed_ms": 6386.85,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2178.493
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1952.235
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1662.882
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1615.857
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 47.484
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 58.185
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 30.247
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 41.267
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "58e08376a85960ef9f079ba0500966f67ffad7c14a6115e8d4f52486ab5aacfb"
+                }
+            ]
+        },
+        "empty_filter": {
+            "repetitions": 3,
+            "median_use_case_ms": 11087.217,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2402.566,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 7.909059,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 260.629346,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 103.978434,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 1882.750099,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 61.159398,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 74.023001,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 12.116284,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 6416.359,
+                    "non_query_elapsed_ms": 4013.793,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1527.009
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1156.381
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1924.576
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 870.587
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 31.963
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 26.814
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 37.811
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 18.387
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 0,
+                    "has_more": false,
+                    "owner_id_order_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 3675.213,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 8.029859,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 92.489373,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 162.98799900000003,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 2937.8142949999997,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 94.97443699999998,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 147.337797,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 231.57929499999997,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 11469.504,
+                    "non_query_elapsed_ms": 7794.291,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 1896.293
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1561.063
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 3566.371
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 2315.915
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 35.819
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 34.643
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 57.991
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 51.118
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 0,
+                    "has_more": false,
+                    "owner_id_order_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+                },
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 3293.478,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 62.126016,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 101.418567,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 236.897832,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 2608.859381,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 148.56247199999999,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 116.023032,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 19.590325,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 11087.217,
+                    "non_query_elapsed_ms": 7793.739,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 3607.133
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 2456.779
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 2485.678
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 1235.041
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 141.632
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 46.327
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 35.286
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 29.776
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 0,
+                    "has_more": false,
+                    "owner_id_order_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+                }
+            ]
+        }
+    },
+    "explain_estimated": {
+        "native_current_event_gate": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bs",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 0,
+                    "Extra": "unique row not found",
+                    "estimated_rows": 0
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "m",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                }
+            ]
+        },
+        "ordinary_candidate_eligibility": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "u",
+                    "type": "range",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 0.67,
+                    "Extra": "Using where",
+                    "estimated_rows": 502
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "ds",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,idx_matcher_discovery_space",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 10,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "m",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bo",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bi",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bs",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bv",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "fo",
+                    "type": "eq_ref",
+                    "possible_keys": "idx-friends,fk-friend",
+                    "key": "idx-friends",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "fi",
+                    "type": "eq_ref",
+                    "possible_keys": "idx-friends,fk-friend",
+                    "key": "idx-friends",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vm",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                }
+            ]
+        },
+        "p8_viewer_eligibility": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vb",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 0,
+                    "Extra": "unique row not found",
+                    "estimated_rows": 0
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vm",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                }
+            ]
+        },
+        "p8_owner_eligibility": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": "Using temporary",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vb",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 0,
+                    "Extra": "unique row not found",
+                    "estimated_rows": 0
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vm",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "u",
+                    "type": "ALL",
+                    "possible_keys": "PRIMARY,unique_email,unique_username,unique_guid",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 0.27,
+                    "Extra": "Using where; Using join buffer (hash join)",
+                    "estimated_rows": 503
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "m",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where; Distinct",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bo",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index; Distinct",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bi",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index; Distinct",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bs",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index; Distinct",
+                    "estimated_rows": 1
+                }
+            ]
+        },
+        "p1_profile_state": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "matcher_profile_state",
+                    "type": "ALL",
+                    "possible_keys": "mp_state_owner_scope",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 36.26,
+                    "Extra": "Using where; Using filesort",
+                    "estimated_rows": 1103
+                }
+            ]
+        },
+        "p1_profile_attributes": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "a",
+                    "type": "ALL",
+                    "possible_keys": "mp_attribute_native,mp_attribute_field_sort,mp_attribute_match_code,mp_attribute_state_fk",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 0.85,
+                    "Extra": "Using where; Using temporary; Using filesort",
+                    "estimated_rows": 19019
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,mp_state_owner_scope,mp_state_id_scope,mp_state_revision_fk",
+                    "key": "PRIMARY",
+                    "key_len": "36",
+                    "filtered": 36.26,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "p",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                }
+            ]
+        },
+        "p1_confirmed_identity": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "p",
+                    "type": "ALL",
+                    "possible_keys": "PRIMARY",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 42.37,
+                    "Extra": "Using where; Using temporary; Using filesort",
+                    "estimated_rows": 472
+                },
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "s",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,mp_state_owner_scope,mp_state_id_scope,mp_state_revision_fk",
+                    "key": "mp_state_owner_scope",
+                    "key_len": "70",
+                    "filtered": 33.33,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "a",
+                    "type": "eq_ref",
+                    "possible_keys": "mp_attribute_native,mp_attribute_field_sort,mp_attribute_match_code,mp_attribute_state_fk",
+                    "key": "mp_attribute_native",
+                    "key_len": "103",
+                    "filtered": 5,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "<derived2>",
+                    "type": "ref",
+                    "possible_keys": "<auto_key0>",
+                    "key": "<auto_key0>",
+                    "key_len": "36",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 2
+                },
+                {
+                    "id": 2,
+                    "select_type": "DERIVED",
+                    "table": "matcher_profile_state",
+                    "type": "range",
+                    "possible_keys": "PRIMARY,mp_state_owner_scope,mp_state_id_scope,mp_state_revision_fk",
+                    "key": "mp_state_owner_scope",
+                    "key_len": "70",
+                    "filtered": 100,
+                    "Extra": "Using where; Using index; Using temporary",
+                    "estimated_rows": 200
+                },
+                {
+                    "id": 2,
+                    "select_type": "DERIVED",
+                    "table": "matcher_profile_draft",
+                    "type": "ref",
+                    "possible_keys": "mp_draft_state_status",
+                    "key": "mp_draft_state_status",
+                    "key_len": "54",
+                    "filtered": 4.11,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                }
+            ]
+        }
+    },
+    "index_comparison": {
+        "available": true,
+        "same_result_for_all_variants": true,
+        "ordinary_discovery_query": "p1_profile_attributes",
+        "existing_index_columns": {
+            "PRIMARY": [
+                "attribute_id"
+            ],
+            "mp_attribute_native": [
+                "state_id",
+                "native_binding"
+            ],
+            "mp_attribute_field_sort": [
+                "state_id",
+                "field_key",
+                "sort_order"
+            ],
+            "mp_attribute_match_code": [
+                "field_key",
+                "value_code",
+                "visibility",
+                "state_id"
+            ],
+            "mp_attribute_state_fk": [
+                "state_id",
+                "scope_key"
+            ]
+        },
+        "measurement_note": "Handler counters are actual engine read operations, not rows_examined. EXPLAIN rows are estimates.",
+        "variants": {
+            "optimizer_default": {
+                "client_query_elapsed_ms": [
+                    350.026662,
+                    238.76901,
+                    284.546355
+                ],
+                "returned_rows": 5133,
+                "session_handler_read_delta": [
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    }
+                ],
+                "explain_estimated": [
+                    {
+                        "table": "a",
+                        "type": "ALL",
+                        "key": null,
+                        "filtered": 0.85,
+                        "Extra": "Using where; Using temporary; Using filesort",
+                        "estimated_rows": 19019
+                    },
+                    {
+                        "table": "s",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 36.26,
+                        "Extra": "Using where",
+                        "estimated_rows": 1
+                    },
+                    {
+                        "table": "p",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 100,
+                        "Extra": null,
+                        "estimated_rows": 1
+                    }
+                ],
+                "explain_analyze_actual": {
+                    "available": true,
+                    "measurement": "EXPLAIN ANALYZE actual iterator rows\/times; not exact rows_examined; node order follows the execution tree",
+                    "nodes": [
+                        {
+                            "node": 0,
+                            "operation": "other",
+                            "first_row_ms": 329,
+                            "completion_ms": 338,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 1,
+                            "operation": "table_scan",
+                            "first_row_ms": 303,
+                            "completion_ms": 308,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 2,
+                            "operation": "other",
+                            "first_row_ms": 303,
+                            "completion_ms": 303,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 3,
+                            "operation": "nested_loop_left_join",
+                            "first_row_ms": 0.0839,
+                            "completion_ms": 256,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 4,
+                            "operation": "nested_loop_inner_join",
+                            "first_row_ms": 0.0696,
+                            "completion_ms": 213,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 5,
+                            "operation": "filter",
+                            "first_row_ms": 0.0299,
+                            "completion_ms": 86.5,
+                            "rows_per_loop": 11983,
+                            "loops": 1
+                        },
+                        {
+                            "node": 6,
+                            "operation": "table_scan",
+                            "first_row_ms": 0.0256,
+                            "completion_ms": 63.9,
+                            "rows_per_loop": 20559,
+                            "loops": 1,
+                            "table": "matcher_profile_attribute",
+                            "alias": "a"
+                        },
+                        {
+                            "node": 7,
+                            "operation": "filter",
+                            "first_row_ms": 0.00978,
+                            "completion_ms": 0.00992,
+                            "rows_per_loop": 0.428,
+                            "loops": 11983
+                        },
+                        {
+                            "node": 8,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.00838,
+                            "completion_ms": 0.00848,
+                            "rows_per_loop": 1,
+                            "loops": 11983,
+                            "table": "matcher_profile_state",
+                            "alias": "s"
+                        },
+                        {
+                            "node": 9,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.00733,
+                            "completion_ms": 0.00745,
+                            "rows_per_loop": 1,
+                            "loops": 5133,
+                            "table": "profile",
+                            "alias": "p"
+                        }
+                    ]
+                }
+            },
+            "use_state_indexes": {
+                "client_query_elapsed_ms": [
+                    314.468003,
+                    276.651758,
+                    328.083649
+                ],
+                "returned_rows": 5133,
+                "session_handler_read_delta": [
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    }
+                ],
+                "explain_estimated": [
+                    {
+                        "table": "a",
+                        "type": "ALL",
+                        "key": null,
+                        "filtered": 0.45,
+                        "Extra": "Using where; Using temporary; Using filesort",
+                        "estimated_rows": 19019
+                    },
+                    {
+                        "table": "s",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 36.26,
+                        "Extra": "Using where",
+                        "estimated_rows": 1
+                    },
+                    {
+                        "table": "p",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 100,
+                        "Extra": null,
+                        "estimated_rows": 1
+                    }
+                ],
+                "explain_analyze_actual": {
+                    "available": true,
+                    "measurement": "EXPLAIN ANALYZE actual iterator rows\/times; not exact rows_examined; node order follows the execution tree",
+                    "nodes": [
+                        {
+                            "node": 0,
+                            "operation": "other",
+                            "first_row_ms": 233,
+                            "completion_ms": 236,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 1,
+                            "operation": "table_scan",
+                            "first_row_ms": 220,
+                            "completion_ms": 223,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 2,
+                            "operation": "other",
+                            "first_row_ms": 220,
+                            "completion_ms": 220,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 3,
+                            "operation": "nested_loop_left_join",
+                            "first_row_ms": 0.243,
+                            "completion_ms": 188,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 4,
+                            "operation": "nested_loop_inner_join",
+                            "first_row_ms": 0.209,
+                            "completion_ms": 157,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 5,
+                            "operation": "filter",
+                            "first_row_ms": 0.0718,
+                            "completion_ms": 66.2,
+                            "rows_per_loop": 11983,
+                            "loops": 1
+                        },
+                        {
+                            "node": 6,
+                            "operation": "table_scan",
+                            "first_row_ms": 0.0635,
+                            "completion_ms": 48.3,
+                            "rows_per_loop": 20559,
+                            "loops": 1,
+                            "table": "matcher_profile_attribute",
+                            "alias": "a"
+                        },
+                        {
+                            "node": 7,
+                            "operation": "filter",
+                            "first_row_ms": 0.00696,
+                            "completion_ms": 0.00708,
+                            "rows_per_loop": 0.428,
+                            "loops": 11983
+                        },
+                        {
+                            "node": 8,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0059,
+                            "completion_ms": 0.00599,
+                            "rows_per_loop": 1,
+                            "loops": 11983,
+                            "table": "matcher_profile_state",
+                            "alias": "s"
+                        },
+                        {
+                            "node": 9,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.00536,
+                            "completion_ms": 0.00545,
+                            "rows_per_loop": 1,
+                            "loops": 5133,
+                            "table": "profile",
+                            "alias": "p"
+                        }
+                    ]
+                }
+            },
+            "ignore_state_indexes": {
+                "client_query_elapsed_ms": [
+                    283.289675,
+                    273.356862,
+                    543.566672
+                ],
+                "returned_rows": 5133,
+                "session_handler_read_delta": [
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    }
+                ],
+                "explain_estimated": [
+                    {
+                        "table": "a",
+                        "type": "ALL",
+                        "key": null,
+                        "filtered": 0.85,
+                        "Extra": "Using where; Using temporary; Using filesort",
+                        "estimated_rows": 19019
+                    },
+                    {
+                        "table": "s",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 36.26,
+                        "Extra": "Using where",
+                        "estimated_rows": 1
+                    },
+                    {
+                        "table": "p",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 100,
+                        "Extra": null,
+                        "estimated_rows": 1
+                    }
+                ],
+                "explain_analyze_actual": {
+                    "available": true,
+                    "measurement": "EXPLAIN ANALYZE actual iterator rows\/times; not exact rows_examined; node order follows the execution tree",
+                    "nodes": [
+                        {
+                            "node": 0,
+                            "operation": "other",
+                            "first_row_ms": 652,
+                            "completion_ms": 657,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 1,
+                            "operation": "table_scan",
+                            "first_row_ms": 638,
+                            "completion_ms": 641,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 2,
+                            "operation": "other",
+                            "first_row_ms": 638,
+                            "completion_ms": 638,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 3,
+                            "operation": "nested_loop_left_join",
+                            "first_row_ms": 0.115,
+                            "completion_ms": 582,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 4,
+                            "operation": "nested_loop_inner_join",
+                            "first_row_ms": 0.0977,
+                            "completion_ms": 505,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 5,
+                            "operation": "filter",
+                            "first_row_ms": 0.0408,
+                            "completion_ms": 324,
+                            "rows_per_loop": 11983,
+                            "loops": 1
+                        },
+                        {
+                            "node": 6,
+                            "operation": "table_scan",
+                            "first_row_ms": 0.0339,
+                            "completion_ms": 295,
+                            "rows_per_loop": 20559,
+                            "loops": 1,
+                            "table": "matcher_profile_attribute",
+                            "alias": "a"
+                        },
+                        {
+                            "node": 7,
+                            "operation": "filter",
+                            "first_row_ms": 0.0141,
+                            "completion_ms": 0.0143,
+                            "rows_per_loop": 0.428,
+                            "loops": 11983
+                        },
+                        {
+                            "node": 8,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0104,
+                            "completion_ms": 0.0106,
+                            "rows_per_loop": 1,
+                            "loops": 11983,
+                            "table": "matcher_profile_state",
+                            "alias": "s"
+                        },
+                        {
+                            "node": 9,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0142,
+                            "completion_ms": 0.0143,
+                            "rows_per_loop": 1,
+                            "loops": 5133,
+                            "table": "profile",
+                            "alias": "p"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "model_calls": 0,
+    "network_calls": 0,
+    "writes_during_measured_read": 0
+}

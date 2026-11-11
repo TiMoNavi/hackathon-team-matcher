@@ -1,0 +1,508 @@
+<?php
+
+namespace humhub\modules\activity\tests\codeception\unit;
+
+use Codeception\Module\Yii2;
+use humhub\components\mail\Message;
+use humhub\modules\activity\components\MailSummary;
+use humhub\modules\activity\components\MailSummaryProcessor;
+use humhub\modules\activity\jobs\SendMailSummary;
+use humhub\modules\activity\models\MailSummaryForm;
+use humhub\modules\activity\services\ActivityManager;
+use humhub\modules\comment\activities\NewCommentActivity;
+use humhub\modules\comment\models\Comment;
+use humhub\modules\content\activities\ContentCreatedActivity;
+use humhub\modules\content\models\Content;
+use humhub\modules\post\models\Post;
+use humhub\modules\space\activities\MemberAddedActivity;
+use humhub\modules\space\models\Space;
+use humhub\modules\user\models\User;
+use tests\codeception\_support\HumHubDbTestCase;
+use Yii;
+use yii\base\InvalidConfigException;
+
+class MailSummaryTest extends HumHubDbTestCase
+{
+    public function testHourlyProcess()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_HOURLY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_HOURLY);
+
+        $this->assertMailSent(1);
+
+        /* @var $yiiModule Yii2 */
+        $yiiModule = $this->getModule('Yii2');
+
+        /* @var $mail Message */
+        $mail = $yiiModule->grabLastSentEmail();
+        $this->assertArrayHasKey('user1@example.com', $mail->getTo());
+        $this->assertEquals('Latest news', $mail->getSubject());
+    }
+
+    public function testDailyProcess()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_DAILY);
+
+        $this->assertMailSent(1);
+
+        /* @var $yiiModule Yii2 */
+        $yiiModule = $this->getModule('Yii2');
+
+        /* @var $mail Message */
+        $mail = $yiiModule->grabLastSentEmail();
+        $this->assertArrayHasKey('user1@example.com', $mail->getTo());
+        $this->assertEquals('Your daily summary', $mail->getSubject());
+    }
+
+    public function testWeeklyProcess()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_WEEKLY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_WEEKLY);
+
+        $this->assertMailSent(1);
+
+        /* @var $yiiModule Yii2 */
+        $yiiModule = $this->getModule('Yii2');
+
+        /* @var $mail Message */
+        $mail = $yiiModule->grabLastSentEmail();
+        $this->assertArrayHasKey('user1@example.com', $mail->getTo());
+        $this->assertEquals('Your weekly summary', $mail->getSubject());
+    }
+
+    public function testMonthlyProcess()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_MONTHLY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Monthly Summary Test']);
+        $this->assertTrue($post->save());
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_MONTHLY);
+
+        $this->assertMailSent(1);
+
+        /* @var $yiiModule Yii2 */
+        $yiiModule = $this->getModule('Yii2');
+
+        /* @var $mail Message */
+        $mail = $yiiModule->grabLastSentEmail();
+        $this->assertArrayHasKey('user1@example.com', $mail->getTo());
+        $this->assertEquals('Your monthly summary', $mail->getSubject());
+    }
+
+    public function testNoneProcess()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_NONE,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_NONE);
+
+        $this->assertMailSent(0);
+    }
+
+    public function testUserWithoutEmailProcessor()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        $user1 = User::findOne(['id' => 2]);
+        $user1->updateAttributes(['email' => null]);
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_DAILY);
+
+        $this->assertMailSent(0);
+    }
+
+    public function testProcessByJob()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        Yii::$app->queue->push(new SendMailSummary(['interval' => MailSummary::INTERVAL_DAILY]));
+
+        $this->assertMailSent(1);
+
+        /* @var $yiiModule Yii2 */
+        $yiiModule = $this->getModule('Yii2');
+
+        /* @var $mail Message */
+        $mail = $yiiModule->grabLastSentEmail();
+        $this->assertArrayHasKey('user1@example.com', $mail->getTo());
+        $this->assertEquals('Your daily summary', $mail->getSubject());
+    }
+
+    public function testInvalidProcessByJob()
+    {
+        $this->becomeUser('Admin');
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Daily Summary Test']);
+        $this->assertTrue($post->save());
+
+        Yii::$app->queue->push(new SendMailSummary(['interval' => MailSummary::INTERVAL_NONE]));
+
+        $this->assertMailSent(0);
+    }
+
+    public function testMailSummaryDailyProcessor()
+    {
+        $this->assertMailSent(0);
+
+        $this->becomeUser('Admin');
+        $post = new Post(Space::findOne(['id' => 4]), ['message' => 'Summary Test']);
+        $this->assertTrue($post->save());
+
+        (new MailSummaryForm(['interval' => MailSummary::INTERVAL_NONE]))->save();
+
+        (new MailSummaryForm([
+            'user' => User::findOne(['id' => 2]),
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [ContentCreatedActivity::class],
+        ]))->save();
+
+        MailSummaryProcessor::process(MailSummary::INTERVAL_DAILY);
+
+        $this->assertMailSent(1);
+
+        /* @var $yiiModule Yii2 */
+        $yiiModule = $this->getModule('Yii2');
+
+        /* @var $mail Message */
+        $mail = $yiiModule->grabLastSentEmail();
+        $this->assertArrayHasKey('user1@example.com', $mail->getTo());
+        $this->assertEquals('Your daily summary', $mail->getSubject());
+    }
+
+
+    public function testResetUserSettings()
+    {
+        $user2 = User::findOne(['id' => 3]);
+
+        $form = new MailSummaryForm([
+            'user' => $user2,
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [],
+            'limitSpaces' => [Space::findOne(['id' => 3])->guid],
+            'limitSpacesMode' => MailSummaryForm::LIMIT_MODE_INCLUDE,
+        ]);
+        $form->save();
+
+        $form = new MailSummaryForm(['user' => $user2]);
+        $form->loadCurrent();
+        $this->assertEmpty($form->activities);
+        $this->assertNotEmpty($form->limitSpaces);
+
+        (new MailSummaryForm(['user' => $user2, 'interval' => MailSummary::INTERVAL_DAILY,]))->resetUserSettings();
+
+        $form = new MailSummaryForm([
+            'user' => $user2,
+            'interval' => MailSummary::INTERVAL_DAILY,
+        ]);
+
+        $form->loadCurrent();
+        $this->assertNotEmpty($form->activities);
+        $this->assertEmpty($form->limitSpaces);
+    }
+
+
+    public function testSummarySpaceExcludeFilter()
+    {
+        // Create Post + Comment in Space3
+        $this->becomeUser('Admin');
+        $post = new Post(Space::findOne(['id' => 3]), ['message' => 'Summary Test']);
+        $this->assertTrue($post->save());
+
+        $this->becomeUser('User1');
+        $comment = new Comment([
+            'message' => 'Summary test comment!',
+            'content_id' => $post->content->id,
+        ]);
+        $this->assertTrue($comment->save());
+
+        // MemberAdded activity in Space4
+        $space4 = Space::findOne(['id' => 4]);
+        $space4->addMember(4);
+
+        $summaryUser2 = $this->createSummary(User::findOne(['id' => 3]), MailSummary::INTERVAL_DAILY);
+        $user2Activities = $summaryUser2->getActivities();
+
+        $this->assertCount(3, $user2Activities);
+        $this->assertContainsActivity(ContentCreatedActivity::class, $user2Activities, 'User2 must contain ' . ContentCreatedActivity::class);
+        $this->assertContainsActivity(NewCommentActivity::class, $user2Activities, 'User2 must contain ' . NewCommentActivity::class);
+        $this->assertContainsActivity(MemberAddedActivity::class, $user2Activities, 'User2 must contain ' . MemberAddedActivity::class);
+
+        // Set no activities by default
+        (new MailSummaryForm([
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [
+                ContentCreatedActivity::class,
+                NewCommentActivity::class,
+                MemberAddedActivity::class,
+            ],
+            'limitSpaces' => [Space::findOne(['id' => 3])->guid],
+            'limitSpacesMode' => MailSummaryForm::LIMIT_MODE_INCLUDE,
+        ]))->save();
+
+        $user2Activities = $summaryUser2->getActivities();
+        $this->assertCount(2, $user2Activities);
+        $this->assertContainsActivity(ContentCreatedActivity::class, $user2Activities, 'User2 must contain ' . ContentCreatedActivity::class);
+        $this->assertContainsActivity(NewCommentActivity::class, $user2Activities, 'User2 must contain ' . NewCommentActivity::class);
+
+        // Set no activities by default
+        (new MailSummaryForm([
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'user' => User::findOne(['id' => 3]),
+            'activities' => [
+                ContentCreatedActivity::class,
+                NewCommentActivity::class,
+                MemberAddedActivity::class,
+            ],
+            'limitSpaces' => [Space::findOne(['id' => 3])->guid],
+            'limitSpacesMode' => MailSummaryForm::LIMIT_MODE_EXCLUDE,
+        ]))->save();
+
+        $user2Activities = $summaryUser2->getActivities();
+        $this->assertCount(1, $user2Activities);
+        $this->assertContainsActivity(MemberAddedActivity::class, $user2Activities, 'User2 must contain ' . MemberAddedActivity::class);
+    }
+
+
+    public function testSummaryUserActivityFilter()
+    {
+        $this->becomeUser('Admin');
+        $post = new Post(Space::findOne(['id' => 3]), ['message' => 'Summary Test']);
+        $this->assertTrue($post->save());
+
+        $this->becomeUser('User1');
+        $comment = new Comment([
+            'message' => 'Summary test comment!',
+            'content_id' => $post->content->id,
+        ]);
+        $this->assertTrue($comment->save());
+
+        // Set no activities by default
+        (new MailSummaryForm([
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [],
+        ]))->save();
+
+        // Overwrite activity filter for User2
+        (new MailSummaryForm([
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'user' => User::findOne(['id' => 3]), // User2
+            'activities' => [
+                NewCommentActivity::class,
+            ],
+        ]))->save();
+
+        $summaryUser2 = $this->createSummary(User::findOne(['id' => 3]), MailSummary::INTERVAL_DAILY);
+        $user2Activities = $summaryUser2->getActivities();
+        $this->assertCount(1, $user2Activities);
+        $this->assertContainsActivity(NewCommentActivity::class, $user2Activities, 'User2 must contain ' . NewCommentActivity::class);
+    }
+
+    public function testSummaryGlobalActivityFilter()
+    {
+        $this->becomeUser('Admin');
+        $post = new Post(Space::findOne(['id' => 3]), ['message' => 'Summary Test']);
+        $this->assertTrue($post->save());
+
+        $this->becomeUser('User1');
+        $comment = new Comment([
+            'message' => 'Summary test comment!',
+            'content_id' => $post->content->id,
+        ]);
+        $this->assertTrue($comment->save());
+
+        $summaryUser2 = $this->createSummary(User::findOne(['id' => 3]), MailSummary::INTERVAL_DAILY);
+
+        // Before global filter we get ContentCreated and NewComment
+        $this->assertCount(2, $summaryUser2->getActivities());
+
+        // Set global filter only receive ContentCreated
+        (new MailSummaryForm([
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [
+                ContentCreatedActivity::class,
+            ],
+        ]))->save();
+
+        $user2Activities = $summaryUser2->getActivities();
+        $this->assertCount(1, $user2Activities);
+        $this->assertContainsActivity(ContentCreatedActivity::class, $user2Activities, 'User2 must contain ' . ContentCreatedActivity::class);
+
+        (new MailSummaryForm([
+            'interval' => MailSummary::INTERVAL_DAILY,
+            'activities' => [],
+        ]))->save();
+
+        $user2Activities = $summaryUser2->getActivities();
+        $this->assertCount(0, $user2Activities);
+    }
+
+    public function testSummaryNoFilter()
+    {
+        $summaryAdmin = $this->createSummary(User::findOne(['id' => 1]), MailSummary::INTERVAL_DAILY);
+        $summaryUser1 = $this->createSummary(User::findOne(['id' => 2]), MailSummary::INTERVAL_DAILY);
+        $summaryUser2 = $this->createSummary(User::findOne(['id' => 3]), MailSummary::INTERVAL_DAILY);
+        $summaryUser3 = $this->createSummary(User::findOne(['id' => 4]), MailSummary::INTERVAL_DAILY);
+
+        $this->assertEmpty($summaryUser2->getActivities());
+
+        $this->becomeUser('Admin');
+        $post = new Post(Space::findOne(['id' => 3]), ['message' => 'Summary Test']);
+        $this->assertTrue($post->save());
+
+        $this->becomeUser('User1');
+        $comment = new Comment([
+            'message' => 'Summary test comment!',
+            'content_id' => $post->content->id,
+        ]);
+        $this->assertTrue($comment->save());
+
+        // Admin only gets comment activity
+        $adminActivities = $summaryAdmin->getActivities();
+        $this->assertCount(1, $adminActivities);
+        $this->assertContainsActivity(NewCommentActivity::class, $adminActivities, 'Admin must contain ' . NewCommentActivity::class);
+
+        // Comment author only gets new content activity
+        $user1Activities = $summaryUser1->getActivities();
+        $this->assertCount(1, $user1Activities);
+        $this->assertContainsActivity(ContentCreatedActivity::class, $user1Activities, 'User1 must contain ' . ContentCreatedActivity::class);
+
+        // Spae member gets both activities
+        $user2Activities = $summaryUser2->getActivities();
+        $this->assertCount(2, $user2Activities);
+        $this->assertContainsActivity(ContentCreatedActivity::class, $user2Activities, 'User2 must contain ' . ContentCreatedActivity::class);
+        $this->assertContainsActivity(NewCommentActivity::class, $user2Activities, 'User2 must contain ' . NewCommentActivity::class);
+
+        $user3Activities = $summaryUser3->getActivities();
+        codecept_debug($user3Activities);
+        $this->assertEmpty($user3Activities);
+    }
+
+
+    public function testSummaryExcludesContentOfPendingSpaceInvite()
+    {
+        $space5 = Space::findOne(['id' => 5]);
+        $space5->inviteMember(4, 1, false);
+
+        $this->becomeUser('Admin');
+        $post = new Post($space5, Content::VISIBILITY_PRIVATE, ['message' => 'Private space content']);
+        $this->assertTrue($post->save());
+
+        // User3 is only invited to the private space and therefore must not receive its activities
+        $summaryUser3 = $this->createSummary(User::findOne(['id' => 4]), MailSummary::INTERVAL_DAILY);
+        $this->assertEmpty($summaryUser3->getActivities());
+    }
+
+    public function testSummaryExcludesContentOfPendingMembershipRequest()
+    {
+        $space5 = Space::findOne(['id' => 5]);
+        $space5->requestMembership(4);
+
+        $this->becomeUser('Admin');
+        $post = new Post($space5, Content::VISIBILITY_PRIVATE, ['message' => 'Private space content']);
+        $this->assertTrue($post->save());
+
+        // User3 only applied for membership and therefore must not receive the space activities
+        $summaryUser3 = $this->createSummary(User::findOne(['id' => 4]), MailSummary::INTERVAL_DAILY);
+        $this->assertEmpty($summaryUser3->getActivities());
+    }
+
+    private function assertContainsActivity($activityClass, $activities, $message = null)
+    {
+        foreach ($activities as $record) {
+            $activity = ActivityManager::load($record);
+
+            if ($activity::class === $activityClass) {
+                $this->assertTrue(true, $message);
+                return;
+            }
+        }
+
+        $this->assertTrue(false, $message);
+    }
+
+    /**
+     * @param $user
+     * @param $interval
+     * @return MailSummary
+     * @throws InvalidConfigException
+     */
+    private function createSummary($user, $interval)
+    {
+        return Yii::createObject([
+            'class' => MailSummary::class,
+            'user' => $user,
+            'interval' => $interval,
+        ]);
+    }
+
+}

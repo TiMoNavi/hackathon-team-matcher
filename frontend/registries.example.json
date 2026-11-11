@@ -1,0 +1,16 @@
+{
+  "registries": {
+    "@affectui": {
+      "url": "https://registry.collectui.pro/api/r/affectui/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${AFFECTUI_TOKEN}"
+      }
+    },
+    "@shadcnuikit": {
+      "url": "https://registry.collectui.pro/api/r/shadcnuikit/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${SHADCNUKIT_REGISTRY_TOKEN}"
+      }
+    }
+  }
+}

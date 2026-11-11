@@ -1,0 +1,177 @@
+{
+  "date": "2026-11-12",
+  "checks": [
+    {
+      "name": "Hero avatar opens the correct basic profile",
+      "passed": true
+    },
+    {
+      "name": "Basic profile includes role, skills and activity intention",
+      "passed": true
+    },
+    {
+      "name": "Profile popover fits desktop viewport",
+      "passed": true
+    },
+    {
+      "name": "Profile entry opens a real matching person route",
+      "passed": true
+    },
+    {
+      "name": "Original activity stays open with profile entry",
+      "passed": true
+    },
+    {
+      "name": "Profile return entry reaches activity forum",
+      "passed": true
+    },
+    {
+      "name": "Author avatar is keyboard operable",
+      "passed": true
+    },
+    {
+      "name": "Escape restores focus to author avatar",
+      "passed": true
+    },
+    {
+      "name": "Reply avatar resolves explicit author identity",
+      "passed": true
+    },
+    {
+      "name": "Escape closes nested profile without closing thread",
+      "passed": true
+    },
+    {
+      "name": "Reply action sets quote context and focuses composer",
+      "passed": true
+    },
+    {
+      "name": "Reply text and target survive closing the thread",
+      "passed": true
+    },
+    {
+      "name": "Quoted reply renders with correct original context",
+      "passed": true
+    },
+    {
+      "name": "Successful reply clears composer and quote selection",
+      "passed": true
+    },
+    {
+      "name": "Empty replies remain validated",
+      "passed": true
+    },
+    {
+      "name": "Quote can be cancelled independently",
+      "passed": true
+    },
+    {
+      "name": "Forum card previews the latest submitted reply",
+      "passed": true
+    },
+    {
+      "name": "New local reply avatar opens self identity",
+      "passed": true
+    },
+    {
+      "name": "Archive keeps reply read-only",
+      "passed": true
+    },
+    {
+      "name": "Archived profile remains readable",
+      "passed": true
+    },
+    {
+      "name": "Avatar card fits 390px touch layout",
+      "passed": true
+    },
+    {
+      "name": "Nested reply profile fits 390px layout",
+      "passed": true
+    },
+    {
+      "name": "Reply dialog fits 390px layout",
+      "passed": true
+    },
+    {
+      "name": "Reply textarea avoids iOS focus zoom 390",
+      "passed": true
+    },
+    {
+      "name": "Matching personal page fits 390px layout",
+      "passed": true
+    },
+    {
+      "name": "Avatar card fits 320px touch layout",
+      "passed": true
+    },
+    {
+      "name": "Nested reply profile fits 320px layout",
+      "passed": true
+    },
+    {
+      "name": "Reply dialog fits 320px layout",
+      "passed": true
+    },
+    {
+      "name": "Reply textarea avoids iOS focus zoom 320",
+      "passed": true
+    },
+    {
+      "name": "Matching personal page fits 320px layout",
+      "passed": true
+    },
+    {
+      "name": "Personal route 0 matches 我",
+      "passed": true
+    },
+    {
+      "name": "Personal route 1 matches 林小满",
+      "passed": true
+    },
+    {
+      "name": "Personal route 2 matches 陈序",
+      "passed": true
+    },
+    {
+      "name": "Personal route 3 matches 许知夏",
+      "passed": true
+    },
+    {
+      "name": "Personal route 4 matches 周一舟",
+      "passed": true
+    },
+    {
+      "name": "Personal route 5 matches 唐可",
+      "passed": true
+    },
+    {
+      "name": "Personal route 6 matches 宋言",
+      "passed": true
+    },
+    {
+      "name": "Unknown person shows not-found without member data",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors from profile or reply flows",
+      "passed": true
+    },
+    {
+      "name": "No browser console errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "screenshots": [
+    "docs/screenshots/polish/1440-overview.png",
+    "docs/screenshots/polish/1440-avatar-card.png",
+    "docs/screenshots/polish/1440-replies.png",
+    "docs/screenshots/polish/390-avatar-card.png",
+    "docs/screenshots/polish/390-replies.png",
+    "docs/screenshots/polish/390-personal-page.png"
+  ],
+  "notFoundStatus": 200,
+  "passed": true
+}

@@ -1,0 +1,2057 @@
+{
+  "origin": "http://127.0.0.1:8103",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 401,
+      "elapsed_ms": 955.522,
+      "response_bytes": 179,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/__s73_test/login",
+      "status": 200,
+      "elapsed_ms": 444.884,
+      "response_bytes": 113,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/__s73_test/login",
+      "status": 200,
+      "elapsed_ms": 207.275,
+      "response_bytes": 113,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/__s73_test/login",
+      "status": 200,
+      "elapsed_ms": 213.651,
+      "response_bytes": 113,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 251.978,
+      "response_bytes": 180,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/current-event",
+      "status": 400,
+      "elapsed_ms": 126.107,
+      "response_bytes": 166,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/current-event",
+      "status": 409,
+      "elapsed_ms": 114.097,
+      "response_bytes": 180,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 141.822,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/current-event",
+      "status": 409,
+      "elapsed_ms": 179.81,
+      "response_bytes": 180,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 162.823,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/current-event",
+      "status": 409,
+      "elapsed_ms": 109.604,
+      "response_bytes": 180,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 158.466,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7074.291,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 6564.388,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7969.693,
+      "response_bytes": 222145,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7337.715,
+      "response_bytes": 221797,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7902.004,
+      "response_bytes": 222229,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8621.71,
+      "response_bytes": 222982,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 11071.346,
+      "response_bytes": 221549,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 9710.765,
+      "response_bytes": 222078,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8299.655,
+      "response_bytes": 222369,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 9837.503,
+      "response_bytes": 222201,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8930.966,
+      "response_bytes": 222255,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 6647.221,
+      "response_bytes": 222293,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8101.456,
+      "response_bytes": 221899,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7422.568,
+      "response_bytes": 222269,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7121.552,
+      "response_bytes": 222465,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7151.136,
+      "response_bytes": 211807,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7524.196,
+      "response_bytes": 444540,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 9141.163,
+      "response_bytes": 443299,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8551.599,
+      "response_bytes": 443802,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8391.325,
+      "response_bytes": 443718,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 9005.398,
+      "response_bytes": 443727,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 9871.123,
+      "response_bytes": 443463,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 6576.268,
+      "response_bytes": 444005,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7415.458,
+      "response_bytes": 211807,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 8806.912,
+      "response_bytes": 337996,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 7466.533,
+      "response_bytes": 337996,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 5890.948,
+      "response_bytes": 448235,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 6192.164,
+      "response_bytes": 224146,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3632.424,
+      "response_bytes": 255726,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3458.476,
+      "response_bytes": 255422,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3799.089,
+      "response_bytes": 209853,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3490.018,
+      "response_bytes": 209853,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3200.954,
+      "response_bytes": 9901,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3513.314,
+      "response_bytes": 421321,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3839.967,
+      "response_bytes": 367176,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3508.878,
+      "response_bytes": 367176,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3045.264,
+      "response_bytes": 441366,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2662.38,
+      "response_bytes": 249027,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2931.685,
+      "response_bytes": 182517,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2625.907,
+      "response_bytes": 357255,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2589.831,
+      "response_bytes": 189699,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2768.292,
+      "response_bytes": 456810,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2625.388,
+      "response_bytes": 38054,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2689.21,
+      "response_bytes": 376021,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2542.505,
+      "response_bytes": 148485,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2635.258,
+      "response_bytes": 444543,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2701.772,
+      "response_bytes": 443302,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2502.303,
+      "response_bytes": 443805,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3149.936,
+      "response_bytes": 443721,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2780.187,
+      "response_bytes": 443730,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2572.321,
+      "response_bytes": 443466,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2564.709,
+      "response_bytes": 444008,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2639.299,
+      "response_bytes": 211810,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2530.89,
+      "response_bytes": 440956,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2835.861,
+      "response_bytes": 442251,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2654.963,
+      "response_bytes": 442677,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2581.795,
+      "response_bytes": 441993,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2675.386,
+      "response_bytes": 439914,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2497.712,
+      "response_bytes": 9202,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2607.584,
+      "response_bytes": 36735,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2598.945,
+      "response_bytes": 444543,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2643.103,
+      "response_bytes": 443302,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2660.177,
+      "response_bytes": 443805,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2686.011,
+      "response_bytes": 443721,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2642.294,
+      "response_bytes": 443730,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2466.306,
+      "response_bytes": 443466,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3120.526,
+      "response_bytes": 444008,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2542.54,
+      "response_bytes": 211810,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2724.222,
+      "response_bytes": 440956,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2553.442,
+      "response_bytes": 442251,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2614.814,
+      "response_bytes": 442677,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2516.578,
+      "response_bytes": 441993,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2709.259,
+      "response_bytes": 439914,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2474.248,
+      "response_bytes": 9202,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2420.335,
+      "response_bytes": 9901,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2466.253,
+      "response_bytes": 189,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2425.462,
+      "response_bytes": 189,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2462.241,
+      "response_bytes": 189,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2460.057,
+      "response_bytes": 189,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2919.088,
+      "response_bytes": 9901,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3767.015,
+      "response_bytes": 440956,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2753.166,
+      "response_bytes": 442251,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3954.558,
+      "response_bytes": 442677,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3435.329,
+      "response_bytes": 441993,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2963.152,
+      "response_bytes": 439914,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2802.617,
+      "response_bytes": 9202,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2701.195,
+      "response_bytes": 9901,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3303.968,
+      "response_bytes": 445772,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3324.698,
+      "response_bytes": 445507,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3066.859,
+      "response_bytes": 443923,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2531.253,
+      "response_bytes": 443640,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2510.589,
+      "response_bytes": 435360,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2772.308,
+      "response_bytes": 445772,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2698.563,
+      "response_bytes": 445507,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2804.588,
+      "response_bytes": 443923,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3037.294,
+      "response_bytes": 443640,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2494.332,
+      "response_bytes": 435360,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2571.776,
+      "response_bytes": 445772,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2759.41,
+      "response_bytes": 445507,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3488.848,
+      "response_bytes": 443923,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2891.626,
+      "response_bytes": 443640,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3357.437,
+      "response_bytes": 435360,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2404.338,
+      "response_bytes": 445772,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2376.801,
+      "response_bytes": 445507,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2384.686,
+      "response_bytes": 443923,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3087.534,
+      "response_bytes": 443640,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2536.434,
+      "response_bytes": 435360,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2427.211,
+      "response_bytes": 189,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2417.361,
+      "response_bytes": 445772,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2405.991,
+      "response_bytes": 445507,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2334.732,
+      "response_bytes": 443923,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2389.928,
+      "response_bytes": 443640,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2325.518,
+      "response_bytes": 435360,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2398.346,
+      "response_bytes": 445772,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2367.31,
+      "response_bytes": 445507,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2394.183,
+      "response_bytes": 443923,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2335.067,
+      "response_bytes": 443640,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2532.692,
+      "response_bytes": 435360,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2349.522,
+      "response_bytes": 189,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2321.307,
+      "response_bytes": 421318,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 48.536,
+      "response_bytes": 220,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 40.543,
+      "response_bytes": 154,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 40.721,
+      "response_bytes": 220,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 39.711,
+      "response_bytes": 220,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 41.454,
+      "response_bytes": 167,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 40.688,
+      "response_bytes": 167,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 40.91,
+      "response_bytes": 220,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 38.978,
+      "response_bytes": 179,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 36.414,
+      "response_bytes": 179,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 38.41,
+      "response_bytes": 179,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 40.448,
+      "response_bytes": 171,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 38.104,
+      "response_bytes": 184,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 39.136,
+      "response_bytes": 171,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 36.606,
+      "response_bytes": 171,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 422,
+      "elapsed_ms": 38.482,
+      "response_bytes": 220,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1172.931,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1152.918,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1158.039,
+      "response_bytes": 202,
+      "filtered": true,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1203.66,
+      "response_bytes": 180,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1149.65,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/503",
+      "status": 200,
+      "elapsed_ms": 2104.615,
+      "response_bytes": 9770,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 50.846,
+      "response_bytes": 104,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 42.23,
+      "response_bytes": 104,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 45.452,
+      "response_bytes": 105,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2358.591,
+      "response_bytes": 444540,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2319.772,
+      "response_bytes": 443299,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2358.402,
+      "response_bytes": 443802,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2328.109,
+      "response_bytes": 443718,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2352.944,
+      "response_bytes": 443727,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2296.34,
+      "response_bytes": 443463,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2336.138,
+      "response_bytes": 444005,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2376.182,
+      "response_bytes": 211807,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 56.139,
+      "response_bytes": 105,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 56.538,
+      "response_bytes": 104,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2421.705,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 52.888,
+      "response_bytes": 105,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/503",
+      "status": 404,
+      "elapsed_ms": 1112.015,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1162.21,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2339.671,
+      "response_bytes": 186,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 51.271,
+      "response_bytes": 105,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 50.764,
+      "response_bytes": 104,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/425",
+      "status": 200,
+      "elapsed_ms": 2137.757,
+      "response_bytes": 9341,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/425",
+      "status": 200,
+      "elapsed_ms": 2117.796,
+      "response_bytes": 9340,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/425",
+      "status": 200,
+      "elapsed_ms": 2131.703,
+      "response_bytes": 9336,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/111",
+      "status": 200,
+      "elapsed_ms": 2150.356,
+      "response_bytes": 9386,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2765.214,
+      "response_bytes": 186,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2467.794,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1535.826,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2593.125,
+      "response_bytes": 186,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/503",
+      "status": 200,
+      "elapsed_ms": 2461.389,
+      "response_bytes": 9465,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2596.19,
+      "response_bytes": 222817,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1171.379,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2499.339,
+      "response_bytes": 186,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/503",
+      "status": 200,
+      "elapsed_ms": 2380.428,
+      "response_bytes": 9465,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2678.566,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/425",
+      "status": 404,
+      "elapsed_ms": 1170.835,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1303.14,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2459.72,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/425",
+      "status": 404,
+      "elapsed_ms": 1132.269,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1163.566,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2463.4,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/425",
+      "status": 404,
+      "elapsed_ms": 1101.968,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1629.807,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 3176.547,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/426",
+      "status": 404,
+      "elapsed_ms": 1288.368,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1281.457,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2357.918,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/426",
+      "status": 404,
+      "elapsed_ms": 1073.956,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1311.688,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2538.016,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/426",
+      "status": 404,
+      "elapsed_ms": 1096.949,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1195.701,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2382.219,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/426",
+      "status": 404,
+      "elapsed_ms": 1171.99,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1239.569,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2526.667,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/426",
+      "status": 404,
+      "elapsed_ms": 1469.984,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 1750.313,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 403,
+      "elapsed_ms": 53.181,
+      "response_bytes": 191,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/503",
+      "status": 403,
+      "elapsed_ms": 52.945,
+      "response_bytes": 191,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 403,
+      "elapsed_ms": 42.098,
+      "response_bytes": 191,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 50.517,
+      "response_bytes": 104,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/events/5/discovery-settings",
+      "status": 200,
+      "elapsed_ms": 44.365,
+      "response_bytes": 104,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 200,
+      "elapsed_ms": 2442.125,
+      "response_bytes": 223122,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 44.525,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 57.68,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 90.998,
+      "response_bytes": 199,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery/people/503",
+      "status": 409,
+      "elapsed_ms": 39.831,
+      "response_bytes": 199,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/6/discovery",
+      "status": 200,
+      "elapsed_ms": 570.659,
+      "response_bytes": 443954,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/6/discovery",
+      "status": 200,
+      "elapsed_ms": 742.364,
+      "response_bytes": 212407,
+      "filtered": false,
+      "continued": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/6/discovery/people/104",
+      "status": 404,
+      "elapsed_ms": 326.358,
+      "response_bytes": 190,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/6/discovery/people/503",
+      "status": 200,
+      "elapsed_ms": 701.539,
+      "response_bytes": 9717,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/6/discovery",
+      "status": 200,
+      "elapsed_ms": 761.743,
+      "response_bytes": 186,
+      "filtered": true,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 62.567,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/me/current-event",
+      "status": 200,
+      "elapsed_ms": 207.358,
+      "response_bytes": 236,
+      "filtered": false,
+      "continued": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/events/5/discovery",
+      "status": 409,
+      "elapsed_ms": 2546.566,
+      "response_bytes": 202,
+      "filtered": false,
+      "continued": true
+    }
+  ]
+}

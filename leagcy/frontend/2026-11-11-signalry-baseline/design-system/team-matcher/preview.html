@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>同频｜Signalry 风格基准</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--foreground);font:16px/1.6 var(--font)}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--primary);outline-offset:4px}a{color:var(--primary);text-underline-offset:4px}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}[hidden]{display:none!important}.icons{position:absolute;width:0;height:0;overflow:hidden}h1,h2,h3,p{margin:0}button{color:inherit}small{font-size:13px}.page{max-width:1440px;margin:auto;padding:30px 48px 32px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:650;font-size:21px;letter-spacing:-.5px}.brandmark{display:flex;align-items:center;justify-content:center;background:var(--primary);color:#fff;width:36px;height:36px;border-radius:11px}.brandmark svg{width:25px;height:25px}.masthead-note{font-size:13px;color:var(--muted-foreground)}.intro{padding:46px 0 30px;display:flex;justify-content:space-between;gap:24px;align-items:flex-end}.intro h1{font-size:clamp(28px,3vw,42px);line-height:1.25;letter-spacing:-1px;font-weight:650}.intro p{margin-top:14px;color:var(--muted-foreground);max-width:38em;line-height:1.8}.proposal-label{flex-shrink:0;border:1px solid var(--border);padding:7px 12px;border-radius:8px;font-size:13px;color:var(--muted-foreground);background:var(--surface)}.board{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:30px;align-items:start}.sample-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;font-size:13px;color:var(--muted-foreground)}.sample-head strong{font-weight:500}.sample-head span{font-size:12px}.app{background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 14px 35px -25px rgb(37 22 120 / 0.24);min-width:0}.appbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:18px 24px;border-bottom:1px solid var(--border)}.event{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}.event-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--primary-soft);color:var(--primary)}.example{font-size:12px;font-weight:400;color:var(--muted-foreground);margin-left:6px}.self-avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--primary-soft);font-size:13px;color:var(--primary)}.app-layout{display:grid;grid-template-columns:86px minmax(0,1fr)}.sidebar{padding:24px 12px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:9px;background:var(--muted)}.nav-item{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:12px;color:var(--muted-foreground);padding:12px 4px;border-radius:10px}.nav-item.active{background:var(--primary-soft);color:var(--primary);font-weight:600}.app-main{padding:26px;min-width:0;min-height:527px}.app-title{font-size:25px;font-weight:650;letter-spacing:-.6px}.app-subtitle{color:var(--muted-foreground);font-size:13px;margin-top:5px}.tabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-top:23px;margin-bottom:22px}.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px 12px;min-height:44px;color:var(--muted-foreground);font-size:14px;white-space:nowrap}.tabs button[aria-selected=true]{border-bottom-color:var(--primary);color:var(--primary);font-weight:650}.tabs button:hover{background:var(--primary-soft);border-radius:6px 6px 0 0}.panel{animation:appear 160ms ease-out}.panel-description{color:var(--muted-foreground);font-size:13px;margin-bottom:15px}.idea-grid,.person-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.idea-card{padding:19px;background:var(--surface);border:1px solid var(--border);border-radius:24px;display:flex;flex-direction:column;min-width:0;min-height:293px}.idea-card.featured{background:var(--muted);border-color:var(--border)}.idea-heading{display:flex;align-items:center;gap:9px;margin-bottom:18px;font-size:12px;color:var(--muted-foreground)}.idea-symbol{background:var(--idea);color:var(--foreground);display:grid;place-items:center;width:30px;height:30px;border-radius:7px}.idea-symbol.mint{background:var(--primary-soft)}.idea-card h3{font-size:19px;font-weight:600;line-height:1.45;letter-spacing:-.3px}.idea-card .description{font-size:14px;line-height:1.75;color:var(--muted-foreground);margin-top:10px;min-height:74px}.contribution{font-size:12px;margin-top:17px}.contribution span{display:inline-block;margin-left:5px;padding:2px 7px;border:1px solid var(--border);border-radius:5px;background:#ffffff80;color:var(--foreground)}.author{margin-top:auto;padding-top:22px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted-foreground)}.avatar{display:grid;place-items:center;flex-shrink:0;background:var(--secondary);color:var(--primary);border-radius:14px;width:48px;height:48px;font-size:21px;font-weight:600}.avatar.clay{background:var(--lime);color:var(--night)}.avatar.small{width:27px;height:27px;border-radius:50%;font-size:12px}.author .detail{margin-left:auto}.detail{border:0;background:transparent;font-size:12px;color:var(--primary);padding:7px 0 7px 8px;min-height:44px}.detail:hover{text-decoration:underline;text-underline-offset:3px}.person{border:1px solid var(--border);border-radius:24px;padding:19px;display:flex;flex-direction:column;min-height:293px;min-width:0}.person:nth-child(2){border-color:var(--border)}.person-head{display:flex;gap:12px;align-items:center}.person h3{font-size:19px;font-weight:600}.role{font-size:12px;color:var(--muted-foreground);margin-top:1px}.person .bio{font-size:14px;margin:19px 0 15px;line-height:1.8}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{background:var(--background);border-radius:5px;padding:3px 7px;font-size:12px;color:var(--muted-foreground)}.seeking{font-size:12px;color:var(--muted-foreground);margin:17px 0 20px}.seeking strong{font-weight:500;color:var(--foreground)}.primary-button,.secondary-button{border-radius:10px;min-height:44px;font-size:14px;font-weight:500;padding:10px 16px;border:1px solid var(--primary);transition:background 150ms}.primary-button{background:var(--primary);color:#fff}.primary-button:hover{background:color-mix(in srgb,var(--primary),black 12%)}.secondary-button{background:var(--surface);color:var(--primary);border-color:var(--input-border)}.secondary-button:hover{background:var(--primary-soft)}.person .secondary-button{margin-top:auto;width:100%;font-size:13px}.profile-preview{border:1px solid var(--border);border-radius:14px;overflow:hidden}.profile-intro{padding:17px 19px;background:var(--primary-soft);display:flex;gap:11px;align-items:flex-start}.ai-label{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--surface);font-size:11px;color:var(--primary);font-weight:650;flex-shrink:0}.profile-intro h3{font-size:15px;font-weight:600}.profile-intro p{font-size:13px;color:var(--muted-foreground);margin-top:5px}.profile-fields{padding:5px 19px}.profile-row{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:13px}.profile-row:last-child{border:0}.field-name{color:var(--muted-foreground)}.privacy{font-size:11px;color:var(--muted-foreground);display:flex;gap:4px;align-items:center}.privacy svg{width:13px;height:13px}.profile-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 19px 18px}.pending{font-size:12px;color:var(--muted-foreground)}.preview-note{display:flex;align-items:flex-start;gap:7px;font-size:12px;line-height:1.7;color:var(--muted-foreground);margin-top:19px}.preview-note svg{width:15px;height:15px;margin-top:3px}.mobile-nav{display:none}.direction{padding-top:30px}.direction h2{font-size:19px;font-weight:600;letter-spacing:-.3px;margin-bottom:9px}.direction>p{font-size:14px;color:var(--muted-foreground);line-height:1.85}.swatches{display:flex;gap:7px;margin:23px 0 9px}.swatch{height:44px;flex:1;min-width:0;border-radius:7px;border:1px solid var(--border)}.swatch-label{font-size:11px;color:var(--muted-foreground);margin-bottom:24px}.principle{border-top:1px solid var(--border);padding-top:18px;margin-top:18px}.principle h3{font-weight:600;font-size:14px;margin-bottom:5px}.principle p{font-size:13px;color:var(--muted-foreground);line-height:1.8}.type-sample{margin-top:23px;font-size:28px;line-height:1.5;letter-spacing:-1px;font-weight:600}.type-caption{font-size:11px;color:var(--muted-foreground);margin-top:3px}.rules{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:30px;padding-top:29px;margin-top:29px;border-top:1px solid var(--border)}.rule h2{font-size:14px;font-weight:600;margin-bottom:7px}.rule p{font-size:13px;color:var(--muted-foreground);line-height:1.9}.footer{display:flex;justify-content:space-between;gap:16px;margin-top:35px;padding-top:20px;border-top:1px solid var(--border);font-size:12px;color:var(--muted-foreground)}.footer a{white-space:nowrap}dialog{border:1px solid var(--border);border-radius:20px;background:var(--surface);color:var(--foreground);width:min(440px,calc(100% - 32px));padding:27px;box-shadow:0 20px 70px rgb(37 22 120 / 0.18)}dialog::backdrop{background:rgb(22 18 43 / 0.42)}dialog h2{font-size:22px;margin-bottom:13px}dialog p{font-size:15px;color:var(--muted-foreground);line-height:1.8}dialog button{margin-top:22px;width:100%}@keyframes appear{from{opacity:.55}to{opacity:1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media(min-width:1600px){.page{padding-top:42px}.intro{padding-top:56px;padding-bottom:42px}.app-main{padding:32px}.idea-card,.person{min-height:320px}}
+    @media(max-width:1150px){.page{padding:26px 30px}.board{grid-template-columns:minmax(0,1fr)}.direction{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;padding-top:0}.direction .palette-block{grid-row:span 2}.principle{margin:0;padding-top:13px}.type-block{grid-column:2/4}.type-sample{margin:0;font-size:24px}.intro{padding-top:35px}.app-main{min-height:510px}.app-layout{grid-template-columns:86px minmax(0,1fr)}}
+    @media(max-width:720px){.page{padding:20px 16px 24px}.masthead-note{display:none}.brand{font-size:19px}.intro{padding:29px 0 24px;display:block}.intro h1{font-size:29px;letter-spacing:-.7px}.intro p{font-size:14px;margin-top:12px}.proposal-label{display:inline-block;margin-top:16px;font-size:12px;padding:4px 9px}.board{gap:24px}.app{border-radius:17px}.appbar{padding:14px 16px}.event{font-size:13px;gap:8px}.example{font-size:11px;margin-left:2px}.app-layout{display:block}.sidebar{display:none}.app-main{padding:21px 16px;min-height:0}.app-title{font-size:23px}.tabs{margin-top:16px;margin-bottom:18px}.tabs button{padding:10px 12px 12px;font-size:13px}.idea-grid,.person-grid{grid-template-columns:1fr;gap:15px}.idea-card,.person{min-height:0}.idea-card .description{min-height:0}.idea-card h3{font-size:20px}.author{padding-top:14px}.person .seeking{margin-top:14px}.mobile-nav{display:flex;justify-content:space-around;border-top:1px solid var(--border);padding:9px 0;background:var(--muted)}.mobile-nav .nav-item{min-width:60px;padding:7px;gap:2px}.direction{grid-template-columns:1fr 1fr;gap:20px}.direction .palette-block{grid-column:1/3;grid-row:auto}.direction h2{font-size:20px}.swatches{max-width:340px;margin-top:16px}.swatch-label{margin-bottom:0}.type-block{grid-column:1/3}.type-sample{font-size:26px}.rules{grid-template-columns:1fr;gap:19px;margin-top:24px;padding-top:24px}.footer{flex-direction:column;gap:10px;margin-top:25px}.profile-row{grid-template-columns:52px minmax(0,1fr);gap:5px 8px}.privacy{grid-column:2}.profile-bottom{align-items:flex-start;flex-direction:column}.profile-bottom button{width:100%}.sample-head{align-items:flex-end}.sample-head span{font-size:11px}.preview-note{font-size:11px}}
+
+    /* Signalry presentation adapted to the existing application style board. */
+    body{position:relative;isolation:isolate}
+    .hero-atmosphere{position:absolute;inset:0 0 auto;height:650px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,var(--hero-start) 0%,var(--hero-mid) 45%,var(--background) 100%)}
+    .hero-atmosphere::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgb(91 61 245 / .08) 1px,transparent 1px),linear-gradient(90deg,rgb(91 61 245 / .08) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 55% at 50% 20%,black 30%,transparent 100%)}
+    .brandmark{border-radius:12px}.brand,.type-sample{font-family:var(--font-heading)}
+    .masthead{padding:12px 18px;background:rgb(255 255 255 / .78);border:1px solid rgb(255 255 255 / .9);border-radius:16px}
+    .intro{flex-direction:column;align-items:center;text-align:center;padding:48px 12px 42px;gap:22px}
+    .intro h1{font-family:var(--font-heading);font-size:clamp(34px,4.5vw,62px);line-height:1.22;letter-spacing:-1.4px;font-weight:650}
+    .hero-emphasis{position:relative;display:inline-block;color:var(--primary);z-index:0}
+    .title-stroke{position:absolute;bottom:-7px;left:1%;height:12px;width:98%;z-index:-1;stroke:var(--lime);stroke-width:6px}
+    .intro p{margin:24px auto 0;color:var(--body);font-size:16px;line-height:1.8;max-width:640px}
+    .intro .proposal-label{font-size:12px;border:1px solid color-mix(in srgb,var(--primary),transparent 85%);border-radius:999px;background:rgb(255 255 255 / .85);color:var(--body);padding:5px 13px;flex-shrink:1}
+    .intro-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.intro-actions a{display:flex;align-items:center;justify-content:center;text-decoration:none;padding:12px 23px;min-height:48px}
+    .intro-actions .primary-button{box-shadow:0 10px 30px -10px rgb(91 61 245 / .5)}.hero-note{color:var(--muted-foreground);font-size:12px}
+    .app{border-radius:24px;box-shadow:0 18px 50px -28px rgb(37 22 120 / .3)}.appbar{background:var(--card)}
+    .sidebar{background:var(--muted)}.tag{background:var(--muted)}.person{border-top-width:1px}.idea-card{border-radius:24px}.idea-card.featured{background:var(--muted)}
+    .direction{padding:25px 22px;background:var(--night);border-radius:24px;color:var(--primary-foreground);margin-top:32px}
+    .direction .palette-copy,.direction .principle p,.direction .type-caption,.direction .swatch-label{color:var(--on-night-muted)}.palette-copy{font-size:14px;line-height:1.85}
+    .direction .principle{border-color:rgb(255 255 255 / .16)}.direction .type-sample{color:var(--lime);font-size:25px;letter-spacing:-.7px}.swatch{border-color:rgb(255 255 255 / .18)}
+    .profile-preview{border-radius:20px}.primary-button,.secondary-button{border-radius:12px}
+    @media(max-width:1150px){.direction{margin-top:0;padding:26px;gap:24px}.direction .palette-block{grid-row:span 2}}
+    @media(max-width:720px){.masthead{padding:11px 12px}.brand{gap:9px;font-size:18px}.intro{display:flex;padding:32px 0;gap:20px}.intro h1{font-size:clamp(24px,7.7vw,36px);letter-spacing:-.8px}.intro p{font-size:14px;margin-top:22px}.intro .proposal-label{margin-top:0;font-size:11px}.intro-actions{width:100%;gap:9px}.intro-actions a{font-size:13px;padding:11px 15px}.hero-atmosphere{height:540px}.app{border-radius:20px}.idea-card,.person{border-radius:20px}.direction{padding:24px 20px;gap:20px}.direction .palette-block{grid-row:auto}.direction .type-sample{font-size:26px}.sample-head{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <div class="hero-atmosphere" aria-hidden="true"></div>
+  <svg class="icons" aria-hidden="true"><defs>
+    <symbol id="mark" viewBox="0 0 24 24"><path d="M4 14V6h8v8H4Zm8 4v-8h8v8h-8Z"/><path d="m8 10 8 4"/></symbol>
+    <symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5Z"/></symbol>
+    <symbol id="square" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2 1-6a8 8 0 1 1 17-4Z"/><path d="M8 11h8M8 15h5"/></symbol>
+    <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+    <symbol id="event" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v5M16 3v5M4 11h16m-11 5 2 2 4-4"/></symbol>
+    <symbol id="idea" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path d="M20 3s-14-2-15 7 9 13 13 6S20 3 20 3Z"/><path d="M3 21 15 9"/></symbol>
+    <symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></symbol>
+  </defs></svg>
+  <div class="page">
+    <header class="masthead"><div class="brand"><span class="brandmark"><svg aria-hidden="true"><use href="#mark"/></svg></span>同频 <span style="font-size:13px;font-weight:400;color:var(--muted-foreground);letter-spacing:0">Signalry 视觉基准</span></div><p class="masthead-note">2026 年 11 月 11 日</p></header>
+    <section class="intro" aria-labelledby="direction-title"><span class="proposal-label">基于本地 Signalry 模板的风格适配</span><div><h1 id="direction-title">找到同频的人，<br><span class="hero-emphasis">一起把想法做出来。<svg class="title-stroke" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9C60 3 140 2 298 7"/></svg></span></h1><p>在活动里发现伙伴，围绕想法开始合作。<br>沿用 Signalry 的品牌紫、浅紫氛围和青柠色细节。</p></div><div class="intro-actions"><a class="primary-button" href="#sample-title">查看应用样张</a><a class="secondary-button" href="MASTER.md">阅读风格规范</a></div><small class="hero-note">用户已选定风格基准，具体页面继续迭代</small></section>
+    <main class="board">
+      <section aria-labelledby="sample-title">
+        <div class="sample-head"><strong id="sample-title">应用内样式适配</strong><span>可切换下方三种样式 · 全部为虚构示例</span></div>
+        <div class="app">
+          <div class="appbar"><div class="event"><span class="event-icon"><svg aria-hidden="true"><use href="#event"/></svg></span><span>周末创造营 <span class="example">活动示例</span></span></div><span class="self-avatar" aria-label="示例账号">我</span></div>
+          <div class="app-layout">
+            <div class="sidebar" aria-label="主导航外观示例，非功能入口"><div class="nav-item active"><svg aria-hidden="true"><use href="#compass"/></svg>发现</div><div class="nav-item"><svg aria-hidden="true"><use href="#square"/></svg>广场</div><div class="nav-item"><svg aria-hidden="true"><use href="#chat"/></svg>消息</div><div class="nav-item"><svg aria-hidden="true"><use href="#user"/></svg>个人</div></div>
+            <div class="app-main">
+              <h2 class="app-title">一起做点有意思的事</h2><p class="app-subtitle">视觉样张，展示当前活动内的内容语言。</p>
+              <div class="tabs" role="tablist" aria-label="切换风格示例；不代表正式应用标签结构"><button id="tab-ideas" type="button" role="tab" aria-selected="true" aria-controls="panel-ideas" tabindex="0">想法卡片</button><button id="tab-people" type="button" role="tab" aria-selected="false" aria-controls="panel-people" tabindex="-1">人物卡片</button><button id="tab-profile" type="button" role="tab" aria-selected="false" aria-controls="panel-profile" tabindex="-1">资料确认</button></div>
+              <section class="panel" id="panel-ideas" role="tabpanel" aria-labelledby="tab-ideas" tabindex="0">
+                <p class="panel-description">先说想解决的问题，再说需要谁一起做。</p>
+                <div class="idea-grid">
+                  <article class="idea-card featured"><div class="idea-heading"><span class="idea-symbol"><svg aria-hidden="true"><use href="#idea"/></svg></span>正在形成想法</div><h3>让活动里的好点子<br>都有下文</h3><p class="description">把临时聊到的点子整理下来，让愿意继续参与的人找到彼此。</p><p class="contribution">希望一起做<span>前端开发</span></p><div class="author"><span class="avatar small">林</span><span>林可 发起</span><button class="detail" data-demo="idea-one" type="button">查看想法</button></div></article>
+                  <article class="idea-card"><div class="idea-heading"><span class="idea-symbol mint"><svg aria-hidden="true"><use href="#leaf"/></svg></span>准备做原型</div><h3>把校园闲置物品<br>留给需要的人</h3><p class="description">想从一个宿舍开始，试试更轻松的闲置分享和交换方式。</p><p class="contribution">希望一起做<span>产品设计</span></p><div class="author"><span class="avatar small clay">陈</span><span>陈序 发起</span><button class="detail" data-demo="idea-two" type="button">查看想法</button></div></article>
+                </div>
+              </section>
+              <section class="panel" id="panel-people" role="tabpanel" aria-labelledby="tab-people" tabindex="0" hidden>
+                <p class="panel-description">先认识这个人，再了解他能带来什么。</p>
+                <div class="person-grid">
+                  <article class="person"><div class="person-head"><span class="avatar">林</span><div><h3>林可</h3><p class="role">产品设计 / 本次想做原型</p></div></div><p class="bio">喜欢把模糊的点子，变成可以实际试用的东西。</p><div class="tags"><span class="tag">交互设计</span><span class="tag">Figma</span><span class="tag">用户访谈</span></div><p class="seeking">这次在找 <strong>愿意一起动手的开发伙伴</strong></p><button class="secondary-button" type="button" data-demo="person-one">了解林可</button></article>
+                  <article class="person"><div class="person-head"><span class="avatar clay">陈</span><div><h3>陈序</h3><p class="role">前端开发 / 本次愿意协作</p></div></div><p class="bio">能做 React 页面，也想在活动里尝试一个新的方向。</p><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">快速原型</span></div><p class="seeking">这次在找 <strong>可以一起验证的小想法</strong></p><button class="secondary-button" type="button" data-demo="person-two">了解陈序</button></article>
+                </div>
+              </section>
+              <section class="panel" id="panel-profile" role="tabpanel" aria-labelledby="tab-profile" tabindex="0" hidden>
+                <p class="panel-description">资料先整理给本人看，确认后再展示。</p>
+                <div class="profile-preview"><div class="profile-intro"><span class="ai-label">AI</span><div><h3>这些描述，符合你吗？</h3><p>根据你提供的资料整理，可以修改内容和展示范围。</p></div></div><div class="profile-fields"><div class="profile-row"><span class="field-name">方向</span><span>前端开发、交互实现</span><span class="privacy"><svg aria-hidden="true"><use href="#eye"/></svg>登录用户可见</span></div><div class="profile-row"><span class="field-name">技能</span><span>React、TypeScript</span><span class="privacy"><svg aria-hidden="true"><use href="#eye"/></svg>登录用户可见</span></div><div class="profile-row"><span class="field-name">一句话</span><span>喜欢把小想法做成可用的原型。</span><span class="privacy"><svg aria-hidden="true"><use href="#eye"/></svg>登录用户可见</span></div></div><div class="profile-bottom"><span class="pending">示例状态：待本人确认</span><button class="primary-button" type="button" data-demo="profile">查看确认样式</button></div></div>
+              </section>
+              <p class="preview-note"><svg aria-hidden="true"><use href="#info"/></svg><span>这里仅展示视觉。人物与想法均为虚构，点击只打开示例说明，不发送申请或保存资料。</span></p>
+            </div>
+          </div>
+          <div class="mobile-nav" aria-label="手机主导航外观示例，非功能入口"><div class="nav-item active"><svg aria-hidden="true"><use href="#compass"/></svg>发现</div><div class="nav-item"><svg aria-hidden="true"><use href="#square"/></svg>广场</div><div class="nav-item"><svg aria-hidden="true"><use href="#chat"/></svg>消息</div><div class="nav-item"><svg aria-hidden="true"><use href="#user"/></svg>个人</div></div>
+        </div>
+      </section>
+      <aside class="direction" aria-label="风格说明">
+        <div class="palette-block"><h2>Signalry 的视觉语言</h2><p class="palette-copy">品牌紫承担主操作，浅薰衣草色承托内容，少量青柠色形成记忆点。</p><div class="swatches" aria-label="白色背景，浅紫底色，深色正文，品牌紫，柔紫色，青柠点缀"><span class="swatch" style="background:var(--background)" title="#FFFFFF"></span><span class="swatch" style="background:var(--muted)" title="#F7F5FF"></span><span class="swatch" style="background:var(--foreground)" title="#13111C"></span><span class="swatch" style="background:var(--primary)" title="#5B3DF5"></span><span class="swatch" style="background:var(--primary-soft)" title="#EEEAFF"></span><span class="swatch" style="background:var(--idea)" title="#D9F85F"></span></div><p class="swatch-label">品牌紫 #5B3DF5 / 青柠 #D9F85F</p></div>
+        <div class="principle"><h3>把人放在前面</h3><p>昵称、头像、正在做的事。能力可读，愿望具体，不给人贴一个模糊的分数。</p></div><div class="principle"><h3>给每次交流一个理由</h3><p>活动说明我们为何在这里，想法说明我们可以一起做什么。</p></div><div class="type-block"><div class="type-sample">Signalry → 同频</div><p class="type-caption">Bricolage Grotesque / Inter / 中文系统字体</p></div>
+      </aside>
+    </main>
+    <section class="rules" aria-label="统一设计规则"><div class="rule"><h2>大圆角，清楚的层次</h2><p>主卡片采用 20–24px 圆角。<br>白色、浅紫与深色区块形成节奏。</p></div><div class="rule"><h2>展示舒展，使用紧凑</h2><p>介绍页保留居中大标题和留白。<br>应用内列表仍然便于阅读和操作。</p></div><div class="rule"><h2>有事情发生，再给反馈</h2><p>AI 显示真实进度，操作明确说明结果。<br>动态效果跟随人的操作。</p></div></section>
+    <footer class="footer"><p>Signalry 风格适配样张 / 全部业务数据为示例 / 冻结简介未修改</p><a href="MASTER.md">阅读完整风格规范</a></footer>
+  </div>
+  <dialog id="sample-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description"><h2 id="dialog-title">示例说明</h2><p id="dialog-description"></p><form method="dialog"><button class="primary-button" type="submit">返回样张</button></form></dialog>
+  <script>
+    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+    function activate(tab, focus) {
+      tabs.forEach(function(item) {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function(tab, index) {
+      tab.addEventListener('click', function() { activate(tab, false); });
+      tab.addEventListener('keydown', function(event) {
+        let next = index;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault(); activate(tabs[next], true);
+      });
+    });
+    const details = {
+      'idea-one': ['让活动里的好点子都有下文', '这是想法详情的视觉示例。真实页面会进一步展示问题、阶段、需要的贡献和发起者，申请加入讨论是单独的明确操作。'],
+      'idea-two': ['把校园闲置物品留给需要的人', '这是虚构的活动想法。浅紫色区分内容层次，青柠只用于少量标记，列表仍保留清楚的阅读顺序。'],
+      'person-one': ['认识林可', '林可是虚构人物。真实人物详情只展示对方允许你查看的资料；添加好友与申请加入想法讨论保持独立。'],
+      'person-two': ['认识陈序', '陈序是虚构人物。人物卡强调本次活动里的意愿和能力，不展示虚构的匹配百分比，也不将浏览当作好友申请。'],
+      'profile': ['由本人确认后再展示', '此处仅演示确认弹层的视觉，不保存资料。正式流程会让用户逐条核对内容及可见范围，明确提交后才更新展示信息。']
+    };
+    const dialog = document.getElementById('sample-dialog');
+    document.querySelectorAll('[data-demo]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const content = details[button.dataset.demo];
+        document.getElementById('dialog-title').textContent = content[0];
+        document.getElementById('dialog-description').textContent = content[1];
+        dialog.showModal();
+      });
+    });
+  </script>
+</body>
+</html>

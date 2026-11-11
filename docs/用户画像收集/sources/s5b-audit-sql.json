@@ -1,0 +1,41 @@
+{
+    "status": "passed",
+    "passed": 8,
+    "failed": 0,
+    "checks": [
+        {
+            "name": "invalid_web_inputs_created_no_source",
+            "passed": true
+        },
+        {
+            "name": "deleted_source_persisted_scrubbed",
+            "passed": true
+        },
+        {
+            "name": "all_original_and_refreshed_snapshots_physically_removed",
+            "passed": true
+        },
+        {
+            "name": "job_receipts_contain_no_original_text",
+            "passed": true
+        },
+        {
+            "name": "jobs_revoked_after_source_deletion",
+            "passed": true
+        },
+        {
+            "name": "job_receipts_only_hold_references",
+            "passed": true
+        },
+        {
+            "name": "confirmed_adopted_project_survives_source_delete",
+            "passed": true
+        },
+        {
+            "name": "ordinary_profile_contains_no_original_text",
+            "passed": true
+        }
+    ],
+    "scope": "direct SQL readback after independent HTTP flow; synthetic isolated owner only",
+    "source_text_in_report": false
+}

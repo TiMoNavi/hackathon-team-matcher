@@ -1,0 +1,8 @@
+{
+  "id": "comparison-native",
+  "name": "CoLab Native Theme Comparison",
+  "description": "Isolated PHP / Bootstrap home-page prototype with synthetic data.",
+  "version": "0.1.0",
+  "humhub": {"minVersion": "1.19", "maxVersion": "1.19"},
+  "authors": [{"name": "Local comparison prototype"}]
+}

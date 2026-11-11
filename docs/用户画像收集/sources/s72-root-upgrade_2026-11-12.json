@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "captured_at_utc": "2026-11-11T18:11:30+00:00",
+  "action": "upgrade",
+  "environment": "isolated_test_clone",
+  "backup_checksum_verified": false,
+  "modules": {
+    "auth-github": {
+      "enabled": true,
+      "code_version": "1.1.1",
+      "installed_version": "1.1.1"
+    },
+    "matcher-user-profile": {
+      "enabled": true,
+      "code_version": "0.9.0",
+      "installed_version": "0.9.0"
+    },
+    "matcher-profile-privacy": {
+      "enabled": true,
+      "code_version": "0.2.0",
+      "installed_version": "0.2.0"
+    },
+    "matcher-onboarding": {
+      "enabled": true,
+      "code_version": "0.3.0",
+      "installed_version": "0.3.0"
+    },
+    "matcher-github-import": {
+      "enabled": true,
+      "code_version": "0.1.1",
+      "installed_version": "0.1.1"
+    },
+    "matcher-resume-import": {
+      "enabled": true,
+      "code_version": "0.1.1",
+      "installed_version": "0.1.1"
+    },
+    "matcher-web-import": {
+      "enabled": true,
+      "code_version": "0.1.1",
+      "installed_version": "0.1.1"
+    },
+    "matcher-onboarding-ai": {
+      "enabled": true,
+      "code_version": "0.1.0",
+      "installed_version": "0.1.0"
+    },
+    "matcher-recommendation": {
+      "enabled": true,
+      "code_version": "0.2.0",
+      "installed_version": "0.2.0"
+    },
+    "matcher-ideas": {
+      "enabled": true,
+      "code_version": "0.1.0",
+      "installed_version": "0.1.0"
+    }
+  },
+  "native_rows_unchanged": true,
+  "native_row_counts": {
+    "user": 103,
+    "profile": 103,
+    "space": 4,
+    "space_membership": 126,
+    "profile_field": 31,
+    "matcher_profile_state": 223,
+    "matcher_profile_attribute": 4048,
+    "matcher_profile_revision": 220,
+    "matcher_profile_draft": 345,
+    "matcher_profile_question_batch": 0,
+    "matcher_profile_question_answer": 0,
+    "matcher_onboarding_session": 0,
+    "matcher_profile_source": 0,
+    "matcher_profile_source_snapshot": 0,
+    "matcher_profile_source_job": 0,
+    "matcher_profile_ai_job": 0
+  },
+  "profile_field_count": 31,
+  "ordinary_field_count": 37,
+  "workflow_tables": {
+    "matcher_profile_source": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_profile_source_snapshot": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_profile_source_job": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_profile_ai_job": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_recommendation_current_selection": {
+      "exists": true,
+      "rows": 1
+    },
+    "matcher_recommendation_discovery_settings": {
+      "exists": true,
+      "rows": 120
+    },
+    "matcher_profile_presentation": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_profile_relation_sharing": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_idea": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_idea_activity": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_idea_conversation": {
+      "exists": true,
+      "rows": 0
+    },
+    "matcher_idea_draft": {
+      "exists": true,
+      "rows": 0
+    }
+  },
+  "migrations": [
+    "m261111_000001_candidate_index",
+    "m261111_000001_onboarding_sessions",
+    "m261111_000001_privacy_projection",
+    "m261111_000001_profile_foundation",
+    "m261111_000002_current_event_selection",
+    "m261111_000002_profile_service",
+    "m261111_000003_policy_batch_storage",
+    "m261111_000003_profile_questions",
+    "m261111_000004_index_generation_lifecycle",
+    "m261111_000004_profile_sources",
+    "m261111_000005_profile_source_kinds",
+    "m261111_000006_profile_ai_jobs",
+    "m261112_000001_discovery_settings",
+    "m261112_000001_ideas",
+    "m261112_000002_relation_sharing",
+    "m261112_000007_profile_presentation"
+  ]
+}

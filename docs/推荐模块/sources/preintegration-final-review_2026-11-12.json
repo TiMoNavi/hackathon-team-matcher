@@ -1,0 +1,102 @@
+{
+  "scope": "Current local source hashes, targeted lint and three edited recommendation documents; no remote or ignored vendor full-tree comparison.",
+  "recommendation_existing_changes": [
+    "backend/protected/modules/matcher-recommendation/tests/conversation_integration/safety.php",
+    "backend/protected/modules/matcher-recommendation/application/ai/AiProviderRegistry.php",
+    "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+    "backend/protected/modules/matcher-recommendation-ai/Module.php"
+  ],
+  "recommendation_added_files": [
+    "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/Fixtures.php",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/legacy_snapshots.json",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/run.php",
+    "backend/protected/modules/matcher-recommendation-ai/tests/conversation_registration/run.php"
+  ],
+  "concurrent_other_changes_not_edited_by_this_task": [
+    "backend/protected/modules/matcher-user-profile/config.php",
+    "backend/protected/modules/matcher-user-profile/module.json",
+    "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileAiJobRepository.php",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfileAiJobRepository.php",
+    "backend/protected/modules/matcher-user-profile/application/ProfileSourceService.php",
+    "backend/protected/modules/matcher-user-profile/application/ProfileAiJobService.php",
+    "backend/protected/modules/matcher-user-profile/controllers/SourceController.php"
+  ],
+  "frozen_original_unchanged": true,
+  "tracked_diff_unchanged": true,
+  "git_diff_check_exit": 0,
+  "git_diff_check_output": "",
+  "php_lint": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_integration/safety.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/tests/conversation_integration/safety.php",
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/application/ai/AiProviderRegistry.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/application/ai/AiProviderRegistry.php",
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation-ai/Module.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation-ai/Module.php",
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/Fixtures.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/Fixtures.php",
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/run.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/run.php",
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation-ai/tests/conversation_registration/run.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation-ai/tests/conversation_registration/run.php",
+      "stderr": ""
+    }
+  ],
+  "broken_local_links": [],
+  "markdown_structure_errors": [],
+  "credential_pattern_file_hits": [],
+  "modified_file_sha256": {
+    "backend/protected/modules/matcher-recommendation/tests/conversation_integration/safety.php": "982414d609e403882bbe2394264cb8e3f8b198923f4fc9b3f7fbe70c9651a5bc",
+    "backend/protected/modules/matcher-recommendation/application/ai/AiProviderRegistry.php": "52269d8c22f19f805b336c9643d45071b40dcf7f6acb9b4470ed07a75c29ab95",
+    "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php": "8fb739407d46c0246a47fd4b8407a16b5baf2819894ba62b160b8f4698190a88",
+    "backend/protected/modules/matcher-recommendation-ai/Module.php": "9ec0fd03739bd93c969b9c05326f7758f1f19aedefb280944ae5e033b036df8a",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/Fixtures.php": "d65109ad891020d41794876d71a5a0a3bad16f2b8a67989def6870bee2b3e449",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/legacy_snapshots.json": "da59107ca9ce888ff6d5cff5c3fade531d2e9cc18545ff6cd751098d4a7e9be0",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/run.php": "13fba226d8f88988934748129c85995b8697e0385f839f51c6ddb014d717af40",
+    "backend/protected/modules/matcher-recommendation-ai/tests/conversation_registration/run.php": "b2bb98f5187f95551e69bec009cfc52d0f24bd112bb29116a9c0b68b15d75a21",
+    "docs/推荐模块/task.md": "d32b9167938c8c073f5a351c282190386020951a556566b84bc3bce4fb0ef295",
+    "docs/推荐模块/15_对话插件实施与验证.md": "2ecdb3aa01616ef1492a00a0394ff6920786f80e0754b5257a0efc613ccb9a58",
+    "docs/推荐模块/16_接入前缺陷修复与复审.md": "dcb5e40129f09a0893ea64124b41fa18857d2b4fb4e589d68b69b8bce3f45a18"
+  },
+  "independent_review": {
+    "result": "passed within repair and internal plugin registration scope",
+    "pre_fix_cases_failed": 3,
+    "pre_fix_implementation_sha256": "f626d8105a14254abbd81053e15fc11b0edb1442242324586677bab2e4ed94d9",
+    "post_fix_cases_passed": 21,
+    "post_fix_implementation_sha256": "8fb739407d46c0246a47fd4b8407a16b5baf2819894ba62b160b8f4698190a88",
+    "production_integration_accepted": false
+  },
+  "verification_totals": {
+    "unique_entrypoints": 14,
+    "functional_checks": 1365,
+    "independent_behavior_cases": 21,
+    "architecture_files": 81
+  }
+}

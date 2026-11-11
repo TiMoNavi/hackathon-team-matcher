@@ -1,0 +1,316 @@
+{
+  "checks": [
+    {
+      "name": "Default is a six-scene presentation",
+      "passed": true
+    },
+    {
+      "name": "Only the current scene is interactive",
+      "passed": true
+    },
+    {
+      "name": "Page turn animates with depth and fade",
+      "passed": true
+    },
+    {
+      "name": "Next updates page counter and URL",
+      "passed": true
+    },
+    {
+      "name": "One wheel gesture does not skip multiple pages",
+      "passed": true,
+      "detail": {
+        "scene": "people"
+      }
+    },
+    {
+      "name": "Keyboard page navigation works from scene focus",
+      "passed": true
+    },
+    {
+      "name": "Dialog input never turns the page",
+      "passed": true
+    },
+    {
+      "name": "Card arrow keys switch people without turning pages",
+      "passed": true
+    },
+    {
+      "name": "Typing keeps the current page",
+      "passed": true
+    },
+    {
+      "name": "Chat remains usable inside the presentation",
+      "passed": true
+    },
+    {
+      "name": "Chat scrolling never triggers a scene change",
+      "passed": true
+    },
+    {
+      "name": "Scene changes preserve selected profile source",
+      "passed": true
+    },
+    {
+      "name": "Pointer lights both the page and local card edge",
+      "passed": true
+    },
+    {
+      "name": "Footer contains six interactive portrait components",
+      "passed": true
+    },
+    {
+      "name": "Footer portrait updates its invitation",
+      "passed": true
+    },
+    {
+      "name": "Portraits gently float",
+      "passed": true
+    },
+    {
+      "name": "Global pause freezes new floating effects",
+      "passed": true
+    },
+    {
+      "name": "Footer action navigates to the correct scene while paused",
+      "passed": true
+    },
+    {
+      "name": "Browser Back restores the prior scene",
+      "passed": true
+    },
+    {
+      "name": "Viewport contains the deck at 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000
+      }
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1440 top",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1440 people",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1440 profile",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1440 recommendations",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1440 community",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1440 invitation",
+      "passed": true
+    },
+    {
+      "name": "Viewport contains the deck at 1024",
+      "passed": true,
+      "detail": {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "height": 1000,
+        "scrollHeight": 1000
+      }
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1024 top",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1024 people",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1024 profile",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1024 recommendations",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1024 community",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 1024 invitation",
+      "passed": true
+    },
+    {
+      "name": "Viewport contains the deck at 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 1000,
+        "scrollHeight": 1000
+      }
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 768 top",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 768 people",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 768 profile",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 768 recommendations",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 768 community",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 768 invitation",
+      "passed": true
+    },
+    {
+      "name": "Viewport contains the deck at 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844
+      }
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 390 top",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 390 people",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 390 profile",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 390 recommendations",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 390 community",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 390 invitation",
+      "passed": true
+    },
+    {
+      "name": "Viewport contains the deck at 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844
+      }
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 320 top",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 320 people",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 320 profile",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 320 recommendations",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 320 community",
+      "passed": true
+    },
+    {
+      "name": "Scene has accessible horizontal bounds 320 invitation",
+      "passed": true
+    },
+    {
+      "name": "Mobile menu navigates and closes",
+      "passed": true
+    },
+    {
+      "name": "Continuous reading remains available",
+      "passed": true
+    },
+    {
+      "name": "Returning to presentation keeps the selected chapter",
+      "passed": true
+    },
+    {
+      "name": "Direct URL and reduced motion are respected",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion keeps navigation without page animation",
+      "passed": true
+    },
+    {
+      "name": "Real touch swipe turns the mobile page",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "widths": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 1000,
+      "scrollHeight": 1000
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "height": 1000,
+      "scrollHeight": 1000
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "height": 1000,
+      "scrollHeight": 1000
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 844,
+      "scrollHeight": 844
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "height": 844,
+      "scrollHeight": 844
+    }
+  ],
+  "passed": true
+}

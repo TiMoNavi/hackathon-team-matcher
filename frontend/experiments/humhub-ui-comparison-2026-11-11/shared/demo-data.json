@@ -1,0 +1,90 @@
+{
+  "brand": "同频 CoLab",
+  "event": {
+    "name": "AI 创造者周末",
+    "phase": "组队进行中",
+    "city": "上海 · 线上同步",
+    "participants": 32,
+    "ideas": 8,
+    "teams": 4
+  },
+  "greeting": "找到与你同频的队友",
+  "subtitle": "让一个好想法，遇见一起把它做出来的人。",
+  "demo": true,
+  "members": [
+    {
+      "id": "lin",
+      "name": "林舟",
+      "initial": "林",
+      "role": "前端",
+      "headline": "把复杂的 AI 能力做成好用的产品",
+      "skills": [
+        "React",
+        "交互设计",
+        "AI 应用"
+      ],
+      "availability": "本周末可投入",
+      "match": 96,
+      "color": "mint"
+    },
+    {
+      "id": "xu",
+      "name": "许知夏",
+      "initial": "许",
+      "role": "设计",
+      "headline": "关注细节，也喜欢从 0 到 1 的冒险",
+      "skills": [
+        "产品设计",
+        "Figma",
+        "用户研究"
+      ],
+      "availability": "正在寻找搭档",
+      "match": 93,
+      "color": "peach"
+    },
+    {
+      "id": "chen",
+      "name": "陈予安",
+      "initial": "陈",
+      "role": "后端",
+      "headline": "让灵感跑起来，让服务稳下来",
+      "skills": [
+        "Python",
+        "FastAPI",
+        "数据工程"
+      ],
+      "availability": "可加入项目",
+      "match": 91,
+      "color": "blue"
+    },
+    {
+      "id": "zhou",
+      "name": "周芮",
+      "initial": "周",
+      "role": "产品",
+      "headline": "从真实问题出发，找到值得做的事",
+      "skills": [
+        "产品策略",
+        "增长",
+        "AI 工作流"
+      ],
+      "availability": "有一个新想法",
+      "match": 89,
+      "color": "lavender"
+    }
+  ],
+  "ideas": [
+    {
+      "title": "让第一次组队不再尴尬",
+      "category": "协作工具",
+      "description": "把自我介绍变成一场轻松、有收获的相遇。",
+      "lookingFor": "正在找前端与设计搭档"
+    },
+    {
+      "title": "给独立创作者一个 AI 搭档",
+      "category": "AI 应用",
+      "description": "整理灵感、搭起原型，把创意推进到下一步。",
+      "lookingFor": "正在找后端与产品搭档"
+    }
+  ]
+}

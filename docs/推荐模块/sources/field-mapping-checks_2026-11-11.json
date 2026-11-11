@@ -1,0 +1,202 @@
+{
+  "date": "2026-11-11",
+  "scope": "Offline metadata tests. Catalog variants are synthetic in-memory copies, no database changes or profile values. Does not test authorization, recommendation quality, normalization, enum migration or HumHub integration.",
+  "catalog": "backend/deploy/profile-fields.json",
+  "catalog_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+  "catalog_field_count": 27,
+  "config_sha256": "87bc40422bfdd539c49e513a6e358880b90e13486998425bb8d5522c9c63ea55",
+  "baseline": {
+    "metadata_valid": true,
+    "runtime_ready": false,
+    "errors": [],
+    "mapped_fields": [
+      {
+        "logical_key": "topic_text",
+        "native_internal_name": "about",
+        "field_type": "TextArea"
+      },
+      {
+        "logical_key": "profession_hint",
+        "native_internal_name": "title",
+        "field_type": "Text"
+      },
+      {
+        "logical_key": "city",
+        "native_internal_name": "city",
+        "field_type": "Text"
+      },
+      {
+        "logical_key": "country",
+        "native_internal_name": "country",
+        "field_type": "CountrySelect"
+      }
+    ],
+    "unmapped_native_fields": [
+      "birthday",
+      "email_virtual",
+      "fax",
+      "firstname",
+      "gender",
+      "im_xmpp",
+      "lastname",
+      "mobile",
+      "phone_private",
+      "phone_work",
+      "state",
+      "street",
+      "url",
+      "url_facebook",
+      "url_instagram",
+      "url_linkedin",
+      "url_mastodon",
+      "url_tiktok",
+      "url_twitter",
+      "url_vimeo",
+      "url_xing",
+      "url_youtube",
+      "zip"
+    ],
+    "runtime_prerequisites_not_validated": [
+      "server-verified current event and active memberships",
+      "confirmed authenticated projection and per-value authorization",
+      "relationship exclusions, blocks and contact-source checks",
+      "read-time and asynchronous version/permission revalidation"
+    ]
+  },
+  "checks": [
+    {
+      "name": "baseline_installed_27_field_catalog",
+      "expected_metadata_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "rename_display_title_preserves_mapping",
+      "expected_metadata_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "new_field_stays_unmapped",
+      "expected_metadata_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "explicit_new_field_binding_accepts_metadata_only",
+      "expected_metadata_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "mapped_field_deleted_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "mapped field missing: about"
+      ]
+    },
+    {
+      "name": "mapped_field_internal_name_changed_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "mapped field missing: about"
+      ]
+    },
+    {
+      "name": "explicit_internal_name_remap_accepts_metadata_only",
+      "expected_metadata_valid": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "mapped_type_changed_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "field type changed: about"
+      ]
+    },
+    {
+      "name": "mapped_native_visibility_revoked_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "native field is not visible: about"
+      ]
+    },
+    {
+      "name": "phone_field_binding_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "excluded native field: phone_private"
+      ]
+    },
+    {
+      "name": "unknown_transformer_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "unsupported normalizer/type: about"
+      ]
+    },
+    {
+      "name": "candidate_budget_overrun_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "invalid or excessive limit: candidate_limit"
+      ]
+    },
+    {
+      "name": "invalid_weights_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "weights must name four policy dimensions and sum to 1"
+      ]
+    },
+    {
+      "name": "nonfinite_weights_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "weights must name four policy dimensions and sum to 1"
+      ]
+    },
+    {
+      "name": "unknown_configuration_key_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "unexpected or missing top-level keys"
+      ]
+    },
+    {
+      "name": "runtime_activation_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "this experiment cannot activate a runtime plugin"
+      ]
+    },
+    {
+      "name": "duplicate_binding_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "invalid or duplicate logical_key: topic_text"
+      ]
+    },
+    {
+      "name": "misordered_limits_rejected",
+      "expected_metadata_valid": false,
+      "passed": true,
+      "errors": [
+        "candidate limits must be ordered"
+      ]
+    }
+  ]
+}

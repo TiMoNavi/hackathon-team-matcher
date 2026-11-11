@@ -1,0 +1,218 @@
+[
+    {
+        "internal_name": "firstname",
+        "title": "First name",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": 1,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "lastname",
+        "title": "Last name",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": 1,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "title",
+        "title": "Title",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "gender",
+        "title": "Gender",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Select",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "street",
+        "title": "Street",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "zip",
+        "title": "Zip",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "city",
+        "title": "City",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "country",
+        "title": "Country",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\CountrySelect",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "state",
+        "title": "State",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "birthday",
+        "title": "Birthday",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Birthday",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "about",
+        "title": "About",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\TextArea",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "phone_private",
+        "title": "Phone Private",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "phone_work",
+        "title": "Phone Work",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "mobile",
+        "title": "Mobile",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "email_virtual",
+        "title": "E-Mail",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\UserEmail",
+        "required": 0,
+        "visible": 0,
+        "editable": 0
+    },
+    {
+        "internal_name": "fax",
+        "title": "Fax",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "im_xmpp",
+        "title": "XMPP Jabber Address",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url",
+        "title": "Website URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_facebook",
+        "title": "Facebook URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_linkedin",
+        "title": "LinkedIn URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_instagram",
+        "title": "Instagram URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_xing",
+        "title": "Xing URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_youtube",
+        "title": "Youtube URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_vimeo",
+        "title": "Vimeo URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_tiktok",
+        "title": "TikTok URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_twitter",
+        "title": "Twitter URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    },
+    {
+        "internal_name": "url_mastodon",
+        "title": "Mastodon URL",
+        "field_type_class": "humhub\\modules\\user\\models\\fieldtype\\Text",
+        "required": null,
+        "visible": 1,
+        "editable": 1
+    }
+]

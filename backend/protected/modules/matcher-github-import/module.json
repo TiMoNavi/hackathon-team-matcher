@@ -1,0 +1,9 @@
+{
+  "id": "matcher-github-import",
+  "name": "GitHub 个人资料导入",
+  "description": "从已验证的 GitHub 登录关联读取本人公开资料，转换为私有结构化文本和待核对候选。",
+  "version": "0.1.1",
+  "humhub": {"minVersion": "1.19.4", "modules": {"matcher-user-profile": {"minVersion": "0.5.0"}, "auth-github": {"minVersion": "1.1.1"}}},
+  "keywords": ["github", "profile", "import"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

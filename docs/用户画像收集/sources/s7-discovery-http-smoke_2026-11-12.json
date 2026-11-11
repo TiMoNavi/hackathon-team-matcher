@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-11-12",
+  "status": "passed",
+  "checks": 22,
+  "command": [
+    "python3",
+    "backend/protected/modules/matcher-recommendation/tests/browse/http_smoke.py",
+    "--settings-put"
+  ],
+  "exit_code": 0,
+  "origin": "http://127.0.0.1:8098",
+  "synthetic_person_number": 82,
+  "scope": "synthetic loopback root clone; profiles and discovery consent unchanged; person 082 settings version incremented once by a same-value PUT",
+  "responses_by_status": {
+    "200": 9,
+    "409": 5,
+    "400": 1,
+    "422": 5,
+    "404": 2
+  },
+  "error_codes": [
+    "CONTEXT_CHANGED",
+    "CURRENT_EVENT_MISMATCH",
+    "CURRENT_EVENT_REQUIRED",
+    "DISCOVERY_PERSON_NOT_FOUND",
+    "DISCOVERY_VERSION_CONFLICT",
+    "INVALID_DISCOVERY_QUERY",
+    "INVALID_REQUEST",
+    "NOT_FOUND",
+    "UNKNOWN_QUERY_FIELD"
+  ],
+  "covered_endpoints": [
+    "GET/PUT /api/v1/me/current-event",
+    "GET/PUT /api/v1/me/events/{spaceId}/discovery-settings",
+    "GET /api/v1/events/{spaceId}/discovery",
+    "GET /api/v1/events/{spaceId}/discovery/people/{ownerId}"
+  ],
+  "security_checks": [
+    "CSRF required for selection PUT",
+    "stale selection revision rejected",
+    "stale settings version rejected",
+    "query spaceId/ownerId cannot override route",
+    "cross-Space list and detail rejected",
+    "unknown owner API remains guarded",
+    "JSON object cannot masquerade as code array"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "V3",
+  "date": "2026-11-12",
+  "widths": [
+    {
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "allSectionHeadingsReadable": true,
+  "errors": [],
+  "passed": true
+}

@@ -1,0 +1,205 @@
+[
+  {
+    "slug": "frost-cloud",
+    "source": "vendor/affectui/affectui-illustrations/frost-cloud.tsx",
+    "url": "https://www.affectui.com/illustrations/frost-cloud",
+    "sha256": "1349691ff4e2ce025b20df3f09c26270e59112556027855577f26b9833d05ddd",
+    "modified": false
+  },
+  {
+    "slug": "glow-keyboard",
+    "source": "vendor/affectui/affectui-illustrations/glow-keyboard.tsx",
+    "url": "https://www.affectui.com/illustrations/glow-keyboard",
+    "sha256": "3832ecf2454f633cabfe6c2f54f473645ce9ae95d4997f1f9094d31dbe9850cc",
+    "modified": false
+  },
+  {
+    "slug": "enrichment-orbit",
+    "source": "vendor/affectui/affectui-illustrations/enrichment-orbit.tsx",
+    "url": "https://www.affectui.com/illustrations/enrichment-orbit",
+    "sha256": "300cd510c1ded928ce02a20225684e47e4c80709b7b4fad861e648420320664d",
+    "modified": false
+  },
+  {
+    "slug": "agent-gallery",
+    "source": "vendor/affectui/affectui-blocks/agent-gallery.tsx",
+    "url": "https://www.affectui.com/blocks/agent-gallery",
+    "sha256": "04159306470555a5d76e9db5d83117f8b3266e7bd5f6ff90a2404b4a53b6e681",
+    "modified": false
+  },
+  {
+    "slug": "gradient-floor",
+    "source": "vendor/affectui/affectui-motion/gradient-floor.tsx",
+    "url": "https://www.affectui.com/motion/gradient-floor",
+    "sha256": "df01c384627d3c66b2fa91ed3981212c71832124f92b4f0262d4937359c400d9",
+    "modified": false
+  },
+  {
+    "slug": "onboarding-website",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/screens/onboarding-website",
+    "sha256": "fd1f21028f07681af701c3a54fe89f808fdde7626cb5923069dc492e640d3cdf",
+    "modified": false
+  },
+  {
+    "slug": "onboarding-brand",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/screens/onboarding-brand",
+    "sha256": "8d3565c9932a7bfbf056b62badbc6523552d38e5ef2daedf3cc77c03a448fc9f",
+    "modified": false
+  },
+  {
+    "slug": "onboarding-tone",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/screens/onboarding-tone",
+    "sha256": "53b42fee1adb37c7fca4f9becc9b1ed85d117f555ca0a028d2288ff5efd7de0f",
+    "modified": false
+  },
+  {
+    "slug": "onboarding-ready",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/screens/onboarding-ready",
+    "sha256": "b975c6fba5a957221bac637d2494bfa6f5ec478c1296f2d3dd51a0fe28c1eb18",
+    "modified": false
+  },
+  {
+    "slug": "glow-cloud",
+    "source": "vendor/affectui/affectui-illustrations/glow-cloud.tsx",
+    "url": "https://www.affectui.com/illustrations/glow-cloud",
+    "sha256": "5c2602055a147dd94df18e22040ead1cbc00c4990a5b17ba7e576d60766b98db",
+    "modified": false
+  },
+  {
+    "slug": "glass-folder",
+    "source": "vendor/affectui/affectui-illustrations/glass-folder.tsx",
+    "url": "https://www.affectui.com/illustrations/glass-folder",
+    "sha256": "96edbd88efd40e771822737e0b4f21c0f05cce33e081bc6005be542bbb71d02f",
+    "modified": false
+  },
+  {
+    "slug": "integration-beam",
+    "source": "vendor/affectui/affectui-illustrations/integration-beam.tsx",
+    "url": "https://www.affectui.com/illustrations/integration-beam",
+    "sha256": "7782094da606b8ea48f88e980ab26e88e8f0863e0de57e54d9919dc575ede41a",
+    "modified": false
+  },
+  {
+    "slug": "integration-flow",
+    "source": "vendor/affectui/affectui-illustrations/integration-flow.tsx",
+    "url": "https://www.affectui.com/illustrations/integration-flow",
+    "sha256": "69899f4d8ef2f10b6319933dad09b97df500a6faacdea36f61194ecda896ccca",
+    "modified": false
+  },
+  {
+    "slug": "agent-team",
+    "source": "vendor/affectui/affectui-illustrations/agent-team.tsx",
+    "url": "https://www.affectui.com/illustrations/agent-team",
+    "sha256": "c71ab9db185df7a26e7720c4efdf5aa2b2af76df4ad59edc14eef2415ffcf2af",
+    "modified": false
+  },
+  {
+    "slug": "project-flow",
+    "source": "vendor/affectui/affectui-illustrations/project-flow.tsx",
+    "url": "https://www.affectui.com/illustrations/project-flow",
+    "sha256": "1192851eb8b7b32910bc7a9306a8bd7496329ea35fecce26e8e100a6ede6e473",
+    "modified": false
+  },
+  {
+    "slug": "layer-stack",
+    "source": "vendor/affectui/affectui-illustrations/layer-stack.tsx",
+    "url": "https://www.affectui.com/illustrations/layer-stack",
+    "sha256": "16e58a7bfcb52c9f671368db9441053d92eac7d013d8e5195b1dcd9cea2a3f09",
+    "modified": false
+  },
+  {
+    "slug": "cover-flow",
+    "source": "vendor/affectui/affectui-illustrations/cover-flow.tsx",
+    "url": "https://www.affectui.com/illustrations/cover-flow",
+    "sha256": "859cd5f25dee868a7b26a9b30cc2a70d72fcc85eb0bbe70b11ee0a1a80675f46",
+    "modified": false
+  },
+  {
+    "slug": "team-invite",
+    "source": "vendor/affectui/affectui-illustrations/team-invite.tsx",
+    "url": "https://www.affectui.com/illustrations/team-invite",
+    "sha256": "975e8e7f198a43a310dbedf97d81244965232dcc68a0f53f5b90b0c7a5254906",
+    "modified": false
+  },
+  {
+    "slug": "blur-crossfade",
+    "source": "vendor/affectui/affectui-motion/blur-crossfade.tsx",
+    "url": "https://www.affectui.com/motion/blur-crossfade",
+    "sha256": "2cff559cbf363731894c1a2f97d17c625772102db3f2b9b0776571ba26b58cf2",
+    "modified": false
+  },
+  {
+    "slug": "tilt-card",
+    "source": "vendor/affectui/affectui-motion/tilt-card.tsx",
+    "url": "https://www.affectui.com/motion/tilt-card",
+    "sha256": "69c24693d70581fbf169e71eedc4318897302539fb0a0f5cbc46c719d913d7ba",
+    "modified": false
+  },
+  {
+    "slug": "gradient-text",
+    "source": "vendor/affectui/affectui-motion/gradient-text.tsx",
+    "url": "https://www.affectui.com/motion/gradient-text",
+    "sha256": "45e5c18b337ce322268f821185b5e384e20a953ee2af0b652c1d7646957659ef",
+    "modified": false
+  },
+  {
+    "slug": "text-reveal",
+    "source": "vendor/affectui/affectui-motion/text-reveal.tsx",
+    "url": "https://www.affectui.com/motion/text-reveal",
+    "sha256": "9b3aefc8310c71fd66f3d9dc29779ebaf6c0e064766ff6619c8fedb84121ee19",
+    "modified": false
+  },
+  {
+    "slug": "grid-background",
+    "source": "vendor/affectui/affectui-motion/grid-background.tsx",
+    "url": "https://www.affectui.com/motion/grid-background",
+    "sha256": "c9c7936cffc22cf08f3c786ad2f09509ada9f2901aed0a89ceaa0037f43ae394",
+    "modified": false
+  },
+  {
+    "slug": "writing-assistant",
+    "source": "vendor/affectui/affectui-components/writing-assistant.tsx",
+    "url": "https://www.affectui.com/components/writing-assistant",
+    "sha256": "4585452a0e83597df3580592f639d5e7a6fee6c9d8cdbb5487d19614911f4258",
+    "modified": false
+  },
+  {
+    "slug": "prompt-library",
+    "source": "vendor/affectui/affectui-components/prompt-library.tsx",
+    "url": "https://www.affectui.com/components/prompt-library",
+    "sha256": "53cd825a64a7ad37ba0c054d830d177f42553676f521af253a9cd9063ce9cb89",
+    "modified": false
+  },
+  {
+    "slug": "dropzone",
+    "source": "vendor/affectui/affectui-components/dropzone.tsx",
+    "url": "https://www.affectui.com/components/dropzone",
+    "sha256": "2cf74d9a02229aea74489e11af3699f893e5f1f4ca6ceda6f8a769d18121ba0f",
+    "modified": false
+  },
+  {
+    "slug": "decision-card",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/components/decision-card",
+    "sha256": "ac4c425ba3e451790f24bee6336a50bf47b25ab6c9793eb6ccbae02cd8891e46",
+    "modified": false
+  },
+  {
+    "slug": "agent-trail",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/components/agent-trail",
+    "sha256": "2968a4a3254a691f8afa1c7d26fb1732db1b1ee63091f2adb47b08c37ad474b3",
+    "modified": false
+  },
+  {
+    "slug": "tag-input",
+    "source": "AffectUI MCP get_source, 2026-11-12",
+    "url": "https://www.affectui.com/components/tag-input",
+    "sha256": "a5630de00b0fd1463d51086e4314266232cd9cc9f60e57c3a7ac5f5fc3c6c4aa",
+    "modified": false
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-11-12",
+  "status": "passed",
+  "checks": 30,
+  "command": [
+    "backend/.runtime/php-mysql/bin/php",
+    "-c",
+    "backend/.runtime/php.ini",
+    "backend/protected/modules/matcher-recommendation/tests/browse/routes.php"
+  ],
+  "exit_code": 0,
+  "database_calls": 0,
+  "llm_calls": 0,
+  "scope": "Real Yii URL rules from P1 and recommendation, both registration orders, 15 paths each",
+  "coverage": [
+    "four ordinary discovery endpoints",
+    "existing profile and current-Space context routes",
+    "privacy/contact/source/AI capability routes",
+    "unknown paths and extra suffixes remain P1 not-found"
+  ]
+}

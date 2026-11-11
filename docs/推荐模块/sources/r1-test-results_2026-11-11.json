@@ -1,0 +1,577 @@
+{
+  "date": "2026-11-11",
+  "scope": "R1 pure use cases with synthetic adapters and isolated native registration, not real HTTP/database or production ranking acceptance.",
+  "network_restriction_flags": [
+    "-n",
+    "-d",
+    "allow_url_fopen=0",
+    "-d",
+    "disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec"
+  ],
+  "suites": {
+    "r0_contracts": {
+      "command": "backend/.runtime/php-mysql/bin/php -n -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "phase": "R0 synthetic contracts only",
+        "checks": 57,
+        "database_calls": 0,
+        "network_calls": 0,
+        "model_calls": 0,
+        "production_adapters_executed": false,
+        "checks_passed": [
+          "server-selected Space accepted",
+          "requested other Space rejected",
+          "DTO construction is not authorization",
+          "invalid actor ID rejected",
+          "global Space and identity versions remain separate",
+          "evidence retains stable attribute ID",
+          "unknown feature stays explicit",
+          "another candidate evidence rejected",
+          "cross-Space versions rejected",
+          "stale evidence revision rejected",
+          "stale evidence permission version rejected",
+          "known feature cannot also be unknown",
+          "unknown null cannot masquerade as known evidence",
+          "idea cannot reuse person evidence type",
+          "explicit hard requirement retained",
+          "AI draft cannot self-confirm hard requirement",
+          "interpreted soft preference retained",
+          "query cannot carry injected activity authority",
+          "unknown target type rejected",
+          "recursive JSON array rejected before recursive walk",
+          "excessive JSON depth rejected",
+          "nested object is not plain JSON transport data",
+          "200-ID batch accepted",
+          "201-ID batch rejected",
+          "duplicate candidate IDs rejected",
+          "empty explicit batch remains empty",
+          "purpose allowlist excludes authenticated contacts and unmapped fields",
+          "private and draft values excluded by fake projection",
+          "new catalog field stays disabled regardless of catalog order",
+          "renamed source is inactive until its binding is explicitly updated",
+          "explicit new binding restores the same logical feature",
+          "field catalog schema can change independently",
+          "empty ID request never becomes all users",
+          "person reader rejects idea target",
+          "dependency failure is not empty success",
+          "membership change invalidates old context despite unchanged P1 versions",
+          "current relationships remain available without AI-only history",
+          "missing history is not an all-false history map",
+          "idea candidates use separate projection and evidence",
+          "idea reader rejects person target",
+          "relationship reader preserves empty request",
+          "relationship reader never returns an unrequested candidate",
+          "idea reader never returns an unrequested candidate",
+          "relationship reader rejects idea target",
+          "idea reader rejects cross-Space context",
+          "relationship reader rejects cross-Space context",
+          "idea reader rejects stale access context",
+          "relationship reader rejects stale access context",
+          "autoload CurrentEventAccess",
+          "autoload ProfileFieldCatalog",
+          "autoload CandidateProjectionReader",
+          "autoload ContactEligibilityReader",
+          "autoload AuthorizedIdeaReader",
+          "autoload IdeaCandidateProjectionReader",
+          "autoload CandidateRetriever",
+          "autoload QueryInterpreter",
+          "autoload CandidateReranker"
+        ]
+      },
+      "stderr": ""
+    },
+    "r1_unit": {
+      "command": "backend/.runtime/php-mysql/bin/php -n -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec backend/protected/modules/matcher-recommendation/tests/unit/run.php",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "phase": "R1 pure use case with synthetic adapters",
+        "checks": 102,
+        "source_files_checked": 27,
+        "database_calls": 0,
+        "network_calls": 0,
+        "model_calls": 0,
+        "production_adapters_executed": false,
+        "production_rule_evaluator_implemented": false,
+        "checks_passed": [
+          "descending scores and stable ID tie break",
+          "self is removed before profile reading",
+          "blocked candidate never reaches evaluator",
+          "ordinary discovery preserves incoming outgoing and friend states",
+          "ordinary discovery does not require AI sent-history capability",
+          "exact hard and soft query plus active policy reach evaluator",
+          "recall route rank reaches evaluator without being discarded",
+          "optional unknown information preserved",
+          "result reasons refer to authorized candidate",
+          "context and selected projections rechecked before result",
+          "batch storage receives returned snapshot",
+          "batch expiry is 15 minutes",
+          "batch stores IDs hashes and versions without profile or query payload",
+          "same query uses deterministic score order",
+          "injected clock controls time",
+          "empty recall remains a true empty result",
+          "empty recall does not trigger full activity fallback",
+          "self-only recall is empty",
+          "missing authorized projections never fabricate candidates",
+          "blocked-only pool remains empty",
+          "unmet explicit hard condition stays hard and produces zero matches",
+          "unknown hard requirement is not assumed satisfied",
+          "events failure propagates rather than becoming empty success",
+          "events failure propagates rather than becoming empty success: no successful batch persisted",
+          "retriever failure propagates rather than becoming empty success",
+          "retriever failure propagates rather than becoming empty success: no successful batch persisted",
+          "profiles failure propagates rather than becoming empty success",
+          "profiles failure propagates rather than becoming empty success: no successful batch persisted",
+          "relationships failure propagates rather than becoming empty success",
+          "relationships failure propagates rather than becoming empty success: no successful batch persisted",
+          "rules failure propagates rather than becoming empty success",
+          "rules failure propagates rather than becoming empty success: no successful batch persisted",
+          "policies failure propagates rather than becoming empty success",
+          "policies failure propagates rather than becoming empty success: no successful batch persisted",
+          "batches failure propagates rather than becoming empty success",
+          "batches failure propagates rather than becoming empty success: no successful batch persisted",
+          "missing evaluator has no implicit test fallback",
+          "person use case rejects idea target",
+          "other current Space is not accepted",
+          "unconnected selected-self context is explicitly rejected",
+          "unconnected current-idea context is explicitly rejected",
+          "unsupported contextual inputs never run partial discovery",
+          "malicious context cannot replace viewer",
+          "malicious context cannot replace viewer: no successful batch persisted",
+          "recall cannot change target type",
+          "recall cannot change target type: no successful batch persisted",
+          "person IDs must be canonical to exclude self safely",
+          "person IDs must be canonical to exclude self safely: no successful batch persisted",
+          "duplicate recall IDs rejected",
+          "duplicate recall IDs rejected: no successful batch persisted",
+          "recall cannot attach arbitrary profile payload",
+          "recall cannot attach arbitrary profile payload: no successful batch persisted",
+          "unknown recall route rejected",
+          "unknown recall route rejected: no successful batch persisted",
+          "fulltext route rank limit enforced",
+          "fulltext route rank limit enforced: no successful batch persisted",
+          "more than 200 recalled candidates rejected",
+          "more than 200 recalled candidates rejected: no successful batch persisted",
+          "structured route count limit enforced",
+          "structured route count limit enforced: no successful batch persisted",
+          "unrequested projection rejected",
+          "unrequested projection rejected: no successful batch persisted",
+          "cross-Space projection rejected",
+          "cross-Space projection rejected: no successful batch persisted",
+          "duplicate projection rejected",
+          "duplicate projection rejected: no successful batch persisted",
+          "idea projection cannot masquerade as person",
+          "idea projection cannot masquerade as person: no successful batch persisted",
+          "incomplete current relationships do not imply permission",
+          "incomplete current relationships do not imply permission: no successful batch persisted",
+          "relationship facts require explicit booleans",
+          "relationship facts require explicit booleans: no successful batch persisted",
+          "foreign relationship subjects rejected",
+          "foreign relationship subjects rejected: no successful batch persisted",
+          "activity revoked during recall rejects stale context",
+          "activity revoked during recall rejects stale context: no successful batch persisted",
+          "activity revoked during evaluation never publishes result",
+          "activity revoked during evaluation never publishes result: no successful batch persisted",
+          "evaluator cannot cite evidence outside supplied projection",
+          "evaluator cannot cite evidence outside supplied projection: no successful batch persisted",
+          "positive result without evidence rejected",
+          "positive result without evidence rejected: no successful batch persisted",
+          "policy change during query rejects stale scoring",
+          "policy change during query rejects stale scoring: no successful batch persisted",
+          "revoked final projection reduces result count without refilling",
+          "changed profile revision removes stale reason",
+          "same projection values with reordered feature scope and nested map keys stay eligible",
+          "actual projection value change still invalidates stale evidence",
+          "ordered list value changes are not normalized away",
+          "policy map key order alone does not invalidate scoring",
+          "map to list semantic change remains a policy change",
+          "map to list semantic change remains a policy change: no successful batch persisted",
+          "query hash is stable across equivalent condition and policy map key order",
+          "canonical query hash preserves associative map versus list semantics",
+          "late block removes candidate without historical filtering",
+          "late non-blocking relationship change is displayed without hiding person",
+          "new catalog feature remains absent until explicitly mapped",
+          "explicit metadata binding enables only its logical feature",
+          "renamed source does not silently replace missing binding",
+          "explicit remapping restores logical feature without original column dependency",
+          "all route ranks remain available for future RRF evaluator",
+          "pure source dependency scan covers contracts domain and application"
+        ]
+      },
+      "stderr": ""
+    },
+    "native_registration": {
+      "command": "backend/.runtime/php-mysql/bin/php -n -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "phase": "R1 native registration only",
+        "checks": 24,
+        "passed": [
+          "config can load without an application or current user",
+          "manifest and configuration IDs agree",
+          "native namespace is explicit",
+          "R1 exposes no public API or automatic request hooks",
+          "native dependency parser requires P1 and no AI or rest module",
+          "local supported HumHub baseline is explicit",
+          "real ModuleManager accepts the module configuration",
+          "unenabled module remains dormant",
+          "native manager registers namespace alias",
+          "in-memory activation registers the module in Yii",
+          "actual recommendation Module loads",
+          "module inherits the actual HumHub base class",
+          "native module base path matches its independent directory",
+          "native module reads its own manifest",
+          "native settings component remains lazy",
+          "production service is unavailable until explicitly wired",
+          "missing production dependencies fail explicitly",
+          "registration does not load P1 or its native-controller overrides",
+          "registration does not need an AI module",
+          "host explicitly injects the complete application service",
+          "registered module executes the synthetic rule use case",
+          "ordinary discovery does not need AI contact-history capability",
+          "executing injected pure service keeps native settings lazy",
+          "configuration and registration never access the database"
+        ],
+        "database_calls": 0,
+        "model_calls": 0,
+        "production_configuration_loaded": false,
+        "persistent_enable_called": false,
+        "http_or_database_integration_test": false
+      },
+      "stderr": ""
+    },
+    "architecture": {
+      "command": "backend/.runtime/php-mysql/bin/php -n -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec backend/protected/modules/matcher-recommendation/tests/architecture/run.php",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "scope": "Static direct dependencies and I/O calls in pure layers; not a security sandbox.",
+        "files_checked": 27,
+        "files": [
+          "application/DiscoverPeople.php",
+          "contracts/CandidateProjection.php",
+          "contracts/CandidateRequest.php",
+          "contracts/ContractShape.php",
+          "contracts/CurrentEventContext.php",
+          "contracts/EvidenceRef.php",
+          "contracts/ProjectionVersions.php",
+          "contracts/QueryIntent.php",
+          "contracts/ports/AuthorizedIdeaReader.php",
+          "contracts/ports/CandidateProjectionReader.php",
+          "contracts/ports/CandidateReranker.php",
+          "contracts/ports/CandidateRetriever.php",
+          "contracts/ports/Clock.php",
+          "contracts/ports/ContactEligibilityReader.php",
+          "contracts/ports/CurrentEventAccess.php",
+          "contracts/ports/DiscoveryBatchStore.php",
+          "contracts/ports/IdeaCandidateProjectionReader.php",
+          "contracts/ports/PolicyStore.php",
+          "contracts/ports/ProfileFieldCatalog.php",
+          "contracts/ports/QueryInterpreter.php",
+          "contracts/ports/RuleEvaluator.php",
+          "domain/DiscoveryBatch.php",
+          "domain/DiscoveryMatch.php",
+          "domain/DiscoveryResult.php",
+          "domain/MatchReason.php",
+          "domain/RuleAssessment.php",
+          "domain/RulePolicy.php"
+        ],
+        "violations": []
+      },
+      "stderr": ""
+    }
+  },
+  "php_lint": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/Module.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/application/DiscoverPeople.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/config.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/QueryIntent.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/AuthorizedIdeaReader.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateReranker.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateRetriever.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/Clock.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ContactEligibilityReader.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/DiscoveryBatchStore.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/IdeaCandidateProjectionReader.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/PolicyStore.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/QueryInterpreter.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/RuleEvaluator.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryBatch.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryMatch.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryResult.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/MatchReason.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/RuleAssessment.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/RulePolicy.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/architecture/run.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/support/FixtureEnvironment.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/support/autoload.php",
+      "exit_code": 0
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/unit/run.php",
+      "exit_code": 0
+    }
+  ],
+  "r0_source_files_unchanged": true,
+  "module_files_not_ignored": true,
+  "source_files": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/Module.php",
+      "sha256": "4e9d1105dd9c55a864f247078dc8a049c4858e78a87b0a7c2db5b57acf83ee0b"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/application/DiscoverPeople.php",
+      "sha256": "b4b4e62ea5fe158ca6158a47eb5c6f7c82cebf88db490cd027b9d07dec09cc57"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/config.php",
+      "sha256": "5aa7566d3372394c27ae901a1c40d960c55954152cf8bf99b5d42a8e929acc62"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php",
+      "sha256": "d1747bf334798551c2392ab8fa9a87c6ad3b2bb99b696cb0715c0647e764dcf9"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php",
+      "sha256": "332d18b999fcd8c4dfeed5f8863960a55d8638972beb3693cc977bada7acfb7a"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php",
+      "sha256": "fdb54ede239dd1e2238a9510b4a9dd36e2c150fa1542831e8f77314febb930c2"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php",
+      "sha256": "ba99b81d94a2cb5ef2bdc27b934470b51e445a14e7ee6b700df712990ccc01a3"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php",
+      "sha256": "2fad64568663587c896b811f5a089b56f003e037786286ec398a6d86214c1b55"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php",
+      "sha256": "c3599d0b00cbf5543d99d1c646de71d904d1725ae6938b26f9d158afcfc4cbbc"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/QueryIntent.php",
+      "sha256": "dab642675129e9012d48837f5eea5fffc66c51b79cf23cb5280246ac680b3016"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/AuthorizedIdeaReader.php",
+      "sha256": "6cb82159f764fb144c9f3d3b54af817643a1191d8ebdfb11dda21b62837a4b48"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php",
+      "sha256": "f745b33212fa4ba6f475f39ff5a84ea75e47f069726d5a6c989c7ed3c3e641ae"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateReranker.php",
+      "sha256": "7cca37ee78e027b463a4952022da7df20d8a4694ba26c29ab3d8f16f490cc671"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateRetriever.php",
+      "sha256": "c34202bdf6bf58a860a625c791afc2b9bbb939463e0739fa31ff919ea4286a30"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/Clock.php",
+      "sha256": "5cf7add2b300d68ef8a94b4246cd6767c0bdf5fe44fff06caaffd20f61ac5c05"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ContactEligibilityReader.php",
+      "sha256": "d4301d0bc46272a624c26d1491a8373eed6a2bfeb06c3d2578b276fe6bb495a1"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php",
+      "sha256": "eae43c8748b0eea1f737bf836b9f89bf98a81f3768371548845188392a1c572d"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/DiscoveryBatchStore.php",
+      "sha256": "0d5f4799b6b780a0e1dc45dd01069a03ae7bac275b65e54263ed5d1595e11728"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/IdeaCandidateProjectionReader.php",
+      "sha256": "9fc5157d4f39485c020d6db1a5535e284c42664f0f5a9ba69b9d4b17c062b08d"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/PolicyStore.php",
+      "sha256": "c984c9d0db38631abb7be125bb01d52834a33462e5e31059cb5a2f40ab998602"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php",
+      "sha256": "a04be6f1b03e585f1293bd9968825cf191459910cd57e094fcec31b1b8aff4ee"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/QueryInterpreter.php",
+      "sha256": "90ef9de424415533d2eba52e5bb57f1515dc5447a43f65c062e1a65f317cf7d4"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/RuleEvaluator.php",
+      "sha256": "f1d1e66b0d803bb1ec484823fd0b7e9c0d7ce5c7c367bd219d55a2629b6d2e58"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryBatch.php",
+      "sha256": "17324b9cd41b43863cd836dead3d71440c9689eb15645871ab5c008a422c71b8"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryMatch.php",
+      "sha256": "2dff8e50ff18a79168d17d259667f40247597e84ca6c5de32733aa670fe1037d"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryResult.php",
+      "sha256": "b80590f2589463ecd3eeda0579a713126e2b27484707be23090f6e0021d0fb1e"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/MatchReason.php",
+      "sha256": "231cc7eef38095af7a338ddccb00fd1d049f4064873ab4c8e2cb756e5b5a0570"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/RuleAssessment.php",
+      "sha256": "bcbacde6fefb94392012ce2c6b144f5337556d65dec4b49540e1ce89cb582ff9"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/RulePolicy.php",
+      "sha256": "3996d483c6151815d5fa0064a2df289afa80557a4cb66e2c286e822554ccaf3b"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/module.json",
+      "sha256": "1727998c6942c64679d4eba65332d0686dd469b201b68a8d405aab53b40e5ecd"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/architecture/run.php",
+      "sha256": "69677e2e2fa74bc944e99414025e5f0a08c248b1b3e1128a9fd9c311eb335fae"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+      "sha256": "ed1e40d82b24a63875e6021433800f9e2979c349b2bf2b012a980f888db08e45"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+      "sha256": "8c449655a0403f45b314c2931f4d804b87d916023cc64318899ca6804342acfa"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/support/FixtureEnvironment.php",
+      "sha256": "77f9ab53138466b0f6afca0e11dd753ff71c9e9660855b7c5d32f97b8b43da4c"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/support/autoload.php",
+      "sha256": "8de94996a9980d884f821c097829bb76437580399319d1d9c15a905955be0d31"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/unit/run.php",
+      "sha256": "dfa225b1e5a02b8a27a9eb439788fd58f8e1ca7855869e68b850feda9b32b8b2"
+    }
+  ]
+}

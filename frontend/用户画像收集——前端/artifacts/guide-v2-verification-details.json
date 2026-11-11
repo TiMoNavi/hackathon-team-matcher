@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-11-11T18:58:17.513Z",
+  "phase": "details",
+  "passed": true,
+  "checks": [
+    "Open settings remains within 320px and 390px viewports",
+    "Conversation composer remains visible with a scrollable message area",
+    "One mascot animates from reader position into the assistant avatar",
+    "Scrolling a long plan clips its avatar outside the message area",
+    "Actual English display, body and visible Chinese glyph fonts are recorded"
+  ],
+  "views": [],
+  "errors": [],
+  "motion": [
+    {
+      "at": 242,
+      "x": 251.83128356933594,
+      "y": 329.670166015625,
+      "width": 300
+    },
+    {
+      "at": 542.7000000029802,
+      "x": 299.6712951660156,
+      "y": 338.18853759765625,
+      "width": 299.9999694824219
+    },
+    {
+      "at": 798.4000000059605,
+      "x": 302.95196533203125,
+      "y": 338.772705078125,
+      "width": 98.03125
+    },
+    {
+      "at": 1045.800000011921,
+      "x": 303,
+      "y": 338.78125,
+      "width": 77.34375
+    },
+    {
+      "at": 1295.800000011921,
+      "x": 303,
+      "y": 338.78125,
+      "width": 76
+    },
+    {
+      "at": 1539.800000011921,
+      "x": 303,
+      "y": 338.78125,
+      "width": 76
+    },
+    {
+      "at": 1828.2000000029802,
+      "x": 303,
+      "y": 338.78125,
+      "width": 76
+    },
+    {
+      "at": 2094.800000011921,
+      "x": 303,
+      "y": 338.78125,
+      "width": 76
+    },
+    {
+      "at": 2383.9000000059605,
+      "x": 303,
+      "y": 338.78125,
+      "width": 76
+    }
+  ],
+  "fonts": {
+    "display": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 16
+      }
+    ],
+    "body": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 4
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 24
+      }
+    ],
+    "chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 1
+      }
+    ]
+  }
+}

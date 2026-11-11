@@ -1,0 +1,84 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/srbhr/Resume-Matcher/950b700b3cc84ba8543e954d4212d7c375b09a27/apps/backend/app/services/parser.py",
+    "lines": 1067,
+    "snippets": [
+      {
+        "line": 964,
+        "text": "    \"\"\"Validate that parsed output is a schema-valid, non-empty resume.\"\"\"\n    parsed_data = ResumeData.model_validate(result).model_dump()\n    if not has_meaningful_resume_content(parsed_data):\n        raise ValueError(\"LLM returned an empty structured resume.\")"
+      },
+      {
+        "line": 1029,
+        "text": "\nasync def parse_resume_to_json(markdown_text: str) -> dict[str, Any]:\n    \"\"\"Parse resume markdown to structured JSON using LLM.\n"
+      }
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/srbhr/Resume-Matcher/950b700b3cc84ba8543e954d4212d7c375b09a27/apps/backend/app/routers/resumes.py",
+    "lines": 3207,
+    "snippets": [
+      {
+        "line": 110,
+        "text": "    parse_document,\n    parse_resume_to_json,\n    restore_dates_from_markdown,\n)"
+      },
+      {
+        "line": 148,
+        "text": "    *,\n    job_id: str,\n    tailored_resume_id: str,\n    master_resume_id: str,"
+      },
+      {
+        "line": 166,
+        "text": "        await db.create_application(\n            job_id=job_id,\n            resume_id=tailored_resume_id,\n            master_resume_id=master_resume_id,"
+      },
+      {
+        "line": 190,
+        "text": "async def _cache_job_keywords(\n    job_id: str, content_hash: str, job_keywords: dict[str, Any]\n) -> dict[str, Any] | None:\n    \"\"\"Best-effort: cache extracted keywords on the job with its content hash."
+      },
+      {
+        "line": 213,
+        "text": "    try:\n        updated_job = await db.update_job(job_id, cache_updates)\n        if not updated_job:\n            logger.warning(\"Failed to persist job keywords for job %s.\", job_id)"
+      },
+      {
+        "line": 215,
+        "text": "        if not updated_job:\n            logger.warning(\"Failed to persist job keywords for job %s.\", job_id)\n        return updated_job\n    except Exception as e:"
+      },
+      {
+        "line": 218,
+        "text": "    except Exception as e:\n        logger.warning(\"Failed to persist job keywords for job %s: %s\", job_id, e)\n        return None\n"
+      },
+      {
+        "line": 253,
+        "text": "        payload = json.loads(raw) if isinstance(raw, str) else raw\n        return InterviewPrepData.model_validate(payload)\n    except (TypeError, json.JSONDecodeError, ValidationError, ValueError) as e:\n        logger.warning("
+      },
+      {
+        "line": 275,
+        "text": "    try:\n        canonical: dict[str, Any] = ResumeData.model_validate(data).model_dump()\n    except ValidationError:\n        canonical = data  # not a full resume payload; hash as-is"
+      }
+    ]
+  },
+  {
+    "url": "https://raw.githubusercontent.com/srbhr/Resume-Matcher/950b700b3cc84ba8543e954d4212d7c375b09a27/apps/backend/app/routers/enrichment.py",
+    "lines": 983,
+    "snippets": [
+      {
+        "line": 98,
+        "text": "        raise ValueError(\"LLM analysis response is missing required list fields\")\n    return AnalysisResponse.model_validate(result).model_dump()\n\n"
+      },
+      {
+        "line": 153,
+        "text": "\n@router.post(\"/analyze/{resume_id}\", response_model=AnalysisResponse)\nasync def analyze_resume(resume_id: str) -> AnalysisResponse:\n    \"\"\"Analyze a resume to identify items that need enrichment."
+      },
+      {
+        "line": 247,
+        "text": "\n@router.post(\"/enhance\", response_model=EnhancementPreview)\nasync def generate_enhancements(request: EnhanceRequest) -> EnhancementPreview:\n    \"\"\"Generate enhanced descriptions from user answers."
+      },
+      {
+        "line": 443,
+        "text": "\n@router.post(\"/apply/{resume_id}\")\nasync def apply_enhancements(resume_id: str, request: ApplyEnhancementsRequest) -> dict:\n    \"\"\"Apply enhancements to the master resume."
+      },
+      {
+        "line": 695,
+        "text": "\n@router.post(\"/apply-regenerated/{resume_id}\")\nasync def apply_regenerated_items(\n    resume_id: str, regenerated_items: list[RegeneratedItem]"
+      }
+    ]
+  }
+]

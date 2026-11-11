@@ -1,0 +1,19 @@
+%% 接入与产品边界：哪些已有，哪些仍待建设
+%% 与 SVG 使用同一节点和关系数据；布局由 Mermaid 决定。
+flowchart TB
+  frontend["自定义 React 前端 · 计划<br/>Shadcn UI Kit + affectUI<br/>本次没有创建前端"]:::planned
+  api["面向普通用户的业务接口 · 待建设<br/>/api/v1；身份与资格、活动范围、字段披露<br/>复用已有逻辑，补齐项目用例与版本冲突处理"]:::planned
+  core["HumHub 核心 · 已复制<br/>用户、好友、Space<br/>内容、通知、文件<br/>现有 PHP / Yii2 代码"]:::core
+  rest["REST 扩展 · 未下载<br/>已有公开实现<br/>普通用户 API 覆盖需审查<br/>不能假定所有接口可直连"]:::optional
+  mail["Messenger · 未下载<br/>私聊与多人会话<br/>会话与 Space 是不同对象<br/>未安装，也没有运行"]:::optional
+  event["活动 · 待开发<br/>邀请加入 + 当前活动上下文<br/>发现 / 搜索 / 推荐限定范围<br/>切换不清除好友与既有私聊<br/>不能只靠前端过滤"]:::planned
+  idea["想法 / 讨论 · 待开发<br/>想法独立于好友关系<br/>讨论成员和消息按活动隔离<br/>与 Space 的映射尚未决定<br/>项目 Agent 尚未实现"]:::planned
+  ai["画像与 AI · 待开发<br/>本人导入 → 抽取 → 用户确认<br/>仅确认资料按选择范围展示<br/>全局画像与活动偏好分开<br/>原始资料不作为公开画像"]:::planned
+  frontend -.->|"计划调用"| api
+  api -.->|"待适配"| core
+  api -.->|"评估后接入"| rest
+  api -.->|"评估后接入"| mail
+  classDef core fill:#edf5ff,stroke:#3975ba,color:#1c304b
+  classDef optional fill:#f5f0ff,stroke:#8870bd,color:#1c304b
+  classDef planned fill:#fff6e6,stroke:#ba7b20,color:#1c304b
+  classDef external fill:#f2f4f7,stroke:#778397,color:#1c304b

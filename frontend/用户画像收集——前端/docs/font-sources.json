@@ -1,0 +1,12 @@
+{
+  "Inter": {
+    "file": "inter-latin.woff2",
+    "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "source": "experiments/signalry-original-preview/.next/dev/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+  },
+  "Bricolage Grotesque": {
+    "file": "bricolage-grotesque-latin.woff2",
+    "sha256": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+    "source": "experiments/signalry-original-preview/.next/dev/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2"
+  }
+}

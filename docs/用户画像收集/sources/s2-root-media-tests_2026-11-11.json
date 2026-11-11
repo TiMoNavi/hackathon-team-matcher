@@ -1,0 +1,23 @@
+{
+  "passed": 18,
+  "checks": [
+    "bounded_avatar_master",
+    "bounded_avatar_thumbnail",
+    "missing_thumbnail_rejects_confirmation",
+    "failed_media_confirmation_retains_identity",
+    "restored_candidate_can_confirm",
+    "corrupt_resource_fails_closed",
+    "restored_media_recovers_without_identity_rewrite",
+    "native_avatar_uses_confirmed_projection",
+    "native_avatar_url_points_to_confirmed_resource",
+    "projection_has_no_second_identity_increment",
+    "identity_does_not_advance_profile_revision",
+    "identity_does_not_reconfirm_profile_attributes",
+    "storage_failure_is_explicit",
+    "storage_failure_does_not_mutate_identity",
+    "avatar_reset_is_versioned",
+    "receipt_failure_rolls_back",
+    "failed_receipt_does_not_retain_candidate_row",
+    "failed_receipt_cleans_staged_private_files"
+  ]
+}

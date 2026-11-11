@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-11T13:42:51.772Z",
+  "url": "http://127.0.0.1:3193",
+  "checks": [
+    "AffectUI progress interaction",
+    "desktop: initial cards, role filter, skill/name search, empty state, follow toggle, detail close/Escape, no overflow, no browser/network errors",
+    "mobile: initial cards, role filter, skill/name search, empty state, follow toggle, detail close/Escape, no overflow, no browser/network errors"
+  ],
+  "pages": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "sourceComponents": {
+        "kitCards": 7,
+        "affectProgress": 1
+      },
+      "errors": [],
+      "failedRequests": [],
+      "externalRequests": [],
+      "responses": [],
+      "assets": [
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/3nxm2xsuly999.css",
+          "transferSize": 8870,
+          "encodedBodySize": 8570,
+          "decodedBodySize": 38682
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/3l04zcqx63h3y.js",
+          "transferSize": 6163,
+          "encodedBodySize": 5863,
+          "decodedBodySize": 16797
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/0cegfsgm6lvdz.js",
+          "transferSize": 48711,
+          "encodedBodySize": 48411,
+          "decodedBodySize": 183103
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/02fh7_m5mrih8.js",
+          "transferSize": 71928,
+          "encodedBodySize": 71628,
+          "decodedBodySize": 229156
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/turbopack-1duz3do6vhzwz.js",
+          "transferSize": 4136,
+          "encodedBodySize": 3836,
+          "decodedBodySize": 9688
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/3fntmmi971322.js",
+          "transferSize": 3961,
+          "encodedBodySize": 3661,
+          "decodedBodySize": 14377
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/34sw86ii7uird.js",
+          "transferSize": 19227,
+          "encodedBodySize": 18927,
+          "decodedBodySize": 57613
+        },
+        {
+          "name": "http://127.0.0.1:3193/favicon.ico",
+          "transferSize": 416,
+          "encodedBodySize": 116,
+          "decodedBodySize": 4286
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "sourceComponents": {
+        "kitCards": 7,
+        "affectProgress": 1
+      },
+      "errors": [],
+      "failedRequests": [],
+      "externalRequests": [],
+      "responses": [],
+      "assets": [
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/3nxm2xsuly999.css",
+          "transferSize": 8870,
+          "encodedBodySize": 8570,
+          "decodedBodySize": 38682
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/3l04zcqx63h3y.js",
+          "transferSize": 6163,
+          "encodedBodySize": 5863,
+          "decodedBodySize": 16797
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/0cegfsgm6lvdz.js",
+          "transferSize": 48711,
+          "encodedBodySize": 48411,
+          "decodedBodySize": 183103
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/02fh7_m5mrih8.js",
+          "transferSize": 71928,
+          "encodedBodySize": 71628,
+          "decodedBodySize": 229156
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/turbopack-1duz3do6vhzwz.js",
+          "transferSize": 4136,
+          "encodedBodySize": 3836,
+          "decodedBodySize": 9688
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/3fntmmi971322.js",
+          "transferSize": 3961,
+          "encodedBodySize": 3661,
+          "decodedBodySize": 14377
+        },
+        {
+          "name": "http://127.0.0.1:3193/_next/static/chunks/34sw86ii7uird.js",
+          "transferSize": 19227,
+          "encodedBodySize": 18927,
+          "decodedBodySize": 57613
+        },
+        {
+          "name": "http://127.0.0.1:3193/favicon.ico",
+          "transferSize": 416,
+          "encodedBodySize": 116,
+          "decodedBodySize": 4286
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

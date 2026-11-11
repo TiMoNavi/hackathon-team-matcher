@@ -1,0 +1,2 @@
+pypdf==6.13.2 --hash=sha256:6eeb9e57693f29d41bd01255d02660cbbb41fd7fc818a982677389a35e4f2083
+typing_extensions==4.15.0 ; python_version < "3.11" --hash=sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548

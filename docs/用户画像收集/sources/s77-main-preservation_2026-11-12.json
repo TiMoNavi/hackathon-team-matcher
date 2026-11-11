@@ -1,0 +1,141 @@
+{
+    "status": "passed",
+    "action": "verify",
+    "tables": 26,
+    "main_total_accounts": 103,
+    "main_total_spaces": 4,
+    "confirmed_attributes": 4048,
+    "checks": [
+        {
+            "table": "user",
+            "rows": 103,
+            "unchanged": true
+        },
+        {
+            "table": "profile",
+            "rows": 103,
+            "unchanged": true
+        },
+        {
+            "table": "space",
+            "rows": 4,
+            "unchanged": true
+        },
+        {
+            "table": "space_membership",
+            "rows": 126,
+            "unchanged": true
+        },
+        {
+            "table": "profile_field",
+            "rows": 31,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_state",
+            "rows": 223,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_attribute",
+            "rows": 4048,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_revision",
+            "rows": 220,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_draft",
+            "rows": 345,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_presentation",
+            "rows": 3,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_relation_sharing",
+            "rows": 14,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_idea",
+            "rows": 3,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_idea_activity",
+            "rows": 4,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_idea_conversation",
+            "rows": 4,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_idea_draft",
+            "rows": 3,
+            "unchanged": true
+        },
+        {
+            "table": "message",
+            "rows": 4,
+            "unchanged": true
+        },
+        {
+            "table": "message_entry",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "user_message",
+            "rows": 9,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_question_batch",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_question_answer",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_onboarding_session",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_source",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_source_snapshot",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_source_job",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_profile_ai_job",
+            "rows": 0,
+            "unchanged": true
+        },
+        {
+            "table": "matcher_recommendation_discovery_settings",
+            "rows": 120,
+            "unchanged": true
+        }
+    ],
+    "excluded_operational_fields": "login\/activity timestamps and current Space selection"
+}

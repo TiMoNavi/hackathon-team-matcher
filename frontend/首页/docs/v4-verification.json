@@ -1,0 +1,280 @@
+{
+  "checks": [
+    {
+      "name": "Five coordinated two-line headings",
+      "passed": true
+    },
+    {
+      "name": "Replay resets letter entrance",
+      "passed": true
+    },
+    {
+      "name": "Both lines finish readable",
+      "passed": true
+    },
+    {
+      "name": "Letter pigment continues flowing after entrance",
+      "passed": true
+    },
+    {
+      "name": "Reflection tracks mouse without moving content",
+      "passed": true
+    },
+    {
+      "name": "Tinted edge changes over time",
+      "passed": true
+    },
+    {
+      "name": "Pause reveals every heading and disables replay",
+      "passed": true
+    },
+    {
+      "name": "Pause stops material edge and glow",
+      "passed": true
+    },
+    {
+      "name": "Paused reflection ignores pointer motion",
+      "passed": true
+    },
+    {
+      "name": "Recommendation no longer has an enclosing card",
+      "passed": true
+    },
+    {
+      "name": "Headings fit in two lines at 1440",
+      "passed": true,
+      "detail": [
+        {
+          "id": "",
+          "width": 456,
+          "scroll": 456,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "profile-title",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "recommendations-heading",
+          "width": 355,
+          "scroll": 355,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        }
+      ]
+    },
+    {
+      "name": "Page fits viewport at 1440",
+      "passed": true
+    },
+    {
+      "name": "Headings fit in two lines at 1024",
+      "passed": true,
+      "detail": [
+        {
+          "id": "",
+          "width": 328,
+          "scroll": 328,
+          "height": 97.171875,
+          "lineHeight": 46.72
+        },
+        {
+          "id": "profile-title",
+          "width": 343,
+          "scroll": 343,
+          "height": 114.390625,
+          "lineHeight": 55
+        },
+        {
+          "id": "recommendations-heading",
+          "width": 355,
+          "scroll": 355,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        }
+      ]
+    },
+    {
+      "name": "Page fits viewport at 1024",
+      "passed": true
+    },
+    {
+      "name": "Headings fit in two lines at 768",
+      "passed": true,
+      "detail": [
+        {
+          "id": "",
+          "width": 456,
+          "scroll": 456,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "profile-title",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "recommendations-heading",
+          "width": 355,
+          "scroll": 355,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        },
+        {
+          "id": "",
+          "width": 406,
+          "scroll": 406,
+          "height": 135.1875,
+          "lineHeight": 65
+        }
+      ]
+    },
+    {
+      "name": "Page fits viewport at 768",
+      "passed": true
+    },
+    {
+      "name": "Headings fit in two lines at 390",
+      "passed": true,
+      "detail": [
+        {
+          "id": "",
+          "width": 287,
+          "scroll": 287,
+          "height": 85.171875,
+          "lineHeight": 40.95
+        },
+        {
+          "id": "profile-title",
+          "width": 256,
+          "scroll": 256,
+          "height": 85.171875,
+          "lineHeight": 40.95
+        },
+        {
+          "id": "recommendations-heading",
+          "width": 224,
+          "scroll": 224,
+          "height": 85.171875,
+          "lineHeight": 40.95
+        },
+        {
+          "id": "",
+          "width": 256,
+          "scroll": 256,
+          "height": 85.171875,
+          "lineHeight": 40.95
+        },
+        {
+          "id": "",
+          "width": 256,
+          "scroll": 256,
+          "height": 85.171875,
+          "lineHeight": 40.95
+        }
+      ]
+    },
+    {
+      "name": "Page fits viewport at 390",
+      "passed": true
+    },
+    {
+      "name": "Headings fit in two lines at 320",
+      "passed": true,
+      "detail": [
+        {
+          "id": "",
+          "width": 246,
+          "scroll": 246,
+          "height": 72.796875,
+          "lineHeight": 35
+        },
+        {
+          "id": "profile-title",
+          "width": 219,
+          "scroll": 219,
+          "height": 72.796875,
+          "lineHeight": 35
+        },
+        {
+          "id": "recommendations-heading",
+          "width": 191,
+          "scroll": 191,
+          "height": 72.796875,
+          "lineHeight": 35
+        },
+        {
+          "id": "",
+          "width": 219,
+          "scroll": 219,
+          "height": 72.796875,
+          "lineHeight": 35
+        },
+        {
+          "id": "",
+          "width": 219,
+          "scroll": 219,
+          "height": 72.796875,
+          "lineHeight": 35
+        }
+      ]
+    },
+    {
+      "name": "Page fits viewport at 320",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion renders every heading immediately",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

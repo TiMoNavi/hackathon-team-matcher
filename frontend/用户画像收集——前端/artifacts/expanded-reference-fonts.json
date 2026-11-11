@@ -1,0 +1,32 @@
+{
+  ".reference-wordmark": [
+    {
+      "familyName": "Bricolage Grotesque 96pt ExtraBold",
+      "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_SemiBold",
+      "isCustomFont": true,
+      "glyphCount": 8
+    }
+  ],
+  "h1": [
+    {
+      "familyName": "Bricolage Grotesque 96pt ExtraBold",
+      "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_SemiBold",
+      "isCustomFont": true,
+      "glyphCount": 3
+    },
+    {
+      "familyName": "PingFang SC",
+      "postScriptName": "PingFangSC-Semibold",
+      "isCustomFont": false,
+      "glyphCount": 12
+    }
+  ],
+  ".reference-card-meta": [
+    {
+      "familyName": "Inter",
+      "postScriptName": "Inter-Regular",
+      "isCustomFont": true,
+      "glyphCount": 10
+    }
+  ]
+}

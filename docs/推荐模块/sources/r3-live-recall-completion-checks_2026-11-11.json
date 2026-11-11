@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "verified_at": "2026-11-11T22:39:59+08:00",
+  "status": "passed_with_recorded_parallel_changes",
+  "scope": "R3.4/R3.6 isolated person recall slice and its documentation. Completion does not certify full R3, M1, HTTP, production persistence or deployment.",
+  "evidence": {
+    "baseline": {
+      "path": "docs/推荐模块/sources/r3-live-recall-baseline_2026-11-11.json",
+      "sha256": "d75ad3fc19123b2c06533d83561f71932751a930a97cfea17009db7b82aad6d0"
+    },
+    "tests": {
+      "path": "docs/推荐模块/sources/r3-live-recall-test-results_2026-11-11.json",
+      "sha256": "e45ed7d5328a5f5d28d5b5deeea04cdd8e0872af2b733642b6a173e16333fb5a"
+    },
+    "review": {
+      "path": "docs/推荐模块/sources/r3-live-recall-review_2026-11-11.json",
+      "sha256": "ccb22f726cb1d41a39a81db208b0c28264e6ebb9e88e0dc34d19c0e2a7d226dc"
+    },
+    "native_baseline": {
+      "path": "docs/推荐模块/sources/r3-native-baseline_2026-11-11.json",
+      "sha256": "80c807d91f8d07ace74e15a3497c18116c242c4ee15eee0a5b6bbb902d7143f7"
+    }
+  },
+  "checks": {
+    "test_source_hashes_match": true,
+    "reviewed_source_hashes_match": true,
+    "protected_anchors_unchanged": true,
+    "native_core_and_vendor_unchanged": true,
+    "privacy_module_unchanged": true,
+    "task_counts_and_scope_correct": true,
+    "markdown_relative_files_and_fences_valid": true,
+    "existing_json_documents_parse": true,
+    "functional_checks_passed": true,
+    "independent_review_complete": true,
+    "all_recommendation_and_production_dependency_files_recorded": true,
+    "unrecorded_additions_are_separate_unexecuted_parallel_tests": true
+  },
+  "failures": [],
+  "task": {
+    "checked": 26,
+    "unchecked": 34,
+    "newly_completed": [
+      "R3.4",
+      "R3.6"
+    ],
+    "all_checked_ids": [
+      "R0.1",
+      "R0.2",
+      "R0.3",
+      "R0.4",
+      "R0.5",
+      "R0.6",
+      "R0.7",
+      "R1.1",
+      "R1.2",
+      "R1.3",
+      "R1.4",
+      "R1.5",
+      "R1.6",
+      "R2.1",
+      "R2.2",
+      "R2.3",
+      "R2.4",
+      "R2.5",
+      "R2.6",
+      "R2.7",
+      "R2.8",
+      "R2.9",
+      "R2.10",
+      "R2.11",
+      "R3.4",
+      "R3.6"
+    ],
+    "complete_R3": false,
+    "complete_M1": false
+  },
+  "verification": {
+    "functional_assertions": 1660,
+    "net_new_functional_assertions": 367,
+    "php_lint_files": 239,
+    "pure_layer_files": 51,
+    "independent_review_checks": 266,
+    "counting_note": "Independent review overlaps regression and is not added to the functional total. Prior successful tests were not redundantly rerun during this final evidence check.",
+    "test_source_files": 252,
+    "test_source_hash_mismatches": [],
+    "unrecorded_current_module_files": [
+      "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_http.py",
+      "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_sql.php",
+      "backend/protected/modules/matcher-user-profile/tests/integration/s5b_sources_sql.php",
+      "backend/protected/modules/matcher-user-profile/tests/unit/s5b_sources.php"
+    ],
+    "reviewed_source_files": 13,
+    "reviewed_source_hash_mismatches": [],
+    "all_current_module_files_recorded_in_tests": false
+  },
+  "module_baseline_differences": {
+    "matcher-recommendation": {
+      "file_count": 99,
+      "added": [
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/composition/NativeRuleDiscoveryFactory.php",
+          "sha256": "4d3e6b5a21a3c68e49399a33a02ffa3ef5d851bb1b1c5123679757209360be49"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/index/CandidateIndexException.php",
+          "sha256": "8c2b5dd4da60f725371d8cabef5417e22a9c278270c6f8f459305b04b4d52ff9"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/index/CandidateIndexSchema.php",
+          "sha256": "1f545b70149cc4ee42d6d8cae150e97fb37af7dd66281e69a9ff88484b3cf6a2"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/index/SqlCandidateIndexAccess.php",
+          "sha256": "bcb662b877750a8f26fffaedc091fb962427bd72ac48e3bfd27a4c48fe39766e"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/native/CurrentEventSelectionSchema.php",
+          "sha256": "0cf36e019f2a4717319aa3e55d9b39656926a7a3178b215eb0098cc0ee2adf76"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/native/ServerActorSessionSource.php",
+          "sha256": "a0e7e99c244b8a4671c39a9bdd8a58775b05a1dd4713bb7377175e0aa2d0bac4"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/native/SqlCurrentEventSelectionStore.php",
+          "sha256": "2cd0a61c0311a0a960d9ee5f506879d80ddf9aa7b66f69bbee4621ff3b64ce23"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/native/YiiActorSessionSource.php",
+          "sha256": "cf44d86e1cd3afb68bddc3e04bfd3d655c23e39f68629e5fb186bd452fbbb4e2"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/application/SelectCurrentEvent.php",
+          "sha256": "9adecbe2446ee2a2e195bfa1d9a1640c60d31ec06aad22041d3d8eb8b26fb301"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventSelectionWriter.php",
+          "sha256": "8ac514b39ff7ba18237fc93bd69c31393c1552f8bb57700429ccf288346f13f5"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ManagedCandidateIndexAccess.php",
+          "sha256": "bff7ccdb39625326c4d37385253cb159fcb9a2d44605f8bfd98e5a50cf38f039"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/migrations/m261111_000001_candidate_index.php",
+          "sha256": "d47db504041d92feb23e14969a6a698b902a5e172365a6386d39b66c4f98ed50"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/migrations/m261111_000002_current_event_selection.php",
+          "sha256": "a4e039c32019cef91ca7d40ab05cfc5f98654b54d05dd7c67d6776940f6a8b8b"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/current_selection/run.php",
+          "sha256": "ab68fb7875049964370670b42354eb2fddb3d671b1fadfb0e1ecf79c4a631daa"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/index/Fixtures.php",
+          "sha256": "f86a366ebfa7fe0474370e258434601a17e2d6997addf7bf7319411d80c96cd1"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/index/run.php",
+          "sha256": "76936a1d4b634eaefec4ce8dd966c739d55e81e99c5dab4a788c9b7c6ac186d0"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/live_recall/Fixtures.php",
+          "sha256": "0374c3e1c463211923782fb4ef25a53fda0d25a5e2d16c1c65bf5b97d8430c16"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/live_recall/run.php",
+          "sha256": "837a7e9a050ba78bbb6de50cc599ceba355b84b2d3e72b940bcc0b2abb536605"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/retrieval/managed_intervals.php",
+          "sha256": "5b1e4b9f0104b3eea28ac3793aa9f9abcb036b477c488690a4f2cb15ed7e08ac"
+        }
+      ],
+      "modified": [
+        {
+          "path": "backend/protected/modules/matcher-recommendation/adapters/retrieval/SqlCandidateRetriever.php",
+          "before_sha256": "bc2e772dbbd683f6801b3923a86e6978d4fdd796604c48ba94eedd7153b56ecc",
+          "sha256": "ac27cf15209241ee1705d8aa70e1b9483c7d1611b2b319a996fbb5b78f67bfae"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/contracts/AuthorizedIndexSnapshot.php",
+          "before_sha256": "119db202de7003be99d95c2e91be16c1dba244868fd95c156c369d9584463aea",
+          "sha256": "cc46af8d1e31a0de38fdf42ecd060167c113869fec11f3de8811b108aedfe07f"
+        },
+        {
+          "path": "backend/protected/modules/matcher-recommendation/tests/retrieval/run.php",
+          "before_sha256": "94d9668da613810fd7a440f13e0834505e5026ffc4a394b9bf1c3442ef2f7baa",
+          "sha256": "b8f17465cda009b7cbc3d2ec44ccfdc715d2bea5820397feae4699d38ecd6665"
+        }
+      ],
+      "removed": []
+    },
+    "matcher-user-profile": {
+      "file_count": 111,
+      "added": [
+        {
+          "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceKindSchemaUpgrade.php",
+          "sha256": "125d31c31d3ae1a6280f937a04c16d27a66c42be9d0f12b160354ac9ec025023"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/domain/ExplicitTextCandidateMapper.php",
+          "sha256": "16534397d3319bad6bca52326f51dffbdf737e34774f4d90629434bb7ec05622"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/domain/ports/IdentifiedProfileSourceReader.php",
+          "sha256": "9ce6959c74f492d023c1770425f77f51d5b73dce5211d40dab7dc1000d28f5df"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/migrations/m261111_000005_profile_source_kinds.php",
+          "sha256": "81a49a515f64e783f2730b7901b72a930794badbc2b7726a62308d8c13008b34"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_http.py",
+          "sha256": "ec2f31c6c441af5db89a14c0c460c661970cb13f1afd155fd109a539ac37cf77"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_sql.php",
+          "sha256": "4f0ac6f39b3c71d32605bae5656bae5aa9fa3273501aa9c33b5947d8f6eb0811"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/tests/integration/s5b_sources_sql.php",
+          "sha256": "b10334a4af214345f7f0150f6eac9c47ac8da82b75544c0552f0118d5870fa52"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/tests/unit/s5b_sources.php",
+          "sha256": "36e09821fc5334dcbae7a4dcba732a869e497a0d0371442b282605c9aca17a9a"
+        }
+      ],
+      "modified": [
+        {
+          "path": "backend/protected/modules/matcher-user-profile/Module.php",
+          "before_sha256": "0fca38ee60b04212add90f65d45a6fdf9332e466da1b95810239fdd25bebdd26",
+          "sha256": "556412d54e7643c051492a9f029beca5d3b67c94d8f1dd4448fe67d9c4ecfcb5"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceSchemaInstaller.php",
+          "before_sha256": "1bf5aec962ba6a13fbe8eaa4de456b042d126c65f35aeebe08b117ef1c0491a3",
+          "sha256": "325d3ccac8922c08f07f5ed5add0f0427bc79f4220e34454f846c84783bd3be7"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/application/ProfileSourceService.php",
+          "before_sha256": "0b3154fee2b3c232967adb830eae1ca84bc4a0c31f958e3f85cfbe82f2dcd6ce",
+          "sha256": "94908e8c70fe154e1e3d4d7de0138051522dfc438e5b63e15334d47e77ed78a6"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/controllers/SourceController.php",
+          "before_sha256": "04ca1dea9307cb39e8bcd4eceef2c18f255703009e9fe012058d3ec886e025a7",
+          "sha256": "df0fdc55eefc8d6b0ef7f9453fd1e2077475099caf941ac1ce5660420d7c9932"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/module.json",
+          "before_sha256": "f16033ac3e4aea5de04c6907043098e79731188966f1ee69d891a74c72d328c4",
+          "sha256": "c64a729c0967c86971b0fae9ba55c92aeacc656815433825c0df3df22fbf480f"
+        }
+      ],
+      "removed": []
+    },
+    "matcher-profile-privacy": {
+      "file_count": 46,
+      "added": [],
+      "modified": [],
+      "removed": []
+    }
+  },
+  "parallel_work": {
+    "classification": "P1 baseline differences are other parallel source-import work, not this recommendation delivery. No author attribution or rollback.",
+    "during_test_run": {
+      "paths": [
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceKindSchemaUpgrade.php",
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceSchemaInstaller.php",
+        "backend/protected/modules/matcher-user-profile/migrations/m261111_000005_profile_source_kinds.php"
+      ],
+      "classification": "Unrelated P1 source-import schema work observed during the test run. No recommendation, P1 batch-read, P8 or exercised dependency source changed. No author attribution and no rollback.",
+      "direct_references_in_exercised_layers": [],
+      "supplemental_lint": [
+        {
+          "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceKindSchemaUpgrade.php",
+          "exit_code": 0,
+          "sha256": "125d31c31d3ae1a6280f937a04c16d27a66c42be9d0f12b160354ac9ec025023"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SourceSchemaInstaller.php",
+          "exit_code": 0,
+          "sha256": "325d3ccac8922c08f07f5ed5add0f0427bc79f4220e34454f846c84783bd3be7"
+        },
+        {
+          "path": "backend/protected/modules/matcher-user-profile/migrations/m261111_000005_profile_source_kinds.php",
+          "exit_code": 0,
+          "sha256": "81a49a515f64e783f2730b7901b72a930794badbc2b7726a62308d8c13008b34"
+        }
+      ]
+    },
+    "entire_source_tree_stable_during_tests": false,
+    "in_scope_and_exercised_dependencies_stable_during_tests": true,
+    "current_recorded_source_hashes_match": true,
+    "p1_or_p8_mutated_by_this_stage": false,
+    "additional_tests_observed_at_completion": {
+      "paths": [
+        "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_http.py",
+        "backend/protected/modules/matcher-user-profile/tests/integration/s5b_audit_sql.php",
+        "backend/protected/modules/matcher-user-profile/tests/integration/s5b_sources_sql.php",
+        "backend/protected/modules/matcher-user-profile/tests/unit/s5b_sources.php"
+      ],
+      "classification": "Separate P1 source-import tests observed outside the final regression source manifest. Not executed or certified by this R3 delivery. Their contents are not loaded by the recorded test entrypoints.",
+      "direct_filename_references_in_recorded_sources": [],
+      "directory_loading_check": "Targeted inspection found recursive scanners only in recommendation pure-layer architecture checks; no P1 test glob/directory execution in the exercised entrypoints.",
+      "included_in_functional_or_lint_totals": false,
+      "rolled_back": false
+    }
+  },
+  "protected_anchors": {
+    "backend/protected/modules/.gitignore": {
+      "baseline_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "current_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "unchanged": true
+    },
+    "backend/deploy/profile-fields.json": {
+      "baseline_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "current_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "unchanged": true
+    },
+    "docs/首次注册与开场引导_用户原稿_冻结.md": {
+      "baseline_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "current_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "unchanged": true
+    }
+  },
+  "native_trees": {
+    "backend/protected/humhub": {
+      "files": 11259,
+      "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+      "unchanged": true,
+      "method": "Full content digest computed in the immediately preceding read-only verification command; same sorted relative-path/NUL/file-SHA256/LF algorithm and exclusions as native baseline."
+    },
+    "backend/protected/vendor": {
+      "files": 15407,
+      "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+      "unchanged": true,
+      "method": "Full content digest computed in the immediately preceding read-only verification command; same sorted relative-path/NUL/file-SHA256/LF algorithm and exclusions as native baseline."
+    }
+  },
+  "documentation": {
+    "files_sha256": {
+      "docs/推荐模块/task.md": "2b908ac978278e8b974b15a268e15d1df40395b219c3c5f697826f5a86e2621c",
+      "docs/推荐模块/00_README.md": "340e7cd0ae7a9281c012de14486c563648aeb162b0c59edb9bc13d8da8085f1a",
+      "docs/推荐模块/09_批量授权缺口补齐.md": "dee034ea6dad7b30b39f3f1ae7fd30f691924135279dc2541ab9eb2eb74b1bf8",
+      "docs/推荐模块/10_R3真实召回闭环.md": "2b931fab920a5c6c4f60c34b0fb22714f4e67551640c58ecda86869b2e457c41"
+    },
+    "relative_file_links_checked": 67,
+    "link_check_scope": "Relative file existence; remote URLs and section-fragment targets are not validated.",
+    "markdown_fences_checked": true,
+    "issues": [],
+    "json_files_checked_including_this_report": 38,
+    "json_errors": [],
+    "historical_status_labels_updated": true
+  },
+  "operational_boundaries": {
+    "existing_database_connected": false,
+    "existing_database_migrated": false,
+    "production_module_enabled": false,
+    "ai_calls": 0,
+    "public_http_routes_added": false,
+    "credentials_or_real_profiles_read": false,
+    "committed_or_staged": false,
+    "test_environment": "Fresh SQLite :memory: with synthetic data; network functions disabled."
+  },
+  "remaining_work": [
+    "R3.1 authorized minimum identity display values; identity version alone is not display data.",
+    "R3.2/R4 HTTP activity selection and request/detail/pagination wiring.",
+    "R3.3 authoritative full application history for AI person selection.",
+    "R3.7 persistent replay and cross-request lifecycle; R3.8 HTTP error mapping.",
+    "R4 production policy/batch storage and cursor/pagination.",
+    "Generation lifecycle metadata and orphan cleanup before deployment.",
+    "Production MySQL migration, query-plan and performance validation.",
+    "Idea target and optional AI extension remain unimplemented."
+  ]
+}

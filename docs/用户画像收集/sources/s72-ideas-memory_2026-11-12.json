@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "execution_exit_code": 0,
+  "suite": "matcher-ideas-memory",
+  "checks": 71,
+  "passed": true,
+  "llm_calls": 0,
+  "native_writes": 0
+}

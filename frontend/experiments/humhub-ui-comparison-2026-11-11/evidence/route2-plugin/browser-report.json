@@ -1,0 +1,133 @@
+{
+  "route": "route2-plugin",
+  "name": "独立 React 前端插件",
+  "url": "http://localhost:8193/comparison-react/home/index",
+  "checked_on": "2026-11-11T13:46:34.045Z",
+  "browser": "157.0.4341.42",
+  "scope": "same synthetic homepage and interactions; not production API/authentication acceptance",
+  "checks": [
+    {
+      "name": "homepage_http_200",
+      "passed": true,
+      "details": 200
+    },
+    {
+      "name": "four_initial_members",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "name": "synthetic_data_label",
+      "passed": true
+    },
+    {
+      "name": "role_filter_frontend",
+      "passed": true
+    },
+    {
+      "name": "skill_search_python",
+      "passed": true
+    },
+    {
+      "name": "empty_search_zero_members",
+      "passed": true
+    },
+    {
+      "name": "clear_search_restores_members",
+      "passed": true
+    },
+    {
+      "name": "follow_state_toggles",
+      "passed": true,
+      "details": {
+        "before": {
+          "text": "关注",
+          "pressed": "false",
+          "label": "关注林舟"
+        },
+        "after": {
+          "text": "已关注",
+          "pressed": "true",
+          "label": "取消关注林舟"
+        }
+      }
+    },
+    {
+      "name": "member_detail_dialog",
+      "passed": true
+    },
+    {
+      "name": "escape_closes_detail",
+      "passed": true
+    },
+    {
+      "name": "desktop_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "no_native_frontend_assets",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile_role_filter",
+      "passed": true
+    },
+    {
+      "name": "mobile_detail_open_close",
+      "passed": true
+    },
+    {
+      "name": "no_javascript_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "no_asset_http_errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "javascript_errors": [],
+  "asset_errors": [],
+  "navigation_ms": 573,
+  "desktop": {
+    "viewport": 1440,
+    "document": 1440,
+    "body": 1440,
+    "hasHumhub": false,
+    "hasJquery": false,
+    "hasPjax": false,
+    "hasNativeTopbar": false,
+    "stylesheets": [
+      "http://localhost:8193/assets/1edf6144/assets/index-DLz7tfG7.css"
+    ]
+  },
+  "resources": [
+    {
+      "url": "http://localhost:8193/assets/1edf6144/assets/index-DLz7tfG7.css",
+      "initiator": "link",
+      "decoded_bytes": 53578,
+      "encoded_bytes": 53578
+    },
+    {
+      "url": "http://localhost:8193/assets/1edf6144/assets/index-CVeaXq50.js",
+      "initiator": "script",
+      "decoded_bytes": 323796,
+      "encoded_bytes": 323796
+    }
+  ],
+  "initial_resource_decoded_bytes": 377374,
+  "bootstrap_css_detected": false,
+  "mobile": {
+    "viewport": 390,
+    "document": 390,
+    "body": 390
+  },
+  "passed": true,
+  "passed_count": 17,
+  "check_count": 17
+}

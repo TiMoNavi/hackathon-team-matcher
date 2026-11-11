@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-11",
+  "purpose": "Find reference backends for project matching, complementary roles, personality/collaboration preferences and optional AI.",
+  "queries": [
+    "github open source team formation matchmaking skills compatibility backend reciprocal recommendation",
+    "github humhub example-basic",
+    "github gorse recommender llm ranker pipeline",
+    "github open match match function team skill roles",
+    "site:github.com/googleforgames/open-match match function teams",
+    "site:github.com Timefold solver team assignment employee scheduling",
+    "site:github.com team formation personality backend API matching hackathon",
+    "site:github.com/vespa-engine/vespa ranking phased inference recommendation"
+  ],
+  "verification": "Verified repository metadata/default commit/README with unauthenticated official GitHub API and selected source files via raw.githubusercontent.com. No dependency installation or candidate service execution.",
+  "metadata_attempts": 9,
+  "metadata_successes": 8,
+  "not_verified": [
+    {
+      "repo": "rodrigoguirao/ai-hackathon-team-maker",
+      "reason": "GitHub API returned HTTP 404; search index entry was not treated as verified code."
+    }
+  ],
+  "scope_limit": "Targeted search and source sampling; not an exhaustive GitHub census, security audit, benchmark or production suitability certification."
+}

@@ -1,0 +1,163 @@
+{
+  "checks": [
+    "系统为夜间且无历史选择时，默认仍为日间模式",
+    "切换到夜间并保留当前会话与草稿",
+    "夜间主题覆盖门户抽屉、新建会话弹窗及表情浮层",
+    "刷新和切换路由保留手动选择，键盘可切回日间",
+    "320/390/768/1024/1440px 两种主题无横向溢出，切换按钮均可见",
+    "无控制台错误、Hydration 错误或运行时异常"
+  ],
+  "errors": [],
+  "overflow": [
+    {
+      "mode": "light",
+      "width": 320,
+      "scrollWidth": 320,
+      "button": {
+        "x": 141,
+        "y": 18,
+        "width": 38,
+        "height": 38,
+        "top": 18,
+        "right": 179,
+        "bottom": 56,
+        "left": 141
+      }
+    },
+    {
+      "mode": "dark",
+      "width": 320,
+      "scrollWidth": 320,
+      "button": {
+        "x": 141,
+        "y": 18,
+        "width": 38,
+        "height": 38,
+        "top": 18,
+        "right": 179,
+        "bottom": 56,
+        "left": 141
+      }
+    },
+    {
+      "mode": "light",
+      "width": 390,
+      "scrollWidth": 390,
+      "button": {
+        "x": 208,
+        "y": 18,
+        "width": 38,
+        "height": 38,
+        "top": 18,
+        "right": 246,
+        "bottom": 56,
+        "left": 208
+      }
+    },
+    {
+      "mode": "dark",
+      "width": 390,
+      "scrollWidth": 390,
+      "button": {
+        "x": 208,
+        "y": 18,
+        "width": 38,
+        "height": 38,
+        "top": 18,
+        "right": 246,
+        "bottom": 56,
+        "left": 208
+      }
+    },
+    {
+      "mode": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "button": {
+        "x": 486,
+        "y": 27,
+        "width": 74,
+        "height": 40,
+        "top": 27,
+        "right": 560,
+        "bottom": 67,
+        "left": 486
+      }
+    },
+    {
+      "mode": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "button": {
+        "x": 486,
+        "y": 27,
+        "width": 74,
+        "height": 40,
+        "top": 27,
+        "right": 560,
+        "bottom": 67,
+        "left": 486
+      }
+    },
+    {
+      "mode": "light",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "button": {
+        "x": 737,
+        "y": 38,
+        "width": 74,
+        "height": 40,
+        "top": 38,
+        "right": 811,
+        "bottom": 78,
+        "left": 737
+      }
+    },
+    {
+      "mode": "dark",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "button": {
+        "x": 737,
+        "y": 38,
+        "width": 74,
+        "height": 40,
+        "top": 38,
+        "right": 811,
+        "bottom": 78,
+        "left": 737
+      }
+    },
+    {
+      "mode": "light",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "button": {
+        "x": 1077,
+        "y": 38,
+        "width": 74,
+        "height": 40,
+        "top": 38,
+        "right": 1151,
+        "bottom": 78,
+        "left": 1077
+      }
+    },
+    {
+      "mode": "dark",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "button": {
+        "x": 1077,
+        "y": 38,
+        "width": 74,
+        "height": 40,
+        "top": 38,
+        "right": 1151,
+        "bottom": 78,
+        "left": 1077
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+modules:
+  config:
+    WebDriver:
+      browser: chrome
+      port: 4444
+      window_size: 1920x1200
+      capabilities:
+          goog:chromeOptions:
+              args: ["--headless"]

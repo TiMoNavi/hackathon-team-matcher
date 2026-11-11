@@ -1,0 +1,100 @@
+{
+  "status": "passed",
+  "suites": [
+    {
+      "suite": "progress",
+      "status": "passed",
+      "passed": 136,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-progress_2026-11-12.json"
+    },
+    {
+      "suite": "s6-jobs",
+      "status": "passed",
+      "passed": 67,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-s6-jobs_2026-11-12.json"
+    },
+    {
+      "suite": "s5-sources",
+      "status": "passed",
+      "passed": 53,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-s5-sources_2026-11-12.json"
+    },
+    {
+      "suite": "s5b-sources",
+      "status": "passed",
+      "passed": 44,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-s5b-sources_2026-11-12.json"
+    },
+    {
+      "suite": "s2-profile",
+      "status": "passed",
+      "passed": 147,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-s2-profile_2026-11-12.json"
+    },
+    {
+      "suite": "s2-identity",
+      "status": "passed",
+      "passed": 1,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-s2-identity_2026-11-12.json"
+    },
+    {
+      "suite": "s1-domain",
+      "status": "passed",
+      "passed": 131,
+      "exit_code": 0,
+      "evidence": "docs/用户画像收集/sources/s76-task-s1-domain_2026-11-12.json"
+    }
+  ],
+  "php_lint": [
+    {
+      "file": "application/ProfileAiJobService.php",
+      "passed": true
+    },
+    {
+      "file": "application/ProfileProgress.php",
+      "passed": true
+    },
+    {
+      "file": "application/ProfileSourceService.php",
+      "passed": true
+    },
+    {
+      "file": "application/QuestionService.php",
+      "passed": true
+    },
+    {
+      "file": "domain/ports/ProfileAiJobSessionQuery.php",
+      "passed": true
+    },
+    {
+      "file": "adapters/memory/InMemoryProfileAiJobRepository.php",
+      "passed": true
+    },
+    {
+      "file": "adapters/persistence/SqlProfileAiJobRepository.php",
+      "passed": true
+    },
+    {
+      "file": "controllers/SourceController.php",
+      "passed": true
+    },
+    {
+      "file": "config.php",
+      "passed": true
+    },
+    {
+      "file": "tests/s76_task_progress.php",
+      "passed": true
+    }
+  ],
+  "module_version": "0.10.0",
+  "external_requests": 0,
+  "real_llm_calls": 0,
+  "scope": "Memory and isolated SQLite only; no application config, credentials, HTTP or MySQL connection."
+}

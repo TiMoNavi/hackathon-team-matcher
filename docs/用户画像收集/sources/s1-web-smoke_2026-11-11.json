@@ -1,0 +1,51 @@
+{
+  "scope": "S1 local native profile and module pages",
+  "checks": [
+    {
+      "name": "native_login_reaches_dashboard",
+      "passed": true
+    },
+    {
+      "name": "native_profile_edit_returns_200",
+      "passed": true
+    },
+    {
+      "name": "headline_input_available",
+      "passed": true
+    },
+    {
+      "name": "firstname_input_available",
+      "passed": true
+    },
+    {
+      "name": "firstname_is_optional",
+      "passed": true
+    },
+    {
+      "name": "lastname_input_available",
+      "passed": true
+    },
+    {
+      "name": "lastname_is_optional",
+      "passed": true
+    },
+    {
+      "name": "new_fields_wait_for_controlled_editor",
+      "passed": true
+    },
+    {
+      "name": "module_admin_returns_200",
+      "passed": true
+    },
+    {
+      "name": "profile_module_listed",
+      "passed": true
+    },
+    {
+      "name": "native_pages_have_no_javascript_errors",
+      "passed": true
+    }
+  ],
+  "javascript_error_count": 0,
+  "status": "passed"
+}

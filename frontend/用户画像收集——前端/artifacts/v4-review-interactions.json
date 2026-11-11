@@ -1,0 +1,136 @@
+[
+  {
+    "case": "stabilized-focus",
+    "edit": {
+      "y": 160.796875,
+      "active": "<textarea aria-label=\"关于我\" placeholder=\"可以写完整的经历、背景和过程，保留你原来的段落。\" id=\"field-intro\" class=\"ui-tac__input\" rows=\"5\" maxlength=\"20000\" dir=\"auto\" style=\"height: 8172px; overflow-y: hidden;\">长文编辑保留完整换行和信息。长文编辑保留完整换行和信息。长文编辑保",
+      "scrollY": 340
+    },
+    "focus": {
+      "y": 108,
+      "active": "<button type=\"button\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide luc"
+    }
+  },
+  {
+    "case": "audience-preview",
+    "privateProfileVisible": 0,
+    "activityRoleVisible": "PRIVATE_ACTIVITY_ROLE_MARKER",
+    "activityRoleEditable": true,
+    "activityControlCount": 4
+  },
+  {
+    "case": "candidate-interaction",
+    "before": {
+      "photo": "demo-lin",
+      "story": "demo-lin",
+      "cycle": "0",
+      "paused": "false",
+      "mascot": {
+        "x": 1176,
+        "y": 613,
+        "w": 104,
+        "h": 104
+      },
+      "actions": {
+        "x": 489.03125,
+        "y": 610.28125,
+        "w": 732.96875,
+        "h": 78.1875
+      },
+      "send": {
+        "x": 964,
+        "y": 632.875,
+        "w": 174,
+        "h": 46
+      },
+      "hint": "介绍会自动轮换，也可以暂停1 / 2"
+    },
+    "after": {
+      "photo": "demo-chen",
+      "story": "demo-chen",
+      "cycle": "0",
+      "paused": "false",
+      "mascot": {
+        "x": 1176,
+        "y": 613,
+        "w": 104,
+        "h": 104
+      },
+      "actions": {
+        "x": 489.03125,
+        "y": 610.28125,
+        "w": 732.96875,
+        "h": 78.1875
+      },
+      "send": {
+        "x": 964,
+        "y": 632.875,
+        "w": 174,
+        "h": 46
+      },
+      "hint": "介绍会自动轮换，也可以暂停1 / 2"
+    },
+    "auto": {
+      "photo": "demo-lin",
+      "story": "demo-lin",
+      "cycle": "1",
+      "paused": "false",
+      "mascot": {
+        "x": 1176,
+        "y": 613,
+        "w": 104,
+        "h": 104
+      },
+      "actions": {
+        "x": 489.03125,
+        "y": 610.28125,
+        "w": 732.96875,
+        "h": 78.1875
+      },
+      "send": {
+        "x": 964,
+        "y": 632.875,
+        "w": 174,
+        "h": 46
+      },
+      "hint": "介绍会自动轮换，也可以暂停2 / 2"
+    },
+    "pause": {
+      "photo": "demo-lin",
+      "story": "demo-lin",
+      "cycle": "1",
+      "paused": "true",
+      "mascot": {
+        "x": 1176,
+        "y": 613,
+        "w": 104,
+        "h": 104
+      },
+      "actions": {
+        "x": 489.03125,
+        "y": 610.28125,
+        "w": 732.96875,
+        "h": 78.1875
+      },
+      "send": {
+        "x": 964,
+        "y": 632.875,
+        "w": 174,
+        "h": 46
+      },
+      "hint": "已暂停，慢慢看2 / 2"
+    },
+    "allRows": 2
+  },
+  {
+    "case": "friend-confirm",
+    "dialogOpen": true,
+    "pending": []
+  },
+  {
+    "case": "reduced-motion",
+    "rows": 5,
+    "all": "candidate-story is-all",
+    "paused": "true"
+  }
+]

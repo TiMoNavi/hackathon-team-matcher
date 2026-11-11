@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "status": "not_executed",
+  "purpose": "Acceptance specification for conversational teammate finding after explicit user rejection of the prior demo. These are test inputs and expected behavior, not model transcripts.",
+  "required_capabilities": [
+    "conversation_and_turn_state",
+    "cross_request_context_restore",
+    "evidence_backed_natural_explanations",
+    "server_tool_events",
+    "explicit_discussion_vs_refresh",
+    "typed_task_and_contribution_semantics"
+  ],
+  "fixture_policy": "New fixtures must support claimed public project/availability/contribution evidence through explicit mappings. Do not silently invent experience for the old forty people; unsupported mappings remain unknown.",
+  "scenarios": [
+    {
+      "id": "continuous_project_session",
+      "turns": [
+        {
+          "id": "A1",
+          "user": "我们有三个人，我负责产品和组织用户测试，另一个人能做前端。想在这次黑客松两天内做一个校园问答工具，现在缺后端和资料处理。我们不追求复杂模型，但想做出能给人试用的东西。",
+          "expected_intents": [
+            "clarify",
+            "prepare_recommendation"
+          ],
+          "requirements": [
+            "利用已有信息，不再问技能/兴趣三选一",
+            "至多针对一个会改变候选选择的缺口追问",
+            "区分本人贡献和缺少的贡献"
+          ],
+          "new_run": "only_if_search_is_explicitly_ready",
+          "search_calls_max": 1
+        },
+        {
+          "id": "A2",
+          "user": "希望周日能给同学实际试用，先处理好接口、资料入库和部署。对方需要在2026年11月14日周六14点到18点参与联调，线上也可以。领域经验不是必须。",
+          "expected_intents": [
+            "prepare_recommendation"
+          ],
+          "requirements": [
+            "继承上一轮团队与目标，不重问",
+            "核验时间表示和贡献意愿",
+            "真实工具开始/完成事件，数字来自结果",
+            "说明每个推荐能补什么和哪里未知"
+          ],
+          "new_run": "continue_existing_unsearched_run",
+          "search_calls_max": 1
+        },
+        {
+          "id": "A3",
+          "user": "你为什么把第二位放在前面？他真的做过部署，还是只是会那门语言？",
+          "expected_intents": [
+            "discuss_current"
+          ],
+          "requirements": [
+            "第二位绑定当前展示版本和ID",
+            "区分明确交付证据与技能自述",
+            "证据不足就说明未知"
+          ],
+          "new_run": false,
+          "search_calls_max": 0
+        },
+        {
+          "id": "A4",
+          "user": "把第一位和第二位比较一下。我们最担心的是两天结束时还只能在个人电脑上跑，哪位能更好地补这个缺口？",
+          "expected_intents": [
+            "compare_current"
+          ],
+          "requirements": [
+            "只比较当前两人并重验权限",
+            "理由联系项目目标，不泛评人格",
+            "不自动更换名单"
+          ],
+          "new_run": false,
+          "search_calls_max": 0
+        },
+        {
+          "id": "A5",
+          "user": "先不用找新人。假设我们先联系第二位，我应该问什么才能确认他愿意负责，而不只是帮忙指导？",
+          "expected_intents": [
+            "discuss_current"
+          ],
+          "requirements": [
+            "保持当前名单和查询",
+            "生成可编辑问题建议，不自动发消息",
+            "不把能力推成参与承诺"
+          ],
+          "new_run": false,
+          "search_calls_max": 0
+        },
+        {
+          "id": "A6",
+          "user": "我们聊过后决定不考虑第二位了。请保留周六能联调和能参与落地这两个要求，再推荐几位之前没看过的。",
+          "expected_intents": [
+            "refresh_recommendation"
+          ],
+          "requirements": [
+            "由真实用户请求授权新run",
+            "排除明确不考虑者并处理近期曝光",
+            "保留硬要求、上下文及平台累计额度",
+            "不能只重排旧名单冒充换人"
+          ],
+          "new_run": true,
+          "search_calls_max": 1
+        },
+        {
+          "id": "A7",
+          "user": "还有呢？",
+          "expected_intents": [
+            "clarify_discuss_or_refresh"
+          ],
+          "requirements": [
+            "结合上下文判断，仍含糊则询问是在了解细节还是再换人",
+            "不因模糊话自动开新run或重置费用"
+          ],
+          "new_run": false,
+          "search_calls_max": 0
+        },
+        {
+          "id": "A8",
+          "user": "我是说目前这两位的分工，不是再找人。继续按我们的校园问答项目聊，先把风险讲清楚。",
+          "expected_intents": [
+            "discuss_current"
+          ],
+          "requirements": [
+            "延续已保存项目上下文",
+            "不触发search",
+            "事实、推断、未知分别说明"
+          ],
+          "new_run": false,
+          "search_calls_max": 0
+        }
+      ]
+    },
+    {
+      "id": "soft_preference_partial_match",
+      "user": "我们需要愿意承担后端并能在周六联调的人，有教育项目经历更好，但不是必须。",
+      "assertions": [
+        "所有结果满足已确认硬条件",
+        "若仅领域偏好不满足可给有核心任务依据的备选",
+        "说明缺少教育经历而非编造成熟经验",
+        "一次受控检索，总召回不超过200、模型摘要不超过24、结果不超过5"
+      ]
+    },
+    {
+      "id": "hard_constraint_no_match",
+      "user": "周六联调是必须的，这一点不能放宽。",
+      "assertions": [
+        "若没有满足硬条件者返回真实不足",
+        "不推荐已知只来周日者",
+        "提出调整建议不等于用户已经同意",
+        "用户实际修改要求之前不执行放宽检索"
+      ]
+    },
+    {
+      "id": "restore_revoke_and_exhaust",
+      "assertions": [
+        "刷新页面恢复会话、不重新请求模型",
+        "重复消息幂等不重复收费",
+        "候选撤权后不再把旧文本发给模型",
+        "活动变化不能沿用旧活动名单",
+        "讨论额度独立且有界，不能重置旧run耗尽的额度",
+        "异步旧结果不得覆盖新的需求版本"
+      ]
+    }
+  ],
+  "minimum_evidence": [
+    "natural_user_visible_transcript",
+    "actual_server_tool_events",
+    "candidate_fact_and_claim_references",
+    "run_turn_query_batch_versions",
+    "model_call_ledger",
+    "explicit_product_pass_or_fail"
+  ],
+  "forbidden_claims": [
+    "Generated examples presented as real model outputs",
+    "No match used to hide model failure",
+    "Internal thought text presented as a verified explanation",
+    "Exact tag match treated as complete teamwork suitability",
+    "Passing protocol tests presented as conversational product acceptance"
+  ]
+}

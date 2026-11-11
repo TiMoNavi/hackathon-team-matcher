@@ -1,0 +1,163 @@
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item";
+import {
+  BookmarkIcon,
+  CopyIcon,
+  EditIcon,
+  FlagIcon,
+  HeartIcon,
+  MessageCircleIcon,
+  MoreHorizontalIcon,
+  ShareIcon,
+  TrashIcon,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+const postData = {
+  author: {
+    avatar: "https://i.pravatar.cc/150?u=shadcn",
+    name: "shadcn",
+    username: "@shadcn",
+  },
+  content: {
+    description:
+      "Just shipped a new design system update! 🚀 Excited to share the improvements we've made to accessibility and theming.",
+    hashtags: ["#React", "#DesignSystem", "#OpenSource"],
+    image: {
+      alt: "Code editor with React components",
+      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    },
+    title: "Building Modern UI Components",
+  },
+};
+
+export default function CardComponent() {
+  return (
+    <Card className="w-full max-w-sm gap-0 overflow-hidden py-0 shadow-none">
+      <CardHeader className="-mr-1 flex flex-row items-center justify-between py-2.5">
+        <Item className="w-full gap-2.5 p-0">
+          <ItemMedia>
+            <Image
+              src={postData.author.avatar}
+              className="bg-secondary h-8 w-8 rounded-full object-contain"
+              alt={`${postData.author.name} profile`}
+              height={32}
+              width={32}
+            />
+          </ItemMedia>
+          <ItemContent className="gap-0">
+            <ItemTitle>{postData.author.name}</ItemTitle>
+            <ItemDescription className="text-xs">
+              {postData.author.username}
+            </ItemDescription>
+          </ItemContent>
+          <ItemActions className="-me-1">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon-sm">
+                  <MoreHorizontalIcon />
+                  <span className="sr-only">More options</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem>
+                  <EditIcon />
+                  <span>Edit post</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <CopyIcon />
+                  <span>Copy link</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <BookmarkIcon />
+                  <span>Save post</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem variant="destructive">
+                  <FlagIcon />
+                  <span>Report</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">
+                  <TrashIcon />
+                  <span>Delete</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </ItemActions>
+        </Item>
+      </CardHeader>
+      <CardContent className="p-0">
+        <div className="relative aspect-video border-y">
+          <Image
+            src={postData.content.image.src}
+            alt={postData.content.image.alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 400px"
+          />
+        </div>
+        <div className="space-y-2 px-6 py-5">
+          <h5 className="font-semibold">{postData.content.title}</h5>
+          <p className="text-muted-foreground text-sm">
+            {postData.content.description}
+          </p>
+          <div className="flex gap-2 *:text-sm *:text-blue-500 *:hover:underline">
+            {postData.content.hashtags.map((hashtag) => (
+              <Link key={hashtag} href="#">
+                {hashtag}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </CardContent>
+      <CardFooter className="flex border-t p-0!">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-muted-foreground shrink-0 grow rounded-none"
+        >
+          <HeartIcon />
+          <span className="hidden sm:inline">Like</span>
+        </Button>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-muted-foreground shrink-0 grow rounded-none"
+        >
+          <MessageCircleIcon />
+          <span className="hidden sm:inline">Comment</span>
+        </Button>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-muted-foreground shrink-0 grow rounded-none"
+        >
+          <ShareIcon />
+          <span className="hidden sm:inline">Share</span>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
+

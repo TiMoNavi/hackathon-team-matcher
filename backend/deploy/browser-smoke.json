@@ -1,0 +1,146 @@
+{
+  "checked_on": "2026-11-11",
+  "scope": "local native-module preview; not project acceptance or load testing",
+  "browser": "Microsoft Edge / Playwright",
+  "pages": [
+    {
+      "kind": "dashboard",
+      "status": 200,
+      "title": "主面板 - HumHub 免费模块预览"
+    },
+    {
+      "kind": "space",
+      "status": 200,
+      "title": "模块预览活动 A - HumHub 免费模块预览",
+      "url": "/s/mo-kuai-yu-lan-huo-dong-a/"
+    },
+    {
+      "kind": "question",
+      "status": 200,
+      "title": "模块预览活动 A - HumHub 免费模块预览",
+      "url": "/s/mo-kuai-yu-lan-huo-dong-a/questions/question/view"
+    },
+    {
+      "kind": "messenger",
+      "status": 200,
+      "title": "HumHub 免费模块预览",
+      "url": "/mail/mail/index"
+    },
+    {
+      "kind": "installed-modules",
+      "status": 200,
+      "title": "模块 - 管理 - HumHub 免费模块预览",
+      "url": "/admin/module/list"
+    },
+    {
+      "kind": "pdf-viewer",
+      "status": 200,
+      "title": "humhub-preview.pdf",
+      "url": "/pdf-viewer/view/open"
+    },
+    {
+      "kind": "calendar",
+      "status": 200,
+      "title": "模块预览活动 A - HumHub 免费模块预览",
+      "url": "/s/mo-kuai-yu-lan-huo-dong-a/calendar"
+    },
+    {
+      "kind": "questions",
+      "status": 200,
+      "title": "模块预览活动 A - HumHub 免费模块预览",
+      "url": "/s/mo-kuai-yu-lan-huo-dong-a/questions/question/view"
+    },
+    {
+      "kind": "gallery",
+      "status": 200,
+      "title": "模块预览活动 A - HumHub 免费模块预览",
+      "url": "/s/mo-kuai-yu-lan-huo-dong-a/gallery/list"
+    },
+    {
+      "kind": "linklist",
+      "status": 200,
+      "title": "模块预览活动 A - HumHub 免费模块预览",
+      "url": "/s/mo-kuai-yu-lan-huo-dong-a/linklist/linklist"
+    },
+    {
+      "kind": "blocked-source",
+      "url": "/.env",
+      "status": 404
+    },
+    {
+      "kind": "blocked-source",
+      "url": "/.runtime/preview-credentials.json",
+      "status": 404
+    },
+    {
+      "kind": "blocked-source",
+      "url": "/protected/config/common.php",
+      "status": 404
+    },
+    {
+      "kind": "blocked-source",
+      "url": "/deploy/bootstrap.php",
+      "status": 404
+    },
+    {
+      "kind": "blocked-source",
+      "url": "/uploads/files/test.pdf",
+      "status": 404
+    }
+  ],
+  "javascript_errors": [],
+  "asset_errors": [],
+  "space_demo_post_visible": true,
+  "space_navigation": [
+    {
+      "text": "日历",
+      "href": "/calendar"
+    },
+    {
+      "text": "日历",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/calendar"
+    },
+    {
+      "text": "Gallery",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/gallery/list"
+    },
+    {
+      "text": "Linklist",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/linklist/linklist"
+    },
+    {
+      "text": "Download ICS",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/calendar/export/event?id=5"
+    },
+    {
+      "text": "Provide an answer",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/questions/question/view?id=1#create-answer-form"
+    },
+    {
+      "text": "View all answers (1)",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/questions/question/view?id=1#answers"
+    },
+    {
+      "text": "Provide an answer",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/questions/question/view?id=1#create-answer-form"
+    },
+    {
+      "text": "折叠",
+      "href": "#humhubmodulescalendarwidgetsupcomingevents"
+    },
+    {
+      "text": "Open Calendar",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/calendar"
+    },
+    {
+      "text": "赛程预览：项目路演\n2026年11月12日 (10:00 - 11:00)",
+      "href": "/s/mo-kuai-yu-lan-huo-dong-a/calendar/entry/view?id=1"
+    }
+  ],
+  "pdf": {
+    "status": 200,
+    "content_type": "application/pdf",
+    "has_pdf_header": true
+  },
+  "passed": true
+}

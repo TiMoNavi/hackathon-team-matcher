@@ -1,0 +1,109 @@
+{
+  "baseline_files_checked": 402,
+  "modified_existing": [
+    "backend/protected/modules/matcher-recommendation/config.php",
+    "backend/protected/modules/matcher-recommendation/Module.php",
+    "backend/protected/modules/matcher-recommendation/module.json",
+    "backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+    "backend/protected/modules/matcher-recommendation/tests/browse/routes.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationStorageSchema.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoConversationStore.php",
+    "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+    "backend/protected/modules/matcher-recommendation-ai/Module.php",
+    "backend/protected/modules/matcher-recommendation-ai/module.json"
+  ],
+  "expected_modified_set_matches": true,
+  "outside_allowed_changes": [],
+  "post_regression_production_changes": [],
+  "production_php_count": 154,
+  "production_php_without_regression_fingerprint": [],
+  "tracked_diff_matching_commands": [
+    "git diff",
+    "git diff --binary",
+    "git diff HEAD",
+    "git diff --binary HEAD"
+  ],
+  "php_syntax": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/ErrorHandler.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/TestPorts.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/bootstrap.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/console.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/control.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/router.php",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/seed.php",
+      "passed": true
+    }
+  ],
+  "python_syntax": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/cleanup.py",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/harness.py",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/lifecycle.py",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/mysql_race.py",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/provision.py",
+      "passed": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_host/run.py",
+      "passed": true
+    }
+  ],
+  "documents": [
+    {
+      "path": "docs/推荐模块/17_后端接入与隔离联调.md",
+      "relative_links": 9,
+      "missing": [],
+      "balanced_fences": true,
+      "trailing_whitespace_lines": []
+    },
+    {
+      "path": "docs/推荐模块/18_隔离后端接入验收.md",
+      "relative_links": 20,
+      "missing": [],
+      "balanced_fences": true,
+      "trailing_whitespace_lines": []
+    },
+    {
+      "path": "docs/推荐模块/task.md",
+      "relative_links": 48,
+      "missing": [],
+      "balanced_fences": true,
+      "trailing_whitespace_lines": []
+    }
+  ],
+  "passed": true,
+  "scope": "Final root source and document review; functional runs reused from recorded evidence, no recreated database, model calls or network imports.",
+  "frozen_original_unchanged": true,
+  "shared_contract_unchanged": true
+}

@@ -1,0 +1,24 @@
+{
+    "status": "passed",
+    "passed": 17,
+    "checks": [
+        "migration_is_additive_and_repeatable",
+        "SQL_submit_queued_zero_model",
+        "SQL_idempotency_replays",
+        "model_outside_SQL_transaction_1",
+        "SQL_extract_succeeded",
+        "SQL_input_cleared_after_success",
+        "SQL_adoption_keeps_profile_unconfirmed",
+        "model_outside_SQL_transaction_2",
+        "SQL_questions_succeeded",
+        "SQL_actual_batch_metrics",
+        "model_outside_SQL_transaction_3",
+        "SQL_compose_succeeded",
+        "SQL_compose_keeps_drafts_unconfirmed",
+        "SQL_job_contains_only_output_references",
+        "SQL_both_scopes_confirm_atomically",
+        "model_outside_SQL_transaction_4",
+        "SQL_delete_purges_AI_private_copies"
+    ],
+    "real_llm_calls": 0
+}

@@ -1,0 +1,84 @@
+"use client";
+
+import { useMemo } from "react";
+import { addDays, format, isToday } from "date-fns";
+import { CalendarDaysIcon } from "lucide-react";
+
+import {
+  Empty,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty";
+import { Separator } from "@/components/ui/separator";
+
+import { AgendaDaysToShow } from "../constants";
+import type { CalendarEvent } from "../types";
+import { getAgendaEventsForDay } from "../utils";
+import { EventItem } from "./event-item";
+
+interface AgendaViewProps {
+  currentDate: Date;
+  events: CalendarEvent[];
+  onEventSelect: (event: CalendarEvent, e: React.MouseEvent) => void;
+}
+
+export function AgendaView({
+  currentDate,
+  events,
+  onEventSelect,
+}: AgendaViewProps) {
+  const days = useMemo(
+    () =>
+      Array.from({ length: AgendaDaysToShow }, (_, i) =>
+        addDays(currentDate, i),
+      )
+        .map((day) => ({ day, events: getAgendaEventsForDay(events, day) }))
+        .filter((item) => item.events.length > 0),
+    [currentDate, events],
+  );
+
+  if (days.length === 0) {
+    return (
+      <Empty className="h-full">
+        <EmptyHeader>
+          <EmptyMedia variant="icon">
+            <CalendarDaysIcon />
+          </EmptyMedia>
+          <EmptyTitle>No events found</EmptyTitle>
+          <EmptyDescription>
+            There are no events scheduled for this time period.
+          </EmptyDescription>
+        </EmptyHeader>
+      </Empty>
+    );
+  }
+
+  return (
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-6">
+      {days.map(({ day, events: dayEvents }) => (
+        <section key={day.toString()} className="flex flex-col gap-3">
+          <div
+            className="text-muted-foreground data-today:text-foreground flex items-center gap-3 text-xs font-medium uppercase data-today:font-semibold"
+            data-today={isToday(day) || undefined}
+          >
+            {format(day, "d MMM, EEEE")}
+            <Separator className="flex-1" />
+          </div>
+          <div className="flex flex-col gap-2">
+            {dayEvents.map((event) => (
+              <EventItem
+                key={event.id}
+                event={event}
+                view="agenda"
+                onClick={(e) => onEventSelect(event, e)}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+

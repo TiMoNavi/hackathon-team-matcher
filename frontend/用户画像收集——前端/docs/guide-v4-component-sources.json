@@ -1,0 +1,115 @@
+{
+  "updated": "2026-11-12",
+  "version": "guide-v4",
+  "affectui_originals": [
+    {
+      "file": "components/reference-originals/glow-cloud.tsx",
+      "source": "../vendor/affectui/affectui-illustrations/glow-cloud.tsx",
+      "sha256": "5c2602055a147dd94df18e22040ead1cbc00c4990a5b17ba7e576d60766b98db",
+      "unchanged": true
+    },
+    {
+      "file": "components/affectui/text-area-clean.tsx",
+      "source": "AffectUI MCP get_source, CollectUI, 2026-11-12",
+      "sha256": "a812262a62528def4a015c59aaadc9905fc3a6c8e8b036c0e4d4953bf89f347e",
+      "unchanged": true
+    },
+    {
+      "file": "components/affectui/thinking-loader-clean.tsx",
+      "source": "../vendor/affectui/affectui-components/thinking-loader-clean.tsx",
+      "sha256": "459869b68f0b163262cb183b5d1b1261d3fe621c3551826c06aae136e7047d76",
+      "unchanged": true
+    },
+    {
+      "file": "components/affectui/ai-answer-clean.tsx",
+      "source": "../vendor/affectui/affectui-components/ai-answer-clean.tsx",
+      "sha256": "ae1e0315b90cce5eff91481a93520c881d1a2e360f589194eac98135d64740e5",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/text-reveal.tsx",
+      "source": "../vendor/affectui/affectui-motion/text-reveal.tsx",
+      "sha256": "9b3aefc8310c71fd66f3d9dc29779ebaf6c0e064766ff6619c8fedb84121ee19",
+      "unchanged": true
+    },
+    {
+      "file": "components/affectui/button-clean.tsx",
+      "source": "../vendor/affectui/affectui-components/button-clean.tsx",
+      "sha256": "b5863cfe612e6db5c0f2f21cc3d84df3cb4c0a1ff23534c1b8fe6ddb843c53d3",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/grid-background.tsx",
+      "source": "../vendor/affectui/affectui-motion/grid-background.tsx",
+      "sha256": "c9c7936cffc22cf08f3c786ad2f09509ada9f2901aed0a89ceaa0037f43ae394",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/gradient-floor.tsx",
+      "source": "../vendor/affectui/affectui-motion/gradient-floor.tsx",
+      "sha256": "df01c384627d3c66b2fa91ed3981212c71832124f92b4f0262d4937359c400d9",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/integration-beam.tsx",
+      "source": "../vendor/affectui/affectui-illustrations/integration-beam.tsx",
+      "sha256": "7782094da606b8ea48f88e980ab26e88e8f0863e0de57e54d9919dc575ede41a",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/agent-trail.tsx",
+      "source": "AffectUI MCP get_source, 2026-11-12",
+      "sha256": "2968a4a3254a691f8afa1c7d26fb1732db1b1ee63091f2adb47b08c37ad474b3",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/gradient-text.tsx",
+      "source": "../vendor/affectui/affectui-motion/gradient-text.tsx",
+      "sha256": "45e5c18b337ce322268f821185b5e384e20a953ee2af0b652c1d7646957659ef",
+      "unchanged": true
+    },
+    {
+      "file": "components/reference-originals/glass-folder.tsx",
+      "source": "../vendor/affectui/affectui-illustrations/glass-folder.tsx",
+      "sha256": "96edbd88efd40e771822737e0b4f21c0f05cce33e081bc6005be542bbb71d02f",
+      "unchanged": true
+    }
+  ],
+  "shadcnuikit": [
+    {
+      "name": "Signalry Card",
+      "source": "../vendor/shadcnuikit/templates/signalry-nextjs/components/ui/card.tsx",
+      "source_sha256": "28dec8d76e1cf48bf822bf533acc00a9b389d2de804a40b27a24b869e4845ed7",
+      "file": "components/onboarding/kit-card.tsx",
+      "sha256": "f2fef2d9ed9588b94b1f10e0a70fce797486c535f72cef1479dcb484ab853852",
+      "adaptation": "Only the cn import path is mapped to the local utility."
+    },
+    {
+      "name": "card3",
+      "provider": "Shadcn UI Kit",
+      "source": "MCP get_item_code, 2026-11-12",
+      "original_snapshot": "docs/v3-source-snapshots/card3.tsx.txt",
+      "snapshot_sha256": "022b487f2f37b9970eb13cbe160a34806d63a2569c21f9e59125b29f7e18f5ea",
+      "adapted_composition": "components/onboarding/candidate-deck.tsx",
+      "adaptation": "Photo composition adapted to click-led desktop browsing, thumbnail selection and optional touch swipes. The vertical information stream is application composition, not an official template."
+    }
+  ],
+  "image_manifest": "guide-v3-image-sources.json",
+  "queries": "AffectUI long-editor and message/notification searches reviewed in this revision. Existing source snapshots reused. No complete official document editor or message-stream template is claimed; no new UI dependency installed.",
+  "application_compositions": [
+    {
+      "file": "components/onboarding/document-text.tsx",
+      "basis": "Original AffectUI TextArea; props, native dialog and scoped CSS. Original source unchanged.",
+      "behavior": "Full inline height, focus editor, native text, newlines and cursor selection retained."
+    },
+    {
+      "file": "components/onboarding/document-workspace.tsx",
+      "basis": "Signalry theme and application document layout. Replaces the V3 social profile cover."
+    },
+    {
+      "file": "components/onboarding/candidate-story.tsx",
+      "basis": "Existing Motion runtime with semantic sections and Signalry tokens; custom application composition.",
+      "behavior": "Two groups along a thin vertical line; 9–30 second reading intervals, pause on hover/focus, explicit pause/show all, static reduced motion."
+    }
+  ]
+}

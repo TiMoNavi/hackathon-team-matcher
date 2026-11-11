@@ -1,0 +1,39 @@
+<!-- grid-placeholder-light.svg -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="xMidYMid slice"
+>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F2F3F5"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background (bleed to avoid 1px frame on scale) -->
+  <rect x="-1" y="-1" width="102" height="102" fill="url(#g)" />
+
+  <!-- Image icon -->
+  <g opacity="0.28">
+    <rect
+      x="28"
+      y="32"
+      width="44"
+      height="30"
+      rx="4"
+      stroke="#0F172A"
+      stroke-width="3"
+      fill="none"
+    />
+    <circle cx="40" cy="42" r="3.5" fill="#0F172A"/>
+    <path
+      d="M32 58 L44 46 L54 54 L64 44 L72 52"
+      stroke="#0F172A"
+      stroke-width="3"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

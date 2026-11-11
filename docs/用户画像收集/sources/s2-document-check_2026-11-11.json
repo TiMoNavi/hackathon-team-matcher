@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "markdown_documents": 10,
+  "broken_relative_links": [],
+  "unclosed_fences": [],
+  "invalid_source_json": [],
+  "frozen_files_unchanged": true,
+  "reference_humhub_clean": true,
+  "task_is_in_profile_directory": true,
+  "s1_completed": 8,
+  "s2_completed": 9,
+  "remaining_implementation_tasks": 38
+}

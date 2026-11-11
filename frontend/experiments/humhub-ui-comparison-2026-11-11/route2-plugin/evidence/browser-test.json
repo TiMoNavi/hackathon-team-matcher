@@ -1,0 +1,150 @@
+{
+  "url": "http://localhost:8193/comparison-react/home/index",
+  "http": 200,
+  "header": "humhub-module-react-independent",
+  "overview": {
+    "title": "同频 CoLab · 独立 React 前端插件",
+    "heading": "发现.",
+    "viewport": 1440,
+    "width": 1440,
+    "root": true,
+    "scripts": [
+      "http://localhost:8193/assets/1edf6144/assets/index-CVeaXq50.js"
+    ],
+    "styles": [
+      "http://localhost:8193/assets/1edf6144/assets/index-DLz7tfG7.css"
+    ],
+    "cards": 4,
+    "bodyClass": "",
+    "csrfMeta": true,
+    "nativeGlobals": {
+      "jquery": false,
+      "humhub": false
+    }
+  },
+  "viewports": [
+    {
+      "viewport": 1440,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "viewport": 1024,
+      "width": 1024,
+      "height": 800
+    },
+    {
+      "viewport": 768,
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "viewport": 390,
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "checks": [
+    {
+      "name": "Initial four members",
+      "pass": true
+    },
+    {
+      "name": "Role filter",
+      "pass": true
+    },
+    {
+      "name": "Search React",
+      "pass": true
+    },
+    {
+      "name": "Empty state and reset",
+      "pass": true
+    },
+    {
+      "name": "Follow toggle",
+      "pass": true
+    },
+    {
+      "name": "Profile dialog and Escape",
+      "pass": true
+    },
+    {
+      "name": "Dark theme",
+      "pass": true
+    },
+    {
+      "name": "AffectUI progress tracker",
+      "pass": true
+    },
+    {
+      "name": "1440px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390px no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Mobile profile dialog",
+      "pass": true
+    },
+    {
+      "name": "No backend mutations",
+      "pass": true
+    },
+    {
+      "name": "No native framework globals",
+      "pass": true
+    },
+    {
+      "name": "Only module JS and CSS",
+      "pass": true
+    },
+    {
+      "name": "Zero browser errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "responses": [
+    {
+      "url": "http://localhost:8193/comparison-react/home/index",
+      "status": 200,
+      "type": "document"
+    },
+    {
+      "url": "http://localhost:8193/assets/1edf6144/assets/index-DLz7tfG7.css",
+      "status": 200,
+      "type": "stylesheet"
+    },
+    {
+      "url": "http://localhost:8193/assets/1edf6144/assets/index-CVeaXq50.js",
+      "status": 200,
+      "type": "script"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://localhost:8193/comparison-react/home/index",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:8193/assets/1edf6144/assets/index-DLz7tfG7.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:8193/assets/1edf6144/assets/index-CVeaXq50.js",
+      "method": "GET"
+    }
+  ]
+}

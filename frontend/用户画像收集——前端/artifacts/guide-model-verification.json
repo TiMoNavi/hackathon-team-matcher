@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-11T21:18:04.155Z",
+  "checks": [
+    "Fresh draft has no fabricated person or ideas and discovery is off",
+    "Actual text is copied literally and opaque files never synthesize a profile",
+    "Demonstration profile requires an explicit sample source",
+    "Audience preview follows authenticated / friends / private exactly",
+    "Skipped questions do not create false preferences",
+    "Reorganized answers preserve earlier visibility choices",
+    "Idea drafts remain separate and private, with exact original text",
+    "Late or cancelled results cannot apply",
+    "Idea revisions invalidate results",
+    "Activity switches revoke search and preserve isolated activity answers",
+    "Results are constrained to one selected event without padding",
+    "Zero-result scenario is not silently changed to ordinary browsing",
+    "Invalid nested browser drafts are rejected safely",
+    "Editing completed profile invalidates final confirmation"
+  ],
+  "passed": 14
+}

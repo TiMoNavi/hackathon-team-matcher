@@ -1,0 +1,172 @@
+{
+  "scope": "Implementation scoped source review before independent host acceptance. Runtime tests still in progress.",
+  "modified_existing": [
+    "backend/protected/modules/matcher-recommendation/config.php",
+    "backend/protected/modules/matcher-recommendation/Module.php",
+    "backend/protected/modules/matcher-recommendation/module.json",
+    "backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+    "backend/protected/modules/matcher-recommendation/tests/browse/routes.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationStorageSchema.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoConversationStore.php",
+    "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+    "backend/protected/modules/matcher-recommendation-ai/Module.php",
+    "backend/protected/modules/matcher-recommendation-ai/module.json"
+  ],
+  "added_implementation_and_offline_tests": [
+    "backend/protected/modules/matcher-recommendation/migrations/m261112_000002_conversation_runtime.php",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/ConversationProviderSource.php",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/ConversationRuntimeGuard.php",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/Fixtures.php",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/native.php",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/race.php",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/http.php",
+    "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/run.php",
+    "backend/protected/modules/matcher-recommendation/adapters/native/HistoryBackedContactEligibilityReader.php",
+    "backend/protected/modules/matcher-recommendation/adapters/composition/NativeConversationFactory.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationHttpView.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationHttpException.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationRuntimeSchema.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationReadinessException.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoRecommendationBudget.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationHttpInput.php",
+    "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoConversationRuntime.php",
+    "backend/protected/modules/matcher-recommendation/controllers/ConversationController.php"
+  ],
+  "concurrent_other_changes": [],
+  "frozen_original_unchanged": true,
+  "shared_contract_unchanged": true,
+  "tracked_diff_unchanged": true,
+  "production_sources_changed_after_root_regression": [],
+  "php_lint": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/config.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/Module.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/browse/routes.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationStorageSchema.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoConversationStore.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/application/conversation/ConversationService.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation-ai/Module.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/migrations/m261112_000002_conversation_runtime.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ConversationProviderSource.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ConversationRuntimeGuard.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/Fixtures.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/native.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/race.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/http.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/conversation_runtime/run.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/native/HistoryBackedContactEligibilityReader.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/composition/NativeConversationFactory.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationHttpView.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationHttpException.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationRuntimeSchema.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationReadinessException.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoRecommendationBudget.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/ConversationHttpInput.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/conversation/PdoConversationRuntime.php",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/controllers/ConversationController.php",
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ]
+}

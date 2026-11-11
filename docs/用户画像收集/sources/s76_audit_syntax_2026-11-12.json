@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "files": [
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s76_audit_bootstrap.php",
+      "syntax_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s76_audit_driver.php",
+      "syntax_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s76_audit_fixture.php",
+      "syntax_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s76_audit_router.php",
+      "syntax_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s76_audit_support.php",
+      "syntax_ok": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s76_audit_http.py",
+      "syntax_ok": true
+    }
+  ],
+  "php_files": 5,
+  "python_files": 1
+}

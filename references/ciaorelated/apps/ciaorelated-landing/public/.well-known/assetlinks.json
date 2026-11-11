@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dogankaraarslan1.songverwandt",
+      "sha256_cert_fingerprints": [
+        "DD:FF:B7:5E:13:5F:BB:19:9E:22:BB:B9:92:AB:B9:5A:A6:CE:1B:07:DE:F9:D8:C8:0F:76:2C:45:40:B6:50:3A"
+      ]
+    }
+  }
+]

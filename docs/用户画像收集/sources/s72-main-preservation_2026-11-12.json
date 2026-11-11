@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "scope": "original account identity fields, native profiles, original Spaces and memberships, profile catalog and existing profile state/history/drafts",
+  "excluded_operational_fields": "login/activity timestamps; new presentation/sharing and idea records checked separately",
+  "original_accounts": 103,
+  "original_spaces": 4,
+  "checks": [
+    {
+      "table": "user",
+      "original_rows": 103,
+      "unchanged": true
+    },
+    {
+      "table": "profile",
+      "original_rows": 103,
+      "unchanged": true
+    },
+    {
+      "table": "space",
+      "original_rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "space_membership",
+      "original_rows": 126,
+      "unchanged": true
+    },
+    {
+      "table": "profile_field",
+      "original_rows": 31,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_state",
+      "original_rows": 223,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_attribute",
+      "original_rows": 4048,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_revision",
+      "original_rows": 220,
+      "unchanged": true
+    },
+    {
+      "table": "matcher_profile_draft",
+      "original_rows": 345,
+      "unchanged": true
+    }
+  ]
+}

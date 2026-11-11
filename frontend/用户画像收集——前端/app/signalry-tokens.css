@@ -1,0 +1,42 @@
+/* Signalry original light tokens, copied without changing values. */
+:root {
+  --radius: 0.75rem;
+
+  --background: #ffffff;
+  --foreground: #13111c;
+  --card: #ffffff;
+  --card-foreground: #13111c;
+  --popover: #ffffff;
+  --popover-foreground: #13111c;
+  --primary: #5b3df5;
+  --primary-foreground: #ffffff;
+  --secondary: #eeeaff;
+  --secondary-foreground: #5b3df5;
+  --muted: #f7f5ff;
+  --muted-foreground: #6e6c7e;
+  --accent: #f7f5ff;
+  --accent-foreground: #5b3df5;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e8e6f0;
+  --input: #e8e6f0;
+  --ring: #5b3df5;
+
+  --chart-1: #5b3df5;
+  --chart-2: #0ea5e9;
+  --chart-3: #10b981;
+  --chart-4: #f97316;
+  --chart-5: #ec4899;
+
+  --sidebar: #f7f5ff;
+  --sidebar-foreground: #13111c;
+  --sidebar-primary: #5b3df5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eeeaff;
+  --sidebar-accent-foreground: #5b3df5;
+  --sidebar-border: #e8e6f0;
+  --sidebar-ring: #5b3df5;
+
+  --lime: #d9f85f;
+  --night: #16122b;
+  --body: #4a4858;
+}

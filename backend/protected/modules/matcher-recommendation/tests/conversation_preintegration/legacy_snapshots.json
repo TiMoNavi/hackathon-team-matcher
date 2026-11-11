@@ -1,0 +1,471 @@
+{
+    "kind": "fixed synthetic pre-fix conversation snapshots; never production data",
+    "source_sha256": "f626d8105a14254abbd81053e15fc11b0edb1442242324586677bab2e4ed94d9",
+    "cases": {
+        "unselected": {
+            "snapshot": {
+                "id": "conversation-a36f6b130dbac752aecb98ee331fdaae",
+                "owner_id": 1,
+                "event_id": 7,
+                "version": 8,
+                "context": {
+                    "viewerId": 1,
+                    "spaceId": 7,
+                    "accessVersion": "access-fixture-1",
+                    "policyVersion": "event-fixture-1"
+                },
+                "policy_hash": "bde9bbec4904fdc812bbbc2a05797f9eed0913ebbb9cdd4ad7c89d4f3972ff86",
+                "provider_identity": "conversation-provider-v1",
+                "limits_hash": "3bc54abc097e576b800d9f2229b9137aee03cc2ec6e8f43a7b5bdd12612f427b",
+                "created_at": 1794445200,
+                "updated_at": 1794445200,
+                "interaction_status": "completed",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "calls_used": 2,
+                "turns": [
+                    {
+                        "turn_id": "turn-357f0b8d45192a1facd292be2d47079b",
+                        "idempotency_key": "initial",
+                        "input_hash": "971c2d742f07a7fe66a2925ae1a426f754f4718c516761e4ba74e708cde1d5f6",
+                        "user_message": "先看愿意做后端的人。",
+                        "command": "recommend",
+                        "run_id": "run-4a85104353f8edb1296b9b1f7f9d5b8a",
+                        "batch_id": "batch-a03a87942699bebb672dc1eb2535470f",
+                        "message": "也看过另一条资料，审计事实-5002：offers=\"后端开发\"。交付经验仍需确认。",
+                        "items": [
+                            {
+                                "id": "5001",
+                                "fact_ids": [
+                                    "f1"
+                                ],
+                                "reason": "本次有明确的后端贡献意愿。",
+                                "gaps": [
+                                    "实际交付经历还需沟通。"
+                                ],
+                                "rule_score": 0.8800000000000001,
+                                "ai_rank": 1,
+                                "fact_scope_id": "batch-a03a87942699bebb672dc1eb2535470f",
+                                "fact_references": [
+                                    {
+                                        "fact_id": "f1",
+                                        "atom_hash": "ab9bf9cb0f861f120a8bd695dbeb352999d0ebc42c8dc8cee6396e735a359f5e",
+                                        "feature": "offers",
+                                        "evidence_refs": [
+                                            {
+                                                "targetType": "person",
+                                                "targetId": "5001",
+                                                "sourceKind": "profile_attribute",
+                                                "sourceId": "attribute-fixture-offers",
+                                                "scope": "space:7",
+                                                "contentRevision": 4,
+                                                "permissionVersion": 2
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "events": [
+                            {
+                                "type": "model_attempt_reserved",
+                                "stage": "plan",
+                                "permit_id": "attempt-02d8124fcf1df906cb54bcb2ab9f446b"
+                            },
+                            {
+                                "type": "tool_started",
+                                "tool": "search_candidates",
+                                "message": "正在查询本次活动中有权推荐的人。"
+                            },
+                            {
+                                "type": "tool_completed",
+                                "tool": "search_candidates",
+                                "candidate_count": 21,
+                                "model_candidate_count": 21,
+                                "message": "本次活动检索完成，正在核对任务依据与未知项。"
+                            },
+                            {
+                                "type": "model_attempt_reserved",
+                                "stage": "respond",
+                                "permit_id": "attempt-193066fcfb42bb8e6ddcb3950f74c872"
+                            }
+                        ],
+                        "calls_used": 2,
+                        "status": "completed",
+                        "error": null
+                    }
+                ],
+                "runs": {
+                    "run-4a85104353f8edb1296b9b1f7f9d5b8a": {
+                        "id": "run-4a85104353f8edb1296b9b1f7f9d5b8a",
+                        "status": "completed",
+                        "calls_used": 2,
+                        "clarification_round": 0,
+                        "repair_used": false,
+                        "search_calls_used": 1,
+                        "conditions": [
+                            {
+                                "feature": "needs",
+                                "operator": "supply_demand",
+                                "value": [
+                                    "后端开发"
+                                ],
+                                "strength": "soft",
+                                "origin": "interpreted_draft"
+                            }
+                        ],
+                        "batch": {
+                            "batch_id": "batch-a03a87942699bebb672dc1eb2535470f",
+                            "display_version": 1,
+                            "ordered_ids": [
+                                "5001"
+                            ],
+                            "items": [
+                                {
+                                    "id": "5001",
+                                    "fact_ids": [
+                                        "f1"
+                                    ],
+                                    "reason": "本次有明确的后端贡献意愿。",
+                                    "gaps": [
+                                        "实际交付经历还需沟通。"
+                                    ],
+                                    "rule_score": 0.8800000000000001,
+                                    "ai_rank": 1,
+                                    "fact_scope_id": "batch-a03a87942699bebb672dc1eb2535470f",
+                                    "fact_references": [
+                                        {
+                                            "fact_id": "f1",
+                                            "atom_hash": "ab9bf9cb0f861f120a8bd695dbeb352999d0ebc42c8dc8cee6396e735a359f5e",
+                                            "feature": "offers",
+                                            "evidence_refs": [
+                                                {
+                                                    "targetType": "person",
+                                                    "targetId": "5001",
+                                                    "sourceKind": "profile_attribute",
+                                                    "sourceId": "attribute-fixture-offers",
+                                                    "scope": "space:7",
+                                                    "contentRevision": 4,
+                                                    "permissionVersion": 2
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "refs": {
+                                "5001": "1915b51f19ae5a396643ca24cdd0e41a319f6504844b8394ab23b838ea1eb78e"
+                            },
+                            "conditions": [
+                                {
+                                    "feature": "needs",
+                                    "operator": "supply_demand",
+                                    "value": [
+                                        "后端开发"
+                                    ],
+                                    "strength": "soft",
+                                    "origin": "interpreted_draft"
+                                }
+                            ],
+                            "valid": true
+                        }
+                    }
+                },
+                "current_run_id": "run-4a85104353f8edb1296b9b1f7f9d5b8a",
+                "current_batch": {
+                    "batch_id": "batch-a03a87942699bebb672dc1eb2535470f",
+                    "display_version": 1,
+                    "ordered_ids": [
+                        "5001"
+                    ],
+                    "items": [
+                        {
+                            "id": "5001",
+                            "fact_ids": [
+                                "f1"
+                            ],
+                            "reason": "本次有明确的后端贡献意愿。",
+                            "gaps": [
+                                "实际交付经历还需沟通。"
+                            ],
+                            "rule_score": 0.8800000000000001,
+                            "ai_rank": 1,
+                            "fact_scope_id": "batch-a03a87942699bebb672dc1eb2535470f",
+                            "fact_references": [
+                                {
+                                    "fact_id": "f1",
+                                    "atom_hash": "ab9bf9cb0f861f120a8bd695dbeb352999d0ebc42c8dc8cee6396e735a359f5e",
+                                    "feature": "offers",
+                                    "evidence_refs": [
+                                        {
+                                            "targetType": "person",
+                                            "targetId": "5001",
+                                            "sourceKind": "profile_attribute",
+                                            "sourceId": "attribute-fixture-offers",
+                                            "scope": "space:7",
+                                            "contentRevision": 4,
+                                            "permissionVersion": 2
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "refs": {
+                        "5001": "1915b51f19ae5a396643ca24cdd0e41a319f6504844b8394ab23b838ea1eb78e"
+                    },
+                    "conditions": [
+                        {
+                            "feature": "needs",
+                            "operator": "supply_demand",
+                            "value": [
+                                "后端开发"
+                            ],
+                            "strength": "soft",
+                            "origin": "interpreted_draft"
+                        }
+                    ],
+                    "valid": true
+                },
+                "seen_ids": [
+                    "5001"
+                ],
+                "requirements": {
+                    "messages": [
+                        "先看愿意做后端的人。"
+                    ],
+                    "conditions": [
+                        {
+                            "feature": "needs",
+                            "operator": "supply_demand",
+                            "value": [
+                                "后端开发"
+                            ],
+                            "strength": "soft",
+                            "origin": "interpreted_draft"
+                        }
+                    ]
+                },
+                "inflight": null,
+                "error": null
+            },
+            "marker": "审计事实-5002：offers=\"后端开发\"",
+            "mentioned_id": "5002"
+        },
+        "empty": {
+            "snapshot": {
+                "id": "conversation-94c66d416bf7549a391b8386921b82c2",
+                "owner_id": 1,
+                "event_id": 7,
+                "version": 8,
+                "context": {
+                    "viewerId": 1,
+                    "spaceId": 7,
+                    "accessVersion": "access-fixture-1",
+                    "policyVersion": "event-fixture-1"
+                },
+                "policy_hash": "bde9bbec4904fdc812bbbc2a05797f9eed0913ebbb9cdd4ad7c89d4f3972ff86",
+                "provider_identity": "conversation-provider-v1",
+                "limits_hash": "3bc54abc097e576b800d9f2229b9137aee03cc2ec6e8f43a7b5bdd12612f427b",
+                "created_at": 1794445200,
+                "updated_at": 1794445200,
+                "interaction_status": "completed",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "calls_used": 2,
+                "turns": [
+                    {
+                        "turn_id": "turn-d1153b97d8a1d5dd5284049646c5992a",
+                        "idempotency_key": "initial",
+                        "input_hash": "971c2d742f07a7fe66a2925ae1a426f754f4718c516761e4ba74e708cde1d5f6",
+                        "user_message": "先看愿意做后端的人。",
+                        "command": "recommend",
+                        "run_id": "run-b53c5b9f3fda8301ac598427987310a6",
+                        "batch_id": "batch-396e532977935d29303f0057abfef55b",
+                        "message": "也看过另一条资料，审计事实-5001：offers=\"后端开发\"。交付经验仍需确认。",
+                        "items": [],
+                        "events": [
+                            {
+                                "type": "model_attempt_reserved",
+                                "stage": "plan",
+                                "permit_id": "attempt-7a80348d46b4259559a540defb9a360a"
+                            },
+                            {
+                                "type": "tool_started",
+                                "tool": "search_candidates",
+                                "message": "正在查询本次活动中有权推荐的人。"
+                            },
+                            {
+                                "type": "tool_completed",
+                                "tool": "search_candidates",
+                                "candidate_count": 21,
+                                "model_candidate_count": 21,
+                                "message": "本次活动检索完成，正在核对任务依据与未知项。"
+                            },
+                            {
+                                "type": "model_attempt_reserved",
+                                "stage": "respond",
+                                "permit_id": "attempt-f5234a9be8d15334776f7c89ba26fe5e"
+                            }
+                        ],
+                        "calls_used": 2,
+                        "status": "completed",
+                        "error": null
+                    }
+                ],
+                "runs": {
+                    "run-b53c5b9f3fda8301ac598427987310a6": {
+                        "id": "run-b53c5b9f3fda8301ac598427987310a6",
+                        "status": "completed",
+                        "calls_used": 2,
+                        "clarification_round": 0,
+                        "repair_used": false,
+                        "search_calls_used": 1,
+                        "conditions": [
+                            {
+                                "feature": "needs",
+                                "operator": "supply_demand",
+                                "value": [
+                                    "后端开发"
+                                ],
+                                "strength": "soft",
+                                "origin": "interpreted_draft"
+                            }
+                        ],
+                        "batch": {
+                            "batch_id": "batch-396e532977935d29303f0057abfef55b",
+                            "display_version": 1,
+                            "ordered_ids": [],
+                            "items": [],
+                            "refs": [],
+                            "conditions": [
+                                {
+                                    "feature": "needs",
+                                    "operator": "supply_demand",
+                                    "value": [
+                                        "后端开发"
+                                    ],
+                                    "strength": "soft",
+                                    "origin": "interpreted_draft"
+                                }
+                            ],
+                            "valid": true
+                        }
+                    }
+                },
+                "current_run_id": "run-b53c5b9f3fda8301ac598427987310a6",
+                "current_batch": {
+                    "batch_id": "batch-396e532977935d29303f0057abfef55b",
+                    "display_version": 1,
+                    "ordered_ids": [],
+                    "items": [],
+                    "refs": [],
+                    "conditions": [
+                        {
+                            "feature": "needs",
+                            "operator": "supply_demand",
+                            "value": [
+                                "后端开发"
+                            ],
+                            "strength": "soft",
+                            "origin": "interpreted_draft"
+                        }
+                    ],
+                    "valid": true
+                },
+                "seen_ids": [],
+                "requirements": {
+                    "messages": [
+                        "先看愿意做后端的人。"
+                    ],
+                    "conditions": [
+                        {
+                            "feature": "needs",
+                            "operator": "supply_demand",
+                            "value": [
+                                "后端开发"
+                            ],
+                            "strength": "soft",
+                            "origin": "interpreted_draft"
+                        }
+                    ]
+                },
+                "inflight": null,
+                "error": null
+            },
+            "marker": "审计事实-5001：offers=\"后端开发\"",
+            "mentioned_id": "5001"
+        },
+        "pending": {
+            "snapshot": {
+                "id": "conversation-914fcdd4c9f156056a3737d09e606d64",
+                "owner_id": 1,
+                "event_id": 7,
+                "version": 5,
+                "context": {
+                    "viewerId": 1,
+                    "spaceId": 7,
+                    "accessVersion": "access-fixture-1",
+                    "policyVersion": "event-fixture-1"
+                },
+                "policy_hash": "bde9bbec4904fdc812bbbc2a05797f9eed0913ebbb9cdd4ad7c89d4f3972ff86",
+                "provider_identity": "conversation-provider-v1",
+                "limits_hash": "3bc54abc097e576b800d9f2229b9137aee03cc2ec6e8f43a7b5bdd12612f427b",
+                "created_at": 1794445200,
+                "updated_at": 1794445200,
+                "interaction_status": "awaiting_input",
+                "execution_status": "succeeded",
+                "applicability": "current",
+                "calls_used": 1,
+                "turns": [
+                    {
+                        "turn_id": "turn-41d02214be017d264ef6c480f3e39975",
+                        "idempotency_key": "initial",
+                        "input_hash": "34e966cad58a22f5df4164786ebe9284a933bb680480b45495ba766a027df27b",
+                        "user_message": "必须周六14点到18点联调，还需要后端贡献。",
+                        "command": "recommend",
+                        "run_id": "run-7349efe031ca89a441f85467105e25da",
+                        "batch_id": null,
+                        "message": "你提到了不可放宽的条件，请先确认哪些条件属于硬要求，我会据此筛选，不把它当成普通偏好。",
+                        "items": [],
+                        "events": [
+                            {
+                                "type": "model_attempt_reserved",
+                                "stage": "plan",
+                                "permit_id": "attempt-57bd515f0e31efc40ff0b0fd0d9aec3e"
+                            }
+                        ],
+                        "calls_used": 1,
+                        "status": "completed",
+                        "error": null
+                    }
+                ],
+                "runs": {
+                    "run-7349efe031ca89a441f85467105e25da": {
+                        "id": "run-7349efe031ca89a441f85467105e25da",
+                        "status": "awaiting_input",
+                        "calls_used": 1,
+                        "clarification_round": 1,
+                        "repair_used": false,
+                        "search_calls_used": 0,
+                        "conditions": [],
+                        "batch": null
+                    }
+                },
+                "current_run_id": "run-7349efe031ca89a441f85467105e25da",
+                "current_batch": null,
+                "seen_ids": [],
+                "requirements": {
+                    "messages": [
+                        "必须周六14点到18点联调，还需要后端贡献。"
+                    ],
+                    "conditions": []
+                },
+                "inflight": null,
+                "error": null
+            },
+            "marker": null,
+            "mentioned_id": null
+        }
+    }
+}

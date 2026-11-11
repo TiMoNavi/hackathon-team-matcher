@@ -1,0 +1,29 @@
+{
+  "checked_on": "2026-11-11",
+  "scope": "local preview runtime; no load test",
+  "queue_job_enqueued": true,
+  "queue_rebuild_completed": true,
+  "new_queue_driver_errors": false,
+  "cron_exit_code": 0,
+  "before_restart": {
+    "url": "http://127.0.0.1:8090",
+    "web_running": true,
+    "mysql_running": true,
+    "queue_running": true,
+    "scheduler_running": true,
+    "database_initialized": true,
+    "application_initialized": true
+  },
+  "stop_exit_code": 0,
+  "start_exit_code": 0,
+  "after_restart": {
+    "url": "http://127.0.0.1:8090",
+    "web_running": true,
+    "mysql_running": true,
+    "queue_running": true,
+    "scheduler_running": true,
+    "database_initialized": true,
+    "application_initialized": true
+  },
+  "passed": true
+}

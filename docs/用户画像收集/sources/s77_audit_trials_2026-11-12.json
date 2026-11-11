@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "http_test_runs": 1,
+  "first_http_run": {
+    "evidence": "s77_audit_http_run1_2026-11-12.json",
+    "passed": 72,
+    "failed": 0,
+    "http_requests": 145
+  },
+  "fixture_or_application_failures": [],
+  "preparation_deviations": [
+    {
+      "category": "tool_transport_syntax",
+      "occurrences": 3,
+      "errors": [
+        "SyntaxError: Invalid or unexpected token",
+        "SyntaxError: Unexpected string"
+      ],
+      "effect": "JavaScript could not parse multiline shell strings or embedded markdown fence characters, so those commands did not execute. Retried with correct transport quoting; no business assertions changed."
+    },
+    {
+      "category": "offline_evidence_command",
+      "occurrences": 2,
+      "errors": [
+        "SyntaxError: EOL while scanning string literal",
+        "AttributeError: tuple object has no attribute startswith"
+      ],
+      "effect": "Command escaping decoded a newline or regex grouping early. Retried using chr(10) and direct Markdown target splitting. HTTP had already passed, no business assertion changed, and no database connection was made."
+    }
+  ],
+  "production_changes": [],
+  "real_model_calls": 0
+}

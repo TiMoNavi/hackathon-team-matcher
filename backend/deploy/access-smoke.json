@@ -1,0 +1,115 @@
+{
+  "checked_on": "2026-11-11",
+  "scope": "native preview access checks; not a complete security audit",
+  "checks": [
+    {
+      "name": "unauthenticated API",
+      "actual": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "admin reads Space A",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "member reads own Space A",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "member denied private Space B",
+      "actual": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "member reads own Space post",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "ordinary user denied admin User API",
+      "actual": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "Space listing status",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "Space listing excludes private B",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "member A opens A",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "member A denied B URL",
+      "actual": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "member B denied A URL",
+      "actual": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "member A receives PDF bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "nonmember B receives PDF bytes",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "guest receives PDF bytes",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "member A PDF download",
+      "status": 200
+    },
+    {
+      "name": "nonmember B PDF download",
+      "status": 401
+    },
+    {
+      "name": "guest PDF download",
+      "status": 401
+    },
+    {
+      "name": "nonmember B PDF modal metadata",
+      "status": 200,
+      "exposes_demo_filename": true,
+      "note": "Viewer wrapper is checked separately from protected file bytes."
+    }
+  ],
+  "passed": true,
+  "security_signoff": false,
+  "known_issues": [
+    "PDF Viewer modal exposes the filename to a nonmember with a known GUID; actual PDF download is denied."
+  ]
+}

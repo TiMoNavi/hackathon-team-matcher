@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "passed": 0,
+  "failed": 1,
+  "checks": [
+    {
+      "name": "preconnect_guard_empty",
+      "passed": false
+    }
+  ],
+  "http_requests": 0,
+  "real_llm_calls": 0,
+  "error_type": "AssertionError",
+  "error": "preconnect_guard_empty",
+  "database": "humhub_profile_s76_test_audit_6b49d027",
+  "origin": "http://127.0.0.1:8105"
+}

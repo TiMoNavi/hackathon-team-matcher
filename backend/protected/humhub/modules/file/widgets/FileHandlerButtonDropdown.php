@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
+
+namespace humhub\modules\file\widgets;
+
+use humhub\components\Widget;
+use humhub\helpers\Html;
+use humhub\modules\file\handler\BaseFileHandler;
+use yii\helpers\ArrayHelper;
+
+/**
+ * FileHandlerButtonWidget shows a dropdown with different file handlers
+ *
+ * @since 1.2
+ * @author Luke
+ */
+class FileHandlerButtonDropdown extends Widget
+{
+    /**
+     * @var string the primary button html code, if not set the first handler will be used
+     */
+    public $primaryButton;
+
+    /**
+     * @var string the default parent css class
+     * You can make the menu drop up by replacing it with 'btn-group dropup'
+     * Or smaller with `btn-group btn-group-sm`
+     */
+    public $cssClass = 'btn-group';
+
+    /**
+     * @var string the default css bootstrap button class
+     */
+    public $cssButtonClass = 'btn-success';
+
+    /**
+     * @var BaseFileHandler[] the handlers to show
+     */
+    public $handlers;
+
+    /**
+     * @var bool if true the dropdown-menu will be assigned with an dropdown-menu-end class.
+     */
+    public $pullRight = false;
+
+    /**
+     * @inheritdoc
+     */
+    public function run()
+    {
+        if (!$this->primaryButton && !$this->isDropdown()) {
+            return '';
+        }
+
+        $output = Html::beginTag('div', ['class' => $this->cssClass]);
+
+        if (!$this->primaryButton) {
+            $firstButton = array_shift($this->handlers)->getLinkAttributes();
+            Html::addCssClass($firstButton, ['btn', $this->cssButtonClass]);
+            $output .= $this->renderLink($firstButton);
+        } else {
+            $output .= $this->primaryButton;
+        }
+
+        if ($this->isDropdown()) {
+            $output .= '<button type="button" class="btn ' . $this->cssButtonClass . ' btn-icon-only dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></button>';
+
+            $cssClass = ($this->pullRight) ? 'dropdown-menu dropdown-menu-end' : 'dropdown-menu';
+
+            $output .= Html::beginTag('ul', ['class' => $cssClass]);
+            foreach ($this->handlers as $handler) {
+                $output .= Html::beginTag('li');
+                $output .= $this->renderLink($handler->getLinkAttributes(), true);
+                $output .= Html::endTag('li');
+            }
+            $output .= Html::endTag('ul');
+        }
+        $output .= Html::endTag('div');
+
+        return $output;
+    }
+
+    /**
+     * Renders the file handle link
+     *
+     * @param array $options the HTML options
+     * @return string the rendered HTML tag
+     */
+    protected function renderLink($options, bool $asDropdownItem = false)
+    {
+
+        $options['data-action-process'] = 'file-handler';
+
+        if ($asDropdownItem) {
+            Html::addCssClass($options, 'dropdown-item');
+        }
+
+        $label = ArrayHelper::remove($options, 'label', 'Label');
+
+        if (isset($options['url'])) {
+            $url = ArrayHelper::remove($options, 'url', '#');
+            $options['href'] = $url;
+        } elseif (!isset($options['href'])) {
+            // The href makes the anchor keyboard focusable and part of the tab
+            // order (an <a> without href is skipped by Tab and cannot receive
+            // focus, e.g. via the dropdown's arrow-key navigation); the
+            // data-action-click handler already calls preventDefault(), so the
+            // fragment is never followed. See Link::withAction() for the same pattern.
+            $options['href'] = '#';
+        }
+
+        return Html::tag('a', $label, $options);
+    }
+
+    protected function isDropdown(): bool
+    {
+        return count($this->handlers) !== 0;
+    }
+}

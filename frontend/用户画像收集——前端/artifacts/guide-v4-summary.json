@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-12",
+  "passed": true,
+  "reports": [
+    "flow",
+    "branches",
+    "resize",
+    "views",
+    "documents"
+  ],
+  "modelChecks": 14,
+  "viewportScenarios": 40,
+  "resizeScenarios": 36,
+  "longDocumentFields": 25,
+  "longDocumentCharacters": "approximately 19,500 in one field",
+  "independentReview": "artifacts/v4-independent-review.md",
+  "buildLog": "artifacts/guide-v4-build.log",
+  "backend": "local demonstration only",
+  "limitations": [
+    "Chromium viewport simulation; no physical-device keyboard or IME testing",
+    "No real OAuth, AI or social backend connected"
+  ]
+}

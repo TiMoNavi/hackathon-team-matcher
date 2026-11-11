@@ -1,0 +1,26 @@
+{
+  "version": "V5",
+  "date": "2026-11-12",
+  "kit": [
+    {
+      "name": "cta6",
+      "adaptation": "Centered invitation with alternating portrait strip. Existing local demo people; interactive TiltCard and BlurCrossfade added."
+    },
+    {
+      "name": "carousel11",
+      "adaptation": "Previous / next buttons and numeric page indicator."
+    },
+    {
+      "name": "onboarding-screen5",
+      "adaptation": "Segmented progress and motion-safe transition reference."
+    }
+  ],
+  "affectui": [
+    "tilt-card",
+    "blur-crossfade",
+    "empty-calendar",
+    "gradient-text",
+    "text-reveal"
+  ],
+  "composition": "The full-page controller, gesture boundaries and page light are project-local adaptations. No new package was installed; existing base UI files remain untouched."
+}

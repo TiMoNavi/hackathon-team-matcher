@@ -1,0 +1,40 @@
+const { chromium } = require('/Users/550m/code/hackathon-team-matcher/backend/.runtime/browser/node_modules/playwright');
+const fs = require('fs');
+(async()=>{
+ const browser = await chromium.launch({executablePath:'/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',headless:true,timeout:20000,args:['--disable-gpu']});
+ const page = await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
+ const errors=[],failures=[],responses=[],requests=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+ page.on('requestfailed',r=>failures.push({url:r.url(),error:r.failure()}));
+ page.on('request',r=>requests.push({url:r.url(),method:r.method()}));
+ page.on('response',r=>responses.push({url:r.url(),status:r.status(),type:r.request().resourceType()}));
+ const response=await page.goto('http://localhost:8193/comparison-react/home/index',{waitUntil:'networkidle'});
+ await page.waitForTimeout(1100);
+ await page.screenshot({path:'evidence/desktop-1440.png',fullPage:true});
+ await page.screenshot({path:'evidence/desktop-viewport-1440.png'});
+ const overview=await page.evaluate(()=>({title:document.title,heading:document.querySelector('h1')?.textContent,viewport:innerWidth,width:document.documentElement.scrollWidth,root:!!document.getElementById('colab-root'),scripts:[...document.scripts].map(x=>x.src),styles:[...document.querySelectorAll('link[rel=stylesheet]')].map(x=>x.href),cards:document.querySelectorAll('[data-testid=member-card]').length,bodyClass:document.body.className,csrfMeta:!!document.querySelector('meta[name=csrf-token]'),nativeGlobals:{jquery:!!window.jQuery,humhub:!!window.humhub}}));
+ const checks=[];
+ async function check(name,fn){try{await fn();checks.push({name,pass:true})}catch(e){checks.push({name,pass:false,error:e.message})}}
+ const assert=(v,m)=>{if(!v)throw new Error(m)};
+ await check('Initial four members',async()=>assert(await page.getByTestId('member-card').count()===4,'expected 4 cards'));
+ await check('Role filter',async()=>{await page.locator('[data-role-filter=前端]').click();assert(await page.getByTestId('member-card').count()===1,'expected 1 frontend card');assert(await page.getByTestId('member-card').getAttribute('data-member-id')==='lin','expected Lin')});
+ await page.locator('[data-role-filter=全部]').click();
+ await check('Search React',async()=>{await page.getByTestId('member-search').fill('React');assert(await page.getByTestId('member-card').count()===1,'expected 1 React result')});
+ await check('Empty state and reset',async()=>{await page.getByTestId('member-search').fill('no-such-person');assert(await page.getByTestId('member-card').count()===0,'expected zero results');await page.getByRole('button',{name:'重置筛选',exact:true}).last().click();assert(await page.getByTestId('member-card').count()===4,'reset expected 4')});
+ await check('Follow toggle',async()=>{await page.getByTestId('member-follow-lin').click();assert(await page.getByTestId('member-follow-lin').getAttribute('aria-pressed')==='true','follow true expected');await page.getByTestId('member-follow-lin').click();assert(await page.getByTestId('member-follow-lin').getAttribute('aria-pressed')==='false','follow false expected')});
+ await check('Profile dialog and Escape',async()=>{await page.getByTestId('member-details-lin').click();await page.getByRole('dialog').waitFor();await page.waitForTimeout(350);await page.screenshot({path:'evidence/desktop-dialog.png'});await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden'})});
+ await check('Dark theme',async()=>{await page.getByRole('button',{name:'切换深浅色'}).click();assert(await page.locator('html').getAttribute('data-theme')==='dark','theme expected dark');await page.screenshot({path:'evidence/desktop-dark.png',fullPage:true});await page.getByRole('button',{name:'切换深浅色'}).click()});
+ await check('AffectUI progress tracker',async()=>{const before=await page.getByRole('progressbar').getAttribute('aria-valuenow');await page.locator('.ui-progress__step').nth(1).click();const after=await page.getByRole('progressbar').getAttribute('aria-valuenow');assert(before!==after,'step should update progress');await page.locator('.ui-progress__step').nth(1).click()});
+ const viewports=[];
+ for(const [width,height] of [[1440,1000],[1024,800],[768,1024],[390,844]]) {await page.setViewportSize({width,height});await page.evaluate(()=>scrollTo(0,0));const size=await page.evaluate(()=>({viewport:innerWidth,width:document.documentElement.scrollWidth,height:innerHeight}));viewports.push(size);await check(width+'px no horizontal overflow',async()=>assert(size.width<=width,'scrollWidth='+size.width))}
+ await page.waitForTimeout(1100);await page.screenshot({path:'evidence/mobile-390.png',fullPage:true});await page.screenshot({path:'evidence/mobile-viewport-390.png'});
+ await check('Mobile profile dialog',async()=>{await page.getByTestId('member-details-lin').click();await page.getByRole('dialog').waitFor();await page.waitForTimeout(350);await page.screenshot({path:'evidence/mobile-dialog.png'});await page.getByRole('button',{name:'关闭详情'}).click();await page.getByRole('dialog').waitFor({state:'hidden'})});
+ await check('No backend mutations',async()=>assert(requests.every(r=>r.method==='GET'),'only GET expected'));
+ await check('No native framework globals',async()=>assert(!overview.nativeGlobals.jquery&&!overview.nativeGlobals.humhub,'unexpected native JS'));
+ await check('Only module JS and CSS',async()=>assert(overview.scripts.length===1&&overview.styles.length===1&&[...overview.scripts,...overview.styles].every(x=>x.includes('/assets/')),'unexpected assets'));
+ await check('Zero browser errors',async()=>assert(errors.length===0,errors.join('; ')));
+ const output={url:page.url(),http:response.status(),header:response.headers()['x-frontend-proof'],overview,viewports,checks,errors,failures,responses,requests};
+ fs.writeFileSync('evidence/browser-test.json',JSON.stringify(output,null,2));console.log(JSON.stringify(output,null,2));
+ await browser.close();if(checks.some(x=>!x.pass))process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

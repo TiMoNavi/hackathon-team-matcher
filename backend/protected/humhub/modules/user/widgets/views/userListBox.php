@@ -1,0 +1,55 @@
+<?php
+
+use humhub\helpers\Html;
+use humhub\modules\user\widgets\Image;
+use humhub\widgets\AjaxLinkPager;
+use humhub\widgets\modal\Modal;
+use humhub\widgets\modal\ModalButton;
+use yii\data\Pagination;
+
+/* @var $users \humhub\modules\user\models\User[] */
+/* @var $hideOnlineStatus bool */
+/* @var $title string */
+/* @var $pagination Pagination */
+?>
+
+<?php Modal::beginDialog([
+    'title' => $title,
+    'footer' => ModalButton::cancel(Yii::t('base', 'Close')),
+    'bodyOptions' => ['style' => 'margin: 0 calc(var(--hh-modal-content-padding) * -1); padding: var(--bs-modal-padding) 0;'], // Body fullwidth
+]) ?>
+
+    <?php if (count($users) === 0): ?>
+        <p><?= Yii::t('UserModule.base', 'No users found.') ?></p>
+    <?php endif; ?>
+
+    <div id="userlist-content" class="hh-list">
+        <?php foreach ($users as $user) : ?>
+            <a href="<?= $user->getUrl() ?>" data-modal-close="1" class="d-flex">
+                <div class="flex-shrink-0 me-2">
+                    <?= Image::widget([
+                        'user' => $user,
+                        'link' => false,
+                        'hideOnlineStatus' => $hideOnlineStatus,
+                        'htmlOptions' => ['class' => 'm-0'], // Remove the bottom margin for the online status icon
+                    ]) ?>
+                </div>
+
+                <div class="flex-grow-1">
+                    <h4 class="mt-0"><?= Html::encode($user->displayName) ?></h4>
+                    <h5><?= Html::encode($user->displayNameSub) ?></h5>
+                </div>
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="pagination-container">
+        <?= AjaxLinkPager::widget(['pagination' => $pagination]) ?>
+    </div>
+
+    <script <?= Html::nonce() ?>>
+        // scroll to top of list
+        $(".modal-body").animate({scrollTop: 0}, 200);
+    </script>
+
+<?php Modal::endDialog() ?>

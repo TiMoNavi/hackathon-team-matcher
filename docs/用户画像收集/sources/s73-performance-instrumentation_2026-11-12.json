@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "scope": "test-only measurement safety and immutable catalog contract before production change",
+  "checks": 17,
+  "results": {
+    "probe_test": {
+      "status": "passed",
+      "checks": 8,
+      "checks_passed": [
+        "instrumentation preserves actual returned data",
+        "counts executed reads and returned fetchAll rows",
+        "records successful elapsed query measurements",
+        "measurement excludes query, parameters and profile values",
+        "active ordinary-read probe blocks writes before execution",
+        "failed queries are counted without exporting exception text",
+        "failure output excludes SQL table payload",
+        "measurement lifecycle leaves no active observer"
+      ],
+      "database": "ephemeral SQLite only",
+      "network_calls": 0,
+      "model_calls": 0
+    },
+    "catalog_contract": {
+      "status": "passed",
+      "checks": 9,
+      "checks_passed": [
+        "all 37 editable field definitions remain available",
+        "mutating returned nested schema cannot alter later definitions",
+        "mutating get result cannot alter shared catalog",
+        "valid public skill still passes validation",
+        "too-long skill still fails validation",
+        "all array items remain validated",
+        "invalid later array item still fails",
+        "valid availability interval still passes",
+        "validation does not mutate immutable schema"
+      ],
+      "catalog_sha256": "f3d619286dba6b1928d94767879bf434684a914cd2f034cc6c3f20b29a212216",
+      "model_calls": 0
+    }
+  }
+}

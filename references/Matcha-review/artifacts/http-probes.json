@@ -1,0 +1,41 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "body": {
+      "endpoints": {
+        "find_teammates": "/api/find-teammates",
+        "scrape": "/api/scrape",
+        "stats": "/api/stats"
+      },
+      "message": "Matcha Backend API is running",
+      "status": "ok"
+    }
+  },
+  {
+    "path": "/api/stats",
+    "status": 500,
+    "body": {
+      "error": "127.0.0.1:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 1000.0ms, connectTimeoutMS: 1000.0ms), Timeout: 1.0s, Topology Description: <TopologyDescription id: 6af359d42d71373d6961dff3, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 1000.0ms, connectTimeoutMS: 1000.0ms)')>]>"
+    }
+  },
+  {
+    "path": "/api/find-teammates",
+    "status": 500,
+    "body": {
+      "error": "Gemini API key not configured"
+    }
+  },
+  {
+    "path": "/api/scrape",
+    "status": 400,
+    "body": {
+      "error": "URL is required"
+    }
+  },
+  {
+    "path": "/api/ideas/generate",
+    "status": 404,
+    "body": "<!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL "
+  }
+]

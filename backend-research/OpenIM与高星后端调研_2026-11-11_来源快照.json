@@ -1,0 +1,619 @@
+{
+  "research_date": "2026-11-11",
+  "research_timezone": "Asia/Shanghai",
+  "scope": "Public GitHub metadata and selected official documentation; no installation, runtime, model, security or performance test. Mutable branch content is not a pinned production release.",
+  "repositories": [
+    {
+      "full_name": "openimsdk/open-im-server",
+      "html_url": "https://github.com/openimsdk/open-im-server",
+      "description": "IM Chat OpenClaw",
+      "stargazers_count": 16765,
+      "forks_count": 2979,
+      "open_issues_count": 138,
+      "language": "Go",
+      "archived": false,
+      "pushed_at": "2026-11-10T08:35:25Z",
+      "updated_at": "2026-11-11T06:17:01Z",
+      "default_branch": "main",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/openimsdk/open-im-server"
+    },
+    {
+      "full_name": "openimsdk/open-im-sdk-web",
+      "html_url": "https://github.com/openimsdk/open-im-sdk-web",
+      "description": "IM web jssdk",
+      "stargazers_count": 115,
+      "forks_count": 106,
+      "open_issues_count": 2,
+      "language": "TypeScript",
+      "archived": false,
+      "pushed_at": "2025-04-23T01:50:47Z",
+      "updated_at": "2026-10-19T03:07:07Z",
+      "default_branch": "main",
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "source_url": "https://api.github.com/repos/openimsdk/open-im-sdk-web"
+    },
+    {
+      "full_name": "openimsdk/openim-sdk-core",
+      "html_url": "https://github.com/openimsdk/openim-sdk-core",
+      "description": "Instant Messaging",
+      "stargazers_count": 514,
+      "forks_count": 442,
+      "open_issues_count": 73,
+      "language": "Go",
+      "archived": false,
+      "pushed_at": "2026-10-13T07:05:34Z",
+      "updated_at": "2026-10-30T08:47:46Z",
+      "default_branch": "main",
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "source_url": "https://api.github.com/repos/openimsdk/openim-sdk-core"
+    },
+    {
+      "full_name": "openimsdk/chat",
+      "html_url": "https://github.com/openimsdk/chat",
+      "description": "A business server that includes user registration and login, deployed together with Open-IM-Server, can be used to set up a chat product.",
+      "stargazers_count": 161,
+      "forks_count": 226,
+      "open_issues_count": 10,
+      "language": "Go",
+      "archived": false,
+      "pushed_at": "2026-11-04T02:55:20Z",
+      "updated_at": "2026-10-30T15:48:06Z",
+      "default_branch": "main",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/openimsdk/chat"
+    },
+    {
+      "full_name": "supabase/supabase",
+      "html_url": "https://github.com/supabase/supabase",
+      "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "stargazers_count": 114782,
+      "forks_count": 15078,
+      "open_issues_count": 1197,
+      "language": "TypeScript",
+      "archived": false,
+      "pushed_at": "2026-11-11T06:47:49Z",
+      "updated_at": "2026-11-11T06:48:15Z",
+      "default_branch": "master",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/supabase/supabase"
+    },
+    {
+      "full_name": "gorse-io/gorse",
+      "html_url": "https://github.com/gorse-io/gorse",
+      "description": "AI powered open source recommender system engine supports classical/LLM rankers and multimodal content via embedding",
+      "stargazers_count": 9919,
+      "forks_count": 926,
+      "open_issues_count": 124,
+      "language": "Go",
+      "archived": false,
+      "pushed_at": "2026-11-10T03:02:18Z",
+      "updated_at": "2026-11-10T17:50:56Z",
+      "default_branch": "master",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/gorse-io/gorse"
+    },
+    {
+      "full_name": "pgvector/pgvector",
+      "html_url": "https://github.com/pgvector/pgvector",
+      "description": "Open-source vector similarity search for Postgres",
+      "stargazers_count": 23648,
+      "forks_count": 1386,
+      "open_issues_count": 17,
+      "language": "C",
+      "archived": false,
+      "pushed_at": "2026-11-09T10:02:56Z",
+      "updated_at": "2026-11-11T06:15:01Z",
+      "default_branch": "master",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "source_url": "https://api.github.com/repos/pgvector/pgvector"
+    },
+    {
+      "full_name": "qdrant/qdrant",
+      "html_url": "https://github.com/qdrant/qdrant",
+      "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+      "stargazers_count": 35508,
+      "forks_count": 2806,
+      "open_issues_count": 789,
+      "language": "Rust",
+      "archived": false,
+      "pushed_at": "2026-11-10T21:32:56Z",
+      "updated_at": "2026-11-11T06:12:06Z",
+      "default_branch": "master",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/qdrant/qdrant"
+    },
+    {
+      "full_name": "docling-project/docling",
+      "html_url": "https://github.com/docling-project/docling",
+      "description": "Get your documents ready for gen AI",
+      "stargazers_count": 70414,
+      "forks_count": 5309,
+      "open_issues_count": 970,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-11T06:30:32Z",
+      "updated_at": "2026-11-11T06:49:09Z",
+      "default_branch": "main",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "source_url": "https://api.github.com/repos/docling-project/docling"
+    },
+    {
+      "full_name": "unclecode/crawl4ai",
+      "html_url": "https://github.com/unclecode/crawl4ai",
+      "description": "Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.",
+      "stargazers_count": 87200,
+      "forks_count": 9088,
+      "open_issues_count": 328,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-10T12:30:15Z",
+      "updated_at": "2026-11-11T06:43:07Z",
+      "default_branch": "main",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/unclecode/crawl4ai"
+    },
+    {
+      "full_name": "BerriAI/litellm",
+      "html_url": "https://github.com/BerriAI/litellm",
+      "description": "The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI, vLLM, Nvidia NIM]",
+      "stargazers_count": 63081,
+      "forks_count": 13182,
+      "open_issues_count": 5107,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-11T06:46:59Z",
+      "updated_at": "2026-11-11T06:45:26Z",
+      "default_branch": "main",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "source_url": "https://api.github.com/repos/BerriAI/litellm"
+    },
+    {
+      "full_name": "langchain-ai/langgraph",
+      "html_url": "https://github.com/langchain-ai/langgraph",
+      "description": "Build resilient agents.",
+      "stargazers_count": 44776,
+      "forks_count": 7714,
+      "open_issues_count": 477,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-11T04:45:40Z",
+      "updated_at": "2026-11-11T06:19:37Z",
+      "default_branch": "main",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "source_url": "https://api.github.com/repos/langchain-ai/langgraph"
+    },
+    {
+      "full_name": "langgenius/dify",
+      "html_url": "https://github.com/langgenius/dify",
+      "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+      "stargazers_count": 160927,
+      "forks_count": 25457,
+      "open_issues_count": 1228,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-11T06:48:05Z",
+      "updated_at": "2026-11-11T06:38:12Z",
+      "default_branch": "main",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "source_url": "https://api.github.com/repos/langgenius/dify"
+    },
+    {
+      "full_name": "HiEventsDev/Hi.Events",
+      "html_url": "https://github.com/HiEventsDev/Hi.Events",
+      "description": "Open-source event management and ticket selling platform — perfect for concerts, conferences, and everything in between 🎟️  If you find this project helpful, please consider giving us a star ⭐️ ",
+      "stargazers_count": 4167,
+      "forks_count": 757,
+      "open_issues_count": 162,
+      "language": "PHP",
+      "archived": false,
+      "pushed_at": "2026-11-09T22:28:47Z",
+      "updated_at": "2026-11-11T05:13:44Z",
+      "default_branch": "develop",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "source_url": "https://api.github.com/repos/HiEventsDev/Hi.Events"
+    },
+    {
+      "full_name": "pretix/pretix",
+      "html_url": "https://github.com/pretix/pretix",
+      "description": "Ticket shop application for conferences, festivals, concerts, tech events, shows, exhibitions, workshops, barcamps, etc.",
+      "stargazers_count": 2565,
+      "forks_count": 676,
+      "open_issues_count": 169,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-10T21:53:28Z",
+      "updated_at": "2026-11-10T22:13:37Z",
+      "default_branch": "master",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "source_url": "https://api.github.com/repos/pretix/pretix"
+    },
+    {
+      "full_name": "humhub/humhub",
+      "html_url": "https://github.com/humhub/humhub",
+      "description": "HumHub is an Open Source Enterprise Social Network. Easy to install, intuitive to use and extendable with countless freely available modules.",
+      "stargazers_count": 6785,
+      "forks_count": 1679,
+      "open_issues_count": 813,
+      "language": "PHP",
+      "archived": false,
+      "pushed_at": "2026-11-11T03:02:39Z",
+      "updated_at": "2026-11-10T18:42:54Z",
+      "default_branch": "master",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "source_url": "https://api.github.com/repos/humhub/humhub"
+    },
+    {
+      "full_name": "heroiclabs/nakama",
+      "html_url": "https://github.com/heroiclabs/nakama",
+      "description": "Scalable open-source game backend server: multiplayer, matchmaking, leaderboards, chat, and social features for games.",
+      "stargazers_count": 13703,
+      "forks_count": 1531,
+      "open_issues_count": 127,
+      "language": "Go",
+      "archived": false,
+      "pushed_at": "2026-11-10T10:46:39Z",
+      "updated_at": "2026-11-11T05:07:11Z",
+      "default_branch": "master",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/heroiclabs/nakama"
+    },
+    {
+      "full_name": "srbhr/Resume-Matcher",
+      "html_url": "https://github.com/srbhr/Resume-Matcher",
+      "description": "The #1 AI Harness for Building Resumes, PDFs, Cover Letters & more, locally with 100+ LLMs support.",
+      "stargazers_count": 29237,
+      "forks_count": 5129,
+      "open_issues_count": 44,
+      "language": "Python",
+      "archived": false,
+      "pushed_at": "2026-11-11T05:57:34Z",
+      "updated_at": "2026-11-11T05:47:47Z",
+      "default_branch": "main",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "source_url": "https://api.github.com/repos/srbhr/Resume-Matcher"
+    }
+  ],
+  "openim_latest_release_response": {
+    "tag_name": "v3.8.3-patch.18",
+    "published_at": "2026-10-13T09:34:31Z",
+    "prerelease": false,
+    "html_url": "https://github.com/openimsdk/open-im-server/releases/tag/v3.8.3-patch.18"
+  },
+  "source_fetches": [
+    {
+      "key": "openim-readme",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-server/main/README.md",
+      "bytes": 7586,
+      "status": "ok",
+      "content_sha256": "3ba4888f46b63627ae8d6a9b8ddd5078d0f9eee2883fa43d28c3950af88a7433"
+    },
+    {
+      "key": "openim-webhooks",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-server/main/config/webhooks.yml",
+      "bytes": 3937,
+      "status": "ok",
+      "content_sha256": "5a0cd163fba0a3ea832acf787554fc9f902e778d2b5282c76dd9ffde52d35540"
+    },
+    {
+      "key": "openim-websdk",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-sdk-web/main/README.md",
+      "bytes": 5587,
+      "status": "ok",
+      "content_sha256": "f9635d19a2a0b720b8208f4848ee4e2751b78ac2943acf45dbfb2944eda51b09"
+    },
+    {
+      "key": "openim-docker",
+      "url": "https://raw.githubusercontent.com/openimsdk/openim-docker/main/docker-compose.yml",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "key": "openim-chat",
+      "url": "https://raw.githubusercontent.com/openimsdk/chat/main/README.md",
+      "bytes": 2101,
+      "status": "ok",
+      "content_sha256": "c9e28383c0061dc464700c5268be2ab94be0a6a346223b978bfcacd54170227a"
+    },
+    {
+      "key": "gorse-readme",
+      "url": "https://raw.githubusercontent.com/gorse-io/gorse/master/README.md",
+      "bytes": 5300,
+      "status": "ok",
+      "content_sha256": "8605362fa09a5be2befc4cae95a5599374a0490e649d22227a49da954e2226dd"
+    },
+    {
+      "key": "docling-readme",
+      "url": "https://raw.githubusercontent.com/docling-project/docling/main/README.md",
+      "bytes": 8738,
+      "status": "ok",
+      "content_sha256": "2ad389cb514915804303a6ac60302f06225ecb0a83b723914c03af1747a85a01"
+    },
+    {
+      "key": "crawl4ai-readme",
+      "url": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md",
+      "bytes": 28178,
+      "status": "ok",
+      "content_sha256": "cbe8e3075935cf988a04b48c799ef7f1aef05665260b391c8cd9a42b5a4ae7ec"
+    },
+    {
+      "key": "litellm-readme",
+      "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/README.md",
+      "bytes": 40338,
+      "status": "ok",
+      "content_sha256": "374d8fdb228a6d528cdcf075aa807b43c5cec7669ee3adf0b21aedbbafd90e7b"
+    },
+    {
+      "key": "litellm-license",
+      "url": "https://raw.githubusercontent.com/BerriAI/litellm/main/LICENSE",
+      "bytes": 1419,
+      "status": "ok",
+      "content_sha256": "b170d6bf8e8835dd357e011681db028f4d51e2fb0ea892058f56e01fb39b8273"
+    },
+    {
+      "key": "langgraph-readme",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/main/README.md",
+      "bytes": 6351,
+      "status": "ok",
+      "content_sha256": "3a13e257af1216962d53d72414a7f44ac1fc5cea34d994bdff60ea2a3b045933"
+    },
+    {
+      "key": "dify-license",
+      "url": "https://raw.githubusercontent.com/langgenius/dify/main/LICENSE",
+      "bytes": 1800,
+      "status": "ok",
+      "content_sha256": "232cf91474932d5110ed304e53b6b742a58463857c571fae803fdf2ac36d7bb3"
+    },
+    {
+      "key": "dify-readme",
+      "url": "https://raw.githubusercontent.com/langgenius/dify/main/README.md",
+      "bytes": 12660,
+      "status": "ok",
+      "content_sha256": "81a960f6d59aeffa60a319dfe84ebb6d2372679d7343c4a0a60cf86d7faf8146"
+    },
+    {
+      "key": "hievents-readme",
+      "url": "https://raw.githubusercontent.com/HiEventsDev/Hi.Events/develop/README.md",
+      "bytes": 9000,
+      "status": "ok",
+      "content_sha256": "e87548a1d602b64c4ee20ba8ed4960e022e7f038880a7c6070d6bbd479235e96"
+    },
+    {
+      "key": "hievents-license",
+      "url": "https://raw.githubusercontent.com/HiEventsDev/Hi.Events/develop/LICENCE",
+      "bytes": 35560,
+      "status": "ok",
+      "content_sha256": "ac17c64ca922f1a085b886d9f7cb80dcae32d1b168badddd922b486f8704ec2d"
+    },
+    {
+      "key": "pretix-readme",
+      "url": "https://raw.githubusercontent.com/pretix/pretix/master/README.rst",
+      "bytes": 2815,
+      "status": "ok",
+      "content_sha256": "bc0aeb77105679b77172be7687d9ad0f18ee9b30eddfdbe7b7bf36dc4bff8310"
+    },
+    {
+      "key": "pretix-license",
+      "url": "https://raw.githubusercontent.com/pretix/pretix/master/LICENSE",
+      "bytes": 51854,
+      "status": "ok",
+      "content_sha256": "535ba4cda7987d794262f67b0166eaf950d398e7819cd4892644993fd079f75e"
+    },
+    {
+      "key": "pgvector-license",
+      "url": "https://raw.githubusercontent.com/pgvector/pgvector/master/LICENSE",
+      "bytes": 1104,
+      "status": "ok",
+      "content_sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87"
+    },
+    {
+      "key": "supabase-readme",
+      "url": "https://raw.githubusercontent.com/supabase/supabase/master/README.md",
+      "bytes": 16662,
+      "status": "ok",
+      "content_sha256": "82793d79c85c3e0ee0e3860eb75e9b8f0f8f85f09d26b0681bd41e78f6e3c490"
+    },
+    {
+      "key": "wasm-meta",
+      "url": "https://api.github.com/repos/openimsdk/open-im-sdk-wasm",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "key": "nakama-meta",
+      "full_name": "heroiclabs/nakama",
+      "stargazers_count": 13703,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "pushed_at": "2026-11-10T10:46:39Z",
+      "archived": false,
+      "content_sha256": "ad279cd1bcf27472888a1ebd046215f6bb7a1d5bb1bf535cf5aab858201f38db"
+    },
+    {
+      "key": "resume-meta",
+      "full_name": "srbhr/Resume-Matcher",
+      "stargazers_count": 29237,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "pushed_at": "2026-11-11T05:57:34Z",
+      "archived": false,
+      "content_sha256": "8a53d75d387fed1ff15c97241c2461097d13557dd57e3f2d12b04efc3e673e08"
+    },
+    {
+      "key": "openim-release",
+      "tag_name": "v3.8.3-patch.18",
+      "published_at": "2026-10-13T09:34:31Z",
+      "prerelease": false,
+      "html_url": "https://github.com/openimsdk/open-im-server/releases/tag/v3.8.3-patch.18",
+      "content_sha256": "a85980d7492280f8f323796a542740ecc9df1d6faae5e0e9e2c481b1be3344de"
+    },
+    {
+      "key": "openim-compose",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-server/main/docker-compose.yml",
+      "bytes": 13219,
+      "status": "ok",
+      "content_sha256": "a03036c19055fc8adede3fca2da2e45d4615ad402474a3cf66cdbbb7fb1c695f"
+    },
+    {
+      "key": "wasm-license",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-sdk-wasm/main/LICENSE",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "key": "websdk-license",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-sdk-web/main/LICENSE",
+      "bytes": 34523,
+      "status": "ok",
+      "content_sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "key": "core-license",
+      "url": "https://raw.githubusercontent.com/openimsdk/openim-sdk-core/main/LICENSE",
+      "bytes": 34523,
+      "status": "ok",
+      "content_sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "key": "resume-readme",
+      "url": "https://raw.githubusercontent.com/srbhr/Resume-Matcher/main/README.md",
+      "bytes": 23025,
+      "status": "ok",
+      "content_sha256": "f22c2c24219ea8205c82d464d78ae8c8f89c403cc45fc6b8833e0d062e35518f"
+    },
+    {
+      "key": "nakama-readme",
+      "url": "https://raw.githubusercontent.com/heroiclabs/nakama/master/README.md",
+      "bytes": 13093,
+      "status": "ok",
+      "content_sha256": "9c3c5b8cd78e783507cc31152cdcd79979548ecd1f2c78c5927dacf8f84113d2"
+    },
+    {
+      "key": "wasm-readme",
+      "url": "https://raw.githubusercontent.com/openimsdk/open-im-sdk-wasm/main/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "key": "docling-serve-readme",
+      "url": "https://raw.githubusercontent.com/docling-project/docling-serve/main/README.md",
+      "bytes": 5560,
+      "status": "ok",
+      "content_sha256": "ee73fd946d57ce5de8bcd0b97743ac4eb5862835c4b0e5f769fc02c46f12db51"
+    }
+  ]
+}

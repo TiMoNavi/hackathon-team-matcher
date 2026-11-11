@@ -1,0 +1,12 @@
+{
+  "status": "observed",
+  "job_id": "72250154-136e-4854-ae34-15cb627b92de",
+  "states": [
+    "queued",
+    "running",
+    "ready"
+  ],
+  "samples": 42,
+  "http_requests": 43,
+  "real_worker_started_by_harness": false
+}

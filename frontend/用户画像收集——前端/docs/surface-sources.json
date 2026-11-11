@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "logo-cluster",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-illustrations/logo-cluster.tsx",
+    "target": "components/reference-originals/logo-cluster.tsx",
+    "sha256": "53e8bed208038a76406e85d2eb426f6029f4c110437fa94aa2bb2e2b2a5a83e9",
+    "modified": false
+  },
+  {
+    "slug": "integration-grid",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-illustrations/integration-grid.tsx",
+    "target": "components/reference-originals/integration-grid.tsx",
+    "sha256": "807483dc182de27dc3ad5e4046cdd1e1454323904219c93d0c979d065d41c9d5",
+    "modified": false
+  },
+  {
+    "slug": "outreach-branches",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-illustrations/outreach-branches.tsx",
+    "target": "components/reference-originals/outreach-branches.tsx",
+    "sha256": "26d6e022b36ba2495d49b90ecaeace2208e86d836d286fb3608496a52c5a2442",
+    "modified": false
+  },
+  {
+    "slug": "model-wheel",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-illustrations/model-wheel.tsx",
+    "target": "components/reference-originals/model-wheel.tsx",
+    "sha256": "96392e718a3e22c6af7190b6a562fb1f8aaa35281d3ba9470e10bd149a10f00a",
+    "modified": false
+  },
+  {
+    "slug": "side-folder",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-illustrations/side-folder.tsx",
+    "target": "components/reference-originals/side-folder.tsx",
+    "sha256": "22b497c8ea13638d17daed55e779a0f87d869429133a2b9f05e9f46b6da65f05",
+    "modified": false
+  },
+  {
+    "slug": "empty-calendar",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-illustrations/empty-calendar.tsx",
+    "target": "components/reference-originals/empty-calendar.tsx",
+    "sha256": "e3de6f44d69d5ad484fa588cf202f7ead07a5ba6c4b0b3100d33fdaaa7503ec3",
+    "modified": false
+  },
+  {
+    "slug": "project-card",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-components/project-card.tsx",
+    "target": "components/reference-originals/project-card.tsx",
+    "sha256": "8df9610b4bfb36cb460318615272713262ef65dafc82fe2c03d78db5fffb2dd1",
+    "modified": false
+  },
+  {
+    "slug": "notification-stack",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-components/notification-stack.tsx",
+    "target": "components/reference-originals/notification-stack.tsx",
+    "sha256": "b8923b0aaf58366c16baa06674dd4654bebbc9bd7cc7ba9741a6df2245ec8072",
+    "modified": false
+  },
+  {
+    "slug": "smart-recommendation",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-components/smart-recommendation.tsx",
+    "target": "components/reference-originals/smart-recommendation.tsx",
+    "sha256": "8e6b8bedf17a5910689772e16b01896b459835185a0c45a97a2a915741a49e42",
+    "modified": false
+  },
+  {
+    "slug": "tips-panel",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-components/tips-panel.tsx",
+    "target": "components/reference-originals/tips-panel.tsx",
+    "sha256": "42780b321a58e12a566e85a44fb9bf496cb487b69e5a24d8d82ea5895f6c7022",
+    "modified": false
+  },
+  {
+    "slug": "shimmer-loader",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-motion/shimmer-loader.tsx",
+    "target": "components/reference-originals/shimmer-loader.tsx",
+    "sha256": "5020de3b09845d14492bf157a093edca0e8b2110eeaef5a5394f0306891172de",
+    "modified": false
+  },
+  {
+    "slug": "number-ticker",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-motion/number-ticker.tsx",
+    "target": "components/reference-originals/number-ticker.tsx",
+    "sha256": "577529c30ca8fe97678031603c031dbbf0a2db5e8ae73e2aa1aff0b21002c0ff",
+    "modified": false
+  },
+  {
+    "slug": "testimonial-wall",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-blocks/testimonial-wall.tsx",
+    "target": "components/reference-originals/testimonial-wall.tsx",
+    "sha256": "f540e5e5bb38e6e672dd493d8cfb2ee22427610e366fb612179b708e96ae143a",
+    "modified": false
+  },
+  {
+    "slug": "logo-marquee",
+    "provider": "AffectUI",
+    "source": "vendor/affectui/affectui-blocks/logo-marquee.tsx",
+    "target": "components/reference-originals/logo-marquee.tsx",
+    "sha256": "3ab398301035882f2be48f5b59d19d969b7fc8797f15e2c31738051b6e7faf04",
+    "modified": false
+  },
+  {
+    "slug": "kit-beams",
+    "provider": "Shadcn UI Kit",
+    "source": "vendor/shadcnuikit/templates/cosmic/components/ui/extras/background-beams-with-collision.tsx",
+    "target": "components/reference-kit/kit-beams.tsx",
+    "sha256": "3fa41feb35fd73e3cdb05d225d6cf86d17d7f1abffde4c8c4b4a7bbbd06a3e57",
+    "modified": false
+  },
+  {
+    "slug": "kit-selection",
+    "provider": "Shadcn UI Kit",
+    "source": "vendor/shadcnuikit/templates/cosmic/components/ui/extras/animated-background.tsx",
+    "target": "components/reference-kit/kit-selection.tsx",
+    "sha256": "ad825ebfbb4b545a0edc7e3bf397eedb63416f6449347da50a9176255a3aba5d",
+    "modified": false
+  },
+  {
+    "slug": "kit-cards-hover",
+    "provider": "Shadcn UI Kit",
+    "source": "vendor/shadcnuikit/templates/cosmic/components/ui/extras/cards-hover.tsx",
+    "target": "components/reference-kit/kit-cards-hover.tsx",
+    "sha256": "4bda50cc882f1ae7159d3567299c84455362b4f5c0e12763f118e469481b94c8",
+    "modified": false
+  },
+  {
+    "slug": "kit-radar",
+    "provider": "Shadcn UI Kit",
+    "source": "vendor/shadcnuikit/library/illustrations/22/index.tsx",
+    "target": "components/reference-kit/kit-radar.tsx",
+    "sha256": "9cdb35d4f2e2c4f851c1b72f80863c30c07f96a7dd66c9ba3168c9d703d45f3f",
+    "modified": false
+  },
+  {
+    "slug": "kit-particles",
+    "provider": "Shadcn UI Kit",
+    "source": "vendor/shadcnuikit/library/illustrations/17/index.tsx",
+    "target": "components/reference-kit/kit-particles.tsx",
+    "sha256": "4c9156a07f5ea829ba366dc73141f1381aad91ea1a1c2f2f9825dc9b2a3facd5",
+    "modified": false
+  }
+]

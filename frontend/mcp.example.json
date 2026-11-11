@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "affectui": {
+      "type": "http",
+      "url": "https://registry.collectui.pro/api/affectui-mcp",
+      "headers": {
+        "Authorization": "Bearer ${AFFECTUI_MCP_TOKEN}"
+      },
+      "tools": [
+        "*"
+      ]
+    },
+    "shadcnuikit": {
+      "type": "http",
+      "url": "https://registry.collectui.pro/api/uikit-mcp",
+      "headers": {
+        "Authorization": "Bearer ${SHADCNUIKIT_MCP_TOKEN}"
+      },
+      "tools": [
+        "*"
+      ]
+    }
+  }
+}

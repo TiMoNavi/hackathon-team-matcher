@@ -1,0 +1,205 @@
+{
+  "date": "2026-11-11",
+  "reviewed_at": "2026-11-11T21:47:17+08:00",
+  "status": "passed_for_scoped_batch_adapter_review",
+  "scope": "Independent review of the user-authorized P1/P8 batch-authorization gap and recommendation projection bridge. Original task stages remain paused; this does not certify complete R3/M1.",
+  "reviewer": "/root/batch_gap_audit",
+  "reviewed_source_files": [
+    {
+      "path": "backend/protected/modules/matcher-user-profile/domain/DiscoveryProfileBatchRequest.php",
+      "sha256": "6638a15e38844ce4456af554577414d81d85c36a14d70fa6d331680e4a403b76"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/domain/ports/DiscoveryProfileBatchSource.php",
+      "sha256": "8c89cf9ab30ef49dd50d8d9777727cebdf0f69330467ce65042f95dfe07b0a16"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/application/DiscoveryProfileBatchReader.php",
+      "sha256": "46366689836d5da0465f0e4d619ecebe41070fe779a054a8146ed203a28e234d"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlDiscoveryProfileBatchSource.php",
+      "sha256": "beefe251312e21631dce46dcff5cae52c208236176d78d3bd7ebadfd0949e0db"
+    },
+    {
+      "path": "backend/protected/modules/matcher-user-profile/Module.php",
+      "sha256": "0fca38ee60b04212add90f65d45a6fdf9332e466da1b95810239fdd25bebdd26"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/domain/ports/DiscoveryRelations.php",
+      "sha256": "f98e54be6e7982dc0d828f675f6c2c416caca297bc4de809469e42974860c015"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php",
+      "sha256": "ccc6a43f1771097b1a2eb2d81245774ccf719d6e126f4e4d19b1bdb2edace90a"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php",
+      "sha256": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeDiscoveryRelations.php",
+      "sha256": "26424a3074ae3322fd0979687a9fd726ca50d7634fd51f8e03b2f5b4d245a7f4"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/Module.php",
+      "sha256": "b805f9247aa54f09f904b3e63a396347dd416fa174732e85f00fb517fedb522a"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/profile/P1CandidateProjectionReader.php",
+      "sha256": "218311531b308794b085c456019c7f5bb80ace3353bd139894929b96aedecfa6"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/profile/P1FieldCatalogAdapter.php",
+      "sha256": "091c831a8912a3aec7e90282305d016898e085af50bb726ffd09513952030e64"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/adapters/profile/P1SourcePurposePolicy.php",
+      "sha256": "99139594cbd05da4c382193fbae96e6887aa3b2c49b2fb0a577a13f36140822c"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/config/ProfileProjectionMapper.php",
+      "sha256": "b699aee9cf6cf3bf1ebc7993aafd82093aa4284dee2a433553030af627839e5e"
+    }
+  ],
+  "probe_helpers": [
+    {
+      "path": "backend/protected/modules/matcher-user-profile/tests/discovery_batch/Fixtures.php",
+      "sha256": "eea9150aadb8ca7b6971fdc7e1db4b77d6e60c28930fb680e2dd53992634c2d5"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/native_access/Fixtures.php",
+      "sha256": "71093dd2d7dacd60c0e5f058a82f944d23c1b5ed04e61ce6b7e9571b5de7d566"
+    },
+    {
+      "path": "backend/protected/modules/matcher-profile-privacy/tests/discovery_batch/legacy_capability.php",
+      "sha256": "ae6e86bc46f84ba73936191017b40a94d73dd02000703aab364eb76901a41c7d"
+    }
+  ],
+  "findings": [
+    {
+      "id": "BATCH-A01",
+      "severity": "high",
+      "status": "resolved",
+      "issue": "The new second profile read originally occurred after the last eligibility query. A subject blocking the viewer during that read remained in the result.",
+      "before_reproduction": {
+        "environment": "New synthetic SQLite memory database, actual NativeDiscoveryRelations and DiscoveryBatchService, synthetic batch source",
+        "mutation": "During source call 2, add reverse block from candidate 2 to viewer 1.",
+        "returned_ids": [
+          2,
+          3
+        ],
+        "current_eligible_ids": [
+          3
+        ]
+      },
+      "resolution": "After source 2 and content/version comparison, run a final native eligibility batch and filter again. Do not read profile values after that gate.",
+      "after_independent_probes": {
+        "reverse_block": "Only candidate 3 returned",
+        "candidate_exit": "Only candidate 3 returned",
+        "viewer_exit": "PROFILE_ACCESS_DENIED thrown; no empty success"
+      },
+      "limitation": "Finite-window observation only; this is not an atomic cross-table authorization snapshot."
+    },
+    {
+      "id": "BATCH-A02",
+      "severity": "medium",
+      "status": "resolved",
+      "issue": "The privacy module still supports ordinary-profile P1 >=0.3.0, while its new batch getter initially called a method absent from legacy P1 without an explicit capability error.",
+      "resolution": "The batch getter checks the capability and throws PROFILE_DEPENDENCY_UNAVAILABLE / 503 before database access. Existing single-person dependency requirements stay unchanged.",
+      "independent_verification": {
+        "test": "backend/protected/modules/matcher-profile-privacy/tests/discovery_batch/legacy_capability.php",
+        "exit_code": 0,
+        "checks": 2,
+        "database_calls": 0,
+        "ordinary_legacy_module_still_accepted": true,
+        "missing_batch_fails_before_database": true
+      }
+    }
+  ],
+  "independent_dynamic_checks": {
+    "total": 32,
+    "groups": [
+      {
+        "checks": 25,
+        "type": "Inline PHP probes using new synthetic SQLite memory databases",
+        "verified": [
+          "Native eligible ID ordering and constant two SELECTs for 1/30/200 owners",
+          "Master connection, no query cache, no sensitive SQL logging/profiling",
+          "Actual P1 source returns requested owners in three SELECTs at 1/30/200 owners",
+          "Post-source2 reverse block and candidate exit remove the candidate; viewer exit throws",
+          "Native field without a confirmed marker stays absent",
+          "P1 mid-read permission_version change throws PROFILE_BATCH_CHANGED",
+          "Empty request never invokes the source",
+          "Existing external transaction explicitly rejected"
+        ]
+      },
+      {
+        "checks": 5,
+        "type": "Inline PHP probe using actual recommendation bridge/catalog mapper and real native event adapter with synthetic source and SQLite",
+        "verified": [
+          "Approved skill evidence and independent identity_version are preserved",
+          "Removed bound field withdraws only that feature and preserves other safe fields",
+          "Changed same-version field schema does not inherit earlier purpose approval",
+          "Server selection revision changing during provider execution is rejected",
+          "Field directory changing during provider execution is rejected"
+        ]
+      },
+      {
+        "checks": 2,
+        "type": "Rerun only the new standalone legacy capability test",
+        "verified": [
+          "Existing P1 ordinary dependency still accepted",
+          "Missing batch capability fails with explicit 503 before any database use"
+        ]
+      }
+    ],
+    "select_counts": {
+      "native_eligibility_only": {
+        "1": 2,
+        "30": 2,
+        "200": 2
+      },
+      "P1_source_only": {
+        "1": 3,
+        "30": 3,
+        "200": 3
+      }
+    },
+    "full_implementation_suites_rerun": false,
+    "aggregate_implementation_test_counts": "Reported by the parent separately; these 32 reviewer checks are not added to implementation-suite totals."
+  },
+  "static_review": [
+    "P1 uses its own domain port; it neither imports recommendation classes nor loops getProfile. The source is internal data access, not proof of viewer authorization.",
+    "P1 SQL reads only requested owner/scope/field rows with confirmed/authenticated markers. Native expressions are built from FieldCatalog and checked against the stored field and binding; no arbitrary stored column is executed.",
+    "P1 state comparison covers state identity, separate revisions/permission versions, identity_version and current_revision_id. Missing state is zero-version/empty data, not implicit state creation or confirmed identity.",
+    "P8 validates actual active viewer/candidates, enabled current Space, formal membership and user/Space blocks in batches. No administrator bypass or per-owner database loop was introduced.",
+    "P8 purpose policy allows 18 reviewed ordinary discovery sources; contacts, raw sources, drafts, friends/private attributes and excess metadata are excluded.",
+    "P8 now uses eligibility1 -> source1 -> eligibility2 -> source2 comparison -> eligibility3, with no profile read after the last native gate.",
+    "Recommendation bridge validates current server-selected activity before and after the call, restricts requested IDs, verifies scope/version shape, and obtains values only through the injected authorized P8 boundary.",
+    "Recommendation published binding semantics remain pinned independently from live directory changes. A removed or changed optional source becomes unknown without reintroducing raw native fields.",
+    "All reviewed native SQL adapters reject old ambient transactions, use the master with cache disabled, suppress SQL logging/profiling and sanitize dependency exceptions.",
+    "No new HTTP route, persistent index writer, migration or production/test provider default was introduced by these new batch classes."
+  ],
+  "confirmed_unresolved_blocking_defects_in_reviewed_slice": [],
+  "authorization_and_execution": {
+    "reviewer_modified_business_source_or_tests": false,
+    "reviewer_read_credentials_or_real_profile_values": false,
+    "reviewer_connected_existing_database": false,
+    "reviewer_started_application_or_enabled_modules": false,
+    "reviewer_ran_migrations_or_model_calls": false,
+    "reviewer_written_paths": [
+      "docs/推荐模块/sources/batch-gap-independent-review_2026-11-11.json"
+    ]
+  },
+  "limitations": [
+    "SQLite fixtures validate the isolated logic and SQL shape, not production MySQL behavior, lock/isolation performance, installed runtime composition or public API.",
+    "Current selection and viewer identity must come from the trusted composition root. Direct P1/P8 internal calls do not establish a server-selected activity merely by receiving integer IDs.",
+    "Checks establish bounded observations during a call, not a permanent grant, a global monotonic permission epoch, a cross-table atomic snapshot or complete ABA detection.",
+    "Out-of-band native edits that bypass P1 version updates are not covered by P1 version comparison; existing protected write paths remain necessary.",
+    "Identity version 0 denotes missing saved identity state and must not be interpreted as confirmed identity.",
+    "Persistent index synchronization and authorization generations, real idea projection, complete request history, HTTP assembly and AI remain outside this gap repair.",
+    "No whole-tree core/vendor or frozen-document hash audit was repeated by this reviewer; the parent handles final boundary evidence.",
+    "The report records reviewed file hashes at this instant. Later source changes need a targeted review before reusing the conclusions."
+  ]
+}

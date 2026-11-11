@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-12",
+  "status": "review_findings_recorded_with_open_quality_issues",
+  "reviewer": "r3_live_recall_audit",
+  "finalized_by": "root",
+  "provenance": "The child reviewer delivered its findings and probe counts in collaboration messages. Root archived those findings, independently reproduced the scoring contrast and rechecked the corrected final corpus/report hashes. This is not a claim that all semantic/production requirements passed.",
+  "independent_probe_results_reported": {
+    "passed": 41,
+    "report_consistency_issues": 1,
+    "issue": "Initial offline report used an earlier fixture hash; live/current corpus already agreed.",
+    "resolution": "Root reran offline with network disabled: 75 checks passed; current, live and offline corpus hashes now identical."
+  },
+  "boundary_findings": [
+    "Actual AiRecommendationService, SearchAiCandidates, deterministic rules, summary builder and output validator execute; retrieval/profiles/relations/history remain synthetic in-memory ports.",
+    "Other-event and current-relationship/history exclusions precede model summaries. Private/draft fields are not projected.",
+    "Offline provider is explicitly fake; the 400-person route recalls 80, not a production SQL/semantic/200-route performance test.",
+    "Only visible assistant.content is recorded; no model hidden reasoning, credentials or authorization headers.",
+    "Four live scenarios made ten attempts, bounded by platform cap 12 and per-run budgets; truncation uses only one repair, never silently falls back."
+  ],
+  "open_quality_findings": [
+    {
+      "id": "R6.T1",
+      "finding": "Product coordination was interpreted as self_type and accepted despite the fixture enum.",
+      "root_reproduced_same_rank_contrast": {
+        "people": 31,
+        "scores_lower_due_to_wrong_condition": 16,
+        "scores_higher": 5,
+        "unchanged": 10,
+        "qualification_changes": 0,
+        "example": {
+          "id": "1001",
+          "actual_score": 0.8627450980392157,
+          "without_wrong_condition": 0.9333333333333333,
+          "difference": -0.07058823529411762
+        }
+      },
+      "fixed": false
+    },
+    {
+      "id": "R6.T2",
+      "finding": "Requests 2, 8 and 9 ended with length/incomplete JSON. The first scenario repaired once; the clarification scenario failed after its sole repair.",
+      "fixed": false
+    },
+    {
+      "id": "R6.T3",
+      "finding": "One feature-level evidence alias expands all its sent facts; backend reasons may mention unrequested facts such as prototype-first or open-source. Facts are authorized but are not necessarily positive query matches or model-authored reasons.",
+      "fixed": false
+    }
+  ],
+  "corpus_sha256": "d678cfa43f2f71e88021860255fb7beeda34892f4d28aec847c3de2e2134be76",
+  "all_current_corpus_hashes_match": true,
+  "production_code_modified_by_review": false,
+  "model_calls_by_reviewer_or_root_recheck": 0,
+  "final_runner_sha256_recorded_by_root": "4116b356a9942fdc206affa60f7cd1ce5f4956d23170279cd868ec30d60f1a91"
+}

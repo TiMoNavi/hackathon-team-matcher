@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-11-11T21:16:26.125Z",
+  "phase": "flow",
+  "passed": true,
+  "checks": [
+    "Symmetric entry, explicit GitHub action, orange night mascot, borderless processing",
+    "Full long-text edit and reload preserve paragraphs",
+    "Conversation questions support typed answers, skip and suggestions without auto-send",
+    "Per-field audience preview filters hidden data",
+    "Multiple ideas, generated plans and uninterrupted long-plan editing",
+    "Activity isolation, docked mascot, explicit multi-recipient confirmation and pending requests"
+  ],
+  "views": [],
+  "errors": []
+}

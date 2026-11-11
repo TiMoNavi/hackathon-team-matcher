@@ -1,0 +1,93 @@
+{
+  "scope": "Selected source inspection only, not a security audit or integration test.",
+  "files": [
+    {
+      "repo": "humhub/example-basic",
+      "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+      "path": "config.php",
+      "url": "https://github.com/humhub/example-basic/blob/89605b11d09427e5ff1cc224392b926de4beb4ce/config.php",
+      "sha256": "0b588b706e783126ff2817e902beafd261810ff19638f0f33de93c198a8f517a",
+      "lines": 15
+    },
+    {
+      "repo": "humhub/example-basic",
+      "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+      "path": "Module.php",
+      "url": "https://github.com/humhub/example-basic/blob/89605b11d09427e5ff1cc224392b926de4beb4ce/Module.php",
+      "sha256": "a8ac816d0f2b74ec7c6aacb8fac253730c053a7ba5c580bec65411e93b7c4598",
+      "lines": 39
+    },
+    {
+      "repo": "humhub/example-basic",
+      "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+      "path": "models/Configuration.php",
+      "url": "https://github.com/humhub/example-basic/blob/89605b11d09427e5ff1cc224392b926de4beb4ce/models/Configuration.php",
+      "sha256": "981bbbcf8356f4d299ce4ba930f64a15ed318872436dc5b96c38fefabae8a334",
+      "lines": 67
+    },
+    {
+      "repo": "humhub/example-basic",
+      "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+      "path": "docs/LICENCE.md",
+      "url": "https://github.com/humhub/example-basic/blob/89605b11d09427e5ff1cc224392b926de4beb4ce/docs/LICENCE.md",
+      "sha256": "6cb210a3d0cca95df31d2012cd252bcd6d7ee999cdc571032a62a8b5bbdaec0c",
+      "lines": 3
+    },
+    {
+      "repo": "harvard-hbs/team-formation",
+      "commit": "ee2506cdc343de7d789d4c04cf86005c065827a4",
+      "path": "team_formation/team_assignment.py",
+      "url": "https://github.com/harvard-hbs/team-formation/blob/ee2506cdc343de7d789d4c04cf86005c065827a4/team_formation/team_assignment.py",
+      "sha256": "cfd5d4ac8ae9630a75fa4822e00b2d03276c1e314476c05352baa0d3f35a6935",
+      "lines": 990
+    },
+    {
+      "repo": "harvard-hbs/team-formation",
+      "commit": "ee2506cdc343de7d789d4c04cf86005c065827a4",
+      "path": "team_formation/api/main.py",
+      "url": "https://github.com/harvard-hbs/team-formation/blob/ee2506cdc343de7d789d4c04cf86005c065827a4/team_formation/api/main.py",
+      "sha256": "e2041bfe6ba57aeed3ad62b93fd582fbf236b5c6939d3b9767e94c9a7268a880",
+      "lines": 473
+    },
+    {
+      "repo": "harvard-hbs/team-formation",
+      "commit": "ee2506cdc343de7d789d4c04cf86005c065827a4",
+      "path": "team_formation/api/models.py",
+      "url": "https://github.com/harvard-hbs/team-formation/blob/ee2506cdc343de7d789d4c04cf86005c065827a4/team_formation/api/models.py",
+      "sha256": "654305720f3d21c33ed785e91a223f5b58459d74984c823ecdcc4a539c2753d7",
+      "lines": 130
+    },
+    {
+      "repo": "harvard-hbs/team-formation",
+      "commit": "ee2506cdc343de7d789d4c04cf86005c065827a4",
+      "path": "pyproject.toml",
+      "url": "https://github.com/harvard-hbs/team-formation/blob/ee2506cdc343de7d789d4c04cf86005c065827a4/pyproject.toml",
+      "sha256": "1d1291dc86bcb4edc7401698d8209b9a5ecdbc778d5bcab464f48399b9a1cb52",
+      "lines": 62
+    },
+    {
+      "repo": "gorse-io/gorse",
+      "commit": "2145bd0567f03b59f83f43ea2575a17a9bdaa016",
+      "path": "logics/reranker.go",
+      "url": "https://github.com/gorse-io/gorse/blob/2145bd0567f03b59f83f43ea2575a17a9bdaa016/logics/reranker.go",
+      "sha256": "4f2fbea6b3af93aa1721e8a0f4ce35518002895207b008d5bd16bfdf5fa50223",
+      "lines": 237
+    },
+    {
+      "repo": "gorse-io/gorse",
+      "commit": "2145bd0567f03b59f83f43ea2575a17a9bdaa016",
+      "path": "common/decision/client.go",
+      "url": "https://github.com/gorse-io/gorse/blob/2145bd0567f03b59f83f43ea2575a17a9bdaa016/common/decision/client.go",
+      "sha256": "8de1b601293ad126fb7c78048f750f291844a83a2533efe4a10f9cc3d60131cb",
+      "lines": 144
+    },
+    {
+      "repo": "duolicious/duolicious",
+      "commit": "72bcf85501ff87d565757023cffebecea65548a3",
+      "path": "backend/serviceshared/matching/personality.py",
+      "url": "https://github.com/duolicious/duolicious/blob/72bcf85501ff87d565757023cffebecea65548a3/backend/serviceshared/matching/personality.py",
+      "sha256": "6bba9f98f174f2d84506759f82dc540271d8a9523372522af506803d5512483d",
+      "lines": 204
+    }
+  ]
+}

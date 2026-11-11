@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
+<title id="title">好友流程：同一关系在 A、B 两侧的状态</title>
+<desc id="desc">原版好友逻辑把单向申请和互相确认区分开。RequestController 的 add 同时承担发起和接受，delete 承担取消申请或解除关系。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<rect width="1280" height="100%" fill="#ffffff"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="50" y="45" font-size="25" font-weight="650" fill="#16243b" text-anchor="start">好友流程：同一关系在 A、B 两侧的状态</text>
+<text x="50" y="77" font-size="14" font-weight="400" fill="#53657b" text-anchor="start">示例固定由 A 先发起；换成 B 发起时完全对称。</text>
+<polyline points="330,220 475,220" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="810,220 950,220" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="640,310 640,390 190,390 190,300" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1090,310 1090,470 110,470 110,300" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="360,638 475,638" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1160,310 1160,638 1050,638" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<rect x="50" y="165" width="280" height="135" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="67" y="196" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">无关系</text>
+<text x="67" y="224" font-size="14" font-weight="400" fill="#334155" text-anchor="start">A：STATE_NONE</text>
+<text x="67" y="246" font-size="14" font-weight="400" fill="#334155" text-anchor="start">B：STATE_NONE</text>
+<text x="67" y="268" font-size="14" font-weight="400" fill="#334155" text-anchor="start">无对应方向记录</text>
+<rect x="475" y="165" width="335" height="145" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="492" y="196" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">申请中 · 只有 A → B</text>
+<text x="492" y="224" font-size="14" font-weight="400" fill="#334155" text-anchor="start">A：STATE_REQUEST_SENT</text>
+<text x="492" y="246" font-size="14" font-weight="400" fill="#334155" text-anchor="start">B：STATE_REQUEST_RECEIVED</text>
+<text x="492" y="268" font-size="14" font-weight="400" fill="#334155" text-anchor="start">两人尚未互相确认</text>
+<rect x="950" y="165" width="280" height="145" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="967" y="196" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">已成为好友</text>
+<text x="967" y="224" font-size="14" font-weight="400" fill="#334155" text-anchor="start">A、B：STATE_FRIENDS</text>
+<text x="967" y="246" font-size="14" font-weight="400" fill="#334155" text-anchor="start">A → B 与 B → A 均存在</text>
+<rect x="50" y="570" width="310" height="135" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="67" y="601" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">RequestController</text>
+<text x="67" y="629" font-size="14" font-weight="400" fill="#334155" text-anchor="start">add：发起 / 接受</text>
+<text x="67" y="651" font-size="14" font-weight="400" fill="#334155" text-anchor="start">delete：拒绝 / 取消 / 解除</text>
+<text x="67" y="673" font-size="14" font-weight="400" fill="#334155" text-anchor="start">原版页面与 AJAX 入口</text>
+<rect x="475" y="570" width="575" height="135" rx="12" fill="#edf5ff" stroke="#3975ba" stroke-width="1.8"/>
+<text x="492" y="601" font-size="17" font-weight="650" fill="#1c304b" text-anchor="start">关系变化后的联动</text>
+<text x="492" y="629" font-size="14" font-weight="400" fill="#334155" text-anchor="start">申请通知、接受或拒绝通知</text>
+<text x="492" y="651" font-size="14" font-weight="400" fill="#334155" text-anchor="start">接受后清理原申请通知</text>
+<text x="492" y="673" font-size="14" font-weight="400" fill="#334155" text-anchor="start">建立与解除好友事件</text>
+<rect x="376.375" y="182" width="53.25" height="22" rx="4" fill="white"/>
+<text x="403" y="197" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">A 发起</text>
+<rect x="852.375" y="182" width="53.25" height="22" rx="4" fill="white"/>
+<text x="879" y="197" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">B 接受</text>
+<rect x="363.0625" y="357" width="113.875" height="22" rx="4" fill="white"/>
+<text x="420" y="372" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">A 撤回 / B 拒绝</text>
+<rect x="730.5" y="437" width="89.0" height="22" rx="4" fill="white"/>
+<text x="775" y="452" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">解除好友关系</text>
+<rect x="385.0" y="602" width="64.0" height="22" rx="4" fill="white"/>
+<text x="417" y="617" font-size="12.5" font-weight="500" fill="#475569" text-anchor="middle">调用模型</text>
+<rect x="50" y="740" width="1180" height="96" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="68" y="767" font-size="14" font-weight="650" fill="#334155" text-anchor="start">读图提醒</text>
+<text x="68" y="791" font-size="13" font-weight="400" fill="#53657b" text-anchor="start">1. 原版 AJAX 操作会返回 FriendshipButton 的 HTML，不能直接当作已经为新 React 前端设计好的 JSON 接口。</text>
+<text x="68" y="813" font-size="13" font-weight="400" fill="#53657b" text-anchor="start">2. 通知与 friendshipCreated / friendshipRemoved 事件可供其他逻辑响应。</text>
+<path d="M 50 1214 H 1230" stroke="#e2e8f0"/>
+<rect x="50" y="1236" width="14" height="14" rx="3" fill="#edf5ff" stroke="#3975ba"/>
+<text x="72" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">原版源码已有</text>
+<rect x="295" y="1236" width="14" height="14" rx="3" fill="#f5f0ff" stroke="#8870bd"/>
+<text x="317" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">独立扩展，未下载</text>
+<rect x="540" y="1236" width="14" height="14" rx="3" fill="#fff6e6" stroke="#ba7b20"/>
+<text x="562" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">本项目待开发</text>
+<rect x="785" y="1236" width="14" height="14" rx="3" fill="#f2f4f7" stroke="#778397"/>
+<text x="807" y="1248" font-size="12" font-weight="400" fill="#334155" text-anchor="start">运行环境 / 外部</text>
+<text x="1230" y="1269" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="end">HumHub v1.19.4 · b8881d5ea7ee · 源码阅读图，未运行验证</text>
+</g></svg>

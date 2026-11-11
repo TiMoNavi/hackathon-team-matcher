@@ -1,0 +1,618 @@
+{
+  "capturedAt": "2026-11-11T15:42:42.441Z",
+  "localUrl": "http://127.0.0.1:4197/",
+  "pages": [
+    {
+      "width": 1440,
+      "status": 200,
+      "initial": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 1000,
+        "scrollHeight": 1000,
+        "font": "\"DM Sans\", \"DM Sans Fallback\""
+      },
+      "selected": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "input": {
+          "x": 500,
+          "y": 928,
+          "width": 904,
+          "height": 36
+        },
+        "inputVisible": true,
+        "images": [
+          {
+            "src": "http://127.0.0.1:4197/logo.svg",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=10",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=11",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=12",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          }
+        ]
+      },
+      "actualFonts": [
+        {
+          "familyName": "DM Sans 9pt",
+          "postScriptName": "DMSans9pt-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "searchFound": true,
+      "emptySearch": true,
+      "mockSend": true,
+      "backToList": null,
+      "errors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    {
+      "width": 768,
+      "status": 200,
+      "initial": {
+        "width": 768,
+        "scrollWidth": 768,
+        "height": 844,
+        "scrollHeight": 844,
+        "font": "\"DM Sans\", \"DM Sans Fallback\""
+      },
+      "selected": {
+        "width": 768,
+        "scrollWidth": 768,
+        "input": {
+          "x": 24,
+          "y": 784,
+          "width": 720,
+          "height": 36
+        },
+        "inputVisible": true,
+        "images": [
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=10",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=11",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=12",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          }
+        ]
+      },
+      "actualFonts": [
+        {
+          "familyName": "DM Sans 9pt",
+          "postScriptName": "DMSans9pt-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "searchFound": true,
+      "emptySearch": true,
+      "mockSend": true,
+      "backToList": true,
+      "errors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "initial": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "font": "\"DM Sans\", \"DM Sans Fallback\""
+      },
+      "selected": {
+        "width": 390,
+        "scrollWidth": 390,
+        "input": {
+          "x": 24,
+          "y": 784,
+          "width": 342,
+          "height": 36
+        },
+        "inputVisible": true,
+        "images": [
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=10",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=11",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=12",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          }
+        ]
+      },
+      "actualFonts": [
+        {
+          "familyName": "DM Sans 9pt",
+          "postScriptName": "DMSans9pt-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 20
+        }
+      ],
+      "searchFound": true,
+      "emptySearch": true,
+      "mockSend": true,
+      "backToList": true,
+      "errors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    {
+      "width": 320,
+      "status": 200,
+      "initial": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 844,
+        "scrollHeight": 844,
+        "font": "\"DM Sans\", \"DM Sans Fallback\""
+      },
+      "selected": {
+        "width": 320,
+        "scrollWidth": 320,
+        "input": {
+          "x": 24,
+          "y": 784,
+          "width": 272,
+          "height": 36
+        },
+        "inputVisible": true,
+        "images": [
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=13",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=2",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=4",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=5",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=6",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=7",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=8",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=9",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=10",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=11",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=12",
+            "loaded": true
+          },
+          {
+            "src": "https://i.pravatar.cc/150?img=1",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=60",
+            "loaded": true
+          }
+        ]
+      },
+      "actualFonts": [
+        {
+          "familyName": "DM Sans 9pt",
+          "postScriptName": "DMSans9pt-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 20
+        }
+      ],
+      "searchFound": true,
+      "emptySearch": true,
+      "mockSend": true,
+      "backToList": true,
+      "errors": [],
+      "failedRequests": [
+        {
+          "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    }
+  ]
+}

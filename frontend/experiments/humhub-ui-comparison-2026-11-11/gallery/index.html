@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23265043'/%3E%3Ctext x='14' y='45' font-size='40' fill='white'%3E3%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <title>三条路线，一起看 · HumHub 前端验证</title>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span class="brand-mark">C</span> CoLab <span class="brand-sub">前端实验室</span></a><span class="date">2026.11.11 · 本机验证</span></header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">HUMHUB × AFFECTUI × SHADCN UI KIT</p><h1>三条路线，<em>一起看。</em></h1><p class="lede">同一份活动与成员数据，三个独立实现。重点看页面效果，和把它做出来要跨过哪些坎。</p></div>
+      <div class="test-badge"><strong id="total-checks">51 / 51</strong><span>统一浏览器检查通过</span><small>桌面 1440 × 1000 · 手机 390 × 844</small></div>
+    </section>
+    <section class="comparison" aria-label="三种方案的页面效果">
+      <div class="toolbar"><div><h2>先看效果</h2><p id="view-note">同尺寸的真实浏览器截图；点击大图看清细节。</p></div><div class="view-switch" role="group" aria-label="选择截图类型"><button type="button" data-view="desktop" aria-pressed="true">桌面首屏</button><button type="button" data-view="mobile" aria-pressed="false">手机首屏</button><button type="button" data-view="detail" aria-pressed="false">详情弹窗</button></div></div>
+      <div id="route-grid" class="route-grid" aria-live="polite"></div>
+    </section>
+    <section class="recommendation"><span class="recommend-mark">↗</span><div><p class="eyebrow">这次验证后的建议</p><h2>优先继续路线 2：用插件承载 React 新前端</h2><p>这次已跑通真实 HumHub 路由与独立 React 页面，两套组件源码都能直接使用。接下来最值得验证的是一个带真实登录、活动权限和数据读取的最小业务页面。整站换肤仍需逐页接通，不能由这个首页直接推断。</p></div></section>
+    <section class="difficulty"><div class="section-heading"><p class="eyebrow">看改造成本</p><h2>差别主要在接入方式</h2><p>三种方案都能做出精致界面。下表是基于本次实现的判断，没有把代理耗时当成人工工期。</p></div>
+      <div class="table-scroll"><table><thead><tr><th scope="col">比较点</th><th scope="col">01 原生视图升级</th><th scope="col">02 React 首页插件</th><th scope="col">03 独立 Next.js 前端</th></tr></thead><tbody>
+        <tr><th scope="row">这次怎么做</th><td>PHP 输出页面，保留 HumHub / Bootstrap / jQuery</td><td>HumHub 模块返回独立页面，只加载自己的 React 资源</td><td>独立 Next.js 项目与预览服务</td></tr>
+        <tr><th scope="row">两套组件的复用</th><td>参考设计；转写成 PHP、CSS 与 DOM 交互</td><td>直接使用 Kit Card / Button / Sheet 与 AffectUI 清单</td><td>直接使用 Kit Card 与 AffectUI 清单</td></tr>
+        <tr><th scope="row">首页改造难点</th><td>原有样式叠加、React 交互转写、PJAX 生命周期</td><td>模块路由、构建清单、资源发布和原生样式隔离</td><td>页面组合较直接；需要独立构建与运行入口</td></tr>
+        <tr><th scope="row">推广到全站</th><td>逐页覆盖原生视图，继续兼容第三方模块样式</td><td>逐步接通业务接口，统一新旧页面导航体验</td><td>认证、权限、业务接口及迁移都需完整重建前端适配</td></tr>
+        <tr><th scope="row">更合适的目标</th><td>保留原生生态，主要改变外观</td><td>保留 HumHub 后端，持续建设现代前端</td><td>接受长期迁移成本，全面掌控前端架构</td></tr>
+      </tbody></table></div>
+    </section>
+    <section class="scope"><h2>这次验证到哪里</h2><p>三页均可筛选角色、搜索技能、打开成员详情和切换关注；所有数据为共同的虚拟样本，操作只留在页面内。前两页运行在单独的 HumHub / MySQL 实例。第三页尚未连接 HumHub API。</p><p>路线 1 是原生技术首页验证，尚未做成全站主题。路线 2 是首页插件，尚未替换全站。路线 3 是重写方向的首页原型。真实登录、权限、消息、持久化与完整迁移均不在本次验收范围。</p></section>
+  </main>
+  <footer><span>本地源码、截图和测试结果已保留</span><span>合成数据 · 无真实业务写入</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

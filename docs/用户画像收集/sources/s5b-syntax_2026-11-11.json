@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "counts": {
+    ".php": 215,
+    ".js": 5,
+    ".cjs": 6,
+    ".py": 12
+  },
+  "failed_files": [],
+  "additional_verified_deploy_scripts": [
+    "profile_s5b_docs_check.py"
+  ]
+}

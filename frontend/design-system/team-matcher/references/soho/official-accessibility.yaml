@@ -1,0 +1,158 @@
+- complementary:
+  - navigation:
+    - link "soho logo svg SohoPro":
+      - /url: "#"
+      - img "soho logo svg"
+      - text: SohoPro
+    - link "Chats":
+      - /url: /
+    - link "Contacts":
+      - /url: /contacts
+  - navigation:
+    - link "Archived messages":
+      - /url: /archive
+    - button "User menu":
+      - img "avatar image"
+- main:
+  - text: Chats
+  - button "New"
+  - region:
+    - group:
+      - button "avatar image Add status":
+        - img "avatar image"
+        - text: Add status
+    - group:
+      - button "avatar image Jacquenetta":
+        - img "avatar image"
+        - text: Jacquenetta
+    - group:
+      - button "avatar image Nickola":
+        - img "avatar image"
+        - text: Nickola
+    - group:
+      - button "FH Farand"
+    - group:
+      - button "avatar image Ossie":
+        - img "avatar image"
+        - text: Ossie
+    - group:
+      - button "avatar image Hall":
+        - img "avatar image"
+        - text: Hall
+    - group:
+      - button "avatar image Elyssa":
+        - img "avatar image"
+        - text: Elyssa
+    - group:
+      - button "avatar image Gil":
+        - img "avatar image"
+        - text: Gil
+    - group:
+      - button "avatar image Bab":
+        - img "avatar image"
+        - text: Bab
+    - group:
+      - button "avatar image Janith":
+        - img "avatar image"
+        - text: Janith
+  - textbox "Search chats..."
+  - img "avatar image"
+  - text: Jacquenetta Slowgrave 10 minutes Great! Looking forward to it. See you later! 1
+  - button
+  - img "avatar image"
+  - text: Nickola Peever 40 minutes Sounds perfect! I've been wanting to try that place. See you there! 1
+  - button
+  - text: FH Farand Hume Yesterday How about 7 PM at the new Italian place downtown?
+  - button
+  - img "avatar image"
+  - text: Ossie Peasey 13 days What time should we meet?
+  - button
+  - img "avatar image"
+  - text: Hall Negri 2 days No worries at all! I’ll grab a table and wait for you. Drive safe!
+  - button
+  - img "avatar image"
+  - text: Elyssa Segot Yesterday She just told me today.
+  - button
+  - img "avatar image"
+  - text: Gil Wilfing 1 day See you in 5 minutes!
+  - button
+  - img "avatar image"
+  - text: Bab Cleaton 3 hours Got it, thanks! You can mail the printed copies later.
+  - button
+  - img "avatar image"
+  - text: Janith Satch 1 day Absolutely! It’s amazing to see her so happy and passionate about it.
+  - button
+  - img "avatar image"
+  - text: Biron Alison 1 day Yeah, she mentioned it last week.
+  - button
+  - img "avatar image"
+  - text: Baily Younie Yesterday Thanks, I appreciate it!
+  - button
+  - img "avatar image"
+  - text: Lawton Broadbury 1 hours Drive safe!
+  - button
+  - text: EB Ealasaid Bohlje 10 days I might be 10 minutes late. Sorry!
+  - button
+  - img "avatar image"
+  - text: Jacquenetta Slowgrave Online
+  - button
+  - button
+  - button
+  - text: Hey Toby! Are we still on for the hike this weekend?
+  - button
+  - time: 05:23 PM
+  - text: Absolutely! I was just going over the route this morning.
+  - button
+  - time: 05:23 PM
+  - text: trail-map.pdf(2.4MB)
+  - button "Download"
+  - button "Preview"
+  - button
+  - time: 05:23 PM
+  - text: Here's the trail map. It's about 12km round trip with a great viewpoint halfway.
+  - button
+  - time: 05:23 PM
+  - text: Perfect, thanks! The route looks totally doable.
+  - button
+  - time: 05:23 PM
+  - figure:
+    - img "image"
+  - button
+  - time: 05:23 PM
+  - text: This is from the summit last year. The night sky up there is unreal.
+  - button
+  - time: 05:23 PM
+  - text: 0:10
+  - button
+  - time: 05:23 PM
+  - text: That's the forest section from my last trip — watch it till the end!
+  - button
+  - time: 05:23 PM
+  - button "Play"
+  - text: 6:13
+  - button
+  - time: 05:23 PM
+  - figure:
+    - img "image"
+  - figure:
+    - img "image"
+  - figure:
+    - img "image"
+  - figure:
+    - img "image"
+    - text: "+1"
+  - button
+  - time: 05:23 PM
+  - text: Some shots from my last few trips. Saturday can't come soon enough!
+  - button
+  - time: 05:23 PM
+  - text: Great! Looking forward to it. See you later!
+  - button
+  - time: 05:23 PM
+  - textbox "Enter message..."
+  - button "Emoji"
+  - button
+  - button
+  - button "Send"
+  - button "Choose File"
+- alert

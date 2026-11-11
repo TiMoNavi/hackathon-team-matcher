@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "checks": 25,
+  "passed": [
+    "native_fixture_has_no_confirmed_metadata",
+    "native_form_clears_unconfirmed_legacy_value",
+    "legacy_clear_has_versioned_audit_revision",
+    "legacy_clear_does_not_publish_other_raw_fields",
+    "native_save_does_not_confirm_old_pending_contact",
+    "old_native_draft_is_preserved",
+    "old_native_draft_conflicts_after_new_save",
+    "native_form_and_api_share_revision",
+    "stale_native_form_rejected",
+    "stale_native_form_preserves_current_native_value",
+    "native_timezone_is_saved_via_profile_service",
+    "timezone_uses_profile_not_identity_version",
+    "unversioned_native_profile_write_rejected",
+    "admin_native_edit_preserves_confirmed_value",
+    "admin_native_edit_records_pending_proposal_and_actor",
+    "admin_proposal_does_not_confirm_revision",
+    "owner_can_confirm_native_admin_proposal",
+    "ordinary_replace_preserves_identity_marker",
+    "ordinary_replace_does_not_advance_identity_version",
+    "native_settings_can_clear_optional_timezone",
+    "timezone_clear_removes_attribute_and_records_revision",
+    "console_account_save_keeps_implicit_timezone_unset",
+    "background_save_does_not_create_profile_revision",
+    "native_bridge_test_rolls_back_profile_values",
+    "native_bridge_test_rolls_back_timezone"
+  ],
+  "preview_database_connected": false
+}

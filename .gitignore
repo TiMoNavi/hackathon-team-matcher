@@ -1,0 +1,48 @@
+.local/
+
+# Local secrets, private source data and authenticated tool configuration
+.private/
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.mcp.json
+.vscode/mcp.json
+.npmrc
+.pypirc
+auth.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Installed dependencies and local runtime state
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.runtime/
+.preview/
+.next/
+.cache/
+.pytest_cache/
+.ruff_cache/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Operating-system and editor temporary files
+.DS_Store
+._*
+Thumbs.db
+*.swp
+*.swo
+*.tsbuildinfo
+
+# Private uploaded source documents: retain locally
+/references/*.docx
+/references/*.doc
+/references/*.pdf

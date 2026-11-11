@@ -1,0 +1,181 @@
+{
+  "route": 3,
+  "route_name": "standalone Next.js frontend",
+  "measured_at_utc": "2026-11-11T13:43:55.136826+00:00",
+  "started_at_utc": "2026-11-11T13:30:28.967516+00:00",
+  "elapsed_wall_seconds": 806.2,
+  "url": "http://127.0.0.1:3193",
+  "pid": 41246,
+  "authored_application": {
+    "files": 5,
+    "bytes": 42281,
+    "physical_lines": 220,
+    "details": [
+      {
+        "file": "app/layout.tsx",
+        "bytes": 391,
+        "physical_lines": 4
+      },
+      {
+        "file": "app/page.tsx",
+        "bytes": 115,
+        "physical_lines": 2
+      },
+      {
+        "file": "app/globals.css",
+        "bytes": 28055,
+        "physical_lines": 121
+      },
+      {
+        "file": "components/discover-home.tsx",
+        "bytes": 13554,
+        "physical_lines": 90
+      },
+      {
+        "file": "lib/utils.ts",
+        "bytes": 166,
+        "physical_lines": 3
+      }
+    ]
+  },
+  "configuration": {
+    "files": 5,
+    "bytes": 1637,
+    "physical_lines": 77,
+    "details": [
+      {
+        "file": "package.json",
+        "bytes": 663,
+        "physical_lines": 27
+      },
+      {
+        "file": "tsconfig.json",
+        "bytes": 698,
+        "physical_lines": 41
+      },
+      {
+        "file": "next.config.ts",
+        "bytes": 177,
+        "physical_lines": 3
+      },
+      {
+        "file": "postcss.config.mjs",
+        "bytes": 60,
+        "physical_lines": 1
+      },
+      {
+        "file": ".gitignore",
+        "bytes": 39,
+        "physical_lines": 5
+      }
+    ]
+  },
+  "vendored_source": {
+    "files": 2,
+    "bytes": 15075,
+    "physical_lines": 528,
+    "details": [
+      {
+        "file": "components/ui/card.tsx",
+        "bytes": 3023,
+        "physical_lines": 109
+      },
+      {
+        "file": "components/affectui/progress-tracker.tsx",
+        "bytes": 12052,
+        "physical_lines": 419
+      }
+    ]
+  },
+  "fixture": {
+    "files": 1,
+    "bytes": 2228,
+    "physical_lines": 90,
+    "details": [
+      {
+        "file": "data/demo-data.json",
+        "bytes": 2228,
+        "physical_lines": 90
+      }
+    ]
+  },
+  "component_provenance": [
+    {
+      "target": "components/ui/card.tsx",
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/vendor/shadcnuikit/dashboard/components/ui/card.tsx",
+      "unchanged": true,
+      "sha256": "9f5b08de0753966f6a8d8d32f0062cb8aea8e2a9caabee5af70aee980b2e398c"
+    },
+    {
+      "target": "components/affectui/progress-tracker.tsx",
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/vendor/affectui/affectui-components/progress-tracker.tsx",
+      "unchanged": true,
+      "sha256": "233da95c31ebe165059067025cf9c087e1feca4fc12be4563c65b546995b079d"
+    }
+  ],
+  "dependencies": {
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "lucide-react": "0.522.0",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.6.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "@types/node": "24.19.2",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "tailwindcss": "4.3.3",
+    "@tailwindcss/postcss": "4.3.3"
+  },
+  "build": {
+    "js": {
+      "files": 10,
+      "raw_bytes": 623723,
+      "gzip_bytes": 191267
+    },
+    "css": {
+      "files": 1,
+      "raw_bytes": 38682,
+      "gzip_bytes": 8546
+    },
+    "static_total_bytes": 662405,
+    "next_directory_bytes": 34528953
+  },
+  "first_load_browser_assets": {
+    "js": {
+      "requests": 6,
+      "encoded_body_bytes": 152326,
+      "decoded_body_bytes": 510734
+    },
+    "css": {
+      "requests": 1,
+      "encoded_body_bytes": 8570,
+      "decoded_body_bytes": 38682
+    }
+  },
+  "verification": {
+    "production_build": "passed",
+    "typescript": "passed during next build",
+    "browser_tests_passed": true,
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "page_errors": 0,
+    "failed_requests": 0,
+    "external_requests": 0,
+    "horizontal_overflow": false
+  },
+  "business_integration": "not implemented; local synthetic fixture and in-memory UI state only",
+  "lockfile_package_entries": 103,
+  "installed_package_entries": 50,
+  "handoff_at_utc": "2026-11-11T13:45:29.486494+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_bootstrap.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_driver.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_fixture.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_router.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_support.php",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_http.py",
+      "passed": true
+    },
+    {
+      "file": "backend/protected/modules/matcher-onboarding/tests/integration/s77_audit_live_review.py",
+      "passed": true
+    }
+  ],
+  "database_connections": 0,
+  "network_calls": 0
+}

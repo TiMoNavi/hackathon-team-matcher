@@ -1,0 +1,169 @@
+{
+  "route": "2-react-plugin",
+  "runtime": "HumHub 1.19.4 + same-origin isolated React document",
+  "url": "http://localhost:8193/comparison-react/home/index",
+  "recorded_at_utc": "2026-11-11T13:45:53.723913+00:00",
+  "started_unix": 1794403919.144695,
+  "finished_unix": 1794404753.723905,
+  "wall_elapsed_seconds": 834.6,
+  "timing_scope": "Prototype implementation, local package installation, browser checks and evidence gathering. Excludes parent-managed HumHub installation and does not estimate production migration.",
+  "source": {
+    "authored_app_and_module": {
+      "file_count": 9,
+      "bytes": 50560,
+      "physical_lines": 257,
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/main.tsx",
+        "frontend/src/styles.css",
+        "frontend/src/vite-env.d.ts",
+        "frontend/src/lib/utils.ts",
+        "module/config.php",
+        "module/Module.php",
+        "module/module.json",
+        "module/controllers/HomeController.php"
+      ]
+    },
+    "tooling_configuration": {
+      "file_count": 4,
+      "bytes": 1887,
+      "physical_lines": 68,
+      "files": [
+        "frontend/package.json",
+        "frontend/tsconfig.json",
+        "frontend/vite.config.ts",
+        "frontend/index.html"
+      ]
+    },
+    "copied_vendor_components": {
+      "file_count": 4,
+      "bytes": 23069,
+      "physical_lines": 744,
+      "files": [
+        "frontend/src/components/ui/card.tsx",
+        "frontend/src/components/ui/sheet.tsx",
+        "frontend/src/components/ui/button.tsx",
+        "frontend/src/components/affectui/progress-tracker.tsx"
+      ]
+    },
+    "copied_shared_fixture": {
+      "file_count": 1,
+      "bytes": 2228,
+      "physical_lines": 90,
+      "files": [
+        "frontend/src/demo-data.json"
+      ]
+    },
+    "line_count_note": "JSX and CSS include compact physical lines; line counts are not a difficulty comparison metric."
+  },
+  "component_provenance": [
+    {
+      "local": "frontend/src/components/ui/card.tsx",
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/vendor/shadcnuikit/dashboard/components/ui/card.tsx",
+      "unchanged": true,
+      "sha256": "9f5b08de0753966f6a8d8d32f0062cb8aea8e2a9caabee5af70aee980b2e398c"
+    },
+    {
+      "local": "frontend/src/components/ui/sheet.tsx",
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/vendor/shadcnuikit/dashboard/components/ui/sheet.tsx",
+      "unchanged": true,
+      "sha256": "54e255b2dec4b8ad7c71a571f17700694df1533ad5c78f8b472ddd802c658877"
+    },
+    {
+      "local": "frontend/src/components/ui/button.tsx",
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/vendor/shadcnuikit/dashboard/components/ui/button.tsx",
+      "unchanged": true,
+      "sha256": "f5b3e7fc7027c3f9abd0dd3787b9e8c40ebb588a9901127b5d5f4628e4e63dfe"
+    },
+    {
+      "local": "frontend/src/components/affectui/progress-tracker.tsx",
+      "source": "/Users/550m/code/hackathon-team-matcher/frontend/vendor/affectui/affectui-components/progress-tracker.tsx",
+      "unchanged": true,
+      "sha256": "233da95c31ebe165059067025cf9c087e1feca4fc12be4563c65b546995b079d"
+    }
+  ],
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "lucide-react": "0.577.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.6.0",
+    "radix-ui": "1.6.7"
+  },
+  "dev_dependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "@vitejs/plugin-react": "6.1.2",
+    "tailwindcss": "4.3.5",
+    "@tailwindcss/vite": "4.3.5"
+  },
+  "npm_install_packages_added": 123,
+  "assets": [
+    {
+      "file": "module/resources/app/assets/index-CVeaXq50.js",
+      "raw_bytes": 323796,
+      "gzip_level6_bytes": 101248
+    },
+    {
+      "file": "module/resources/app/assets/index-DLz7tfG7.css",
+      "raw_bytes": 53578,
+      "gzip_level6_bytes": 11935
+    }
+  ],
+  "bundle_raw_bytes": 377374,
+  "bundle_gzip_level6_bytes": 113183,
+  "tests": {
+    "typescript_and_production_build": "pass",
+    "php_lint_files": 3,
+    "browser_checks_passed": 17,
+    "browser_checks_total": 17,
+    "page_or_console_errors": 0,
+    "failed_network_requests": 0,
+    "viewports": [
+      {
+        "viewport": 1440,
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "viewport": 1024,
+        "width": 1024,
+        "height": 800
+      },
+      {
+        "viewport": 768,
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "viewport": 390,
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "only_module_assets": true,
+    "native_jquery_or_humhub_globals": false,
+    "csrf_meta_present": true,
+    "network_methods": [
+      "GET"
+    ]
+  },
+  "problems_resolved": [
+    "TS2882 for CSS side-effect import: added vite/client types.",
+    "Default favicon requested missing native path: added self-contained SVG data favicon.",
+    "Initial desktop text too small: increased content font sizes and contrast via application CSS only."
+  ],
+  "isolation": "One HumHub module GET route returns an independent HTML document and publishes only its own Vite JS/CSS. No iframe, native view lifecycle, Bootstrap, Clean theme, PJAX or jQuery.",
+  "boundaries": [
+    "All data and follow/checklist/bookmark state are synthetic/local.",
+    "No real authentication sessions, user permissions, Spaces, posts, chat, notification or file upload integration verified.",
+    "Public GET proof retains inherited controller filters and default CSRF, but production login/data authorization policies still require deliberate design and tests.",
+    "Only Microsoft Edge Chromium tested. No Safari/Firefox or assistive-technology audit.",
+    "No automatic upgrade or full-site migration tested.",
+    "App authoring uses components from local snapshots; full paid application or remote registry availability is not tested."
+  ],
+  "gzip_method": "Node.js zlib.gzipSync level 6, measured from final files; transfer compression is not enabled or asserted"
+}

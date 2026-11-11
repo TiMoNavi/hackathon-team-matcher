@@ -1,0 +1,18 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+!matcher-user-profile/
+!matcher-user-profile/**
+!matcher-profile-privacy/
+!matcher-profile-privacy/**
+!matcher-onboarding/
+!matcher-onboarding/**
+!matcher-recommendation/
+!matcher-recommendation/**
+!matcher-recommendation-ai/
+!matcher-recommendation-ai/**
+
+# Include every project-owned matcher plugin in the project snapshot
+!matcher-*/
+!matcher-*/**

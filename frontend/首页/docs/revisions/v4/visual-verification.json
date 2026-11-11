@@ -1,0 +1,23 @@
+{
+  "version": "V4",
+  "date": "2026-11-12",
+  "widths": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "allSectionHeadingsReadable": true,
+  "desktopAndMobileScreenshotsReviewed": [
+    "1440-people.png",
+    "1440-profile.png",
+    "1440-recommendations.png",
+    "390-profile.png",
+    "390-recommendations.png"
+  ],
+  "uiPrimitivesComparedToSignalry": 15,
+  "changedUiPrimitives": 0,
+  "errors": [],
+  "passed": true
+}

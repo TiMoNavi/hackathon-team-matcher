@@ -1,0 +1,10 @@
+{
+  "id": "comparison-react",
+  "name": "CoLab React Frontend Proof",
+  "description": "Isolated React frontend comparison using demonstration fixtures only.",
+  "version": "0.1.0",
+  "humhub": {
+    "minVersion": "1.19.0",
+    "maxVersion": "1.19"
+  }
+}

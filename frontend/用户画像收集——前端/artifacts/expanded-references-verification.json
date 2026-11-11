@@ -1,0 +1,580 @@
+{
+  "checkedAt": "2026-11-11T17:00:03.488Z",
+  "views": [
+    {
+      "slug": "glow-cloud",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glow-cloud",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glow-cloud",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glow-cloud",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glass-folder",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glass-folder",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glass-folder",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "glass-folder",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-beam",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-beam",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-beam",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-beam",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-flow",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-flow",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-flow",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "integration-flow",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-team",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-team",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-team",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-flow",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-flow",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-flow",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "layer-stack",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-team",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "layer-stack",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "layer-stack",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "cover-flow",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "project-flow",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "cover-flow",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "cover-flow",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "team-invite",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "team-invite",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "team-invite",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "blur-crossfade",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "blur-crossfade",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "blur-crossfade",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tilt-card",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "layer-stack",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tilt-card",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tilt-card",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "gradient-text",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "cover-flow",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "gradient-text",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "gradient-text",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "text-reveal",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "text-reveal",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "text-reveal",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "grid-background",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "team-invite",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "grid-background",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "grid-background",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "blur-crossfade",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "decision-card",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "decision-card",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "decision-card",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tilt-card",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-trail",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-trail",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "gradient-text",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-trail",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "writing-assistant",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "writing-assistant",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "text-reveal",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "writing-assistant",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "prompt-library",
+      "width": 390,
+      "scroll": 390,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "grid-background",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "prompt-library",
+      "width": 320,
+      "scroll": 320,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "prompt-library",
+      "width": 768,
+      "scroll": 768,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tag-input",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "decision-card",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tag-input",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tag-input",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "dropzone",
+      "width": 390,
+      "scroll": 390,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "dropzone",
+      "width": 320,
+      "scroll": 320,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "agent-trail",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "dropzone",
+      "width": 768,
+      "scroll": 768,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "writing-assistant",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "prompt-library",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 2,
+      "brokenImages": 0
+    },
+    {
+      "slug": "tag-input",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    },
+    {
+      "slug": "dropzone",
+      "width": 1440,
+      "scroll": 1440,
+      "children": 1,
+      "brokenImages": 0
+    }
+  ],
+  "checks": [
+    "26-item library, 8 recommendations, search, deep link, dark mode and mobile layout",
+    "Beam source toggles with accessible state",
+    "Layer selection follows clicked dimension",
+    "Cover Flow next navigation",
+    "Three-question sequence, retained answers and reset",
+    "Trail failed and completed states",
+    "Blur transition swaps variable-length guidance",
+    "Tag entry creates removable chip",
+    "Fill-in prompt assembles and submits local sentence",
+    "Suggestion submits and shows simulated reply",
+    "Local file can enter and leave simulated upload queue",
+    "Beam respects reduced motion"
+  ],
+  "errors": []
+}

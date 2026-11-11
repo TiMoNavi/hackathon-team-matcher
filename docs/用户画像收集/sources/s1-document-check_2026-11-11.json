@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "markdown_files": 10,
+  "local_links": 98,
+  "json_examples": 0,
+  "table_rows": 319,
+  "frozen_unchanged": {
+    "docs/简介冻结禁止修改.md": true,
+    "docs/首次注册与开场引导_用户原稿_冻结.md": true,
+    "leagcy/docs/用户画像收集/01_原始输入_附件全文.txt": true
+  },
+  "implementation_complete": [
+    "S1.1",
+    "S1.2",
+    "S1.3",
+    "S1.4",
+    "S1.5",
+    "S1.6",
+    "S1.7"
+  ],
+  "implementation_pending": 47,
+  "task_in_requested_directory": true
+}

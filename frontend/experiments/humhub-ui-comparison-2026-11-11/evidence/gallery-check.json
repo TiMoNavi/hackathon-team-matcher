@@ -1,0 +1,76 @@
+{
+  "views": [
+    {
+      "view": "desktop",
+      "images": [
+        [
+          1440,
+          1000
+        ],
+        [
+          1440,
+          1000
+        ],
+        [
+          1440,
+          1000
+        ]
+      ],
+      "noOverflow": true
+    },
+    {
+      "view": "mobile",
+      "images": [
+        [
+          390,
+          844
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          390,
+          844
+        ]
+      ],
+      "noOverflow": true
+    },
+    {
+      "view": "detail",
+      "images": [
+        [
+          1440,
+          1000
+        ],
+        [
+          1440,
+          1000
+        ],
+        [
+          1440,
+          1000
+        ]
+      ],
+      "noOverflow": true
+    }
+  ],
+  "live_routes": [
+    {
+      "url": "http://localhost:8193/comparison-native/home/index",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8193/comparison-react/home/index",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3193/",
+      "status": 200
+    }
+  ],
+  "title": "三条路线，一起看 · HumHub 前端验证",
+  "phone_no_overflow": true,
+  "errors": [],
+  "passed": true
+}

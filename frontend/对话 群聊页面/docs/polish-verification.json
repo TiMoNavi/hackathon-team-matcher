@@ -1,0 +1,91 @@
+{
+  "checks": [
+    "无历史偏好默认日间；背景真实移动，暂停后位置保持；暂停不影响发送且新消息无入场动画",
+    "新发送消息有轻量反馈，系统减少动态效果时背景及新消息动画停用",
+    "1024/768/390/320px 及 390×420 短屏，两种主题无横向溢出，输入区可用，申请可滚动到底",
+    "截图覆盖桌面/手机/好友侧栏，未发现控制台或运行时异常"
+  ],
+  "errors": [],
+  "layout": [
+    {
+      "mode": "light",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "composerBottom": 687,
+      "messageViewport": 241
+    },
+    {
+      "mode": "dark",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "composerBottom": 687,
+      "messageViewport": 241
+    },
+    {
+      "mode": "light",
+      "width": 768,
+      "height": 900,
+      "scrollWidth": 768,
+      "composerBottom": 822.5,
+      "messageViewport": 395
+    },
+    {
+      "mode": "dark",
+      "width": 768,
+      "height": 900,
+      "scrollWidth": 768,
+      "composerBottom": 822.5,
+      "messageViewport": 395
+    },
+    {
+      "mode": "light",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "composerBottom": 781,
+      "messageViewport": 413
+    },
+    {
+      "mode": "dark",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "composerBottom": 781,
+      "messageViewport": 413
+    },
+    {
+      "mode": "light",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "composerBottom": 515,
+      "messageViewport": 263
+    },
+    {
+      "mode": "dark",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "composerBottom": 515,
+      "messageViewport": 263
+    },
+    {
+      "mode": "light",
+      "width": 390,
+      "height": 420,
+      "scrollWidth": 390,
+      "composerBottom": 367,
+      "messageViewport": 115
+    },
+    {
+      "mode": "dark",
+      "width": 390,
+      "height": 420,
+      "scrollWidth": 390,
+      "composerBottom": 367,
+      "messageViewport": 115
+    }
+  ]
+}

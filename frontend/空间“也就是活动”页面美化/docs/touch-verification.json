@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "name": "Decorative motion runs when allowed",
+      "passed": true
+    },
+    {
+      "name": "Touch pause stops CSS motion",
+      "passed": true
+    },
+    {
+      "name": "Touch tab opens forum",
+      "passed": true
+    },
+    {
+      "name": "Mobile input font avoids auto zoom",
+      "passed": true
+    },
+    {
+      "name": "Mobile draft survives close",
+      "passed": true
+    },
+    {
+      "name": "Touch date switch works",
+      "passed": true
+    },
+    {
+      "name": "Touch schedule details fit viewport",
+      "passed": true
+    },
+    {
+      "name": "Touch photo next works",
+      "passed": true
+    },
+    {
+      "name": "Touch avatar opens basic profile",
+      "passed": true
+    },
+    {
+      "name": "Touch profile entry reaches matching personal page",
+      "passed": true
+    },
+    {
+      "name": "Touch reply avatar opens nested profile",
+      "passed": true
+    },
+    {
+      "name": "Touch quoted reply is sent with context",
+      "passed": true
+    },
+    {
+      "name": "Touch page has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Touch session has no runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

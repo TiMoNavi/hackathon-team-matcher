@@ -1,0 +1,1282 @@
+{
+  "date": "2026-11-12",
+  "base": "http://127.0.0.1:4201/",
+  "checks": [
+    {
+      "name": "Activity title and four tabs present",
+      "passed": true
+    },
+    {
+      "name": "Local images fully loaded",
+      "passed": true
+    },
+    {
+      "name": "Bricolage actually rendered",
+      "passed": true
+    },
+    {
+      "name": "Inter actually rendered",
+      "passed": true
+    },
+    {
+      "name": "Chinese glyph font checked",
+      "passed": true,
+      "detail": {
+        "selector": ".hero-copy h1",
+        "fonts": [
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 5
+          }
+        ]
+      }
+    },
+    {
+      "name": "Photo dialog opens",
+      "passed": true
+    },
+    {
+      "name": "Photo keyboard next works",
+      "passed": true
+    },
+    {
+      "name": "Photo Escape closes and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Like updates both state and count",
+      "passed": true
+    },
+    {
+      "name": "Local reply appended to thread",
+      "passed": true
+    },
+    {
+      "name": "Empty post validation appears",
+      "passed": true
+    },
+    {
+      "name": "Draft survives closing the composer",
+      "passed": true
+    },
+    {
+      "name": "Published demo is visible in activity forum",
+      "passed": true
+    },
+    {
+      "name": "Forum category filter works",
+      "passed": true
+    },
+    {
+      "name": "Search empty result shown",
+      "passed": true
+    },
+    {
+      "name": "Day one agenda has five sessions",
+      "passed": true
+    },
+    {
+      "name": "Day two agenda has three sessions",
+      "passed": true
+    },
+    {
+      "name": "Schedule details include correct full date",
+      "passed": true
+    },
+    {
+      "name": "Schedule participation toggle works",
+      "passed": true
+    },
+    {
+      "name": "Participation reflected in agenda",
+      "passed": true
+    },
+    {
+      "name": "All gallery photos accessible",
+      "passed": true
+    },
+    {
+      "name": "Tabs support arrow keyboard navigation",
+      "passed": true
+    },
+    {
+      "name": "Browser back restores activity section",
+      "passed": true
+    },
+    {
+      "name": "People filter uses current activity demo",
+      "passed": true
+    },
+    {
+      "name": "Archived activity disables posting",
+      "passed": true
+    },
+    {
+      "name": "Lost access clears member content DOM",
+      "passed": true
+    },
+    {
+      "name": "Invitation does not expose activity content",
+      "passed": true
+    },
+    {
+      "name": "Accept demo invitation restores activity shell",
+      "passed": true
+    },
+    {
+      "name": "Empty forum and photo state shown",
+      "passed": true
+    },
+    {
+      "name": "Empty agenda state shown",
+      "passed": true
+    },
+    {
+      "name": "Load error recoverable",
+      "passed": true
+    },
+    {
+      "name": "No overflow and all tabs fit 1440 overview",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440,
+        "tabRects": [
+          {
+            "left": 96,
+            "right": 196
+          },
+          {
+            "left": 220,
+            "right": 320
+          },
+          {
+            "left": 344,
+            "right": 444
+          },
+          {
+            "left": 468,
+            "right": 568
+          }
+        ],
+        "container": 1248
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1440 forum",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440,
+        "tabRects": [
+          {
+            "left": 96,
+            "right": 196
+          },
+          {
+            "left": 220,
+            "right": 320
+          },
+          {
+            "left": 344,
+            "right": 444
+          },
+          {
+            "left": 468,
+            "right": 568
+          }
+        ],
+        "container": 1248
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1440 schedule",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440,
+        "tabRects": [
+          {
+            "left": 96,
+            "right": 196
+          },
+          {
+            "left": 220,
+            "right": 320
+          },
+          {
+            "left": 344,
+            "right": 444
+          },
+          {
+            "left": 468,
+            "right": 568
+          }
+        ],
+        "container": 1248
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1440 gallery",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440,
+        "tabRects": [
+          {
+            "left": 96,
+            "right": 196
+          },
+          {
+            "left": 220,
+            "right": 320
+          },
+          {
+            "left": 344,
+            "right": 444
+          },
+          {
+            "left": 468,
+            "right": 568
+          }
+        ],
+        "container": 1248
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1024 overview",
+      "passed": true,
+      "detail": {
+        "viewport": 1024,
+        "document": 1024,
+        "tabRects": [
+          {
+            "left": 32,
+            "right": 132
+          },
+          {
+            "left": 156,
+            "right": 256
+          },
+          {
+            "left": 280,
+            "right": 380
+          },
+          {
+            "left": 404,
+            "right": 504
+          }
+        ],
+        "container": 960
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1024 forum",
+      "passed": true,
+      "detail": {
+        "viewport": 1024,
+        "document": 1024,
+        "tabRects": [
+          {
+            "left": 32,
+            "right": 132
+          },
+          {
+            "left": 156,
+            "right": 256
+          },
+          {
+            "left": 280,
+            "right": 380
+          },
+          {
+            "left": 404,
+            "right": 504
+          }
+        ],
+        "container": 960
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1024 schedule",
+      "passed": true,
+      "detail": {
+        "viewport": 1024,
+        "document": 1024,
+        "tabRects": [
+          {
+            "left": 32,
+            "right": 132
+          },
+          {
+            "left": 156,
+            "right": 256
+          },
+          {
+            "left": 280,
+            "right": 380
+          },
+          {
+            "left": 404,
+            "right": 504
+          }
+        ],
+        "container": 960
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 1024 gallery",
+      "passed": true,
+      "detail": {
+        "viewport": 1024,
+        "document": 1024,
+        "tabRects": [
+          {
+            "left": 32,
+            "right": 132
+          },
+          {
+            "left": 156,
+            "right": 256
+          },
+          {
+            "left": 280,
+            "right": 380
+          },
+          {
+            "left": 404,
+            "right": 504
+          }
+        ],
+        "container": 960
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 768 overview",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 120
+          },
+          {
+            "left": 144,
+            "right": 244
+          },
+          {
+            "left": 268,
+            "right": 368
+          },
+          {
+            "left": 392,
+            "right": 492
+          }
+        ],
+        "container": 728
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 768 forum",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 120
+          },
+          {
+            "left": 144,
+            "right": 244
+          },
+          {
+            "left": 268,
+            "right": 368
+          },
+          {
+            "left": 392,
+            "right": 492
+          }
+        ],
+        "container": 728
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 768 schedule",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 120
+          },
+          {
+            "left": 144,
+            "right": 244
+          },
+          {
+            "left": 268,
+            "right": 368
+          },
+          {
+            "left": 392,
+            "right": 492
+          }
+        ],
+        "container": 728
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 768 gallery",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 120
+          },
+          {
+            "left": 144,
+            "right": 244
+          },
+          {
+            "left": 268,
+            "right": 368
+          },
+          {
+            "left": 392,
+            "right": 492
+          }
+        ],
+        "container": 728
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 390 overview",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 107.5
+          },
+          {
+            "left": 107.5,
+            "right": 195
+          },
+          {
+            "left": 195,
+            "right": 282.5
+          },
+          {
+            "left": 282.5,
+            "right": 370
+          }
+        ],
+        "container": 350
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 390 forum",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 107.5
+          },
+          {
+            "left": 107.5,
+            "right": 195
+          },
+          {
+            "left": 195,
+            "right": 282.5
+          },
+          {
+            "left": 282.5,
+            "right": 370
+          }
+        ],
+        "container": 350
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 390 schedule",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 107.5
+          },
+          {
+            "left": 107.5,
+            "right": 195
+          },
+          {
+            "left": 195,
+            "right": 282.5
+          },
+          {
+            "left": 282.5,
+            "right": 370
+          }
+        ],
+        "container": 350
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 390 gallery",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390,
+        "tabRects": [
+          {
+            "left": 20,
+            "right": 107.5
+          },
+          {
+            "left": 107.5,
+            "right": 195
+          },
+          {
+            "left": 195,
+            "right": 282.5
+          },
+          {
+            "left": 282.5,
+            "right": 370
+          }
+        ],
+        "container": 350
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 320 overview",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "document": 320,
+        "tabRects": [
+          {
+            "left": 16,
+            "right": 88
+          },
+          {
+            "left": 88,
+            "right": 160
+          },
+          {
+            "left": 160,
+            "right": 232
+          },
+          {
+            "left": 232,
+            "right": 304
+          }
+        ],
+        "container": 288
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 320 forum",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "document": 320,
+        "tabRects": [
+          {
+            "left": 16,
+            "right": 88
+          },
+          {
+            "left": 88,
+            "right": 160
+          },
+          {
+            "left": 160,
+            "right": 232
+          },
+          {
+            "left": 232,
+            "right": 304
+          }
+        ],
+        "container": 288
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 320 schedule",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "document": 320,
+        "tabRects": [
+          {
+            "left": 16,
+            "right": 88
+          },
+          {
+            "left": 88,
+            "right": 160
+          },
+          {
+            "left": 160,
+            "right": 232
+          },
+          {
+            "left": 232,
+            "right": 304
+          }
+        ],
+        "container": 288
+      }
+    },
+    {
+      "name": "No overflow and all tabs fit 320 gallery",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "document": 320,
+        "tabRects": [
+          {
+            "left": 16,
+            "right": 88
+          },
+          {
+            "left": 88,
+            "right": 160
+          },
+          {
+            "left": 160,
+            "right": 232
+          },
+          {
+            "left": 232,
+            "right": 304
+          }
+        ],
+        "container": 288
+      }
+    },
+    {
+      "name": "Mobile schedule shortcut appears before forum",
+      "passed": true
+    },
+    {
+      "name": "Mobile schedule shortcut opens session",
+      "passed": true
+    },
+    {
+      "name": "Mobile menu works",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation closes menu",
+      "passed": true
+    },
+    {
+      "name": "Dialog focus remains inside",
+      "passed": true
+    },
+    {
+      "name": "Pause control updates state",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion stops decorative animation",
+      "passed": true
+    },
+    {
+      "name": "No page runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No HTTP failures",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "widths": [
+    {
+      "width": 1440,
+      "view": "overview",
+      "viewport": 1440,
+      "document": 1440,
+      "tabRects": [
+        {
+          "left": 96,
+          "right": 196
+        },
+        {
+          "left": 220,
+          "right": 320
+        },
+        {
+          "left": 344,
+          "right": 444
+        },
+        {
+          "left": 468,
+          "right": 568
+        }
+      ],
+      "container": 1248
+    },
+    {
+      "width": 1440,
+      "view": "forum",
+      "viewport": 1440,
+      "document": 1440,
+      "tabRects": [
+        {
+          "left": 96,
+          "right": 196
+        },
+        {
+          "left": 220,
+          "right": 320
+        },
+        {
+          "left": 344,
+          "right": 444
+        },
+        {
+          "left": 468,
+          "right": 568
+        }
+      ],
+      "container": 1248
+    },
+    {
+      "width": 1440,
+      "view": "schedule",
+      "viewport": 1440,
+      "document": 1440,
+      "tabRects": [
+        {
+          "left": 96,
+          "right": 196
+        },
+        {
+          "left": 220,
+          "right": 320
+        },
+        {
+          "left": 344,
+          "right": 444
+        },
+        {
+          "left": 468,
+          "right": 568
+        }
+      ],
+      "container": 1248
+    },
+    {
+      "width": 1440,
+      "view": "gallery",
+      "viewport": 1440,
+      "document": 1440,
+      "tabRects": [
+        {
+          "left": 96,
+          "right": 196
+        },
+        {
+          "left": 220,
+          "right": 320
+        },
+        {
+          "left": 344,
+          "right": 444
+        },
+        {
+          "left": 468,
+          "right": 568
+        }
+      ],
+      "container": 1248
+    },
+    {
+      "width": 1024,
+      "view": "overview",
+      "viewport": 1024,
+      "document": 1024,
+      "tabRects": [
+        {
+          "left": 32,
+          "right": 132
+        },
+        {
+          "left": 156,
+          "right": 256
+        },
+        {
+          "left": 280,
+          "right": 380
+        },
+        {
+          "left": 404,
+          "right": 504
+        }
+      ],
+      "container": 960
+    },
+    {
+      "width": 1024,
+      "view": "forum",
+      "viewport": 1024,
+      "document": 1024,
+      "tabRects": [
+        {
+          "left": 32,
+          "right": 132
+        },
+        {
+          "left": 156,
+          "right": 256
+        },
+        {
+          "left": 280,
+          "right": 380
+        },
+        {
+          "left": 404,
+          "right": 504
+        }
+      ],
+      "container": 960
+    },
+    {
+      "width": 1024,
+      "view": "schedule",
+      "viewport": 1024,
+      "document": 1024,
+      "tabRects": [
+        {
+          "left": 32,
+          "right": 132
+        },
+        {
+          "left": 156,
+          "right": 256
+        },
+        {
+          "left": 280,
+          "right": 380
+        },
+        {
+          "left": 404,
+          "right": 504
+        }
+      ],
+      "container": 960
+    },
+    {
+      "width": 1024,
+      "view": "gallery",
+      "viewport": 1024,
+      "document": 1024,
+      "tabRects": [
+        {
+          "left": 32,
+          "right": 132
+        },
+        {
+          "left": 156,
+          "right": 256
+        },
+        {
+          "left": 280,
+          "right": 380
+        },
+        {
+          "left": 404,
+          "right": 504
+        }
+      ],
+      "container": 960
+    },
+    {
+      "width": 768,
+      "view": "overview",
+      "viewport": 768,
+      "document": 768,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 120
+        },
+        {
+          "left": 144,
+          "right": 244
+        },
+        {
+          "left": 268,
+          "right": 368
+        },
+        {
+          "left": 392,
+          "right": 492
+        }
+      ],
+      "container": 728
+    },
+    {
+      "width": 768,
+      "view": "forum",
+      "viewport": 768,
+      "document": 768,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 120
+        },
+        {
+          "left": 144,
+          "right": 244
+        },
+        {
+          "left": 268,
+          "right": 368
+        },
+        {
+          "left": 392,
+          "right": 492
+        }
+      ],
+      "container": 728
+    },
+    {
+      "width": 768,
+      "view": "schedule",
+      "viewport": 768,
+      "document": 768,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 120
+        },
+        {
+          "left": 144,
+          "right": 244
+        },
+        {
+          "left": 268,
+          "right": 368
+        },
+        {
+          "left": 392,
+          "right": 492
+        }
+      ],
+      "container": 728
+    },
+    {
+      "width": 768,
+      "view": "gallery",
+      "viewport": 768,
+      "document": 768,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 120
+        },
+        {
+          "left": 144,
+          "right": 244
+        },
+        {
+          "left": 268,
+          "right": 368
+        },
+        {
+          "left": 392,
+          "right": 492
+        }
+      ],
+      "container": 728
+    },
+    {
+      "width": 390,
+      "view": "overview",
+      "viewport": 390,
+      "document": 390,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 107.5
+        },
+        {
+          "left": 107.5,
+          "right": 195
+        },
+        {
+          "left": 195,
+          "right": 282.5
+        },
+        {
+          "left": 282.5,
+          "right": 370
+        }
+      ],
+      "container": 350
+    },
+    {
+      "width": 390,
+      "view": "forum",
+      "viewport": 390,
+      "document": 390,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 107.5
+        },
+        {
+          "left": 107.5,
+          "right": 195
+        },
+        {
+          "left": 195,
+          "right": 282.5
+        },
+        {
+          "left": 282.5,
+          "right": 370
+        }
+      ],
+      "container": 350
+    },
+    {
+      "width": 390,
+      "view": "schedule",
+      "viewport": 390,
+      "document": 390,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 107.5
+        },
+        {
+          "left": 107.5,
+          "right": 195
+        },
+        {
+          "left": 195,
+          "right": 282.5
+        },
+        {
+          "left": 282.5,
+          "right": 370
+        }
+      ],
+      "container": 350
+    },
+    {
+      "width": 390,
+      "view": "gallery",
+      "viewport": 390,
+      "document": 390,
+      "tabRects": [
+        {
+          "left": 20,
+          "right": 107.5
+        },
+        {
+          "left": 107.5,
+          "right": 195
+        },
+        {
+          "left": 195,
+          "right": 282.5
+        },
+        {
+          "left": 282.5,
+          "right": 370
+        }
+      ],
+      "container": 350
+    },
+    {
+      "width": 320,
+      "view": "overview",
+      "viewport": 320,
+      "document": 320,
+      "tabRects": [
+        {
+          "left": 16,
+          "right": 88
+        },
+        {
+          "left": 88,
+          "right": 160
+        },
+        {
+          "left": 160,
+          "right": 232
+        },
+        {
+          "left": 232,
+          "right": 304
+        }
+      ],
+      "container": 288
+    },
+    {
+      "width": 320,
+      "view": "forum",
+      "viewport": 320,
+      "document": 320,
+      "tabRects": [
+        {
+          "left": 16,
+          "right": 88
+        },
+        {
+          "left": 88,
+          "right": 160
+        },
+        {
+          "left": 160,
+          "right": 232
+        },
+        {
+          "left": 232,
+          "right": 304
+        }
+      ],
+      "container": 288
+    },
+    {
+      "width": 320,
+      "view": "schedule",
+      "viewport": 320,
+      "document": 320,
+      "tabRects": [
+        {
+          "left": 16,
+          "right": 88
+        },
+        {
+          "left": 88,
+          "right": 160
+        },
+        {
+          "left": 160,
+          "right": 232
+        },
+        {
+          "left": 232,
+          "right": 304
+        }
+      ],
+      "container": 288
+    },
+    {
+      "width": 320,
+      "view": "gallery",
+      "viewport": 320,
+      "document": 320,
+      "tabRects": [
+        {
+          "left": 16,
+          "right": 88
+        },
+        {
+          "left": 88,
+          "right": 160
+        },
+        {
+          "left": 160,
+          "right": 232
+        },
+        {
+          "left": 232,
+          "right": 304
+        }
+      ],
+      "container": 288
+    }
+  ],
+  "fonts": [
+    {
+      "selector": ".brand-en",
+      "fonts": [
+        {
+          "familyName": "Bricolage Grotesque 96pt ExtraBold",
+          "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ]
+    },
+    {
+      "selector": ".event-edition",
+      "fonts": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Regular",
+          "isCustomFont": false,
+          "glyphCount": 4
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 20
+        }
+      ]
+    },
+    {
+      "selector": ".hero-copy h1",
+      "fonts": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Semibold",
+          "isCustomFont": false,
+          "glyphCount": 5
+        }
+      ]
+    },
+    {
+      "selector": ".hero-intro",
+      "fonts": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Regular",
+          "isCustomFont": false,
+          "glyphCount": 19
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

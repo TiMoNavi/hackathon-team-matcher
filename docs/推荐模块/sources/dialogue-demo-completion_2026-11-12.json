@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-12",
+  "status": "recorded_with_unresolved_quality_findings",
+  "synthetic_only": true,
+  "scope": "Requested manual dialogue experiment; production recommendation code unchanged. Exact visible model outputs preserved, including malformed outputs. No real accounts/database or hidden reasoning.",
+  "corpus": {
+    "people": 40,
+    "current_event": 36,
+    "other_event": 4,
+    "sha256": "d678cfa43f2f71e88021860255fb7beeda34892f4d28aec847c3de2e2134be76",
+    "same_for_live_and_offline": true
+  },
+  "offline": {
+    "passed": 75,
+    "real_model_calls": 0,
+    "fake_provider": true,
+    "large_pool": {
+      "people": 400,
+      "recalled": 80,
+      "qualified": 35,
+      "summaries": 24,
+      "fake_results": 3
+    }
+  },
+  "live": {
+    "model": "gemini-3.8-flash",
+    "generation_requests": 10,
+    "platform_reservations": 10,
+    "call_cap": 12,
+    "scenarios": [
+      {
+        "id": "project_complement",
+        "status": "completed",
+        "results": 5,
+        "model_calls": 3,
+        "error": null
+      },
+      {
+        "id": "shared_interests",
+        "status": "completed",
+        "results": 5,
+        "model_calls": 2,
+        "error": null
+      },
+      {
+        "id": "clarify_goal",
+        "status": "failed",
+        "results": 0,
+        "model_calls": 4,
+        "error": "invalid_model_output"
+      },
+      {
+        "id": "honest_empty",
+        "status": "completed",
+        "results": 0,
+        "model_calls": 1,
+        "error": null
+      }
+    ],
+    "maximum_candidate_bytes_observed": 757,
+    "maximum_request_bytes_observed": 16379,
+    "usage": {
+      "prompt_tokens": 38703,
+      "completion_tokens": 12320,
+      "total_tokens": 51023
+    },
+    "truncated_responses": [
+      2,
+      8,
+      9
+    ],
+    "new_calls_after_initial_dialogues": 0
+  },
+  "quality_findings": [
+    "R6.T1: product role wrongly interpreted as self_type and accepted; scores affected",
+    "R6.T2: truncated JSON caused one repaired result and one failed run; no automatic fallback",
+    "R6.T3: feature-level evidence expands unrelated same-feature facts into backend reason text"
+  ],
+  "production_validation": {
+    "files_compared": 117,
+    "mismatches": [],
+    "frozen_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03"
+  },
+  "independent_review": {
+    "path": "docs/推荐模块/sources/dialogue-demo-review_2026-11-12.json",
+    "exists": true,
+    "reported_passed_probes": 41,
+    "root_archived_and_reproduced": true
+  },
+  "documentation": {
+    "relative_links_checked": 79,
+    "missing_links": [],
+    "contains_raw_synthetic_dialogues": true
+  },
+  "files_sha256": {
+    "docs/推荐模块/examples/dialogue-demo-users_2026-11-12.json": "d678cfa43f2f71e88021860255fb7beeda34892f4d28aec847c3de2e2134be76",
+    "docs/推荐模块/examples/dialogue-demo-users_2026-11-12.md": "82eaff4e1a338753221e0108eed589af19e7a014d28d42ac43cf36ea3eee082f",
+    "docs/推荐模块/13_批量虚构用户与真实AI对话测试.md": "7f03c175493da565a252fa06c6d784856461850d7e1cab126236c0006a9de1c1",
+    "docs/推荐模块/task.md": "a813f8c3ce2de0b16711fa4d88510f5a35b7d6691fb609210162e0466292cd1e",
+    "docs/推荐模块/00_README.md": "fa770a6a641fbda9c752fa2406beb06c563cf3180c246c459ea062609f7f2a44",
+    "docs/推荐模块/12_R6可选AI子插件与内部验证.md": "275aafd63da33b7e7b049ad62edda64ae00b78eb812d0ab60e8ca2b0f1e8a9c5",
+    "docs/推荐模块/sources/dialogue-demo-live_2026-11-12.json": "e11c75c8ebdd6045b18aaab6142931e7102d0435d4af5d6aaf0db7a38c9a29ef",
+    "docs/推荐模块/sources/dialogue-demo-offline_2026-11-12.json": "fcbb3096a6fbc248b6f09425caadc2a6aa61d9cee11b035b6eea5684bf00603e",
+    "docs/推荐模块/sources/dialogue-demo-visible-transcript_2026-11-12.md": "78f6996a11374edf7851115381b4a38847ecb6c9e64e44493236ab002fd1dafc",
+    "backend/protected/modules/matcher-recommendation-ai/tests/dialogue_demo/run.php": "4116b356a9942fdc206affa60f7cd1ce5f4956d23170279cd868ec30d60f1a91",
+    "docs/推荐模块/sources/dialogue-demo-review_2026-11-12.json": "529387ffb0a39174c91940bb18762e22f5909d4c07005851a1b82833f30decea"
+  },
+  "operational_boundaries": {
+    "real_accounts_created": false,
+    "existing_database_connected": false,
+    "production_algorithm_modified": false,
+    "production_module_enabled": false,
+    "api_deployed": false,
+    "other_activity_candidates_sent": false,
+    "unconfirmed_or_private_fields_sent": false,
+    "credentials_or_headers_logged": false,
+    "hidden_model_reasoning_logged": false
+  },
+  "recorded_at": "2026-11-12T00:31:30+08:00",
+  "final_verified_at": "2026-11-12T00:35:47+08:00",
+  "product_acceptance": {
+    "status": "rejected_by_user",
+    "date": "2026-11-12",
+    "reason": "Existing demo exposes protocol outputs and shallow prompts; it does not deliver natural project-oriented conversation, reliable tool progress, evidence-based explanations, persistent context or explicit discuss-versus-refresh behavior.",
+    "technical_results_retained": true,
+    "replacement_acceptance_document": "docs/推荐模块/14_对话式找队友改版与验收.md"
+  }
+}

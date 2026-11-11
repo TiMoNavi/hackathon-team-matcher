@@ -1,0 +1,23 @@
+%% 运行结构：一个模块化的 PHP / Yii2 应用
+%% 与 SVG 使用同一节点和关系数据；布局由 Mermaid 决定。
+flowchart TB
+  browser["浏览器 / 原站页面<br/>上游自带页面和 AJAX 请求"]:::external
+  entry["index.php<br/>加载配置，创建 Web 应用"]:::core
+  yii["Yii2 请求处理<br/>路由、身份与访问规则 → Controller"]:::core
+  core["HumHub 核心模块（同一应用）<br/>user / friendship / space<br/>content / post / comment / like / file<br/>stream / notification / activity / queue<br/>模型、Behavior、Service 与权限逻辑"]:::core
+  addons["独立免费扩展 · 未下载<br/>RESTful API<br/>Messenger<br/>安装、接口适配均未执行"]:::optional
+  db["数据库<br/>业务数据、成员关系、内容等<br/>尚未建库或迁移"]:::external
+  files["文件与缓存<br/>uploads / 文件存储<br/>默认 FileCache"]:::external
+  jobs["控制台 / cron / queue<br/>后台任务；默认 MySQL 队列驱动<br/>尚未配置或运行"]:::external
+  browser -->|"HTTP"| entry
+  entry --> yii
+  yii -->|"调用模块"| core
+  yii -.->|"安装后可扩展"| addons
+  addons -.-> core
+  core --> db
+  core --> files
+  core --> jobs
+  classDef core fill:#edf5ff,stroke:#3975ba,color:#1c304b
+  classDef optional fill:#f5f0ff,stroke:#8870bd,color:#1c304b
+  classDef planned fill:#fff6e6,stroke:#ba7b20,color:#1c304b
+  classDef external fill:#f2f4f7,stroke:#778397,color:#1c304b

@@ -1,0 +1,26 @@
+{
+  "type": "local-reference-adaptation",
+  "sources": [
+    {
+      "source": "用户画像收集——前端/components/reference-originals/text-reveal.tsx",
+      "sha256": "9b3aefc8310c71fd66f3d9dc29779ebaf6c0e064766ff6619c8fedb84121ee19"
+    },
+    {
+      "source": "用户画像收集——前端/components/reference-originals/gradient-text.tsx",
+      "sha256": "45e5c18b337ce322268f821185b5e384e20a953ee2af0b652c1d7646957659ef"
+    },
+    {
+      "source": "用户画像收集——前端/components/reference-originals/empty-calendar.tsx",
+      "sha256": "e3de6f44d69d5ad484fa588cf202f7ead07a5ba6c4b0b3100d33fdaaa7503ec3"
+    },
+    {
+      "source": "用户画像收集——前端/components/reference-originals/notification-stack.tsx",
+      "sha256": "b8923b0aaf58366c16baa06674dd4654bebbc9bd7cc7ba9741a6df2245ec8072"
+    }
+  ],
+  "compositions": [
+    "KineticHeading: two staggered TextReveal lines and GradientText-inspired pigment",
+    "MaterialSurface: EmptyCalendar partial tinted edge, diffuse glow and pointer-sampled reflection"
+  ],
+  "note": "These compositions are local adaptations, not official library exports."
+}

@@ -1,0 +1,275 @@
+{
+  "shots": [
+    {
+      "name": "desktop-group-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 96,
+        "y": 112,
+        "width": 1248,
+        "height": 842
+      },
+      "composer": {
+        "top": 809,
+        "bottom": 919
+      }
+    },
+    {
+      "name": "desktop-group-details-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 96,
+        "y": 112,
+        "width": 1248,
+        "height": 842
+      },
+      "composer": {
+        "top": 809,
+        "bottom": 919
+      }
+    },
+    {
+      "name": "desktop-direct-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 96,
+        "y": 112,
+        "width": 1248,
+        "height": 842
+      },
+      "composer": {
+        "top": 809,
+        "bottom": 919
+      }
+    },
+    {
+      "name": "list-1024",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 20,
+        "y": 112,
+        "width": 984,
+        "height": 742
+      },
+      "composer": {
+        "top": 709,
+        "bottom": 819
+      }
+    },
+    {
+      "name": "group-1024",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 20,
+        "y": 112,
+        "width": 984,
+        "height": 742
+      },
+      "composer": {
+        "top": 709,
+        "bottom": 819
+      }
+    },
+    {
+      "name": "direct-1024",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 20,
+        "y": 112,
+        "width": 984,
+        "height": 742
+      },
+      "composer": {
+        "top": 709,
+        "bottom": 819
+      }
+    },
+    {
+      "name": "list-768",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 20,
+        "y": 94,
+        "width": 728,
+        "height": 765
+      },
+      "composer": {
+        "top": 0,
+        "bottom": 0
+      }
+    },
+    {
+      "name": "group-768",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 20,
+        "y": 94,
+        "width": 728,
+        "height": 765
+      },
+      "composer": {
+        "top": 700.5,
+        "bottom": 822.5
+      }
+    },
+    {
+      "name": "direct-768",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 20,
+        "y": 94,
+        "width": 728,
+        "height": 765
+      },
+      "composer": {
+        "top": 700.5,
+        "bottom": 822.5
+      }
+    },
+    {
+      "name": "list-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 10,
+        "y": 74,
+        "width": 370,
+        "height": 736
+      },
+      "composer": {
+        "top": 0,
+        "bottom": 0
+      }
+    },
+    {
+      "name": "group-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 10,
+        "y": 74,
+        "width": 370,
+        "height": 736
+      },
+      "composer": {
+        "top": 668,
+        "bottom": 781
+      }
+    },
+    {
+      "name": "direct-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 10,
+        "y": 74,
+        "width": 370,
+        "height": 736
+      },
+      "composer": {
+        "top": 668,
+        "bottom": 781
+      }
+    },
+    {
+      "name": "list-320",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 7,
+        "y": 74,
+        "width": 306,
+        "height": 736
+      },
+      "composer": {
+        "top": 0,
+        "bottom": 0
+      }
+    },
+    {
+      "name": "group-320",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 7,
+        "y": 74,
+        "width": 306,
+        "height": 736
+      },
+      "composer": {
+        "top": 668,
+        "bottom": 781
+      }
+    },
+    {
+      "name": "direct-320",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "shell": {
+        "x": 7,
+        "y": 74,
+        "width": 306,
+        "height": 736
+      },
+      "composer": {
+        "top": 668,
+        "bottom": 781
+      }
+    }
+  ],
+  "errors": []
+}

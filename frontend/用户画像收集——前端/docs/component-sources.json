@@ -1,0 +1,65 @@
+[
+  {
+    "name": "voice-orb",
+    "source": "vendor/affectui/affectui-illustrations/voice-orb.tsx",
+    "destination": "components/affectui/voice-orb.tsx",
+    "sha256": "d0d55d9ba73100bfef9e1ea62b831cd7a39d31623ac2f2c667a1d94d944bb3c4",
+    "modified": false
+  },
+  {
+    "name": "text-reveal",
+    "source": "vendor/affectui/affectui-motion/text-reveal.tsx",
+    "destination": "components/affectui/text-reveal.tsx",
+    "sha256": "9b3aefc8310c71fd66f3d9dc29779ebaf6c0e064766ff6619c8fedb84121ee19",
+    "modified": false
+  },
+  {
+    "name": "button-clean",
+    "source": "vendor/affectui/affectui-components/button-clean.tsx",
+    "destination": "components/affectui/button-clean.tsx",
+    "sha256": "b5863cfe612e6db5c0f2f21cc3d84df3cb4c0a1ff23534c1b8fe6ddb843c53d3",
+    "modified": false
+  },
+  {
+    "name": "dropzone-clean",
+    "source": "vendor/affectui/affectui-components/dropzone-clean.tsx",
+    "destination": "components/affectui/dropzone-clean.tsx",
+    "sha256": "2c2e792c6175e16d6a83a40cbd49fe16631582c5229ca6e25363b05ee209ae6c",
+    "modified": false
+  },
+  {
+    "name": "segmented-control-clean",
+    "source": "vendor/affectui/affectui-components/segmented-control-clean.tsx",
+    "destination": "components/affectui/segmented-control-clean.tsx",
+    "sha256": "1d0e5d145b9364dd1e1c52e29a30a50eed92245d26add9b1b4c991511a9dddc3",
+    "modified": false
+  },
+  {
+    "name": "thinking-loader-clean",
+    "source": "vendor/affectui/affectui-components/thinking-loader-clean.tsx",
+    "destination": "components/affectui/thinking-loader-clean.tsx",
+    "sha256": "459869b68f0b163262cb183b5d1b1261d3fe621c3551826c06aae136e7047d76",
+    "modified": false
+  },
+  {
+    "name": "thinking-state-clean",
+    "source": "vendor/affectui/affectui-components/thinking-state-clean.tsx",
+    "destination": "components/affectui/thinking-state-clean.tsx",
+    "sha256": "495023d74768e9a7a90f7e829fe9232d9e80c5a80262191420158c91e6a76eff",
+    "modified": false
+  },
+  {
+    "name": "ai-answer-clean",
+    "source": "vendor/affectui/affectui-components/ai-answer-clean.tsx",
+    "destination": "components/affectui/ai-answer-clean.tsx",
+    "sha256": "ae1e0315b90cce5eff91481a93520c881d1a2e360f589194eac98135d64740e5",
+    "modified": false
+  },
+  {
+    "name": "text-area-clean",
+    "source": "AffectUI MCP get_source, CollectUI, 2026-11-12",
+    "destination": "components/affectui/text-area-clean.tsx",
+    "sha256": "a812262a62528def4a015c59aaadc9905fc3a6c8e8b036c0e4d4953bf89f347e",
+    "modified": false
+  }
+]

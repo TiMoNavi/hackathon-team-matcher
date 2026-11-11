@@ -1,0 +1,126 @@
+{
+  "checks": [
+    "申请版本、过期状态、重复操作和收发方向校验",
+    "未接受不能开启私聊；接受原子更新好友及唯一空会话；婉拒不创建好友",
+    "入口计数、展开简介、接受后进入新私聊、主动发送与原草稿保留",
+    "婉拒、发出申请撤回、过期记录和已接受会话复用",
+    "合法广场来源可接受；清空待办后计数和空状态更新",
+    "刷新恢复演示数据；夜间主题、Escape 关闭和入口焦点恢复",
+    "手机/平板两种主题无溢出，申请独立滚动，短屏可访问底部操作"
+  ],
+  "geometry": [
+    {
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "scrollHeight": 971,
+      "clientHeight": 504,
+      "drawer": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 828
+      }
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "scrollHeight": 971,
+      "clientHeight": 504,
+      "drawer": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 828
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "scrollHeight": 1038,
+      "clientHeight": 344,
+      "drawer": {
+        "x": 8,
+        "y": 8,
+        "width": 304,
+        "height": 552
+      }
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "scrollHeight": 1038,
+      "clientHeight": 344,
+      "drawer": {
+        "x": 8,
+        "y": 8,
+        "width": 304,
+        "height": 552
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "height": 900,
+      "documentWidth": 768,
+      "scrollHeight": 989,
+      "clientHeight": 518,
+      "drawer": {
+        "x": 312,
+        "y": 8,
+        "width": 448,
+        "height": 884
+      }
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "height": 900,
+      "documentWidth": 768,
+      "scrollHeight": 989,
+      "clientHeight": 518,
+      "drawer": {
+        "x": 312,
+        "y": 8,
+        "width": 448,
+        "height": 884
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "height": 420,
+      "documentWidth": 390,
+      "scrollHeight": 971,
+      "clientHeight": 196,
+      "drawer": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 404
+      }
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "height": 420,
+      "documentWidth": 390,
+      "scrollHeight": 971,
+      "clientHeight": 196,
+      "drawer": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 404
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,23 @@
+%% Space：成员状态、角色与加入策略
+%% 与 SVG 使用同一节点和关系数据；布局由 Mermaid 决定。
+flowchart TB
+  none["没有成员关系<br/>尚未加入该 Space"]:::core
+  invited["被邀请<br/>STATUS_INVITED = 1<br/>等待被邀请人处理"]:::core
+  applied["申请加入<br/>STATUS_APPLICANT = 2<br/>等待空间管理员处理"]:::core
+  member["正式成员<br/>STATUS_MEMBER = 3<br/>成员关系与角色共同生效"]:::core
+  policy["加入与可见性策略<br/>JOIN_POLICY_*<br/>VISIBILITY_*<br/>由入口与模型共同约束"]:::core
+  events["成员变化联动<br/>通知、活动记录<br/>成员缓存更新<br/>加入 / 移除事件"]:::core
+  roles["空间角色<br/>owner / admin<br/>moderator / member<br/>决定管理与内容权限"]:::core
+  none -->|"授权者邀请"| invited
+  none -->|"申请"| applied
+  invited -->|"接受邀请"| member
+  applied -->|"批准申请"| member
+  none -->|"自由加入 / 授权管理员直接添加"| member
+  policy -.-> applied
+  member --> roles
+  member --> events
+  member -->|"符合规则时退出 / 移除；申请与邀请也可取消"| none
+  classDef core fill:#edf5ff,stroke:#3975ba,color:#1c304b
+  classDef optional fill:#f5f0ff,stroke:#8870bd,color:#1c304b
+  classDef planned fill:#fff6e6,stroke:#ba7b20,color:#1c304b
+  classDef external fill:#f2f4f7,stroke:#778397,color:#1c304b

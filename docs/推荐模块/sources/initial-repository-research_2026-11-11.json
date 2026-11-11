@@ -1,0 +1,85 @@
+{
+  "verified_date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "method": "Unauthenticated GitHub REST API metadata, commit and README; no library installed or benchmark run.",
+  "repositories": [
+    {
+      "full_name": "gorse-io/gorse",
+      "html_url": "https://github.com/gorse-io/gorse",
+      "description": "AI powered open source recommender system engine supports classical/LLM rankers and multimodal content via embedding",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2026-11-10T03:02:18Z",
+      "stargazers_count": 9919,
+      "license_spdx": "Apache-2.0",
+      "commit": "2145bd0567f03b59f83f43ea2575a17a9bdaa016",
+      "readme_url": "https://github.com/gorse-io/gorse/blob/2145bd0567f03b59f83f43ea2575a17a9bdaa016/README.md",
+      "readme_sha256": "8605362fa09a5be2befc4cae95a5599374a0490e649d22227a49da954e2226dd"
+    },
+    {
+      "full_name": "lyst/lightfm",
+      "html_url": "https://github.com/lyst/lightfm",
+      "description": "A Python implementation of LightFM, a hybrid recommendation algorithm.",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2024-07-24T18:48:54Z",
+      "stargazers_count": 5120,
+      "license_spdx": "Apache-2.0",
+      "commit": "0c9c31e027b976beab2385e268b58010fff46096",
+      "readme_url": "https://github.com/lyst/lightfm/blob/0c9c31e027b976beab2385e268b58010fff46096/README.md",
+      "readme_sha256": "824fbab733e11dd3c73b46ca76349d5bf70e7df58eb5b76c68676c5694412b20"
+    },
+    {
+      "full_name": "RUCAIBox/RecBole",
+      "html_url": "https://github.com/RUCAIBox/RecBole",
+      "description": "A unified, comprehensive and efficient recommendation library",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2025-02-24T07:16:41Z",
+      "stargazers_count": 4616,
+      "license_spdx": "MIT",
+      "commit": "7b02be5ec80a88310f2d04a27a82adfcbb5dc211",
+      "readme_url": "https://github.com/RUCAIBox/RecBole/blob/7b02be5ec80a88310f2d04a27a82adfcbb5dc211/README.md",
+      "readme_sha256": "99bc0bc6c260a3605cedfbca02d951902d4f179f7ad35017295db598ee306129"
+    },
+    {
+      "full_name": "networkx/networkx",
+      "html_url": "https://github.com/networkx/networkx",
+      "description": "Network Analysis in Python",
+      "default_branch": "main",
+      "archived": false,
+      "pushed_at": "2026-11-10T20:11:21Z",
+      "stargazers_count": 17392,
+      "license_spdx": "NOASSERTION",
+      "commit": "c32b376b53229f2b2a2d06029c25a852737efdc2",
+      "readme_url": "https://github.com/networkx/networkx/blob/c32b376b53229f2b2a2d06029c25a852737efdc2/README.rst",
+      "readme_sha256": "f437309d99f5d72a71ff69b844561ac70bb68c68eb296ff4ec0063e9d53b6c4f"
+    },
+    {
+      "full_name": "duolicious/duolicious",
+      "html_url": "https://github.com/duolicious/duolicious",
+      "description": "The internet's most popular open-source dating app",
+      "default_branch": "main",
+      "archived": false,
+      "pushed_at": "2026-11-11T04:47:39Z",
+      "stargazers_count": 197,
+      "license_spdx": "AGPL-3.0",
+      "commit": "72bcf85501ff87d565757023cffebecea65548a3",
+      "readme_url": "https://github.com/duolicious/duolicious/blob/72bcf85501ff87d565757023cffebecea65548a3/README.md",
+      "readme_sha256": "4494a39520559789052ebffcb450011d379b662f787e2e3ca2ae3b980b890539"
+    },
+    {
+      "full_name": "humhub/example-basic",
+      "html_url": "https://github.com/humhub/example-basic",
+      "description": "Basic Module Example",
+      "default_branch": "master",
+      "archived": false,
+      "pushed_at": "2026-11-04T17:15:22Z",
+      "stargazers_count": 3,
+      "license_spdx": null,
+      "commit": "89605b11d09427e5ff1cc224392b926de4beb4ce",
+      "readme_url": "https://github.com/humhub/example-basic/blob/89605b11d09427e5ff1cc224392b926de4beb4ce/docs/README.md",
+      "readme_sha256": "8c3c2979d659b114bbe8d7c4d9392a2478bd4a2c41366445812cbe47a3a0d953"
+    }
+  ]
+}

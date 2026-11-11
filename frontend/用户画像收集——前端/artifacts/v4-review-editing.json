@@ -1,0 +1,158 @@
+[
+  {
+    "case": "manual-first-char",
+    "fields": [
+      "name",
+      "intro",
+      "role"
+    ]
+  },
+  {
+    "case": "long-edit",
+    "width": 1440,
+    "inputLength": 14418,
+    "edit": {
+      "y": 500.796875,
+      "x": 331,
+      "w": 1013,
+      "h": 7922,
+      "scroll": 7922,
+      "client": 7920,
+      "overflow": "hidden",
+      "active": false,
+      "valueLength": 14418,
+      "sectionY": 387.796875
+    },
+    "focus": {
+      "x": 171,
+      "y": 108,
+      "w": 1098,
+      "h": 716.8125,
+      "scroll": 8328,
+      "client": 717,
+      "active": false,
+      "dialogHeight": 868
+    },
+    "back": {
+      "y": 160.796875,
+      "h": 7954,
+      "active": "<button type=\"button\" aria-label=\"专注编辑 关于我\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fil",
+      "bodyOverflow": "",
+      "unchanged": true
+    },
+    "storedLength": 14425,
+    "exactPreserved": true,
+    "fieldCount": 17
+  },
+  {
+    "case": "long-edit",
+    "width": 1280,
+    "inputLength": 14418,
+    "edit": {
+      "y": 500.796875,
+      "x": 271,
+      "w": 973,
+      "h": 8203,
+      "scroll": 8203,
+      "client": 8201,
+      "overflow": "hidden",
+      "active": false,
+      "valueLength": 14418,
+      "sectionY": 387.796875
+    },
+    "focus": {
+      "x": 91,
+      "y": 108,
+      "w": 1098,
+      "h": 536.8125,
+      "scroll": 8328,
+      "client": 537,
+      "active": false,
+      "dialogHeight": 688
+    },
+    "back": {
+      "y": 160.796875,
+      "h": 8234,
+      "active": "<button type=\"button\" aria-label=\"专注编辑 关于我\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fil",
+      "bodyOverflow": "",
+      "unchanged": true
+    },
+    "storedLength": 14425,
+    "exactPreserved": true,
+    "fieldCount": 17
+  },
+  {
+    "case": "long-edit",
+    "width": 390,
+    "inputLength": 14418,
+    "edit": {
+      "y": 156.6875,
+      "x": 18,
+      "w": 354,
+      "h": 22756,
+      "scroll": 22756,
+      "client": 22754,
+      "overflow": "hidden",
+      "active": true,
+      "valueLength": 14418,
+      "sectionY": 47.6875
+    },
+    "focus": {
+      "x": 8,
+      "y": 75,
+      "w": 374,
+      "h": 726,
+      "scroll": 21652,
+      "client": 726,
+      "active": false,
+      "dialogHeight": 844
+    },
+    "back": {
+      "y": 156.6875,
+      "h": 22787,
+      "active": "<button type=\"button\" aria-label=\"专注编辑 关于我\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fil",
+      "bodyOverflow": "",
+      "unchanged": true
+    },
+    "storedLength": 14425,
+    "exactPreserved": true,
+    "fieldCount": 17
+  },
+  {
+    "case": "long-edit",
+    "width": 320,
+    "inputLength": 14418,
+    "edit": {
+      "y": 157.078125,
+      "x": 18,
+      "w": 284,
+      "h": 29868,
+      "scroll": 29868,
+      "client": 29866,
+      "overflow": "hidden",
+      "active": true,
+      "valueLength": 14418,
+      "sectionY": 48.078125
+    },
+    "focus": {
+      "x": 8,
+      "y": 75,
+      "w": 304,
+      "h": 726,
+      "scroll": 27700,
+      "client": 726,
+      "active": false,
+      "dialogHeight": 844
+    },
+    "back": {
+      "y": 157.078125,
+      "h": 29898,
+      "active": "<button type=\"button\" aria-label=\"专注编辑 关于我\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fil",
+      "bodyOverflow": "",
+      "unchanged": true
+    },
+    "storedLength": 14425,
+    "exactPreserved": true,
+    "fieldCount": 17
+  }
+]

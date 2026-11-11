@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "test_databases_removed": 2,
+  "scoped_grants_removed": 2,
+  "test_ports_closed": [
+    8096,
+    8097
+  ],
+  "main_preview_8090_preserved": true,
+  "private_backup_checksum_verified": true,
+  "resume_parser_preserved": true,
+  "isolated_runtime_directories_removed": 2
+}

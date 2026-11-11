@@ -1,0 +1,39 @@
+<?php
+
+use humhub\helpers\Html;
+use humhub\modules\friendship\widgets\ManageMenu;
+use humhub\widgets\GridView;
+
+?>
+<div class="panel-heading">
+    <?= Yii::t('FriendshipModule.base', '<strong>My</strong> friends'); ?>
+</div>
+
+
+<?php echo ManageMenu::widget(['user' => $user]); ?>
+
+<div class="panel-body">
+    <?php
+    echo GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            'username',
+            'profile.firstname',
+            'profile.lastname',
+            [
+                'header' => Yii::t('base', 'Actions'),
+                'class' => 'yii\grid\ActionColumn',
+                'buttons' => [
+                    'update' => function (): void {
+                        return;
+                    },
+                    'view' => function (): void {
+                        return;
+                    },
+                    'delete' => fn($url, $model) => Html::a(Yii::t('FriendshipModule.base', 'Unfriend'), ['/friendship/request/delete', 'userId' => $model->id], ['class' => 'btn btn-danger btn-sm', 'data-method' => 'POST']),
+                ],
+            ]],
+    ]);
+    ?>
+
+</div>

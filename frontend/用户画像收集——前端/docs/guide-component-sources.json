@@ -1,0 +1,83 @@
+{
+  "updated": "2026-11-12",
+  "components": [
+    {
+      "file": "components/reference-originals/glow-cloud.tsx",
+      "provider": "AffectUI",
+      "sha256": "5c2602055a147dd94df18e22040ead1cbc00c4990a5b17ba7e576d60766b98db",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/grid-background.tsx",
+      "provider": "AffectUI",
+      "sha256": "c9c7936cffc22cf08f3c786ad2f09509ada9f2901aed0a89ceaa0037f43ae394",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/gradient-floor.tsx",
+      "provider": "AffectUI",
+      "sha256": "df01c384627d3c66b2fa91ed3981212c71832124f92b4f0262d4937359c400d9",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/glass-folder.tsx",
+      "provider": "AffectUI",
+      "sha256": "96edbd88efd40e771822737e0b4f21c0f05cce33e081bc6005be542bbb71d02f",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/integration-beam.tsx",
+      "provider": "AffectUI",
+      "sha256": "7782094da606b8ea48f88e980ab26e88e8f0863e0de57e54d9919dc575ede41a",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/agent-trail.tsx",
+      "provider": "AffectUI",
+      "sha256": "2968a4a3254a691f8afa1c7d26fb1732db1b1ee63091f2adb47b08c37ad474b3",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/blur-crossfade.tsx",
+      "provider": "AffectUI",
+      "sha256": "2cff559cbf363731894c1a2f97d17c625772102db3f2b9b0776571ba26b58cf2",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/tilt-card.tsx",
+      "provider": "AffectUI",
+      "sha256": "69c24693d70581fbf169e71eedc4318897302539fb0a0f5cbc46c719d913d7ba",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/tag-input.tsx",
+      "provider": "AffectUI",
+      "sha256": "a5630de00b0fd1463d51086e4314266232cd9cc9f60e57c3a7ac5f5fc3c6c4aa",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-originals/shimmer-loader.tsx",
+      "provider": "AffectUI",
+      "sha256": "5020de3b09845d14492bf157a093edca0e8b2110eeaef5a5394f0306891172de",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/affectui/button-clean.tsx",
+      "provider": "AffectUI",
+      "sha256": "b5863cfe612e6db5c0f2f21cc3d84df3cb4c0a1ff23534c1b8fe6ddb843c53d3",
+      "original_file_modified": false
+    },
+    {
+      "file": "components/reference-kit/kit-selection.tsx",
+      "provider": "Shadcn UI Kit",
+      "sha256": "ad825ebfbb4b545a0edc7e3bf397eedb63416f6449347da50a9176255a3aba5d",
+      "original_file_modified": false
+    }
+  ],
+  "layout_sources": [
+    "../vendor/shadcnuikit/templates/signalry-nextjs/components/site-header.tsx",
+    "../vendor/shadcnuikit/templates/signalry-nextjs/components/sections/hero.tsx",
+    "../design-system/team-matcher/MASTER.md"
+  ],
+  "adaptation": "Props and scoped components/onboarding/guide.css; no source component or vendor edits."
+}

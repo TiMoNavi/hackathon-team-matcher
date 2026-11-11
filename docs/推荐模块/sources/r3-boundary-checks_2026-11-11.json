@@ -1,0 +1,307 @@
+{
+  "date": "2026-11-11",
+  "stage": "R3 recommendation-side adapters only",
+  "baseline": "r3-native-baseline_2026-11-11.json",
+  "scope": "Final independent comparison of the monitored core/vendor trees, named native/configuration/frozen anchors and existing recommendation module scaffold. Other plugin trees are not attributed to this task.",
+  "tree_digest_algorithm": "For sorted relative POSIX file paths inside each tree: SHA256 of concatenated relative_path + NUL + file_sha256_hex + LF (UTF-8). File content hashed with SHA256; symlinks, .local directories and .env/.env.* are excluded.",
+  "trees": {
+    "backend/protected/humhub": {
+      "before": {
+        "files": 11259,
+        "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+        "excluded_paths": []
+      },
+      "after": {
+        "files": 11259,
+        "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+        "excluded_paths": []
+      },
+      "unchanged": true
+    },
+    "backend/protected/vendor": {
+      "before": {
+        "files": 15407,
+        "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+        "excluded_paths": [
+          "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+        ]
+      },
+      "after": {
+        "files": 15407,
+        "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+        "excluded_paths": [
+          "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+        ]
+      },
+      "unchanged": true
+    }
+  },
+  "anchors": {
+    "backend/protected/modules/.gitignore": {
+      "before_sha256": "23782bc7b85c26e9b958dbb01c167ab8b7544126074130a0396f1d76f573297d",
+      "after_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "unchanged": false,
+      "observed_at_utc": "2026-11-11T12:26:23Z"
+    },
+    "backend/deploy/profile-fields.json": {
+      "before_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "after_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "unchanged": true
+    },
+    "docs/首次注册与开场引导_用户原稿_冻结.md": {
+      "before_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "after_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "unchanged": true
+    }
+  },
+  "module_scaffolding": {
+    "backend/protected/modules/matcher-recommendation/Module.php": {
+      "before_sha256": "4e9d1105dd9c55a864f247078dc8a049c4858e78a87b0a7c2db5b57acf83ee0b",
+      "after_sha256": "4e9d1105dd9c55a864f247078dc8a049c4858e78a87b0a7c2db5b57acf83ee0b",
+      "unchanged": true
+    },
+    "backend/protected/modules/matcher-recommendation/config.php": {
+      "before_sha256": "5aa7566d3372394c27ae901a1c40d960c55954152cf8bf99b5d42a8e929acc62",
+      "after_sha256": "5aa7566d3372394c27ae901a1c40d960c55954152cf8bf99b5d42a8e929acc62",
+      "unchanged": true
+    },
+    "backend/protected/modules/matcher-recommendation/module.json": {
+      "before_sha256": "1727998c6942c64679d4eba65332d0686dd469b201b68a8d405aab53b40e5ecd",
+      "after_sha256": "1727998c6942c64679d4eba65332d0686dd469b201b68a8d405aab53b40e5ecd",
+      "unchanged": true
+    }
+  },
+  "modules_ignore_text_unchanged": false,
+  "all_monitored_boundaries_unchanged": false,
+  "authorization_and_execution": {
+    "user_confirmed_other_plugins_read_only": true,
+    "other_plugin_writes_authorized": false,
+    "reviewer_modified_source_or_tests": false,
+    "reviewer_read_credentials_or_real_profile_values": false,
+    "reviewer_connected_existing_database": false,
+    "reviewer_started_service_or_enabled_module": false,
+    "reviewer_ran_migrations_or_model_calls": false,
+    "independent_dynamic_checks": "Narrow inline PHP probes using synthetic fixtures and separate SQLite in-memory databases. No test files or persistent databases were created by the reviewer.",
+    "production_adapter_assembly_verified": false,
+    "existing_module_scaffold_unchanged": true
+  },
+  "independent_review": {
+    "reviewed_paths": [
+      "backend/protected/modules/matcher-recommendation/adapters/native/",
+      "backend/protected/modules/matcher-recommendation/adapters/profile/P1FieldCatalogAdapter.php",
+      "backend/protected/modules/matcher-recommendation/adapters/profile/P1SourcePurposePolicy.php",
+      "backend/protected/modules/matcher-recommendation/adapters/retrieval/SqlCandidateRetriever.php",
+      "backend/protected/modules/matcher-recommendation/contracts/AuthorizedIndexSnapshot.php",
+      "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateIndexAccess.php"
+    ],
+    "confirmed_findings": [
+      {
+        "id": "R3-A01",
+        "status": "resolved",
+        "issue": "COUNT(*) allowed duplicate indexed facts to increase recall rank and crowd out a candidate with more distinct query matches.",
+        "synthetic_case": {
+          "recall_limit": 1,
+          "query_topic_terms": [
+            "social",
+            "education"
+          ],
+          "candidate_2": [
+            "social",
+            "social",
+            "social"
+          ],
+          "candidate_3": [
+            "social",
+            "education"
+          ]
+        },
+        "before_probe": {
+          "recalled_id": "2",
+          "distinct_hits_of_recalled_candidate": 1,
+          "distinct_hits_of_excluded_candidate": 2
+        },
+        "resolution": "Deduplicate index space/target/feature/term rows and native eligible IDs before aggregation and route LIMIT.",
+        "after_probe": {
+          "recalled_id": "3",
+          "passed": true
+        },
+        "additional_after_probe": {
+          "duplicate_candidate_membership_added": true,
+          "recalled_id": "3",
+          "passed": true
+        },
+        "verification": "Original inline synthetic SQLite reproduction rerun after code change; no production index writer or source provider was used."
+      },
+      {
+        "id": "R3-A02",
+        "status": "resolved",
+        "issue": "Route LIMIT preceded user hard-condition filtering; a nonqualifying early candidate could consume the budget and omit a genuinely qualifying later candidate.",
+        "synthetic_case": {
+          "recall_limit": 1,
+          "soft_topics": [
+            "social",
+            "education"
+          ],
+          "hard_required_offer": [
+            "backend"
+          ],
+          "candidate_2": {
+            "topics": [
+              "social",
+              "education"
+            ],
+            "offers": "unknown"
+          },
+          "candidate_3": {
+            "topics": [
+              "social"
+            ],
+            "offers": [
+              "backend"
+            ]
+          }
+        },
+        "before_probe": {
+          "recalled_ids": [
+            "2"
+          ],
+          "formal_evaluator_qualifies": {
+            "2": false,
+            "3": true
+          }
+        },
+        "resolution": "Apply each original hard token condition as its own correlated EXISTS predicates before route LIMIT. Similarity/contribution require all requested tokens; explicit preference accepts alternatives. Fresh rule evaluation remains required.",
+        "after_probe": {
+          "recalled_ids": [
+            "3"
+          ],
+          "passed": true
+        },
+        "unsupported_hard_interval_probe": {
+          "rejected": true,
+          "exception": "RuntimeException",
+          "message": "Hard interval recall requires an authorized interval index that is not connected."
+        },
+        "verification": "Same inline SQLite reproduction rerun; separate unsupported interval probe confirms explicit failure instead of false empty success."
+      }
+    ],
+    "additional_static_checks": [
+      "Authenticated actor, selected Space and selection revision are bound; a request Space cannot replace the server selection.",
+      "Native SQL rechecks enabled accounts/Space, formal memberships, bilateral user blocks and Space blocks; relation reads are batched and preserve current direction flags.",
+      "Native SELECTs use the master connection with query cache disabled, reject an existing transaction snapshot, suppress SQL logging/profiling while executing and restore prior flags in finally. Database exceptions do not retain expanded SQL chains.",
+      "P1 metadata adapter copies only ordinary field directory metadata; source-purpose grants pin 18 reviewed schema-2 sources and reject administrative semantic relabeling. This does not authorize any subject value.",
+      "CandidateIndexAccess is mandatory before and after bounded retrieval and must prove a complete current authorized generation. No production default fake or index seeding was added to Module/config.",
+      "SQL retrieval explicitly rejects unsupported semantic routing and hard interval recall. It now also rejects differing normalized alias maps for one candidate feature; self-mappings are removed and alias keys/values are normalized before comparing."
+    ],
+    "confirmed_unresolved_blocking_defects_in_reviewed_adapter_slice": [],
+    "full_implementation_test_suites_rerun_by_independent_reviewer": false,
+    "full_suite_counts": "Not asserted here. The parent agent records actual final suite results separately."
+  },
+  "external_dependency_gaps": [
+    "P1 ProfileService and privacy PrivacyService expose single-user reads, not an authorized recommendation batch source. Iterating getProfile or directly reading P1 tables is not an accepted substitute.",
+    "No production CandidateIndexAccess/source epoch authority or authorized index writer is connected. SQL adapter tests use synthetic authorized index fixtures.",
+    "The read-only session bridge has no activity-switch writer or public route. Runtime composition must supply a genuine validated server selection.",
+    "No authorized idea-domain query/context or idea candidate provider is connected; personal project history cannot substitute for that domain.",
+    "Native Friendship does not provide complete sent-request terminal history; AI person recommendation history filtering remains unavailable.",
+    "No authorized interval index or semantic provider is connected. Unsupported requests fail explicitly."
+  ],
+  "limitations": [
+    "R3.1, R3.4, R3.6 and R3.7 cannot be marked wholly complete from this adapter slice. Complete R3, M1 and production readiness are not established.",
+    "SQLite in-memory tests validate the isolated SQL/adapters against synthetic table shapes, not an existing application database or production MySQL isolation behavior.",
+    "Native fact fingerprints are not monotonic permission epochs; undetectable ABA changes cannot be claimed resolved by these fingerprints.",
+    "Strict assertBindings is a full validation/publishing or complete-generation gate. A future runtime reader must distinguish per-feature source-grant invalidation from whole-policy validation and preserve unaffected safe features where the contract permits.",
+    "Native relationship rows describe stored friendship/pending facts; behavior under a globally disabled friendship feature requires explicit downstream capability semantics.",
+    "P1 and privacy have concurrent changes made by other work. No full before/after hash comparison of those plugin trees was made, and those changes are not attributed to the recommendation task.",
+    "No final recommendation-document tree hash is captured because authorized documentation work can continue.",
+    "The credential-safe exclusion rule omits one vendor .env path and all symlinks/.local paths. Compare only with the matching R3 baseline algorithm.",
+    "Latest shared-anchor observation at 2026-11-11T12:26:23Z: modules/.gitignore has four added lines relative to the R3 baseline, two for matcher-profile-privacy and two for matcher-onboarding, with no removed lines. Recommendation and recommendation-ai whitelist entries already existed in the baseline and remain unchanged. The earlier privacy-only observation is preserved in shared_anchor_observation_history. No author or task attribution is inferred.",
+    "This shared-anchor follow-up does not refresh the core/vendor hashes, rerun tests, reconnect any database, or inspect credentials or other plugins’ profile values; earlier monitored-tree results retain their original audit scope."
+  ],
+  "boundary_check_status": "external_shared_anchor_changed_core_vendor_and_recommendation_scaffold_unchanged",
+  "core_vendor_unchanged": true,
+  "recommendation_owned_scaffolding_unchanged": true,
+  "observed_external_changes": [
+    {
+      "path": "backend/protected/modules/.gitignore",
+      "observed_at_utc": "2026-11-11T12:26:23Z",
+      "observed_at_asia_shanghai": "2026-11-11T20:26:23+08:00",
+      "clock_source": "clock__curr_time; read in the same independent tool batch as the current shared anchor",
+      "baseline_sha256": "23782bc7b85c26e9b958dbb01c167ab8b7544126074130a0396f1d76f573297d",
+      "current_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "added_lines": [
+        "!matcher-profile-privacy/",
+        "!matcher-profile-privacy/**",
+        "!matcher-onboarding/",
+        "!matcher-onboarding/**"
+      ],
+      "removed_lines": [],
+      "delta_since_previous_recorded_observation": {
+        "previous_sha256": "fcd3808b811a70712478af15e09bd24704e316c7e3c8bbf8d328755bab13fca8",
+        "added_lines": [
+          "!matcher-onboarding/",
+          "!matcher-onboarding/**"
+        ],
+        "removed_lines": []
+      },
+      "recommendation_whitelist_entries_unchanged": true,
+      "recommendation_ai_whitelist_entries_unchanged": true,
+      "attribution": "The observed baseline delta adds privacy and onboarding plugin tracking exceptions. This diff cannot identify an author or task. No author is inferred and changes are not attributed to the recommendation work.",
+      "action": "Shared file read only. No rollback or modification performed. Only this audit report is updated."
+    }
+  ],
+  "shared_anchor_observation_history": [
+    {
+      "observed_on": "2026-11-11",
+      "observed_at_utc": null,
+      "time_precision": "Date only. The original audit did not record an exact observation time; none is invented here.",
+      "anchor": {
+        "before_sha256": "23782bc7b85c26e9b958dbb01c167ab8b7544126074130a0396f1d76f573297d",
+        "after_sha256": "fcd3808b811a70712478af15e09bd24704e316c7e3c8bbf8d328755bab13fca8",
+        "unchanged": false
+      },
+      "observed_change": {
+        "path": "backend/protected/modules/.gitignore",
+        "added_lines": [
+          "!matcher-profile-privacy/",
+          "!matcher-profile-privacy/**"
+        ],
+        "removed_lines": [],
+        "recommendation_whitelist_entries_unchanged": true,
+        "attribution": "The exact delta adds privacy-plugin tracking exceptions. This hash/diff report cannot determine its author or task. The independent reviewer did not write this file; parallel P1/privacy changes are not attributed to the recommendation implementation.",
+        "action": "Recorded without reverting or editing the shared file. The overall monitored-boundary unchanged flag remains false."
+      },
+      "related_limitations": [
+        "One monitored shared anchor changed during R3: modules/.gitignore gained two privacy-plugin whitelist lines. Core/vendor, profile-field snapshot, frozen original and recommendation Module/config/manifest remained unchanged. Do not describe all monitored paths as unchanged."
+      ],
+      "record_kind": "Preserved original audit observation"
+    }
+  ],
+  "latest_shared_anchor_observation": {
+    "path": "backend/protected/modules/.gitignore",
+    "observed_at_utc": "2026-11-11T12:26:23Z",
+    "observed_at_asia_shanghai": "2026-11-11T20:26:23+08:00",
+    "clock_source": "clock__curr_time; read in the same independent tool batch as the current shared anchor",
+    "baseline_sha256": "23782bc7b85c26e9b958dbb01c167ab8b7544126074130a0396f1d76f573297d",
+    "current_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+    "added_lines": [
+      "!matcher-profile-privacy/",
+      "!matcher-profile-privacy/**",
+      "!matcher-onboarding/",
+      "!matcher-onboarding/**"
+    ],
+    "removed_lines": [],
+    "delta_since_previous_recorded_observation": {
+      "previous_sha256": "fcd3808b811a70712478af15e09bd24704e316c7e3c8bbf8d328755bab13fca8",
+      "added_lines": [
+        "!matcher-onboarding/",
+        "!matcher-onboarding/**"
+      ],
+      "removed_lines": []
+    },
+    "recommendation_whitelist_entries_unchanged": true,
+    "recommendation_ai_whitelist_entries_unchanged": true,
+    "attribution": "The observed baseline delta adds privacy and onboarding plugin tracking exceptions. This diff cannot identify an author or task. No author is inferred and changes are not attributed to the recommendation work.",
+    "action": "Shared file read only. No rollback or modification performed. Only this audit report is updated."
+  },
+  "shared_anchor_followup_scope": "Only the shared modules/.gitignore anchor was re-read and rehashed. Existing core/vendor and other-anchor results remain the original R3 audit observations; no source changes, test reruns or whole-tree recalculation occurred."
+}

@@ -1,0 +1,13 @@
+PASS means the problematic behavior was reproduced. All external services were mocked.
+
+test_anonymous_scrape_deletes_entire_collection (__main__.ReviewProbes.test_anonymous_scrape_deletes_entire_collection) ... ok
+test_malformed_json_becomes_500 (__main__.ReviewProbes.test_malformed_json_becomes_500) ... ok
+test_matching_uses_first_participant_without_identity (__main__.ReviewProbes.test_matching_uses_first_participant_without_identity) ... ok
+test_model_failure_silently_returns_fallback_matches (__main__.ReviewProbes.test_model_failure_silently_returns_fallback_matches) ... ok
+test_model_score_out_of_range_not_validated (__main__.ReviewProbes.test_model_score_out_of_range_not_validated) ... ok
+test_non_devpost_url_reaches_browser_driver (__main__.ReviewProbes.test_non_devpost_url_reaches_browser_driver) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.051s
+
+OK

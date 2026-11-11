@@ -1,0 +1,126 @@
+{
+  "verifiedAt": "2026-11-11T16:26:03.789Z",
+  "checks": [
+    "Actual rendered Bricolage, Inter and Chinese PingFang glyphs",
+    "Suggestion fills input; processing failure and retry recover",
+    "Profile nickname, introduction, skills and visibility are editable",
+    "Chat sends and displays a preset response; composition Enter does not send",
+    "Theme persists; personal input does not persist across reload",
+    "Manual and operating-system reduced motion replace animation with a static orb",
+    "File selection shows local feedback with no network upload",
+    "Switching preview tabs cancels old timers and preserves the selected context",
+    "Keyboard focus remains on an interactive control"
+  ],
+  "viewports": [
+    {
+      "label": "light-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "outOfBounds": []
+    },
+    {
+      "label": "light-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "outOfBounds": []
+    },
+    {
+      "label": "light-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "outOfBounds": []
+    },
+    {
+      "label": "light-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "outOfBounds": []
+    },
+    {
+      "label": "chat-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "outOfBounds": []
+    },
+    {
+      "label": "dark-chat-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "outOfBounds": []
+    },
+    {
+      "label": "dark-chat-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "outOfBounds": []
+    },
+    {
+      "label": "dark-chat-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "outOfBounds": []
+    },
+    {
+      "label": "dark-chat-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "outOfBounds": []
+    },
+    {
+      "label": "upload-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "outOfBounds": []
+    }
+  ],
+  "fonts": {
+    "h1": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 9
+      }
+    ],
+    ".brand-word": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Medium",
+        "isCustomFont": false,
+        "glyphCount": 2
+      },
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Bold",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ],
+    ".stage-description": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 41
+      }
+    ],
+    "textarea": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 23
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 6
+      }
+    ]
+  },
+  "errors": [],
+  "failedRequests": [],
+  "baseline": "Original Signalry desktop/mobile screenshots captured without modifying the reference",
+  "status": "passed"
+}

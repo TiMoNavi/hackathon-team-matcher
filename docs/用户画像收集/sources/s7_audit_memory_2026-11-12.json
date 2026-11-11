@@ -1,0 +1,21 @@
+{
+    "status": "passed",
+    "scope": "Independent memory-port application checks; no SQL\/HTTP or seed validation claimed.",
+    "checks": 12,
+    "checks_passed": [
+        "settings returns the explicit port result",
+        "settings binds current context and checks it after read",
+        "path Space mismatch fails before reading settings",
+        "different actor cannot use viewer context",
+        "rejected actor and Space do not reach settings port",
+        "negative expected version is rejected",
+        "invalid expected version cannot mutate settings",
+        "explicit opt-in forwards expected version and boolean",
+        "settings mutation carries server context and rechecks authorization",
+        "access revoked during read cannot return successful settings",
+        "access revoked during write cannot return stale success",
+        "dependency failure is never translated to empty success"
+    ],
+    "network_calls": 0,
+    "model_calls": 0
+}

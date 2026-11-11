@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "task_started": "2026-11-11",
+  "verified_at": "2026-11-12T00:03:55+08:00",
+  "status": "passed_with_observed_parallel_changes",
+  "scope": "Internal optional person AI extension with genuine synthetic gateway calls; not complete M1/M2 or deployed AIJob/API.",
+  "checks": {
+    "offline_suites_passed": true,
+    "live_synthetic_passed": true,
+    "independent_review_passed": true,
+    "source_manifest_matches": true,
+    "native_trees_unchanged": true,
+    "anchors_unchanged": true,
+    "documentation_valid": true,
+    "no_secret_patterns_in_outputs": true,
+    "task_scope_expected": true,
+    "p8_unchanged": true,
+    "p1_parallel_changes_recorded": true
+  },
+  "failures": [],
+  "test_summary": {
+    "assertions_total": 2514,
+    "prior_assertions": 1989,
+    "net_new_assertions": 525,
+    "suite_count": 32,
+    "php_lint_files": 310,
+    "pure_layer_files": 68,
+    "source_files": 314,
+    "sources_stable_during_tests": true
+  },
+  "independent_review_checks": 287,
+  "independent_counting_note": "Overlaps main suites; do not add to 2514.",
+  "live_gateway": {
+    "status": "passed",
+    "configured_model": "gemini-3.8-flash",
+    "audit_totals": {
+      "generation_requests_including_failed_attempts": 7,
+      "successful_final_attempt_generation_requests": 3,
+      "models_discovery_requests": 1,
+      "reported_token_usage": {
+        "prompt_tokens": 5893,
+        "completion_tokens": 6265,
+        "total_tokens": 12158
+      },
+      "requested_max_tokens_exceeded_in_gateway_usage": true,
+      "generation_requests_after_success": 0
+    },
+    "synthetic_only": true
+  },
+  "source_validation": {
+    "test_manifest_files": 314,
+    "test_mismatches": [],
+    "reviewed_files": 38,
+    "review_mismatches": []
+  },
+  "module_baseline_differences": {
+    "matcher-recommendation": {
+      "added": [
+        "backend/protected/modules/matcher-recommendation/application/ai/AiProviderRegistry.php",
+        "backend/protected/modules/matcher-recommendation/application/ai/AiRecommendationService.php",
+        "backend/protected/modules/matcher-recommendation/application/ai/SearchAiCandidates.php",
+        "backend/protected/modules/matcher-recommendation/application/ai/ValidateAiRerankOutput.php",
+        "backend/protected/modules/matcher-recommendation/contracts/ports/AiCandidateSearch.php",
+        "backend/protected/modules/matcher-recommendation/contracts/ports/AiPlatformBudget.php",
+        "backend/protected/modules/matcher-recommendation/domain/ai/AiCandidatePool.php",
+        "backend/protected/modules/matcher-recommendation/domain/ai/AiRankedCandidate.php",
+        "backend/protected/modules/matcher-recommendation/domain/ai/AiRecommendationException.php",
+        "backend/protected/modules/matcher-recommendation/domain/ai/InternalAiRun.php",
+        "backend/protected/modules/matcher-recommendation/domain/ai/MinimalCandidatePoolBuilder.php",
+        "backend/protected/modules/matcher-recommendation/tests/ai_candidates/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/ai_integration/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/ai_runs/Fixtures.php",
+        "backend/protected/modules/matcher-recommendation/tests/ai_runs/run.php",
+        "backend/protected/modules/matcher-recommendation/tests/ai_search/Fixtures.php",
+        "backend/protected/modules/matcher-recommendation/tests/ai_search/run.php"
+      ],
+      "removed": [],
+      "changed": [],
+      "before_files": 125,
+      "after_files": 142
+    },
+    "matcher-recommendation-ai": {
+      "added": [
+        "backend/protected/modules/matcher-recommendation-ai/Module.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/gateway/ChatCompletionsClient.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/gateway/CurlGatewayTransport.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/gateway/GatewayConfig.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/gateway/GatewayResponse.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/gateway/GatewayTransport.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/gateway/ProviderException.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/provider/ChatCandidateReranker.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/provider/ChatQueryInterpreter.php",
+        "backend/protected/modules/matcher-recommendation-ai/adapters/provider/ProtocolShape.php",
+        "backend/protected/modules/matcher-recommendation-ai/config.php",
+        "backend/protected/modules/matcher-recommendation-ai/module.json",
+        "backend/protected/modules/matcher-recommendation-ai/tests/live_gateway_smoke.php",
+        "backend/protected/modules/matcher-recommendation-ai/tests/providers/Fixtures.php",
+        "backend/protected/modules/matcher-recommendation-ai/tests/providers/run.php",
+        "backend/protected/modules/matcher-recommendation-ai/tests/support/autoload.php"
+      ],
+      "removed": [],
+      "changed": [],
+      "before_files": 0,
+      "after_files": 16
+    },
+    "matcher-user-profile": {
+      "added": [
+        "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileAiJobRepository.php",
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/AiJobSchemaInstaller.php",
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfileAiJobRepository.php",
+        "backend/protected/modules/matcher-user-profile/application/ProfileAiJobService.php",
+        "backend/protected/modules/matcher-user-profile/domain/ports/ProfileAiJobRepository.php",
+        "backend/protected/modules/matcher-user-profile/domain/ports/ProfileAiWorkflow.php",
+        "backend/protected/modules/matcher-user-profile/migrations/m261111_000006_profile_ai_jobs.php",
+        "backend/protected/modules/matcher-user-profile/tests/unit/s6_audit_jobs.php"
+      ],
+      "removed": [],
+      "changed": [
+        "backend/protected/modules/matcher-user-profile/Module.php",
+        "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlQuestionRepository.php",
+        "backend/protected/modules/matcher-user-profile/application/ProfileSourceService.php",
+        "backend/protected/modules/matcher-user-profile/application/QuestionService.php",
+        "backend/protected/modules/matcher-user-profile/config.php",
+        "backend/protected/modules/matcher-user-profile/controllers/SourceController.php",
+        "backend/protected/modules/matcher-user-profile/module.json"
+      ],
+      "before_files": 113,
+      "after_files": 121
+    },
+    "matcher-profile-privacy": {
+      "added": [],
+      "removed": [],
+      "changed": [],
+      "before_files": 46,
+      "after_files": 46
+    }
+  },
+  "protected_anchors": {
+    "backend/protected/modules/.gitignore": {
+      "before_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "current_sha256": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+      "unchanged": true
+    },
+    "backend/deploy/profile-fields.json": {
+      "before_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "current_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "unchanged": true
+    },
+    "docs/首次注册与开场引导_用户原稿_冻结.md": {
+      "before_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "current_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "unchanged": true
+    }
+  },
+  "native_trees": {
+    "backend/protected/humhub": {
+      "files": 11259,
+      "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+      "excluded_paths": [],
+      "unchanged": true
+    },
+    "backend/protected/vendor": {
+      "files": 15407,
+      "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+      "excluded_paths": [
+        "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+      ],
+      "unchanged": true
+    }
+  },
+  "tree_digest_algorithm": "For sorted relative POSIX file paths inside each tree: SHA256 of concatenated relative_path + NUL + file_sha256_hex + LF (UTF-8). File content hashed with SHA256; symlinks, .local directories and .env/.env.* are excluded.",
+  "task": {
+    "new_completed": [
+      "R6.1",
+      "R6.2",
+      "R6.4",
+      "R6.6",
+      "R6.7"
+    ],
+    "completed_ids": [
+      "R0.1",
+      "R0.2",
+      "R0.3",
+      "R0.4",
+      "R0.5",
+      "R0.6",
+      "R0.7",
+      "R1.1",
+      "R1.2",
+      "R1.3",
+      "R1.4",
+      "R1.5",
+      "R1.6",
+      "R2.1",
+      "R2.2",
+      "R2.3",
+      "R2.4",
+      "R2.5",
+      "R2.6",
+      "R2.7",
+      "R2.8",
+      "R2.9",
+      "R2.10",
+      "R2.11",
+      "R3.4",
+      "R3.6",
+      "R3.7",
+      "R6.1",
+      "R6.2",
+      "R6.4",
+      "R6.6",
+      "R6.7"
+    ],
+    "complete_R6": false,
+    "complete_M1": false,
+    "complete_M2": false,
+    "limited_completed": [
+      "R6.2 person direct conditions only",
+      "R6.4 per-run internal orchestration only",
+      "R6.6 person only"
+    ]
+  },
+  "documentation": {
+    "files_sha256": {
+      "docs/推荐模块/task.md": "08ba45570d91d760f29004a0886fd12aefafe464acee8ee964bd536f9ddd477a",
+      "docs/推荐模块/00_README.md": "aadf00b0078fd0f621c9b19acd0e1f56b6f9239469717b3066ac551b101a746c",
+      "docs/推荐模块/11_R3重放与R4持久化.md": "78a7fcbaf3ef2d709543c48eebd0861aedd004367c90613847eab8be38aa6dda",
+      "docs/推荐模块/12_R6可选AI子插件与内部验证.md": "ff8b1b4e3a4afd636bcd97c72a27bb11c5475a2bbdbe71ddb9fe456dedab75b8"
+    },
+    "relative_file_links_checked": 83,
+    "markdown_issues": [],
+    "json_files_including_this_report": 47,
+    "json_errors": [],
+    "secret_pattern_paths": []
+  },
+  "operational_boundaries": {
+    "existing_database_connected": false,
+    "public_http_routes_added": false,
+    "production_module_enabled": false,
+    "production_migrations": false,
+    "native_core_modified": false,
+    "credentials_shared_with_agents": false,
+    "real_user_profiles_sent_to_model": false,
+    "production_shared_aijob_wired": false,
+    "real_sent_history_available": false,
+    "p1_p8_modified_by_this_task": false,
+    "p1_has_observed_parallel_changes": true
+  },
+  "remaining_work": [
+    "Authoritative sent-request history required before real AI person entry",
+    "Durable run/shared AIJob, cross-process CAS, idempotency and platform budget",
+    "Selected-self attribute authorization and idea context/target adapters",
+    "Approved identity display, public API/feedback/runtime composition",
+    "Existing R3/R4/M1 work including activity-wide ordinary discovery, scheduling and MySQL validation"
+  ],
+  "initial_boundary_observation": {
+    "p1_identical_to_start": false,
+    "observed_added_files": 8,
+    "observed_changed_files": 7,
+    "effect": "P1 baseline differs. Changes were not authored or reverted by this recommendation task. Keep and report them; no broad unchanged-P1 claim."
+  }
+}

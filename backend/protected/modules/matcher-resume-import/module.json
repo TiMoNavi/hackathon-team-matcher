@@ -1,0 +1,9 @@
+{
+  "id": "matcher-resume-import",
+  "name": "简历资料导入",
+  "description": "将本人 PDF、DOCX、Markdown 和文本简历解析为私有结构化文本及可核对字段候选。",
+  "version": "0.1.1",
+  "humhub": {"minVersion": "1.19.4", "modules": {"matcher-user-profile": {"minVersion": "0.6.0"}}},
+  "keywords": ["profile", "resume", "import"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

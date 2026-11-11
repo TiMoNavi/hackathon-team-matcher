@@ -1,0 +1,519 @@
+{
+  "checkedAt": "2026-11-11T19:28:22.794Z",
+  "phase": "resize",
+  "passed": true,
+  "checks": [
+    "Rapid resizing across six sizes keeps a single mascot on its anchor without transition lag",
+    "Chat reaches the page edges and its bottom composer leaves a readable message viewport",
+    "Resizing during a mascot scene transition cancels travel and snaps to the new anchor",
+    "Mouse swipe advances the photo and details together; no request is sent; detail visibly extends from the card",
+    "Reduced motion retains card browsing and detail reading without animation"
+  ],
+  "views": [
+    {
+      "step": 1,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1200,
+      "scroll": 1200,
+      "composer": null,
+      "thread": null,
+      "height": 820,
+      "count": 1
+    },
+    {
+      "step": 1,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 860,
+      "scroll": 860,
+      "composer": null,
+      "thread": null,
+      "height": 740,
+      "count": 1
+    },
+    {
+      "step": 1,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 390,
+      "scroll": 390,
+      "composer": null,
+      "thread": null,
+      "height": 844,
+      "count": 1
+    },
+    {
+      "step": 1,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 320,
+      "scroll": 320,
+      "composer": null,
+      "thread": null,
+      "height": 680,
+      "count": 1
+    },
+    {
+      "step": 1,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 768,
+      "scroll": 768,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 1,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1440,
+      "scroll": 1440,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1200,
+      "scroll": 1200,
+      "composer": null,
+      "thread": null,
+      "height": 820,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 860,
+      "scroll": 860,
+      "composer": null,
+      "thread": null,
+      "height": 740,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 390,
+      "scroll": 390,
+      "composer": null,
+      "thread": null,
+      "height": 844,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 320,
+      "scroll": 320,
+      "composer": null,
+      "thread": null,
+      "height": 680,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 768,
+      "scroll": 768,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1440,
+      "scroll": 1440,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1200,
+      "scroll": 1200,
+      "composer": {
+        "bottom": 715.40625,
+        "width": 1128
+      },
+      "thread": {
+        "height": 350.21875,
+        "width": 1128
+      },
+      "height": 820,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 860,
+      "scroll": 860,
+      "composer": {
+        "bottom": 635.40625,
+        "width": 788
+      },
+      "thread": {
+        "height": 270.21875,
+        "width": 788
+      },
+      "height": 740,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 390,
+      "scroll": 390,
+      "composer": {
+        "bottom": 745.203125,
+        "width": 362
+      },
+      "thread": {
+        "height": 398.21875,
+        "width": 362
+      },
+      "height": 844,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 320,
+      "scroll": 320,
+      "composer": {
+        "bottom": 581.203125,
+        "width": 292
+      },
+      "thread": {
+        "height": 234.21875,
+        "width": 292
+      },
+      "height": 680,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 768,
+      "scroll": 768,
+      "composer": {
+        "bottom": 795.40625,
+        "width": 696
+      },
+      "thread": {
+        "height": 430.21875,
+        "width": 696
+      },
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1440,
+      "scroll": 1440,
+      "composer": {
+        "bottom": 795.40625,
+        "width": 1368
+      },
+      "thread": {
+        "height": 430.21875,
+        "width": 1368
+      },
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 7,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1200,
+      "scroll": 1200,
+      "composer": {
+        "bottom": 681,
+        "width": 1128
+      },
+      "thread": {
+        "height": 298.8125,
+        "width": 1128
+      },
+      "height": 820,
+      "count": 1
+    },
+    {
+      "step": 7,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 860,
+      "scroll": 860,
+      "composer": {
+        "bottom": 601,
+        "width": 788
+      },
+      "thread": {
+        "height": 218.8125,
+        "width": 788
+      },
+      "height": 740,
+      "count": 1
+    },
+    {
+      "step": 7,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 390,
+      "scroll": 390,
+      "composer": {
+        "bottom": 709,
+        "width": 362
+      },
+      "thread": {
+        "height": 345.015625,
+        "width": 362
+      },
+      "height": 844,
+      "count": 1
+    },
+    {
+      "step": 7,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 320,
+      "scroll": 320,
+      "composer": {
+        "bottom": 545,
+        "width": 292
+      },
+      "thread": {
+        "height": 181.015625,
+        "width": 292
+      },
+      "height": 680,
+      "count": 1
+    },
+    {
+      "step": 7,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 768,
+      "scroll": 768,
+      "composer": {
+        "bottom": 761,
+        "width": 696
+      },
+      "thread": {
+        "height": 378.8125,
+        "width": 696
+      },
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 7,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1440,
+      "scroll": 1440,
+      "composer": {
+        "bottom": 761,
+        "width": 1368
+      },
+      "thread": {
+        "height": 378.8125,
+        "width": 1368
+      },
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 8,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1200,
+      "scroll": 1200,
+      "composer": null,
+      "thread": null,
+      "height": 820,
+      "count": 1
+    },
+    {
+      "step": 8,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 860,
+      "scroll": 860,
+      "composer": null,
+      "thread": null,
+      "height": 740,
+      "count": 1
+    },
+    {
+      "step": 8,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 390,
+      "scroll": 390,
+      "composer": null,
+      "thread": null,
+      "height": 844,
+      "count": 1
+    },
+    {
+      "step": 8,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 320,
+      "scroll": 320,
+      "composer": null,
+      "thread": null,
+      "height": 680,
+      "count": 1
+    },
+    {
+      "step": 8,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 768,
+      "scroll": 768,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 8,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1440,
+      "scroll": 1440,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 10,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1200,
+      "scroll": 1200,
+      "composer": null,
+      "thread": null,
+      "height": 820,
+      "count": 1
+    },
+    {
+      "step": 10,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 860,
+      "scroll": 860,
+      "composer": null,
+      "thread": null,
+      "height": 740,
+      "count": 1
+    },
+    {
+      "step": 10,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 390,
+      "scroll": 390,
+      "composer": null,
+      "thread": null,
+      "height": 844,
+      "count": 1
+    },
+    {
+      "step": 10,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 320,
+      "scroll": 320,
+      "composer": null,
+      "thread": null,
+      "height": 680,
+      "count": 1
+    },
+    {
+      "step": 10,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 768,
+      "scroll": 768,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    },
+    {
+      "step": 10,
+      "dx": 0,
+      "dy": 0,
+      "dw": 0,
+      "width": 1440,
+      "scroll": 1440,
+      "composer": null,
+      "thread": null,
+      "height": 900,
+      "count": 1
+    }
+  ],
+  "errors": []
+}

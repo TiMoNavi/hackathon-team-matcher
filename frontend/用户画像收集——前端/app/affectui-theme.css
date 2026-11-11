@@ -1,0 +1,138 @@
+/* Signalry theme bridge. Original AffectUI source files remain unchanged. */
+
+.onboarding-page .preview-shell .ui-buttonc { --h:44px; --fs:14px; --lh:22px; --radius:12px; --px:14px; }
+.onboarding-page .preview-shell .ui-buttonc.primary-action { --h:46px; --fs:14px; --px:17px; --radius:12px; font-weight:600; box-shadow:0 4px 14px -5px color-mix(in srgb,var(--primary) 45%,transparent); }
+.onboarding-page .preview-shell .ui-buttonc.icon-control { --h:44px; --px:10px; --radius:10px; width:44px; height:44px; }
+.onboarding-page .preview-shell .ui-buttonc.suggestion { --h:34px; --px:10px; --radius:8px; --fs:12px; --lh:18px; --ui-btnc-shadow:0 0 0 1px var(--border); color:var(--body); }
+.onboarding-page .preview-shell .ui-buttonc.send-action { --h:44px; --radius:10px; --px:12px; height:44px; width:44px; }
+.onboarding-page .preview-shell .ui-tac { max-width:none; --fs:15px; --lh:25px; --aui-ink:var(--foreground); --aui-muted:var(--muted-foreground); --aui-placeholder:var(--muted-foreground); --aui-surface:var(--card); --aui-border:var(--border); --aui-border-strong:var(--primary); --aui-focus:var(--ring); --aui-font:var(--page-font); }
+.onboarding-page .preview-shell .ui-tac__box { border-radius:12px; }
+.onboarding-page .preview-shell .ui-tac__input { font-size:14px; line-height:24px; padding:13px 14px; }
+.onboarding-page .preview-shell .ui-tac__label { font-size:13px; color:var(--muted-foreground); margin-bottom:4px; }
+.onboarding-page .preview-shell .ui-tac__input:focus-visible { outline:2px solid var(--ring); outline-offset:3px; border-radius:12px; }
+.onboarding-page .preview-shell .ui-segc { width:100%; }
+.onboarding-page .preview-shell .ui-segc__opt { min-height:40px; font-size:12px; }
+.onboarding-page .preview-shell .ui-segc__track { width:100%; }
+.onboarding-page .preview-shell .ui-segc[data-full] .ui-segc__track { grid-auto-columns:minmax(0,1fr); min-width:0; }
+.onboarding-page .preview-shell .process-trail { max-width:none; border-radius:14px; --ui-tkc-shadow:0 0 0 1px var(--border); }
+.onboarding-page .preview-shell .chat-answer { max-width:none; --ui-ansc-shadow:none; }
+.onboarding-page .preview-shell .ui-ansc__card { box-shadow:none; background:transparent; }
+.onboarding-page .preview-shell .ui-ansc__body { padding:0; }
+.onboarding-page .preview-shell .ui-ansc__inner { padding:12px 0 8px; }
+.onboarding-page .preview-shell .ui-dzc { max-width:none; }
+.onboarding-page .preview-shell .ui-dzc__card { border-radius:14px; }
+.onboarding-page .preview-shell .ui-vo { font-family:var(--page-font); --ui-vo-ink:var(--primary); --ui-vo-accent:var(--primary); --ui-vo-muted:var(--muted-foreground); }
+@media(max-width:767px){.onboarding-page .preview-shell .ui-buttonc.suggestion{--h:40px}.onboarding-page .preview-shell .ui-segc__opt{min-height:44px}}
+@media(max-width:370px){.onboarding-page .preview-shell .ui-segc__opt{font-size:12px;padding-inline:5px}.onboarding-page .preview-shell .ui-segc__icon{display:none}.onboarding-page .preview-shell .ui-buttonc.suggestion{--fs:12px}}
+
+.onboarding-page .preview-shell .ui-buttonc {
+  --ui-btnc-title: var(--foreground);
+  --ui-btnc-ink: var(--foreground);
+  --ui-btnc-muted: var(--muted-foreground);
+  --ui-btnc-icon: var(--muted-foreground);
+  --ui-btnc-solid: var(--primary);
+  --ui-btnc-solid-hover: var(--primary);
+  --ui-btnc-on-solid: var(--primary-foreground);
+  --ui-btnc-surface: var(--card);
+  --ui-btnc-wash: var(--muted);
+  --ui-btnc-danger: var(--error);
+  --ui-btnc-focus: var(--primary);
+  font-family: var(--page-font);
+}
+
+.onboarding-page .preview-shell .ui-dzc {
+  --ui-dzc-card: var(--card);
+  --ui-dzc-ink: var(--foreground);
+  --ui-dzc-strong: var(--foreground);
+  --ui-dzc-text: var(--body);
+  --ui-dzc-muted: var(--muted-foreground);
+  --ui-dzc-faint: var(--muted-foreground);
+  --ui-dzc-icon: var(--muted-foreground);
+  --ui-dzc-line: var(--border);
+  --ui-dzc-dash: var(--border);
+  --ui-dzc-dash-hover: var(--border);
+  --ui-dzc-sheet-line: var(--border);
+  --ui-dzc-track: var(--muted);
+  --ui-dzc-wash: var(--muted);
+  --ui-dzc-wash-big: var(--muted);
+  --ui-dzc-accent: var(--primary);
+  --ui-dzc-accent-soft: var(--secondary);
+  --ui-dzc-ok: var(--success);
+  --ui-dzc-danger: var(--error);
+  --ui-dzc-focus: var(--primary);
+  font-family: var(--page-font);
+}
+
+.onboarding-page .preview-shell .ui-segc {
+  --ui-segc-ink: var(--foreground);
+  --ui-segc-text: var(--body);
+  --ui-segc-line: var(--border);
+  --ui-segc-wash: var(--muted);
+  --ui-segc-fill: var(--muted);
+  --ui-segc-track: var(--muted);
+  --ui-segc-card: var(--card);
+  --ui-segc-accent: var(--primary);
+  --ui-segc-accent-soft: var(--secondary);
+  --ui-segc-focus: var(--primary);
+  --ui-segc-icon: var(--muted-foreground);
+  font-family: var(--page-font);
+}
+
+.onboarding-page .preview-shell .ui-tlc {
+  --ui-tlc-ink: var(--foreground);
+  --ui-tlc-text: var(--body);
+  --ui-tlc-accent: var(--primary);
+  --ui-tlc-bg: var(--card);
+  --ui-tlc-icon: var(--muted-foreground);
+  font-family: var(--page-font);
+}
+
+.onboarding-page .preview-shell .ui-thinkc {
+  --ui-tkc-card: var(--card);
+  --ui-tkc-ink: var(--foreground);
+  --ui-tkc-strong: var(--foreground);
+  --ui-tkc-text: var(--body);
+  --ui-tkc-muted: var(--muted-foreground);
+  --ui-tkc-faint: var(--muted-foreground);
+  --ui-tkc-icon: var(--muted-foreground);
+  --ui-tkc-line: var(--border);
+  --ui-tkc-rail: var(--muted);
+  --ui-tkc-fill: var(--muted);
+  --ui-tkc-wash: var(--muted);
+  --ui-tkc-wash-big: var(--muted);
+  --ui-tkc-accent: var(--primary);
+  --ui-tkc-focus: var(--primary);
+  font-family: var(--page-font);
+}
+
+.onboarding-page .preview-shell .ui-ansc {
+  --ui-ansc-card: var(--card);
+  --ui-ansc-ink: var(--foreground);
+  --ui-ansc-strong: var(--foreground);
+  --ui-ansc-text: var(--body);
+  --ui-ansc-muted: var(--muted-foreground);
+  --ui-ansc-faint: var(--muted-foreground);
+  --ui-ansc-icon: var(--muted-foreground);
+  --ui-ansc-line: var(--border);
+  --ui-ansc-fill: var(--muted);
+  --ui-ansc-wash: var(--muted);
+  --ui-ansc-accent: var(--primary);
+  --ui-ansc-ok: var(--success);
+  --ui-ansc-focus: var(--primary);
+  font-family: var(--page-font);
+}
+
+.onboarding-page .preview-shell .ui-tac {
+  --ui-tac-title: var(--foreground);
+  --ui-tac-ink: var(--foreground);
+  --ui-tac-muted: var(--muted-foreground);
+  --ui-tac-subtle: var(--muted-foreground);
+  --ui-tac-faint: var(--muted-foreground);
+  --ui-tac-icon: var(--muted-foreground);
+  --ui-tac-surface: var(--card);
+  --ui-tac-wash: var(--muted);
+  --ui-tac-readonly: var(--muted);
+  --ui-tac-danger: var(--error);
+  --ui-tac-focus: var(--primary);
+  font-family: var(--page-font);
+}

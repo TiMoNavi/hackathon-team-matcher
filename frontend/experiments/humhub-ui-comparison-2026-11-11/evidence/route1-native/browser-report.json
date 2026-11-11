@@ -1,0 +1,190 @@
+{
+  "route": "route1-native",
+  "name": "原生 PHP 主题改造",
+  "url": "http://localhost:8193/comparison-native/home/index",
+  "checked_on": "2026-11-11T13:46:28.546Z",
+  "browser": "157.0.4341.42",
+  "scope": "same synthetic homepage and interactions; not production API/authentication acceptance",
+  "checks": [
+    {
+      "name": "homepage_http_200",
+      "passed": true,
+      "details": 200
+    },
+    {
+      "name": "four_initial_members",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "name": "synthetic_data_label",
+      "passed": true
+    },
+    {
+      "name": "role_filter_frontend",
+      "passed": true
+    },
+    {
+      "name": "skill_search_python",
+      "passed": true
+    },
+    {
+      "name": "empty_search_zero_members",
+      "passed": true
+    },
+    {
+      "name": "clear_search_restores_members",
+      "passed": true
+    },
+    {
+      "name": "follow_state_toggles",
+      "passed": true,
+      "details": {
+        "before": {
+          "text": "",
+          "pressed": "false",
+          "label": "关注林舟"
+        },
+        "after": {
+          "text": "",
+          "pressed": "true",
+          "label": "取消关注林舟"
+        }
+      }
+    },
+    {
+      "name": "member_detail_dialog",
+      "passed": true
+    },
+    {
+      "name": "escape_closes_detail",
+      "passed": true
+    },
+    {
+      "name": "desktop_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "native_humhub_runtime_present",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile_role_filter",
+      "passed": true
+    },
+    {
+      "name": "mobile_detail_open_close",
+      "passed": true
+    },
+    {
+      "name": "no_javascript_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "no_asset_http_errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "javascript_errors": [],
+  "asset_errors": [],
+  "navigation_ms": 1580,
+  "desktop": {
+    "viewport": 1440,
+    "document": 1440,
+    "body": 1440,
+    "hasHumhub": true,
+    "hasJquery": true,
+    "hasPjax": true,
+    "hasNativeTopbar": false,
+    "stylesheets": [
+      "http://localhost:8193/assets/768d230c/css/humhub-app.css?v=1794404235",
+      "http://localhost:8193/assets/e234a310/resources/css/theme.css?v=1794404235",
+      "http://localhost:8193/assets/c7138b97/css/native-home.css?v=1794404424",
+      "http://localhost:8193/clean-theme-config-css?v=2.5.3-0"
+    ]
+  },
+  "resources": [
+    {
+      "url": "http://localhost:8193/assets/e234a310/resources/css/theme.css?v=1794404235",
+      "initiator": "link",
+      "decoded_bytes": 405582,
+      "encoded_bytes": 405582
+    },
+    {
+      "url": "http://localhost:8193/assets/768d230c/js/humhub-app.js?v=1794404236",
+      "initiator": "link",
+      "decoded_bytes": 646633,
+      "encoded_bytes": 646633
+    },
+    {
+      "url": "http://localhost:8193/assets/768d230c/css/humhub-app.css?v=1794404235",
+      "initiator": "link",
+      "decoded_bytes": 162907,
+      "encoded_bytes": 162907
+    },
+    {
+      "url": "http://localhost:8193/assets/c7138b97/css/native-home.css?v=1794404424",
+      "initiator": "link",
+      "decoded_bytes": 30296,
+      "encoded_bytes": 30296
+    },
+    {
+      "url": "http://localhost:8193/clean-theme-config-css?v=2.5.3-0",
+      "initiator": "link",
+      "decoded_bytes": 3761,
+      "encoded_bytes": 3761
+    },
+    {
+      "url": "http://localhost:8193/assets/768d230c/js/humhub-bundle.js?v=1794404235",
+      "initiator": "script",
+      "decoded_bytes": 2506477,
+      "encoded_bytes": 2506477
+    },
+    {
+      "url": "http://localhost:8193/assets/7863bc9a/js/humhub.cleanTheme.topNavigation.js?v=1794404424",
+      "initiator": "script",
+      "decoded_bytes": 8582,
+      "encoded_bytes": 8582
+    },
+    {
+      "url": "http://localhost:8193/assets/7f485d54/locales/jquery.timeago.zh-CN.js?v=1794404424",
+      "initiator": "script",
+      "decoded_bytes": 759,
+      "encoded_bytes": 759
+    },
+    {
+      "url": "http://localhost:8193/assets/c7138b97/js/native-home.js?v=1794404424",
+      "initiator": "script",
+      "decoded_bytes": 7057,
+      "encoded_bytes": 7057
+    },
+    {
+      "url": "http://localhost:8193/assets/7863bc9a/js/humhub.cleanTheme.js?v=1794404424",
+      "initiator": "script",
+      "decoded_bytes": 263,
+      "encoded_bytes": 263
+    },
+    {
+      "url": "http://localhost:8193/assets/768d230c/build/20fa3ba6/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "initiator": "css",
+      "decoded_bytes": 77160,
+      "encoded_bytes": 77160
+    }
+  ],
+  "initial_resource_decoded_bytes": 3849477,
+  "bootstrap_css_detected": true,
+  "mobile": {
+    "viewport": 390,
+    "document": 390,
+    "body": 390
+  },
+  "passed": true,
+  "passed_count": 17,
+  "check_count": 17
+}

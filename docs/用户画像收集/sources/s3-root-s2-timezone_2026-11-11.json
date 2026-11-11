@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": 4,
+  "passed": [
+    "timezone_writer_completes_without_user_lock_upgrade_deadlock",
+    "concurrent_locked_profile_reader_completes",
+    "reader_observes_post_commit_revision",
+    "reader_observes_committed_native_timezone"
+  ],
+  "real_concurrent_connections": true,
+  "preview_database_connected": false
+}

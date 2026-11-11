@@ -1,0 +1,1561 @@
+{
+  "checks": [
+    {
+      "name": "Header and stage fill viewport 1920x1080",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 1080,
+        "stageHeight": 992,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "panels": [
+          {
+            "id": "top",
+            "height": 992,
+            "scroll": 992
+          },
+          {
+            "id": "people",
+            "height": 992,
+            "scroll": 992
+          },
+          {
+            "id": "profile",
+            "height": 992,
+            "scroll": 992
+          },
+          {
+            "id": "recommendations",
+            "height": 992,
+            "scroll": 992
+          },
+          {
+            "id": "community",
+            "height": 992,
+            "scroll": 992
+          },
+          {
+            "id": "invitation",
+            "height": 992,
+            "scroll": 992
+          }
+        ]
+      }
+    },
+    {
+      "name": "All six scenes fit without extra scroll 1920x1080",
+      "passed": true,
+      "detail": [
+        {
+          "id": "top",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "people",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "profile",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "recommendations",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "community",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "invitation",
+          "height": 992,
+          "scroll": 992
+        }
+      ]
+    },
+    {
+      "name": "Header and stage fill viewport 1440x900",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1440,
+          900
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 900,
+        "stageHeight": 812,
+        "documentWidth": 1440,
+        "documentHeight": 900,
+        "panels": [
+          {
+            "id": "top",
+            "height": 812,
+            "scroll": 812
+          },
+          {
+            "id": "people",
+            "height": 812,
+            "scroll": 812
+          },
+          {
+            "id": "profile",
+            "height": 812,
+            "scroll": 812
+          },
+          {
+            "id": "recommendations",
+            "height": 812,
+            "scroll": 812
+          },
+          {
+            "id": "community",
+            "height": 812,
+            "scroll": 812
+          },
+          {
+            "id": "invitation",
+            "height": 812,
+            "scroll": 812
+          }
+        ]
+      }
+    },
+    {
+      "name": "All six scenes fit without extra scroll 1440x900",
+      "passed": true,
+      "detail": [
+        {
+          "id": "top",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "people",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "profile",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "recommendations",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "community",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "invitation",
+          "height": 812,
+          "scroll": 812
+        }
+      ]
+    },
+    {
+      "name": "Header and stage fill viewport 1366x768",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1366,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "All six scenes fit without extra scroll 1366x768",
+      "passed": true,
+      "detail": [
+        {
+          "id": "top",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "people",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "profile",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "recommendations",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "community",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "invitation",
+          "height": 680,
+          "scroll": 680
+        }
+      ]
+    },
+    {
+      "name": "Header and stage fill viewport 1280x800",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 800,
+        "stageHeight": 712,
+        "documentWidth": 1280,
+        "documentHeight": 800,
+        "panels": [
+          {
+            "id": "top",
+            "height": 712,
+            "scroll": 712
+          },
+          {
+            "id": "people",
+            "height": 712,
+            "scroll": 712
+          },
+          {
+            "id": "profile",
+            "height": 712,
+            "scroll": 712
+          },
+          {
+            "id": "recommendations",
+            "height": 712,
+            "scroll": 712
+          },
+          {
+            "id": "community",
+            "height": 712,
+            "scroll": 712
+          },
+          {
+            "id": "invitation",
+            "height": 712,
+            "scroll": 712
+          }
+        ]
+      }
+    },
+    {
+      "name": "All six scenes fit without extra scroll 1280x800",
+      "passed": true,
+      "detail": [
+        {
+          "id": "top",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "people",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "profile",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "recommendations",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "community",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "invitation",
+          "height": 712,
+          "scroll": 712
+        }
+      ]
+    },
+    {
+      "name": "Header and stage fill viewport 1280x720",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "All six scenes fit without extra scroll 1280x720",
+      "passed": true,
+      "detail": [
+        {
+          "id": "top",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "people",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "profile",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "recommendations",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "community",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "invitation",
+          "height": 632,
+          "scroll": 632
+        }
+      ]
+    },
+    {
+      "name": "Profile source fits GitHub at 1280",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Profile source fits 个人简历 at 1280",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Profile source fits 作品网站 at 1280",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recommendation content fits candidate 0 at 1280",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recommendation content fits candidate 1 at 1280",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recommendation content fits candidate 2 at 1280",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 720,
+        "stageHeight": 632,
+        "documentWidth": 1280,
+        "documentHeight": 720,
+        "panels": [
+          {
+            "id": "top",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "people",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "profile",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "recommendations",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "community",
+            "height": 632,
+            "scroll": 632
+          },
+          {
+            "id": "invitation",
+            "height": 632,
+            "scroll": 632
+          }
+        ]
+      }
+    },
+    {
+      "name": "Activity join and status remain visible at 1280",
+      "passed": true
+    },
+    {
+      "name": "Header and stage fill viewport 1024x768",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "All six scenes fit without extra scroll 1024x768",
+      "passed": true,
+      "detail": [
+        {
+          "id": "top",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "people",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "profile",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "recommendations",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "community",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "invitation",
+          "height": 680,
+          "scroll": 680
+        }
+      ]
+    },
+    {
+      "name": "Profile source fits GitHub at 1024",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "Profile source fits 个人简历 at 1024",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "Profile source fits 作品网站 at 1024",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recommendation content fits candidate 0 at 1024",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recommendation content fits candidate 1 at 1024",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recommendation content fits candidate 2 at 1024",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 768,
+        "stageHeight": 680,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "panels": [
+          {
+            "id": "top",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "people",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "profile",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "recommendations",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "community",
+            "height": 680,
+            "scroll": 680
+          },
+          {
+            "id": "invitation",
+            "height": 680,
+            "scroll": 680
+          }
+        ]
+      }
+    },
+    {
+      "name": "Activity join and status remain visible at 1024",
+      "passed": true
+    },
+    {
+      "name": "One downward gesture opens people with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One downward gesture opens profile with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One downward gesture opens recommendations with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One downward gesture opens community with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One downward gesture opens invitation with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One upward gesture returns to community with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One upward gesture returns to recommendations with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One upward gesture returns to profile with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One upward gesture returns to people with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "One upward gesture returns to top with no extra scroll",
+      "passed": true
+    },
+    {
+      "name": "Expanded mobile menu reserves its actual height",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          390,
+          844
+        ],
+        "headerBottom": 297,
+        "stageTop": 297,
+        "stageBottom": 844,
+        "stageHeight": 547,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "panels": [
+          {
+            "id": "top",
+            "height": 547,
+            "scroll": 552
+          },
+          {
+            "id": "people",
+            "height": 547,
+            "scroll": 1256
+          },
+          {
+            "id": "profile",
+            "height": 547,
+            "scroll": 1600
+          },
+          {
+            "id": "recommendations",
+            "height": 547,
+            "scroll": 2198
+          },
+          {
+            "id": "community",
+            "height": 547,
+            "scroll": 1479
+          },
+          {
+            "id": "invitation",
+            "height": 547,
+            "scroll": 740
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mobile hero fits under collapsed menu",
+      "passed": true
+    },
+    {
+      "name": "Mobile invitation fits below the header",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          390,
+          844
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 844,
+        "stageHeight": 756,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "panels": [
+          {
+            "id": "top",
+            "height": 756,
+            "scroll": 756
+          },
+          {
+            "id": "people",
+            "height": 756,
+            "scroll": 1256
+          },
+          {
+            "id": "profile",
+            "height": 756,
+            "scroll": 1600
+          },
+          {
+            "id": "recommendations",
+            "height": 756,
+            "scroll": 2198
+          },
+          {
+            "id": "community",
+            "height": 756,
+            "scroll": 1479
+          },
+          {
+            "id": "invitation",
+            "height": 756,
+            "scroll": 756
+          }
+        ]
+      }
+    },
+    {
+      "name": "Long mobile content remains scrollable",
+      "passed": true
+    },
+    {
+      "name": "Mobile final content can be fully read",
+      "passed": true
+    },
+    {
+      "name": "Stage updates when viewport height changes",
+      "passed": true,
+      "detail": {
+        "viewport": [
+          390,
+          667
+        ],
+        "headerBottom": 88,
+        "stageTop": 88,
+        "stageBottom": 667,
+        "stageHeight": 579,
+        "documentWidth": 390,
+        "documentHeight": 667,
+        "panels": [
+          {
+            "id": "top",
+            "height": 579,
+            "scroll": 579
+          },
+          {
+            "id": "people",
+            "height": 579,
+            "scroll": 1256
+          },
+          {
+            "id": "profile",
+            "height": 579,
+            "scroll": 1600
+          },
+          {
+            "id": "recommendations",
+            "height": 579,
+            "scroll": 2198
+          },
+          {
+            "id": "community",
+            "height": 579,
+            "scroll": 1479
+          },
+          {
+            "id": "invitation",
+            "height": 579,
+            "scroll": 740
+          }
+        ]
+      }
+    },
+    {
+      "name": "No browser runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "measurements": [
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "headerBottom": 88,
+      "stageTop": 88,
+      "stageBottom": 1080,
+      "stageHeight": 992,
+      "documentWidth": 1920,
+      "documentHeight": 1080,
+      "panels": [
+        {
+          "id": "top",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "people",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "profile",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "recommendations",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "community",
+          "height": 992,
+          "scroll": 992
+        },
+        {
+          "id": "invitation",
+          "height": 992,
+          "scroll": 992
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "headerBottom": 88,
+      "stageTop": 88,
+      "stageBottom": 900,
+      "stageHeight": 812,
+      "documentWidth": 1440,
+      "documentHeight": 900,
+      "panels": [
+        {
+          "id": "top",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "people",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "profile",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "recommendations",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "community",
+          "height": 812,
+          "scroll": 812
+        },
+        {
+          "id": "invitation",
+          "height": 812,
+          "scroll": 812
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "headerBottom": 88,
+      "stageTop": 88,
+      "stageBottom": 768,
+      "stageHeight": 680,
+      "documentWidth": 1366,
+      "documentHeight": 768,
+      "panels": [
+        {
+          "id": "top",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "people",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "profile",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "recommendations",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "community",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "invitation",
+          "height": 680,
+          "scroll": 680
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "headerBottom": 88,
+      "stageTop": 88,
+      "stageBottom": 800,
+      "stageHeight": 712,
+      "documentWidth": 1280,
+      "documentHeight": 800,
+      "panels": [
+        {
+          "id": "top",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "people",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "profile",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "recommendations",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "community",
+          "height": 712,
+          "scroll": 712
+        },
+        {
+          "id": "invitation",
+          "height": 712,
+          "scroll": 712
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "headerBottom": 88,
+      "stageTop": 88,
+      "stageBottom": 720,
+      "stageHeight": 632,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "panels": [
+        {
+          "id": "top",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "people",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "profile",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "recommendations",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "community",
+          "height": 632,
+          "scroll": 632
+        },
+        {
+          "id": "invitation",
+          "height": 632,
+          "scroll": 632
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "headerBottom": 88,
+      "stageTop": 88,
+      "stageBottom": 768,
+      "stageHeight": 680,
+      "documentWidth": 1024,
+      "documentHeight": 768,
+      "panels": [
+        {
+          "id": "top",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "people",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "profile",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "recommendations",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "community",
+          "height": 680,
+          "scroll": 680
+        },
+        {
+          "id": "invitation",
+          "height": 680,
+          "scroll": 680
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,833 @@
+{
+  "recorded_at": "2026-11-11T21:30:20+08:00",
+  "scope": "Local batch-authorization gap repair only; recommendation task progression paused. P1/P8 and recommendation adapter authorized. No credentials or existing DB.",
+  "modules": {
+    "matcher-user-profile": [
+      {
+        "path": "backend/protected/modules/matcher-user-profile/Module.php",
+        "sha256": "572464272573a1df02055e511762b20545bc75ee04be4baae61b5b785d1b3cdb"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/http/IdempotencyGuard.php",
+        "sha256": "0760e56ebb0cbc06e37ca680fae3d02a374596428c3680852803f887ef24a993"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/identity/NativeConfirmedIdentityReader.php",
+        "sha256": "8978f1e711d776089d8e699305895945b0b8677965e348836bacacb14d8feee7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/identity/NativeDisplayName.php",
+        "sha256": "2576b48938f2e126ac08fd6786decd3b8603618ca403f865d3794d875fa5fd76"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/identity/NativeProfileValidation.php",
+        "sha256": "a3c660afcd8e423f31b4e995658156879015fade3d03f02b73898b40eff3ace1"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/media/LocalProfileMediaStore.php",
+        "sha256": "9fe17af4f8c67f7aaa90e673139bc31d86ac45e73fa111a2698a12823fd0f3d9"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/media/NativeAvatarProjection.php",
+        "sha256": "b81f730ea57db69e4dbf945f8338cbbd687d459478e4485985c82c271013b71a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/media/SqlIdentityStore.php",
+        "sha256": "d1457a070c3588799512533256740e89fc7ecae9bae383caef72613ee462af69"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/media/native-avatar-crop.js",
+        "sha256": "c8a2d60a520cc9ef1c685c2b94245d3baf7c6ccc422f36aa666b4ad7ba668b9d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/media/native-avatar.js",
+        "sha256": "84e2539e5df5e0598f4763db936d4e172623ac5dcbae3e80458aa874235f3086"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileAccessPolicy.php",
+        "sha256": "0be17cdfb146397c24ff215d89c6e9d55dd79f9430d1ec213679f1a33c612581"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileRepository.php",
+        "sha256": "0818a6258a3c4bcd66f6d3ecf21ada1af89c97a13287ca93817846df2c4e3223"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileResourcePolicy.php",
+        "sha256": "33b8a6ced65cb3d3b59b42e1c6e7137df13b64b93589d08fd714189c43c9c33d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryProfileWorkflow.php",
+        "sha256": "82f8bdaffa52afa5537e166561f3f8603c6b6df59179d71c574481a581090e55"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/memory/InMemoryQuestionRepository.php",
+        "sha256": "4fc467721e1578e1a343a0c9bdfddf30da8abe1ba839ce53aaf9464c6d15f97f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/native/AccountController.php",
+        "sha256": "981c79adc9e7a0e9272413a7404754da7a688710028a9c9000ec4eb65bed5a35"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/native/AdminUserController.php",
+        "sha256": "39ed9321257ea3869d0bd29cb60c01a74837f7d943911b5233ef8396d617dc5f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/native/NativeEditBridge.php",
+        "sha256": "9d872a796161863b7c101c7b3d82dce54e465c1f82f474ee1e11cb38d837aa1a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/native/VersionedHForm.php",
+        "sha256": "ec6d681b6f6fe8cb576f0ab651f2c564edae2664353c5c0404198b9ba898b598"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/NativeProfileAccessPolicy.php",
+        "sha256": "5239d9520b4cfaed9d3f23e6244d14b6c79950e7783d35a296237b42f1aa4d5c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/NativeProfileValues.php",
+        "sha256": "1d6f166fcddda5640b6d34a6a0bdf711f0d83565b386c7e0a7ac8ec3f9ca734c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/NativeProfileWorkflow.php",
+        "sha256": "c60e5c3053b8cc16bf372435b022907a73ead8c7fed5e394b910db94693a981b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/ProfileSchemaInstaller.php",
+        "sha256": "7a81bf78e36701b4804fd28896b3358fb922a761be73c5daa62a312bda620a6c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/ProfileSchemaUpgradeV2.php",
+        "sha256": "db81b51cb07917843997b310ac5fa2f3007bcb7053ae93fa156ee4c15b9c78c6"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/QuestionSchemaInstaller.php",
+        "sha256": "e1c443669f3bff8dcc0576551946a449e62a7778d5922f94c42fc6f5174f360c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfileRepository.php",
+        "sha256": "2b478b7376d181ba23e7910e56560b8ef6a65610906f680321ef53bfb7125809"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlQuestionRepository.php",
+        "sha256": "4253e74c036d8bd554b90f139b00f1b3b604f8d22f63e165858c19cb9b9d8d67"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/persistence/WorkflowSchemaSupport.php",
+        "sha256": "f4b35ce54bbdc431909cbbe848280476ab85f88be04029eb6fae050d99d70208"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/adapters/ui/EditorNavigation.php",
+        "sha256": "e685a12aec3e18d72a3eb9139c91f8271efce42e5af2e1a5a060b7a891b1c3c5"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/application/GetDisplayName.php",
+        "sha256": "28e5ec564a50a2c31fc49859cae2d9f0434080766585952c228dd8f57ada621d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/application/IdentityService.php",
+        "sha256": "fc7b15528634a372ef1c44068de0078f620d46478a299da15a5215ab4eda7be5"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/application/ProfileService.php",
+        "sha256": "e36c89d8a15c569619d017c73418dd28d1ae43d68a8f9f97160e24bcc968d58d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/application/QuestionService.php",
+        "sha256": "3de8eda8737b7f9b53c3ed215d520a5efe28bc28e110d7a33cf851ae393f9ace"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/application/interfaces/IdentityStore.php",
+        "sha256": "790cdd92d1aba751c6c9f0828e4f54569dfca1a235818d55fd8823a4df56edba"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/application/interfaces/ProfileMediaStore.php",
+        "sha256": "f333adedf960fd585a263e215267c02ba9d47cd549813a2dc70cff26f095d2d4"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/assets/EditorAsset.php",
+        "sha256": "4d6764defbe847eff69a2ea9484bc04cc5e4fd9f3d48a03cab08334335da4b36"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/assets/editor/editor.css",
+        "sha256": "f58fa8152cdaee6a05d62e31f43634af96138a2db1863bbe5678fb0f91f75524"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/assets/editor/editor.js",
+        "sha256": "2cbb00474d5219a82fdd651d6b811333eb0491d180ebde1e1f010cf00675feee"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/config.php",
+        "sha256": "d8a119ab6248cb6dc7fd524b998afe77cdef2ee504382abe47f59c1d7a79cb4e"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/controllers/ApiController.php",
+        "sha256": "a377e1c856a867bf26119a59a2e3d44ec7fb31ced8baebce65b8b420dc395dc3"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/controllers/EditorController.php",
+        "sha256": "862f02f6c93719ebf3dac86a13546493f5ba3e93c4fc98a1541b7636abd9012f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/controllers/NativeImageController.php",
+        "sha256": "bb9199f8abaa6da8f661df4bdc34b9a78b962c94810a73ceccb9e74943708e66"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/DisplayName.php",
+        "sha256": "82ef4eff60116b90e935d990cec0da7ec8972d507d11039c4bcfc1a744840324"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+        "sha256": "636e2e8738fc3d7a8729f53fa27799b6742e21789069680583b95cb08699c947"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ProfileException.php",
+        "sha256": "896f7e64092345e8855257cb6dd16a5edc32d0c77a381f3fb609d3e26e856f4f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ProfileScope.php",
+        "sha256": "c6d7093b0d328ac11609d3788a6b92a3d49422df410972cbe97ed6d59541f56b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/RelationAccessContext.php",
+        "sha256": "fd43bc914fa0a3979e641f855ff65a65fd3bb423c78733d8539e9608e4c42112"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ValueValidator.php",
+        "sha256": "253f88d757b4681217a2db9384580241dfd11edd86c7dec5d0a8e2699dcf055f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ConfirmedIdentityReader.php",
+        "sha256": "1626c324832cb71ab979bb331a9908b3e94701276445b5aa385da5dd048da750"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileAccessPolicy.php",
+        "sha256": "eccd1b532f8c87353ad430796b42ff696fc89be22e5b6f06a15eff86c42ae562"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileComposer.php",
+        "sha256": "d2e9dce2c1bd1438333dd4a341dfde91640055f83a063bc0bdc170cb7bbb31c2"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileReadPolicy.php",
+        "sha256": "9a305853b03bf96de1e5593c2f376f3bdc6811010ecc73d8945601beef8bce16"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileRelationReader.php",
+        "sha256": "a950e06a3bd460075f38719ab149a7f8795dcd36327b17fc31db276c88f5fc90"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileRepository.php",
+        "sha256": "1b220023e54dee1f62bc016fc472e23e4506e6cd5585582b8d8837011722c21a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileResourcePolicy.php",
+        "sha256": "6229f0503f283c5689f749f0f4cefc6ce7ad79bddeb8365448ea5457bc0a12d7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/ProfileWorkflow.php",
+        "sha256": "f7131789c3dffc8c3468bced2d897905d786e6aa3a254abcb789e5dd8afd2cbc"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/QuestionProvider.php",
+        "sha256": "230ea61e85f1e6676613d804258c56e599dcb5344a5667497a404b6ae2db3fd5"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/ports/QuestionRepository.php",
+        "sha256": "99d60a4196f64821fab3e0675512f249f8ea750be72c0b44d2df5d809d3ff179"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/rules/RuleQuestionProvider.php",
+        "sha256": "c4bf44909f003277e4004bb868e7611a95cfa798ee5d5ed55fff7b4ba7dff59b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/domain/rules/RulesProfileComposer.php",
+        "sha256": "61f35062a23740e4a6f6c9b1c9906e7bcc1f83a3edb32dbeb81c3448bd2df461"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/migrations/m261111_000001_profile_foundation.php",
+        "sha256": "b12fbf03fb97800387d369af257d1b4f1664445b258bf7f87151ed9617292148"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/migrations/m261111_000002_profile_service.php",
+        "sha256": "ca2fd1ced778a803e7cc1311cb9042e9112f32fa86c3c1efb714dcdb9b82bb0b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/migrations/m261111_000003_profile_questions.php",
+        "sha256": "7b6a9ee32c434537f5d0e12fdd4570dea8ac5d042e29435878ab9bc9b93c999e"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/module.json",
+        "sha256": "d4dd559ad8e57e68c60ba18194ae9b65d9701b528eacd095534794f7e33b5c50"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/native_module.php",
+        "sha256": "fda5fb1d617495222d7a95350c829f125d14b2c324a97f3b54b669fea530d0d3"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/run.php",
+        "sha256": "9ab016dc69c880ee1a26ee92e5e744e2b92cd762fec42298e129b8e8d3a1ed5c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_http_bootstrap.php",
+        "sha256": "d8f8e8cc16ad0222f30b1bac1c21cc4f83a9776e58f2942d939e38c4903bf117"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_http_fixture.php",
+        "sha256": "c9701bc7bec812c35423a6e3635d9b5bf5516818d6cec848d625811d9ff92746"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_http_media.php",
+        "sha256": "f4350fa816cbc9142df7d40a37dd3979ddaa21c2c83cb3a0df38da33110f1eda"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_http_router.php",
+        "sha256": "8f400be57c62b06745ff34acffdfe2da98c55300c79308eab6f61998f07dedbd"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_http_test.py",
+        "sha256": "2498cb63f78a53795089b4f09156129fcb6ba95e0fd699e39c8e4b49a80c4d0b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_native_avatar_test.cjs",
+        "sha256": "410074dbcc23b4739b0d6cf81624ac8bd32e55e56701747dcddd52eec1cea164"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_persistence.php",
+        "sha256": "24686a7abbd039accfef2bcdb143f680e325f647c277c4e980320d1e401a6b56"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_persistence_bootstrap.php",
+        "sha256": "8ef1a2a3de6b756bcaa037bc3dbcd73ae8892115b5b8175473b47e367f2cace3"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_persistence_concurrency.php",
+        "sha256": "c36980057de36f22e85689cba4b12cb5b5540777a27eb394945041519fe0319e"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_persistence_native.php",
+        "sha256": "785f83636c1e68f596716bb329afbb687d3898d9eeb6f5e948bf46b04bfe5440"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_persistence_timezone_race.php",
+        "sha256": "bf58bbb86c38301bf55fa3929c00d3764ee415953a426ce8ca0d020ed756735c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_persistence_worker.php",
+        "sha256": "704851a9fe53059b11675f8f59864045aa2b8d229bc57d0d4ae54bf40d8de676"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s2_root_acceptance.py",
+        "sha256": "1c311fb636a8ec7a65c4ee06c0b50be0f83bf2be75e15ca1f0b739693780438e"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s3_editor_browser.cjs",
+        "sha256": "393532c45ab4a16d96ce7683d2c4492cb8ac4504c7064373f1ff51cefce0f215"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/integration/s3_editor_fixture.php",
+        "sha256": "1fde7b3fc14fba173b9a36d08de9673f56074ad9b3a91903d67041e4f48977e7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/unit/run.php",
+        "sha256": "c66a8bf719086107d5eef8af272ebc3fb8b6d8fb19ae00d26e9cc3c40e26faf0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/unit/s2_profile.php",
+        "sha256": "8397fc34864dc5794604bac823a8e218ed606a585b66ba8eee1f9395703da288"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/tests/unit/s2_review_identity_consistency.php",
+        "sha256": "3117ae0cea861039a0758563445508926d7bcab04daa8b7bbd724a962a9a2c4a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/views/editor/index.php",
+        "sha256": "e8a81dcd13e68c5e64f5e9e11477488fe836e7bc75de83b582340ec0987e7865"
+      },
+      {
+        "path": "backend/protected/modules/matcher-user-profile/views/native-image/crop.php",
+        "sha256": "4e9271670ca251a238317d98307f863c948f416547b1287bfb3ad660d18e88d0"
+      }
+    ],
+    "matcher-profile-privacy": [
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/Module.php",
+        "sha256": "726689addf12e166e1d7ce2109921eff2a4bf4330fd837903d7c1edfba8cd228"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/memory/InMemoryProfileRelations.php",
+        "sha256": "b404d528b30e58c3f8429d989e1820e335d4b5d44069168f6b50f28220a02ce2"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeCalendarEntryController.php",
+        "sha256": "8e45caaf8955d247baa52d076f843b220438e2b94ee868bc73216e71ebff6971"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeInboxMessagePreview.php",
+        "sha256": "21f280cfb5c80add0819ac692d8bb38758d70d8b18e4cbc3a228a4da4d60f552"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeMailController.php",
+        "sha256": "5844234779d5612c0311d2ee43c7538081c9a0a1dda7ffbe8e9950c58bbb5d75"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativePeopleController.php",
+        "sha256": "c9fd553846ccdff24076396c286e49d4eb616975cff3c363de45a8ae9a09cdd0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativePeopleDetails.php",
+        "sha256": "94ad1fed30723cb1075277601de2342bfcee6293c9c4724071b59ac331f9009c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativePeopleTags.php",
+        "sha256": "5e81d72c7721383866a4734009443804df4ef8df5b8bf8fb40d180ae9a26f6cb"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativePrivacyHooks.php",
+        "sha256": "4db7135918b96b47d58e37d686acbe2297a8c89db6f1156a2fa44b7a20a9bbd1"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeProfileController.php",
+        "sha256": "1b96569495969fbd8d451f1c3a4348edf4d1d5b548ea2e4f5b5f6730804f437f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeProfileLinks.php",
+        "sha256": "2d84fffb7061eb5a5a471434f48847ee37495086b535a77511aac8354b4ba8c7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeProfilePresenter.php",
+        "sha256": "90f980d394049a32b363ea99ffe4f41806e17247501b46218ae21b2ea5e80f15"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeProfileRelations.php",
+        "sha256": "bddab7d37925e38eff491f2719f0866721ae0da166dbea06c96e9c825038d5d0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeRequestContext.php",
+        "sha256": "595fa9986f73e4b794e1a9ca5f0c75db8a0464c9caf57cdcf4eda8d0f3e66b41"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeSearchController.php",
+        "sha256": "a9137ba0fc337433ffd72f531a9a5e1c7cfb4a22220cbe3621e8cb20c24d78ba"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeUserSearchProvider.php",
+        "sha256": "3af64286fbe112adca953f16c1e94149b5756952c9277953fc9d4aecef2898ad"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/ScopedPeopleQuery.php",
+        "sha256": "68e866950cf46fa8e6f59bc1b4467c826c0bf79773f98c0426a51a9dc3ffd7ad"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/compat/CalendarBirthdayQuery.php",
+        "sha256": "07e2f452cd1f8414197fe34604cea6dfbe59a541454c6be16402432001c20878"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/compat/CalendarPrincipalBackend.php",
+        "sha256": "403a249c418a8d8957339f2acdb24d3b9c76aed82a2832e9ccfd8b4af5e7ddbf"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/compat/CalendarVCalendar.php",
+        "sha256": "ef3eaa577c894a2fdb88b1d06bd31cb58c6626653c9566fc3da1afd62c0fba8d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/native/compat/RestUserDefinitions.php",
+        "sha256": "504c1d583138c983700bd0026baa13edd620450398be05fde265a3ed77aaefd0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/persistence/LegacyProfileImporter.php",
+        "sha256": "840d8da27d582a71cc9c63d77a2e9de88530245161b10726eb937331c3a491b4"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/adapters/persistence/PrivacySchemaInstaller.php",
+        "sha256": "0777cd3286e7c943b70074d056ec5f4d995bdf19ed3881dec4f3a2eb21979b09"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/application/PrivacyService.php",
+        "sha256": "0a99c9e76fc9ca86c264dc7ed48e114582c8a03feab63f67ec6dd81530898dcd"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/application/ProfileReadPolicy.php",
+        "sha256": "dce0347355698b0125971f68b564b3ade8fa8a661373b013cebd887042d34375"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/config.php",
+        "sha256": "7e75484bc1bedc64a947171ddf7918a2ed020bfcfcb2fe7601244f918e8e8a2f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/controllers/ApiController.php",
+        "sha256": "847a18b52fcde9d3a30ef7e5f23f48fe1b1f9a4c92ce993f2744d413b11d980c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/domain/ReadContext.php",
+        "sha256": "74551f159da3067291cc064ec4829ede32e2985bc4cafb15618cad7ceda39f4b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/domain/VisibilityPolicy.php",
+        "sha256": "ba0d3136bb228696e48ae988911cf369cd1be973c8d4d13479e4503f51803a84"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/domain/ports/ProfileRelations.php",
+        "sha256": "bc209217da6ef9fc0fadb0bae269c57218a126360c2dcbc960247b995c1201ba"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/migrations/m261111_000001_privacy_projection.php",
+        "sha256": "5c08d282320b3bf178f5d33d251e366f3a9e81551c9f563a3da17eba03c89507"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/module.json",
+        "sha256": "75ac8a947a0d203108c1ccff269c838523c04c2100f5eeb6c370171f0b20d48a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_entry_links_browser.cjs",
+        "sha256": "1e53ce22f4d9a59f0efaebaef2de520825d6fa3c1f5a5dfe10aa3c41e5d23ab3"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_fixture.php",
+        "sha256": "5e1fa7b1d17b17db5cd2852fcef5ee888d3a5cd23922f75a075971bed0c3d6c7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_http_bootstrap.php",
+        "sha256": "40273967bae725a9cbb211d5f22f8281d0e0a2717c18534a432317ed03c8bca0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_http_router.php",
+        "sha256": "4a11b8fb9aaa597218a4ba3de1d7743e4fa8c20093ca4b66b52821c4280f2cc0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_native.php",
+        "sha256": "6a3706ea03e9831ca1ccf7821a56217898bdcf73064c0face5f316e3ad5e110d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_root_acceptance.py",
+        "sha256": "1b990572fdd332474bd46204a819b57107bfe4dc5f2d9b656893340887a8df36"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/integration/s3_root_fixture.php",
+        "sha256": "357c12e8f4ed8bc7d282d2a35351a0559c2eea6e1a54337d71a6ec793b92a94a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-profile-privacy/tests/unit/run.php",
+        "sha256": "1d4466608b04ff80b0a9b8baa717c5cd82d66e36d4c964c5eb8d00260806741b"
+      }
+    ],
+    "matcher-recommendation": [
+      {
+        "path": "backend/protected/modules/matcher-recommendation/Module.php",
+        "sha256": "4e9d1105dd9c55a864f247078dc8a049c4858e78a87b0a7c2db5b57acf83ee0b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/native/NativeAccessException.php",
+        "sha256": "751e3ca09538a28920467d501ec2610a77749955854f5d995e05d272d5cff121"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/native/NativeContactEligibilityReader.php",
+        "sha256": "6e7c2321eae4acc0cd65f762a56194733a9b583fa0c2713637e54a2c803e8466"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/native/NativeCurrentEventAccess.php",
+        "sha256": "e423f8cfaf8a0465e9fe936ea17da066446833e3168b26f5aa4bffe63768cd7f"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/native/NativeEligibilityQuery.php",
+        "sha256": "25a0d0b5f2bbc933394362194f6acc5953e2d2dd824d71753a881b2b93e8c7a2"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/native/ServerSelectionSource.php",
+        "sha256": "1c344296314f8cc3e3a1087add92a8721856a361c388438dbc9e79c6382cdb8d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/native/YiiSessionSelectionSource.php",
+        "sha256": "e90ca32190e7027fa941f4051575816fc3b5c35e7353440c84ed9ea6cd01452a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/profile/P1FieldCatalogAdapter.php",
+        "sha256": "091c831a8912a3aec7e90282305d016898e085af50bb726ffd09513952030e64"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/profile/P1SourcePurposePolicy.php",
+        "sha256": "99139594cbd05da4c382193fbae96e6887aa3b2c49b2fb0a577a13f36140822c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/adapters/retrieval/SqlCandidateRetriever.php",
+        "sha256": "bc2e772dbbd683f6801b3923a86e6978d4fdd796604c48ba94eedd7153b56ecc"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/application/DiscoverPeople.php",
+        "sha256": "f7713f284a7c23941c588d28c0c390c188c4edc0101e1bd0a97e4219c775b7d7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/application/policy/PolicyLifecycle.php",
+        "sha256": "db96469dd65d1d1092afa117f5e050799359711ef9018128584ab6d053ebf497"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/config.php",
+        "sha256": "5aa7566d3372394c27ae901a1c40d960c55954152cf8bf99b5d42a8e929acc62"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/AuthorizedIndexSnapshot.php",
+        "sha256": "119db202de7003be99d95c2e91be16c1dba244868fd95c156c369d9584463aea"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php",
+        "sha256": "d1747bf334798551c2392ab8fa9a87c6ad3b2bb99b696cb0715c0647e764dcf9"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php",
+        "sha256": "332d18b999fcd8c4dfeed5f8863960a55d8638972beb3693cc977bada7acfb7a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php",
+        "sha256": "fdb54ede239dd1e2238a9510b4a9dd36e2c150fa1542831e8f77314febb930c2"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php",
+        "sha256": "ba99b81d94a2cb5ef2bdc27b934470b51e445a14e7ee6b700df712990ccc01a3"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php",
+        "sha256": "2fad64568663587c896b811f5a089b56f003e037786286ec398a6d86214c1b55"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php",
+        "sha256": "c3599d0b00cbf5543d99d1c646de71d904d1725ae6938b26f9d158afcfc4cbbc"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/QueryIntent.php",
+        "sha256": "dab642675129e9012d48837f5eea5fffc66c51b79cf23cb5280246ac680b3016"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/AuthorizedIdeaReader.php",
+        "sha256": "6cb82159f764fb144c9f3d3b54af817643a1191d8ebdfb11dda21b62837a4b48"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateIndexAccess.php",
+        "sha256": "f214f72206f4c08e4f5d35d66fcd79017fbda429a71dbe44477c5b6a402e23c0"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php",
+        "sha256": "f745b33212fa4ba6f475f39ff5a84ea75e47f069726d5a6c989c7ed3c3e641ae"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateReranker.php",
+        "sha256": "7cca37ee78e027b463a4952022da7df20d8a4694ba26c29ab3d8f16f490cc671"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateRetriever.php",
+        "sha256": "c34202bdf6bf58a860a625c791afc2b9bbb939463e0739fa31ff919ea4286a30"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/Clock.php",
+        "sha256": "5cf7add2b300d68ef8a94b4246cd6767c0bdf5fe44fff06caaffd20f61ac5c05"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ContactEligibilityReader.php",
+        "sha256": "d4301d0bc46272a624c26d1491a8373eed6a2bfeb06c3d2578b276fe6bb495a1"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php",
+        "sha256": "eae43c8748b0eea1f737bf836b9f89bf98a81f3768371548845188392a1c572d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/DiscoveryBatchStore.php",
+        "sha256": "0d5f4799b6b780a0e1dc45dd01069a03ae7bac275b65e54263ed5d1595e11728"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/IdeaCandidateProjectionReader.php",
+        "sha256": "9fc5157d4f39485c020d6db1a5535e284c42664f0f5a9ba69b9d4b17c062b08d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/PolicyAdministrationAccess.php",
+        "sha256": "8739a4e79c743cdf297b74f2d3546c76e66e34a6ae0cf6c7a23996987b0d0256"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/PolicyReplaySuiteProvider.php",
+        "sha256": "c88a531d574f10aaafeb70a29091080705508ce6c8b27bacd7cf18280902daf3"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/PolicyRevisionStore.php",
+        "sha256": "c2edc2172f314337f7b4403a41908474716452fee726cc5551d21858c5e2e29e"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/PolicyStore.php",
+        "sha256": "c984c9d0db38631abb7be125bb01d52834a33462e5e31059cb5a2f40ab998602"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php",
+        "sha256": "a04be6f1b03e585f1293bd9968825cf191459910cd57e094fcec31b1b8aff4ee"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/QueryInterpreter.php",
+        "sha256": "90ef9de424415533d2eba52e5bb57f1515dc5447a43f65c062e1a65f317cf7d4"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/RecentExposureReader.php",
+        "sha256": "b7defc99f51584adf1767ec4582a8194289082f4955848eba3180108576302c5"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/RuleEvaluator.php",
+        "sha256": "f1d1e66b0d803bb1ec484823fd0b7e9c0d7ce5c7c367bd219d55a2629b6d2e58"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/contracts/ports/RuleQueryValidator.php",
+        "sha256": "552141a9e7ab6847b6c51ebe1b2210340bca247d38d891ac7578282194d5d215"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryBatch.php",
+        "sha256": "17324b9cd41b43863cd836dead3d71440c9689eb15645871ab5c008a422c71b8"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryMatch.php",
+        "sha256": "2dff8e50ff18a79168d17d259667f40247597e84ca6c5de32733aa670fe1037d"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryOutcome.php",
+        "sha256": "b04e5ee9ee8d22a354b531be170b1179209acbfba4a7e532f836bf91eadfe8ab"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/DiscoveryResult.php",
+        "sha256": "cfa90ef0ecf4e2655279164edd2122b80c13af45da0b1b83e83add4408b123d1"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/MatchReason.php",
+        "sha256": "231cc7eef38095af7a338ddccb00fd1d049f4064873ab4c8e2cb756e5b5a0570"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/RuleAssessment.php",
+        "sha256": "6512c4848166a20a8ea89f53b53e29abc61af911ebe40a06b9ef3215cfe6954b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/RuleDiagnostics.php",
+        "sha256": "61e98a94562a328c4eca2a6ca374f85214d3dcf196ff537903cb4dd7670068cc"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/RulePolicy.php",
+        "sha256": "3996d483c6151815d5fa0064a2df289afa80557a4cb66e2c286e822554ccaf3b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/Fingerprint.php",
+        "sha256": "ef0f601e6e26d3b2eed55ed052a99edf812a9c9eab172ff8be1edfd6b66c2458"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/PolicyDraft.php",
+        "sha256": "1d7b5cfb42b3b797b4684ae3cae880d79da482b991e79ac32fb00f7f39e7b658"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/PolicyValidator.php",
+        "sha256": "fb2716da827a018dca9501e9c20d3e37f1a42a514cbd717a3e225f433ea72f86"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/ProfileProjectionMapper.php",
+        "sha256": "b699aee9cf6cf3bf1ebc7993aafd82093aa4284dee2a433553030af627839e5e"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/ReplayCase.php",
+        "sha256": "8b4603e2ea954b7b8db0f07f0d5c60d1d86e2a2ec3762a914bcbcb19e04ebb7b"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/ReplayReport.php",
+        "sha256": "4be8713408c90ecf4225a780946630f37fe0b67f3df3f7e1a5a7b73d851e0135"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/ReplaySuite.php",
+        "sha256": "985c33085cfffbf59e7a06e4bb34f4e39d6b774583520314db3e19568e33f2fe"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/config/ValueSchema.php",
+        "sha256": "f8b6001baaa1ddfee433185af9bfd4d1851c734b4ef013441a8e34014680d659"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/rules/DeterministicRuleEvaluator.php",
+        "sha256": "13321c619e03bc639834de9311c9a86eed172041ee836c795e7c0e96ed990974"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/selection/RankedResultSelector.php",
+        "sha256": "d6602ecafe11388b3df4f922359889cde50ce2a3abbe0c974df9f5ecee21d804"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/domain/selection/SelectedMatches.php",
+        "sha256": "5572d18e0248a76ab98e1f54276c4457289cc239171c594345d2ed19d9859580"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/module.json",
+        "sha256": "1727998c6942c64679d4eba65332d0686dd469b201b68a8d405aab53b40e5ecd"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/architecture/run.php",
+        "sha256": "69677e2e2fa74bc944e99414025e5f0a08c248b1b3e1128a9fd9c311eb335fae"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/contracts/run.php",
+        "sha256": "ed1e40d82b24a63875e6021433800f9e2979c349b2bf2b012a980f888db08e45"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/integration/module.php",
+        "sha256": "8c449655a0403f45b314c2931f4d804b87d916023cc64318899ca6804342acfa"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/integration/rules.php",
+        "sha256": "ab4550e9e6f4ff61f50d990c45f94f516ea367383c8f4df6ab26a0b76aa4e8e7"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/native_access/Fixtures.php",
+        "sha256": "71093dd2d7dacd60c0e5f058a82f944d23c1b5ed04e61ce6b7e9571b5de7d566"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/native_access/run.php",
+        "sha256": "8785b3e58824a831d050acbbf20c16a894ab912c04dac837a0d74a16a16d9175"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/policy/Fixtures.php",
+        "sha256": "210ff813a3a2c3e9fa6ce987c00b7619d78c8751b0cd1aa6e13119790e419a32"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/policy/MemoryEnvironment.php",
+        "sha256": "d9010e7ad6e729846157036c5262b962bcf6d53cbb32b4d289ef4cdeb5ac536a"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/policy/run.php",
+        "sha256": "a3086ef4d667d067743449e97b1b0769cb61ff6e2887a50c3512576f9fd4aaee"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/profile_adapter/run.php",
+        "sha256": "de25234bdd08246eba7c65a3ea6e1f43844912163539a37e4e4f15db706bbab9"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/retrieval/run.php",
+        "sha256": "94d9668da613810fd7a440f13e0834505e5026ffc4a394b9bf1c3442ef2f7baa"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/rules/Fixtures.php",
+        "sha256": "d6767ed666f8b6a25336f8ee0df6b502f5e661b3b4c7d82480e293865d94f0ec"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/rules/run.php",
+        "sha256": "61bb116b8174cc20b200dc3eccfcacd748e28cf223be2e75a0f0b76b5e50e7d6"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/selection/run.php",
+        "sha256": "ff34801d2602d1b43cd9768cbb00ba9b5eb8d85b094d6f5c76696b2535b9cfce"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/support/FixtureEnvironment.php",
+        "sha256": "77f9ab53138466b0f6afca0e11dd753ff71c9e9660855b7c5d32f97b8b43da4c"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/support/autoload.php",
+        "sha256": "8de94996a9980d884f821c097829bb76437580399319d1d9c15a905955be0d31"
+      },
+      {
+        "path": "backend/protected/modules/matcher-recommendation/tests/unit/run.php",
+        "sha256": "c92697742112d1e05c606ae60bae585a694bf8ee172c856eea36cea664132d44"
+      }
+    ]
+  },
+  "anchors": {
+    "backend/protected/modules/.gitignore": "13b55b350b17140186a16af12402f8fa66407e092d2da22d09068c8d02ae84bc",
+    "backend/deploy/profile-fields.json": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+    "docs/首次注册与开场引导_用户原稿_冻结.md": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03"
+  },
+  "limitations": [
+    "Captured after delegation and before parent implementation; any earlier concurrent additions cannot be attributed from this report alone.",
+    "Core/vendor final comparison may reuse the unchanged prior R3 tree baseline."
+  ]
+}

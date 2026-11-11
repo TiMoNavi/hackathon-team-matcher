@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-11",
+  "passed": 51,
+  "total": 51,
+  "routes": [
+    {
+      "id": "route1-native",
+      "url": "http://localhost:8193/comparison-native/home/index",
+      "passed": 17,
+      "total": 17,
+      "initial_resource_decoded_bytes": 3849477
+    },
+    {
+      "id": "route2-plugin",
+      "url": "http://localhost:8193/comparison-react/home/index",
+      "passed": 17,
+      "total": 17,
+      "initial_resource_decoded_bytes": 377374
+    },
+    {
+      "id": "route3-standalone",
+      "url": "http://localhost:3193",
+      "passed": 17,
+      "total": 17,
+      "initial_resource_decoded_bytes": 549416
+    }
+  ]
+}

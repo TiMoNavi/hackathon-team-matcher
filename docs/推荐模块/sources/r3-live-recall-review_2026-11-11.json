@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "reviewer": "/root/r3_live_recall_audit",
+  "status": "completed",
+  "scope": {
+    "implementation": "R3 request-owned authorized index, hard-interval retrieval, trusted current-activity selection",
+    "business_source_edits": false,
+    "production_database_connections": 0,
+    "network_calls": 0,
+    "model_calls": 0,
+    "credentials_read": false,
+    "allowed_written_file": "docs/推荐模块/sources/r3-live-recall-review_2026-11-11.json"
+  },
+  "methodology": {
+    "skill": ".agents/skills/architecture-patterns/SKILL.md (full text read)",
+    "test_environment": "PHP -n with network entrypoints disabled; new synthetic SQLite :memory: only; no application bootstrap",
+    "full_suite_repeated": false
+  },
+  "findings": [
+    {
+      "id": "R3-REVIEW-001",
+      "severity": "high",
+      "status": "fixed_and_independently_retested",
+      "summary": "Microsecond boundaries lost precision when Yii batchInsert string-cast floating UTC seconds using PHP precision=14.",
+      "reproduction": {
+        "expected": 1794391200.123456,
+        "persisted_before_fix": "1794391200.1235",
+        "failure": "Unchanged source incorrectly failed assertCurrent with index_changed."
+      },
+      "resolution": "Publisher explicitly binds six-decimal endpoints as PDO string values and temporarily disables stringify fetches for interval integrity reads, restoring settings in finally. Retriever uses six-decimal bound endpoints.",
+      "retest": "Exact endpoint match, one microsecond earlier start, one microsecond later end, and equivalent timezone offsets behave correctly through actual publisher and retriever."
+    },
+    {
+      "id": "R3-REVIEW-002",
+      "severity": "deployment_limitation",
+      "status": "accepted_as_explicit_deployment_followup",
+      "summary": "Process termination can bypass finally/destructor cleanup and leave derived generation rows. No generation timestamps or orphan collector exist in this slice.",
+      "required_followup": "Document as production lifecycle work before enabling persistent deployment; this isolated R3 slice cannot claim crash-safe lifecycle cleanup."
+    }
+  ],
+  "independent_probes": [
+    {
+      "id": "interval-differential",
+      "status": "passed",
+      "cases": 240,
+      "random_seed": 73111,
+      "candidate_interval_features": 2,
+      "positive_cases": 134,
+      "negative_cases": 106,
+      "mismatches": 0,
+      "coverage": "Compare SQL full-union coverage to DeterministicRuleEvaluator on disjoint, touching, overlapping, nested and absent candidate intervals plus multiple requested windows."
+    },
+    {
+      "id": "publisher-retriever-boundaries",
+      "status": "passed",
+      "checks": 16,
+      "coverage": [
+        "Exact microsecond boundaries and timezone equivalence",
+        "One microsecond insufficient start/end coverage rejected",
+        "PDO stringify setting restored",
+        "Successful recall cleans terms and interval rows",
+        "400 eligible subjects projected as two batches of 200",
+        "Changed content on late nonselected ID invalidates complete generation",
+        "Cleanup after whole-pool revalidation failure",
+        "Unique generation per acquire; releasing one does not delete another",
+        "Incomplete known-or-unknown feature coverage rejected",
+        "Upstream exception absent from serialized error with zend.exception_ignore_args=0"
+      ]
+    },
+    {
+      "id": "current-activity-selection",
+      "status": "passed",
+      "checks": 10,
+      "coverage": [
+        "A second actual SqlCurrentEventSelectionStore performs a fully authorized select during the first writer postcheck and wins CAS",
+        "The losing writer does not delete the winner revision",
+        "Returning to the same Space does not revive prior context",
+        "Distinct authenticated sessions have separate selections",
+        "Precheck denial preserves old selection",
+        "Postcheck revocation invalidates only the new revision and does not restore old context",
+        "Upstream identity exception is sanitized including enabled trace arguments"
+      ],
+      "failure_semantics": "Parent explicitly approved precheck preservation versus postcheck invalidation; the latter does not promise restoration of the old selection."
+    }
+  ],
+  "pending": [],
+  "conclusion": "No unresolved blocking findings for this isolated R3 slice. This review does not certify full R3, M1, production persistence, HTTP delivery, or production recommendation quality.",
+  "independent_check_total": 266,
+  "counting_note": "240 + 16 + 10 distinct final checks. The original 14 index checks are included in the final 16. Do not add this number to parent regression totals, which overlap. Corrected probe-harness setup attempts are not counted.",
+  "static_review": {
+    "factory": "NativeRuleDiscoveryFactory pins context and policy, injects explicit P8-authorized capability and leaves policy/batch/clock runtime owners external. It performs no auto-install, migration, HTTP registration, AI construction or synthetic default.",
+    "layering": "CurrentEventSelectionWriter and SelectCurrentEvent stay framework-free; SQL, native eligibility, session identity and migrations remain adapters.",
+    "authorization": "Complete eligible roster is read in bounded batches. The post-recall source fingerprint includes each complete projection, both scope/content/permission versions, identity and P8 policy, plus evidence and unknown features. It is an observed fingerprint, not a durable permission epoch.",
+    "index_storage": "Random request-owned generations use SHA-256 exact normalized tokens and UTC interval boundaries. Plain encoding remains a compatibility mode for synthetic/nonmanaged providers; production managed publisher uses sha256. Hashes are not anonymization.",
+    "hard_conditions": "All hard predicates precede route LIMIT. Explicit preference uses alternatives; token requirements retain independent rule sources; time requires complete union coverage rather than any overlap.",
+    "current_selection": "Server actor and active session determine identity. SQL row is keyed by actor plus namespaced session hash. Random revisions and conditional mutations prevent stale overwrite. Selection facts alone do not grant access; NativeCurrentEventAccess validates current native account, Space, membership and blocks.",
+    "exceptions": "Index public boundaries reconstruct bounded exceptions without retaining the upstream error. Selection identity reads likewise discard original exception chains. Synthetic marker probes tested enabled exception trace arguments."
+  },
+  "remaining_limits": [
+    "Only fresh synthetic SQLite :memory: was exercised; real MySQL execution plans, migration behavior and production performance are not certified.",
+    "Finite before/after observation does not guarantee an atomic cross-module snapshot or detect every ABA history change.",
+    "Process crashes can bypass finally/destructor. Generation orphan collection and runtime storage lifecycle remain deployment work.",
+    "Fulltext-named route currently means exact normalized lexical token equality; no general free-text tokenizer, embeddings, or semantic provider was introduced.",
+    "No HTTP activity action, CSRF mapping, production PolicyStore, DiscoveryBatchStore or Clock implementation is supplied by the factory; ordinary API/pagination remain subsequent tasks.",
+    "No AI, idea target, raw identity display projection, complete historical applications, module enablement, production connection or deployment was independently certified."
+  ],
+  "final_source_sha256": {
+    "backend/protected/modules/matcher-recommendation/adapters/index/SqlCandidateIndexAccess.php": "bcb662b877750a8f26fffaedc091fb962427bd72ac48e3bfd27a4c48fe39766e",
+    "backend/protected/modules/matcher-recommendation/adapters/index/CandidateIndexSchema.php": "1f545b70149cc4ee42d6d8cae150e97fb37af7dd66281e69a9ff88484b3cf6a2",
+    "backend/protected/modules/matcher-recommendation/adapters/index/CandidateIndexException.php": "8c2b5dd4da60f725371d8cabef5417e22a9c278270c6f8f459305b04b4d52ff9",
+    "backend/protected/modules/matcher-recommendation/adapters/retrieval/SqlCandidateRetriever.php": "ac27cf15209241ee1705d8aa70e1b9483c7d1611b2b319a996fbb5b78f67bfae",
+    "backend/protected/modules/matcher-recommendation/adapters/composition/NativeRuleDiscoveryFactory.php": "4d3e6b5a21a3c68e49399a33a02ffa3ef5d851bb1b1c5123679757209360be49",
+    "backend/protected/modules/matcher-recommendation/contracts/AuthorizedIndexSnapshot.php": "cc46af8d1e31a0de38fdf42ecd060167c113869fec11f3de8811b108aedfe07f",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/ManagedCandidateIndexAccess.php": "bff7ccdb39625326c4d37385253cb159fcb9a2d44605f8bfd98e5a50cf38f039",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventSelectionWriter.php": "8ac514b39ff7ba18237fc93bd69c31393c1552f8bb57700429ccf288346f13f5",
+    "backend/protected/modules/matcher-recommendation/application/SelectCurrentEvent.php": "9adecbe2446ee2a2e195bfa1d9a1640c60d31ec06aad22041d3d8eb8b26fb301",
+    "backend/protected/modules/matcher-recommendation/adapters/native/ServerActorSessionSource.php": "a0e7e99c244b8a4671c39a9bdd8a58775b05a1dd4713bb7377175e0aa2d0bac4",
+    "backend/protected/modules/matcher-recommendation/adapters/native/YiiActorSessionSource.php": "cf44d86e1cd3afb68bddc3e04bfd3d655c23e39f68629e5fb186bd452fbbb4e2",
+    "backend/protected/modules/matcher-recommendation/adapters/native/SqlCurrentEventSelectionStore.php": "2cd0a61c0311a0a960d9ee5f506879d80ddf9aa7b66f69bbee4621ff3b64ce23",
+    "backend/protected/modules/matcher-recommendation/adapters/native/CurrentEventSelectionSchema.php": "0cf36e019f2a4717319aa3e55d9b39656926a7a3178b215eb0098cc0ee2adf76"
+  },
+  "reproduction_commands": {
+    "interval_differential": "backend/.runtime/php-mysql/bin/php -n -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec <<'PHP'\n<?php\n$base=getcwd().'/backend';require $base.'/protected/vendor/autoload.php';require $base.'/protected/vendor/yiisoft/yii2/Yii.php';Yii::setAlias('@humhub',$base.'/protected/humhub');require $base.'/protected/modules/matcher-recommendation/tests/support/autoload.php';require $base.'/protected/modules/matcher-recommendation/tests/native_access/Fixtures.php';\nuse humhub\\modules\\matcherRecommendation\\tests\\native_access\\Fixtures as N;use humhub\\modules\\matcherRecommendation\\tests\\rules\\Fixtures as R;use humhub\\modules\\matcherRecommendation\\tests\\policy\\Fixtures as P;use humhub\\modules\\matcherRecommendation\\adapters\\native\\NativeEligibilityQuery;use humhub\\modules\\matcherRecommendation\\adapters\\retrieval\\SqlCandidateRetriever;use humhub\\modules\\matcherRecommendation\\contracts\\ports\\{CandidateIndexAccess,PolicyStore};use humhub\\modules\\matcherRecommendation\\contracts\\{AuthorizedIndexSnapshot,CurrentEventContext,QueryIntent};use humhub\\modules\\matcherRecommendation\\domain\\RulePolicy;use humhub\\modules\\matcherRecommendation\\domain\\config\\Fingerprint;use humhub\\modules\\matcherRecommendation\\domain\\rules\\DeterministicRuleEvaluator;\n$db=N::database(1);$events=N::events($db);$context=$events->resolve(1);$p=P::parameters();$p['bindings']['availability_b']=$p['bindings']['availability'];$p['bindings']['availability_b']['source_key']='synthetic_availability_b';$p['rules'][6]['candidate_features'][]='availability_b';$policy=new RulePolicy('audit-interval-1',$p);\n$db->createCommand('CREATE TABLE matcher_recommendation_search_term (generation TEXT,space_id INTEGER,target_id INTEGER,route TEXT,feature TEXT,term TEXT)')->execute();$db->createCommand('CREATE TABLE matcher_recommendation_search_interval (generation TEXT,space_id INTEGER,target_id INTEGER,feature TEXT,starts_at REAL,ends_at REAL)')->execute();$db->createCommand()->insert('matcher_recommendation_search_term',['generation'=>'audit-generation-1','space_id'=>7,'target_id'=>2,'route'=>'structured','feature'=>'topics','term'=>'robotics'])->execute();\n$store=new class($policy) implements PolicyStore{public function __construct(private RulePolicy $p){}public function current(CurrentEventContext $c):RulePolicy{return $this->p;}};$gate=new class implements CandidateIndexAccess{public function acquire(CurrentEventContext $c,RulePolicy $p):AuthorizedIndexSnapshot{return new AuthorizedIndexSnapshot('audit-generation-1',7,Fingerprint::of($c),Fingerprint::of($p),'audit-purpose-1');}public function assertCurrent(CurrentEventContext $c,RulePolicy $p,AuthorizedIndexSnapshot $s):void{}};$eval=new DeterministicRuleEvaluator();$retriever=new SqlCandidateRetriever(new NativeEligibilityQuery($db),$events,$store,$eval,$gate);\nmt_srand(73111);$cases=240;$mismatches=[];$positives=0;$negatives=0;$iso=static fn(int $n):string=>'2026-11-11T00:00:'.str_pad((string)$n,2,'0',STR_PAD_LEFT).'Z';\nfor($i=0;$i<$cases;$i++){$db->createCommand()->delete('matcher_recommendation_search_interval')->execute();$features=['topics'=>['robotics'],'availability'=>[],'availability_b'=>[]];foreach(['availability','availability_b'] as $feature){for($k=0,$n=mt_rand(0,5);$k<$n;$k++){$a=mt_rand(0,14);$b=mt_rand($a+1,18);$features[$feature][]=['starts_at'=>$iso($a),'ends_at'=>$iso($b)];$db->createCommand()->insert('matcher_recommendation_search_interval',['generation'=>'audit-generation-1','space_id'=>7,'target_id'=>2,'feature'=>$feature,'starts_at'=>1794355200+$a,'ends_at'=>1794355200+$b])->execute();}}$wanted=[];for($k=0,$n=mt_rand(1,3);$k<$n;$k++){$a=mt_rand(0,14);$b=mt_rand($a+1,18);$wanted[]=['starts_at'=>$iso($a),'ends_at'=>$iso($b)];}$intent=new QueryIntent('person',[R::condition('topics','similarity',['robotics']),R::condition('availability','interval_overlap',$wanted,'hard')]);$assessment=$eval->evaluate($context,$intent,R::candidate($features,$p,id:'2'),$policy,['structured'=>1]);$expected=$assessment->qualifies;$actual=$retriever->recall($context,$intent)!==[];if($expected){$positives++;}else{$negatives++;}if($expected!==$actual){$mismatches[]=['case'=>$i,'expected'=>$expected,'actual'=>$actual];}}\necho json_encode(['status'=>$mismatches===[]?'passed':'failed','cases'=>$cases,'seed'=>73111,'features'=>2,'positives'=>$positives,'negatives'=>$negatives,'mismatches'=>$mismatches],JSON_PRETTY_PRINT).PHP_EOL;\nPHP",
+    "index_boundaries_and_sanitization": "backend/.runtime/php-mysql/bin/php -n -d zend.exception_ignore_args=0 -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec <<'PHP'\n<?php\n$base=getcwd().'/backend';require $base.'/protected/vendor/autoload.php';require $base.'/protected/vendor/yiisoft/yii2/Yii.php';Yii::setAlias('@humhub',$base.'/protected/humhub');$m=$base.'/protected/modules/matcher-recommendation';require $m.'/tests/support/autoload.php';require $m.'/tests/native_access/Fixtures.php';require $m.'/tests/index/Fixtures.php';\nuse humhub\\modules\\matcherRecommendation\\tests\\native_access\\{Fixtures as N,MutableSelection};use humhub\\modules\\matcherRecommendation\\tests\\policy\\Fixtures as P;use humhub\\modules\\matcherRecommendation\\tests\\rules\\Fixtures as R;use humhub\\modules\\matcherRecommendation\\tests\\index\\{MutableProjectionReader,MutablePolicies};use humhub\\modules\\matcherRecommendation\\adapters\\native\\NativeEligibilityQuery;use humhub\\modules\\matcherRecommendation\\adapters\\index\\{CandidateIndexSchema,SqlCandidateIndexAccess,CandidateIndexException};use humhub\\modules\\matcherRecommendation\\adapters\\retrieval\\SqlCandidateRetriever;use humhub\\modules\\matcherRecommendation\\contracts\\QueryIntent;use humhub\\modules\\matcherRecommendation\\domain\\rules\\DeterministicRuleEvaluator;\nfunction verify($v,$label){if(!$v){throw new RuntimeException($label);} $GLOBALS['passed'][]=$label;}\nfunction setup($n){$db=N::database($n);$db->schemaCache=null;CandidateIndexSchema::install($db);$sel=new MutableSelection();$ev=N::events($db,$sel);$ctx=$ev->resolve(1);$reader=new MutableProjectionReader();$ps=new MutablePolicies(P::policy());$ix=new SqlCandidateIndexAccess($db,new NativeEligibilityQuery($db),$ev,$reader,$ps,'audit-purpose-1');return[$db,$ev,$ctx,$reader,$ps,$ix,$sel];}\n$passed=[];[$db,$ev,$ctx,$reader,$ps,$ix]=setup(1);$available=[['starts_at'=>'2026-11-11T10:00:00.123456Z','ends_at'=>'2026-11-11T11:00:00.654321Z']];$reader->overrides['2']=['topics'=>['robotics'],'availability'=>$available];$s=$ix->acquire($ctx,$ps->policy);$before=$db->getMasterPdo()->getAttribute(PDO::ATTR_STRINGIFY_FETCHES);$ix->assertCurrent($ctx,$ps->policy,$s);verify($db->getMasterPdo()->getAttribute(PDO::ATTR_STRINGIFY_FETCHES)===$before,'index integrity read restores PDO stringify setting');$ix->release($s);$retriever=new SqlCandidateRetriever(new NativeEligibilityQuery($db),$ev,$ps,new DeterministicRuleEvaluator(),$ix);\nforeach([['2026-11-11T10:00:00.123456Z','2026-11-11T11:00:00.654321Z',true],['2026-11-11T10:00:00.123455Z','2026-11-11T11:00:00.654321Z',false],['2026-11-11T10:00:00.123456Z','2026-11-11T11:00:00.654322Z',false],['2026-11-11T18:00:00.123456+08:00','2026-11-11T19:00:00.654321+08:00',true]] as $i=>[$a,$b,$expected]){$q=new QueryIntent('person',[R::condition('topics','similarity',['robotics']),R::condition('availability','interval_overlap',[['starts_at'=>$a,'ends_at'=>$b]],'hard')]);verify(($retriever->recall($ctx,$q)!==[])===$expected,'microsecond and timezone full-chain case '.$i);verify((int)$db->createCommand('SELECT count(*) FROM matcher_recommendation_search_term')->queryScalar()===0&&(int)$db->createCommand('SELECT count(*) FROM matcher_recommendation_search_interval')->queryScalar()===0,'successful recall releases generation case '.$i);}\n[$db,$ev,$ctx,$reader,$ps,$ix]=setup(400);$s=$ix->acquire($ctx,$ps->policy);verify(count($reader->batches)===2&&array_map('count',$reader->batches)===[200,200],'full 400 roster split into exactly two <=200 projections');$reader->overrides['400']=['topics'=>['new-nonselected-value']];try{$ix->assertCurrent($ctx,$ps->policy,$s);verify(false,'nonselected late candidate changed');}catch(CandidateIndexException $e){verify($e->reason==='source_changed'&&$e->getPrevious()===null,'late nonselected candidate content change invalidates entire generation');}$ix->release($s);verify((int)$db->createCommand('SELECT count(*) FROM matcher_recommendation_search_term')->queryScalar()===0,'failed whole-pool recheck can release generation');\n[$db,$ev,$ctx,$reader,$ps,$ix]=setup(2);$s1=$ix->acquire($ctx,$ps->policy);$s2=$ix->acquire($ctx,$ps->policy);verify($s1->generation!==$s2->generation,'two acquisitions never reuse generation');$ix->release($s1);$ix->assertCurrent($ctx,$ps->policy,$s2);verify(true,'releasing one generation preserves concurrent owner generation');$ix->release($s2);\n\n$badReader=new class implements \\humhub\\modules\\matcherRecommendation\\contracts\\ports\\CandidateProjectionReader {public function read(\\humhub\\modules\\matcherRecommendation\\contracts\\CandidateRequest $r):array{return [R::candidate(['topics'=>['robotics']],id:'2')];}};\n$badIndex=new SqlCandidateIndexAccess($db,new NativeEligibilityQuery($db),$ev,$badReader,$ps,'audit-purpose-1');try{$badIndex->acquire($ctx,$ps->policy);verify(false,'incomplete features rejected');}catch(CandidateIndexException $e){verify($e->reason==='invalid_projection','omitting known-or-unknown binding coverage is rejected');}\n$throwing=new class implements \\humhub\\modules\\matcherRecommendation\\contracts\\ports\\CandidateProjectionReader {public function read(\\humhub\\modules\\matcherRecommendation\\contracts\\CandidateRequest $r):array{throw new RuntimeException('audit-secret-upstream-sql-marker');}};\n$badIndex=new SqlCandidateIndexAccess($db,new NativeEligibilityQuery($db),$ev,$throwing,$ps,'audit-purpose-1');try{$badIndex->acquire($ctx,$ps->policy);verify(false,'upstream sanitized');}catch(CandidateIndexException $e){verify($e->reason==='dependency_unavailable'&&$e->getPrevious()===null&&!str_contains(serialize($e),'audit-secret-upstream-sql-marker'),'upstream error absent from serialized error including enabled trace args');}\n\necho json_encode(['status'=>'passed','checks'=>count($passed),'checks_passed'=>$passed,'network_calls'=>0,'production_database_calls'=>0],JSON_PRETTY_PRINT).PHP_EOL;\nPHP",
+    "selection_cas_and_revocation": "backend/.runtime/php-mysql/bin/php -n -d zend.exception_ignore_args=0 -d allow_url_fopen=0 -d disable_functions=fsockopen,pfsockopen,stream_socket_client,curl_exec,curl_multi_exec <<'PHP'\n<?php\n$base=getcwd().'/backend';require $base.'/protected/vendor/autoload.php';require $base.'/protected/vendor/yiisoft/yii2/Yii.php';Yii::setAlias('@humhub',$base.'/protected/humhub');$m=$base.'/protected/modules/matcher-recommendation';require $m.'/tests/support/autoload.php';require $m.'/tests/native_access/Fixtures.php';\nuse humhub\\modules\\matcherRecommendation\\tests\\native_access\\Fixtures as F;use humhub\\modules\\matcherRecommendation\\adapters\\native\\{CurrentEventSelectionSchema,NativeAccessException,NativeCurrentEventAccess,ServerActorSessionSource,SqlCurrentEventSelectionStore};\nfinal class AuditIdentity implements ServerActorSessionSource{public function __construct(public string $session='audit-a',public int $actor=1){}public function read():array{return ['actor_id'=>$this->actor,'session_hash'=>hash('sha256',$this->session)];}}\nfunction ok($v,$s){if(!$v){throw new RuntimeException('FAIL '.$s);} $GLOBALS['checks'][]=$s;}function denied($f,$r,$s){try{$f();}catch(NativeAccessException $e){ok($e->reason===$r&&$e->getPrevious()===null,$s);return;}throw new RuntimeException('DID NOT REJECT '.$s);}\nfunction setup(){ $db=F::database(2);$db->schemaCache=null;CurrentEventSelectionSchema::install($db);$id=new AuditIdentity();$s=new SqlCurrentEventSelectionStore($db,$id,'audit-policy-1');return[$db,$id,$s,new NativeCurrentEventAccess($db,$s,'audit-policy-1')];}\n$checks=[];[$db,$id,$first,$events]=setup();$old=$first->select(7,null);$oldRevision=$first->read()['selection_revision'];$second=new SqlCurrentEventSelectionStore($db,new AuditIdentity(),'audit-policy-1');$db->selects=[];\n$db->onSelect=function($connection,$n)use($second){if($n===2){$connection->onSelect=null;$rev=$connection->getMasterPdo()->query('SELECT selection_revision FROM matcher_recommendation_current_selection')->fetchColumn();$second->select(7,$rev);}};\ndenied(fn()=>$first->select(8,$oldRevision),'context_changed','real second adapter wins during first adapter postcheck');$winner=$first->read();ok($winner['space_id']===7&&$winner['selection_revision']!==$oldRevision,'first adapter cleanup preserves independently authorized winning revision');denied(fn()=>$events->assertCurrent($old),'context_changed','returning to same Space does not revive old context');\n$other=new SqlCurrentEventSelectionStore($db,new AuditIdentity('audit-b'),'audit-policy-1');denied(fn()=>$other->read(),'current_event_required','other authenticated session cannot replay selection');$other->select(8,null);ok($first->read()===$winner,'other session selection does not overwrite original session');\n[$db,$id,$s,$events]=setup();$s->select(7,null);$r=$s->read()['selection_revision'];$db->selects=[];$db->onSelect=function($connection,$n){if($n===4){$connection->onSelect=null;$connection->createCommand()->delete('space_membership',['user_id'=>1,'space_id'=>8])->execute();}};denied(fn()=>$s->select(8,$r),'access_denied','post-CAS membership revocation fails context publication');denied(fn()=>$s->read(),'current_event_required','postcheck failure invalidates only its issued selection without restoring an old context');\n[$db,$id,$s]=setup();$s->select(7,null);$before=$s->read();$db->createCommand()->delete('space_membership',['user_id'=>1,'space_id'=>8])->execute();denied(fn()=>$s->select(8,$before['selection_revision']),'access_denied','precheck rejects unjoined target');ok($s->read()===$before,'precheck failure preserves old selection');\n$bad=new class implements ServerActorSessionSource{public function read():array{throw new RuntimeException('audit-sensitive-session-marker');}};$badStore=new SqlCurrentEventSelectionStore($db,$bad,'audit-policy-1');try{$badStore->read();}catch(Throwable $e){ok(!str_contains(serialize($e),'audit-sensitive-session-marker'),'typed boundary strips backend exception including trace args');}\necho json_encode(['status'=>'passed','checks'=>count($checks),'checks_passed'=>$checks,'real_second_adapter_cas_executed'=>true,'production_database_calls'=>0,'model_calls'=>0],JSON_PRETTY_PRINT).PHP_EOL;\nPHP"
+  }
+}

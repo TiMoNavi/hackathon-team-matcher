@@ -1,0 +1,113 @@
+{
+  "checks": [
+    "群聊和私聊独立路由及初始筛选",
+    "实际渲染 Inter、Bricolage Grotesque 及中文 PingFang 字形",
+    "搜索、无结果、清空搜索和分类筛选",
+    "分会话草稿、回车发送、换行、中文输入法保护、空消息阻止及消息隔离",
+    "表情插入、分会话附件、移除、附件发送及本地下载",
+    "群详情成员、置顶、免打扰演示与 Escape 关闭",
+    "建群名称和人数验证、创建空群、主动开场后发送",
+    "选择演示联系人开启新私聊",
+    "7 组屏幕尺寸：横向不溢出、输入区可见、消息滚动区可用、窄屏返回与键盘打开会话",
+    "系统减少动效与手动暂停",
+    "刷新恢复虚构初始会话，不冒充持久化",
+    "全程无浏览器运行时异常或失败 HTTP 响应"
+  ],
+  "fonts": {
+    "body": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 4
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 23
+      }
+    ],
+    "brand": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 12
+      },
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 2
+      }
+    ]
+  },
+  "errors": [],
+  "failedResponses": [],
+  "layout": [
+    {
+      "width": 1440,
+      "height": 900,
+      "documentWidth": 1440,
+      "composerBottom": 819,
+      "composerTop": 709,
+      "messageViewportHeight": 373,
+      "messageContentHeight": 697
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "documentWidth": 1024,
+      "composerBottom": 687,
+      "composerTop": 577,
+      "messageViewportHeight": 241,
+      "messageContentHeight": 697
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "documentWidth": 768,
+      "composerBottom": 822.5,
+      "composerTop": 700.5,
+      "messageViewportHeight": 395,
+      "messageContentHeight": 697
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "composerBottom": 781,
+      "composerTop": 668,
+      "messageViewportHeight": 413,
+      "messageContentHeight": 684
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "composerBottom": 515,
+      "composerTop": 414,
+      "messageViewportHeight": 263,
+      "messageContentHeight": 721
+    },
+    {
+      "width": 390,
+      "height": 420,
+      "documentWidth": 390,
+      "composerBottom": 367,
+      "composerTop": 266,
+      "messageViewportHeight": 115,
+      "messageContentHeight": 649
+    },
+    {
+      "width": 768,
+      "height": 500,
+      "documentWidth": 768,
+      "composerBottom": 439.5,
+      "composerTop": 334.5,
+      "messageViewportHeight": 173,
+      "messageContentHeight": 659
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "file": "tsconfig.json",
+    "source": "../首页/tsconfig.json",
+    "sha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3"
+  },
+  {
+    "file": "eslint.config.mjs",
+    "source": "../首页/eslint.config.mjs",
+    "sha256": "870f1adccecf3051cbcd9fd307cef51d7633cf510979c181a81f4b1797273493"
+  },
+  {
+    "file": "next-env.d.ts",
+    "source": "../首页/next-env.d.ts",
+    "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+  },
+  {
+    "file": "components.json",
+    "source": "../首页/components.json",
+    "sha256": "23847d364d38ace78e85de854424e7f91fef4aa5f28dfa636dc39b82c93d3b12"
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "source": "../首页/pnpm-lock.yaml",
+    "sha256": "9fdc6573572e6d258e4b3c3c8f88fa3a6458807c137584a575a872bf8d6aa3b6"
+  },
+  {
+    "file": "components/ui/button.tsx",
+    "source": "../首页/components/ui/button.tsx",
+    "sha256": "ceb0806eefc388559b7dc1f4a28e164ac573cd870f8f783070042205964b5c21"
+  },
+  {
+    "file": "components/ui/dialog.tsx",
+    "source": "../首页/components/ui/dialog.tsx",
+    "sha256": "8ab651fb3207035f93fa3a9cc6bb09fd830b7a372879111229c1510313d7b67b"
+  },
+  {
+    "file": "components/ui/card.tsx",
+    "source": "../首页/components/ui/card.tsx",
+    "sha256": "28dec8d76e1cf48bf822bf533acc00a9b389d2de804a40b27a24b869e4845ed7"
+  },
+  {
+    "file": "components/ui/badge.tsx",
+    "source": "../首页/components/ui/badge.tsx",
+    "sha256": "befabd8ae03134b9175bd26fe8243dc2025f773d042ddfe82c764323ce87be6f"
+  },
+  {
+    "file": "components/effects/tilt-card.tsx",
+    "source": "../首页/components/effects/tilt-card.tsx",
+    "sha256": "69c24693d70581fbf169e71eedc4318897302539fb0a0f5cbc46c719d913d7ba"
+  },
+  {
+    "file": "components/effects/blur-crossfade.tsx",
+    "source": "../首页/components/effects/blur-crossfade.tsx",
+    "sha256": "10900dc8d059582f1e072764904980d7031d5fa0c490aacead6d1fb774f540dd"
+  },
+  {
+    "file": "components/effects/gradient-floor.tsx",
+    "source": "../首页/components/effects/gradient-floor.tsx",
+    "sha256": "df01c384627d3c66b2fa91ed3981212c71832124f92b4f0262d4937359c400d9"
+  },
+  {
+    "file": "components/effects/grid-background.tsx",
+    "source": "../首页/components/effects/grid-background.tsx",
+    "sha256": "ff2d8b9a63c48206cd44bca5e7d247985fcbc4bdd347c88672d6ada17de719b2"
+  },
+  {
+    "file": "components/motion-preference.tsx",
+    "source": "../首页/components/motion-preference.tsx",
+    "sha256": "7466ba03a62b827a1ff43be86496bc07ccec4006b2e5a82e25ae39e82ca7fd11"
+  },
+  {
+    "file": "lib/utils.ts",
+    "source": "../首页/lib/utils.ts",
+    "sha256": "14300d758170c270c75b057f38fedb3793a5920ea872f0477e29fb131185e8a7"
+  },
+  {
+    "file": "app/fonts/inter-latin.woff2",
+    "source": "../首页/app/fonts/inter-latin.woff2",
+    "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+  },
+  {
+    "file": "app/fonts/bricolage-grotesque-latin.woff2",
+    "source": "../首页/app/fonts/bricolage-grotesque-latin.woff2",
+    "sha256": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d"
+  },
+  {
+    "file": "app/fonts/SOURCE.json",
+    "source": "../首页/app/fonts/SOURCE.json",
+    "sha256": "560df0a2adac6c8c915aa80118eeb17c924a9bb268e12bfada3c44709d72e8a3"
+  }
+]

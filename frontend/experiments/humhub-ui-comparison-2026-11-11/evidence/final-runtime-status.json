@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-11T13:52:46.206290+00:00",
+  "services": [
+    {
+      "url": "http://127.0.0.1:8090",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8193/comparison-native/home/index",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8193/comparison-react/home/index",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3193",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4193",
+      "status": 200
+    }
+  ],
+  "browser_open_exit_code": 0,
+  "original_preview_running": true,
+  "previews_left_running": true
+}

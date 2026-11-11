@@ -1,0 +1,16 @@
+# Private CollectUI credentials and local authenticated MCP configuration
+.local/
+.env.local
+.env.*.local
+.mcp.json
+.vscode/mcp.json
+
+# Generated application files
+node_modules/
+dist/
+.next/
+*.log
+.DS_Store
+
+# Local third-party source snapshots
+vendor/

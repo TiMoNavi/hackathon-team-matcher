@@ -1,0 +1,213 @@
+{
+  "checks": [
+    {
+      "name": "Bottom toolbar, counter and progress strip removed",
+      "passed": true
+    },
+    {
+      "name": "Six scenes retained with only one interactive",
+      "passed": true
+    },
+    {
+      "name": "Real wheel down opens the next screen",
+      "passed": true
+    },
+    {
+      "name": "Forward transition enters vertically from below",
+      "passed": true,
+      "detail": [
+        {
+          "direction": "forward",
+          "x": 0,
+          "y": 912
+        },
+        {
+          "direction": "backward",
+          "x": 0,
+          "y": -912
+        }
+      ]
+    },
+    {
+      "name": "Backward transition enters vertically from above",
+      "passed": true,
+      "detail": [
+        {
+          "direction": "forward",
+          "x": 0,
+          "y": 912
+        },
+        {
+          "direction": "backward",
+          "x": 0,
+          "y": -912
+        }
+      ]
+    },
+    {
+      "name": "Horizontal wheel no longer changes scenes",
+      "passed": true
+    },
+    {
+      "name": "Horizontal page keyboard navigation removed",
+      "passed": true
+    },
+    {
+      "name": "Down arrow turns at the page boundary",
+      "passed": true
+    },
+    {
+      "name": "Up arrow returns at the page boundary",
+      "passed": true
+    },
+    {
+      "name": "One wheel burst turns only one screen",
+      "passed": true
+    },
+    {
+      "name": "Modal interactions do not turn pages",
+      "passed": true
+    },
+    {
+      "name": "Recommendation still handles its own horizontal keys",
+      "passed": true
+    },
+    {
+      "name": "Nested chat keeps its native scroll",
+      "passed": true
+    },
+    {
+      "name": "Chat input and send still work",
+      "passed": true
+    },
+    {
+      "name": "Profile choice survives page changes",
+      "passed": true
+    },
+    {
+      "name": "Browser Back retains vertical scene navigation",
+      "passed": true
+    },
+    {
+      "name": "Paused page navigation works without animation",
+      "passed": true
+    },
+    {
+      "name": "Stage extends to viewport bottom at 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "document": 1440,
+        "stageBottom": 1000,
+        "height": 1000
+      }
+    },
+    {
+      "name": "Stage extends to viewport bottom at 1024",
+      "passed": true,
+      "detail": {
+        "width": 1024,
+        "document": 1024,
+        "stageBottom": 1000,
+        "height": 1000
+      }
+    },
+    {
+      "name": "Stage extends to viewport bottom at 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "document": 768,
+        "stageBottom": 1000,
+        "height": 1000
+      }
+    },
+    {
+      "name": "Stage extends to viewport bottom at 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "document": 390,
+        "stageBottom": 844,
+        "height": 844
+      }
+    },
+    {
+      "name": "Stage extends to viewport bottom at 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "document": 320,
+        "stageBottom": 844,
+        "height": 844
+      }
+    },
+    {
+      "name": "Real mobile upward swipe opens next screen",
+      "passed": true
+    },
+    {
+      "name": "Real mobile downward swipe returns to previous screen",
+      "passed": true
+    },
+    {
+      "name": "Horizontal swipe no longer turns the page",
+      "passed": true
+    },
+    {
+      "name": "Long mobile content scrolls before page turn",
+      "passed": true
+    },
+    {
+      "name": "Mobile flips after reaching the content bottom",
+      "passed": true
+    },
+    {
+      "name": "Returning upward lands at previous content bottom",
+      "passed": true
+    },
+    {
+      "name": "Touching chat scrolls the chat, not the page",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "widths": [
+    {
+      "width": 1440,
+      "document": 1440,
+      "stageBottom": 1000,
+      "height": 1000
+    },
+    {
+      "width": 1024,
+      "document": 1024,
+      "stageBottom": 1000,
+      "height": 1000
+    },
+    {
+      "width": 768,
+      "document": 768,
+      "stageBottom": 1000,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "document": 390,
+      "stageBottom": 844,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "document": 320,
+      "stageBottom": 844,
+      "height": 844
+    }
+  ],
+  "passed": true
+}

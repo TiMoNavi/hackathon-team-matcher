@@ -1,0 +1,1145 @@
+{
+    "status": "passed",
+    "stage": "baseline",
+    "date_utc": "2026-11-11T19:00:29+00:00",
+    "database": "humhub_profile_s73_test_root_4a70f3d1",
+    "server_version": "9.7.4",
+    "scope": "ordinary discovery BrowsePeople with real native current-event gates, P1\/P8 and MySQL; fixed server-selection fixture excludes HTTP\/session selection SQL and response serialization",
+    "measurement_notes": [
+        "client query time includes PDO execute\/fetch and Yii command overhead",
+        "returned_rows counts fetchAll results including repeated authorization reads; not scanned rows",
+        "session Handler_read counters measure engine operations and are not exact rows examined",
+        "EXPLAIN rows are optimizer estimates, not ANALYZE actual rows",
+        "no SQL text, bound parameters, profile values, credentials or exception messages are exported",
+        "recommendation candidate indexes are outside this ordinary browse path"
+    ],
+    "source_sha256": {
+        "ordinary_source": "93aee7c504ce6056b5a2093f48c43115735cb0797cd1ba22588f4c1790a3f5a8",
+        "browse_use_case": "ada847d5eed7b31384eb3d4d88f08d97522e26d0fa2bf5d084d5c11f07caeaad",
+        "p1_field_catalog": "9184135f0e4a11231754fdcb836d6ef7b783ff2a8a1fc285b4beb0ad49bd5b61",
+        "p1_profile_batch": "beefe251312e21631dce46dcff5cae52c208236176d78d3bd7ebadfd0949e0db",
+        "p8_batch": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999"
+    },
+    "scenarios": {
+        "recent_first": {
+            "repetitions": 1,
+            "median_use_case_ms": 14046.484,
+            "samples": [
+                {
+                    "query_count": 66,
+                    "query_elapsed_ms": 2545.296,
+                    "returned_rows": 47644,
+                    "groups": {
+                        "native_current_event_gate": {
+                            "count": 6,
+                            "elapsed_ms": 15.118271,
+                            "returned_rows": 6,
+                            "failures": 0
+                        },
+                        "ordinary_candidate_eligibility": {
+                            "count": 4,
+                            "elapsed_ms": 85.501103,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_confirmed_identity": {
+                            "count": 8,
+                            "elapsed_ms": 174.425502,
+                            "returned_rows": 1436,
+                            "failures": 0
+                        },
+                        "p1_profile_attributes": {
+                            "count": 8,
+                            "elapsed_ms": 2071.067172,
+                            "returned_rows": 36856,
+                            "failures": 0
+                        },
+                        "p1_profile_state": {
+                            "count": 16,
+                            "elapsed_ms": 74.08657900000001,
+                            "returned_rows": 5744,
+                            "failures": 0
+                        },
+                        "p8_owner_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 108.16192399999998,
+                            "returned_rows": 2154,
+                            "failures": 0
+                        },
+                        "p8_viewer_eligibility": {
+                            "count": 12,
+                            "elapsed_ms": 16.934959,
+                            "returned_rows": 12,
+                            "failures": 0
+                        }
+                    },
+                    "use_case_elapsed_ms": 14046.484,
+                    "non_query_elapsed_ms": 11501.188,
+                    "batch_calls": {
+                        "p8_profiles": [
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 3456.809
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 3045.656
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_profiles": 200,
+                                "elapsed_ms": 3813.49
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_profiles": 159,
+                                "elapsed_ms": 2714.625
+                            }
+                        ],
+                        "p1_identities": [
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 63.558
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 51.47
+                            },
+                            {
+                                "requested_owners": 200,
+                                "returned_identities": 200,
+                                "elapsed_ms": 100.723
+                            },
+                            {
+                                "requested_owners": 159,
+                                "returned_identities": 159,
+                                "elapsed_ms": 39.063
+                            }
+                        ]
+                    },
+                    "session_handler_read_delta": {
+                        "Handler_read_first": 40,
+                        "Handler_read_key": 102552,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 38200,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 36856,
+                        "Handler_read_rnd_next": 148442
+                    },
+                    "items": 24,
+                    "has_more": true,
+                    "owner_id_order_sha256": "7d003837b5225d31f2789f6283bc87636a78c1507978943a2d4e5c51d8e72789"
+                }
+            ]
+        }
+    },
+    "explain_estimated": {
+        "native_current_event_gate": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bs",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 0,
+                    "Extra": "unique row not found",
+                    "estimated_rows": 0
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "m",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                }
+            ]
+        },
+        "ordinary_candidate_eligibility": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "u",
+                    "type": "range",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 0.67,
+                    "Extra": "Using where",
+                    "estimated_rows": 502
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "ds",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,idx_matcher_discovery_space",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 10,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "m",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bo",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bi",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bs",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bv",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "fo",
+                    "type": "eq_ref",
+                    "possible_keys": "idx-friends,fk-friend",
+                    "key": "idx-friends",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "fi",
+                    "type": "eq_ref",
+                    "possible_keys": "idx-friends,fk-friend",
+                    "key": "idx-friends",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vm",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                }
+            ]
+        },
+        "p8_viewer_eligibility": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vb",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 0,
+                    "Extra": "unique row not found",
+                    "estimated_rows": 0
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vm",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                }
+            ]
+        },
+        "p8_owner_eligibility": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "v",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": "Using temporary",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vb",
+                    "type": "const",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 0,
+                    "Extra": "unique row not found",
+                    "estimated_rows": 0
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "vm",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where",
+                    "estimated_rows": 2
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "u",
+                    "type": "ALL",
+                    "possible_keys": "PRIMARY,unique_email,unique_username,unique_guid",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 0.27,
+                    "Extra": "Using where; Using join buffer (hash join)",
+                    "estimated_rows": 503
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "m",
+                    "type": "ref",
+                    "possible_keys": "index_status,fk_space_membership-space_id,fk_space_membership-user_id",
+                    "key": "fk_space_membership-user_id",
+                    "key_len": "4",
+                    "filtered": 65.95,
+                    "Extra": "Using where; Distinct",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bo",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index; Distinct",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bi",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index; Distinct",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "bs",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,fk-contentcontainer-blocked-users-rel-user-id",
+                    "key": "PRIMARY",
+                    "key_len": "8",
+                    "filtered": 100,
+                    "Extra": "Using where; Not exists; Using index; Distinct",
+                    "estimated_rows": 1
+                }
+            ]
+        },
+        "p1_profile_state": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "matcher_profile_state",
+                    "type": "ALL",
+                    "possible_keys": "mp_state_owner_scope",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 36.26,
+                    "Extra": "Using where; Using filesort",
+                    "estimated_rows": 1103
+                }
+            ]
+        },
+        "p1_profile_attributes": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "a",
+                    "type": "ALL",
+                    "possible_keys": "mp_attribute_native,mp_attribute_field_sort,mp_attribute_match_code,mp_attribute_state_fk",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 0.85,
+                    "Extra": "Using where; Using temporary; Using filesort",
+                    "estimated_rows": 19019
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "s",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,mp_state_owner_scope,mp_state_id_scope,mp_state_revision_fk",
+                    "key": "PRIMARY",
+                    "key_len": "36",
+                    "filtered": 36.26,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "p",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 1
+                }
+            ]
+        },
+        "p1_confirmed_identity": {
+            "measurement": "EXPLAIN optimizer estimates; not measured rows examined",
+            "plan": [
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "p",
+                    "type": "ALL",
+                    "possible_keys": "PRIMARY",
+                    "key": null,
+                    "key_len": null,
+                    "filtered": 42.37,
+                    "Extra": "Using where; Using temporary; Using filesort",
+                    "estimated_rows": 472
+                },
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "s",
+                    "type": "eq_ref",
+                    "possible_keys": "PRIMARY,mp_state_owner_scope,mp_state_id_scope,mp_state_revision_fk",
+                    "key": "mp_state_owner_scope",
+                    "key_len": "70",
+                    "filtered": 33.33,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "a",
+                    "type": "eq_ref",
+                    "possible_keys": "mp_attribute_native,mp_attribute_field_sort,mp_attribute_match_code,mp_attribute_state_fk",
+                    "key": "mp_attribute_native",
+                    "key_len": "103",
+                    "filtered": 5,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                },
+                {
+                    "id": 1,
+                    "select_type": "PRIMARY",
+                    "table": "<derived2>",
+                    "type": "ref",
+                    "possible_keys": "<auto_key0>",
+                    "key": "<auto_key0>",
+                    "key_len": "36",
+                    "filtered": 100,
+                    "Extra": null,
+                    "estimated_rows": 2
+                },
+                {
+                    "id": 2,
+                    "select_type": "DERIVED",
+                    "table": "matcher_profile_state",
+                    "type": "range",
+                    "possible_keys": "PRIMARY,mp_state_owner_scope,mp_state_id_scope,mp_state_revision_fk",
+                    "key": "mp_state_owner_scope",
+                    "key_len": "70",
+                    "filtered": 100,
+                    "Extra": "Using where; Using index; Using temporary",
+                    "estimated_rows": 200
+                },
+                {
+                    "id": 2,
+                    "select_type": "DERIVED",
+                    "table": "matcher_profile_draft",
+                    "type": "ref",
+                    "possible_keys": "mp_draft_state_status",
+                    "key": "mp_draft_state_status",
+                    "key_len": "54",
+                    "filtered": 4.11,
+                    "Extra": "Using where",
+                    "estimated_rows": 1
+                }
+            ]
+        }
+    },
+    "index_comparison": {
+        "available": true,
+        "same_result_for_all_variants": true,
+        "ordinary_discovery_query": "p1_profile_attributes",
+        "existing_index_columns": {
+            "PRIMARY": [
+                "attribute_id"
+            ],
+            "mp_attribute_native": [
+                "state_id",
+                "native_binding"
+            ],
+            "mp_attribute_field_sort": [
+                "state_id",
+                "field_key",
+                "sort_order"
+            ],
+            "mp_attribute_match_code": [
+                "field_key",
+                "value_code",
+                "visibility",
+                "state_id"
+            ],
+            "mp_attribute_state_fk": [
+                "state_id",
+                "scope_key"
+            ]
+        },
+        "measurement_note": "Handler counters are actual engine read operations, not rows_examined. EXPLAIN rows are estimates.",
+        "variants": {
+            "optimizer_default": {
+                "client_query_elapsed_ms": [
+                    246.714881,
+                    390.556661,
+                    390.567532
+                ],
+                "returned_rows": 5133,
+                "session_handler_read_delta": [
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    }
+                ],
+                "explain_estimated": [
+                    {
+                        "table": "a",
+                        "type": "ALL",
+                        "key": null,
+                        "filtered": 0.85,
+                        "Extra": "Using where; Using temporary; Using filesort",
+                        "estimated_rows": 19019
+                    },
+                    {
+                        "table": "s",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 36.26,
+                        "Extra": "Using where",
+                        "estimated_rows": 1
+                    },
+                    {
+                        "table": "p",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 100,
+                        "Extra": null,
+                        "estimated_rows": 1
+                    }
+                ],
+                "explain_analyze_actual": {
+                    "available": true,
+                    "measurement": "EXPLAIN ANALYZE actual iterator rows\/times; not exact rows_examined; node order follows the execution tree",
+                    "nodes": [
+                        {
+                            "node": 0,
+                            "operation": "other",
+                            "first_row_ms": 627,
+                            "completion_ms": 635,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 1,
+                            "operation": "table_scan",
+                            "first_row_ms": 599,
+                            "completion_ms": 604,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 2,
+                            "operation": "other",
+                            "first_row_ms": 599,
+                            "completion_ms": 599,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 3,
+                            "operation": "nested_loop_left_join",
+                            "first_row_ms": 0.111,
+                            "completion_ms": 523,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 4,
+                            "operation": "nested_loop_inner_join",
+                            "first_row_ms": 0.0948,
+                            "completion_ms": 435,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 5,
+                            "operation": "filter",
+                            "first_row_ms": 0.0387,
+                            "completion_ms": 197,
+                            "rows_per_loop": 11983,
+                            "loops": 1
+                        },
+                        {
+                            "node": 6,
+                            "operation": "table_scan",
+                            "first_row_ms": 0.0329,
+                            "completion_ms": 125,
+                            "rows_per_loop": 20559,
+                            "loops": 1,
+                            "table": "matcher_profile_attribute",
+                            "alias": "a"
+                        },
+                        {
+                            "node": 7,
+                            "operation": "filter",
+                            "first_row_ms": 0.019,
+                            "completion_ms": 0.0191,
+                            "rows_per_loop": 0.428,
+                            "loops": 11983
+                        },
+                        {
+                            "node": 8,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0172,
+                            "completion_ms": 0.0173,
+                            "rows_per_loop": 1,
+                            "loops": 11983,
+                            "table": "matcher_profile_state",
+                            "alias": "s"
+                        },
+                        {
+                            "node": 9,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0146,
+                            "completion_ms": 0.0147,
+                            "rows_per_loop": 1,
+                            "loops": 5133,
+                            "table": "profile",
+                            "alias": "p"
+                        }
+                    ]
+                }
+            },
+            "use_state_indexes": {
+                "client_query_elapsed_ms": [
+                    599.521239,
+                    477.02525,
+                    510.503857
+                ],
+                "returned_rows": 5133,
+                "session_handler_read_delta": [
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    }
+                ],
+                "explain_estimated": [
+                    {
+                        "table": "a",
+                        "type": "ALL",
+                        "key": null,
+                        "filtered": 0.45,
+                        "Extra": "Using where; Using temporary; Using filesort",
+                        "estimated_rows": 19019
+                    },
+                    {
+                        "table": "s",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 36.26,
+                        "Extra": "Using where",
+                        "estimated_rows": 1
+                    },
+                    {
+                        "table": "p",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 100,
+                        "Extra": null,
+                        "estimated_rows": 1
+                    }
+                ],
+                "explain_analyze_actual": {
+                    "available": true,
+                    "measurement": "EXPLAIN ANALYZE actual iterator rows\/times; not exact rows_examined; node order follows the execution tree",
+                    "nodes": [
+                        {
+                            "node": 0,
+                            "operation": "other",
+                            "first_row_ms": 434,
+                            "completion_ms": 439,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 1,
+                            "operation": "table_scan",
+                            "first_row_ms": 418,
+                            "completion_ms": 422,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 2,
+                            "operation": "other",
+                            "first_row_ms": 418,
+                            "completion_ms": 418,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 3,
+                            "operation": "nested_loop_left_join",
+                            "first_row_ms": 0.145,
+                            "completion_ms": 350,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 4,
+                            "operation": "nested_loop_inner_join",
+                            "first_row_ms": 0.124,
+                            "completion_ms": 285,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 5,
+                            "operation": "filter",
+                            "first_row_ms": 0.0593,
+                            "completion_ms": 122,
+                            "rows_per_loop": 11983,
+                            "loops": 1
+                        },
+                        {
+                            "node": 6,
+                            "operation": "table_scan",
+                            "first_row_ms": 0.0525,
+                            "completion_ms": 89.9,
+                            "rows_per_loop": 20559,
+                            "loops": 1,
+                            "table": "matcher_profile_attribute",
+                            "alias": "a"
+                        },
+                        {
+                            "node": 7,
+                            "operation": "filter",
+                            "first_row_ms": 0.0125,
+                            "completion_ms": 0.0126,
+                            "rows_per_loop": 0.428,
+                            "loops": 11983
+                        },
+                        {
+                            "node": 8,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0105,
+                            "completion_ms": 0.0106,
+                            "rows_per_loop": 1,
+                            "loops": 11983,
+                            "table": "matcher_profile_state",
+                            "alias": "s"
+                        },
+                        {
+                            "node": 9,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0119,
+                            "completion_ms": 0.012,
+                            "rows_per_loop": 1,
+                            "loops": 5133,
+                            "table": "profile",
+                            "alias": "p"
+                        }
+                    ]
+                }
+            },
+            "ignore_state_indexes": {
+                "client_query_elapsed_ms": [
+                    371.026716,
+                    342.795152,
+                    294.404371
+                ],
+                "returned_rows": 5133,
+                "session_handler_read_delta": [
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    },
+                    {
+                        "Handler_read_first": 1,
+                        "Handler_read_key": 17081,
+                        "Handler_read_last": 0,
+                        "Handler_read_next": 0,
+                        "Handler_read_prev": 0,
+                        "Handler_read_rnd": 5133,
+                        "Handler_read_rnd_next": 25694
+                    }
+                ],
+                "explain_estimated": [
+                    {
+                        "table": "a",
+                        "type": "ALL",
+                        "key": null,
+                        "filtered": 0.85,
+                        "Extra": "Using where; Using temporary; Using filesort",
+                        "estimated_rows": 19019
+                    },
+                    {
+                        "table": "s",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 36.26,
+                        "Extra": "Using where",
+                        "estimated_rows": 1
+                    },
+                    {
+                        "table": "p",
+                        "type": "eq_ref",
+                        "key": "PRIMARY",
+                        "filtered": 100,
+                        "Extra": null,
+                        "estimated_rows": 1
+                    }
+                ],
+                "explain_analyze_actual": {
+                    "available": true,
+                    "measurement": "EXPLAIN ANALYZE actual iterator rows\/times; not exact rows_examined; node order follows the execution tree",
+                    "nodes": [
+                        {
+                            "node": 0,
+                            "operation": "other",
+                            "first_row_ms": 325,
+                            "completion_ms": 333,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 1,
+                            "operation": "table_scan",
+                            "first_row_ms": 312,
+                            "completion_ms": 314,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 2,
+                            "operation": "other",
+                            "first_row_ms": 312,
+                            "completion_ms": 312,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 3,
+                            "operation": "nested_loop_left_join",
+                            "first_row_ms": 0.123,
+                            "completion_ms": 250,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 4,
+                            "operation": "nested_loop_inner_join",
+                            "first_row_ms": 0.104,
+                            "completion_ms": 202,
+                            "rows_per_loop": 5133,
+                            "loops": 1
+                        },
+                        {
+                            "node": 5,
+                            "operation": "filter",
+                            "first_row_ms": 0.0425,
+                            "completion_ms": 78.6,
+                            "rows_per_loop": 11983,
+                            "loops": 1
+                        },
+                        {
+                            "node": 6,
+                            "operation": "table_scan",
+                            "first_row_ms": 0.0366,
+                            "completion_ms": 55.3,
+                            "rows_per_loop": 20559,
+                            "loops": 1,
+                            "table": "matcher_profile_attribute",
+                            "alias": "a"
+                        },
+                        {
+                            "node": 7,
+                            "operation": "filter",
+                            "first_row_ms": 0.00962,
+                            "completion_ms": 0.00978,
+                            "rows_per_loop": 0.428,
+                            "loops": 11983
+                        },
+                        {
+                            "node": 8,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.00844,
+                            "completion_ms": 0.00852,
+                            "rows_per_loop": 1,
+                            "loops": 11983,
+                            "table": "matcher_profile_state",
+                            "alias": "s"
+                        },
+                        {
+                            "node": 9,
+                            "operation": "single_row_index_lookup",
+                            "first_row_ms": 0.0087,
+                            "completion_ms": 0.00879,
+                            "rows_per_loop": 1,
+                            "loops": 5133,
+                            "table": "profile",
+                            "alias": "p"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "model_calls": 0,
+    "network_calls": 0,
+    "writes_during_measured_read": 0
+}

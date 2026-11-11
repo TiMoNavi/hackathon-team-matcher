@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-11",
+  "stage": "R2",
+  "reviewer": "independent recommendation native boundary audit",
+  "baseline": "r2-native-baseline_2026-11-11.json",
+  "scope": "Compare only the monitored original core/vendor trees, named anchors, and original recommendation module scaffold. No production runtime, database, service, model or credentials accessed.",
+  "tree_digest_algorithm": "For sorted relative POSIX file paths inside each tree: SHA256 of concatenated relative_path + NUL + file_sha256_hex + LF (UTF-8). File content hashed with SHA256; symlinks, .local directories and .env/.env.* are excluded.",
+  "trees": {
+    "backend/protected/humhub": {
+      "before": {
+        "files": 11259,
+        "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+        "excluded_paths": []
+      },
+      "after": {
+        "files": 11259,
+        "tree_sha256": "b022a9842e74c6d1b8d75866dcaf956eb8a90b1d3a54309f5d3d160b5df3a615",
+        "excluded_paths": []
+      },
+      "unchanged": true
+    },
+    "backend/protected/vendor": {
+      "before": {
+        "files": 15407,
+        "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+        "excluded_paths": [
+          "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+        ]
+      },
+      "after": {
+        "files": 15407,
+        "tree_sha256": "d38196edc5c94d389e811d8912de1a69097d45c27225cb1f60bc166ea181c993",
+        "excluded_paths": [
+          "backend/protected/vendor/bower-asset/inputmask/inputmask-pages/.env"
+        ]
+      },
+      "unchanged": true
+    }
+  },
+  "anchors": {
+    "backend/protected/modules/.gitignore": {
+      "before_sha256": "23782bc7b85c26e9b958dbb01c167ab8b7544126074130a0396f1d76f573297d",
+      "after_sha256": "23782bc7b85c26e9b958dbb01c167ab8b7544126074130a0396f1d76f573297d",
+      "unchanged": true
+    },
+    "backend/deploy/profile-fields.json": {
+      "before_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "after_sha256": "f1bc6380ff439d3ccc614d4a94e4a60c488db4e316dd33192245208dfc4f6525",
+      "unchanged": true
+    },
+    "docs/首次注册与开场引导_用户原稿_冻结.md": {
+      "before_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "after_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "unchanged": true
+    }
+  },
+  "module_scaffolding": {
+    "backend/protected/modules/matcher-recommendation/Module.php": {
+      "before_sha256": "4e9d1105dd9c55a864f247078dc8a049c4858e78a87b0a7c2db5b57acf83ee0b",
+      "after_sha256": "4e9d1105dd9c55a864f247078dc8a049c4858e78a87b0a7c2db5b57acf83ee0b",
+      "unchanged": true
+    },
+    "backend/protected/modules/matcher-recommendation/config.php": {
+      "before_sha256": "5aa7566d3372394c27ae901a1c40d960c55954152cf8bf99b5d42a8e929acc62",
+      "after_sha256": "5aa7566d3372394c27ae901a1c40d960c55954152cf8bf99b5d42a8e929acc62",
+      "unchanged": true
+    },
+    "backend/protected/modules/matcher-recommendation/module.json": {
+      "before_sha256": "1727998c6942c64679d4eba65332d0686dd469b201b68a8d405aab53b40e5ecd",
+      "after_sha256": "1727998c6942c64679d4eba65332d0686dd469b201b68a8d405aab53b40e5ecd",
+      "unchanged": true
+    }
+  },
+  "modules_ignore_text_unchanged": true,
+  "all_monitored_boundaries_unchanged": true,
+  "independent_review": {
+    "method": "Read-only source review plus narrow inline PHP synthetic reproductions using backend/.runtime/php-mysql/bin/php -n and test-only autoload. No source/test files created by reviewer; full suites are owned and run by implementation agents.",
+    "confirmed_findings": [
+      {
+        "id": "R2-A01",
+        "file": "backend/protected/modules/matcher-recommendation/application/DiscoverPeople.php",
+        "issue": "A lower configured limits.recall was not enforced before candidate projection reads.",
+        "resolution": "recallRanks now validates the configured bound and rejects disabled routes before reading projections.",
+        "verification": "Independent static reread confirms placement; formal recall=10/11 rejection test is reported separately by the parent agent.",
+        "status": "resolved"
+      },
+      {
+        "id": "R2-A02",
+        "file": "backend/protected/modules/matcher-recommendation/domain/rules/DeterministicRuleEvaluator.php",
+        "issue": "Equal dimension/operator-family/wanted values merged independent feature sources, allowing a soft work_style match to satisfy an unknown hard preferences requirement.",
+        "before_probe": {
+          "qualifies": true,
+          "match_score": 1,
+          "unknowns": [],
+          "hard_conflicts": [],
+          "evidence_coverage": 1
+        },
+        "resolution": "Deduplication key includes candidate feature sources and normalized aliases. Each original hard rule is checked against its independent known/score result.",
+        "after_probe": {
+          "qualifies": false,
+          "unknowns": [
+            "preferences"
+          ],
+          "hard_conflicts": [
+            "style_explicit:unknown"
+          ],
+          "evidence_coverage": 0.85
+        },
+        "verification": "Same inline synthetic reproduction rerun after fix; no real profile data or database.",
+        "status": "resolved"
+      },
+      {
+        "id": "R2-A03",
+        "file": "backend/protected/modules/matcher-recommendation/application/policy/PolicyLifecycle.php",
+        "issue": "Management permission revoked during publish catalog read was not rechecked before moving the active policy pointer.",
+        "before_probe": {
+          "published": true,
+          "authorized_at_write": false,
+          "active": true
+        },
+        "resolution": "Write operations revalidate management access immediately before save/publish after dependent reads; create also checks inside the transaction.",
+        "after_probe": {
+          "published": false,
+          "error": "RuntimeException",
+          "message": "Management denied.",
+          "active": false
+        },
+        "verification": "Same inline catalog wrapper revocation reproduction rerun after fix.",
+        "status": "resolved"
+      }
+    ],
+    "other_reviewed_boundaries": [
+      "Semantic-to-dimension declarations cannot cross scoring dimensions; personality/preference aliases cannot invent equivalences.",
+      "Mapping uses explicit catalog binding and minimal already-authorized snapshots; unknown/new fields do not automatically enter matching.",
+      "Schema/type/enum/scope/cardinality changes invalidate affected bindings. Labels alone do not alter semantic fingerprints.",
+      "Policy publication requires current validation and actual replay, revision/content/catalog/suite checks, and active-pointer CAS; rollback repeats these gates.",
+      "Fixed-anchor near-score bands avoid transitive widening; at most one lower-exposure exploration entry; scores are not changed by selection.",
+      "Exposure history is per requesting viewer and Space; fresh candidate/relationship reads follow history access; ordinary discovery does not inherit AI-only relationship-history exclusions.",
+      "Synthetic rule failures remain dependency/validation errors; lack of qualified evidence returns real insufficiency, not cross-Space filler."
+    ],
+    "confirmed_unresolved_blocking_findings": []
+  },
+  "limitations": [
+    "R2 is a pure in-memory rule/configuration implementation; real P1 batch authorization, current Space selection, persistent policy storage and public API adapters remain later-stage work.",
+    "Binding semantic is a trusted administrative declaration, not proof of source semantics. R3 needs an independent discovery-purpose/source authority; source-name defenses alone do not grant permission.",
+    "Formal storage/adapters must keep management permission and catalog epoch protection through commit; final snapshot checks alone do not close external races.",
+    "This report does not claim production recommendation quality, database integration, module enablement or a live AI path.",
+    "No entire P1/other-plugin or recommendation-document tree comparison was made. Only explicitly monitored paths are claimed unchanged; other agents may still edit authorized recommendation documents.",
+    "R2 vendor digest excludes one .env path and symlinks by design; do not compare directly to R1 vendor digest/count created under a different exclusion rule.",
+    "The independent reviewer did not rerun full implementation test suites; parent test evidence is separate."
+  ]
+}

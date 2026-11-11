@@ -1,0 +1,69 @@
+[
+  {
+    "name": "recent_first",
+    "filters": {},
+    "sort": "recent",
+    "limit": 24
+  },
+  {
+    "name": "last_person_late_skill",
+    "filters": {
+      "skill": [
+        "s73-wasm-component-model"
+      ]
+    },
+    "sort": "recent",
+    "limit": 24
+  },
+  {
+    "name": "role_skill_and",
+    "filters": {
+      "role": [
+        "frontend"
+      ],
+      "skill": [
+        "react"
+      ]
+    },
+    "sort": "recent",
+    "limit": 24
+  },
+  {
+    "name": "seeking_array_second_third",
+    "filters": {
+      "event_seeking": {
+        "role_codes": [
+          "s73-primary-role_codes-item-2"
+        ],
+        "skill_codes": [
+          "s73-primary-skill_codes-item-3"
+        ]
+      }
+    },
+    "sort": "recent",
+    "limit": 24
+  },
+  {
+    "name": "availability_full_window",
+    "filters": {
+      "event_availability": [
+        {
+          "starts_at": "2026-11-28T01:00:00Z",
+          "ends_at": "2026-11-28T05:00:00Z"
+        }
+      ]
+    },
+    "sort": "recent",
+    "limit": 24
+  },
+  {
+    "name": "empty_filter",
+    "filters": {
+      "skill": [
+        "s73-no-match"
+      ]
+    },
+    "sort": "recent",
+    "limit": 24
+  }
+]

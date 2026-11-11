@@ -1,0 +1,674 @@
+{
+  "date": "2026-11-12",
+  "status": "passed",
+  "scope": "P6 production validator/engine and isolated live harness offline acceptance",
+  "private_config_read": false,
+  "external_requests": 0,
+  "database_connections": 0,
+  "real_llm_calls": 0,
+  "production_changes": false,
+  "suites": {
+    "p6_unit": {
+      "suite": "s6-p6-engine",
+      "passed": 159,
+      "failed": 0,
+      "real_gateway_calls": 0,
+      "checks": [
+        "extract_valid_candidates",
+        "extract_never_returns_source_text",
+        "unknown_root",
+        "confirmation_instruction",
+        "model_visibility",
+        "unknown_field",
+        "identity_field",
+        "relation_field",
+        "wrong_scope",
+        "null_value",
+        "invented_fact",
+        "unknown_section",
+        "foreign_source",
+        "old_source",
+        "string_version",
+        "empty_evidence",
+        "duplicate_evidence",
+        "duplicate_candidate_id",
+        "duplicate_singleton",
+        "invented_code",
+        "schema_extra_property",
+        "unsupported_self_level",
+        "review_bad_kind",
+        "review_identity",
+        "review_unknown_ref",
+        "review_extra_confirm",
+        "explicit_personality_only",
+        "personality_not_inferred_from_repo",
+        "invented_personality_rejected",
+        "unknown_operation_preflight",
+        "input_current_space_positive",
+        "input_source_duplicate",
+        "input_section_duplicate",
+        "questions_three_to_eight",
+        "free_text_control_last",
+        "free_control_outside_enum",
+        "question_prompt_personalized",
+        "too_few_questions",
+        "too_many_questions",
+        "question_foreign_template",
+        "question_changed_code",
+        "question_changed_label",
+        "question_wrong_scope",
+        "question_hidden_skip",
+        "question_duplicate",
+        "question_free_first",
+        "question_free_null",
+        "no_space_questions_without_current_space",
+        "compose_rule_structured_mapping",
+        "compose_privacy_strictest_even_uncited_global",
+        "compose_plain_field_server_assigns_scope",
+        "compose_keeps_evidence",
+        "prose_always_has_server_review",
+        "prose_notice_explains_evidence_limit",
+        "prose_notice_not_overridable",
+        "compose_overwrite_existing_singleton",
+        "compose_invented_trait",
+        "compose_wrong_evidence_scope",
+        "compose_unrelated_answer",
+        "compose_wrong_value_label",
+        "compose_wrong_value_code",
+        "compose_attribute_overwrite",
+        "compose_invalid_visibility",
+        "compose_null_visibility",
+        "compose_empty_evidence",
+        "compose_unknown_profile_ref",
+        "compose_duplicate_field",
+        "compose_global_in_space",
+        "answer_control_never_selected_code",
+        "free_answer_preserves_rule_mapping",
+        "json_fence",
+        "json_trailing",
+        "json_array",
+        "json_duplicate",
+        "json_escaped_duplicate",
+        "json_nested_duplicate",
+        "json_truncated",
+        "json_string_braces_not_structure",
+        "json_typed_output_valid",
+        "json_container_root_list_object",
+        "json_container_review_list_object",
+        "json_container_evidence_list_object",
+        "json_container_value_object_as_list",
+        "json_scalar_field_type",
+        "status_does_not_call_model",
+        "one_actual_call",
+        "reported_usage_kept",
+        "fixed_model_sent",
+        "structured_nonstream_payload",
+        "key_absent_from_prompt",
+        "config_debug_redacted",
+        "config_serialization_disabled",
+        "injection_only_in_user_data",
+        "system_explicit_untrusted_boundary",
+        "http_401_safe",
+        "http_403_safe",
+        "http_429_safe",
+        "http_502_safe",
+        "http_302_safe",
+        "http_400_safe",
+        "accounting_malformed_envelope",
+        "redaction_malformed_envelope",
+        "accounting_schema_failure",
+        "redaction_schema_failure",
+        "usage_survives_schema_failure",
+        "accounting_model_mismatch",
+        "redaction_model_mismatch",
+        "usage_survives_model_mismatch",
+        "accounting_truncated",
+        "redaction_truncated",
+        "usage_survives_truncated",
+        "accounting_fenced_output",
+        "redaction_fenced_output",
+        "usage_survives_fenced_output",
+        "accounting_tool_call",
+        "redaction_tool_call",
+        "usage_survives_tool_call",
+        "usage_unknown_is_null",
+        "mismatch_records_actual_reported_model",
+        "usage_inconsistent_not_fabricated",
+        "unknown_transport_error_redacted",
+        "no_config_zero_calls",
+        "unavailable_zero_calls",
+        "bad_input_zero_calls",
+        "config_url_0",
+        "config_url_1",
+        "config_url_2",
+        "config_url_3",
+        "config_url_4",
+        "config_url_5",
+        "header_injection_rejected",
+        "endpoint_no_double_append",
+        "missing_config_unavailable",
+        "private_synthetic_config_loaded",
+        "public_config_rejected",
+        "invalid_config_sanitized",
+        "curl_fixed_endpoint",
+        "curl_verified_http11_protocol",
+        "curl_no_redirects",
+        "curl_tls_validation",
+        "curl_https_only",
+        "curl_proxy_disabled",
+        "curl_bounded_timeout",
+        "curl_netrc_disabled",
+        "curl_timeout",
+        "curl_network",
+        "curl_response_bound",
+        "curl_stream_abort_bound",
+        "curl_request_bound",
+        "native_curl_deprecations_become_exceptions",
+        "native_curl_success_survives_strict_error_handler",
+        "native_curl_success_releases_handle",
+        "native_curl_success_without_deprecation",
+        "native_curl_exactly_one_synthetic_attempt",
+        "native_curl_setup_failure_preserves_code",
+        "native_curl_setup_failure_releases_handle",
+        "native_curl_exec_failure_preserves_code",
+        "native_curl_exec_failure_releases_handle",
+        "native_curl_all_cleanup_without_deprecation"
+      ]
+    },
+    "p6_independent": {
+      "status": "passed",
+      "passed": 95,
+      "checks": [
+        {
+          "name": "typed_extract_roundtrip",
+          "passed": true
+        },
+        {
+          "name": "candidate_cannot_supply_visibility",
+          "passed": true
+        },
+        {
+          "name": "candidate_cannot_supply_confirmation",
+          "passed": true
+        },
+        {
+          "name": "candidate_cannot_supply_owner_id",
+          "passed": true
+        },
+        {
+          "name": "candidate_cannot_supply_publish",
+          "passed": true
+        },
+        {
+          "name": "candidate_cannot_supply_attribute_id",
+          "passed": true
+        },
+        {
+          "name": "root_cannot_supply_grant_permissions",
+          "passed": true
+        },
+        {
+          "name": "root_cannot_supply_confirmation_intent",
+          "passed": true
+        },
+        {
+          "name": "root_cannot_supply_publish",
+          "passed": true
+        },
+        {
+          "name": "root_cannot_supply_endpoint",
+          "passed": true
+        },
+        {
+          "name": "forged_evidence_source_id",
+          "passed": true
+        },
+        {
+          "name": "forged_evidence_source_version",
+          "passed": true
+        },
+        {
+          "name": "forged_evidence_section_id",
+          "passed": true
+        },
+        {
+          "name": "duplicate_evidence_rejected",
+          "passed": true
+        },
+        {
+          "name": "empty_evidence_rejected",
+          "passed": true
+        },
+        {
+          "name": "new_city_fact_rejected",
+          "passed": true
+        },
+        {
+          "name": "skill_label_code_mismatch_rejected",
+          "passed": true
+        },
+        {
+          "name": "space_fact_cannot_be_extracted_globally",
+          "passed": true
+        },
+        {
+          "name": "explicit_trait_supported",
+          "passed": true
+        },
+        {
+          "name": "trait_cannot_be_inferred_from_repository_text",
+          "passed": true
+        },
+        {
+          "name": "prepared_data_strips_nonessential_inputs",
+          "passed": true
+        },
+        {
+          "name": "three_to_eight_questions",
+          "passed": true
+        },
+        {
+          "name": "free_entry_separate_last_and_skippable",
+          "passed": true
+        },
+        {
+          "name": "question_0_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_1_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_2_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_3_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_4_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_5_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_6_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "question_7_options_immutable",
+          "passed": true
+        },
+        {
+          "name": "reject_two_questions",
+          "passed": true
+        },
+        {
+          "name": "reject_nine_questions",
+          "passed": true
+        },
+        {
+          "name": "reject_duplicate_question",
+          "passed": true
+        },
+        {
+          "name": "reject_free_first",
+          "passed": true
+        },
+        {
+          "name": "reject_hide_skip",
+          "passed": true
+        },
+        {
+          "name": "reject_false_scope",
+          "passed": true
+        },
+        {
+          "name": "fixture_covers_global_space_and_skipped",
+          "passed": true
+        },
+        {
+          "name": "structured_role_matches_explicit_answer",
+          "passed": true
+        },
+        {
+          "name": "uncited_private_contact_makes_prose_private",
+          "passed": true
+        },
+        {
+          "name": "contact_does_not_reappear_as_generated_field",
+          "passed": true
+        },
+        {
+          "name": "skipped_answer_not_evidence",
+          "passed": true
+        },
+        {
+          "name": "space_answer_cannot_support_global_prose",
+          "passed": true
+        },
+        {
+          "name": "foreign_profile_reference_rejected",
+          "passed": true
+        },
+        {
+          "name": "invented_structured_personality_rejected",
+          "passed": true
+        },
+        {
+          "name": "structured_role_label_cannot_be_rewritten",
+          "passed": true
+        },
+        {
+          "name": "generated_field_cannot_confirm",
+          "passed": true
+        },
+        {
+          "name": "existing_headline_cannot_be_replaced",
+          "passed": true
+        },
+        {
+          "name": "existing_bio_cannot_be_replaced",
+          "passed": true
+        },
+        {
+          "name": "prose_limit_is_observed_and_still_private",
+          "passed": true
+        },
+        {
+          "name": "strict_json_duplicate",
+          "passed": true
+        },
+        {
+          "name": "strict_json_escaped_duplicate",
+          "passed": true
+        },
+        {
+          "name": "strict_json_nested_duplicate",
+          "passed": true
+        },
+        {
+          "name": "strict_json_root_array",
+          "passed": true
+        },
+        {
+          "name": "strict_json_trailing",
+          "passed": true
+        },
+        {
+          "name": "strict_json_fenced",
+          "passed": true
+        },
+        {
+          "name": "typed_json_candidates_object",
+          "passed": true
+        },
+        {
+          "name": "typed_json_evidence_object",
+          "passed": true
+        },
+        {
+          "name": "typed_json_object_value_list",
+          "passed": true
+        },
+        {
+          "name": "typed_json_reviews_object",
+          "passed": true
+        },
+        {
+          "name": "status_does_not_call_model",
+          "passed": true
+        },
+        {
+          "name": "one_fixed_model_call",
+          "passed": true
+        },
+        {
+          "name": "provider_usage_preserved",
+          "passed": true
+        },
+        {
+          "name": "prompt_injection_stays_in_untrusted_user_data",
+          "passed": true
+        },
+        {
+          "name": "payload_cannot_grant_tools",
+          "passed": true
+        },
+        {
+          "name": "synthetic_config_secret_absent_from_payload",
+          "passed": true
+        },
+        {
+          "name": "engine_mismatched_model_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_mismatched_model_retains_usage",
+          "passed": true
+        },
+        {
+          "name": "engine_tool_calls_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_tool_calls_retains_usage",
+          "passed": true
+        },
+        {
+          "name": "engine_truncated_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_truncated_retains_usage",
+          "passed": true
+        },
+        {
+          "name": "engine_schema_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_schema_retains_usage",
+          "passed": true
+        },
+        {
+          "name": "engine_http_401_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_http_429_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_http_302_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "engine_http_503_safe_explicit_single_call",
+          "passed": true
+        },
+        {
+          "name": "inconsistent_usage_is_unknown_not_invented",
+          "passed": true
+        },
+        {
+          "name": "unconfigured_does_not_fallback",
+          "passed": true
+        },
+        {
+          "name": "unconfigured_zero_transport_calls",
+          "passed": true
+        },
+        {
+          "name": "bad_input_before_transport",
+          "passed": true
+        },
+        {
+          "name": "invalid_input_zero_transport_calls",
+          "passed": true
+        },
+        {
+          "name": "config_rejects_unsafe_url_0",
+          "passed": true
+        },
+        {
+          "name": "config_rejects_unsafe_url_1",
+          "passed": true
+        },
+        {
+          "name": "config_rejects_unsafe_url_2",
+          "passed": true
+        },
+        {
+          "name": "config_rejects_unsafe_url_3",
+          "passed": true
+        },
+        {
+          "name": "curl_extension_available_for_executor_test",
+          "passed": true
+        },
+        {
+          "name": "fixed_server_endpoint",
+          "passed": true
+        },
+        {
+          "name": "tls_and_https_required",
+          "passed": true
+        },
+        {
+          "name": "redirects_disabled",
+          "passed": true
+        },
+        {
+          "name": "proxy_and_netrc_disabled",
+          "passed": true
+        },
+        {
+          "name": "timeouts_are_bounded",
+          "passed": true
+        },
+        {
+          "name": "transport_timeout_safe",
+          "passed": true
+        },
+        {
+          "name": "transport_oversize_safe",
+          "passed": true
+        }
+      ],
+      "observations": [
+        {
+          "code": "PROSE_SEMANTIC_LIMIT",
+          "observed": "An unsupported award/team claim with a valid global skill reference passed prose validation, retaining private visibility. Schema/evidence validation is not semantic truth verification. Editable user confirmation is required.",
+          "status": "documented_product_boundary"
+        }
+      ],
+      "external_requests": 0,
+      "real_llm_calls": 0,
+      "scope": "Independent P6 validator, structured engine and injected curl executor; no live config"
+    },
+    "s77_engine": {
+      "suite": "s77-engine-offline",
+      "status": "passed",
+      "passed": 34,
+      "checks": {
+        "extract_capability_is_read_only": true,
+        "extract_single_transport_call": true,
+        "extract_actual_usage": true,
+        "extract_review_items_list": true,
+        "extract_schema_failure_no_retry": true,
+        "extract_schema_failure_preserves_usage": true,
+        "extract_exception_contains_no_body": true,
+        "extract_timeout_exactly_one_attempt": true,
+        "extract_timeout_usage_unknown": true,
+        "extract_missing_usage_remains_unknown": true,
+        "questions_capability_is_read_only": true,
+        "questions_single_transport_call": true,
+        "questions_actual_usage": true,
+        "questions_review_items_list": true,
+        "questions_server_free_entry_last": true,
+        "questions_schema_failure_no_retry": true,
+        "questions_schema_failure_preserves_usage": true,
+        "questions_exception_contains_no_body": true,
+        "questions_timeout_exactly_one_attempt": true,
+        "questions_timeout_usage_unknown": true,
+        "questions_missing_usage_remains_unknown": true,
+        "compose_capability_is_read_only": true,
+        "compose_single_transport_call": true,
+        "compose_actual_usage": true,
+        "compose_review_items_list": true,
+        "compose_inherits_private_evidence": true,
+        "compose_appends_prose_review": true,
+        "compose_schema_failure_no_retry": true,
+        "compose_schema_failure_preserves_usage": true,
+        "compose_exception_contains_no_body": true,
+        "compose_timeout_exactly_one_attempt": true,
+        "compose_timeout_usage_unknown": true,
+        "compose_missing_usage_remains_unknown": true,
+        "disabled_engine_zero_calls_no_fallback": true
+      },
+      "real_gateway_calls": 0,
+      "production_code_changes": 0
+    },
+    "s77_ledger": {
+      "suite": "s77-live-ledger-offline",
+      "status": "passed",
+      "passed": 9,
+      "checks": {
+        "new_ledger_has_six_slot_limit": true,
+        "reservation_is_durable_and_unknown": true,
+        "ledger_is_owner_only": true,
+        "independent_lock_blocks_second_worker": true,
+        "interrupted_temporary_write_keeps_reserved_slot": true,
+        "atomic_replacement_retains_reservation": true,
+        "existing_empty_fails_closed": true,
+        "existing_broken_fails_closed": true,
+        "existing_wrong_db_fails_closed": true
+      },
+      "database_connections": 0,
+      "real_gateway_calls": 0
+    },
+    "s77_harness": {
+      "suite": "s77-live-harness-offline",
+      "status": "passed",
+      "passed": 28,
+      "checks": {
+        "mutation_and_captured_resource_checkpointed_together": true,
+        "checkpoint_stores_hash_not_payload": true,
+        "checkpoint_is_owner_only": true,
+        "successful_write_never_reissued_on_resume": true,
+        "uncertain_write_intent_persists": true,
+        "uncertain_write_requires_explicit_inspection": true,
+        "six_job_budget_blocks_before_HTTP": true,
+        "unknown_call_accounting_not_coerced_to_zero": true,
+        "failed_operations_retained_in_report": true,
+        "reserved_unknown_overrides_stale_queued_zero": true,
+        "reserved_unknown_overrides_cancelled_initial_zero": true,
+        "late_ledger_complete_overrides_unknown_checkpoint": true,
+        "same_failed_state_allows_late_accounting": true,
+        "cancelled_initial_zero_can_become_unknown": true,
+        "compact_progress_rejects_private_payload": true,
+        "no_optin_never_overwrites_checkpoint": true,
+        "duplicate_prepare_never_overwrites_checkpoint": true,
+        "bad_checkpoint_never_overwrites_checkpoint": true,
+        "corrupt_checkpoint_never_overwritten": true,
+        "observer_accounts_for_login_and_GET": true,
+        "observer_never_writes_checkpoint": true,
+        "report_is_pure_and_repeatable": true,
+        "report_sums_workflow_and_observer_requests": true,
+        "worker_preconnect_guard_0": true,
+        "worker_preconnect_guard_1": true,
+        "worker_preconnect_guard_2": true,
+        "worker_preconnect_guard_3": true,
+        "fixture_preconnect_exact_database_guard": true
+      },
+      "http_requests": 0,
+      "database_connections": 0,
+      "real_gateway_calls": 0
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "status": "passed",
+  "synthetic_only": true,
+  "existing_database_connected": false,
+  "configured_model": "gemini-3.8-flash",
+  "generation_requests": 3,
+  "requests": [
+    {
+      "stage_schema": "recommendation_ranking",
+      "request_bytes": 3165,
+      "max_tokens_requested": 1024,
+      "http_status": 200,
+      "response_bytes": 706,
+      "response_model": "gemini-3.8-flash",
+      "finish_reason": "stop",
+      "shape_diagnostics": {
+        "choice_index_zero": true,
+        "assistant_role": true,
+        "content_string": true,
+        "content_json_object": true,
+        "tool_calls_absent_or_null": true,
+        "tool_calls_empty_array": false,
+        "function_call_absent_or_null": true,
+        "refusal_absent_or_null": true,
+        "items_count": 3,
+        "item_ids_are_strings": true,
+        "evidence_refs_match_sent_pool": true
+      },
+      "usage": {
+        "prompt_tokens": 852,
+        "completion_tokens": 577,
+        "total_tokens": 1429
+      },
+      "elapsed_ms": 7133.054
+    },
+    {
+      "stage_schema": "recommendation_interpretation",
+      "request_bytes": 9920,
+      "max_tokens_requested": 1024,
+      "http_status": 200,
+      "response_bytes": 486,
+      "response_model": "gemini-3.8-flash",
+      "finish_reason": "stop",
+      "shape_diagnostics": {
+        "choice_index_zero": true,
+        "assistant_role": true,
+        "content_string": true,
+        "content_json_object": true,
+        "tool_calls_absent_or_null": true,
+        "tool_calls_empty_array": false,
+        "function_call_absent_or_null": true,
+        "refusal_absent_or_null": true,
+        "items_count": 0,
+        "item_ids_are_strings": true,
+        "evidence_refs_match_sent_pool": true
+      },
+      "usage": {
+        "prompt_tokens": 1175,
+        "completion_tokens": 185,
+        "total_tokens": 1360
+      },
+      "elapsed_ms": 4957.235
+    },
+    {
+      "stage_schema": "recommendation_ranking",
+      "request_bytes": 3168,
+      "max_tokens_requested": 1024,
+      "http_status": 200,
+      "response_bytes": 706,
+      "response_model": "gemini-3.8-flash",
+      "finish_reason": "stop",
+      "shape_diagnostics": {
+        "choice_index_zero": true,
+        "assistant_role": true,
+        "content_string": true,
+        "content_json_object": true,
+        "tool_calls_absent_or_null": true,
+        "tool_calls_empty_array": false,
+        "function_call_absent_or_null": true,
+        "refusal_absent_or_null": true,
+        "items_count": 3,
+        "item_ids_are_strings": true,
+        "evidence_refs_match_sent_pool": true
+      },
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 836,
+        "total_tokens": 1689
+      },
+      "elapsed_ms": 8879.729
+    }
+  ],
+  "scenarios": [
+    {
+      "mode": "structured",
+      "interaction_status": "completed",
+      "applicability": "current",
+      "model_calls_used": 1,
+      "search_calls_used": 1,
+      "repair_used": false,
+      "result_count": 3,
+      "error": null,
+      "selected_synthetic_ids": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "mode": "natural",
+      "interaction_status": "completed",
+      "applicability": "current",
+      "model_calls_used": 2,
+      "search_calls_used": 1,
+      "repair_used": false,
+      "result_count": 3,
+      "error": null,
+      "selected_synthetic_ids": [
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  ],
+  "exit_code": 0,
+  "models_discovery": {
+    "http_status": 200,
+    "model_count": 14,
+    "exact_model_present": "gemini-3.8-flash",
+    "generation_calls": 0
+  },
+  "model_identity_note": "This is the model ID exposed and accepted by the user-specified gateway, not independent verification of the underlying vendor deployment.",
+  "previous_attempts": [
+    {
+      "status": "failed",
+      "synthetic_only": true,
+      "error": "live_gateway_smoke_failed",
+      "generation_requests": 0,
+      "requests": [],
+      "scenarios": [],
+      "exit_code": 1
+    },
+    {
+      "status": "failed",
+      "error_class": "RuntimeException",
+      "error_location": "live_gateway_smoke.php:44",
+      "generation_requests": 0,
+      "cause": "Test autoload overwrote a local workspace path variable; fixed by using a dedicated variable."
+    },
+    {
+      "status": "incomplete",
+      "synthetic_only": true,
+      "existing_database_connected": false,
+      "configured_model": "gemini-3.8-flash",
+      "generation_requests": 2,
+      "requests": [
+        {
+          "stage_schema": "recommendation_ranking",
+          "request_bytes": 2630,
+          "max_tokens_requested": 1024,
+          "http_status": 200,
+          "response_bytes": 796,
+          "response_model": "gemini-3.8-flash",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 739,
+            "completion_tokens": 778,
+            "total_tokens": 1517
+          },
+          "elapsed_ms": 7769.033
+        },
+        {
+          "stage_schema": "recommendation_ranking",
+          "request_bytes": 2630,
+          "max_tokens_requested": 1024,
+          "http_status": 200,
+          "response_bytes": 806,
+          "response_model": "gemini-3.8-flash",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 739,
+            "completion_tokens": 741,
+            "total_tokens": 1480
+          },
+          "elapsed_ms": 7556.9
+        }
+      ],
+      "scenarios": [
+        {
+          "mode": "structured",
+          "interaction_status": "failed",
+          "applicability": "current",
+          "model_calls_used": 2,
+          "search_calls_used": 1,
+          "repair_used": true,
+          "result_count": 0,
+          "error": "invalid_model_output",
+          "selected_synthetic_ids": []
+        }
+      ],
+      "exit_code": 1
+    },
+    {
+      "status": "incomplete",
+      "synthetic_only": true,
+      "existing_database_connected": false,
+      "configured_model": "gemini-3.8-flash",
+      "generation_requests": 2,
+      "requests": [
+        {
+          "stage_schema": "recommendation_ranking",
+          "request_bytes": 2630,
+          "max_tokens_requested": 1024,
+          "http_status": 200,
+          "response_bytes": 638,
+          "response_model": "gemini-3.8-flash",
+          "finish_reason": "stop",
+          "shape_diagnostics": {
+            "choice_index_zero": true,
+            "assistant_role": true,
+            "content_string": true,
+            "content_json_object": true,
+            "tool_calls_absent_or_null": true,
+            "tool_calls_empty_array": false,
+            "function_call_absent_or_null": true,
+            "refusal_absent_or_null": true,
+            "items_count": 0,
+            "item_ids_are_strings": true,
+            "evidence_refs_match_sent_pool": true
+          },
+          "usage": {
+            "prompt_tokens": 769,
+            "completion_tokens": 1896,
+            "total_tokens": 2665
+          },
+          "elapsed_ms": 10793.239
+        },
+        {
+          "stage_schema": "recommendation_ranking",
+          "request_bytes": 2630,
+          "max_tokens_requested": 1024,
+          "http_status": 200,
+          "response_bytes": 1201,
+          "response_model": "gemini-3.8-flash",
+          "finish_reason": "stop",
+          "shape_diagnostics": {
+            "choice_index_zero": true,
+            "assistant_role": true,
+            "content_string": true,
+            "content_json_object": true,
+            "tool_calls_absent_or_null": true,
+            "tool_calls_empty_array": false,
+            "function_call_absent_or_null": true,
+            "refusal_absent_or_null": true,
+            "items_count": 0,
+            "item_ids_are_strings": true,
+            "evidence_refs_match_sent_pool": true
+          },
+          "usage": {
+            "prompt_tokens": 766,
+            "completion_tokens": 1252,
+            "total_tokens": 2018
+          },
+          "elapsed_ms": 6744.372
+        }
+      ],
+      "scenarios": [
+        {
+          "mode": "structured",
+          "interaction_status": "failed",
+          "applicability": "current",
+          "model_calls_used": 2,
+          "search_calls_used": 1,
+          "repair_used": true,
+          "result_count": 0,
+          "error": "invalid_model_output",
+          "selected_synthetic_ids": []
+        }
+      ],
+      "exit_code": 1
+    }
+  ],
+  "audit_totals": {
+    "generation_requests_including_failed_attempts": 7,
+    "successful_final_attempt_generation_requests": 3,
+    "models_discovery_requests": 1,
+    "reported_token_usage": {
+      "prompt_tokens": 5893,
+      "completion_tokens": 6265,
+      "total_tokens": 12158
+    },
+    "requested_max_tokens_exceeded_in_gateway_usage": true,
+    "generation_requests_after_success": 0
+  }
+}

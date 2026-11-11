@@ -1,0 +1,554 @@
+{
+  "status": "passed",
+  "scope": "ordinary discovery use case; HTTP/session selection/serialization measured separately",
+  "fixture": {
+    "members": 400,
+    "opted_in": 360,
+    "viewer_id": 424,
+    "space_id": 5,
+    "eligible_other_people": 359,
+    "batch_sizes_per_complete_read": [
+      200,
+      159
+    ],
+    "complete_reads_per_page": 2
+  },
+  "scenarios": {
+    "recent_first": {
+      "baseline_use_case_ms": [
+        5302.14,
+        5436.793,
+        5447.51
+      ],
+      "final_use_case_ms": [
+        5566.764,
+        4913.545,
+        5346.508
+      ],
+      "baseline_median_ms": 5436.793,
+      "final_median_ms": 5346.508,
+      "observed_median_reduction_percent": 1.66,
+      "baseline_query_ms_median": 952.119,
+      "final_query_ms_median": 1791.1,
+      "baseline_non_query_ms_median": 4484.674,
+      "final_non_query_ms_median": 3526.424,
+      "query_count_and_ordered_result_unchanged": true,
+      "baseline_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "final_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "query_count": 66,
+      "returned_rows": 47644,
+      "owner_id_order_sha256": "7d003837b5225d31f2789f6283bc87636a78c1507978943a2d4e5c51d8e72789",
+      "items": 24,
+      "has_more": true
+    },
+    "last_person_late_skill": {
+      "baseline_use_case_ms": [
+        5415.928,
+        5448.759,
+        5577.139
+      ],
+      "final_use_case_ms": [
+        4363.082,
+        5549.472,
+        5270.933
+      ],
+      "baseline_median_ms": 5448.759,
+      "final_median_ms": 5270.933,
+      "observed_median_reduction_percent": 3.26,
+      "baseline_query_ms_median": 938.966,
+      "final_query_ms_median": 1674.287,
+      "baseline_non_query_ms_median": 4509.793,
+      "final_non_query_ms_median": 3596.646,
+      "query_count_and_ordered_result_unchanged": true,
+      "baseline_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "final_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "query_count": 66,
+      "returned_rows": 47644,
+      "owner_id_order_sha256": "6f5ee070ffc36e0b8aa986d10f333de1ae11398905501c1de145d6985ca21d23",
+      "items": 1,
+      "has_more": false
+    },
+    "role_skill_and": {
+      "baseline_use_case_ms": [
+        5785.754,
+        5522.84,
+        5592.414
+      ],
+      "final_use_case_ms": [
+        6500.361,
+        9119.664,
+        7144.712
+      ],
+      "baseline_median_ms": 5592.414,
+      "final_median_ms": 7144.712,
+      "observed_median_reduction_percent": -27.76,
+      "baseline_query_ms_median": 945.364,
+      "final_query_ms_median": 2286.859,
+      "baseline_non_query_ms_median": 4647.05,
+      "final_non_query_ms_median": 4857.853,
+      "query_count_and_ordered_result_unchanged": true,
+      "baseline_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "final_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "query_count": 66,
+      "returned_rows": 47644,
+      "owner_id_order_sha256": "7006cb19452781939a79e75402a1f871476e92b616bb22b384e199233db3aaf6",
+      "items": 24,
+      "has_more": true
+    },
+    "seeking_array_second_third": {
+      "baseline_use_case_ms": [
+        5684.262,
+        5552.467,
+        5540.945
+      ],
+      "final_use_case_ms": [
+        8092.896,
+        5116.137,
+        6147.794
+      ],
+      "baseline_median_ms": 5552.467,
+      "final_median_ms": 6147.794,
+      "observed_median_reduction_percent": -10.72,
+      "baseline_query_ms_median": 943.268,
+      "final_query_ms_median": 2331.522,
+      "baseline_non_query_ms_median": 4609.199,
+      "final_non_query_ms_median": 3816.272,
+      "query_count_and_ordered_result_unchanged": true,
+      "baseline_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "final_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "query_count": 66,
+      "returned_rows": 47644,
+      "owner_id_order_sha256": "280b7520a21e68058f137dd4b30713eacd9a3d32581859c23fb6123849782abf",
+      "items": 24,
+      "has_more": true
+    },
+    "availability_full_window": {
+      "baseline_use_case_ms": [
+        5657.332,
+        5869.758,
+        6656.219
+      ],
+      "final_use_case_ms": [
+        6834.74,
+        9166.03,
+        8908.991
+      ],
+      "baseline_median_ms": 5869.758,
+      "final_median_ms": 8908.991,
+      "observed_median_reduction_percent": -51.78,
+      "baseline_query_ms_median": 955.735,
+      "final_query_ms_median": 2522.141,
+      "baseline_non_query_ms_median": 4914.023,
+      "final_non_query_ms_median": 6386.85,
+      "query_count_and_ordered_result_unchanged": true,
+      "baseline_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "final_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "query_count": 66,
+      "returned_rows": 47644,
+      "owner_id_order_sha256": "58e08376a85960ef9f079ba0500966f67ffad7c14a6115e8d4f52486ab5aacfb",
+      "items": 24,
+      "has_more": true
+    },
+    "empty_filter": {
+      "baseline_use_case_ms": [
+        8336.395,
+        11940.177,
+        9004.65
+      ],
+      "final_use_case_ms": [
+        6416.359,
+        11469.504,
+        11087.217
+      ],
+      "baseline_median_ms": 9004.65,
+      "final_median_ms": 11087.217,
+      "observed_median_reduction_percent": -23.13,
+      "baseline_query_ms_median": 1519.9,
+      "final_query_ms_median": 3293.478,
+      "baseline_non_query_ms_median": 7484.75,
+      "final_non_query_ms_median": 7793.739,
+      "query_count_and_ordered_result_unchanged": true,
+      "baseline_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "final_handler_samples": [
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        },
+        {
+          "Handler_read_first": 40,
+          "Handler_read_key": 102552,
+          "Handler_read_last": 0,
+          "Handler_read_next": 38200,
+          "Handler_read_prev": 0,
+          "Handler_read_rnd": 36856,
+          "Handler_read_rnd_next": 148442
+        }
+      ],
+      "query_count": 66,
+      "returned_rows": 47644,
+      "owner_id_order_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "items": 0,
+      "has_more": false
+    }
+  },
+  "changed_production_files": [
+    "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+    "backend/protected/modules/matcher-user-profile/module.json"
+  ],
+  "production_change": "Memoize only immutable code-defined field schemas; PHP array copy-on-write preserves caller isolation. P1 patch version 0.9.1. No SQL, index, authorization, full-scan bound or recommendation-policy change.",
+  "source_sha256_baseline": {
+    "ordinary_source": "93aee7c504ce6056b5a2093f48c43115735cb0797cd1ba22588f4c1790a3f5a8",
+    "browse_use_case": "ada847d5eed7b31384eb3d4d88f08d97522e26d0fa2bf5d084d5c11f07caeaad",
+    "p1_field_catalog": "9184135f0e4a11231754fdcb836d6ef7b783ff2a8a1fc285b4beb0ad49bd5b61",
+    "p1_profile_batch": "beefe251312e21631dce46dcff5cae52c208236176d78d3bd7ebadfd0949e0db",
+    "p8_batch": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999"
+  },
+  "source_sha256_final": {
+    "ordinary_source": "93aee7c504ce6056b5a2093f48c43115735cb0797cd1ba22588f4c1790a3f5a8",
+    "browse_use_case": "ada847d5eed7b31384eb3d4d88f08d97522e26d0fa2bf5d084d5c11f07caeaad",
+    "p1_field_catalog": "1cf5cca85451d391d719e786b2b34e9c040e9984c7ebc626b31c66b0163d1b36",
+    "p1_profile_batch": "beefe251312e21631dce46dcff5cae52c208236176d78d3bd7ebadfd0949e0db",
+    "p8_batch": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999"
+  },
+  "catalog_schema_sha256_unchanged": "f3d619286dba6b1928d94767879bf434684a914cd2f034cc6c3f20b29a212216",
+  "offline_regression_checks": 630,
+  "measurement_tool_correction": {
+    "reason": "MySQL 9.7 default EXPLAIN returns TREE, so the initial tabular parser yielded no usable estimate. Explicit EXPLAIN FORMAT=TRADITIONAL now supplies estimates. Actual iterator nodes include only whitelisted operator/table labels and numbers.",
+    "before_fix_evidence": "s73-performance-baseline-before-plan-format-fix_2026-11-12.json",
+    "plan_refresh_evidence": "s73-performance-baseline-plan-refresh_2026-11-12.json",
+    "same_source_hashes": true,
+    "scenario_timings_and_original_index_client_timings_preserved": true,
+    "initial_unparsed_estimates_are_invalid": true
+  },
+  "limits": [
+    "Only three sequential local samples per case. Timing variability, including the slow empty baseline samples, is retained; no production capacity, throughput, SLA or isolated causal-effect claim.",
+    "Handler counts are engine read operations; returned-row totals include repeated authorization reads. Neither is exact rows_examined.",
+    "EXPLAIN FORMAT=TRADITIONAL estimates and numeric EXPLAIN ANALYZE iterator actuals are distinct. ANALYZE instrumentation timings are not the normal SELECT client timings.",
+    "The tested existing state-leading index USE/IGNORE hints preserve results and do not change the optimizer's attribute-table scan. Do not attribute timing differences to indexes.",
+    "Recommendation candidate-term/interval indexes are not consulted by ordinary discovery.",
+    "Concurrent load, multi-client throughput, latency percentiles and production capacity were not measured. No consistent end-to-end acceleration was demonstrated."
+  ],
+  "model_calls": 0
+}

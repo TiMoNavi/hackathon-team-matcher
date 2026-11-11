@@ -1,0 +1,87 @@
+{
+  "status": "resolved_by_full_rerun",
+  "date": "2026-11-12",
+  "trials": [
+    {
+      "evidence": "s76_audit_http_first_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 0,
+      "http_requests": 0,
+      "stop_reason": "preconnect_guard_empty",
+      "classification": "test_harness",
+      "resolution": "PHP运行配置关闭错误展示；守卫已退出但测试仅从stderr查找提示，未能确认预期文本。"
+    },
+    {
+      "evidence": "s76_audit_http_run2_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 0,
+      "http_requests": 0,
+      "stop_reason": "preconnect_guard_empty",
+      "classification": "test_harness",
+      "resolution": "合并stdout/stderr仍无法取得关闭展示的错误；守卫负例单独启用display_errors后确认在加载配置前拒绝。"
+    },
+    {
+      "evidence": "s76_audit_http_run3_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 5,
+      "http_requests": 0,
+      "stop_reason": "S76 audit CLI failed: legacy (exit 1)",
+      "classification": "test_harness",
+      "resolution": "新合成reader的PHP命名空间在生成脚本中被错误转义；修正测试helper，不改生产文件。"
+    },
+    {
+      "evidence": "s76_audit_http_run4_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 56,
+      "http_requests": 74,
+      "stop_reason": "source_running_schema",
+      "classification": "contract_expectation",
+      "resolution": "P1来源/任务紧凑data是安全元数据加progress，测试误按纯progress对象断言；修正取值并保留整个响应的禁用字段扫描。"
+    },
+    {
+      "evidence": "s76_audit_http_run5_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 65,
+      "http_requests": 77,
+      "stop_reason": "source_failure_stops_polling",
+      "classification": "fixture_identity",
+      "resolution": "传入空suffix导致两次合成来源同标识，既有去重正确复用ready来源；改用独立来源后真实失败reader被执行。"
+    },
+    {
+      "evidence": "s76_audit_http_run6_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 91,
+      "http_requests": 163,
+      "stop_reason": "source_deletion_revokes_saved_success",
+      "classification": "state_expectation",
+      "resolution": "删除测试引用的旧成功job已因手工输入变更变成superseded；既有来源撤销仅处理current。改为先创建并验证新的current成功job，再删除来源验证revoked。"
+    },
+    {
+      "evidence": "s76_audit_http_run7_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 121,
+      "http_requests": 227,
+      "stop_reason": "S76 audit CLI failed: install (exit 1)",
+      "classification": "upgrade_entry",
+      "resolution": "测试绕过迁移历史直接重跑早期ProfileSchemaInstaller，命中既有列默认值校验；改用授权的原生S76 upgrade入口连续两次，核对迁移记录与数据指纹。"
+    },
+    {
+      "evidence": "s76_audit_http_run8_2026-11-12.json",
+      "status": "failed",
+      "passed_before_stop": 115,
+      "http_requests": 219,
+      "stop_reason": "'available'",
+      "classification": "contract_expectation",
+      "resolution": "AI能力available实际位于ai对象；修正测试取值。finally已重新启用P6，后续完整复验通过。"
+    }
+  ],
+  "final_evidence": "s76_audit_http_2026-11-12.json",
+  "final_passed": 128,
+  "final_http_requests": 251,
+  "production_files_modified_by_audit": false,
+  "unresolved_application_failures": 0,
+  "notes": [
+    "早期中断保留完整逐项结果，不计为最终验收失败。",
+    "reader日志仅记录入口与事务状态，completed=0不代表读取失败；来源结果由HTTP真实状态断言验证。"
+  ]
+}

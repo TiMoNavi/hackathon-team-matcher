@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "final_changed_php_files_checked": 5,
+  "final_changed_python_files_checked": 3,
+  "node_syntax_valid": true,
+  "failed_files": [],
+  "public_documents_scanned": 63,
+  "credential_matches_in_scanned_documents": [],
+  "private_configuration_permissions_correct": true,
+  "local_directory_ignored": true
+}

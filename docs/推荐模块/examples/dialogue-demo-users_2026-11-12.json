@@ -1,0 +1,1533 @@
+{
+  "schema_version": 1,
+  "synthetic_only": true,
+  "viewer": {
+    "id": 1,
+    "event_id": 7,
+    "display_name": "虚构测试者"
+  },
+  "users": [
+    {
+      "id": "1001",
+      "display_name": "虚构·林澄",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "机器学习"
+        ],
+        "offers": [
+          "后端开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。已明确愿意在本活动承担后端开发；适合验证同主题下对产品、商业角色的贡献补足。性格类型仅为自报。"
+    },
+    {
+      "id": "1002",
+      "display_name": "虚构·程木",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "skills": [
+          "产品协调",
+          "用户访谈"
+        ],
+        "offers": [
+          "产品协调"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做计划"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。明确提供产品协调，不把外向类型推断为领导能力；与同主题后端或设计角色形成已声明的分工。"
+    },
+    {
+      "id": "1003",
+      "display_name": "虚构·许弦",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "开源"
+        ],
+        "skills": [
+          "前端开发",
+          "设计"
+        ],
+        "offers": [
+          "前端开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。计划制作教学互动原型，愿意承担前端；与后端需求互补，但周六上午时间条件不能由兴趣代替。"
+    },
+    {
+      "id": "1004",
+      "display_name": "虚构·陈舟",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "skills": [
+          "商业拓展",
+          "用户访谈"
+        ],
+        "offers": [
+          "商业拓展"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做计划"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。愿意承担访谈和商业拓展；项目主题相似但不能推荐为已承诺后端开发的候选。"
+    },
+    {
+      "id": "1005",
+      "display_name": "虚构·云帆",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "游戏"
+        ],
+        "skills": [
+          "设计",
+          "教学设计"
+        ],
+        "offers": [
+          "设计"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。希望设计游戏化教学界面；有相同教育主题和设计贡献，未填写性格类型。"
+    },
+    {
+      "id": "1006",
+      "display_name": "虚构·余朔",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "机器人"
+        ],
+        "skills": [
+          "硬件开发",
+          "后端开发"
+        ],
+        "offers": [
+          "硬件开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做计划"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。有后端技能但本活动只承诺硬件开发，验证技能和本次贡献意愿分开。"
+    },
+    {
+      "id": "1007",
+      "display_name": "虚构·闻夏",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "skills": [
+          "教学设计",
+          "产品协调"
+        ],
+        "offers": [
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。希望整理教学场景和验收需求；可与技术角色合作，无需依赖性格标签。"
+    },
+    {
+      "id": "1008",
+      "display_name": "虚构·苏砚",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "音乐"
+        ],
+        "skills": [
+          "前端开发",
+          "设计"
+        ],
+        "offers": [
+          "前端开发",
+          "设计"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做原型"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。对音乐学习工具感兴趣，明确愿意承担前端和设计，可同时匹配主题和项目分工。"
+    },
+    {
+      "id": "1009",
+      "display_name": "虚构·顾栎",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "数据分析"
+        ],
+        "offers": [
+          "后端开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做计划"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。与林澄主题及技术方向相似，但偏好先做计划；偏好差异应按用户条件评分，不推断为无法合作。"
+    },
+    {
+      "id": "1010",
+      "display_name": "虚构·叶寻",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "徒步"
+        ],
+        "skills": [
+          "产品协调",
+          "商业拓展"
+        ],
+        "offers": [
+          "商业拓展"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做原型"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。可以拓展教育公益试用场景，并有徒步共同兴趣；承担商业拓展是明确声明。"
+    },
+    {
+      "id": "1011",
+      "display_name": "虚构·沈禾",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "开源"
+        ],
+        "skills": [
+          "后端开发"
+        ],
+        "offers": [
+          "后端开发"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。公开相关字段较少但已有明确教育兴趣和后端贡献，不能因字段少自动判为低质量用户。"
+    },
+    {
+      "id": "1012",
+      "display_name": "虚构·陆遥",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "游戏"
+        ],
+        "skills": [
+          "前端开发"
+        ],
+        "offers": [
+          "前端开发"
+        ],
+        "preferences": [
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。仅有必要的主题、技能和贡献资料；可做兴趣相似推荐，不补写沟通习惯或性格。"
+    },
+    {
+      "id": "1013",
+      "display_name": "虚构·白露",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育"
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。只确认了教育兴趣；角色、时间和偏好都未知。共同兴趣可作证据，不能说其能补上项目技术缺口。"
+    },
+    {
+      "id": "1014",
+      "display_name": "虚构·孟川",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "skills": [
+          "商业拓展",
+          "设计"
+        ],
+        "offers": [
+          "商业拓展"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做计划"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。主题相关但角色不满足明确后端需求；软条件可降分，用户确认的硬角色要求不能被高兴趣相似度抵消。"
+    },
+    {
+      "id": "1015",
+      "display_name": "虚构·唐屿",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "前端开发"
+        ],
+        "preferences": [
+          "异步沟通"
+        ],
+        "self_type": "INTJ"
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。只确认技术技能，尚未声明本活动愿意承担什么；不得把能力直接当成贡献意愿。"
+    },
+    {
+      "id": "1016",
+      "display_name": "虚构·周岚",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "机器人",
+          "开源"
+        ],
+        "skills": [
+          "硬件开发",
+          "传感器集成"
+        ],
+        "offers": [
+          "硬件开发"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。机器人主题候选，与教育查询主题不同；只有真实条件覆盖时才推荐，不为凑满卡片赋予教育兴趣。"
+    },
+    {
+      "id": "1017",
+      "display_name": "虚构·秦音",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "音乐",
+          "开源"
+        ],
+        "skills": [
+          "前端开发"
+        ],
+        "offers": [
+          "前端开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。适合音乐或开源界面项目；前端贡献和共同兴趣可以分别成为理由。"
+    },
+    {
+      "id": "1018",
+      "display_name": "虚构·何青",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "徒步",
+          "公益"
+        ],
+        "skills": [
+          "产品协调",
+          "用户访谈"
+        ],
+        "offers": [
+          "产品协调"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做计划"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。想组织户外公益项目，验证非技术主题的产品协调候选。"
+    },
+    {
+      "id": "1019",
+      "display_name": "虚构·温序",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "开源",
+          "金融"
+        ],
+        "skills": [
+          "后端开发",
+          "数据分析"
+        ],
+        "offers": [
+          "后端开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做计划"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。可以匹配金融或开源后端需求，但没有教育主题证据。"
+    },
+    {
+      "id": "1020",
+      "display_name": "虚构·方歌",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "音乐",
+          "游戏"
+        ],
+        "skills": [
+          "设计"
+        ],
+        "offers": [
+          "设计"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做原型"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。音乐游戏视觉设计方向，适合检验相同兴趣与不同分工同时匹配。"
+    },
+    {
+      "id": "1021",
+      "display_name": "虚构·罗星",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "游戏",
+          "机器人"
+        ],
+        "skills": [
+          "硬件开发",
+          "后端开发"
+        ],
+        "offers": [
+          "硬件开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。偏好实体交互游戏；有后端能力但只接受硬件开发分工。"
+    },
+    {
+      "id": "1022",
+      "display_name": "虚构·夏棠",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "金融",
+          "公益"
+        ],
+        "skills": [
+          "商业拓展",
+          "产品协调"
+        ],
+        "offers": [
+          "商业拓展"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做计划"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。愿意探索公益项目的可持续运营，商业贡献不等于金融专业资质声明。"
+    },
+    {
+      "id": "1023",
+      "display_name": "虚构·徐沐",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "开源",
+          "音乐"
+        ],
+        "skills": [
+          "前端开发",
+          "设计"
+        ],
+        "offers": [
+          "前端开发"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做计划"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。开源音乐工具前端方向；与秦音兴趣相似，但实现前的协作偏好有所差异。"
+    },
+    {
+      "id": "1024",
+      "display_name": "虚构·许原",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "徒步",
+          "游戏"
+        ],
+        "skills": [
+          "产品协调"
+        ],
+        "offers": [
+          "产品协调"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做原型"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。希望做户外探索游戏；明确承担产品协调，不能因类型标签额外加领导力分。"
+    },
+    {
+      "id": "1025",
+      "display_name": "虚构·季宁",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "前端开发",
+          "设计"
+        ],
+        "offers": [
+          "前端开发",
+          "设计"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。公益开源页面方向，有多个明确贡献，但重复标签不能重复累计相同证据得分。"
+    },
+    {
+      "id": "1026",
+      "display_name": "虚构·戴竹",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "机器人",
+          "徒步"
+        ],
+        "skills": [
+          "设计",
+          "硬件开发"
+        ],
+        "offers": [
+          "设计"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做计划"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。关注户外机器人产品外观；声明的本次贡献为设计。"
+    },
+    {
+      "id": "1027",
+      "display_name": "虚构·齐墨",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "产品协调"
+        ],
+        "offers": [
+          "后端开发",
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": true,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。公开匹配度很高，但存在 blocked=true，必须在送模型前排除。"
+    },
+    {
+      "id": "1028",
+      "display_name": "虚构·安澈",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "产品协调"
+        ],
+        "offers": [
+          "后端开发",
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": true,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。公开匹配度很高，但已是好友，不能作为新好友的 AI 联系推荐。"
+    },
+    {
+      "id": "1029",
+      "display_name": "虚构·魏泉",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "产品协调"
+        ],
+        "offers": [
+          "后端开发",
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": true,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。公开匹配度很高，但有对方发来的待处理申请 pending_in=true，必须排除。"
+    },
+    {
+      "id": "1030",
+      "display_name": "虚构·邵禾",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "产品协调"
+        ],
+        "offers": [
+          "后端开发",
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": true
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。公开匹配度很高，但有本人发出的待处理申请 pending_out=true，必须排除。"
+    },
+    {
+      "id": "1031",
+      "display_name": "虚构·梁溪",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "产品协调"
+        ],
+        "offers": [
+          "后端开发",
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": true,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。当前没有待处理关系，但权威历史标记 ever_sent=true；即使旧申请已终结也必须排除。"
+    },
+    {
+      "id": "1032",
+      "display_name": "虚构·虞声",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "音乐"
+        ],
+        "preferences": [
+          "异步沟通"
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "offers": [
+          "后端开发"
+        ]
+      },
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。教育主题和后端贡献只存在于 excluded_private_features，不能进入召回、评分、模型摘要或理由；公开可用主题只有音乐。"
+    },
+    {
+      "id": "1033",
+      "display_name": "虚构·董棋",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "游戏"
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "offers": [
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通"
+        ]
+      },
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。教育兴趣与产品协调只在未确认草稿中，未采纳前不得作为推荐依据；当前公开可用主题只有游戏。"
+    },
+    {
+      "id": "1034",
+      "display_name": "虚构·杨空",
+      "event_id": 7,
+      "features": {},
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。尚未确认可用于发现的画像字段，属于真实的资料不足；不推断兴趣、角色或类型，不保证生成推荐理由。"
+    },
+    {
+      "id": "1035",
+      "display_name": "虚构·米芮",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "设计"
+        ],
+        "offers": [
+          "设计"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。教育主题和后端技能相关，但本活动只愿意做设计；明确验证角色需求不匹配，不把技能擅自转换成后端承诺。"
+    },
+    {
+      "id": "1036",
+      "display_name": "虚构·金笙",
+      "event_id": 7,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "skills": [
+          "后端开发"
+        ],
+        "offers": [
+          "后端开发"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做计划"
+        ],
+        "self_type": "ENFP",
+        "availability": [
+          {
+            "starts_at": "2026-11-21T09:00:00+08:00",
+            "ends_at": "2026-11-21T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。主题与后端贡献吻合，但只有次周可用；对本周六的硬时间要求应失败，对软时间偏好应明确解释已知时段不重合，不能改称未知。"
+    },
+    {
+      "id": "2001",
+      "display_name": "虚构·韩汀",
+      "event_id": 8,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益",
+          "开源"
+        ],
+        "skills": [
+          "后端开发",
+          "产品协调"
+        ],
+        "offers": [
+          "后端开发",
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "self_type": "INTJ",
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          },
+          {
+            "starts_at": "2026-11-15T14:00:00+08:00",
+            "ends_at": "2026-11-15T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。属于活动8；即使匹配度很高且关系允许，也不得补入当前活动7的召回、推荐或模型摘要。"
+    },
+    {
+      "id": "2002",
+      "display_name": "虚构·宋杉",
+      "event_id": 8,
+      "features": {
+        "topics": [
+          "AI教育",
+          "公益"
+        ],
+        "skills": [
+          "产品协调"
+        ],
+        "offers": [
+          "产品协调"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。属于活动8；用于验证产品协调缺口不能通过跨活动凑数填补。"
+    },
+    {
+      "id": "2003",
+      "display_name": "虚构·郑弥",
+      "event_id": 8,
+      "features": {
+        "topics": [
+          "AI教育",
+          "开源"
+        ],
+        "skills": [
+          "商业拓展"
+        ],
+        "offers": [
+          "商业拓展"
+        ],
+        "preferences": [
+          "异步沟通",
+          "先做计划"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T09:00:00+08:00",
+            "ends_at": "2026-11-14T13:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。属于活动8；用于验证商业拓展候选不足也必须保留活动边界。"
+    },
+    {
+      "id": "2004",
+      "display_name": "虚构·杜弦",
+      "event_id": 8,
+      "features": {
+        "topics": [
+          "AI教育",
+          "音乐"
+        ],
+        "skills": [
+          "设计",
+          "前端开发"
+        ],
+        "offers": [
+          "设计"
+        ],
+        "preferences": [
+          "当面讨论",
+          "先做原型"
+        ],
+        "availability": [
+          {
+            "starts_at": "2026-11-14T14:00:00+08:00",
+            "ends_at": "2026-11-14T18:00:00+08:00"
+          }
+        ]
+      },
+      "relationship": {
+        "blocked": false,
+        "friend": false,
+        "pending_in": false,
+        "pending_out": false
+      },
+      "ever_sent": false,
+      "excluded_private_features": {},
+      "unconfirmed_features": {},
+      "scenario_note": "synthetic=true；全部人物与资料均为虚构测试数据。属于活动8；用于验证兴趣相似和设计贡献都不能覆盖活动授权边界。"
+    }
+  ]
+}

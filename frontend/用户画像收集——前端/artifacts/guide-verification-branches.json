@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-11T18:06:51.980Z",
+  "phase": "branches",
+  "checks": [
+    "No-source path skips parsing, all questions may be skipped, an empty idea cannot advance, and no activity never falls back to global people",
+    "An opaque real file remains explicitly unparsed and never receives a fictional profile",
+    "Zero results require explicit ordinary browsing; following, discussion requests and friendship are independent",
+    "Recommendation failure stays visible and explicit retry recovers",
+    "Switching activities during search cancels the old task and clears results",
+    "Storage failure retains the editor and never advances as saved",
+    "Unreadable drafts are preserved until explicit restart",
+    "Reduced motion has static visuals and no running animations; system dark mode and theme toggle work"
+  ],
+  "views": [],
+  "errors": []
+}

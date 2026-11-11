@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": 147,
+  "database_calls": 0,
+  "model_calls": 0,
+  "areas": [
+    "optional contacts",
+    "owner-only drafts",
+    "Space membership",
+    "stable repeatable IDs",
+    "partial confirmation",
+    "dual versions",
+    "idempotency",
+    "history",
+    "rollback",
+    "administrator adoption",
+    "QR ownership",
+    "maintenance"
+  ]
+}

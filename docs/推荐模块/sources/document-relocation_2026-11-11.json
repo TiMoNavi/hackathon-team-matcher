@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-11",
+  "scope": "User-requested relocation of recommendation-owned research artifacts. Content writes stay inside docs/推荐模块. Source paths were removed by rename only.",
+  "files": [
+    {
+      "from": "backend-research/examples/friend-recommendation/config.draft.json",
+      "to": "docs/推荐模块/examples/field-mapping/config.draft.json",
+      "original_sha256": "87bc40422bfdd539c49e513a6e358880b90e13486998425bb8d5522c9c63ea55",
+      "relocation_verified": true,
+      "current_sha256": "87bc40422bfdd539c49e513a6e358880b90e13486998425bb8d5522c9c63ea55"
+    },
+    {
+      "from": "backend-research/examples/friend-recommendation/validate_config.py",
+      "to": "docs/推荐模块/examples/field-mapping/validate_config.py",
+      "original_sha256": "eea050f93e1e418dd66ab8ec266adf1be3c348dd808815a443367d3778260b2d",
+      "relocation_verified": true,
+      "current_sha256": "932338649db4232478dabae5a5f814969d565a93837799c2f2fdfb485eef1120"
+    },
+    {
+      "from": "backend-research/evidence/friend-recommendation-config-checks-2026-11-11.json",
+      "to": "docs/推荐模块/sources/field-mapping-checks_2026-11-11.json",
+      "original_sha256": "a770824eda60505042655f354163ad3404da2a9f85793be40834f2f82cf61708",
+      "relocation_verified": true,
+      "current_sha256": "a770824eda60505042655f354163ad3404da2a9f85793be40834f2f82cf61708"
+    },
+    {
+      "from": "backend-research/evidence/recommendation-repositories-2026-11-11.json",
+      "to": "docs/推荐模块/sources/initial-repository-research_2026-11-11.json",
+      "original_sha256": "f70b2d24caafc43751998361ad5846f70d380e0bfcd08630c429a0857546bcfd",
+      "relocation_verified": true,
+      "current_sha256": "f70b2d24caafc43751998361ad5846f70d380e0bfcd08630c429a0857546bcfd"
+    },
+    {
+      "from": "backend-research/HumHub好友推荐插件与动态字段配置方案.md",
+      "to": "docs/推荐模块/history/旧研究导航_2026-11-11.md",
+      "original_sha256": "e26d566e00cf63872e1018808439dddd554adb6e54015a8d4211f5d3e0ef6ee7",
+      "relocation_verified": true,
+      "current_sha256": "cfe2f024f592560251d26b955a3104c7c1a085c6dcf485530ceda4f7a05323f5"
+    }
+  ],
+  "destination_adjustments": [
+    "Adjust relocated offline validator project-root depth",
+    "Fix relocated navigation and recommendation-document relative links"
+  ],
+  "outside_documents": "Shared contracts, root navigation, general research and other plugin documents were kept read-only; their pre-existing content was not reverted or migrated wholesale.",
+  "backend_code": "No files written; implementation planning only."
+}

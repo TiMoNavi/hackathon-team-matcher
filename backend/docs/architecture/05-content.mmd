@@ -1,0 +1,24 @@
+%% 内容访问：权限判断与内容生命周期
+%% 与 SVG 使用同一节点和关系数据；布局由 Mermaid 决定。
+flowchart TB
+  request["请求入口<br/>身份 / 操作权限<br/>由对应 Controller 处理"]:::core
+  content["加载 Post / Content<br/>归属个人或 Space<br/>作者、状态、可见性"]:::core
+  access["服务端访问判断<br/>canView：能否读取<br/>canEdit：能否编辑<br/>结合身份、状态、容器规则"]:::core
+  allow["允许对应操作<br/>通过校验后读取或修改"]:::core
+  deny["拒绝 / 不返回无权内容<br/>具体响应由入口决定"]:::external
+  draft["草稿<br/>STATE_DRAFT = 10"]:::core
+  scheduled["定时发布<br/>STATE_SCHEDULED = 20<br/>需要 scheduled_at"]:::core
+  published["已发布<br/>STATE_PUBLISHED = 1"]:::core
+  deleted["已删除状态<br/>STATE_DELETED = 100<br/>不等于已经物理删除"]:::core
+  request --> content
+  content --> access
+  access -->|"通过"| allow
+  access -->|"不通过"| deny
+  draft --> scheduled
+  scheduled --> published
+  published --> deleted
+  draft -->|"也可直接发布；具体操作仍须校验权限"| published
+  classDef core fill:#edf5ff,stroke:#3975ba,color:#1c304b
+  classDef optional fill:#f5f0ff,stroke:#8870bd,color:#1c304b
+  classDef planned fill:#fff6e6,stroke:#ba7b20,color:#1c304b
+  classDef external fill:#f2f4f7,stroke:#778397,color:#1c304b

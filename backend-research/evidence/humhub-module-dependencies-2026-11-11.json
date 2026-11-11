@@ -1,0 +1,32 @@
+{
+  "checked_on": "2026-11-11",
+  "humhub": "1.19.4",
+  "method": "Read-only ModuleDependencyService.getUnmetDependencies with in-memory metadata; no install/enable/disable/migration",
+  "checks": [
+    {
+      "name": "enabled_matching",
+      "dependency": "rest",
+      "minimum": "0.12.7",
+      "satisfied": true
+    },
+    {
+      "name": "version_too_high",
+      "dependency": "rest",
+      "minimum": "99.0.0",
+      "satisfied": false,
+      "reason": "minimum version unmet"
+    },
+    {
+      "name": "installed_disabled",
+      "dependency": "twofa",
+      "satisfied": false,
+      "reason": "installed but not enabled"
+    },
+    {
+      "name": "missing_dependency",
+      "dependency": "matcher-profile-not-installed",
+      "satisfied": false,
+      "reason": "not installed"
+    }
+  ]
+}

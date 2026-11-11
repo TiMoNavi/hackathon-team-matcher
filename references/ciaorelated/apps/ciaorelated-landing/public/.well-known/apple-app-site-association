@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "989J2TKG5N.com.dogankaraarslan1.songverwandt",
+        "paths": ["/join", "/join/*"]
+      }
+    ]
+  }
+}

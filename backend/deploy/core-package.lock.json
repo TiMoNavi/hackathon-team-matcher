@@ -1,0 +1,10 @@
+{
+  "version": "1.19.4",
+  "url": "https://download.humhub.com/downloads/install/humhub-1.19.4.tar.gz",
+  "sha256": "90b0d1e03fd3107def5effc86368eee954b4285f4176e19103689ee452430b45",
+  "bytes": 52815090,
+  "verified_on": "2026-11-11",
+  "role": "official built assets and vendored dependencies; tracked core stays from upstream tag",
+  "materialized_files": 16196,
+  "tracked_core_mismatch_count": 0
+}

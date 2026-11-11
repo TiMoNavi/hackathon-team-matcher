@@ -1,0 +1,1801 @@
+{
+  "influence": {
+    "title": "Einfluss",
+    "back": "Zurück",
+    "close": "Schließen",
+    "info": "Über Community-Einfluss",
+    "loading": "Einfluss wird geladen",
+    "retry": "Erneut versuchen",
+    "failed": "Der aktuelle Stand konnte nicht geladen werden.",
+    "earned": "Erworben",
+    "received": "Empfangen",
+    "assigned": "Zugeordnet",
+    "own": "Eigener Einfluss",
+    "you": "Du selbst",
+    "recipient": "Unterstützung",
+    "rankingPending": "Reichweitenwirkung noch nicht aktiv",
+    "rankingActive": "Gewichtung für neue Beiträge aktiv",
+    "rankingExplanation": "Eigener und empfangener Einfluss geben neuen Beiträgen begrenzten Vorrang im persönlichen Homefeed und im Communities-Mix. Die Wirkung nimmt mit dem Alter des Beitrags ab. Sichtbarkeit, Relevanz und Abwechslung bleiben maßgeblich. Eine bestimmte Reichweite ist nicht garantiert. Gefolgt-, Profil- und direkte Community-Ansichten bleiben unverändert.",
+    "inactive": "Punkteerwerb noch nicht gestartet",
+    "starts": "Punkteerwerb ab {{date}}",
+    "choose": "Profil auswählen",
+    "revoke": "Wieder selbst nutzen",
+    "search": "Profil suchen",
+    "noPeople": "Keine passenden Profile gefunden.",
+    "support": "Unterstützen",
+    "confirm": "{{points}} eigener Einfluss und künftiger Fortschritt dieser Community. Jederzeit widerrufbar.",
+    "saveFailed": "Die Änderung konnte nicht bestätigt werden. Prüfe die Verbindung und versuche es erneut.",
+    "unavailablePerson": "Nicht verfügbar",
+    "unavailableCommunity": "Community nicht verfügbar",
+    "community": "Gemeinsame Entwicklung",
+    "participation": "Eigene Beteiligung",
+    "resonance": "Resonanz auf deine Beiträge",
+    "joined": "Dabei seit {{date}}",
+    "settled": "Abgerechnet bis {{date}}",
+    "unsettled": "Noch keine Abrechnung",
+    "communities": "Deine Communities",
+    "empty": "Noch keine Community-Positionen vorhanden.",
+    "more": "Weitere Communities",
+    "privateInfo": "Warum private Communities keinen Einfluss erzeugen",
+    "privateExplanation": "Private Communities erzeugen keinen Einfluss. Ihre Beiträge bleiben Mitgliedern vorbehalten. Nur öffentliche Communities tragen zum Punkteerwerb bei.",
+    "explanation": "Ein Beitritt allein gibt keine Punkte. Qualifiziertes Wachstum während deiner Mitgliedschaft stärkt deinen Frühvorteil. Gemeinsame Aktivität, eigene Beteiligung und Resonanz auf deine Community-Beiträge zählen zusätzlich.\n\nAbgerechnet wird nach Tagesende. Bei einem Austritt bleibt dein erworbener Einfluss erhalten; weiterer Erwerb pausiert.\n\nDu kannst pro Community deinen gesamten eigenen Einfluss einschließlich künftigem Fortschritt einem Profil zuordnen und jederzeit zurücknehmen. Empfangene Unterstützung lässt sich nicht weiterreichen.\n\nBei einer Sperre oder gegenseitigen Blockierung pausiert die Unterstützung. Nach deren Ende kann sie wieder wirken. Wird der Empfänger gelöscht, fällt die Zuordnung an dich zurück.",
+    "state": { "active": "Mitglied", "paused": "Erwerb pausiert", "private": "Privat · kein Punkteerwerb", "unavailable": "Einfluss pausiert" }
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "error": "Fehler",
+    "save": "Speichern",
+    "loading": "Lädt…",
+    "delete": "Löschen",
+    "thanks": "Danke",
+    "actionFailed": "Aktion fehlgeschlagen",
+    "block": "Blockieren",
+    "user": "Nutzer",
+    "userFallback": "user",
+    "dash": "—",
+    "ellipsis": "…",
+    "copied": "Kopiert",
+    "optional": "Optional",
+    "invalidServerResponse": "Ungültige Antwort vom Server.",
+    "unknownError": "Unbekannter Fehler.",
+    "tryAgain": "Bitte erneut versuchen.",
+    "note": "Hinweis",
+    "enable": "Aktivieren",
+    "done": "Fertig",
+    "unexpectedError": "Unerwarteter Fehler.",
+    "networkErrorTitle": "Netzwerkfehler",
+    "networkErrorBody": "Bitte Internetverbindung prüfen und erneut versuchen.",
+    "fieldSuffix": "Feld: {{field}}"
+  },
+  "openLink": {
+    "cannotOpen": "Link kann nicht geöffnet werden: {{url}}",
+    "failed": "Etwas ist schiefgelaufen beim Öffnen des Links."
+  },
+  "appUpdate": {
+    "availableTitle": "Update verfügbar",
+    "availableBody": "Es gibt eine neue Version ({{version}}).",
+    "updateNow": "Jetzt aktualisieren",
+    "later": "Später"
+  },
+  "requiredUpdate": {
+    "title": "Update erforderlich",
+    "body": "Eine neue {{appName}}-Version ist verfügbar. Bitte aktualisiere die App, um fortzufahren.",
+    "installed": "Installiert",
+    "new": "Neu",
+    "updateNow": "Jetzt aktualisieren"
+  },
+  "tabs": {
+    "home": "Home",
+    "moments": "Momente",
+    "explore": "Explore",
+    "profile": "Profil"
+  },
+  "time": {
+    "justNow": "gerade eben",
+
+    "secondsAgo_one": "vor {{count}} Sekunde",
+    "secondsAgo_other": "vor {{count}} Sekunden",
+
+    "minutesAgo_one": "vor {{count}} Minute",
+    "minutesAgo_other": "vor {{count}} Minuten",
+
+    "hoursAgo_one": "vor {{count}} Stunde",
+    "hoursAgo_other": "vor {{count}} Stunden",
+
+    "daysAgo_one": "vor {{count}} Tag",
+    "daysAgo_other": "vor {{count}} Tagen",
+
+    "weeksAgo_one": "vor {{count}} Woche",
+    "weeksAgo_other": "vor {{count}} Wochen"
+  },
+  "editprofile": {
+    "editProfile": "Profil bearbeiten",
+    "editImageOrAvatar": "Bild oder Avatar bearbeiten",
+    "yourName": "dein Name",
+    "userName": "Benutzername",
+    "username": "username",
+    "aboutYou": "Über dich…",
+    "contextEducation": "Kontext & Ausbildung",
+    "youCanChangeTheseFieldsAtAnyTime": "Diese Felder kannst du jederzeit ändern.",
+    "eGVienna": "z.B. Wien",
+    "trainingLevel": "Ausbildungslevel",
+    "eGStudiesTechnicalCollegeVocationalTb8cfdf": "z.B. Studium / HTL / Ausbildung",
+    "organization": "Organisation",
+    "eGTuVienna": "z.B. TU Wien",
+    "specialization": "Fachrichtung",
+    "eGComputerScience": "z.B. Informatik",
+    "graduationYear": "Abschlussjahr",
+    "eG2027": "z.B. 2027",
+    "interests": "Interessen",
+    "chooseUpTo12": "Wähle bis zu 12.",
+    "security": "Sicherheit",
+    "changePassword": "Passwort ändern",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "repeatNewPassword": "Neues Passwort wiederholen",
+    "noteChangesOnlyAffectThisProfile": "Hinweis: Änderungen betreffen nur dieses Profil.",
+    "name": "Name",
+    "bio": "Bio",
+    "city": "Stadt",
+    "permissionNeeded": "Berechtigung benötigt",
+    "allowPhotosAccess": "Bitte erlaube den Zugriff auf deine Fotos.",
+    "usernameTitle": "Benutzername",
+    "usernameTaken": "Dieser Benutzername ist bereits vergeben.",
+    "usernamePleaseEnter": "Bitte gib einen Benutzernamen ein.",
+    "saveFailed": "Speichern fehlgeschlagen.",
+    "fileNotFound": "Datei nicht gefunden.",
+    "uploadFailedStatus": "Upload fehlgeschlagen ({{status}}).",
+    "graduationYearInvalid": "Abschlussjahr ist ungültig.",
+    "passwordFillAll": "Bitte alle Passwort-Felder ausfüllen.",
+    "passwordTooShort": "Neues Passwort zu kurz (mind. 6 Zeichen).",
+    "passwordsDontMatch": "Passwörter stimmen nicht überein.",
+    "successTitle": "Erfolg",
+    "passwordChanged": "Passwort wurde geändert.",
+    "changePasswordFailed": "Passwort ändern fehlgeschlagen.",
+    "usernameAvailable": "frei",
+    "usernameUnavailable": "vergeben"
+  },
+
+  "setup": "[i18n setup]",
+  "vlogwizard": {
+    "createANewVlog": "Neuen Vlog erstellen",
+    "chooseCover": "Cover wählen",
+    "giveYourVlogACleanLook": "Gib deinem Vlog einen klaren Look",
+    "vlogsArePrivateCollectionsAndCanBeSh6ed840": "Vlogs sind private Sammlungen und können mit anderen geteilt werden. Beiträge darin erscheinen trotzdem wie gewohnt im Feed und auf Profilen.",
+    "eGSummerInSicily": "z. B. sommer-in-sizilien",
+    "fromTitle": "aus Titel",
+    "description": "Beschreibung",
+    "optionalWhatIsThisVlogAbout": "Optional — worum geht’s in diesem Vlog?",
+    "location": "Standort",
+    "currentLocation": "Aktueller Standort",
+    "remove": "Entfernen",
+    "searchForALocationAddressCityLandmare46174": "Ort suchen (Adresse, Stadt, Sehenswürdigkeit …)",
+    "noteBackendPlacesAreNotAvailableFall3e5b7c": "Hinweis: Backend-Places sind nicht verfügbar → Fallback (weniger zuverlässig).",
+    "noMatchesFound": "Keine Treffer.",
+    "createAVlog": "Vlog erstellen",
+    "pleaseSelectALocationFirst": "Bitte wähle zuerst einen Standort aus.",
+    "errors": {
+      "locationPermissionTitle": "Standort",
+      "locationPermissionBody": "Bitte erlaube den Zugriff auf deinen Standort in den Systemeinstellungen.",
+      "mediaPermissionTitle": "Zugriff benötigt",
+      "mediaPermissionBody": "Bitte erlaube den Zugriff auf deine Mediathek.",
+      "titleMissingTitle": "Titel fehlt",
+      "titleMissingBody": "Bitte gib deinem Vlog einen Titel.",
+      "slugTitle": "Slug",
+      "slugBody": "Bitte gib einen gültigen Slug ein.",
+      "locationRequiredTitle": "Standort erforderlich",
+      "locationRequiredBody": "Bitte wähle einen Standort (Aktueller Standort oder Suche).",
+      "unknownCoverSize": "Covergröße unbekannt",
+      "coverUploadFailed": "Cover-Upload fehlgeschlagen",
+      "createFailed": "Vlog konnte nicht erstellt werden.",
+      "searching": "Suche…"
+    }
+  },
+  "notificationsettings": {
+    "notifications": "Benachrichtigungen",
+    "pushNotifications": "Push-Benachrichtigungen",
+    "highlightsDigest": "Highlights (Digest)",
+    "activity": "Aktivität",
+    "followRequests": "Follow-Anfragen",
+    "followRequestAccepted": "Follow-Anfrage akzeptiert",
+    "storyPosted": "Story gepostet",
+    "storyMention": "Story-Erwähnungen",
+    "comments": "Kommentare",
+    "postsTags": "Beiträge & Tags",
+    "shareThisPostInquiry": "Beitrag teilen – Anfrage",
+    "shareThisPostAccepted": "Beitrag teilen – akzeptiert",
+    "shareThisPostRejected": "Beitrag teilen – abgelehnt",
+    "taggingRequestPostTag": "Markierungsanfrage (Post Tag)",
+    "newPostsInTheVlog": "Neue Beiträge im Vlog",
+    "vlogDeleted": "Vlog gelöscht",
+    "loadingSettings": "Einstellungen werden geladen…",
+    "couldNotLoadSettingsPleaseTryAgainLacf3cb7": "Konnte Einstellungen nicht laden. Bitte später nochmal.",
+
+    "section": {
+      "push": {
+        "title": "Push",
+        "subtitle": "Push betrifft nur Benachrichtigungen auf deinem Handy. Aktivitäten bleiben in der App sichtbar."
+      },
+      "vlogs": {
+        "title": "Vlogs",
+        "subtitle": "Benachrichtigungen rund um Vlogs."
+      }
+    },
+
+    "pushDisabledHint": "Wenn deaktiviert, erhältst du keine Push-Benachrichtigungen.",
+    "digestHint": "Einmal täglich: Zusammenfassung neuer Aktivitäten.",
+    "activityHint": "Welche Ereignisse als Push erscheinen (wenn Push aktiviert ist).",
+    "follows": "Neue Follower",
+    "likes": "Likes",
+    "storyPostedHint": "Push, wenn jemand dem du folgst eine Story postet.",
+    "storyMentionHint": "Push, wenn dich jemand in einer Story erwähnt.",
+    "postsTagsHint": "Anfragen und Entscheidungen rund um Teilen und Markierungen.",
+    "vlogNewPostHint": "Push, wenn jemand etwas in einem Vlog postet."
+  },
+  "insights": {
+    "professionalDashboard": "Professional-Dashboard",
+    "insights": "Insights",
+    "july16August14": "16. Juli–14. Aug.",
+    "yourTools": "Deine Tools",
+    "viewAll": "Alle ansehen",
+    "monthlyReview": "Monatsrückblick",
+    "monthlyReviewSubtitle": "Sieh dir deine Zusammenfassung für den letzten Monat an.",
+    "bestPractices": "Best Practices",
+    "inspiration": "Inspiration",
+    "partnershipAds": "Partnership Ads",
+    "advertisingTools": "Werbetools",
+    "testReels": "Test-Reels",
+    "yourAis": "Deine KIs",
+    "brandedContent": "Branded Content",
+    "brandedContentSubtitle": "Erstelle deinen nächsten Beitrag gemeinsam mit einer Marke oder einem Creator",
+    "tipsAndResources": "Tipps und Ressourcen",
+    "latestAudio": "Topaktuelle Audios",
+    "otherHelpfulResources": "Weitere hilfreiche Ressourcen",
+    "newBadge": "Neu",
+    "kpis": {
+      "views": "Aufrufe",
+      "interactions": "Interaktionen",
+      "newFollowers": "Neue Follower",
+      "adInsights": "Insights zu Werbung",
+      "sharedContent": "Inhalte, die du geteilt hast"
+    }
+  },
+  "onboarding": {
+    "yourStart": "Dein Start",
+    "welcome": "Willkommen ✨",
+    "aCityIsYourContextAnchorYouCanChanged4c9cc": "Eine Stadt ist dein Kontext-Anker. Alles andere kannst du später ändern.",
+    "eGVienna": "z.B. Wien",
+    "suggestionsViaFallbackGeocodeBackendcb84fe": "Vorschläge via Fallback-Geocode (Backend-Suche nicht verfügbar).",
+    "trainingOptional": "Ausbildung (optional)",
+    "levelEGUniversityStudiesTechnicalCol524aa8": "Level (z.B. Studium / HTL / Ausbildung)",
+    "organizationEGTuVienna": "Organisation (z.B. TU Wien)",
+    "specializationEGComputerScience": "Fachrichtung (z.B. Informatik)",
+    "yearOfCompletionEG2027": "Abschlussjahr (z.B. 2027)",
+    "interestsOptional": "Interessen (optional)",
+    "chooseAFewThingsThatAreWithYouRightNdc9252": "Wähle ein paar Dinge, die dich gerade begleiten.",
+    "further": "Weiter",
+    "youCanAdjustThisLaterInYourProfile": "Du kannst das später in deinem Profil anpassen.",
+
+    "cityLabelRequired": "Stadt *",
+    "cityHint": "Eine Stadt ist dein Kontext-Anker — du kannst das später ändern.",
+    "fallbackHint": "Vorschläge via Fallback-Geocoding (Gerät).",
+
+
+    "interestsHint": "Wähle ein paar Dinge, die dich gerade begleiten.",
+    "placeholders": {
+      "educationLevel": "Stufe (z. B. Studium / FH / Lehre)",
+      "educationOrg": "Organisation (z. B. TU Wien)",
+      "educationField": "Fachrichtung (z. B. Informatik)",
+      "educationGradYear": "Abschlussjahr (z. B. 2027)"
+    },
+
+    "errors": {
+      "pickCityFromSuggestions": "Bitte wähle deine Stadt aus den Vorschlägen aus.",
+      "invalidGraduationYear": "Abschlussjahr ist ungültig.",
+      "failed": "Onboarding fehlgeschlagen."
+    }
+  },
+  "editvlog": {
+    "loading": "Lädt…",
+    "tryAgain": "Erneut versuchen",
+    "editVlog": "Vlog bearbeiten",
+    "save": "Speichern",
+    "chooseCover": "Cover wählen",
+    "eGSummerInSicily": "z. B. sommer-in-sizilien",
+    "allowedLettersNumbersHyphensCleanupOe78f35": "Erlaubt: Buchstaben, Zahlen, Bindestrich. Beim Speichern wird bereinigt:",
+    "description": "Beschreibung",
+    "optionalDescription": "Optionale Beschreibung …",
+    "location": "Standort",
+    "currentLocation": "Aktueller Standort",
+    "searchForALocationAddressCityLandmare46174": "Ort suchen (Adresse, Stadt, Sehenswürdigkeit …)",
+    "sections": {
+      "cover": "Cover",
+      "details": "Details"
+    },
+    "fields": {
+      "title": "Titel",
+      "slug": "Slug"
+    },
+
+    "searching": "Suche…",
+    "saving": "Speichere…",
+    "saveChanges": "Änderungen speichern",
+
+    "locationPermission": {
+      "title": "Standort",
+      "body": "Bitte erlaube den Zugriff auf deinen Standort in den Systemeinstellungen."
+    },
+    "mediaPermission": {
+      "title": "Zugriff benötigt",
+      "body": "Bitte erlaube den Zugriff auf deine Mediathek."
+    },
+
+    "validation": {
+      "titleMissingTitle": "Titel fehlt",
+      "titleMissingBody": "Bitte gib deinem Vlog einen Titel.",
+      "locationRequiredTitle": "Standort erforderlich",
+      "locationRequiredBody": "Bitte wähle einen Standort oder übernimm den aktuellen."
+    },
+
+    "errors": {
+      "coverSizeUnknown": "Covergröße unbekannt",
+      "coverUploadFailed": "Cover-Upload fehlgeschlagen",
+      "saveFailed": "Vlog konnte nicht gespeichert werden."
+    }
+  },
+  "protools": {
+    "professionalDashboard": "Professional-Dashboard",
+    "yourTools": "Deine Tools",
+    "monthlyReview": "Monatsrückblick",
+    "monthlyReviewSubtitle": "Sieh dir deine Zusammenfassung für den letzten Monat an.",
+    "bestPractices": "Best Practices",
+    "inspiration": "Inspiration",
+    "partnershipAds": "Partnership Ads",
+    "advertisingTools": "Werbetools",
+    "testReels": "Test-Reels",
+    "yourAis": "Deine KIs",
+    "brandedContent": "Branded Content",
+    "brandedContentSubtitle": "Erstelle deinen nächsten Beitrag gemeinsam mit einer Marke oder einem Creator",
+    "tipsAndResources": "Tipps und Ressourcen",
+    "latestAudio": "Topaktuelle Audios",
+    "otherHelpfulResources": "Weitere hilfreiche Ressourcen",
+    "newBadge": "Neu"
+  },
+  "publishform": {
+    "preview": "Vorschau",
+    "caption": "Bildunterschrift",
+    "addImageCaption": "Bildunterschrift hinzufügen…",
+    "interests": "Interessen",
+    "vlogsPeople": "Vlogs & Personen",
+    "communityPeople": "Community & Personen",
+    "community": "Community",
+    "persons": "Personen",
+    "createANewVlog": "Neuen Vlog erstellen",
+    "startANewVlogAndPostThisEntryDirectl1e77a3": "Starte einen neuen Vlog und poste diesen Beitrag direkt dort hinein.",
+    "selectedVlogs": "Ausgewählte Vlogs",
+    "toMarkANew": "Neu zu markieren",
+    "showOnlyTheFirst": "Zeige nur die ersten",
+    "hits": "Treffer",
+    "addLocation": "Ort hinzufügen…",
+
+    "vlogs": "Vlogs",
+
+    "share": "Teilen",
+
+    "subtitle": {
+      "carousel": "Karussell",
+      "video": "Video",
+      "photo": "Foto",
+      "captionHelp": "Verwende Hashtags, um deinen Beitrag mit ähnlichen Inhalten zu verbinden.",
+      "interestsHelp": "Optional – hilft, deinen Beitrag schneller einzuordnen.",
+      "vlogsPeopleHelp": "Wähle einen Vlog aus oder markiere Personen für diesen Beitrag.",
+      "communityPeopleHelp": "Wähle optional eine Community oder markiere Personen für diesen Beitrag."
+    },
+
+
+    "searchVlogs": "Vlogs suchen…",
+    "searchCommunities": "Communities suchen…",
+    "searchPeople": "Personen suchen…",
+
+    "noHits": "Keine Treffer.",
+    "chooseOneOfYourVlogsOrCreateNew": "Wähle einen deiner Vlogs aus — oder erstelle einen neuen.",
+    "chooseCommunityOrProfileOnly": "Wähle eine Community aus oder poste nur auf deinem Profil.",
+    "searchPeopleToTag": "Suche nach Personen, die du markieren möchtest.",
+    "selectedCommunity": "Ausgewählte Community",
+    "profileOnly": "Nur auf meinem Profil posten",
+    "profileOnlyHelp": "Der Beitrag erscheint nicht in einem Community Live Feed.",
+    "eventFeed": "Event Feed",
+    "communityFeed": "Community Feed",
+    "communitySummaryTitle": "Zusammenfassung",
+    "communitySummarySelected": "Dieser Beitrag erscheint auf deinem Profil und zusätzlich im Live Feed von „{{title}}“.",
+    "communitySummaryProfileOnly": "Dieser Beitrag erscheint nur auf deinem Profil und im normalen Feed.",
+
+    "alert": {
+      "endPostTitle": "Beitrag verlassen?",
+      "endPostBody": "Wenn du jetzt einen neuen Vlog erstellst, verlässt du diesen Beitrag. Nicht gespeicherte Änderungen gehen verloren.",
+      "cancel": "Abbrechen",
+      "createNewVlog": "Neuen Vlog erstellen"
+    },
+    "location": "Ort"
+  },
+  "settings": {
+    "settings": "Einstellungen",
+    "registration": "Anmeldung",
+    "logOut": "Abmelden",
+    "privacy": "Privatsphäre",
+    "admin": "Admin",
+    "adminDashboard": "Admin Dashboard",
+    "adminDashboardSubtitle": "Reports, 24h-Prüfung und Urheberrechtsfälle prüfen.",
+    "blockedProfiles": "Blockierte Profile",
+    "privateProfile": "Privates Profil",
+    "darkMode": "Dark Mode",
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsOfUse": "Nutzungsbedingungen",
+    "account": "Konto",
+    "deleteAccount": "Konto löschen",
+    "title": "Einstellungen",
+    "privateProfile_title": "Profil privat machen?",
+    "privateProfile_body": "Nur bestätigte Follower können deine Beiträge & Stories sehen.",
+    "enable": "Aktivieren",
+    "hint_openLinkFail": "Konnte den Link nicht öffnen.",
+    "logoutFail": "Abmelden nicht möglich.",
+    "accountDeleted_title": "Konto gelöscht",
+    "accountDeleted_body": "Dein Konto wurde entfernt.",
+    "deleteAccount_title": "Konto löschen?",
+    "deleteAccount_body": "Dieser Vorgang kann nicht rückgängig gemacht werden.",
+    "deleteAccount_confirm": "Ja, löschen",
+    "language": "Sprache",
+    "language_auto": "Automatisch",
+    "language_de": "Deutsch",
+    "language_en": "English",
+    "manageBlockedUsers": "Verwalte blockierte Nutzer",
+    "addAccount": "Konto hinzufügen",
+    "privacyUrl": "",
+    "termsUrl": "",
+    "display": "Anzeige",
+
+    "privateConfirmTitle": "Profil privat machen?",
+    "privateConfirmBody": "Nur bestätigte Follower können deine Beiträge & Stories sehen.",
+    "saveFailed": "Konnte Einstellung nicht speichern.",
+
+    "deleteFailed": "Konto konnte nicht gelöscht werden. Bitte versuche es später erneut.",
+    "accountDeletedTitle": "Konto gelöscht",
+    "accountDeletedBody": "Dein Konto wurde entfernt.",
+
+    "deleteConfirmTitle": "Konto löschen?",
+    "deleteConfirmBody": "Dieser Vorgang kann nicht rückgängig gemacht werden.",
+    "deleteConfirmCta": "Ja, löschen",
+
+    "logoutFailed": "Abmelden nicht möglich.",
+    "openLinkFailed": "Konnte den Link nicht öffnen.",
+
+    "deleteAccountSubtitle": "Entfernt dein Konto und Inhalte"
+  },
+  "admindashboard": {
+    "title": "Admin Dashboard",
+    "reviewQueue": "Moderationsqueue",
+    "reviewQueueSub": "Offene Reports, überfällige 24h-Prüfungen und Urheber-/Musikclaims an einem Ort.",
+    "openReports": "Offene Reports",
+    "overdue24h": "Überfällig 24h",
+    "copyrightReports": "Urheberrecht",
+    "copyright": "Copyright",
+    "processTitle": "Review-Prozess",
+    "processText": "Tippe auf einen Report, um den gemeldeten Beitrag oder das Profil zu öffnen. Schließen bedeutet keine Maßnahme, Löschen entfernt den gemeldeten Inhalt, Sperren pausiert den Nutzer für 7 Tage.",
+    "noReports": "Keine offenen Reports.",
+    "closeReport": "Report schließen",
+    "deleteContent": "Inhalt löschen",
+    "suspendUser": "Nutzer sperren",
+    "confirmCloseReport": "Diesen Report ohne weitere Maßnahme schließen?",
+    "confirmDeleteContent": "Gemeldeten Beitrag/Kommentar wirklich löschen? Das löscht nicht das Profil.",
+    "confirmSuspendUser": "Das betroffene Profil für 7 Tage sperren?",
+    "confirmUnsuspendUser": "Dieses Profil jetzt entsperren?",
+    "close": "Schließen",
+    "delete": "Löschen",
+    "deleteContentShort": "Inhalt",
+    "suspend": "Sperren",
+    "suspend7d": "7 Tage",
+    "resolvedReports": "Erledigt",
+    "suspendedUsers": "Gesperrt",
+    "noSuspendedUsers": "Keine gesperrten Nutzer.",
+    "suspendedUntil": "Gesperrt bis",
+    "unsuspendUser": "Nutzer entsperren",
+    "unsuspend": "Entsperren"
+  },
+ 
+  "storyviewer": {
+    "storyIsLoading": "Story wird geladen…",
+    "noStoryAvailable": "Keine Story verfügbar.",
+    "back": "Zurück",
+    "viewPost": "Beitrag ansehen",
+    "sendMessage": "Nachricht senden…",
+    "deleteStory": "Story löschen",
+    "cancel": "Abbrechen",
+    "seenBy": "Gesehen von",
+    "noViewsYet": "Noch keine Aufrufe.",
+    "loadingMore": "Lade mehr…",
+    "quickReactions": "Schnelle Reaktionen",
+    "yourStory": "Deine Story",
+    "views": "Aufrufe",
+    "viewsCount": "{{value}} Aufrufe",
+    "mentionClicks": "{{count}} Erwähnungs-Klicks",
+    "linkClicks": "{{count}} Link-Klicks",
+    "locationClicks": "{{count}} Standort-Klicks",
+    "pollClicks": "{{count}} Umfrage-Stimmen",
+    "pollVoteSaved": "Abstimmung gespeichert.",
+    "questionAnswers": "{{count}} Antworten",
+    "questionAnswerPlaceholder": "Schreib deine Antwort…",
+    "sendAnswer": "Senden",
+    "questionAnswerSent": "Antwort gesendet.",
+    "questionAnswerFailed": "Antwort konnte nicht gesendet werden",
+    "questionReplyTitle": "Story-Antwort",
+    "questionReplyDraft": "Zu deiner Story-Frage: „{{question}}“\n\nDeine Antwort: „{{answer}}“\n\n",
+    "linkOpenFailed": "Link konnte nicht geöffnet werden.",
+    "deleteTitle": "Story löschen?",
+    "deleteBody": "Diese Story wird dauerhaft entfernt.",
+    "messageSent": "Nachricht gesendet ✅",
+    "threadCreateFailed": "Thread konnte nicht erstellt werden",
+    "sendFailed": "Senden fehlgeschlagen",
+    "noRecipient": "Kein Empfänger (user.id / slide.userId fehlt)"
+  },
+  "verifyemail": {
+    "confirmEmailAddress": "E-Mail bestätigen",
+    "checkYourEmail": "Check deine E-Mail ✉️",
+    "weveSentYouA6DigitCodeEnterItHereToA9a87c4": "Wir haben dir einen 6-stelligen Code geschickt. Gib ihn hier ein, um dein Konto zu aktivieren.",
+
+    "codePlaceholder": "123456",
+    "confirm": "Bestätigen",
+
+    "sentTitle": "Code gesendet",
+    "sentBody": "Wir haben dir einen neuen Bestätigungscode per E-Mail geschickt.",
+    "newCodeSentBody": "Ein neuer Bestätigungscode wurde an deine E-Mail-Adresse gesendet.",
+
+    "enter6DigitCode": "Bitte gib den 6-stelligen Code ein.",
+    "verificationFailed": "Verifizierung fehlgeschlagen.",
+    "notVerifiedYetTitle": "Noch nicht bestätigt",
+    "notVerifiedYetBody": "Bitte versuche es erneut oder fordere einen neuen Code an.",
+
+    "resendCode": "Code erneut senden",
+    "resendInSeconds": "Code erneut senden ({{count}}s)",
+    "codeCouldNotBeSent": "Der Code konnte nicht gesendet werden.",
+
+    "changeEmailAddress": "E-Mail-Adresse ändern",
+    "weWillThenAutomaticallySendYouANewCo7097b7": "Wir senden dir danach automatisch einen neuen Code.",
+    "newEmailCom": "neue@email.com",
+
+    "pleaseEnterEmail": "Bitte gib eine E-Mail-Adresse ein.",
+    "couldNotChangeEmail": "Die E-Mail-Adresse konnte nicht geändert werden.",
+
+    "emailAlreadyUsedTitle": "E-Mail bereits verwendet",
+    "emailAlreadyUsedBody": "Diese E-Mail-Adresse ist bereits mit einem anderen Konto verknüpft.",
+
+    "invalidEmailTitle": "Ungültige E-Mail-Adresse",
+    "invalidEmailBody": "Bitte prüfe die Schreibweise deiner E-Mail-Adresse.",
+
+    "tipAlsoCheckYourSpamFolder": "Tipp: Schau auch im Spam-Ordner nach.",
+
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  },
+  "profileunified": {
+    "noUsernameWasProvided": "Kein Nutzername übergeben.",
+    "userNotFound": "User nicht gefunden.",
+    "posts": "Beiträge",
+    "likes": "Likes",
+    "views": "Aufrufe",
+    "interactions": "Interaktionen",
+    "newFollowers": "Neue Follower",
+    "professionalDashboard": "Professional Dashboard",
+    "dashboardSubtitle": "Aufrufe und Reichweite deiner Beiträge",
+    "totalViews": "Gesamtaufrufe",
+    "reachedPeople": "Erreichte Profile",
+    "viewsRising": "steigend",
+    "viewsFalling": "sinkend",
+    "last30Days": "Letzte 30 Tage",
+    "viewsCountShort": "{{count}} Aufrufe",
+    "last30DaysWithViews": "Letzte 30 Tage: {{count}} Aufrufe",
+    "totalViewsWithRecent": "{{total}} Gesamtaufrufe · {{recent}} in 30 Tagen",
+    "dashboardViewExplanation": "{{recent}} Aufrufe kamen in den letzten 30 Tagen dazu. In den 30 Tagen davor waren es {{previous}}.",
+    "dashboardTotalVsRecentHint": "Gesamtaufrufe zählen alle bisherigen Views auf deinen Beiträgen. Der 30-Tage-Wert zeigt nur die aktuelle Entwicklung.",
+    "previous30Days": "30 Tage davor",
+    "profileViewers": "Profilbesucher",
+    "profileViewersSubtitle": "Wer dein Profil zuletzt angesehen hat",
+    "noProfileViewersYet": "Noch keine Profilbesucher.",
+    "followers": "Follower",
+    "editProfile": "Profil bearbeiten",
+    "message": "Nachricht",
+    "block": "Blockieren",
+    "thisProfileIsPrivate": "Dieses Profil ist privat",
+    "toSeePostsAndTags": ", um Beiträge und Markierungen zu sehen.",
+    "noneYet": "Noch keine",
+    "available": "vorhanden",
+    "noPostsYet": "Noch keine Beiträge.",
+    "noMomentsYet": "Noch keine Momente.",
+    "noCommunityPostsYet": "Noch keine Community-Beiträge.",
+    "noTagsYet": "Noch keine Markierungen.",
+    "createFirstPostTitle": "Erstelle deinen ersten Beitrag",
+    "createFirstPostBody": "Teile den ersten Moment auf deinem Profil.",
+    "blockUserTitle": "Nutzer blockieren?",
+    "blockUserMessage": "@{{username}} blockieren? Du siehst keine Inhalte mehr und ihr könnt nicht interagieren.",
+    "cancel": "Abbrechen",
+    "blockAction": "Blockieren",
+    "blockedTitle": "Blockiert",
+    "blockedMessage": "@{{username}} wurde blockiert.",
+    "errorTitle": "Fehler",
+    "actionFailed": "Aktion fehlgeschlagen",
+    "errorPrefix": "Fehler",
+    "meShort": "Ich",
+    "yourStory": "Deine Story",
+    "privateProfileTitle": "Profil ist privat",
+    "privateProfileMessage": "Folge @{{username}}, um Follower/Gefolgt zu sehen.",
+    "following": "Gefolgt",
+    "noGroupConnections": "Noch keine Connections aus Communities",
+    "groupConnectionsCount": "{{count}} Connections aus Communities",
+    "sharedCommunity": "Gemeinsame Community",
+    "sharedCommunities": "Shared communities",
+    "communityFallback": "Community",
+    "tabLabel": {
+      "posts": "Beiträge",
+      "reelsVlogs": "Reels/Vlogs",
+      "tagged": "Markierungen"
+    }
+  },
+  "activity": {
+    "inquiry": "Anfrage",
+    "posts": "Beiträge",
+    "refuse": "Ablehnen",
+    "activity": "Aktivität",
+    "inquiries": "Anfragen",
+    "everyoneReads": "Alle lesen",
+    "tapOnEntriesToOpenThem": "Tippe auf Einträge, um sie zu öffnen",
+    "selectStory": "Story auswählen",
+
+    "loading": "Lädt…",
+    "empty": "Keine Aktivitäten",
+
+    "filter": {
+      "all": "Alle",
+      "new": "Neu"
+    },
+
+    "bucket": {
+      "today": "Heute",
+      "yesterday": "Gestern",
+      "last7Days": "Letzte 7 Tage",
+      "older": "Älter"
+    },
+
+    "section": {
+      "newCount": "Neu ({{count}})"
+    },
+
+    "time": {
+      "justNow": "gerade eben",
+      "minutes": "{{count}} min",
+      "hours": "{{count}} h",
+      "days": "{{count}} d"
+    },
+
+    "someone": "Jemand",
+    "userFallback": "user",
+    "vlog": "Vlog",
+
+    "verb": {
+      "has": "hat",
+      "have": "haben"
+    },
+
+    "actors": {
+      "two": "{{a}} und {{b}}",
+      "many": "{{a}}, {{b}} und {{count}} weitere"
+    },
+
+    "status": {
+      "confirmed": "Bestätigt",
+      "rejected": "Abgelehnt"
+    },
+
+    "action": {
+      "accept": "Akzeptieren",
+      "confirm": "Bestätigen"
+    },
+
+    "digest": {
+      "last24hCount": "In den letzten 24h: {{count}} neue Beiträge"
+    },
+
+    "title": {
+      "storyPosted": "{{username}} hat eine Story gepostet",
+      "storyMention": "{{username}} hat dich in einer Story erwähnt",
+      "vlogNewPost": "Neuer Beitrag im Vlog",
+      "vlogNewPostWithTitle": "Neuer Beitrag im Vlog „{{title}}“",
+      "followedYou": "{{username}} folgt dir jetzt.",
+      "postTagRequest": "{{username}} möchte dich in einem Beitrag markieren.",
+      "postShareRequest": "{{username}} möchte einen Beitrag auf deinem Profil teilen.",
+      "requestAccepted": "{{username}} hat deine Anfrage akzeptiert.",
+      "requestRejected": "{{username}} hat deine Anfrage abgelehnt.",
+      "vlogTagRequest": "{{title}} – neue Beitragsanfrage",
+      "vlogRequestAccepted": "{{title}} – Anfrage akzeptiert",
+      "vlogRequestRejected": "{{title}} – Anfrage abgelehnt",
+      "vlogDeleted": "Ein Vlog wurde gelöscht.",
+      "tagAccepted": "Du hast eine Markierung akzeptiert.",
+      "tagRejected": "Du hast eine Markierung abgelehnt.",
+      "likedYourPost": "{{username}} gefällt dein Beitrag",
+      "commented": "{{username}} hat kommentiert",
+      "followRequest": "{{username}} möchte dir folgen.",
+      "highlights": "Highlights",
+      "activity": "Aktivität"
+    },
+
+    "bundle": {
+      "storyPosted": "{{actors}} {{verb}} eine Story gepostet",
+      "likedYourPost": "{{actors}} gefällt dein Beitrag"
+    },
+    "bundleFallbackTitle": "Aktivität"
+  },
+  "postedit": {
+    "editPost": "Beitrag bearbeiten",
+    "caption": "Bildunterschrift",
+    "writeACaption": "Schreibe eine Caption",
+    "addLocation": "Ort hinzufügen…",
+    "interests": "Interessen",
+    "persons": "Personen",
+    "alreadyMarkedAccepted": "Schon markiert (akzeptiert)",
+    "selectedVlogs": "Ausgewählte Vlogs",
+    "toMarkANew": "Neu zu markieren",
+    "location": "Ort",
+    "searchVlogs": "Vlogs suchen…",
+    "searchPeople": "Personen suchen…",
+    "noHits": "Keine Treffer.",
+    "yourVlogsAppearHere": "Deine Vlogs erscheinen hier.",
+    "searchPeopleHint": "Suche nach Personen.",
+    "saving": "Speichere…",
+    "saveFailed": "Speichern fehlgeschlagen.",
+    "alert": {
+      "interestLimitTitle": "Limit erreicht",
+      "interestLimitBody": "Maximal {{count}} Interessen möglich."
+    }
+  },
+  "vlogmembers": {
+    "members": "Mitglieder",
+    "youDoNotHaveAdminRights": "Du hast keine Admin-Rechte.",
+    "invite": "Einladen",
+    "searchProfile": "Profil suchen…",
+    "noMembers": "Keine Mitglieder.",
+    "typeANameToSearchForProfiles": "Tippe einen Namen, um Profile zu suchen.",
+    "noMatchesFound": "Keine Treffer.",
+    "save": "Speichern"
+  },
+  "vlogradar": {
+    "retry": "Erneut versuchen",
+    "locationRequired": "Standort benötigt",
+    "forRadarToWorkYouNeedLocationPermiss2465f0": "Damit Radar funktioniert, brauchst du Location-Permission.",
+    "acquiringLocation": "Acquiring location…",
+    "preview": "(preview)",
+    "swipeToChangeRadius": "Swipe ↑↓ to change radius",
+    "noVlogsWithin": "No vlogs within",
+    "resetSelection": "Auswahl zurücksetzen",
+    "chooseLocation": "Standort wählen",
+    "eGViennaBerlinInnsbruck": "z.B. Wien, Berlin, Innsbruck…",
+    "currentLocation": "Aktueller Standort",
+    "selectedLocation": "Ausgewählter Standort",
+    "backTitle": "Zurück",
+    "clusterSelected": "Cluster ausgewählt · {{count}} Vlogs"
+  },
+  "vlogherocard": {
+    "untitled": "Unbenannter Vlog",
+    "private": "Privat",
+    "public": "Öffentlich"
+  },
+  "messages": {
+    "news": "Nachrichten",
+    "chats": "Chats",
+    "seek": "Suchen…",
+    "createTitle": "Erstellen",
+    "newGroupChat": "Neue Chatgruppe",
+    "newCommunity": "Community erstellen",
+    "viewCommunities": "Communities ansehen",
+    "selectPeopleForGroup": "Suche und wähle Personen für eine Chatgruppe aus.",
+    "groupNamePlaceholder": "Gruppenname",
+    "groupNameRequired": "Bitte gib einen Gruppennamen ein.",
+    "selectedPeople": "{{count}} ausgewählt",
+    "createGroup": "Gruppe erstellen",
+    "searchPeople": "Personen suchen",
+    "searchPeopleForGroup": "Tippe mindestens zwei Zeichen ein, um Personen für deine Gruppe zu finden.",
+    "noChatsYet": "Noch keine Chats",
+    "startAConversationUsingTheSearchFunc47e2cb": "Starte eine Unterhaltung über die Suche oben.",
+    "noResultsFound": "Keine Treffer",
+    "tryADifferentName": "Versuche einen anderen Namen.",
+    "followsYou": "· folgt dir",
+    "sendMessage": "Nachricht senden",
+    "threadLabelCommunity": "Community",
+    "threadLabelDisabled": "Deaktiviert",
+    "threadLabelGroup": "Gruppe"
+  },
+  "vlogdetail": {
+    "noPostsYet": "Noch keine Beiträge",
+    "shareYourFirstPostInThisVlog": "Teile deinen ersten Beitrag in diesem Vlog.",
+    "createPost": "Beitrag erstellen",
+    "loading": "Lädt…",
+    "reload": "Erneut laden",
+    "vlogNotFound": "Vlog nicht gefunden.",
+    "loadingMore": "Lade mehr…",
+    "errorsPosts": "Fehler (Posts):",
+    "vlog": "Vlog",
+
+    "privacy": {
+      "private": "Privat",
+      "public": "Öffentlich"
+    },
+
+    "leave": {
+      "title": "Vlog verlassen?",
+      "body": "Deine Beiträge bleiben bestehen, sind danach aber nicht mehr Teil dieses Vlogs.",
+      "confirm": "Verlassen",
+      "failed": "Verlassen fehlgeschlagen."
+    },
+
+    "delete": {
+      "title": "Vlog löschen?",
+      "body": "Beiträge werden NICHT gelöscht, aber aus diesem Vlog entfernt.",
+      "failed": "Löschen fehlgeschlagen."
+    },
+
+    "postsError": "Posts konnten nicht geladen werden"
+    
+  },
+  "chat": {
+    "downloadShareImage": "Bild herunterladen / teilen",
+    "deleteMessage": "Nachricht löschen",
+    "cancel": "Abbrechen",
+    "storyNoLongerAvailable": "Story nicht mehr verfügbar",
+    "thisStoryHasExpired": "Diese Story ist abgelaufen.",
+    "openLiveFeed": "Live Feed öffnen",
+    "replyToStory": "Antwort auf Story",
+    "sendAMessage": "Nachricht schreiben…",
+    "welcomeTitle": "Willkommen bei {{appName}}",
+    "welcomeMessage": "Entdecke echte Momente im Feed, bleib in Chats nah an Menschen dran, tritt Communities rund um Gruppen und Orte bei, folge Live-Momenten aus Events und vervollständige dein Profil, damit andere wissen, mit wem sie sich verbinden. In Aktivität findest du Likes, Kommentare, Follows, Erwähnungen und Community-Updates gesammelt an einem Ort. In den Aktivitätseinstellungen entscheidest du, welche Updates dich benachrichtigen sollen.",
+    "welcomeReviewPrefix": "Wenn dir die Idee einer Open-Source-Social-Media-App gefällt, freuen wir uns über eine Bewertung im App Store oder Play Store: ",
+    "welcomeReviewLink": "Store-Eintrag öffnen",
+    "welcomeReviewSuffix": ".",
+    "welcomeLanguagePrefix": "You can adjust language settings ",
+    "welcomeLanguageLink": "here",
+    "welcomeLanguageSuffix": ".",
+    "welcomeActions": {
+      "feed": "Feed",
+      "chats": "Chats",
+      "communities": "Communities",
+      "events": "Momente",
+      "profile": "Profil",
+      "activity": "Aktivität",
+      "activitySettings": "Aktivitätseinstellungen"
+    },
+    "broadcastOnlyNotice": "Nur Admins können in diesem Broadcast-Chat Nachrichten senden.",
+    "chatDisabledNotice": "Dieser Community-Chat ist derzeit deaktiviert.",
+    "deleteFailedTitle": "Löschen fehlgeschlagen",
+    "sendFailedTitle": "Senden fehlgeschlagen",
+    "savedTitle": "Gespeichert",
+    "fileSaved": "Datei gespeichert: {{uri}}",
+    "downloadFailedTitle": "Download fehlgeschlagen",
+    "downloadFailedStatus": "Download fehlgeschlagen (Status {{status}})",
+    "permissionMissingTitle": "Berechtigung fehlt",
+    "photosPermissionBody": "Bitte erlaube Zugriff auf deine Fotos.",
+    "imageSendFailedTitle": "Bild senden fehlgeschlagen",
+    "imageSendFailedBody": "Bitte später erneut versuchen.",
+    "storyFallbackName": "Story",
+    "storyBadgeVideo": "Video",
+    "storyBadgePhoto": "Story",
+    "groupSettings": "Gruppen-Einstellungen",
+    "groupMembers": "Gruppenmitglieder",
+    "you": "Du",
+    "thisMember": "dieses Mitglied",
+    "removeMemberTitle": "Mitglied entfernen?",
+    "removeMemberBody": "{{username}} aus dieser Gruppe entfernen?",
+    "removeMemberCta": "Entfernen"
+  },
+  "postactionsmenu": {
+    "editPost": "Beitrag bearbeiten",
+    "delete": "Löschen",
+    "removeMarker": "Markierung entfernen",
+    "reportPost": "Beitrag melden",
+    "blockUsers": "Nutzer blockieren",
+    "shareAsStory": "Als Story teilen",
+    "cancel": "Abbrechen",
+    "toggleGridVisibility": "Anzeige im Raster ändern",
+    "alert": {
+      "deleteTitle": "Löschen?",
+      "deleteBody": "Möchtest du diesen Beitrag wirklich löschen?"
+    }
+  },
+  "register": {
+    "userName": "Benutzername",
+    "nameOptional": "Name (optional)",
+    "password": "Passwort",
+    "createAccount": "Konto erstellen",
+    "alreadyHaveAnAccount": "Bereits ein Konto?",
+    "register": "Registrieren",
+    "newAccount": "Neues Konto",
+    "email": "E-Mail",
+    "signIn": "Anmelden",
+    "errors": {
+      "fillEmailUsernamePassword": "Bitte E-Mail, Benutzername und Passwort ausfüllen.",
+      "failed": "Registrierung fehlgeschlagen.",
+      "invalidResponse": "Ungültige Antwort der Registrierung."
+    }
+  },
+  "userprofilescreenold": {
+    "noUsernameWasProvided": "Kein Nutzername übergeben.",
+    "userNotFound": "User nicht gefunden.",
+    "posts": "Beiträge",
+    "followers": "Follower",
+    "block": "Blockieren",
+    "noneYet": "Noch keine",
+    "available": "vorhanden"
+  },
+  "vlogpostcard": {
+    "comments": "Kommentare",
+    "comment": "Kommentieren …",
+    "reportPost": "Beitrag melden",
+    "blockUsers": "Nutzer blockieren",
+    "deletePost": "Beitrag löschen",
+    "cancel": "Abbrechen",
+    "and": "und",
+    "more": "weitere",
+    "me": "Ich",
+    "fromCommunity": "Aus {{title}}",
+    "alsoInCommunity": "Auch in {{title}}",
+    "sharedCommunities": "Gemeinsame Communities",
+    "alsoInYourCommunity": "Auch in deiner Community",
+    "optionsTitle": "Optionen"
+  },
+  "explore": {
+    "endReached": "Ende erreicht",
+    "seek": "Suchen",
+    "followers": "Follower · ",
+    "subscribed": "abonniert",
+    "noResultsFound": "Keine Treffer",
+    "nothingToDiscoverYet": "Noch nichts zu entdecken",
+    "errorPrefix": "Fehler: {{message}}"
+  },
+  "resetpassword": {
+    "newPassword": "Neues Passwort",
+    "changePassword": "Passwort ändern",
+    "emailOrUsername": "E-Mail oder Benutzername",
+    "n6DigitCode": "6-stelliger Code",
+    "newPasswordMin8Characters": "Neues Passwort (min. 8 Zeichen)",
+    "savePassword": "Passwort speichern",
+    "validation": "Bitte E-Mail/Benutzername, Code und ein neues Passwort (min. 8 Zeichen) eingeben.",
+    "successTitle": "Erfolg",
+    "successBody": "Dein Passwort wurde geändert.",
+    "errors": {
+      "fallback": "Bitte erneut versuchen"
+    }
+  },
+  "profileswitchermodal": {
+    "active": "Aktiv",
+    "thisAccount": "Dieses Konto",
+    "otherAccountsOnThisDevice": "Weitere Konten auf diesem Gerät",
+    "noOtherAccountsSaved": "Keine weiteren Konten gespeichert.",
+    "addciaorelatedAccount": "{{appName}}-Konto hinzufügen",
+    "unnamed": "Unbenannt",
+    "remove": "Entfernen"
+  },
+  "createmedia": {
+    "further": "Weiter",
+    "chooseAPhoto": "Wähle ein Foto",
+    "addImageCaption": "Bildunterschrift hinzufügen …",
+    "addLocation": "Ort hinzufügen"
+  },
+  "login": {
+    "emailOrUsername": "E-Mail oder Benutzername",
+    "password": "Passwort",
+    "forgotYourPassword": "Passwort vergessen?",
+    "noAccount": "Kein Konto?",
+    "register": "Registrieren",
+    "addAccount": "Konto hinzufügen",
+    "signIn": "Anmelden",
+    "login": "Login",
+    "errors": {
+      "title": "Login fehlgeschlagen",
+      "tryAgain": "Bitte erneut versuchen.",
+      "invalidResponse": "Ungültige Login-Antwort."
+    }
+  },
+  "phoneAuth": {
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "phonePlaceholder": "Telefonnummer, z. B. +436641234567",
+    "internationalHint": "Bitte international eingeben, z. B. +43, +49 oder 0043.",
+    "codePlaceholder": "6-stelliger Code",
+    "sendCode": "Code senden",
+    "verifyCode": "Code bestätigen",
+    "resendCode": "Code erneut senden",
+    "codeSentTitle": "Code gesendet",
+    "codeSentBody": "Wir haben dir einen Bestätigungscode per SMS gesendet.",
+    "loginHint": "Melde dich mit einer bereits verifizierten Telefonnummer an. Neue Nummern kannst du über Registrieren erstellen.",
+    "usePhoneInstead": "Mit Telefonnummer anmelden",
+    "noAccountTitle": "Kein Konto gefunden",
+    "noAccountBody": "Mit dieser Telefonnummer ist noch kein Konto verknüpft. Bitte registriere dich zuerst.",
+    "noAccountInline": "Mit dieser Telefonnummer ist noch kein Konto verknüpft.",
+    "phoneTakenTitle": "Telefonnummer bereits vergeben",
+    "phoneTakenBody": "Diese Telefonnummer gehört bereits zu einem Konto. Bitte melde dich damit an oder verwende eine andere Nummer.",
+    "phoneTakenInline": "Diese Telefonnummer ist bereits vergeben.",
+    "errors": {
+      "requestFailed": "Code konnte nicht gesendet werden.",
+      "availabilityFailed": "Telefonnummer konnte nicht geprüft werden.",
+      "verifyFailed": "Code konnte nicht bestätigt werden.",
+      "invalidResponse": "Ungültige Antwort der Telefon-Anmeldung.",
+      "invalidPhoneNumber": "Bitte gib eine gültige Telefonnummer ein.",
+      "invalidCode": "Der Code ist ungültig oder abgelaufen.",
+      "tooManyAttempts": "Zu viele Versuche. Bitte fordere einen neuen Code an."
+    }
+  },
+  "myvlogs": {
+    "createANewVlog": "Neuen Vlog erstellen",
+    "tryAgain": "Erneut versuchen",
+    "noVlogsYet": "Noch keine Vlogs",
+    "createYourFirstVlogAndCollectAllYourec5517": "Erstelle deinen ersten Vlog und sammle Beiträge an einem Ort.",
+    "startVlogWizard": "Vlog-Wizard starten",
+    "title": "Meine Vlogs",
+    "loading": "Lade…"
+  },
+  "banned": {
+    "accountLocked": "Account gesperrt",
+    "youHaveBeenLoggedOutAndAreLoggedOutUb67cca": "Du wurdest abgemeldet und bist bis",
+    "blocked": "gesperrt.",
+    "okayLogOut": "Okay, abmelden"
+  },
+  "blockedusers": {
+    "blockedProfiles": "Blockierte Profile",
+    "noBlockedProfiles": "Keine blockierten Profile",
+    "youCurrentlyHaveNoOneBlocked": "Du hast aktuell niemanden blockiert.",
+    "unblock": "Entblocken",
+    "unblockTitle": "Nutzer entblocken?",
+    "unblockBodyNamed": "@{{username}} kann danach wieder mit dir interagieren.",
+    "unblockBodyFallback": "Der Nutzer kann danach wieder mit dir interagieren."
+  },
+  "camerasquare": {
+    "cameraAccess": "Kamera Zugriff",
+    "pleaseAllowAccessToTheCamera": "Bitte erlaube Zugriff auf die Kamera.",
+    "allow": "Erlauben",
+    "cancel": "Abbrechen"
+  },
+  "mediafiltermenu": {
+    "favorites": "Favoriten",
+    "mode": {
+      "recent": "Neueste",
+      "videos": "Videos",
+      "favorites": "Favoriten"
+    },
+    "allAlbums": "Alle Alben",
+    "elements": "Elemente"
+  },
+  "newpost": {
+    "newPost": "Neuer Beitrag",
+    "chooseAPhoto": "Wähle ein Foto",
+    "addImageCaption": "Bildunterschrift hinzufügen …",
+    "addLocation": "Ort hinzufügen"
+  },
+  "mediaComposer": {
+    "next": "Weiter",
+    "recent": "Zuletzt",
+    "camera": "Kamera",
+    "share": "Teilen",
+    "permissions": {
+      "photosTitle": "Zugriff benötigt",
+      "photosBody": "Bitte erlaube den Zugriff auf Fotos.",
+      "cameraTitle": "Kamera benötigt",
+      "cameraBody": "Bitte erlaube den Zugriff auf die Kamera."
+    },
+    "errors": {
+      "noViewToCapture": "Keine Ansicht zum Speichern gefunden.",
+      "captureFailed": "Bild konnte nicht vorbereitet werden."
+    },
+    "filters": {
+      "original": "Original",
+      "sepia": "Sepia",
+      "mono": "Schwarzweiß",
+      "warm": "Warm",
+      "cool": "Kalt",
+      "vignette": "Vignette"
+    },
+    "modes": {
+      "post": "BEITRAG",
+      "story": "STORY",
+      "reels": "REELS"
+    },
+    "tools": {
+      "music": "Musik",
+      "text": "Text",
+      "overlay": "Overlay",
+      "filter": "Filter",
+      "edit": "Bearbeiten"
+    }
+  },
+  "profilescreenold": {
+    "noUserLoaded": "Kein Benutzer geladen.",
+    "posts": "Beiträge",
+    "followers": "Follower",
+    "editProfile": "Profil bearbeiten",
+    "errorPrefix": "Fehler: {{message}}",
+    "me": "Ich",
+    "yourStory": "Deine Story"
+  },
+  "resetpasswordrequest": {
+    "resetPassword": "Passwort zurücksetzen",
+    "requestCode": "Code anfordern",
+    "emailOrUsername": "E-Mail oder Benutzername",
+    "sendCode": "Code senden",
+    "codeSentTitle": "Code gesendet",
+    "codeSentMessage": "Wenn ein Konto existiert, haben wir dir eine E-Mail mit einem Code geschickt.",
+    "validation": "Bitte E-Mail oder Benutzername eingeben.",
+    "errors": {
+      "fallback": "Bitte erneut versuchen"
+    }
+  },
+  "addaccountsheet": {
+    "addAccount": "Konto hinzufügen",
+    "logInToAnExistingAccount": "Bei bestehendem Konto anmelden",
+    "createNewAccount": "Neues Konto erstellen"
+  },
+  "postmoderationmenu": {
+    "reportPost": "Beitrag melden",
+    "blockUsers": "Nutzer blockieren",
+    "cancel": "Abbrechen",
+    "reportSentTitle": "Danke",
+    "reportSentBody": "Deine Meldung wurde übermittelt.",
+    "reportTitle": "Beitrag melden",
+    "pickReason": "Grund auswählen:",
+    "unknownUser": "Nutzer",
+    "blockTitle": "Nutzer blockieren?",
+    "blockBody": "@{{username}} blockieren? Du siehst keine Inhalte mehr und ihr könnt nicht interagieren.",
+    "blockAction": "Blockieren",
+    "blockedTitle": "Blockiert",
+    "blockedBody": "@{{username}} wurde blockiert.",
+    "reason": {
+      "hateSpeech": "Hassrede / Diskriminierung",
+      "nudity": "Nacktheit / Sexuelle Inhalte",
+      "violence": "Gewalt / Bedrohung",
+      "spam": "Spam / Betrug"
+    }
+  },
+  "videocontrols": {
+    "muted": "Stumm",
+    "soundOn": "Ton an",
+    "loopOn": "Loop",
+    "loopOff": "Aus",
+    "trim": "Zuschneiden",
+    "cover1s": "Cover +1s",
+    "length": "Länge:",
+    "cover": "• Cover:"
+  },
+  "storywizard": {
+    "loadingPost": "Beitrag wird geladen…",
+    "postNotFound": "Beitrag nicht gefunden.",
+    "cameraIsLoading": "Kamera wird geladen…",
+    "searchStickers": "Suchen",
+    "textPlaceholder": "Schreib etwas…",
+    "defaultText": "Moment teilen",
+    "stickers": {
+      "location": "Standort",
+      "mention": "Erwähnung",
+      "music": "Musik",
+      "question": "Fragen",
+      "poll": "Abstimmung",
+      "hashtag": "Hashtag",
+      "countdown": "Countdown",
+      "link": "Link"
+    },
+    "moreOptions": "Für mehr Optionen hier tippen",
+    "link": {
+      "title": "Link hinzufügen",
+      "urlLabel": "URL",
+      "help": "Personen, die sich deine Story ansehen, können auf den Sticker tippen und so diesen Link aufrufen.",
+      "labelPlaceholder": "Sticker-Text personalisieren",
+      "previewFallback": "Link"
+    },
+    "mention": {
+      "title": "Erwähnung",
+      "placeholder": "erwähnung"
+    },
+    "location": {
+      "title": "Orte",
+      "lead": "Wähle einen Standort zum Markieren aus",
+      "sub": "Personen, mit denen du diesen Content teilst, sehen den markierten Standort.",
+      "search": "Suchen"
+    },
+    "poll": {
+      "title": "Abstimmung",
+      "yes": "Ja",
+      "no": "Nein",
+      "defaultQuestion": "Testfrage",
+      "questionPlaceholder": "Stelle eine Frage ...",
+      "addOption": "Weitere Option hinzufügen..."
+    },
+    "question": {
+      "title": "Frage",
+      "defaultPrompt": "Stell mir eine Frage",
+      "placeholder": "Schreib etwas ...",
+      "help": "Betrachter deiner Story können mit Text, einem Foto oder einem Video antworten."
+    },
+    "save": {
+      "permissionTitle": "Berechtigung benötigt",
+      "permissionBody": "Bitte erlaube den Zugriff auf deine Fotos, um diese Story zu speichern.",
+      "successTitle": "Gespeichert",
+      "successBody": "Dein Story-Bild wurde in deiner Mediathek gespeichert.",
+      "videoFrameSuccessBody": "Ein Story-Frame mit deinen Stickern und Texten wurde in deiner Mediathek gespeichert.",
+      "failedTitle": "Speichern fehlgeschlagen",
+      "failedBody": "Die Story konnte nicht gespeichert werden."
+    },
+    "pick": {
+      "permissionTitle": "Zugriff benötigt",
+      "permissionBody": "Bitte erlaube den Zugriff auf Fotos/Videos.",
+      "videoTooLongTitle": "Video zu lang",
+      "videoTooLongBody": "Stories dürfen max. 30 Sekunden sein."
+    },
+    "upload": {
+      "unknownError": "Unbekannter Upload-Fehler",
+      "emptyFile": "Dateigröße 0 – Quelle fehlerhaft",
+      "postNotFound": "Kein Post gefunden.",
+      "failed": "Upload fehlgeschlagen."
+    }
+  },
+  "reels": {
+    "popularWithYou": "Beliebt für dich",
+    "forYou": "Für dich",
+    "activeRooms": "Aktive Räume",
+    "searchResults": "Suchergebnisse",
+    "searchContext": "Events, Communities, Hashtags suchen…",
+    "loadingMore": "Lade mehr…",
+    "title": "Momente",
+    "mix": "Mix",
+    "communityMix": "Communities",
+    "communities": {
+      "liveTitle": "Live Communities",
+      "liveSub": "Deine gemeinsamen Räume",
+      "manage": "Alle",
+      "live": "Live"
+    },
+    "contextKind": {
+      "city": "Stadt",
+      "interest": "Interesse",
+      "hashtag": "Hashtag",
+      "topic": "Thema",
+      "place": "Ort",
+      "eduField": "Studium",
+      "eduOrg": "Campus",
+      "eduLevel": "Ausbildung"
+    },
+
+    "meta": {
+      "vlog": "{{posts}} Beiträge · {{members}} Mitglieder",
+      "context": "Kontext",
+      "discoveryMix": "Discovery Mix",
+      "promoted": "Promoted",
+      "hashtag": "Hashtag",
+      "contextKindFallback": "KONTEXT",
+      "postsCount": "{{count}} Posts",
+      "likersCount": "{{count}} Liker"
+    },
+
+    "empty": {
+      "noResults": "Keine Treffer.",
+      "noPosts": "Noch keine Beiträge.",
+      "noPostsInVlog": "Noch keine Beiträge in diesem Vlog."
+    },
+    "end": "Ende"
+  },
+  "storycompose": {
+    "stickerActivePinchRotatePanAnywhereTda13cd": "Sticker aktiv: Pinch/Rotate/Pan irgendwo = Text • Tap = Fertig • DoubleTap = Bearbeiten",
+    "yourStory": "Deine Story",
+    "typeText": "Text eingeben…",
+
+    "text": {
+      "title": "Text",
+      "help": "Zum Zoomen zusammendrücken, drehen und frei verschieben.",
+      "deleteTitle": "Text löschen?",
+      "deleteBody": "Möchtest du diesen Text entfernen?",
+      "preset": {
+        "classic": "Klassisch",
+        "strong": "Fett",
+        "mono": "Mono"
+      },
+      "background": {
+        "on": "Hintergrund: AN",
+        "off": "Hintergrund: AUS"
+      }
+    },
+
+    "errors": {
+      "prepareLocalFile": "Lokale Datei konnte nicht vorbereitet werden.",
+      "videoLoadFailed": "Video konnte nicht geladen werden.",
+      "exportFailed": "Export fehlgeschlagen.",
+      "fileNotReady": "Datei noch nicht bereit.",
+      "uploadFailedHttp": "Upload fehlgeschlagen (HTTP {{status}})."
+    }
+  },
+  "storiesbar": {
+    "yourStory": "Deine Story",
+    "noStoriesYet": "Noch keine Stories"
+  },
+  "followlistsheet": {
+    "followersTitle": "Follower",
+    "followingTitle": "Gefolgt",
+    "remove": "Entfernen",
+    "removeTitle": "@{{username}} entfernen?",
+    "removeBody": "Diese Person kann dir danach nicht mehr folgen.",
+    "unfollow": "Entfolgen",
+    "unfollowTitle": "@{{username}} entfolgen?",
+    "unfollowBody": "Du folgst dieser Person danach nicht mehr.",
+    "emptyFollowers": "Noch keine Follower.",
+    "emptyFollowing": "Du folgst niemandem.",
+    "thisProfileIsPrivateYouCanOnlySeeThe59e432": "Dieses Profil ist privat. Du kannst die Liste erst sehen, wenn du folgst."
+  },
+  "postcommentsheet": {
+    "comments": "Kommentare",
+    "comment": "Kommentieren …"
+  },
+  "postlikessheet": {
+    "couldNotLoadLikes": "Konnte Likes nicht laden.",
+    "noLikesYet": "Noch keine Likes."
+  },
+  "storycamera": {
+    "cameraAccessRequired": "Kamerazugriff benötigt",
+    "allow": "Erlauben"
+  },
+  "stepheader": {
+    "further": "Weiter"
+  },
+  "postwizard": {
+    "chooseAPhoto": "Wähle ein Foto",
+    "edit": "Bearbeiten",
+    "header": {
+      "newPost": "Neuer Beitrag",
+      "editCarousel": "Bearbeiten · Karussell",
+      "editVideo": "Video bearbeiten",
+      "editPhoto": "Foto bearbeiten",
+      "share": "Beitrag teilen"
+    },
+    "camera": {
+      "title": "Kamera",
+      "permissionBody": "Bitte erlaube Zugriff auf die Kamera."
+    },
+    "error": {
+      "noSelection": "Keine Auswahl.",
+      "sourceUnavailable": "Quelle nicht verfügbar.",
+      "noUploadItems": "Keine Upload-Items."
+    },
+    "shareFailed": {
+      "title": "Teilen fehlgeschlagen",
+      "body": "Bitte versuch es erneut."
+    },
+    "filters": {
+      "title": "Filter",
+      "label": "Filter",
+      "photosOnly": "Filter sind aktuell nur für Fotos verfügbar."
+    },
+    "editing": {
+      "title": "Bearbeiten",
+      "photosOnly": "Bearbeiten ist aktuell nur für Fotos verfügbar."
+    },
+    "multi": {
+      "multiple": "Mehrfach",
+      "single": "Einzeln"
+    },
+    "upload": {
+      "pending": "Dein Beitrag wird gerade hochgeladen"
+    }
+  },
+  "edittoggle": {
+    "edit": "Bearbeiten",
+    "hideEdit": "Bearbeiten ausblenden"
+  },
+  "newstory": {
+    "noPermissionToViewPhotos": "Keine Berechtigung für Fotos",
+    "postInStory": "In Story posten",
+    "loadLibraryFailed": "Konnte Mediathek nicht laden.",
+    "permissionTitle": "Zugriff benötigt",
+    "permissionBody": "Bitte erlaube den Zugriff auf deine Mediathek.",
+    "videoTooLongTitle": "Video zu lang",
+    "videoTooLongBody": "Stories dürfen max. 30 Sekunden sein."
+  },
+  "suggestedprofilescarousel": {
+    "suggestedByciaorelated": "Von {{appName}} vorgeschlagen"
+  },
+  "uploadoverlay": {
+    "yourPostIsCurrentlyBeingUploaded": "Dein Beitrag wird gerade hochgeladen",
+    "keepAppOpen": "Bitte App nicht schließen"
+  },
+  "postauthorrow": {
+    "and": "und"
+  },
+  "postheaderrow": {
+    "and": "und",
+    "more": "weitere"
+  },
+  "reportcomment": {
+    "report": "Melden",
+    "reason": {
+      "hateSpeech": "Hassrede / Diskriminierung",
+      "nudity": "Nacktheit / Sexuelle Inhalte",
+      "violence": "Gewalt / Bedrohung",
+      "spam": "Spam / Betrug",
+      "copyright": "Urheberrecht / Musikrechte"
+    },
+    "cancel": "Abbrechen"
+  },
+  "screen": {
+    "back": "← Zurück"
+  },
+  "taggeduserssheet": {
+    "title": "Markiert in diesem Beitrag",
+    "me": "Du",
+    "noAcceptedTags": "Keine akzeptierten Markierungen."
+  },
+  "postcamera": {
+    "tapPhotoHoldVideo": "Tippen: Foto • Halten: Video",
+    "permissionTitle": "Zugriff benötigt",
+    "permissionBody": "Bitte erlaube den Zugriff auf Fotos/Videos.",
+    "videoTooLongTitle": "Video zu lang",
+    "videoTooLongBody": "Beiträge dürfen max. {{seconds}} Sekunden sein."
+  },
+  "alignablesquare": {
+    "alignTwoFingers": "Ausrichten – Zwei Finger"
+  },
+  "mediagrid": {
+    "camera": "Kamera",
+    "noPermissionToViewPhotosVideosPlease6e591d": "Keine Berechtigung für Fotos/Videos. Bitte in den Einstellungen erlauben."
+  },
+  "createpost": {
+    "newPost": "Neuer Beitrag",
+    "uploadFailed": "Upload fehlgeschlagen"
+  },
+  "createstory": {
+    "newStory": "Neue Story",
+    "uploadFailed": "Upload fehlgeschlagen"
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen & Community-Regeln",
+    "intro": "Version {{version}}",
+    "body": "Wir tolerieren keine anstößigen, gewaltverherrlichenden, pornografischen, hasserfüllten, belästigenden oder rechtswidrigen Inhalte. Gemeldete Inhalte prüfen wir in der Regel innerhalb von 24 Stunden. Bei Verstößen entfernen wir Inhalte und können Accounts sperren.",
+    "consent": "Ich habe gelesen und stimme zu.",
+    "buttonSaving": "Wird übernommen…",
+    "buttonAgree": "Zustimmen & fortfahren",
+    "readTerms": "Nutzungsbedingungen lesen",
+    "readGuidelines": "Community-Richtlinien lesen",
+    "readPrivacy": "Datenschutz",
+    "saveFailed": "Konnte nicht speichern."
+  },
+  "feed": {
+    "suggestedForYou": "Für dich vorgeschlagen",
+    "followUsersToSeePostsInYourFeed": "Folge Nutzern, um Beiträge in deinem Feed zu sehen.",
+    "modes": {
+      "ciaorelated": "ciaorelated",
+      "forYou": "Für dich",
+      "following": "Gefolgt",
+      "events": "Events"
+    },
+    "empty": {
+      "following": "Noch keine Beiträge von Personen, denen du folgst.",
+      "events": "Noch keine Event- oder Community-Beiträge."
+    }
+  },
+  "notifications": {
+    "announcements": "Mitteilungen",
+    "justNow": "gerade eben",
+    "loading": "Lädt…",
+    "empty": "Keine Mitteilungen",
+    "unknownUser": "Unbekannt",
+    "defaultTitle": "Mitteilung",
+    "yourVlog": "deinem Vlog",
+    "deletedFallback": "Gelöscht",
+    "kind": {
+      "vlogTagRequest": "{{username}} möchte einen Beitrag in „{{vlogTitle}}“ teilen.",
+      "vlogTagApproved": "Vlog-Anfrage akzeptiert",
+      "vlogTagRejected": "Vlog-Anfrage abgelehnt",
+      "follow": "{{username}} folgt dir jetzt",
+      "like": "{{username}} gefällt dein Beitrag",
+      "comment": "{{username}} hat kommentiert",
+      "vlogDeleted": "Vlog „{{vlogTitle}}“ wurde entfernt"
+    }
+  },
+  "postdetail": {
+    "posts": "Beiträge",
+
+    "grid": {
+      "removeFromGrid": "Vom Raster entfernen",
+      "addToGrid": "Zum Raster hinzufügen"
+    },
+
+    "report": {
+      "title": "Beitrag melden",
+      "pickReason": "Grund auswählen:",
+      "sent": "Deine Meldung wurde übermittelt.",
+      "reason": {
+        "hateSpeech": "Hassrede / Diskriminierung",
+        "nudity": "Nacktheit / Sexuelle Inhalte",
+        "violence": "Gewalt / Bedrohung",
+        "spam": "Spam / Betrug",
+        "copyright": "Urheberrecht / Musikrechte"
+      }
+    },
+
+    "block": {
+      "title": "Nutzer blockieren",
+      "body": "Möchtest du @{{username}} blockieren?",
+      "doneTitle": "Blockiert",
+      "doneBody": "Du hast @{{username}} blockiert."
+    }
+  },
+  "communitydiscovery": {
+    "suggestedTitle": "Communities entdecken",
+    "searchTitle": "Öffentliche Communities",
+    "members_one": "{{count}} Mitglied",
+    "members_other": "{{count}} Mitglieder",
+    "joined": "Beigetreten",
+    "reason": {
+      "following": "Menschen, denen du folgst",
+      "active": "Neue Moments",
+      "public": "Öffentliche Community"
+    },
+    "more": "Weitere Communities",
+    "retry": "Erneut versuchen",
+    "loading": "Communities werden geladen",
+    "failed": "Communities konnten nicht geladen werden.",
+    "empty": "Keine öffentlichen Communities gefunden."
+  },
+  "communityprivacy": {
+    "public": "Öffentlich",
+    "private": "Privat",
+    "publicDescription": "Alle Bvrly-Profile können Beiträge und Mitglieder sehen.",
+    "privateDescription": "Nur Mitglieder sehen Beiträge. Mit dem Einladungslink kann jeder beitreten.",
+    "fixed": "Die Sichtbarkeit kann später nicht geändert werden.",
+    "publicPost": "Dieser Beitrag ist für alle Bvrly-Profile sichtbar, auch wenn dein Profil privat ist.",
+    "privatePost": "Nur aktuelle Mitglieder sehen diesen Beitrag, auch auf deinem Profil.",
+    "privatePostLocked": "Die private Community-Zuordnung dieses Beitrags bleibt bestehen.",
+    "join": "Beitreten",
+    "joining": "Beitritt läuft…",
+    "joinFailed": "Der Beitritt ist fehlgeschlagen. Bitte versuche es erneut."
+  },
+  "grouplinksheet": {
+    "createAnInvitationLink": "Einladungslink erstellen",
+    "liveAccess": "Live Access",
+    "subtitle": "Erstelle einen Link, mit dem Menschen deiner Community beitreten und posten können.",
+    "titleEGUniversityComputerScience2026": "Titel",
+    "linkCreated": "Link erstellt 🎉",
+    "copy": "Kopieren",
+    "create": "Link erstellen",
+    "creating": "Erstelle…",
+    "share": "Teilen",
+    "linkCopied": "Einladungslink wurde kopiert.",
+    "invitationLinkFallbackTitle": "Einladungslink",
+    "type": {
+      "drop": "Drop",
+      "family": "Familie",
+      "uni": "Uni",
+      "business": "Business",
+      "community": "Community",
+      "event": "Event"
+    }
+  },
+  "communityspace": {
+    "communityFallback": "Community",
+    "thisCommunity": "dieser Community",
+    "linkCopiedTitle": "Link kopiert",
+    "linkCopiedBody": "Der Community-Link ist bereit zum Teilen.",
+    "festivalFeed": "Festival Feed",
+    "communityLiveFeed": "Community Live Feed",
+    "liveMomentsFromEvent": "Live-Momente von diesem Event",
+    "momentsFromCommunity": "Momente von Menschen aus dieser Community",
+    "peopleHere": "{{count}} Personen hier",
+    "joinWithLink": "Beitritt per Link",
+    "createEventMoment": "Moment erstellen",
+    "openChat": "Community-Chat öffnen",
+    "settingsTitle": "Community-Einstellungen",
+    "editCommunity": "Community bearbeiten",
+    "editCommunitySub": "Name und Community-Bild ändern.",
+    "communityName": "Community-Name",
+    "communityNamePlaceholder": "Community-Name",
+    "permissionNeededTitle": "Berechtigung nötig",
+    "permissionNeededBody": "Bitte erlaube Zugriff auf deine Fotos.",
+    "titleRequired": "Bitte gib einen Community-Namen ein.",
+    "imageMissing": "Das ausgewählte Bild konnte nicht gefunden werden.",
+    "uploadFailedStatus": "Upload fehlgeschlagen (Status {{status}}).",
+    "editFailedTitle": "Community nicht gespeichert",
+    "editFailedBody": "Die Community konnte gerade nicht aktualisiert werden. Bitte versuche es nochmal.",
+    "manageMembers": "Mitglieder verwalten",
+    "owner": "Owner",
+    "member": "Mitglied",
+    "thisMember": "dieses Mitglied",
+    "removeMemberTitle": "Mitglied entfernen?",
+    "removeMemberBody": "{{username}} aus dieser Community entfernen?",
+    "removeMemberCta": "Entfernen",
+    "removeMemberFailed": "Das Mitglied konnte gerade nicht entfernt werden.",
+    "shareLink": "Link teilen",
+    "copyLink": "Link kopieren",
+    "copyLinkSub": "Kopiert den Einladungslink in die Zwischenablage.",
+    "shareQrSub": "Teile ein QR-Einladungsbild.",
+    "enableBroadcast": "Chat als Broadcast setzen",
+    "disableBroadcast": "Alle chatten lassen",
+    "chatModeBody": "Mitglieder können chatten, Momente teilen und die Einladungsfunktionen von hier öffnen.",
+    "broadcastModeBody": "Broadcast-Modus ist aktiv. Nur Admins können in diesem Community-Chat Nachrichten senden.",
+    "broadcastModeSub": "Nur Admins können dann Nachrichten senden.",
+    "disableChat": "Community-Chat deaktivieren",
+    "enableChat": "Community-Chat aktivieren",
+    "disableChatSub": "Mitglieder können diesen Chat dann nicht mehr öffnen oder darin schreiben.",
+    "enableChatSub": "Mitglieder können den Community-Chat wieder öffnen.",
+    "chatDisabledTitle": "Community-Chat deaktiviert",
+    "chatDisabledBody": "Der Admin hat den Chat für diese Community deaktiviert.",
+    "chatModeFailedTitle": "Chat-Einstellungen nicht gespeichert",
+    "chatModeFailedBody": "Der Chat-Modus konnte gerade nicht geändert werden. Bitte versuche es nochmal.",
+    "chatUnavailableTitle": "Chat nicht verfügbar",
+    "chatUnavailableBody": "Der Community-Chat ist noch nicht bereit. Bitte versuche es gleich nochmal.",
+    "shareQr": "QR-Code teilen",
+    "qrShareFailedTitle": "QR-Code nicht geteilt",
+    "qrShareFailedBody": "Der QR-Code konnte gerade nicht erstellt werden. Teile stattdessen den Link.",
+    "peopleInEvent": "Menschen bei diesem Event",
+    "peopleInCommunity": "Menschen in dieser Community",
+    "alsoAt": "Auch bei {{title}}",
+    "communityMoments": "Community-Momente",
+    "onlyContextPosts": "Hier erscheinen nur Beiträge, die in diesen Kontext gepostet wurden.",
+    "feedUnavailableTitle": "Live Feed nicht erreichbar",
+    "feedUnavailableBody": "Der Server kennt die neue Community-Feed Query wahrscheinlich noch nicht oder ist nicht erreichbar.",
+    "tryAgain": "Nochmal versuchen",
+    "createFirstMoment": "Erstelle den ersten Event-Moment",
+    "emptyBody": "Lade Menschen per Gruppenlink ein oder teile den ersten Moment von hier.",
+    "inviteWithGroupLink": "Mit Gruppenlink einladen"
+  },
+  "groups": {
+    "yourGroups": "Deine Gruppen",
+    "youHaventJoinedAnyGroupYet": "Du bist noch keiner Gruppe beigetreten.",
+    "liveFeed": "Live Feed",
+    "copyLink": "Link kopieren",
+    "leaveGroup": "Gruppe verlassen",
+    "createANewGroupLink": "Neuen Gruppenlink erstellen",
+    "title": "Gruppen",
+    "copiedTitle": "Kopiert",
+    "inviteLinkCopied": "Einladungslink wurde kopiert.",
+    "groupFallback": "Gruppe",
+    "joinedAt": "Beigetreten: {{date}}",
+    "hubTitle": "Deine Communities",
+    "hubSubtitle": "Live Feeds, Einladungslinks und Events an einem Ort.",
+    "emptyTitle": "Bring eine Community zu {{appName}}",
+    "emptyBody": "Erstelle einen Link für Bar, Event oder Freundesgruppe und lade Menschen direkt in den Live Feed ein.",
+    "leave": {
+      "title": "Gruppe verlassen?",
+      "body": "Willst du \"{{title}}\" verlassen?",
+      "confirm": "Verlassen",
+      "failed": "Konnte Gruppe nicht verlassen.",
+      "ownerTitle": "Adminrechte zuerst übertragen",
+      "ownerBody": "Du bist aktuell Admin dieser Community. Übertrage die Adminrechte zuerst an ein anderes Mitglied, bevor du die Community verlassen kannst."
+    }
+  },
+  "joingroup": {
+    "oops": "Oops",
+    "toApp": "Zur App",
+    "groupAdded": "Gruppe wird hinzugefügt…",
+    "pullDownToContinue": "Ziehe nach unten, um fortzufahren",
+    "youWereAddedToTheGroup": "Du wurdest zur Gruppe „",
+    "added": "“ hinzugefügt.",
+    "openLiveFeed": "Live Feed öffnen",
+    "checkOutYourGroupsNow": "Schau dir deine Gruppen jetzt an",
+    "later": "Später",
+    "invalidLink": "Ungültiger Link.",
+    "loadFailed": "Konnte Gruppe nicht laden.",
+    "joinFailed": "Beitritt fehlgeschlagen."
+  },
+  "followbutton": {
+    "follow": "Folgen",
+    "requested": "Angefragt",
+    "unfollow": "Entfolgen"
+  },
+  "postcard": {
+    "fromGroup": "Aus Gruppe",
+
+    "delete": {
+      "title": "Beitrag löschen?",
+      "body": "Dieser Beitrag wird dauerhaft gelöscht.",
+      "failed": "Löschen fehlgeschlagen"
+    },
+
+    "report": {
+      "title": "Beitrag melden",
+      "pickReason": "Grund auswählen:",
+      "sent": "Deine Meldung wurde übermittelt.",
+      "reason": {
+        "hateSpeech": "Hassrede / Diskriminierung",
+        "nudity": "Nacktheit / Sexuelle Inhalte",
+        "violence": "Gewalt / Bedrohung",
+        "spam": "Spam / Betrug",
+        "copyright": "Urheberrecht / Musikrechte"
+      }
+    },
+
+    "block": {
+      "title": "Nutzer blockieren?",
+      "body": "@{{username}} blockieren? Du siehst keine Inhalte mehr und ihr könnt nicht interagieren.",
+      "doneTitle": "Blockiert",
+      "doneBody": "@{{username}} wurde blockiert."
+    }
+  },
+  "rotatingsuggestionlabel": {
+    "suggestedForYou": "Für dich vorgeschlagen",
+    "byciaorelated": "von {{appName}}"
+  },
+  "vlogcard": {
+    "untitledVlog": "Unbenannter Vlog",
+    "privacy": {
+      "private": "Privat",
+      "public": "Öffentlich"
+    }
+  },
+  "minimalvideoeditor": {
+    "play": "Abspielen",
+    "pause": "Pause",
+
+    "chooseCover": "Cover wählen",
+    "updateCover": "Cover aktualisieren",
+    "coverSet": "Cover gesetzt",
+
+    "time": "Zeit",
+
+    "nudgeBack": "◀︎ 0,5 s",
+    "nudgeForward": "0,5 s ▶︎"
+  },
+  "filtersbar": {
+    "filter": {
+      "none": "Original",
+      "sepia": "Sepia",
+      "mono": "Schwarz-Weiß",
+      "warm": "Warm",
+      "cool": "Kalt",
+      "noir": "Noir",
+      "dramatic": "Drama",
+      "lomo": "Lomo",
+      "instant": "Instant",
+      "fade": "Verblasst",
+      "vignette": "Vignette"
+    }
+  },
+  "adjustbar": {
+    "tool": {
+      "bright": "Helligkeit",
+      "contr": "Kontrast",
+      "sat": "Sättigung",
+      "temp": "Wärme",
+      "hue": "Farbe",
+      "fade": "Verblassen"
+    },
+    "done": "Fertig"
+  },
+  "interests": {
+    "photography": "Fotografie",
+    "music": "Musik",
+    "film": "Film",
+    "design": "Design",
+    "architecture": "Architektur",
+    "fashion": "Mode",
+    "art": "Kunst",
+    "sport": "Sport",
+    "sports": "Sport",
+    "fitness": "Fitness",
+    "cooking": "Kochen",
+    "travel": "Reisen",
+    "gaming": "Gaming",
+    "tech": "Tech",
+    "startups": "Startups",
+    "nature": "Natur",
+    "books": "Bücher"
+  },
+  "bottomcreatebar": {
+    "modes": {
+      "post": "Beitrag",
+      "story": "Story",
+      "vlog": "Vlog"
+    }
+  },
+   "commentsinput": {
+    "placeholder": "Kommentieren …",
+    "send": "Senden"
+  }
+}

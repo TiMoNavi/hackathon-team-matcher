@@ -1,0 +1,444 @@
+{
+  "source": "conversation-live_2026-11-12-20261111T184938Z-8487e1.json",
+  "source_sha256": "181ac05d24ffffea23928cfca8568b1a336241865b3b5dbb3c2cfefc1fcc1704",
+  "structural_status": "passed",
+  "semantic_status": "requires_separate_human_review",
+  "checks": [
+    {
+      "label": "all nine user turns complete successfully",
+      "passed": true
+    },
+    {
+      "label": "at most sixteen actual gateway requests",
+      "passed": true
+    },
+    {
+      "label": "complete wire requests at most 24KiB",
+      "passed": true
+    },
+    {
+      "label": "all turns remain within their model attempt limits",
+      "passed": true
+    },
+    {
+      "label": "A3 discusses or clarifies without retrieval",
+      "passed": true
+    },
+    {
+      "label": "A4 discusses or clarifies without retrieval",
+      "passed": true
+    },
+    {
+      "label": "A5 discusses or clarifies without retrieval",
+      "passed": true
+    },
+    {
+      "label": "A7 discusses or clarifies without retrieval",
+      "passed": true
+    },
+    {
+      "label": "A8 discusses or clarifies without retrieval",
+      "passed": true
+    },
+    {
+      "label": "A9 discusses or clarifies without retrieval",
+      "passed": true
+    },
+    {
+      "label": "A1 asks a real clarification before retrieval",
+      "passed": true
+    },
+    {
+      "label": "A2 continues original run with exactly one retrieval",
+      "passed": true
+    },
+    {
+      "label": "A6 explicitly retrieves a distinct batch",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5012 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5012 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5001 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5001 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5002 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5002 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5003 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5003 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5010 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A2 candidate 5010 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5014 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5014 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5024 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5024 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5013 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5013 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5015 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5015 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5007 passes event/contact boundaries",
+      "passed": true
+    },
+    {
+      "label": "A6 candidate 5007 satisfies both confirmed hard conditions",
+      "passed": true
+    },
+    {
+      "label": "request 3 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5002 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5007 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5014 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5019 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5031 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5001 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5003 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5010 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5012 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5013 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5015 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5022 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5024 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5034 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 candidate 5036 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 3 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 4 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 4 candidate 5012 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 4 candidate 5001 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 4 candidate 5002 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 4 candidate 5003 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 4 candidate 5010 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 4 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 5 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 5 candidate 5012 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 5 candidate 5001 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 5 candidate 5002 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 5 candidate 5003 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 5 candidate 5010 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 5 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 6 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 6 candidate 5012 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 6 candidate 5001 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 6 candidate 5002 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 6 candidate 5003 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 6 candidate 5010 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 6 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 8 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5007 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5014 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5019 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5031 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5013 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5015 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5022 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5024 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5034 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 candidate 5036 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 8 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 9 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 9 candidate 5014 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 9 candidate 5024 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 9 candidate 5013 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 9 candidate 5015 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 9 candidate 5007 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 9 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 10 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 10 candidate 5014 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 10 candidate 5024 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 10 candidate 5013 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 10 candidate 5015 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 10 candidate 5007 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 10 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "request 11 respects candidate count",
+      "passed": true
+    },
+    {
+      "label": "request 11 candidate 5014 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 11 candidate 5024 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 11 candidate 5013 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 11 candidate 5015 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 11 candidate 5007 respects byte bound",
+      "passed": true
+    },
+    {
+      "label": "request 11 cites facts actually sent for the same person",
+      "passed": true
+    },
+    {
+      "label": "durable call ledger matches actual unique gateway attempts",
+      "passed": true
+    },
+    {
+      "label": "recorded tool searches match actual backend retrievals",
+      "passed": true
+    }
+  ],
+  "turns_recorded": 9,
+  "generation_requests": 11,
+  "finish_reason_counts": {
+    "stop": 11
+  },
+  "maximum_wire_bytes": 22052,
+  "gateway_reported_usage": {
+    "prompt_tokens": 40893,
+    "completion_tokens": 32073,
+    "total_tokens": 72966
+  },
+  "usage_note": "Upstream reported counters only; max_tokens is not treated as a verified billing limit."
+}

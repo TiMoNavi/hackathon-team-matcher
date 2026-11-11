@@ -1,0 +1,103 @@
+{
+  "path": "backend/protected/modules/matcher-recommendation/tests/conversation_preintegration/run.php",
+  "exit_code": 0,
+  "seconds": 6.678,
+  "result": {
+    "suite": "conversation_preintegration",
+    "status": "passed",
+    "cases": 21,
+    "failed": 0,
+    "implementation_sha256": "8fb739407d46c0246a47fd4b8407a16b5baf2819894ba62b160b8f4698190a88",
+    "network_calls": 0,
+    "database_connections": 0,
+    "results": [
+      {
+        "case": "unselected_candidate_body_revocation",
+        "status": "passed"
+      },
+      {
+        "case": "pending_hard_requirement_survives_followup",
+        "status": "passed"
+      },
+      {
+        "case": "confirmed_soft_requirement_survives_model_omission",
+        "status": "passed"
+      },
+      {
+        "case": "empty_items_body_revocation",
+        "status": "passed"
+      },
+      {
+        "case": "direct_submit_revalidates_unselected_body_history",
+        "status": "passed"
+      },
+      {
+        "case": "direct_submit_revalidates_empty_body_history",
+        "status": "passed"
+      },
+      {
+        "case": "refresh_transitive_source_revocation",
+        "status": "passed"
+      },
+      {
+        "case": "independent_new_conversation_has_no_revoked_source",
+        "status": "passed"
+      },
+      {
+        "case": "pending_hard_requirement_blocks_refresh",
+        "status": "passed"
+      },
+      {
+        "case": "pending_hard_requirement_blocks_refresh_after_failure",
+        "status": "passed"
+      },
+      {
+        "case": "trusted_hard_confirmation_runs_real_filter",
+        "status": "passed"
+      },
+      {
+        "case": "confirmed_soft_survives_service_reload_and_refresh",
+        "status": "passed"
+      },
+      {
+        "case": "explicit_complete_snapshot_replaces_soft_preference",
+        "status": "passed"
+      },
+      {
+        "case": "withdrawn_confirmed_soft_not_restored_by_model",
+        "status": "passed"
+      },
+      {
+        "case": "legacy_unselected_body_is_not_assumed_authorized",
+        "status": "passed"
+      },
+      {
+        "case": "legacy_empty_body_is_not_assumed_authorized",
+        "status": "passed"
+      },
+      {
+        "case": "legacy_pending_hard_requirement_cannot_resume_as_soft",
+        "status": "passed"
+      },
+      {
+        "case": "normal_discussion_and_idempotent_replay_keep_batch",
+        "status": "passed"
+      },
+      {
+        "case": "twenty_turn_source_graph_rechecks_are_linear_and_fresh",
+        "status": "passed"
+      },
+      {
+        "case": "refresh_clarification_cannot_reuse_revoked_draft_condition",
+        "status": "passed"
+      },
+      {
+        "case": "hard_confirmation_questions_share_three_round_limit",
+        "status": "passed"
+      }
+    ]
+  },
+  "stderr": "",
+  "implementation_sha256": "8fb739407d46c0246a47fd4b8407a16b5baf2819894ba62b160b8f4698190a88",
+  "source_unchanged": true
+}

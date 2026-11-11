@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-12",
+  "relative_links_checked": 89,
+  "broken_links_or_fences": [],
+  "json_errors": [],
+  "credential_pattern_paths": [],
+  "demo_lint_exit": 0,
+  "review_python_parse": "passed",
+  "frozen_draft_unchanged": true,
+  "live_records": [
+    {
+      "file": "conversation-live_2026-11-12-20261111T184647Z-949633.json",
+      "sha256": "32cba749f2406edc32347bdd3a4ab04fd75c038d3eeb83573f0b30c6051aec12",
+      "requests": 3,
+      "turns": 2,
+      "status": "partial"
+    },
+    {
+      "file": "conversation-live_2026-11-12-20261111T184938Z-8487e1.json",
+      "sha256": "181ac05d24ffffea23928cfca8568b1a336241865b3b5dbb3c2cfefc1fcc1704",
+      "requests": 11,
+      "turns": 9,
+      "status": "recorded"
+    },
+    {
+      "file": "conversation-live_2026-11-12.json",
+      "sha256": "8533d5a113a6c3fa9c716f232814720918b9b6abaed3cdcb036e8f0a63c81e0d",
+      "requests": 13,
+      "turns": 8,
+      "status": "partial"
+    }
+  ],
+  "total_gateway_requests": 27,
+  "recorded_implementation_changed_after_final_live": [],
+  "baseline_existing_files_changed_at_completion": {
+    "matcher-recommendation": [],
+    "matcher-recommendation-ai": [],
+    "matcher-user-profile": [
+      "backend/protected/modules/matcher-user-profile/config.php",
+      "backend/protected/modules/matcher-user-profile/Module.php",
+      "backend/protected/modules/matcher-user-profile/module.json",
+      "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+      "backend/protected/modules/matcher-user-profile/domain/ports/ProfileRelationReader.php"
+    ],
+    "matcher-profile-privacy": [
+      "backend/protected/modules/matcher-profile-privacy/config.php",
+      "backend/protected/modules/matcher-profile-privacy/Module.php",
+      "backend/protected/modules/matcher-profile-privacy/module.json",
+      "backend/protected/modules/matcher-profile-privacy/controllers/ApiController.php"
+    ]
+  },
+  "note": "Concurrent P1/P8 changes are recorded, not reverted or attributed to this work. Final live code hash covers core, provider, store, ports and driver."
+}

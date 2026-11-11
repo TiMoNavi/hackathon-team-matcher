@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "stderr_type_only": [
+    "{\"status\":\"failed\",\"type\":\"yii\\\\db\\\\Exception\",\"reason\":\"Installation failed; no raw database or credential diagnostics are printed.\"}"
+  ]
+}

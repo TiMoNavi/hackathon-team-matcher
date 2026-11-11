@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devpost Hackathon Scraper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: monospace;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .example {
+            font-size: 12px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 10px;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .status.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .status.loading {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stats h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .matches {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .matches h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .current-user-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .current-user-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        .current-user-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .match-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .match-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .match-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .match-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            object-fit: cover;
+        }
+
+        .match-info {
+            flex: 1;
+        }
+
+        .match-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 4px 0;
+        }
+
+        .match-role {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+
+        .match-score {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .match-reason {
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .match-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .match-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .match-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Devpost Scraper</h1>
+        <p class="subtitle">Scrape hackathon participants and store in MongoDB</p>
+
+        <div class="input-group">
+            <label for="hackathon-url">Hackathon URL</label>
+            <input
+                type="text"
+                id="hackathon-url"
+                placeholder="https://hackutd-2025.devpost.com/"
+                autocomplete="off"
+            >
+            <div class="example">Example: https://hacktx2025.devpost.com/</div>
+        </div>
+
+        <button id="scrape-btn" onclick="scrapeHackathon()">
+            Scrape & Store Participants
+        </button>
+
+        <div id="status" class="status"></div>
+
+        <div class="stats" id="stats-container" style="display: none;">
+            <h3>📊 Database Statistics</h3>
+            <div id="stats-content"></div>
+            <button id="find-teammates-btn" onclick="findTeammates()" style="margin-top: 20px; display: none;">
+                🤝 Find My Ideal Teammates
+            </button>
+        </div>
+
+        <div class="matches" id="matches-container" style="display: none;">
+            <h3>🤝 Your Top Teammate Matches</h3>
+            <div id="current-user-profile" style="margin-bottom: 20px;"></div>
+            <div id="matches-content"></div>
+        </div>
+
+        <div class="footer">
+            Data stored securely in MongoDB Atlas • AI-powered by Google Gemini
+        </div>
+    </div>
+
+    <script>
+        let currentHackathon = null;
+
+        // Load stats on page load
+        window.addEventListener('load', loadStats);
+
+        async function loadStats() {
+            try {
+                const response = await fetch('/stats');
+                const data = await response.json();
+
+                if (data.total_participants > 0) {
+                    displayStats(data);
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        function displayStats(data) {
+            const statsContainer = document.getElementById('stats-container');
+            const statsContent = document.getElementById('stats-content');
+            const findTeammatesBtn = document.getElementById('find-teammates-btn');
+
+            let html = `
+                <div class="stat-item">
+                    <span class="stat-label">Total Participants</span>
+                    <span class="stat-value">${data.total_participants}</span>
+                </div>
+            `;
+
+            if (data.hackathons && data.hackathons.length > 0) {
+                data.hackathons.forEach(hackathon => {
+                    html += `
+                        <div class="stat-item">
+                            <span class="stat-label">${hackathon.name}</span>
+                            <span class="stat-value">${hackathon.count}</span>
+                        </div>
+                    `;
+                });
+
+                // Store the most recent hackathon
+                currentHackathon = data.hackathons[0].name;
+                findTeammatesBtn.style.display = 'block';
+            }
+
+            statsContent.innerHTML = html;
+            statsContainer.style.display = 'block';
+        }
+
+        async function scrapeHackathon() {
+            const urlInput = document.getElementById('hackathon-url');
+            const statusDiv = document.getElementById('status');
+            const scrapeBtn = document.getElementById('scrape-btn');
+
+            const url = urlInput.value.trim();
+
+            if (!url) {
+                showStatus('Please enter a hackathon URL', 'error');
+                return;
+            }
+
+            if (!url.includes('devpost.com')) {
+                showStatus('Please enter a valid Devpost URL', 'error');
+                return;
+            }
+
+            // Disable button and show loading
+            scrapeBtn.disabled = true;
+            showStatus('<div class="loader"></div>Scraping participants... This may take a minute.', 'loading');
+
+            try {
+                const response = await fetch('/scrape', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: url })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showStatus(
+                        `✅ ${data.message}<br>Hackathon: <strong>${data.hackathon}</strong><br>Participants: <strong>${data.participants_count}</strong>`,
+                        'success'
+                    );
+
+                    // Reload stats and set current hackathon
+                    setTimeout(() => {
+                        loadStats();
+                        currentHackathon = data.hackathon;
+                        document.getElementById('find-teammates-btn').style.display = 'block';
+                    }, 500);
+
+                    // Clear input
+                    urlInput.value = '';
+                } else {
+                    showStatus(`❌ Error: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Network error: ${error.message}`, 'error');
+            } finally {
+                scrapeBtn.disabled = false;
+            }
+        }
+
+        async function findTeammates() {
+            if (!currentHackathon) {
+                showStatus('Please scrape a hackathon first', 'error');
+                return;
+            }
+
+            const findBtn = document.getElementById('find-teammates-btn');
+            findBtn.disabled = true;
+            findBtn.textContent = '🔍 Analyzing teammates...';
+
+            showStatus('<div class="loader"></div>Using AI to find your perfect teammates...', 'loading');
+
+            try {
+                const response = await fetch('/find-teammates', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ hackathon: currentHackathon })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    displayMatches(data);
+                    showStatus('✅ Found your top 10 teammate matches!', 'success');
+
+                    // Scroll to matches
+                    document.getElementById('matches-container').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    if (data.error && data.error.includes('Gemini API')) {
+                        showStatus('❌ Gemini API key not configured. Please set GEMINI_API_KEY environment variable.', 'error');
+                    } else {
+                        showStatus(`❌ Error: ${data.error}`, 'error');
+                    }
+                }
+            } catch (error) {
+                showStatus(`❌ Network error: ${error.message}`, 'error');
+            } finally {
+                findBtn.disabled = false;
+                findBtn.textContent = '🤝 Find My Ideal Teammates';
+            }
+        }
+
+        function displayMatches(data) {
+            const matchesContainer = document.getElementById('matches-container');
+            const currentUserProfile = document.getElementById('current-user-profile');
+            const matchesContent = document.getElementById('matches-content');
+
+            // Display current user
+            const user = data.current_user;
+            let userHTML = `
+                <div class="current-user-card">
+                    <h4>👤 Your Profile</h4>
+                    <p style="margin: 5px 0;"><strong>${user.name}</strong></p>
+                    <p style="margin: 5px 0; opacity: 0.9;">${user.role || 'No role specified'}</p>
+                    <div class="tags">
+                        ${user.skills.slice(0, 6).map(skill => `<span class="tag">${skill}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            currentUserProfile.innerHTML = userHTML;
+
+            // Display matches
+            let matchesHTML = '';
+            data.matches.forEach((match, index) => {
+                const avatarUrl = match.photo_url || 'https://via.placeholder.com/50';
+                matchesHTML += `
+                    <div class="match-card">
+                        <div class="match-header">
+                            <img src="${avatarUrl}" alt="${match.name}" class="match-avatar" onerror="this.src='https://via.placeholder.com/50'">
+                            <div class="match-info">
+                                <h4 class="match-name">${index + 1}. ${match.name}</h4>
+                                <p class="match-role">${match.role || 'No role specified'}</p>
+                            </div>
+                            <div class="match-score">${match.match_score}</div>
+                        </div>
+                        <div class="match-reason">
+                            💡 ${match.match_reason}
+                        </div>
+                        <div class="match-skills">
+                            ${match.skills.slice(0, 8).map(skill =>
+                                `<span class="skill-tag">${skill}</span>`
+                            ).join('')}
+                        </div>
+                        <a href="${match.profile_url}" target="_blank" class="match-link">
+                            View Profile →
+                        </a>
+                    </div>
+                `;
+            });
+
+            matchesContent.innerHTML = matchesHTML;
+            matchesContainer.style.display = 'block';
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = `status ${type}`;
+            statusDiv.innerHTML = message;
+            statusDiv.style.display = 'block';
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('hackathon-url').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                scrapeHackathon();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "step": 5,
+      "theme": "light",
+      "scroll": 1440,
+      "title": "现在，这张卡片像你了吗？",
+      "screenshot": "artifacts/guide-step-5-1440.png"
+    },
+    {
+      "width": 768,
+      "step": 5,
+      "theme": "light",
+      "scroll": 768,
+      "title": "现在，这张卡片像你了吗？",
+      "screenshot": "artifacts/guide-step-5-768.png"
+    },
+    {
+      "width": 390,
+      "step": 5,
+      "theme": "light",
+      "scroll": 390,
+      "title": "现在，这张卡片像你了吗？",
+      "screenshot": "artifacts/guide-step-5-390.png"
+    },
+    {
+      "width": 320,
+      "step": 5,
+      "theme": "light",
+      "scroll": 320,
+      "title": "现在，这张卡片像你了吗？",
+      "screenshot": "artifacts/guide-step-5-320.png"
+    },
+    {
+      "width": 1440,
+      "step": 1,
+      "theme": "dark",
+      "scroll": 1440,
+      "title": "从你已经有的开始。",
+      "screenshot": "artifacts/guide-step-1-dark-desktop.png"
+    },
+    {
+      "width": 1440,
+      "step": 5,
+      "theme": "dark",
+      "scroll": 1440,
+      "title": "现在，这张卡片像你了吗？",
+      "screenshot": "artifacts/guide-step-5-dark-desktop.png"
+    },
+    {
+      "width": 1440,
+      "step": 7,
+      "theme": "dark",
+      "scroll": 1440,
+      "title": "让这个想法，有一个起点。",
+      "screenshot": "artifacts/guide-step-7-dark-desktop.png"
+    }
+  ],
+  "errors": []
+}

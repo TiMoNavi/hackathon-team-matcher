@@ -1,0 +1,8 @@
+{
+  "s6_worker_recovery_checks": 11,
+  "passed": true,
+  "real_llm_calls": 0,
+  "status": "passed",
+  "command_exit_code": 0,
+  "assertion_count": 11
+}

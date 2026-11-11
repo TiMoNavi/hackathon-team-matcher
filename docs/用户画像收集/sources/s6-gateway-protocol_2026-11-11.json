@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "configured_model": "gemini-3.8-flash",
+  "model_catalog_exact_match": true,
+  "protocol_requests_this_session": 2,
+  "synthetic_only": true,
+  "profile_written": false,
+  "first_attempt": {
+    "max_tokens": 128,
+    "result": "JSONDecodeError",
+    "usage_reported": false
+  },
+  "http_status": 200,
+  "response_bytes": 307,
+  "content_type": "application/json; charset=utf-8",
+  "outer_json_valid": true,
+  "finish_reason": "stop",
+  "content_type_in_message": "str",
+  "content_bytes": 11,
+  "reasoning_present": false,
+  "usage": {
+    "prompt_tokens": 57,
+    "completion_tokens": 46,
+    "total_tokens": 103
+  },
+  "json_fence": false,
+  "json_object_supported": true,
+  "elapsed_ms": 3765
+}

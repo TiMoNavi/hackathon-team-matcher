@@ -1,0 +1,92 @@
+{
+  "status": "failed",
+  "passed": 20,
+  "checks": [
+    {
+      "name": "race_questions_worker_succeeds",
+      "passed": true
+    },
+    {
+      "name": "answer_change_blocks_late_compose",
+      "passed": true
+    },
+    {
+      "name": "superseded_compose_creates_no_drafts",
+      "passed": true
+    },
+    {
+      "name": "new_answer_snapshot_can_compose",
+      "passed": true
+    },
+    {
+      "name": "new_answer_value_reaches_draft",
+      "passed": true
+    },
+    {
+      "name": "recompose_with_manual_draft_succeeds",
+      "passed": true
+    },
+    {
+      "name": "recompose_preserves_unconfirmed_manual_text_and_scope",
+      "passed": true
+    },
+    {
+      "name": "draft_conflict_returned_for_manual_resolution",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_invalidates_completed_job",
+      "passed": true
+    },
+    {
+      "name": "privacy_change_and_reads_do_not_call_model",
+      "passed": true
+    },
+    {
+      "name": "old_question_batch_blocked_after_privacy_change",
+      "passed": true
+    },
+    {
+      "name": "stale_session_still_readable_for_reconcile",
+      "passed": true
+    },
+    {
+      "name": "text_refresh_cannot_change_source_identity",
+      "passed": true
+    },
+    {
+      "name": "source_refresh_supersedes_running_job",
+      "passed": true
+    },
+    {
+      "name": "source_refresh_supersedes_completed_job",
+      "passed": true
+    },
+    {
+      "name": "sql_get_recovers_expired_running_job",
+      "passed": true
+    },
+    {
+      "name": "sql_late_worker_only_backfills_usage",
+      "passed": true
+    },
+    {
+      "name": "sql_expired_job_explicit_retry_succeeds",
+      "passed": true
+    },
+    {
+      "name": "actual_idle_watch_recovers_expired_sql_job",
+      "passed": true
+    },
+    {
+      "name": "idle_watch_recovery_zero_model_calls",
+      "passed": true
+    },
+    {
+      "name": "actual_worker_log_keeps_unknown_accounting",
+      "passed": false
+    }
+  ],
+  "http_requests": 43,
+  "error": "actual_worker_log_keeps_unknown_accounting"
+}
