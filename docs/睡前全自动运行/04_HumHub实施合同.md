@@ -1,5 +1,7 @@
 # HumHub 实施合同
 
+> **2026-11-12 最新决定**：采用[覆盖式产品改造](11_改造现状扫描与覆盖式实施原则.md)，允许必要依赖和指定原生入口/逻辑接管，不要求模块移除后原框架完整运行。数据、权限和原美术要求保留；历史回执不因新原则改变验收范围。
+
 > 日期：2026-11-12。关联 N02；本文锁定当前 HumHub 插件接入映射，不表示全部应用已实现。
 > N01 已完成并推送至 feat/overnight-integration-20261112，提交 adb960ad7514424b41a7b0acd742018b5b8a0889；证据见 [N01 隔离验收](sources/N01_隔离验收_20261112.json)。它验证空库隔离、迁移、恢复及未登录负例，不证明真实业务闭环。
 > 产品规则以[共享契约](../共享数据与接口契约.md)及本轮已批准[接入设计](02_插件使用与接入设计.md)为准；执行按[任务依赖](task.md)。旧 Next.js/FastAPI 设计的路由、物理表和异步协议不能冒充当前 HumHub 实现。
@@ -143,7 +145,7 @@ P1他人详情当前基于entry_type、space_id、post_id和动态原生关系�
 
 构建输出backend/protected/modules/matcher-webapp/resources/app，入口index.html，显式manifest.json。宿主固定读取该manifest，递归校验静态imports、dynamicImports及JS/CSS路径在资源目录内，拒绝穿越和外部URL；字体／图片同源。构建桥frontend/integration/、首页适配frontend/首页/integration/；保留原组件，每个文档仅一份相容React，不拼多个Next运行时。
 
-最小薄片真实GET /me成功后独立读current-event：401为登录态，409 CURRENT_EVENT_REQUIRED为尚未选择活动，403／上下文冲突清旧投影；same-origin credentials和窄DTO校验，不造假用户或示例卡片，不自动导入、选活动、调用模型或写社交。uiEnabled=false使新UI路由明确404，撤回新导航后保留原生入口；不调用destructive disable/remove，不停隐私保护层或删数据。
+最小薄片真实GET /me成功后独立读current-event：401为登录态，409 CURRENT_EVENT_REQUIRED为尚未选择活动，403／上下文冲突清旧投影；same-origin credentials和窄DTO校验，不造假用户或示例卡片，不自动导入、选活动、调用模型或写社交。现有uiEnabled=false使新UI路由明确404；后续按覆盖清单允许关闭/转接原生入口，不要求关闭UI后原生完整功能自动恢复。禁止用删数据的disable/remove冒充功能暂停，必要隐私保护保留。
 
 ## 8. 验证与交付边界
 

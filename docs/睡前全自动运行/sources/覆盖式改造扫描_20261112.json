@@ -1,0 +1,235 @@
+{
+  "kind": "source_and_document_scan",
+  "date": "2026-11-12",
+  "timezone": "Asia/Shanghai",
+  "branch": "feat/overnight-integration-20261112",
+  "head_at_scan": "91b6d1fc0f494515c01272a235833f7a980f1c4a",
+  "module_count": 15,
+  "modules": [
+    {
+      "module": "matcher-auth",
+      "source_version": "0.1.1",
+      "head_version": "0.1.1",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "auth-github": {
+          "minVersion": "1.1.1"
+        },
+        "matcher-user-profile": {
+          "minVersion": "0.10.0"
+        },
+        "matcher-github-import": {
+          "minVersion": "0.1.1"
+        }
+      },
+      "manifest_sha256": "097d549346ec89b75924987012553b4601e6f89fd56f58abfb3c74c7401a9b7d"
+    },
+    {
+      "module": "matcher-chat",
+      "source_version": "0.1.0",
+      "head_version": null,
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "mail": {
+          "minVersion": "3.4.6"
+        }
+      },
+      "manifest_sha256": "7990a53d04a8db1bacd2c5cc49a358367f74db2a1d6062f5b57739578395ec55"
+    },
+    {
+      "module": "matcher-chat-ui",
+      "source_version": "0.1.0",
+      "head_version": null,
+      "has_frontend_build": true,
+      "declared_module_dependencies": {},
+      "manifest_sha256": "a86b7b083b629c493620e62d3c5ad7b41791573903d2da7e166e0a715ef0cd87"
+    },
+    {
+      "module": "matcher-event-access",
+      "source_version": "0.1.0",
+      "head_version": "0.1.0",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {},
+      "manifest_sha256": "514bc652c15256efa0b18c100869eda43f830cb7050ef84e66fec03827e1a14e"
+    },
+    {
+      "module": "matcher-github-import",
+      "source_version": "0.1.1",
+      "head_version": "0.1.1",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.5.0"
+        },
+        "auth-github": {
+          "minVersion": "1.1.1"
+        }
+      },
+      "manifest_sha256": "ea855c533fbfd13c152f02a15e298efb0fd9ec76981563689b8a775c094b1347"
+    },
+    {
+      "module": "matcher-ideas",
+      "source_version": "0.1.0",
+      "head_version": "0.1.0",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-recommendation": {
+          "minVersion": "0.2.0"
+        },
+        "mail": {
+          "minVersion": "3.4.6"
+        }
+      },
+      "manifest_sha256": "a9e7bd0b0ea189f0dfadefa65682ce96196a434a3a3be307660d06c61c4962ba"
+    },
+    {
+      "module": "matcher-onboarding",
+      "source_version": "0.6.0",
+      "head_version": "0.4.0",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.12.0"
+        }
+      },
+      "manifest_sha256": "ddda37fd300369e5e6796deb06e5a5ebda14212f5d337b6cfd4c289b34b13ccb"
+    },
+    {
+      "module": "matcher-onboarding-ai",
+      "source_version": "0.1.0",
+      "head_version": "0.1.0",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.7.0"
+        },
+        "matcher-onboarding": {
+          "minVersion": "0.3.0"
+        }
+      },
+      "manifest_sha256": "06830080c334a2bf780f6a776f6396737dddc3a37af753dd4a876fb6287f0b07"
+    },
+    {
+      "module": "matcher-profile-privacy",
+      "source_version": "0.2.0",
+      "head_version": "0.2.0",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.9.0"
+        }
+      },
+      "manifest_sha256": "96374f6a90f9e5e05337cceb040c25c4130534b439d3ec1862b5d5bb5abb2933"
+    },
+    {
+      "module": "matcher-recommendation",
+      "source_version": "0.4.1",
+      "head_version": "0.4.1",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.10.1"
+        },
+        "matcher-profile-privacy": {
+          "minVersion": "0.2.0"
+        }
+      },
+      "manifest_sha256": "63c948e0728f4b7fca7349fbafdd81c80c75a1a319042ec5f10f8f2f93413c30"
+    },
+    {
+      "module": "matcher-recommendation-ai",
+      "source_version": "0.2.0",
+      "head_version": "0.2.0",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-recommendation": {
+          "minVersion": "0.3.0"
+        }
+      },
+      "manifest_sha256": "decd9633920848a5d91c0a7c2539f28968cc758d5a498f9c1854d6c77c07c42a"
+    },
+    {
+      "module": "matcher-resume-import",
+      "source_version": "0.1.1",
+      "head_version": "0.1.1",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.6.0"
+        }
+      },
+      "manifest_sha256": "65022681c752dabeb2c7c0df03ed4bc203773a41a147bc4d0b8b6c0be08d416e"
+    },
+    {
+      "module": "matcher-user-profile",
+      "source_version": "0.12.0",
+      "head_version": "0.10.1",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {},
+      "manifest_sha256": "095cbd9d49232c4360295821cb91983c89d6d4ac46bcca6ea629f383612980e0"
+    },
+    {
+      "module": "matcher-web-import",
+      "source_version": "0.1.1",
+      "head_version": "0.1.1",
+      "has_frontend_build": false,
+      "declared_module_dependencies": {
+        "matcher-user-profile": {
+          "minVersion": "0.6.0"
+        }
+      },
+      "manifest_sha256": "b61cafb488c70c5a2d63b285414a19b2810f67dd547147555a1ece30011db90e"
+    },
+    {
+      "module": "matcher-webapp",
+      "source_version": "0.1.0",
+      "head_version": "0.1.0",
+      "has_frontend_build": true,
+      "declared_module_dependencies": {},
+      "manifest_sha256": "2d1d1072cf1b55b580a4601e7153976df2f0484e5c9a02e5415e5e491dcfb9aa"
+    }
+  ],
+  "evidence_source_sha256": {
+    "docs/用户画像收集/52_N06A2隔离验收与后续交接.md": "875e24c6b69b64e5814ee36374d7aeeb3bd281d43f68c06e277f8bf3a4b16fd6",
+    "docs/用户画像收集/51_N06A2独立复核.md": "48cf2c93de1edc78a01b712df043e0ffe362de42149a5e93755cb6a60db7fefe",
+    "docs/推荐模块/26_原版推荐展示接回与验收.md": "859217beea05c4ae759faf33a5e98026e6003db9e39176c7598d415cdec3df0e",
+    "docs/群聊模块升级/09_C04隔离读取接线回执.md": "1e69b95b9fd48f4929ba1f45ca205825e1cfe7ff5b1d1e32f2c2ec29ac698bb1",
+    "docs/群聊模块升级/10_聊天入口接管与恢复方案.md": "e3ffbf04bc2ba465d9f9135279410ef1f364c9e485223088ea1fa6e7203d8b21",
+    "frontend/integration/vite.config.ts": "6809641ba1172b3503be959f9d14ded9c7d0f8c0c4bd1c4f5ec579a21383df03",
+    "backend/protected/humhub/components/Module.php": "47f3e994f39375f2ddb9285516371fcde17f29a694dccbd8209baea644e4a407",
+    "backend/protected/modules/mail/Module.php": "dbd9be35fec20815f5b089d83b44f2ba693285a800d3d659be32c668857b2e55"
+  },
+  "business_tests_rerun": false,
+  "runtime_configuration_read": false,
+  "database_mutations": 0,
+  "runtime_disable_calls": 0,
+  "builds_or_deployments": 0,
+  "limits": [
+    "Working tree contains other teams uncommitted handoffs.",
+    "Source versions do not establish installed versions.",
+    "Existing reports are reviewed, not repeated acceptance in this scan."
+  ],
+  "runtime_module_link_metadata": [
+    {
+      "module": "matcher-user-profile",
+      "runtime_module_is_symlink": true,
+      "links_to_shared_source": true
+    },
+    {
+      "module": "matcher-onboarding",
+      "runtime_module_is_symlink": true,
+      "links_to_shared_source": true
+    },
+    {
+      "module": "matcher-recommendation",
+      "runtime_module_is_symlink": true,
+      "links_to_shared_source": true
+    },
+    {
+      "module": "matcher-webapp",
+      "runtime_module_is_symlink": true,
+      "links_to_shared_source": true
+    }
+  ],
+  "runtime_link_check_scope": "Filesystem link metadata only; no private configuration, account or database reads"
+}
