@@ -3,7 +3,7 @@
   "date": "2026-11-12",
   "timezone": "Asia/Shanghai",
   "scope": "unwired offline chat read kernel and frontend client",
-  "status": "verified",
+  "status": "done",
   "backend": {
     "checks": 228,
     "test_exit_code": 0,
@@ -173,7 +173,15 @@
     "group invitations",
     "connected UI and rollback with message data"
   ],
-  "publication": "pending independent branch commit and remote verification",
+  "publication": {
+    "branch": "feat/chat-plugin-c03-20261112",
+    "implementation_commit": "c01f3a639cbc72c964f47f75dba16ed6072745c7",
+    "implementation_remote_verified": true,
+    "implementation_file_count": 38,
+    "receipt_recorded_separately": true,
+    "merged": false,
+    "deployed": false
+  },
   "commands": [
     {
       "cwd": ".",
