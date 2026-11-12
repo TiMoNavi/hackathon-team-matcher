@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "fixture": "chat-c05-text-v1",
+  "target": "http://127.0.0.1:8124",
+  "synthetic_only": true,
+  "credentials_returned": false,
+  "credentials_transport": "anonymous-child-stdin",
+  "real_ai_calls": 0,
+  "legacy_preserved": true,
+  "gates_restored": true,
+  "child": {
+    "passed": true,
+    "checks": 6,
+    "normalNativeFormLogins": 2,
+    "newMessages": 3,
+    "sendPosts": 4,
+    "receiptWrites": 0,
+    "failedStage": null,
+    "report": "integration/artifacts/send-browser/send-browser-report.json"
+  },
+  "queue_preserved": true,
+  "native_seen_unchanged": true,
+  "new_messages": 3,
+  "fixture_messages": 11,
+  "read_state_before": [
+    {
+      "user_id": 5,
+      "read_seq": 4,
+      "generation": 1
+    }
+  ],
+  "read_state_after": [
+    {
+      "user_id": 5,
+      "read_seq": 4,
+      "generation": 1
+    }
+  ]
+}

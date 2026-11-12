@@ -3,10 +3,10 @@ declare(strict_types=1);
 namespace humhub\modules\matcherChat;
 
 use humhub\modules\matcherChat\adapters\http\SessionActor;
-use humhub\modules\matcherChat\adapters\native\{DirectAdmission, EntryCoverage, GuardedPollController};
-use humhub\modules\matcherChat\adapters\persistence\{SqlReadStore, SqlState};
+use humhub\modules\matcherChat\adapters\native\{DirectAdmission, EntryCoverage, GuardedPollController, NativeSendEligibility};
+use humhub\modules\matcherChat\adapters\persistence\{SqlReadStore, SqlSendStore, SqlState};
 use humhub\modules\matcherChat\adapters\security\{HmacCursorCodec, SystemClock};
-use humhub\modules\matcherChat\application\{ChatReader, EntryPolicy};
+use humhub\modules\matcherChat\application\{ChatReader, ChatSender, EntryPolicy};
 use humhub\modules\matcherChat\domain\{ChatException, PageRequest};
 use Yii;
 
@@ -15,6 +15,7 @@ final class Module extends \humhub\components\Module
     public const EVENT_ENTRY_READINESS = 'entryReadiness';
     public bool $integrationReady = false;
     public bool $entryTakeoverEnabled = false;
+    public bool $sendEnabled = false;
     public string $cursorSecret = '';
     public string $nativeTimeZone = 'UTC';
     private ?SqlState $sql = null;
@@ -26,6 +27,18 @@ final class Module extends \humhub\components\Module
         return $this->integrationReady && in_array($this->settings->get('readEnabled'), [true, 1, '1', 'true'], true) && strlen($this->cursorSecret) >= 32 && $this->schemaReady();
     }
     public function admission(): DirectAdmission { return new DirectAdmission($this->sql()); }
+    public function isSendingEnabled(): bool
+    {
+        return $this->sendEnabled && in_array($this->settings->getUncached('sendEnabled'), ['1', 'true'], true)
+            && $this->isReadingEnabled() && (new NativeSendEligibility($this->sql(), true))->ready();
+    }
+    public function sender(int $viewerId): ChatSender
+    {
+        if (!$this->isSendingEnabled()) { throw new ChatException('CHAT_SEND_UNAVAILABLE', 'Text sending is unavailable.', 503); }
+        $reads = new SqlReadStore($this->sql(), $viewerId, new NativeSendEligibility($this->sql(), $this->sendEnabled));
+        $writes = new SqlSendStore($this->sql(), $reads, $viewerId);
+        return new ChatSender($reads, $reads, $writes, $writes);
+    }
     public function isEntryTakeoverEnabled(): bool
     {
         return EntryPolicy::enabled($this->entryTakeoverEnabled, $this->settings->get('entryTakeoverEnabled'));
@@ -74,7 +87,7 @@ final class Module extends \humhub\components\Module
     public function reader(int $viewerId): ChatReader
     {
         if (!$this->isReadingEnabled()) { throw new ChatException('CHAT_DEPENDENCY_UNAVAILABLE', 'Chat reading is not enabled.', 503); }
-        $store = new SqlReadStore($this->sql(), $viewerId);
+        $store = new SqlReadStore($this->sql(), $viewerId, new NativeSendEligibility($this->sql(), $this->sendEnabled));
         return new ChatReader($store, $store, new HmacCursorCodec($this->cursorSecret, new SystemClock()), $store);
     }
     public function disable()

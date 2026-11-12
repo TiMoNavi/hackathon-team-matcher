@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace humhub\modules\matcherChat\adapters\persistence;
 
-use humhub\modules\matcherChat\adapters\native\NativeProjection;
+use humhub\modules\matcherChat\adapters\native\{NativeProjection, NativeSendEligibility};
 use humhub\modules\matcherChat\domain\{AccessGrant, ChatException, Conversation, Message, SafeInteger, Sender};
 use humhub\modules\matcherChat\domain\ports\{AccessReader, ConsistencyBoundary, ReadRepository};
 
@@ -11,8 +11,9 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
     private bool $active = false;
     private int $currentRevision = 0;
     private array $states = [];
+    private array $sendFacts = [];
 
-    public function __construct(private readonly SqlState $sql, private readonly int $viewerId)
+    public function __construct(private readonly SqlState $sql, private readonly int $viewerId, private readonly ?NativeSendEligibility $sending = null)
     {
         SafeInteger::positive($viewerId, 'viewer_id');
     }
@@ -31,7 +32,7 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
                 try { $result = $operation(); $unit->commit(); return $result; }
                 catch (ChatException $error) { $unit->rollBack(); $failure = $error; return null; }
             });
-        } finally { $this->active = false; $this->states = []; $this->currentRevision = 0; }
+        } finally { $this->active = false; $this->states = []; $this->sendFacts = []; $this->currentRevision = 0; }
         if ($failure !== null) { throw $failure; }
         return $result;
     }
@@ -46,8 +47,9 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
             $id = SafeInteger::native($row['message_id'], 'conversation_id');
             if (isset($this->states[$id])) { throw new ChatException('INVALID_MEMBER_GENERATION', 'Multiple member generations are not admitted in this release.', 503); }
             $this->states[$id] = $this->sql->synchronize($id);
+            if ($this->sending !== null) { $this->sendFacts[$id] = $this->sending->snapshot($this->states[$id]); }
         }
-        $this->currentRevision = $this->sql->refreshRevision($this->viewerId, array_values($this->states));
+        $this->currentRevision = $this->sql->refreshRevision($this->viewerId, array_values($this->states), $this->sendFacts);
     }
 
     public function revision(int $viewerId): int
@@ -78,7 +80,13 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
         $pair = [SafeInteger::native($state['pair_low'], 'pair_low'), SafeInteger::native($state['pair_high'], 'pair_high')];
         $members = $this->sql->nativeMembers($conversationId);
         if ($member === null || $member['status'] !== 'active' || !$this->sql->exactMembers($members, $pair) || !hash_equals($state['native_members_hash'], NativeProjection::membershipHash($members)) || !$this->sql->pairEnabled($pair) || $this->sql->nativeMessage($conversationId) === null) { return null; }
-        return new AccessGrant($viewerId, $conversationId, 'direct', SafeInteger::native($state['version'], 'authorization_version'), 1, 0, true, 'active', true, false, false, false);
+        $send = false;
+        if ($this->sending !== null) {
+            $facts = $this->sending->snapshot($state);
+            if ($facts !== $this->sendFacts[$conversationId]) { throw new ChatException('AUTHORIZATION_CHANGED', 'The send authority changed.', 409); }
+            $send = $facts['allowed'];
+        }
+        return new AccessGrant($viewerId, $conversationId, 'direct', SafeInteger::native($state['version'], 'authorization_version'), 1, 0, true, 'active', true, $send, false, false);
     }
 
     public function sender(int $viewerId, int $conversationId, ?int $senderId): Sender

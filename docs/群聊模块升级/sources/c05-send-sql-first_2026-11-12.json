@@ -1,0 +1,260 @@
+{
+  "status": "passed",
+  "database": "humhub_chat_c02_20261112",
+  "check_count": 14,
+  "checks": [
+    "real send gate enabled",
+    "same-key concurrent peer replays holder message",
+    "same-key different body conflict after holder",
+    "different key obtains a distinct later sequence",
+    "send lock serializes before native-table unfriend",
+    "unfriend blocks existing-key replay",
+    "pending unfriend commits before send authority",
+    "missing block key locked until accepted send finishes",
+    "pending block commits before send authority",
+    "after-receipt failure rolls back native text seq and receipt",
+    "actual SQL sliding quota rejects then fully rolls back",
+    "C04 eight messages and receipt data preserved",
+    "only fixed accepted new sends persisted",
+    "read states and original queue unchanged"
+  ],
+  "cases": [
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-send",
+        "checks": 42,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 201,
+        "replayed": false,
+        "seq": 5,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "dedupe-send",
+        "checks": 42,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 200,
+        "replayed": true,
+        "seq": 5,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-send",
+        "checks": 43,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 200,
+        "replayed": true,
+        "seq": 5,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "changed-send",
+        "checks": 42,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 409,
+        "error_code": "IDEMPOTENCY_CONFLICT",
+        "rollback_verified": false,
+        "no_new_message": true
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-send",
+        "checks": 43,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 200,
+        "replayed": true,
+        "seq": 5,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "try-send",
+        "checks": 42,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 201,
+        "replayed": false,
+        "seq": 6,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-send",
+        "checks": 45,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 200,
+        "replayed": true,
+        "seq": 5,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "delete-friend",
+        "checks": 43,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "deleted_friendship_rows": 2
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "status": "passed",
+      "mode": "try-send",
+      "checks": 43,
+      "owned_synthetic_scope": true,
+      "credentials_returned": false,
+      "notifications_sent": false,
+      "http_status": 403,
+      "error_code": "SEND_FORBIDDEN",
+      "rollback_verified": false,
+      "no_new_message": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-unfriend",
+        "checks": 45,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "deleted_friendship_rows": 2
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "try-send",
+        "checks": 43,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 403,
+        "error_code": "SEND_FORBIDDEN",
+        "rollback_verified": false,
+        "no_new_message": true
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-send",
+        "checks": 45,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 200,
+        "replayed": true,
+        "seq": 5,
+        "read_seq": 0,
+        "unread_count": 1
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "hold-block",
+        "checks": 45,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "blocked_pair_count": 1
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-block",
+        "checks": 45,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "blocked_pair_count": 1
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "try-send",
+        "checks": 43,
+        "owned_synthetic_scope": true,
+        "credentials_returned": false,
+        "notifications_sent": false,
+        "http_status": 403,
+        "error_code": "SEND_FORBIDDEN",
+        "rollback_verified": false,
+        "no_new_message": true
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "status": "passed",
+      "mode": "rollback-send",
+      "checks": 44,
+      "owned_synthetic_scope": true,
+      "credentials_returned": false,
+      "notifications_sent": false,
+      "http_status": 409,
+      "error_code": "C05_TEST_ROLLBACK",
+      "rollback_verified": true,
+      "no_new_message": true
+    },
+    {
+      "status": "passed",
+      "mode": "quota-rollback",
+      "checks": 45,
+      "owned_synthetic_scope": true,
+      "credentials_returned": false,
+      "notifications_sent": false,
+      "quota_denied": true,
+      "temporary_sends": 58,
+      "all_temporary_rows_rolled_back": true
+    }
+  ],
+  "new_messages": 2,
+  "fixture_messages": 6,
+  "legacy_preserved": true,
+  "credentials_returned": false,
+  "http_requests": 0,
+  "real_ai_calls": 0,
+  "limitations": [
+    "SQL relation changes model native table writes; native AR hooks, lock-order variants and deadlock retries not validated.",
+    "Overlaps use independent processes and held-lock handshakes; no HTTP concurrency claim.",
+    "Quota rollback may advance native auto-increment allocation; no row reset or ID reuse performed."
+  ]
+}

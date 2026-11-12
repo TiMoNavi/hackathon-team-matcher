@@ -1,8 +1,8 @@
 {
     "id": "matcher-chat",
-    "name": "聊天读取与原生授权适配",
-    "description": "C04 隔离验证：显式准入 direct 的原生读取、序号、已读和保守入口保护。发送、附件、群与生产启用未开放。",
-    "version": "0.1.0",
+    "name": "私聊读取、文字发送与原生授权适配",
+    "description": "C04/C05 隔离验证：已显式准入 direct 的原生读取、已读与受控文字发送、持久幂等和入口保护；发送默认关闭，附件、群与生产启用未开放。",
+    "version": "0.2.0",
     "humhub": {"minVersion": "1.19.4", "modules": {"mail": {"minVersion": "3.4.6"}}},
     "authors": [{"name": "Hackathon Team Matcher"}]
 }

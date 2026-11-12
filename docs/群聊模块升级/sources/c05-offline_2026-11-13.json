@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "verified_on": "2026-11-13",
+  "php_suites": {
+    "kernel": 228,
+    "native": 109,
+    "takeover": 102,
+    "send": 67,
+    "send_native": 70,
+    "ui": 215,
+    "read_bootstrap": 12
+  },
+  "nested_native_checks_not_double_counted": true,
+  "php_lint_count": 75,
+  "guards": {
+    "python_checks": 108,
+    "php_guard_checks": 64,
+    "yii_header_checks": 5
+  },
+  "frontend": {
+    "tests": 97,
+    "pass": 97,
+    "fail": 0
+  },
+  "typecheck_passed_during_build": true,
+  "read_build_verified": true,
+  "cross_language_read_contract": [
+    {
+      "status": "passed",
+      "mode": "offline-php-usecases-to-typescript-parser",
+      "positive_cases": 29,
+      "negative_cases": 15,
+      "positive_names": [
+        "empty-list",
+        "authorized-list",
+        "list-first",
+        "list-older",
+        "history-latest",
+        "history-older",
+        "history-empty",
+        "group-history",
+        "discussion-history",
+        "increment-truncated",
+        "increment-empty",
+        "read-initial",
+        "read-forward",
+        "read-lower",
+        "read-group-baseline",
+        "increment-before-profile-change",
+        "increment-after-profile-change",
+        "list-after-profile-change",
+        "read-after-profile-change",
+        "read-hole-error",
+        "missing-error",
+        "cursor-limit-error",
+        "cursor-expired-error",
+        "revoked-error",
+        "native-overflow-error",
+        "projection-before-list",
+        "projection-before-history",
+        "projection-after-increment",
+        "projection-after-list"
+      ],
+      "negative_names": [
+        "unsafe native identifier",
+        "unknown private projection",
+        "untyped legacy conversation",
+        "cross-conversation message",
+        "duplicate sequence",
+        "unsorted history",
+        "unsafe sequence",
+        "history boundary exposure",
+        "unavailable attachment capability",
+        "increment cannot reuse backward cursor",
+        "negative read position",
+        "missing request id",
+        "error retry flag is not a string",
+        "missing list projection revision",
+        "missing message projection revision"
+      ],
+      "projection_invalidation": "passed",
+      "projection_downgrade_rejection": "passed",
+      "synthetic_client_requests": 8,
+      "real_http_requests": 0,
+      "database_connections": 0,
+      "real_authentication": false
+    }
+  ],
+  "database_access": false,
+  "http_requests": 0,
+  "aggregation_note": "PHP, guard and npm test commands exited zero. Initial summary parser assumed TAP despite the Node default reporter. Cross-language runner then exposed missing .js-to-.ts loader setup; that script was fixed and actual PHP export piped into the runner successfully."
+}

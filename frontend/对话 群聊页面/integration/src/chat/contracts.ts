@@ -1,4 +1,6 @@
-/** C04-P wire contracts. Importing this module has no I/O or activation effect. */
+import { validateClientMessageId, validateMessageBody } from "./send-input.js";
+
+/** Chat wire contracts. Importing this module has no I/O or activation effect. */
 export type Permissions = Readonly<{ read: boolean; send: boolean; invite: boolean; leave: boolean }>;
 export type ConversationType = "direct" | "group" | "discussion";
 export type Sender = Readonly<{ status: "available"; user_id: number; display_name: string; avatar_ref: string | null }>
@@ -20,6 +22,7 @@ export type Page<T> = Readonly<{ items: readonly T[]; next_cursor: string | null
 export type ConversationPage = Page<ConversationSummary> & Readonly<{ authorization_revision: number }>;
 export type MessagePage = Page<Message> & Readonly<{ read_seq: number; unread_count: number; context: ConversationContext }>;
 export type ReadState = Readonly<{ conversation_id: number; read_seq: number; unread_count: number; context: ConversationContext }>;
+export type SendReceipt = Readonly<{ message: Message; client_message_id: string; replayed: boolean; read_seq: number; unread_count: number; context: ConversationContext }>;
 export type Envelope<T> = Readonly<{ data: T; meta: Readonly<{ request_id: string }> }>;
 export type JsonValue = null | boolean | number | string | readonly JsonValue[] | { readonly [key: string]: JsonValue };
 export type ErrorDetails = readonly JsonValue[] | { readonly [key: string]: JsonValue };
@@ -83,7 +86,9 @@ function messageFields(object: Record<string, unknown>): MessageSummary {
     return Object.freeze({ ...common, kind: "deleted", body: null });
   }
   if (object.kind !== "text" && object.kind !== "system") return invalid();
-  return Object.freeze({ ...common, kind: object.kind, body: nonempty(object.body) });
+  const body = text(object.body);
+  if (/^[\p{White_Space}\p{Z}]*$/u.test(body)) return invalid();
+  return Object.freeze({ ...common, kind: object.kind, body });
 }
 function messageSummary(value: unknown): MessageSummary {
   return messageFields(exact(value, ["id", "seq", "kind", "sender", "body", "created_at"]));
@@ -158,6 +163,19 @@ export function parseReadState(value: unknown): Envelope<ReadState> {
   const conversation_id = safeInteger(data.conversation_id, 1);
   if (conversation_id !== authority.conversation_id || safeInteger(data.read_seq) < authority.history_after_seq) return invalid();
   return Object.freeze({ data: Object.freeze({ conversation_id, read_seq: safeInteger(data.read_seq), unread_count: safeInteger(data.unread_count), context: authority }), meta: meta(envelope.meta) });
+}
+
+/** A persistent receipt is not a delivery/read receipt and grants no new scope. */
+export function parseSendReceipt(value: unknown): Envelope<SendReceipt> {
+  const envelope = exact(value, ["data", "meta"]);
+  const data = exact(envelope.data, ["message", "client_message_id", "replayed", "read_seq", "unread_count", "context"]);
+  const authority = context(data.context); const entry = message(data.message); const replayed = bool(data.replayed);
+  if (authority.type !== "direct" || (entry.kind !== "text" && !(replayed && entry.kind === "deleted")) || entry.conversation_id !== authority.conversation_id
+    || entry.seq <= authority.history_after_seq || safeInteger(data.read_seq) < authority.history_after_seq) return invalid();
+  let key: string;
+  try { key = validateClientMessageId(data.client_message_id); if (!replayed) validateMessageBody(entry.body); } catch { return invalid(); }
+  return Object.freeze({ data: Object.freeze({ message: entry, client_message_id: key, replayed,
+    read_seq: safeInteger(data.read_seq), unread_count: safeInteger(data.unread_count), context: authority }), meta: meta(envelope.meta) });
 }
 
 function json(value: unknown, ancestors: Set<object>, depth = 0): JsonValue {

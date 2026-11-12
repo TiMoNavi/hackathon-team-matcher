@@ -83,4 +83,4 @@ await build({
     sourcemap: false,
   },
 });
-console.log(JSON.stringify({ build: "passed", stage: reading ? "read" : "shell", businessApiCalls: reading ? "explicit authorized read client only; runtime not verified" : 0, modules: moduleCount, react: "19.2.4", output: path.relative(projectRoot, outputRoot), envFiles: "disabled", sharedCacheWrites: "disabled by explicit config" }));
+console.log(JSON.stringify({ build: "passed", stage: reading ? "read" : "shell", businessApiCalls: reading ? "explicit authorized read/send client; runtime not verified" : 0, modules: moduleCount, react: "19.2.4", output: path.relative(projectRoot, outputRoot), envFiles: "disabled", sharedCacheWrites: "disabled by explicit config" }));

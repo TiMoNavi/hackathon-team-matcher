@@ -257,7 +257,7 @@ namespace {
         $other = new \humhub\modules\ui\menu\MenuLink(['url' => ['/dashboard/dashboard'], 'label' => 'Dashboard']);
         $top = new class($original, $other) { public array $entries; public function __construct(...$items) { $this->entries = $items; } public function getEntries(): array { return $this->entries; } public function removeEntry($entry): void { $this->entries = array_values(array_filter($this->entries, static fn($e) => $e !== $entry)); } };
         $event->sender = $top; Navigation::topMenu($event); Navigation::topMenu($event);
-        check('exact native inbox entry replaced once', count($top->entries) === 2 && $original->getUrl() === '/matcher-chat-ui/app/index' && $original->options['label'] === '聊天（只读）');
+        check('exact native inbox entry replaced once', count($top->entries) === 2 && $original->getUrl() === '/matcher-chat-ui/app/index' && $original->options['label'] === '聊天');
         check('unrelated menu entry unchanged', $other->getUrl() === '/dashboard/dashboard' && $other->options['label'] === 'Dashboard');
         $area = new class { public array $widgets = ['humhub\modules\mail\widgets\NotificationInbox', 'humhub\modules\notification\widgets\Overview']; public function removeWidget(string $class): void { $this->widgets = array_values(array_diff($this->widgets, [$class])); } };
         $event->sender = $area; Navigation::notificationArea($event);

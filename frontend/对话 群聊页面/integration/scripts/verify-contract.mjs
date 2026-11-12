@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
-import {
-  parseConversationPage, parseMessagePage, parseReadState, parseErrorEnvelope,
-} from '../src/chat/contracts.ts';
-import { http, state } from '../tests/chat-test-helpers.mjs';
+import { contracts, http, state } from '../tests/chat-test-helpers.mjs';
+
+// Reuse the offline resolver before loading TypeScript dependencies. Production
+// modules retain their .js specifiers for the application build.
+const { parseConversationPage, parseMessagePage, parseReadState, parseErrorEnvelope } = contracts;
 
 // Input is generated exclusively by matcher-chat/tests/export-contract.php.
 // No network, application boot, database, identity, or production fixture is used.

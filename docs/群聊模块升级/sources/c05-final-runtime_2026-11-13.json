@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "started_on": "2026-11-12",
+  "completed_on": "2026-11-13",
+  "target": "127.0.0.1:8124",
+  "database": "humhub_chat_c02_20261112",
+  "owned_server_stopped": true,
+  "gate_settings_closed": true,
+  "ui_enabled": true,
+  "counts": {
+    "user": 5,
+    "profile": 5,
+    "space": 0,
+    "space_membership": 0,
+    "user_auth": 0,
+    "message": 4,
+    "user_message": 8,
+    "message_entry": 19,
+    "file": 0,
+    "matcher_chat_conversation": 3,
+    "matcher_chat_entry_sequence": 19,
+    "matcher_chat_member": 6,
+    "matcher_chat_read_state": 3,
+    "matcher_chat_viewer_revision": 5,
+    "matcher_chat_send_receipt": 11,
+    "queue": 1,
+    "module_enabled": 3,
+    "migration": 232
+  },
+  "modules": {
+    "mail": {
+      "enabled": true,
+      "code_version": "3.4.6",
+      "installed_version": "3.4.6"
+    },
+    "matcher-chat-ui": {
+      "enabled": true,
+      "code_version": "0.2.0",
+      "installed_version": "0.2.0"
+    },
+    "matcher-chat": {
+      "enabled": true,
+      "code_version": "0.2.0",
+      "installed_version": "0.2.0"
+    }
+  },
+  "repeat_chat_ui_upgrade_preserved": true,
+  "nonempty_backup_restore_refused": true,
+  "legacy_preserved": true,
+  "legacy_hash": "4728880512d243c287808dead67aca0de1c613cb22d869c6955d3f76306ba382",
+  "c05_read_state": [
+    {
+      "user_id": 5,
+      "read_seq": 11,
+      "generation": 1
+    }
+  ],
+  "native_seen": [
+    {
+      "user_id": 4,
+      "last_viewed": null
+    },
+    {
+      "user_id": 5,
+      "last_viewed": null
+    }
+  ],
+  "fixture_messages": 11,
+  "queue_preserved": true,
+  "real_ai_calls": 0,
+  "worker_started": false,
+  "credentials_returned": false,
+  "main_preview_changed": false,
+  "production_ready": false
+}

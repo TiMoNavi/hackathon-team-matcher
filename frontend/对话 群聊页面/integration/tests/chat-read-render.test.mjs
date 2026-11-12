@@ -6,7 +6,7 @@ import { registerHooks } from "node:module";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import ts from "typescript";
-import { conversationPage, message, messagePage, response, summary, errorEnvelope } from "./chat-test-helpers.mjs";
+import { conversationPage, context, deferred, envelope, message, messagePage, response, summary, errorEnvelope } from "./chat-test-helpers.mjs";
 
 // Render the real read component offline. TSX is transformed only in memory;
 // this creates no bundle, output files, browser, server or network connection.
@@ -131,4 +131,42 @@ test("list denial uses list recovery copy and never claims that a particular con
   const html = render(controller, "/matcher/chat/conversations/99");
   assert.ok(html.includes("会话列表暂不可访问"));
   assert.doesNotMatch(html, /此会话暂不可访问|会话 99|原版聊天入口/);
+});
+
+test("server send permission enables only text composer and keeps unimplemented controls disabled", async () => {
+  const permissions = { read: true, send: true, invite: false, leave: false };
+  const controller = createReadController(config, async (url) => response(url.includes("messages") ? messagePage(1, [], { context: context(1, { permissions }) }) : conversationPage([summary(1, { permissions })])));
+  await controller.start("/matcher/chat/conversations/1"); controller.editDraft("synthetic draft <script>");
+  const html = render(controller, "/matcher/chat/conversations/1");
+  const textarea = html.match(/<textarea[^>]*>/)[0]; assert.ok(!textarea.includes("disabled"));
+  assert.ok(html.includes("文字发送已开放")); assert.ok(html.includes("synthetic draft &lt;script&gt;"));
+  assert.ok(html.includes("Shift+Enter 换行")); assert.ok(!html.includes("发送、附件和群聊尚未开放"));
+  assert.match(html, /<button[^>]*disabled=""[^>]*aria-label="添加附件/);
+  assert.match(html, /<button[^>]*disabled=""[^>]*aria-label="群聊/);
+  assert.doesNotMatch(html, /原版聊天入口|对方已读|synthetic-render-csrf/);
+});
+
+test("actual composer shows sending, uncertainty and explicit retry instead of a fake delivered message", async () => {
+  const wait = deferred(); const permissions = { read: true, send: true, invite: false, leave: false };
+  const controller = createReadController(config, async (url, init) => init.method === "POST" ? wait.promise
+    : response(url.includes("messages") ? messagePage(1, [], { context: context(1, { permissions }) }) : conversationPage([summary(1, { permissions })])));
+  await controller.start("/matcher/chat/conversations/1"); controller.editDraft("SYNTHETIC_UNCERTAIN_DRAFT"); const sending = controller.submitDraft();
+  const pending = render(controller); assert.ok(pending.includes("正在发送，请勿重复提交")); assert.match(pending, /<textarea[^>]*disabled=""/);
+  wait.reject(new Error("synthetic dropped response")); await sending;
+  const unknown = render(controller); assert.ok(unknown.includes("发送结果待确认")); assert.ok(unknown.includes("重试原消息")); assert.ok(unknown.includes("放弃重试并编辑"));
+  assert.ok(unknown.includes("SYNTHETIC_UNCERTAIN_DRAFT")); assert.equal(controller.snapshot().chat.active.messages.length, 0);
+  assert.ok(!unknown.includes(controller.snapshot().draft.clientMessageId));
+  controller.suspend(); const cleared = render(controller); assert.ok(!cleared.includes("SYNTHETIC_UNCERTAIN_DRAFT"));
+});
+
+test("actual sent feedback follows a persistent receipt and revoked send renders no draft", async () => {
+  const permissions = { read: true, send: true, invite: false, leave: false }; let posted;
+  const controller = createReadController(config, async (url, init) => {
+    if (init.method === "POST") { posted = JSON.parse(init.body); return response(envelope({ client_message_id: posted.client_message_id, replayed: false,
+      message: message(1, 1, { body: posted.body }), read_seq: 0, unread_count: 0, context: context(1, { permissions }) }), 201); }
+    return response(url.includes("messages") ? messagePage(1, posted ? [message(1, 1, { body: posted.body })] : [], { context: context(1, { permissions }) }) : conversationPage([summary(1, { permissions })]));
+  });
+  await controller.start("/matcher/chat/conversations/1"); controller.editDraft("SYNTHETIC_CONFIRMED"); await controller.submitDraft();
+  const html = render(controller); assert.ok(html.includes("已发送。此状态不代表对方已收到或已读。")); assert.ok(html.includes('data-message-id="101"'));
+  assert.equal(controller.snapshot().draft.body, ""); assert.equal(controller.snapshot().chat.active.readSeq, 0);
 });

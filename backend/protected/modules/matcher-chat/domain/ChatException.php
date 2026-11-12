@@ -4,7 +4,7 @@ namespace humhub\modules\matcherChat\domain;
 
 final class ChatException extends \RuntimeException
 {
-    public function __construct(public readonly string $errorCode, string $message, public readonly int $httpStatus = 422, public readonly bool $retryable = false, public readonly array $details = [])
+    public function __construct(public readonly string $errorCode, string $message, public readonly int $httpStatus = 422, public readonly bool $retryable = false, public readonly array $details = [], public readonly ?int $retryAfterSeconds = null)
     {
         parent::__construct($message);
     }

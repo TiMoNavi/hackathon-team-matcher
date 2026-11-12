@@ -4,7 +4,7 @@ namespace humhub\modules\matcherChat\controllers;
 
 use humhub\modules\matcherChat\adapters\http\RequestBoundary;
 use humhub\modules\matcherChat\adapters\http\ActorExpectation;
-use humhub\modules\matcherChat\domain\{ChatException, PageRequest, SafeInteger};
+use humhub\modules\matcherChat\domain\{ChatException, PageRequest, SafeInteger, SendText};
 use humhub\modules\matcherChat\Module;
 use humhub\modules\user\models\User;
 use Yii;
@@ -24,9 +24,9 @@ final class ApiController extends \yii\web\Controller
         $response->headers->set('Cache-Control', 'private, no-store');
         $response->headers->set('X-Content-Type-Options', 'nosniff');
         try {
-            $methods = ['conversations' => 'GET', 'messages' => 'GET', 'read-state' => 'PUT'];
+            $methods = ['conversations' => ['GET'], 'messages' => ['GET', 'POST'], 'read-state' => ['PUT']];
             if (!isset($methods[$id])) { throw new ChatException('NOT_FOUND', 'The endpoint is unavailable.', 404); }
-            if (Yii::$app->request->method !== $methods[$id]) { $response->headers->set('Allow', $methods[$id]); throw new ChatException('METHOD_NOT_ALLOWED', 'Unsupported request method.', 405); }
+            if (!in_array(Yii::$app->request->method, $methods[$id], true)) { $response->headers->set('Allow', implode(', ', $methods[$id])); throw new ChatException('METHOD_NOT_ALLOWED', 'Unsupported request method.', 405); }
             $this->sameOrigin();
             $user = Yii::$app->user;
             if (!$user->enableSession || $user->isGuest) { throw new ChatException('AUTHENTICATION_REQUIRED', 'Sign in to read conversations.', 401); }
@@ -46,7 +46,21 @@ final class ApiController extends \yii\web\Controller
     }
 
     public function actionConversations(): array { return $this->chat()->reader($this->viewerId)->conversations($this->viewerId, $this->page(false), $this->requestId); }
-    public function actionMessages($id): array { return $this->chat()->reader($this->viewerId)->messages($this->viewerId, $this->id($id), $this->page(true), $this->requestId); }
+    public function actionMessages($id): array
+    {
+        if (Yii::$app->request->method === 'GET') { return $this->chat()->reader($this->viewerId)->messages($this->viewerId, $this->id($id), $this->page(true), $this->requestId); }
+        $request = Yii::$app->request;
+        $this->queryKeys(['r', 'id']);
+        if (strtolower(trim(explode(';', (string)$request->headers->get('Content-Type'))[0])) !== 'application/json') { throw new ChatException('INVALID_REQUEST', 'Use application/json.', 415); }
+        if (strlen($request->rawBody) > 65536) { throw new ChatException('INVALID_REQUEST', 'The request is too large.', 413); }
+        try { $body = json_decode($request->rawBody, false, 4, JSON_THROW_ON_ERROR); } catch (\JsonException) { throw new ChatException('INVALID_ARGUMENT', 'Provide a JSON object.'); }
+        if (!$body instanceof \stdClass) { throw new ChatException('INVALID_ARGUMENT', 'Provide a JSON object.'); }
+        $keys = array_keys((array)$body); sort($keys);
+        if ($keys !== ['body', 'client_message_id']) { throw new ChatException('INVALID_ARGUMENT', 'Provide only client_message_id and body.'); }
+        $result = $this->chat()->sender($this->viewerId)->send($this->viewerId, $this->id($id), new SendText($body->client_message_id, $body->body), $this->requestId);
+        Yii::$app->response->statusCode = $result['data']['replayed'] ? 200 : 201;
+        return $result;
+    }
     public function actionReadState($id): array
     {
         $request = Yii::$app->request;
@@ -84,6 +98,7 @@ final class ApiController extends \yii\web\Controller
     private function failure(ChatException $error): array
     {
         Yii::$app->response->statusCode = $error->httpStatus;
+        if ($error->retryAfterSeconds !== null) { Yii::$app->response->headers->set('Retry-After', (string)$error->retryAfterSeconds); }
         Yii::$app->response->headers->remove('Location');
         Yii::$app->response->content = null;
         return $error->envelope($this->requestId);

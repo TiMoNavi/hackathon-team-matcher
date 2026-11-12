@@ -138,11 +138,11 @@ final class SqlState
     }
 
     /** Persist monotonic scope epoch; process/cache restart never resets it. */
-    public function refreshRevision(int $viewerId, array $states): int
+    public function refreshRevision(int $viewerId, array $states, array $sendFacts = []): int
     {
         $scope = [];
         foreach ($states as $state) { $scope[] = [$state['message_id'], $state['status'], $state['version'], $state['native_members_hash']]; }
-        $hash = hash('sha256', json_encode($scope, JSON_THROW_ON_ERROR));
+        $hash = hash('sha256', json_encode($sendFacts === [] ? $scope : [$scope, $sendFacts], JSON_THROW_ON_ERROR));
         $row = $this->one('SELECT revision,scope_hash FROM {{%matcher_chat_viewer_revision}} WHERE user_id=:viewer FOR UPDATE', [':viewer' => $viewerId]);
         if ($row === null) {
             $this->db->createCommand()->insert('{{%matcher_chat_viewer_revision}}', ['user_id' => $viewerId, 'revision' => 1, 'scope_hash' => $hash])->execute();

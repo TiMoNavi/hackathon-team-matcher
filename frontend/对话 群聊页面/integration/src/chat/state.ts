@@ -1,12 +1,15 @@
 import { ChatApiError } from "./http.js";
 import type { ChatApi } from "./http.js";
-import { ChatContractError, parseConversationPage, parseMessagePage, parseReadState, safeInteger } from "./contracts.js";
-import type { ConversationContext, ConversationSummary, Message, MessagePage, ReadState } from "./contracts.js";
+import { ChatContractError, parseConversationPage, parseMessagePage, parseReadState, parseSendReceipt, safeInteger } from "./contracts.js";
+import type { ConversationContext, ConversationSummary, Message, MessagePage, ReadState, SendReceipt } from "./contracts.js";
+import type { SendOptions } from "./http.js";
 
 export type OperationResult = "applied" | "ignored" | "aborted" | "failed";
 export type OperationOptions = Readonly<{ signal?: AbortSignal; limit?: number }>;
 type Phase = "idle" | "loading" | "ready" | "error";
-type ActiveOperation = "history" | "older" | "increment" | "read-state";
+type ActiveOperation = "history" | "older" | "increment" | "read-state" | "send";
+export type SendOperationResult = Readonly<{ status: "applied"; receipt: SendReceipt }>
+  | Readonly<{ status: "failed"; error: ChatApiError }> | Readonly<{ status: "ignored" | "aborted" }>;
 export type ConversationListState = Readonly<{
   phase: Phase; items: readonly ConversationSummary[]; nextCursor: string | null; hasMore: boolean | null; authorizationRevision: number | null; error: ChatApiError | null;
 }>;
@@ -30,6 +33,7 @@ export interface ChatState {
   loadOlder(options?: OperationOptions): Promise<OperationResult>;
   loadNewer(options?: OperationOptions): Promise<OperationResult>;
   markRead(readSeq: number, options?: Pick<OperationOptions, "signal">): Promise<OperationResult>;
+  sendText(options: SendOptions): Promise<SendOperationResult>;
   /** Use after a known server permission change; never infer this from switching Space. */
   invalidateConversation(id: number): void;
   abort(): void;
@@ -212,7 +216,7 @@ export function createChatState(): ChatState {
     }
     return Object.freeze([...bySeq.values()].sort((a, b) => a.seq - b.seq));
   }
-  async function loadActive(operation: ActiveOperation, value: OperationOptions = {}, requestedReadSeq?: number): Promise<OperationResult> {
+  async function loadActive(operation: Exclude<ActiveOperation, "send">, value: OperationOptions = {}, requestedReadSeq?: number): Promise<OperationResult> {
     checkedOptions(value); const port = requireSession(); const selected = requireActive();
     if (activeTask) return inputError();
     if (operation !== "history" && (!selected.context || !selected.context.permissions.read)) return inputError();
@@ -269,6 +273,43 @@ export function createChatState(): ChatState {
       return "applied";
     } catch (error) { return rejectTask(work, error); } finally { release(work); }
   }
+  async function sendText(value: SendOptions): Promise<SendOperationResult> {
+    const port = requireSession(); const selected = requireActive();
+    if (activeTask || selected.phase !== "ready" || !selected.context || selected.context.type !== "direct"
+      || selected.context.permissions.send !== true || typeof port.sendText !== "function") return inputError();
+    const work = task(value.signal, true); activeTask = work;
+    publish({ active: Object.freeze({ ...selected, operation: "send", error: null }) });
+    try {
+      const data = parseSendReceipt(await port.sendText(selected.id, { ...value, signal: work.controller.signal })).data;
+      if (!matches(work)) return { status: "ignored" };
+      if (work.controller.signal.aborted) { finishAborted(work); return { status: "aborted" }; }
+      if (data.context.conversation_id !== selected.id || data.client_message_id !== value.clientMessageId || !data.replayed && data.message.body !== value.body) throw new ChatContractError();
+      if (authorizationRevision !== null && data.context.authorization_revision !== authorizationRevision) {
+        throw new ChatApiError(409, "AUTHORIZATION_CHANGED", "Chat access changed while sending.");
+      }
+      if (contextKey(data.context) !== work.contextKey) throw new ChatApiError(409, "CONTEXT_CHANGED", "Chat access changed while sending.");
+      if (data.read_seq < selected.readSeq!) throw new ChatContractError();
+      // The receipt confirms persistence, not delivery or reading. Do not append
+      // its message and skip concurrent seqs: the caller explicitly reloads GET.
+      publish({ active: Object.freeze({ ...selected, operation: null, messages: data.replayed ? Object.freeze([]) : selected.messages,
+        readSeq: data.read_seq, unreadCount: data.unread_count, error: null }),
+        conversations: data.replayed ? emptyList() : Object.freeze({ ...current.conversations, items: Object.freeze(current.conversations.items.map((entry) => entry.id === selected.id
+          ? Object.freeze({ ...entry, unread_count: data.unread_count }) : entry)) }) });
+      return { status: "applied", receipt: data };
+    } catch (error) {
+      const problem = failure(error);
+      // A malformed send receipt may follow a committed write. It is not proof
+      // of revoked access: reject its payload but retain this same-scope attempt
+      // for explicit same-key confirmation. Observed auth failures still clear.
+      if (problem.code === "INVALID_RESPONSE" && ![401, 403, 404].includes(problem.status)
+        && matches(work) && !work.controller.signal.aborted && current.active) {
+        publish({ active: Object.freeze({ ...current.active, operation: null, error: problem }) });
+        return { status: "failed", error: problem };
+      }
+      const result = rejectTask(work, problem);
+      return result === "failed" ? { status: "failed", error: problem } : { status: result === "aborted" ? "aborted" : "ignored" };
+    } finally { release(work); }
+  }
   return Object.freeze({
     snapshot: () => current,
     subscribe(listener: (snapshot: ChatStateSnapshot) => void) {
@@ -291,6 +332,7 @@ export function createChatState(): ChatState {
     loadOlder: (value: OperationOptions = {}) => loadActive("older", value),
     loadNewer: (value: OperationOptions = {}) => loadActive("increment", value),
     markRead: (readSeq: number, value: Pick<OperationOptions, "signal"> = {}) => loadActive("read-state", value, readSeq),
+    sendText,
     invalidateConversation(id: number) { requireSession(); try { safeInteger(id, 1); } catch { return inputError(); } revoke(id, null); },
     abort() {
       if (current.status === "disposed") return;

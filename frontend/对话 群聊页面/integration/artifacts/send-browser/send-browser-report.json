@@ -1,0 +1,94 @@
+{
+  "stage": "C06-T-isolated-send-browser",
+  "passed": true,
+  "checks": [
+    "Two synthetic accounts use native login and one-hop authorized old-show navigation",
+    "A explicit double-click sends one persistent message; simulated IME evidence is separately labeled",
+    "Both accounts explicitly retrieve the peer message and B sends a real reply",
+    "A committed response is deliberately lost; explicit original-key retry returns the same persisted message",
+    "Refresh retains exactly three new messages and no implicit read-state PUT",
+    "1440px/320px day/night retain text composer, disabled unsupported features and safe exit links"
+  ],
+  "screenshots": [
+    "send-1440-day.png",
+    "send-1440-night.png",
+    "send-320-day.png",
+    "send-320-night.png"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "dark": false,
+      "clippedCount": 0,
+      "smallTargetCount": 0
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "dark": true,
+      "clippedCount": 0,
+      "smallTargetCount": 0
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "dark": false,
+      "clippedCount": 0,
+      "smallTargetCount": 0
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "dark": true,
+      "clippedCount": 0,
+      "smallTargetCount": 0
+    }
+  ],
+  "normalNativeFormLogins": 2,
+  "newMessages": 3,
+  "sendPosts": 4,
+  "receiptWrites": 0,
+  "browserUsesRealHttp": true,
+  "realProviderAuthentication": false,
+  "realUserDataUsed": false,
+  "credentialsReturned": false,
+  "cookieExported": false,
+  "rawMessageBodiesLogged": false,
+  "screenshotsSyntheticOnly": true,
+  "apiRequests": {
+    "list": 3,
+    "history": 4,
+    "increment": 5
+  },
+  "responseLoss": {
+    "committedBeforeAbort": true,
+    "sameKeyBodyReplay": true,
+    "samePersistentMessage": true
+  },
+  "ime": {
+    "kind": "simulated-browser-composition-events",
+    "status": "simulated-events-pass",
+    "realInputMethodCertified": false
+  },
+  "duplicateClick": {
+    "kind": "browser-double-click",
+    "onePost": true
+  },
+  "focusLifecycle": {
+    "status": "not-verified"
+  },
+  "explicitReadReceipt": {
+    "status": "not-exercised"
+  },
+  "blockedExternalRequests": 0,
+  "blockedUnexpectedRequests": 0,
+  "pageErrors": 0,
+  "consoleErrors": 0,
+  "expectedLossConsoleErrors": 1,
+  "limitations": [
+    "Composition events were simulated in the browser; this is not real OS/input-method certification.",
+    "Focus/visibility lifecycle and read-state writes were not verified by this send exercise.",
+    "No provider authentication, groups, attachments, friend-request workflow or production deployment is certified."
+  ]
+}

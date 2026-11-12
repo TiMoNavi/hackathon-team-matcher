@@ -1,8 +1,14 @@
-# matcher-chat-ui 0.1.0
+# matcher-chat-ui 0.2.0
 
-C03独立同源页面壳及C04/C06可选读取宿主，要求HumHub1.19.4或以上。默认shell不依赖matcher-webapp或matcher-chat；可选read模式显式检查matcher-chat读取开关。UI模块只消费原生session和读取API，不拥有消息、成员、附件或邀请记录。
+C03独立同源页面壳及C04/C05/C06可选读取与文字发送宿主，要求HumHub1.19.4或以上。默认shell不依赖matcher-webapp或matcher-chat；可选read模式显式检查matcher-chat读取开关。UI模块只消费原生session和聊天API，不拥有消息、成员、附件或邀请记录。
 
 默认阶段仍为shell，显示“聊天接入中，尚未读取会话”。read模式已实现，仅在固定8124隔离验证：原生session、模块属性readUiEnabled、设置readUiEnabled、UI总开关和业务模块读取就绪共同允许时才装配。当前并未满足生产原生兼容条件，不能据此启用主预览。
+
+## C05 文字发送接线
+
+同一个 v2/read 十字段 bootstrap 继续使用，未添加客户端授权开关。后端发送双闸及原生双向好友、屏蔽、账号和成员事实决定每个 context.permissions.send。输入框只在服务端允许时开放，点击或非 IME Enter 提交；原键原文手动重试，网络结果不明不自动重发。回执只表示服务器持久保存，不表示对方收到或已读；后续 GET 拉取当前获准投影。附件、建群及好友申请仍不可用。
+
+公共调用入口见 [跨页面接口目录](../../../../docs/群聊模块升级/12_首页画像通用社交与聊天接口.md) 和 [客户端说明](../../../../frontend/对话%20群聊页面/integration/SEND-MODE.md)。入口接管状态仅用于导航，不能替代单会话发送资格。真实运行证据由 [13回执](../../../../docs/群聊模块升级/13_C05文字发送接线与验收.md) 记录。
 
 ## 页面与开关
 
@@ -18,11 +24,11 @@ C03独立同源页面壳及C04/C06可选读取宿主，要求HumHub1.19.4或以�
 
 后端matcher-chat的entryTakeoverEnabled属性与同名持久设置必须同时开启，生产默认关闭。UI通过EntryBridge响应entryReadiness事件，只声明当前session/impersonation、读取开关和read-app manifest是否就绪，不提供目标URL、不授予会话权限。事件用类名字符串注册，未安装后端时C03静态壳仍可独立使用。
 
-- TopMenu在EVENT_RUN精确匹配原生收件箱URL并改到本插件；保留其他项。NotificationArea仅移除原生NotificationInbox，普通通知不动，不虚构新的未读角标。未交付发送/建群入口不包装成可用功能。
-- 完整覆盖的受管用户显示“聊天（只读）”。有未覆盖会话或依赖故障时显示“聊天（暂不可用）”；新页面返回503静态说明，不装配read bootstrap、不把部分会话列表当全部。
+- TopMenu在EVENT_RUN精确匹配原生收件箱URL并改到本插件；保留其他项。NotificationArea仅移除原生NotificationInbox，普通通知不动，不虚构新的未读角标。文字发送资格来自单会话业务API，未交付建群入口仍关闭。
+- 完整覆盖的受管用户显示“聊天”。有未覆盖会话或依赖故障时显示“聊天（暂不可用）”；新页面返回503静态说明，不装配read bootstrap、不把部分会话列表当全部。
 - 暂停接管/关闭UI与业务API授权分开。已经打开的读取客户端仍可访问readEnabled允许且真实授权有效的API；通用503不会被当作撤权。业务撤权仍由读取内核判定，关闭UI不自动恢复旧聊天入口。
 - 读取前端不再把保留的native_chat_url字段用作返回链接，退出统一指向首页，避免新旧入口循环。v2/read十字段合同保持不变。
-- 受管原生GET的实际导航由后端在seen副作用前处理。UI只消费状态，业务保护保留；本批没有完成混合收件箱、发送/附件/群、完整原生恢复或生产开放。
+- 受管原生GET的实际导航由后端在seen副作用前处理。UI只消费状态，业务保护保留；混合收件箱、附件/群、完整原生恢复或生产开放仍未完成。
 
 ## Bootstrap与资源合同
 
@@ -59,4 +65,4 @@ T1/T2离线回执为215项宿主/manifest检查及12项read-bootstrap检查通�
 - 后端所有者维护本目录的PHP/metadata/测试/本README。
 - 前端所有者维护原聊天目录构建桥及本模块resources/app和resources/read-app产物。
 - 实施合同和进展位于仓库 `docs/群聊模块升级/`；本模块不能自行修改N04/N05/N08/N09状态。
-- C04读取API由独立matcher-chat提供，UI仍不提供发送、附件、群邀请等能力。受管用户原生mail入口当前保守拒绝，关闭UI不撤回业务保护；这不代表完整原版回退已通过。
+- 读取和受控文字发送API由matcher-chat提供，UI按会话权限调用；附件与群邀请尚未开放。受管原生入口按T1/T2范围接管或拒绝，关闭UI不撤回业务保护，不表示完整原版回退已通过。

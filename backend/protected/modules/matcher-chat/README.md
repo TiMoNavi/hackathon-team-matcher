@@ -1,6 +1,6 @@
-# matcher-chat C04 隔离读取适配
+# matcher-chat 0.2.0 隔离私聊读取与文字发送
 
-本目录在已完成的 C04-P 读取内核上增加 HumHub 0.1.0 模块、原生 MySQL 读取适配、引用/规则元数据迁移和三个 session API，**仅进入独立隔离验证，默认关闭，不表示 C04 完整完成或允许生产启用**。N04/N05 旧阻塞已由[新交接](../../../../docs/睡前全自动运行/10_聊天C04前置交接_20261112.md)解除；自己的真实数据库、HTTP、并发及旧入口验收由主集成人另记。发送、附件、群、讨论、真实姓名/头像投影均未开放。
+本目录包含 C04 读取、T1/T2 入口适配，以及新增的 C05-A 既有受管好友私聊文字发送实现，**默认关闭，不表示 C04/C05 完整完成或允许生产启用**。N04/N05 旧阻塞已由[新交接](../../../../docs/睡前全自动运行/10_聊天C04前置交接_20261112.md)解除；真实数据库、HTTP、并发及旧入口验收由主集成人另记。文字发送仅允许单独开关下的窄范围隔离验证；附件、群、讨论、真实姓名/头像投影未开放。原生 mail/core 源码未修改。
 
 本批遵循[聊天实施合同](../../../../docs/群聊模块升级/03_C01_聊天实施合同.md)、[真实接线计划](../../../../docs/群聊模块升级/07_真实接线推进计划.md)、[共享契约](../../../../docs/共享数据与接口契约.md)与项目 architecture-patterns Skill。原生 mail、好友、Space、想法绑定继续拥有各自事实。本目录没有当前活动选择器、好友状态表、消息正文镜像或发送/邀请用例。UI 关闭不解除受管对象保护，不得以禁用原生 mail 回退。
 
@@ -15,9 +15,36 @@
 - 宿主在 ModuleAutoLoader 后、LanguageSelector 前安装 ChatRequestBootstrap，仅为本模块 PUT JSON 设置空 form body；rawBody 和 Yii CSRF 校验保留。模块 beforeRequest 有同样范围的兜底，但不能代替更早宿主解析阶段验证。
 - 新增迁移 m261112_230000_chat_reading：matcher_chat_lock、conversation、entry_sequence、member、read_state、viewer_revision（均带 matcher_chat_ 前缀）。只存引用、序号、权限、哈希与时间元数据，不存正文/姓名/头像。迁移回退拒绝自动删除。
 
-API 仅 GET /api/v1/conversations、GET /api/v1/conversations/{id}/messages、PUT /api/v1/conversations/{id}/read-state。使用原生 session 和 Yii CSRF；GET 不标原生 seen。actor 只取启用原生身份，拒绝 sessionless REST 身份和受限 impersonation。可选 X-Matcher-Chat-Actor 仅为前端缓存预期，须是与 session 一致的规范正安全整数，否则401 SESSION_CHANGED；它永不授予身份。跨源 Origin/Sec-Fetch-Site 拒绝，响应 private,no-store。严格限制 query 与 JSON read_seq，错误使用既有 envelope；本批未提供发送、上传、通知偏好或管理端点。
+读取 API 为 GET /api/v1/conversations、GET /api/v1/conversations/{id}/messages、PUT /api/v1/conversations/{id}/read-state；新增 POST 同一 messages 路径提供单独受控文字发送。使用原生 session 和 Yii CSRF；GET 不标原生 seen。actor 只取启用原生身份，拒绝 sessionless REST 身份和受限 impersonation。可选 X-Matcher-Chat-Actor 仅为前端缓存预期，须是与 session 一致的规范正安全整数，否则401 SESSION_CHANGED；它永不授予身份。跨源 Origin/Sec-Fetch-Site 拒绝，响应 private,no-store。严格限制 query 与 JSON 字段，错误使用既有 envelope；不提供上传、通知偏好或管理端点。
 
-SQL 适配仅准入 direct：sender 始终 unavailable，attachments=[]，permissions 的 send/invite/leave 均 false。这表示缺少获准画像/写入合同，不是假姓名，也不是已完成完整私聊读写。
+SQL 适配仅准入 direct：sender 始终 unavailable，attachments=[]，permissions.invite/leave 均 false。permissions.send 仅在下述文字发送双闸及当前原生资格同时满足时为 true，读取和历史资格独立保留。没有获准姓名/头像投影时不返回假姓名；仍不代表完整私聊能力已经交付。
+
+## C05-A 既有私聊文字发送
+
+public bool sendEnabled=false 与 settings.sendEnabled 双闸默认关闭；isSendingEnabled() 还要求读取已开启、发送元数据与原生依赖具备 InnoDB/主键前置条件。Module::sender(viewerId) 返回 ChatSender。原生 friendship 的 enable 设置也必须显式启用；没有通过开关、依赖或当前关系检查时 GET 的 permissions.send=false。entryStatus 的聚合 capabilities 仍只声明当前入口读取覆盖，不能用于开启某个会话发送；客户端以该会话的服务端 context.permissions.send 为准。
+
+发送范围只包括显式准入且 active、无附件、当前恰好两名原生成员的 direct。原生双方账号必须 enabled，user_friendship 必须存在且仅存在双向各一行，contentcontainer_blocked_users 的双方容器→对方 user_id 均无屏蔽。只读原生事实，不写好友/申请/屏蔽，不新建私聊、不拥有用户对唯一绑定，不推断 N08 的来源、关系代次或历史。已经可读的私聊不会因当前不是好友而失去历史读取；未来发送与历史读取分别授权。任何双向屏蔽记录均阻止本批发送，即使其他界面关闭了屏蔽操作入口。
+
+资格在发送事务内使用当前 FOR UPDATE：设置、双方账号、两个屏蔽主键（含不存在键的范围锁）、双向好友行；屏蔽检查在好友检查之前，贴合原生 block 后取消好友的顺序。关系行 ID/时间、设置、账号、屏蔽事实指纹进入 viewer revision，能力变化不能静默保留旧 send=true。指纹不是伪造的 N08 代次；两次观察之间已完成且不可辨的原生变化不声称全部捕获。与原生写入的真实锁等待、死锁及撤销并发仍须独立 MySQL 验证；失败全事务回滚，不自动重试发送。
+
+| 合同项 | 精确行为 |
+|---|---|
+| 请求 | POST /api/v1/conversations/{id}/messages，Content-Type application/json，仅 client_message_id 与 body 两个字段；最大原始 JSON 65536 字节 |
+| client_message_id | 小写规范 UUIDv4；永久键为 conversation + sender + UUID，不同会话或发送者可使用同一 UUID |
+| body | UTF-8 原文 1–4000 Unicode 码点，不 trim、不换行转换、不 Unicode 归一化；仅判空白，拒绝全 Unicode 空白、无效 UTF-8 和 Cc 控制字符（TAB/LF/CR 例外，C1 也拒绝） |
+| 新发/重放 | 新发 201；同会话同发送者同键同原文 200/replayed=true；同键异原文 409 IDEMPOTENCY_CONFLICT；重放仍须当前读取和发送资格 |
+| 成功 data | message（既有 Message DTO）、client_message_id、replayed、read_seq、unread_count、context（既有 context）；meta 保持 request_id |
+| 限流 | 每发送者所有会话合计滚动 60 秒最多 60 条成功新消息；合法重放不计额，事务失败不耗额；429 RATE_LIMITED、Retry-After 正整秒，details 仍为空数组 |
+| 已读 | 返回事务内本人现有 read_seq/unread_count；发送不自动推进插件 read-state，不写原生 last_viewed，不推断对方已读 |
+| 错误 | 格式 422 INVALID_CLIENT_MESSAGE_ID/INVALID_MESSAGE_BODY；当前发送资格不足 403 SEND_FORBIDDEN；不可读 404 CONVERSATION_UNAVAILABLE；发送关闭/依赖不可用 503 CHAT_SEND_UNAVAILABLE；其他身份/CSRF/同源错误沿既有边界 |
+
+永久幂等承诺消息身份唯一，不保存旧正文快照。200 重放先校验请求原文 hash，再返回该消息当前获准投影；后续编辑返回当前文本，删除返回 body=null 的墓碑，不能借旧 key 恢复已删除内容或姓名。首次 201 必须精确往返本次原文；客户端不可把合法的当前重放投影误判为未知发送结果。
+
+迁移 m261112_235000_chat_sending 新增 matcher_chat_send_receipt：主键 message_id/user_id/client_message_id，entry_id 唯一索引及 user_id/created_at 配额索引。只保存正文 SHA-256、原生 entry 引用、seq、提交时间；没有正文副本、TTL 清理或删除回执的回退。正文仍唯一存放于原生 message_entry.content，写前使用 HTML 实体转义；现有纯文本投影能精确还原字面 HTML、实体、Markdown、CRLF、引号、emoji 与前后空白。
+
+SqlSendStore 在现有 SqlReadStore 锁事务及业务 savepoint 内写原生 message_entry 的作者/审计时间，更新 message.updated_at/updated_by，同步 seq，写永久 receipt；末端重新检查真实授权。全局 chat mutex 与唯一键共同串行化本插件的同键请求。它是已授权窄 SQL 适配，不绕过请求授权，也不关闭 NativeGuard；所有原生旧写仍被守卫拒绝。未调用 ReplyForm、MessageEntry::save/notify、RichText::postProcess、file attach 或邮件/live/push，从而不触发原生事务前通知与富文本副作用。提交后只失效原生参与者未读计数缓存，缓存失败依赖原生过期，不把已提交消息伪装成失败或重复发送。
+
+本批没有通知交付承诺，也没有发送者姓名/头像、输入提示、对方在线/已读、附件、编辑/删除、群或新建空私聊能力。已有原生非受管聊天规则保持原职责；N08 正式来源/唯一绑定/关系代次交接仍待完成。暂停入口/UI 与关闭业务发送仍分别控制，服务器不相信客户端“已确认”字段或模型声称同意。
 
 ## T1/T2 入口适配
 
@@ -124,6 +151,8 @@ AccessReader.revision 是 viewer 维度持久、单调递增的正 JavaScript �
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/export-contract.php
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/native.php
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/takeover.php
+    backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/send.php
+    backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/send-native.php
 
 run.php 覆盖真实用例输出、合法/拒绝成员、重复代次、join 前后、私聊历史/send 分离、摘要/头像撤权、空列表/空会话、seq 空洞、自己的/system/deleted 未读排除、分页/增量、HMAC 篡改/过期/跨对象/未来时间/超 TTL、末端撤权、已读单调和坏仓储位置回滚。输出是计数汇总，不打印密钥、配置或用户资料。
 
@@ -137,4 +166,8 @@ isolated-sql.php 只能由主集成人用 deploy/chat 的固定 harness PHP 命�
 
 append-once 只为已验证的 history 插入固定第八条原生合成消息，以 sql_probe={spec:chat-c04-isolated-sql-v1,append_entry_id:实际原生ID} 记录幂等归属，保留原 entries 七项列表；真实增量读取必须验证 seq8 与权限版本、revision、read-state 不变。revoke-empty 只撤销已验证的 empty 准入，验证错误 cursor 后 revision 观察仍持久、旧 cursor 失效、双方读取被拒绝且原生消息/成员不变。两模式修改隔离夹具，不是产品发送/管理接口；不会重新准入或删除原生数据。stdout 仅输出安全计数、布尔和固定检查名，不能据脚本存在声称真实验收已经通过。
 
-C05 发送、附件及通知偏好和 C07 群邀请/接受/退出仍未实现。C04完整验收及原生安全回退仍受本页明确缺口限制，不能据源码或隔离安装把其标记为全部done。
+send.php 使用内存适配验证真实 ChatSender 用例的原文、消息回执、同会话/发送者永久幂等范围、重放先授权、配额、失败/末端撤权回滚；send-native.php 运行实际资格与回执/配额 SQL seam、锁键/方向、HTML 往返和无事务前通知的静态负例，均无 DB/HTTP。这些检查不证明真实 SQL 锁等待、并发幂等、持久恢复、网络响应丢失或双用户收发，必须由主集成人另行验收。
+
+isolated-send.php 是主集成人独占执行的固定 C05 探针，只接收 hold-send/dedupe-send/changed-send/delete-friend/hold-unfriend/hold-block/try-send/rollback-send/quota-rollback 枚举。固定 bootstrap 和 _chat_c05_fixture nonce/两个合成账号/唯一准入会话都验证后才执行；不接受 ID、正文、SQL、凭据或时间参数。竞争进程在实际边界前输出固定 ATTEMPTING 标记；持锁进程取得真实锁后输出 READY 并等待精确 continue 换行，固定30秒超时，不靠 sleep 宣称重叠。关系变更仅限拥有的合成两人且由 root 恢复；rollback-send 验永久回执之后的整体回滚，quota-rollback 的最多60条真实临时原生 entry/receipt 与配额拒绝全部回滚，不遗留虚构引用。不执行该文件不能宣称真实并发/配额已经通过。
+
+C05-A 的窄文字代码存在不等于完整 C05 交付；附件、通知偏好和 C07 群邀请/接受/退出仍未实现。C04/C05 完整验收及旧入口收敛仍受本页明确缺口限制，不能据源码或隔离安装把其标记为全部 done。

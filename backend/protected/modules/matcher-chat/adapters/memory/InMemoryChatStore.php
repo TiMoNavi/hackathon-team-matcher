@@ -2,11 +2,11 @@
 declare(strict_types=1);
 namespace humhub\modules\matcherChat\adapters\memory;
 
-use humhub\modules\matcherChat\domain\{AccessGrant, Conversation, Message, SafeInteger, Sender};
-use humhub\modules\matcherChat\domain\ports\{AccessReader, ConsistencyBoundary, ReadRepository};
+use humhub\modules\matcherChat\domain\{AccessGrant, ChatException, Conversation, Message, SafeInteger, Sender, SendReceipt, SendText};
+use humhub\modules\matcherChat\domain\ports\{AccessReader, ConsistencyBoundary, ReadRepository, SendRepository};
 
 /** Synthetic adapter only. No native connection, durable data or SQL lock claims. */
-final class InMemoryChatStore implements AccessReader, ReadRepository, ConsistencyBoundary
+final class InMemoryChatStore implements AccessReader, ReadRepository, ConsistencyBoundary, SendRepository
 {
     private array $conversations = [];
     private array $messages = [];
@@ -16,6 +16,8 @@ final class InMemoryChatStore implements AccessReader, ReadRepository, Consisten
     private array $senders = [];
     private array $reads = [];
     private array $hooks = [];
+    private array $receipts = [];
+    public int $now = 1794484800;
     private bool $insideBoundary = false;
     public array $calls = [];
 
@@ -63,10 +65,10 @@ final class InMemoryChatStore implements AccessReader, ReadRepository, Consisten
     public function run(callable $operation): mixed
     {
         if ($this->insideBoundary) { throw new \LogicException('Nested synthetic boundaries are unsupported.'); }
-        $reads = $this->reads;
+        $snapshot = [$this->reads, $this->messages, $this->messageIds, $this->receipts];
         $this->insideBoundary = true;
         try { return $operation(); }
-        catch (\Throwable $error) { $this->reads = $reads; throw $error; }
+        catch (\Throwable $error) { [$this->reads, $this->messages, $this->messageIds, $this->receipts] = $snapshot; throw $error; }
         finally { $this->insideBoundary = false; }
     }
 
@@ -149,6 +151,42 @@ final class InMemoryChatStore implements AccessReader, ReadRepository, Consisten
         }
         $this->fire('unreadCount');
         return $count;
+    }
+
+    public function receipt(int $viewerId, int $conversationId, string $clientMessageId): ?SendReceipt
+    {
+        $receipt = $this->receipts[$viewerId][$conversationId][$clientMessageId]['receipt'] ?? null;
+        $this->fire('receipt');
+        return $receipt;
+    }
+
+    public function assertQuota(int $viewerId): void
+    {
+        $recent = [];
+        foreach ($this->receipts[$viewerId] ?? [] as $conversation) {
+            foreach ($conversation as $item) { if ($item['at'] > $this->now - 60) { $recent[] = $item['at']; } }
+        }
+        if (count($recent) >= 60) { throw new ChatException('RATE_LIMITED', 'Wait before sending another message.', 429, true, [], max(1, min($recent) + 60 - $this->now)); }
+        $this->fire('assertQuota');
+    }
+
+    public function append(int $viewerId, int $conversationId, SendText $text): Message
+    {
+        if (!$this->insideBoundary) { throw new \LogicException('Send writes require a boundary.'); }
+        $id = $this->messageIds === [] ? 1 : max(array_keys($this->messageIds)) + 1;
+        $seqs = array_keys($this->messages[$conversationId] ?? []);
+        $seq = $seqs === [] ? 1 : max($seqs) + 1;
+        $message = new Message($id, $conversationId, $seq, $viewerId, 'text', $text->body, gmdate('Y-m-d\TH:i:s\Z', $this->now));
+        $this->seedMessage($message);
+        $this->fire('append');
+        return $message;
+    }
+
+    public function remember(int $viewerId, int $conversationId, SendText $text, Message $message): void
+    {
+        if (!$this->insideBoundary || isset($this->receipts[$viewerId][$conversationId][$text->clientMessageId])) { throw new \LogicException('Synthetic receipt conflict.'); }
+        $this->receipts[$viewerId][$conversationId][$text->clientMessageId] = ['receipt' => new SendReceipt($message->id, $message->seq, $text->bodyHash), 'at' => $this->now];
+        $this->fire('remember');
     }
 
     private function touch(int $viewerId): void

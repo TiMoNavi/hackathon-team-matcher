@@ -48,7 +48,7 @@ final class Navigation
     private static function label(?array $status): string
     {
         return match ($status['state'] ?? '') {
-            'takeover' => '聊天（只读）',
+            'takeover' => '聊天',
             'paused', 'unsupported_coverage' => '聊天（暂不可用）',
             default => '聊天（接入中）',
         };

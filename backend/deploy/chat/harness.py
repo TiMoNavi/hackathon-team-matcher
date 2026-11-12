@@ -206,7 +206,7 @@ def require_stopped():
     require(owned_server() is None and port_free(), 'Stop the owned chat HTTP server before mutation.')
 
 def control(action):
-    require(action in ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off'], 'Unsupported control action.')
+    require(action in ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off'], 'Unsupported control action.')
     config = runtime_guard()
     database_guard(config)
     if action in ['install', 'upgrade-ui', 'upgrade-chat']:
@@ -281,6 +281,14 @@ def upgrade_chat():
     result = control('upgrade-chat')
     result['configuration_upgraded'] = changed
     return result
+
+def c05_fixture(action):
+    require(action in ['prepare', 'snapshot'], 'Unsupported C05 fixture action.')
+    config = runtime_guard(); database_guard(config)
+    require(config['modules'] == CHAT_MODULES, 'Fixed chat module set required.')
+    if action == 'prepare':
+        require_stopped()
+    return parse_control_output(run(php_command() + [str(HERE / 'c05-fixture.php'), action], timeout=60), action)
 
 def start():
     require(control('inspect').get('baseline_installed') is True, 'Install the fixed chat baseline before starting HTTP.')
@@ -455,7 +463,7 @@ def locked():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'fixture-prepare', 'fixture-inspect', 'backup-restore', 'start', 'stop'])
+    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off', 'fixture-prepare', 'fixture-inspect', 'c05-prepare', 'c05-inspect', 'backup-restore', 'start', 'stop'])
     action = parser.parse_args().action
     if action == 'probe':
         result = probe()
@@ -466,7 +474,9 @@ def main():
                           'chat-read-on': lambda: control('chat-read-on'), 'chat-read-off': lambda: control('chat-read-off'),
                           'chat-ui-read-on': lambda: control('chat-ui-read-on'), 'chat-ui-read-off': lambda: control('chat-ui-read-off'),
                           'chat-takeover-on': lambda: control('chat-takeover-on'), 'chat-takeover-off': lambda: control('chat-takeover-off'),
+                          'chat-send-on': lambda: control('chat-send-on'), 'chat-send-off': lambda: control('chat-send-off'),
                           'fixture-prepare': lambda: fixture('fixture-prepare'), 'fixture-inspect': lambda: fixture('fixture-inspect'),
+                          'c05-prepare': lambda: c05_fixture('prepare'), 'c05-inspect': lambda: c05_fixture('snapshot'),
                           'backup-restore': backup_restore, 'start': start, 'stop': stop}
             result = operations[action]()
     print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -1,15 +1,18 @@
-import { parseConversationPage, parseErrorEnvelope, parseMessagePage, parseReadState, safeInteger } from "./contracts.js";
-import type { ConversationPage, Envelope, ErrorDetails, MessagePage, ReadState } from "./contracts.js";
+import { parseConversationPage, parseErrorEnvelope, parseMessagePage, parseReadState, parseSendReceipt, safeInteger } from "./contracts.js";
+import type { ConversationPage, Envelope, ErrorDetails, MessagePage, ReadState, SendReceipt } from "./contracts.js";
+import { validateClientMessageId, validateMessageBody, MessageInputError } from "./send-input.js";
 
 export type ChatFetcher = (input: string, init: RequestInit) => Promise<Response>;
 export type PageOptions = Readonly<{ limit?: number; cursor?: string; signal?: AbortSignal }>;
 export type IncrementOptions = Readonly<{ afterSeq: number; limit?: number; signal?: AbortSignal }>;
 export type ReadOptions = Readonly<{ readSeq: number; signal?: AbortSignal }>;
+export type SendOptions = Readonly<{ clientMessageId: string; body: string; signal?: AbortSignal }>;
 export interface ChatApi {
   list(options?: PageOptions): Promise<Envelope<ConversationPage>>;
   history(conversationId: number, options?: PageOptions): Promise<Envelope<MessagePage>>;
   increment(conversationId: number, options: IncrementOptions): Promise<Envelope<MessagePage>>;
   readState(conversationId: number, options: ReadOptions): Promise<Envelope<ReadState>>;
+  sendText(conversationId: number, options: SendOptions): Promise<Envelope<SendReceipt>>;
   dispose(): void;
 }
 export type ChatApiConfig = Readonly<{ apiBase: "/api/v1"; csrfToken: string; fetcher?: ChatFetcher; expectedActorId?: number }>;
@@ -62,7 +65,8 @@ export function createChatApi(config: ChatApiConfig): ChatApi {
     for (const controller of pending) controller.abort();
     pending.clear();
   }
-  async function request<T>(path: string, parse: (value: unknown) => Envelope<T>, callerSignal?: AbortSignal, body?: { read_seq: number }): Promise<Envelope<T>> {
+  async function request<T>(path: string, parse: (value: unknown, status: number) => Envelope<T>, callerSignal?: AbortSignal,
+    body?: { read_seq: number } | { client_message_id: string; body: string }, method: "GET" | "PUT" | "POST" = body === undefined ? "GET" : "PUT", statuses: readonly number[] = [200]): Promise<Envelope<T>> {
     if (disposed) throw new ChatApiError(0, "CLIENT_DISPOSED", "Chat client is no longer active.");
     const controller = new AbortController();
     const cancel = () => controller.abort();
@@ -79,7 +83,7 @@ export function createChatApi(config: ChatApiConfig): ChatApi {
       if (body !== undefined) { headers["Content-Type"] = "application/json"; headers["X-CSRF-Token"] = csrfToken; }
       let response: Response;
       try {
-        response = await fetcher(`/api/v1/conversations${path}`, { method: body === undefined ? "GET" : "PUT", headers,
+        response = await fetcher(`/api/v1/conversations${path}`, { method, headers,
           ...(body === undefined ? {} : { body: JSON.stringify(body) }), credentials: "same-origin", redirect: "error", cache: "no-store", signal: controller.signal });
       } catch {
         checkActive();
@@ -102,8 +106,8 @@ export function createChatApi(config: ChatApiConfig): ChatApi {
         try { error = parseErrorEnvelope(payload); } catch { throw new ChatApiError(response.status, "INVALID_RESPONSE", "The server returned an invalid chat error."); }
         throw new ChatApiError(response.status, error.error.code, error.error.message, error.error.retryable, error.meta.request_id, error.error.details);
       }
-      if (response.status !== 200) throw new ChatApiError(response.status, "INVALID_RESPONSE", "The server returned an unexpected chat status.");
-      try { return parse(payload); } catch { throw new ChatApiError(response.status, "INVALID_RESPONSE", "The server returned an invalid chat response."); }
+      if (!statuses.includes(response.status)) throw new ChatApiError(response.status, "INVALID_RESPONSE", "The server returned an unexpected chat status.");
+      try { return parse(payload, response.status); } catch { throw new ChatApiError(response.status, "INVALID_RESPONSE", "The server returned an invalid chat response."); }
     } finally {
       callerSignal?.removeEventListener("abort", cancel); pending.delete(controller);
     }
@@ -142,6 +146,18 @@ export function createChatApi(config: ChatApiConfig): ChatApi {
         if (result.data.conversation_id !== id || result.data.read_seq < readSeq) return invalidInput();
         return result;
       }, value.signal, { read_seq: readSeq });
+    },
+    sendText(conversationId: number, value: SendOptions) {
+      const id = checkId(conversationId); const input = options(value, ["clientMessageId", "body", "signal"]);
+      let key: string; let text: string;
+      try { key = validateClientMessageId(input.clientMessageId); text = validateMessageBody(input.body); }
+      catch (error) { if (error instanceof MessageInputError) throw new ChatApiError(0, error.code, error.message); return invalidInput(); }
+      return request(`/${id}/messages`, (payload, status) => {
+        const result = parseSendReceipt(payload);
+        if (result.data.context.conversation_id !== id || result.data.client_message_id !== key || !result.data.replayed && result.data.message.body !== text
+          || result.data.replayed !== (status === 200)) return invalidInput();
+        return result;
+      }, value.signal, { client_message_id: key, body: text }, "POST", [200, 201]);
     },
     dispose,
   });
