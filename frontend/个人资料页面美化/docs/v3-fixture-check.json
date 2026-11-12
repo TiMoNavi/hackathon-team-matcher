@@ -1,0 +1,161 @@
+{
+  "status": "passed",
+  "date": "2026-11-12",
+  "visibleEntries": 29,
+  "globalEntries": 19,
+  "eventEntries": 10,
+  "heroPoolEntries": 25,
+  "detailsEntries": 27,
+  "projectEntries": 2,
+  "eventFieldsCovered": 10,
+  "restrictionFixturesContainNoValues": true,
+  "catalogSource": "../../backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+  "entries": [
+    {
+      "id": "skill-design",
+      "field": "skill",
+      "scope": "global"
+    },
+    {
+      "id": "direction-ai",
+      "field": "direction",
+      "scope": "global"
+    },
+    {
+      "id": "event-seeking",
+      "field": "event_seeking",
+      "scope": "event"
+    },
+    {
+      "id": "project-roam",
+      "field": "project",
+      "scope": "global"
+    },
+    {
+      "id": "event-time",
+      "field": "event_time_commitment",
+      "scope": "event"
+    },
+    {
+      "id": "collab",
+      "field": "collaboration_preference",
+      "scope": "global"
+    },
+    {
+      "id": "skill-react",
+      "field": "skill",
+      "scope": "global"
+    },
+    {
+      "id": "school",
+      "field": "education",
+      "scope": "global"
+    },
+    {
+      "id": "city",
+      "field": "city",
+      "scope": "global"
+    },
+    {
+      "id": "skill-figma",
+      "field": "skill",
+      "scope": "global"
+    },
+    {
+      "id": "event-goal",
+      "field": "event_goal",
+      "scope": "event"
+    },
+    {
+      "id": "interest-tools",
+      "field": "interest",
+      "scope": "global"
+    },
+    {
+      "id": "communication",
+      "field": "communication_preference",
+      "scope": "global"
+    },
+    {
+      "id": "event-role",
+      "field": "event_role",
+      "scope": "event"
+    },
+    {
+      "id": "project-spark",
+      "field": "project",
+      "scope": "global"
+    },
+    {
+      "id": "seeking",
+      "field": "seeking",
+      "scope": "global"
+    },
+    {
+      "id": "event-contribution",
+      "field": "event_contribution",
+      "scope": "event"
+    },
+    {
+      "id": "role",
+      "field": "role",
+      "scope": "global"
+    },
+    {
+      "id": "event-mode",
+      "field": "event_collaboration_mode",
+      "scope": "event"
+    },
+    {
+      "id": "skill-research",
+      "field": "skill",
+      "scope": "global"
+    },
+    {
+      "id": "event-availability",
+      "field": "event_availability",
+      "scope": "event"
+    },
+    {
+      "id": "award",
+      "field": "award",
+      "scope": "global"
+    },
+    {
+      "id": "language",
+      "field": "language",
+      "scope": "global"
+    },
+    {
+      "id": "language-en",
+      "field": "language",
+      "scope": "global"
+    },
+    {
+      "id": "timezone",
+      "field": "timezone",
+      "scope": "global"
+    },
+    {
+      "id": "headline",
+      "field": "headline",
+      "scope": "global"
+    },
+    {
+      "id": "event-presence",
+      "field": "event_presence",
+      "scope": "event"
+    },
+    {
+      "id": "event-contact",
+      "field": "event_contact_preference",
+      "scope": "event"
+    },
+    {
+      "id": "event-constraint",
+      "field": "event_constraint",
+      "scope": "event"
+    }
+  ],
+  "scope": "Local presentation mapping only; no PHP validator or backend API integration was run."
+}

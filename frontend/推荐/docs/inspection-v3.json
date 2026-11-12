@@ -1,0 +1,455 @@
+{
+  "layouts": [
+    {
+      "size": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1440,
+      "stage": {
+        "x": 32,
+        "y": 216.796875,
+        "width": 1376,
+        "height": 538.03125,
+        "top": 216.796875,
+        "right": 1408,
+        "bottom": 754.828125,
+        "left": 32
+      },
+      "controls": {
+        "x": 40,
+        "y": 700.828125,
+        "width": 376.796875,
+        "height": 54,
+        "top": 700.828125,
+        "right": 416.796875,
+        "bottom": 754.828125,
+        "left": 40
+      },
+      "composer": {
+        "x": 280,
+        "y": 770,
+        "width": 680,
+        "height": 108,
+        "top": 770,
+        "right": 960,
+        "bottom": 878,
+        "left": 280
+      },
+      "companion": {
+        "x": 1006,
+        "y": 755.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 755.8125,
+        "right": 1416,
+        "bottom": 882,
+        "left": 1006
+      },
+      "dossier": {
+        "x": 32,
+        "y": 924.828125,
+        "width": 1376,
+        "height": 3276.9375,
+        "top": 924.828125,
+        "right": 1408,
+        "bottom": 4201.765625,
+        "left": 32
+      },
+      "cards": [
+        {
+          "rank": "0",
+          "height": 278,
+          "content": 240,
+          "visible": 240,
+          "title": 39,
+          "lh": "39.2px"
+        },
+        {
+          "rank": "1",
+          "height": 248,
+          "content": 210,
+          "visible": 210,
+          "title": 29,
+          "lh": "29.4px"
+        }
+      ]
+    },
+    {
+      "size": [
+        1280,
+        720
+      ],
+      "scrollWidth": 1280,
+      "stage": {
+        "x": 32,
+        "y": 161.796875,
+        "width": 1216,
+        "height": 419.84375,
+        "top": 161.796875,
+        "right": 1248,
+        "bottom": 581.640625,
+        "left": 32
+      },
+      "controls": {
+        "x": 40,
+        "y": 527.640625,
+        "width": 328.796875,
+        "height": 54,
+        "top": 527.640625,
+        "right": 368.796875,
+        "bottom": 581.640625,
+        "left": 40
+      },
+      "composer": {
+        "x": 70,
+        "y": 607,
+        "width": 700,
+        "height": 97,
+        "top": 607,
+        "right": 770,
+        "bottom": 704,
+        "left": 70
+      },
+      "companion": {
+        "x": 846,
+        "y": 581.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 581.8125,
+        "right": 1256,
+        "bottom": 708,
+        "left": 846
+      },
+      "dossier": {
+        "x": 32,
+        "y": 721.640625,
+        "width": 1216,
+        "height": 3265.75,
+        "top": 721.640625,
+        "right": 1248,
+        "bottom": 3987.390625,
+        "left": 32
+      },
+      "cards": [
+        {
+          "rank": "0",
+          "height": 216,
+          "content": 182,
+          "visible": 182,
+          "title": 32,
+          "lh": "32.2px"
+        },
+        {
+          "rank": "1",
+          "height": 193,
+          "content": 159,
+          "visible": 159,
+          "title": 25,
+          "lh": "25.2px"
+        }
+      ]
+    },
+    {
+      "size": [
+        1100,
+        900
+      ],
+      "scrollWidth": 1100,
+      "stage": {
+        "x": 24,
+        "y": 209.296875,
+        "width": 1052,
+        "height": 565.03125,
+        "top": 209.296875,
+        "right": 1076,
+        "bottom": 774.328125,
+        "left": 24
+      },
+      "controls": {
+        "x": 32,
+        "y": 720.328125,
+        "width": 279.59375,
+        "height": 54,
+        "top": 720.328125,
+        "right": 311.59375,
+        "bottom": 774.328125,
+        "left": 32
+      },
+      "composer": {
+        "x": 25,
+        "y": 770,
+        "width": 670,
+        "height": 108,
+        "top": 770,
+        "right": 695,
+        "bottom": 878,
+        "left": 25
+      },
+      "companion": {
+        "x": 734,
+        "y": 761.125,
+        "width": 350,
+        "height": 120.875,
+        "top": 761.125,
+        "right": 1084,
+        "bottom": 882,
+        "left": 734
+      },
+      "dossier": {
+        "x": 24,
+        "y": 944.328125,
+        "width": 1052,
+        "height": 3279.75,
+        "top": 944.328125,
+        "right": 1076,
+        "bottom": 4224.078125,
+        "left": 24
+      },
+      "cards": [
+        {
+          "rank": "0",
+          "height": 278,
+          "content": 240,
+          "visible": 240,
+          "title": 39,
+          "lh": "39.2px"
+        },
+        {
+          "rank": "1",
+          "height": 248,
+          "content": 214,
+          "visible": 210,
+          "title": 59,
+          "lh": "29.4px"
+        }
+      ]
+    },
+    {
+      "size": [
+        768,
+        1024
+      ],
+      "scrollWidth": 768,
+      "stage": {
+        "x": 24,
+        "y": 206.796875,
+        "width": 720,
+        "height": 1081.734375,
+        "top": 206.796875,
+        "right": 744,
+        "bottom": 1288.53125,
+        "left": 24
+      },
+      "controls": {
+        "x": 186,
+        "y": 694.03125,
+        "width": 396,
+        "height": 54,
+        "top": 694.03125,
+        "right": 582,
+        "bottom": 748.03125,
+        "left": 186
+      },
+      "composer": {
+        "x": 25,
+        "y": 894,
+        "width": 338,
+        "height": 108,
+        "top": 894,
+        "right": 363,
+        "bottom": 1002,
+        "left": 25
+      },
+      "companion": {
+        "x": 402,
+        "y": 899,
+        "width": 350,
+        "height": 107,
+        "top": 899,
+        "right": 752,
+        "bottom": 1006,
+        "left": 402
+      },
+      "dossier": {
+        "x": 24,
+        "y": 1458.53125,
+        "width": 720,
+        "height": 4337.609375,
+        "top": 1458.53125,
+        "right": 744,
+        "bottom": 5796.140625,
+        "left": 24
+      },
+      "cards": [
+        {
+          "rank": "0",
+          "height": 278,
+          "content": 240,
+          "visible": 240,
+          "title": 36,
+          "lh": "36.4px"
+        },
+        {
+          "rank": "1",
+          "height": 248,
+          "content": 211,
+          "visible": 210,
+          "title": 56,
+          "lh": "28px"
+        }
+      ]
+    },
+    {
+      "size": [
+        390,
+        844
+      ],
+      "scrollWidth": 390,
+      "stage": {
+        "x": 16,
+        "y": 402.375,
+        "width": 358,
+        "height": 1121.140625,
+        "top": 402.375,
+        "right": 374,
+        "bottom": 1523.515625,
+        "left": 16
+      },
+      "controls": {
+        "x": 28,
+        "y": 890.015625,
+        "width": 334,
+        "height": 54,
+        "top": 890.015625,
+        "right": 362,
+        "bottom": 944.015625,
+        "left": 28
+      },
+      "composer": {
+        "x": 12,
+        "y": 730,
+        "width": 366,
+        "height": 102,
+        "top": 730,
+        "right": 378,
+        "bottom": 832,
+        "left": 12
+      },
+      "companion": {
+        "x": 288,
+        "y": 636,
+        "width": 90,
+        "height": 78,
+        "top": 636,
+        "right": 378,
+        "bottom": 714,
+        "left": 288
+      },
+      "dossier": {
+        "x": 16,
+        "y": 1573.515625,
+        "width": 358,
+        "height": 5258.5625,
+        "top": 1573.515625,
+        "right": 374,
+        "bottom": 6832.078125,
+        "left": 16
+      },
+      "cards": [
+        {
+          "rank": "0",
+          "height": 278,
+          "content": 240,
+          "visible": 240,
+          "title": 64,
+          "lh": "32.2px"
+        },
+        {
+          "rank": "1",
+          "height": 248,
+          "content": 210,
+          "visible": 210,
+          "title": 48,
+          "lh": "23.8px"
+        }
+      ]
+    },
+    {
+      "size": [
+        320,
+        740
+      ],
+      "scrollWidth": 320,
+      "stage": {
+        "x": 14,
+        "y": 393.96875,
+        "width": 292,
+        "height": 1151.140625,
+        "top": 393.96875,
+        "right": 306,
+        "bottom": 1545.109375,
+        "left": 14
+      },
+      "controls": {
+        "x": 26,
+        "y": 908.609375,
+        "width": 268,
+        "height": 54,
+        "top": 908.609375,
+        "right": 294,
+        "bottom": 962.609375,
+        "left": 26
+      },
+      "composer": {
+        "x": 12,
+        "y": 626,
+        "width": 296,
+        "height": 102,
+        "top": 626,
+        "right": 308,
+        "bottom": 728,
+        "left": 12
+      },
+      "companion": {
+        "x": 218,
+        "y": 532,
+        "width": 90,
+        "height": 78,
+        "top": 532,
+        "right": 308,
+        "bottom": 610,
+        "left": 218
+      },
+      "dossier": {
+        "x": 14,
+        "y": 1595.109375,
+        "width": 292,
+        "height": 5485.578125,
+        "top": 1595.109375,
+        "right": 306,
+        "bottom": 7080.6875,
+        "left": 14
+      },
+      "cards": [
+        {
+          "rank": "0",
+          "height": 278,
+          "content": 240,
+          "visible": 240,
+          "title": 56,
+          "lh": "28px"
+        },
+        {
+          "rank": "1",
+          "height": 248,
+          "content": 210,
+          "visible": 210,
+          "title": 45,
+          "lh": "22.4px"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

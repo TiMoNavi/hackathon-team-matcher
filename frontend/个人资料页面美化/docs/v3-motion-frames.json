@@ -1,0 +1,5492 @@
+[
+  {
+    "t": 0,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 0.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 1,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 1.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 2,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 1.38034% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 2.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 8.66934% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 0.687975% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 3,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 2.78873% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 32.4817% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 7.1329% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 3.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 14.3655% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 82.5293% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 24.7295% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 4,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 42.4101% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 61.3807% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 4.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0.00368183% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 0.130988% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 50.3437% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 1.55852% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 5.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 2.98498% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 11.2518% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 7.33533% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 89.5345% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 6,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 12.8097% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 25.7273% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 2.38852% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 21.6697% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 21.4698% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 6.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 0.248046% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 35.4866% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 5.68713% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 0.205352% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 50.0973% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 5.31388% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 7,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 4.6871% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 81.0409% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 0.920684% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 1.07234% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 0.978706% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 7.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 20.5954% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 6.52518% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 1.54615% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 0.00307378% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 8,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 59.2958% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 19.9511% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 8.04779% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 8.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 61.5363% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 49.5127% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 60.5708% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 25.0713% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 9,
+    "items": [
+      {
+        "id": "city",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 6.81863% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 8.18988% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 91.5474% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 9.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "growing",
+        "clip": "inset(0px 20.8935% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 1.36902% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 2.06976% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 10,
+    "items": [
+      {
+        "id": "city",
+        "phase": "growing",
+        "clip": "inset(0px 4.24384% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 0.0527157% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 86.8382% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 0.253912% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 10.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "growing",
+        "clip": "inset(0px 0.482926% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 24.1468% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 55.7492% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 11,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 6.3667% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 13.0635% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 11.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 1.4802% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 3.35148% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 12,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 0.0968765% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 0.510085% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 12.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 13,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 13.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 14,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 14.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 15,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 0.276261% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 15.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 0.868498% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 4.08651% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 16,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 6.98182% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 16.0648% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 0.1933% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 16.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 25.4728% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 45.8005% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 3.67048% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 17,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 66.8439% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 14.4662% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 17.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 39.8306% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 18,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 92.576% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 18.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "retracting",
+        "clip": "inset(0px 0.0957176% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 60.49% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 31.6319% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 19,
+    "items": [
+      {
+        "id": "city",
+        "phase": "retracting",
+        "clip": "inset(0px 3.64967% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "retracting",
+        "clip": "inset(0px 0.0585484% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 12.6103% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 7.36638% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 19.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "retracting",
+        "clip": "inset(0px 17.4952% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "retracting",
+        "clip": "inset(0px 2.63571% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 2.52788% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 1.38021% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "growing",
+        "clip": "inset(0px 45.5329% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 20,
+    "items": [
+      {
+        "id": "city",
+        "phase": "retracting",
+        "clip": "inset(0px 52.1641% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "retracting",
+        "clip": "inset(0px 11.3802% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 0.195538% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 0.0370668% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0.000647884% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "growing",
+        "clip": "inset(0px 10.6693% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 20.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "retracting",
+        "clip": "inset(0px 32.331% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "retracting",
+        "clip": "inset(0px 1.34883% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "growing",
+        "clip": "inset(0px 2.48768% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 21,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "retracting",
+        "clip": "inset(0px 77.0372% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "retracting",
+        "clip": "inset(0px 7.03109% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "growing",
+        "clip": "inset(0px 0.222017% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 21.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "growing",
+        "clip": "inset(0px 70.4188% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0.00055296% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "retracting",
+        "clip": "inset(0px 20.347% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "retracting",
+        "clip": "inset(0px 0.120041% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 22,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "growing",
+        "clip": "inset(0px 13.6427% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "retracting",
+        "clip": "inset(0px 1.46088% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "retracting",
+        "clip": "inset(0px 47.5471% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "retracting",
+        "clip": "inset(0px 2.8107% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 22.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "growing",
+        "clip": "inset(0px 2.50568% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "growing",
+        "clip": "inset(0px 69.9513% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "retracting",
+        "clip": "inset(0px 7.72344% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "retracting",
+        "clip": "inset(0px 98.2371% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "retracting",
+        "clip": "inset(0px 12.0295% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 23,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "growing",
+        "clip": "inset(0px 0.148073% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "growing",
+        "clip": "inset(0px 16.8553% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "retracting",
+        "clip": "inset(0px 22.6505% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "retracting",
+        "clip": "inset(0px 33.144% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 23.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "growing",
+        "clip": "inset(0px 4.28268% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "retracting",
+        "clip": "inset(0px 53.5261% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "retracting",
+        "clip": "inset(0px 75.4921% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 24,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "growing",
+        "clip": "inset(0px 0.677521% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "growing",
+        "clip": "inset(0px 65.6211% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 24.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "growing",
+        "clip": "inset(0px 17.8712% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 25,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "growing",
+        "clip": "inset(0px 5.19753% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "growing",
+        "clip": "inset(0px 77.5078% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 25.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "growing",
+        "clip": "inset(0px 44.1862% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "growing",
+        "clip": "inset(0px 1.12783% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "growing",
+        "clip": "inset(0px 18.73% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 26,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "growing",
+        "clip": "inset(0px 11.5545% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "growing",
+        "clip": "inset(0px 0.0506815% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "growing",
+        "clip": "inset(0px 4.91398% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 26.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "growing",
+        "clip": "inset(0px 3.09337% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "growing",
+        "clip": "inset(0px 0.94976% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 27,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "growing",
+        "clip": "inset(0px 0.450166% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "growing",
+        "clip": "inset(0px 0.00595388% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 27.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "growing",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 28,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 28.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "retracting",
+        "clip": "inset(0px 0.616109% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "retracting",
+        "clip": "inset(0px 0.0218687% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 29,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "retracting",
+        "clip": "inset(0px 5.98094% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "retracting",
+        "clip": "inset(0px 2.33247% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 29.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "retracting",
+        "clip": "inset(0px 22.8175% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "retracting",
+        "clip": "inset(0px 11.6808% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 30,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "retracting",
+        "clip": "inset(0px 61.2078% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "retracting",
+        "clip": "inset(0px 34.5771% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "retracting",
+        "clip": "inset(0px 0.126686% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 30.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "retracting",
+        "clip": "inset(0px 82.3891% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "retracting",
+        "clip": "inset(0px 3.07224% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 31,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "retracting",
+        "clip": "inset(0px 0.546864% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "retracting",
+        "clip": "inset(0px 13.3792% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 31.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "retracting",
+        "clip": "inset(0px 6.21081% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "growing",
+        "clip": "inset(0px 69.6908% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "retracting",
+        "clip": "inset(0px 37.4384% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 32,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "retracting",
+        "clip": "inset(0px 24.0206% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "growing",
+        "clip": "inset(0px 14.662% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "growing",
+        "clip": "inset(0px 50.5107% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "retracting",
+        "clip": "inset(0px 85.9577% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 32.5,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "retracting",
+        "clip": "inset(0px 66.9483% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "growing",
+        "clip": "inset(0px 3.18381% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "growing",
+        "clip": "inset(0px 11.2869% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 33,
+    "items": [
+      {
+        "id": "event-contribution",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "growing",
+        "clip": "inset(0px 0.29143% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "growing",
+        "clip": "inset(0px 2.3975% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 33.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "retracting",
+        "clip": "inset(0px 0.41908% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "growing",
+        "clip": "inset(0px 0.207173% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "growing",
+        "clip": "inset(0px 52.8581% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 34,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "growing",
+        "clip": "inset(0px 46.3905% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "retracting",
+        "clip": "inset(0px 4.39859% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "growing",
+        "clip": "inset(0px 12.2627% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 34.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "growing",
+        "clip": "inset(0px 8.54612% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "retracting",
+        "clip": "inset(0px 16.5749% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "growing",
+        "clip": "inset(0px 2.77709% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 35,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "growing",
+        "clip": "inset(0px 1.47501% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "retracting",
+        "clip": "inset(0px 43.5968% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "growing",
+        "clip": "inset(0px 0.316792% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 35.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "growing",
+        "clip": "inset(0px 0.0181131% 0px 0px round 14px)"
+      },
+      {
+        "id": "role",
+        "phase": "retracting",
+        "clip": "inset(0px 95.7313% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 36,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "retracting",
+        "clip": "inset(0px 0.169116% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "holding",
+        "clip": "inset(0px 0.00178233% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 36.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "retracting",
+        "clip": "inset(0px 2.71024% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "retracting",
+        "clip": "inset(0px 1.65588% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 37,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "growing",
+        "clip": "inset(0px 46.6507% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "retracting",
+        "clip": "inset(0px 0.383712% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "retracting",
+        "clip": "inset(0px 10.3508% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "retracting",
+        "clip": "inset(0px 8.3715% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 37.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "growing",
+        "clip": "inset(0px 10.7318% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "retracting",
+        "clip": "inset(0px 4.06764% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "retracting",
+        "clip": "inset(0px 28.2668% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "retracting",
+        "clip": "inset(0px 25.8281% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 38,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "growing",
+        "clip": "inset(0px 2.59129% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "retracting",
+        "clip": "inset(0px 14.193% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "retracting",
+        "clip": "inset(0px 62.5063% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "retracting",
+        "clip": "inset(0px 61.5233% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 38.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "growing",
+        "clip": "inset(0px 0.294308% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "retracting",
+        "clip": "inset(0px 36.5246% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "award",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "language",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 39,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "retracting",
+        "clip": "inset(0px 81.3221% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 39.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-research",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "hidden",
+        "clip": "inset(0px 99.924% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 40,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "growing",
+        "clip": "inset(0px 43.1112% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "growing",
+        "clip": "inset(0px 28.5844% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 40.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "growing",
+        "clip": "inset(0px 81.6317% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "growing",
+        "clip": "inset(0px 11.8487% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "growing",
+        "clip": "inset(0px 7.39019% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 41,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "growing",
+        "clip": "inset(0px 21.1772% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "growing",
+        "clip": "inset(0px 3.20768% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "growing",
+        "clip": "inset(0px 1.58782% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 41.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 0.354827% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "growing",
+        "clip": "inset(0px 5.85722% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "growing",
+        "clip": "inset(0px 0.572757% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "growing",
+        "clip": "inset(0px 0.0969557% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 42,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 5.08405% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "growing",
+        "clip": "inset(0px 1.24326% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 42.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 19.6244% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "growing",
+        "clip": "inset(0px 0.0558317% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 1.15031% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 43,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 54.2681% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 7.52407% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 43.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "retracting",
+        "clip": "inset(0px 1.21124% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-seeking",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 24.7607% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 44,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "retracting",
+        "clip": "inset(0px 9.3497% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "retracting",
+        "clip": "inset(0px 64.6897% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 0.0545881% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 44.5,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "retracting",
+        "clip": "inset(0px 32.2961% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 82.3544% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-time",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 2.54127% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 45,
+    "items": [
+      {
+        "id": "event-constraint",
+        "phase": "retracting",
+        "clip": "inset(0px 86.9706% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 17.0769% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 11.8725% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 45.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 3.76061% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 76.1367% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 34.08% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 46,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "growing",
+        "clip": "inset(0px 0.455601% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 17.368% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "school",
+        "phase": "retracting",
+        "clip": "inset(0px 79.6641% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 46.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "growing",
+        "clip": "inset(0px 27.7371% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 3.90123% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 47,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "growing",
+        "clip": "inset(0px 5.60913% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "growing",
+        "clip": "inset(0px 0.553389% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 47.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "growing",
+        "clip": "inset(0px 0.719134% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 58.1895% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 48,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 1.1835% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 13.4676% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 48.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 7.13442% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 3.25684% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 49,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 23.3996% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "growing",
+        "clip": "inset(0px 0.391808% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 49.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "retracting",
+        "clip": "inset(0px 57.6828% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 50,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "direction-ai",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 50.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 51,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 0.851613% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 51.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 28.4995% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 5.85768% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 52,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 7.16952% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 0.00839484% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 0.624356% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 19.1739% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 52.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 1.46678% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 1.7959% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 4.7337% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "retracting",
+        "clip": "inset(0px 49.5642% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 53,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "growing",
+        "clip": "inset(0px 0.0672533% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 8.35858% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 15.1902% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-react",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 53.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 24.0603% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 37.3819% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 54,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "retracting",
+        "clip": "inset(0px 57.7262% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "retracting",
+        "clip": "inset(0px 80.6736% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 54.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 0.209658% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-roam",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "collab",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 42.2174% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 55,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 4.03938% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 10.5297% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 55.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "holding",
+        "clip": "inset(0px 0.00658211% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 17.4592% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 89.0739% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 2.48349% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 56,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 2.57199% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "retracting",
+        "clip": "inset(0px 49.4545% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 40.3967% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 0.42681% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 26.3912% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "growing",
+        "clip": "inset(0px 0.288282% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 56.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 14.1032% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-goal",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 10.2107% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 5.05499% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 7.27752% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 57,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "retracting",
+        "clip": "inset(0px 44.1118% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 2.68111% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 18.5943% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 1.87801% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 57.5,
+    "items": [
+      {
+        "id": "skill-design",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 88.7532% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "growing",
+        "clip": "inset(0px 0.3437% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "retracting",
+        "clip": "inset(0px 51.438% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "growing",
+        "clip": "inset(0px 0.183087% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 58,
+    "items": [
+      {
+        "id": "city",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 19.9363% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "communication",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 0.0235201% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 58.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "hidden",
+        "clip": "inset(0px 87.3274% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 4.42043% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 2.22065% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 59,
+    "items": [
+      {
+        "id": "city",
+        "phase": "growing",
+        "clip": "inset(0px 17.8732% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "growing",
+        "clip": "inset(0px 0.609765% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 10.4951% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 59.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "growing",
+        "clip": "inset(0px 3.40167% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 25.8808% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 31.9638% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 60,
+    "items": [
+      {
+        "id": "city",
+        "phase": "growing",
+        "clip": "inset(0px 0.309927% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 6.11045% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "seeking",
+        "phase": "retracting",
+        "clip": "inset(0px 75.627% 0px 0px round 14px)"
+      }
+    ]
+  },
+  {
+    "t": 60.5,
+    "items": [
+      {
+        "id": "city",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "skill-figma",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-mode",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "interest-tools",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-availability",
+        "phase": "growing",
+        "clip": "inset(0px 1.13244% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-role",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "project-spark",
+        "phase": "holding",
+        "clip": "inset(0px 0% 0px 0px round 14px)"
+      },
+      {
+        "id": "event-presence",
+        "phase": "hidden",
+        "clip": "inset(0px 100% 0px 0px round 14px)"
+      }
+    ]
+  }
+]

@@ -1,0 +1,205 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "visitorOrder": [
+        "about",
+        "insights",
+        "details",
+        "work",
+        "activities",
+        "connect"
+      ]
+    },
+    {
+      "viewport": 1440,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "viewport": 1100,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "viewport": 1024,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "viewport": 901,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "viewport": 768,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "viewport": 390,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "viewport": 320,
+      "bars": 8,
+      "overflow": false,
+      "clippedRows": []
+    },
+    {
+      "entryDetails": true,
+      "focusRestoration": true,
+      "manualRotation": true
+    },
+    {
+      "detailsFieldRows": 27,
+      "projectRecords": 2,
+      "accordionKeyboard": true,
+      "restrictedPlaceholders": 2,
+      "restrictedTextAbsent": true
+    },
+    {
+      "sharedTopBottomDraft": true,
+      "toneChoices": 3,
+      "manualEdit": true,
+      "maxLength": 300,
+      "emptySaveDisabled": true,
+      "discardRestore": true,
+      "keyboardSave": true,
+      "escapeEditor": true,
+      "noFriendUnlock": true
+    },
+    {
+      "citationPreviewAndDetail": true,
+      "viewerContexts": 3,
+      "visitorDraftReset": true
+    },
+    {
+      "workTabsCounts": [
+        4,
+        2,
+        2
+      ],
+      "workDetails": true,
+      "bookmark": true,
+      "activityCounts": [
+        1,
+        2
+      ],
+      "historyLabel": true
+    },
+    {
+      "contentStates": [
+        "sparse",
+        "long",
+        "no-photo"
+      ],
+      "stateWidths": [
+        1440,
+        390,
+        320
+      ],
+      "visibilityDraftReset": true
+    },
+    {
+      "manualEntry": true,
+      "mobileNavigation": true,
+      "mobileRequest": true
+    },
+    {
+      "reducedMotion": true
+    },
+    {
+      "platformFonts": {
+        ".world-heading h1": [
+          {
+            "familyName": "Bricolage Grotesque 96pt ExtraBold",
+            "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 1
+          },
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 3
+          }
+        ],
+        ".message-value": [
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Medium",
+            "isCustomFont": false,
+            "glyphCount": 6
+          },
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_Medium",
+            "isCustomFont": true,
+            "glyphCount": 3
+          }
+        ],
+        ".hero-breadcrumb": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_Medium",
+            "isCustomFont": true,
+            "glyphCount": 18
+          }
+        ],
+        ".portrait-copy p": [
+          {
+            "familyName": "Bricolage Grotesque 96pt ExtraBold",
+            "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+            "isCustomFont": true,
+            "glyphCount": 11
+          }
+        ],
+        "#details-title": [
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 11
+          }
+        ],
+        ".detail-list-row dt": [
+          {
+            "familyName": "PingFang SC",
+            "postScriptName": "PingFangSC-Regular",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      }
+    },
+    {
+      "motionSeconds": 61,
+      "uniqueEntries": 25,
+      "phases": [
+        "holding",
+        "retracting",
+        "hidden",
+        "growing"
+      ],
+      "clipStates": 306,
+      "hoverPause": true,
+      "focusPause": true,
+      "dialogPause": true,
+      "offscreenPause": true
+    },
+    {
+      "noRestrictedValuesInRuntimePayload": true
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "externalRequests": []
+}

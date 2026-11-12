@@ -1,0 +1,14 @@
+{
+  "accordion.tsx": {
+    "identicalToSignalry": true,
+    "sha256": "04da0ebdb96c833f744333a758a4661594a00c44858229988e77079e71e94e76"
+  },
+  "tabs.tsx": {
+    "identicalToSignalry": true,
+    "sha256": "578f99a61842566f7e812a2f9af16f9fb8f1b35692801d226e9f1d202e036df3"
+  },
+  "avatar.tsx": {
+    "identicalToSignalry": true,
+    "sha256": "036b8f39d9f42962a9eedd097103c90450d58a50ea55c693896c4cea4b5953a4"
+  }
+}

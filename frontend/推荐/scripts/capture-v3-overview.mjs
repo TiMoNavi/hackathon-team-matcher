@@ -1,0 +1,10 @@
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);const {chromium}=require(process.env.PLAYWRIGHT_MODULE);
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_EXECUTABLE});
+const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+await page.goto('http://127.0.0.1:4203/',{waitUntil:'networkidle'});await page.locator('.search-experience').waitFor({state:'hidden'});await page.evaluate(()=>document.fonts.ready);
+await page.screenshot({path:'docs/screenshots/v3/page-desktop-full.png',fullPage:true});
+await page.locator('.try-together').scrollIntoViewIfNeeded();await page.screenshot({path:'docs/screenshots/v3/collaboration.png'});
+await page.setViewportSize({width:390,height:844});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'docs/screenshots/v3/page-mobile-full.png',fullPage:true});
+await page.locator('.profile-insight').scrollIntoViewIfNeeded();await page.screenshot({path:'docs/screenshots/v3/graph-mobile.png'});
+await browser.close();console.log('Final overview screenshots captured.');

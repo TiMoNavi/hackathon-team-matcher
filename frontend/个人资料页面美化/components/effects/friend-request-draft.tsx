@@ -6,7 +6,7 @@ import { useLayoutEffect,useRef,useState,type ReactNode,type RefObject } from 'r
 export type RequestVariant={id:string;label:string;body:string};
 export function FriendRequestDraft({initialBody,tones,onDraftChange,onSave,className}:{initialBody:string;tones:RequestVariant[];onDraftChange:(body:string)=>void;onSave:(body:string)=>void;className?:string}){
  const [body,setBody]=useState(initialBody);
- const [tone,setTone]=useState(initialBody===tones[0]?.body?tones[0].id:'');
+ const [tone,setTone]=useState(tones.find(t=>t.body===initialBody)?.id??'');
  const [editing,setEditing]=useState(!initialBody);
  const [phase,setPhase]=useState<'draft'|'saved'|'discarded'>('draft');
  const inner=useRef<HTMLDivElement>(null);const outer=useSmoothHeight(inner);const textRef=useRef<HTMLTextAreaElement>(null);
@@ -20,7 +20,7 @@ export function FriendRequestDraft({initialBody,tones,onDraftChange,onSave,class
  const open=phase==='draft';
  return <div className={['ui-edc','friend-request-draft',className].filter(Boolean).join(' ')} data-phase={phase} data-source="affectui/email-draft-clean">
   <style href="profile-friend-request-draft" precedence="default">{css}</style>
-  <div className="ui-edc__record"><div className="ui-edc__ref"><span className="ui-edc__id">好友申请</span><span className="ui-edc__status">待你确认</span><span className="ui-edc__amount">{body.length}/300</span></div><span className="ui-edc__account">周末造物场 · 站内好友申请</span></div>
+  <div className="ui-edc__record"><div className="ui-edc__ref"><span className="ui-edc__id">好友申请</span><span className="ui-edc__status">{phase==='saved'?'草稿已保存':phase==='discarded'?'已放下':'待你确认'}</span><span className="ui-edc__amount">{body.length}/300</span></div><span className="ui-edc__account">周末造物场 · 站内好友申请</span></div>
   <div className="ui-edc__outer" ref={outer}><div ref={inner}>
    {open?<div className="ui-edc__draft"><div className="ui-edc__meta"><div className="ui-edc__to"><span className="ui-edc__label">收件人</span><span className="request-recipient"><span className="ui-edc__avatar" aria-hidden="true">林</span><strong>林知夏</strong><span>产品设计师 / 创意前端</span></span></div></div>
     <div className="ui-edc__body">{editing?<textarea ref={textRef} className="ui-edc__edit" value={body} maxLength={300} onChange={e=>{setTone('');change(e.target.value);}} onKeyDown={e=>{if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){e.preventDefault();save();}if(e.key==='Escape'){e.stopPropagation();setEditing(false);}}} onBlur={()=>setEditing(false)} aria-label="好友申请正文" placeholder="说说你为什么想认识她，或者请 AI 帮你起草。"/>:<button key={tone} type="button" className="ui-edc__text request-editable-text" onClick={startEditing} aria-label="编辑好友申请正文">{body||'点击写下你的好友申请。'}</button>}</div>

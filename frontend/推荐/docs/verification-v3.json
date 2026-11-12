@@ -1,0 +1,3354 @@
+{
+  "version": "V3",
+  "date": "2026-11-12",
+  "checks": [
+    {
+      "name": "Bricolage Grotesque renders English display",
+      "passed": true
+    },
+    {
+      "name": "Inter renders English body",
+      "passed": true
+    },
+    {
+      "name": "Chinese glyphs render in an actual Chinese font",
+      "passed": true
+    },
+    {
+      "name": "Decorative composer sentence removed",
+      "passed": true
+    },
+    {
+      "name": "Card rotation pause button removed",
+      "passed": true
+    },
+    {
+      "name": "AffectUI composer is mounted",
+      "passed": true
+    },
+    {
+      "name": "No fake voice, approval or file tools in composer",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 1920",
+      "passed": true,
+      "detail": 1920
+    },
+    {
+      "name": "Readable main body 1920",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Readable front card titles 1920",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 1920",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 1920",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 1920",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 520,
+          "y": 950,
+          "width": 680,
+          "height": 108,
+          "top": 950,
+          "right": 1200,
+          "bottom": 1058,
+          "left": 520
+        },
+        "companion": {
+          "x": 1486,
+          "y": 935.8125,
+          "width": 410,
+          "height": 126.1875,
+          "top": 935.8125,
+          "right": 1896,
+          "bottom": 1062,
+          "left": 1486
+        }
+      }
+    },
+    {
+      "name": "Person navigation clears composer 1920",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 268,
+          "y": 700.828125,
+          "width": 384,
+          "height": 54,
+          "top": 700.828125,
+          "right": 652,
+          "bottom": 754.828125,
+          "left": 268
+        },
+        "composer": {
+          "x": 520,
+          "y": 950,
+          "width": 680,
+          "height": 108,
+          "top": 950,
+          "right": 1200,
+          "bottom": 1058,
+          "left": 520
+        }
+      }
+    },
+    {
+      "name": "Dossier starts after first fold 1920",
+      "passed": true,
+      "detail": 1101
+    },
+    {
+      "name": "Analysis stays inside viewport 1920",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 1440",
+      "passed": true,
+      "detail": 1440
+    },
+    {
+      "name": "Readable main body 1440",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Readable front card titles 1440",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 1440",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 1440",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 1440",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 280,
+          "y": 770,
+          "width": 680,
+          "height": 108,
+          "top": 770,
+          "right": 960,
+          "bottom": 878,
+          "left": 280
+        },
+        "companion": {
+          "x": 1006,
+          "y": 755.8125,
+          "width": 410,
+          "height": 126.1875,
+          "top": 755.8125,
+          "right": 1416,
+          "bottom": 882,
+          "left": 1006
+        }
+      }
+    },
+    {
+      "name": "Person navigation clears composer 1440",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 40,
+          "y": 700.828125,
+          "width": 376.796875,
+          "height": 54,
+          "top": 700.828125,
+          "right": 416.796875,
+          "bottom": 754.828125,
+          "left": 40
+        },
+        "composer": {
+          "x": 280,
+          "y": 770,
+          "width": 680,
+          "height": 108,
+          "top": 770,
+          "right": 960,
+          "bottom": 878,
+          "left": 280
+        }
+      }
+    },
+    {
+      "name": "Dossier starts after first fold 1440",
+      "passed": true,
+      "detail": 924.828125
+    },
+    {
+      "name": "Recommendation container is expanded",
+      "passed": true,
+      "detail": 1376
+    },
+    {
+      "name": "Companion is enlarged",
+      "passed": true,
+      "detail": 410
+    },
+    {
+      "name": "Analysis stays inside viewport 1440",
+      "passed": true
+    },
+    {
+      "name": "Sidebar reserved lane 1440",
+      "passed": true,
+      "detail": {
+        "size": [
+          1440,
+          900
+        ],
+        "scrollWidth": 1440,
+        "stage": {
+          "x": 24,
+          "y": 206.796875,
+          "width": 1016,
+          "height": 550.03125,
+          "top": 206.796875,
+          "right": 1040,
+          "bottom": 756.828125,
+          "left": 24
+        },
+        "controls": {
+          "x": 32,
+          "y": 702.828125,
+          "width": 289.109375,
+          "height": 54,
+          "top": 702.828125,
+          "right": 321.109375,
+          "bottom": 756.828125,
+          "left": 32
+        },
+        "composer": {
+          "x": 182,
+          "y": 770,
+          "width": 700,
+          "height": 108,
+          "top": 770,
+          "right": 882,
+          "bottom": 878,
+          "left": 182
+        },
+        "companion": {
+          "x": 1006,
+          "y": 755.8125,
+          "width": 410,
+          "height": 126.1875,
+          "top": 755.8125,
+          "right": 1416,
+          "bottom": 882,
+          "left": 1006
+        },
+        "panel": {
+          "x": 1064,
+          "y": 108,
+          "width": 352,
+          "height": 768,
+          "top": 108,
+          "right": 1416,
+          "bottom": 876,
+          "left": 1064
+        },
+        "dossier": {
+          "x": 24,
+          "y": 926.828125,
+          "width": 1016,
+          "height": 3234.578125,
+          "top": 926.828125,
+          "right": 1040,
+          "bottom": 4161.40625,
+          "left": 24
+        },
+        "personFont": 15,
+        "cards": [
+          {
+            "rank": "0",
+            "title": "让一句碎碎念，变成一段旅程",
+            "titleHeight": 34,
+            "lineHeight": 33.6,
+            "font": 24,
+            "bodyHeight": 278,
+            "buttonBottom": 266,
+            "surfaceHeight": 240,
+            "contentHeight": 240
+          },
+          {
+            "rank": "1",
+            "title": "不只把页面画出来，也让它顺手",
+            "titleHeight": 50,
+            "lineHeight": 25.2,
+            "font": 18,
+            "bodyHeight": 248,
+            "buttonBottom": 236,
+            "surfaceHeight": 210,
+            "contentHeight": 210
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sidebar cards retain readable content 1440",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 34,
+          "lineHeight": 33.6,
+          "font": 24,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Sidebar navigation clears composer 1440",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 32,
+          "y": 702.828125,
+          "width": 289.109375,
+          "height": 54,
+          "top": 702.828125,
+          "right": 321.109375,
+          "bottom": 756.828125,
+          "left": 32
+        },
+        "composer": {
+          "x": 182,
+          "y": 770,
+          "width": 700,
+          "height": 108,
+          "top": 770,
+          "right": 882,
+          "bottom": 878,
+          "left": 182
+        }
+      }
+    },
+    {
+      "name": "No horizontal overflow 1366",
+      "passed": true,
+      "detail": 1366
+    },
+    {
+      "name": "Readable main body 1366",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "Readable front card titles 1366",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 25,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 1366",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 25,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 1366",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 1366",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 113,
+          "y": 655,
+          "width": 700,
+          "height": 97,
+          "top": 655,
+          "right": 813,
+          "bottom": 752,
+          "left": 113
+        },
+        "companion": {
+          "x": 932,
+          "y": 629.8125,
+          "width": 410,
+          "height": 126.1875,
+          "top": 629.8125,
+          "right": 1342,
+          "bottom": 756,
+          "left": 932
+        }
+      }
+    },
+    {
+      "name": "Person navigation clears composer 1366",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 40,
+          "y": 547.640625,
+          "width": 354.59375,
+          "height": 54,
+          "top": 547.640625,
+          "right": 394.59375,
+          "bottom": 601.640625,
+          "left": 40
+        },
+        "composer": {
+          "x": 113,
+          "y": 655,
+          "width": 700,
+          "height": 97,
+          "top": 655,
+          "right": 813,
+          "bottom": 752,
+          "left": 113
+        }
+      }
+    },
+    {
+      "name": "Dossier starts after first fold 1366",
+      "passed": true,
+      "detail": 779
+    },
+    {
+      "name": "Analysis stays inside viewport 1366",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 1280",
+      "passed": true,
+      "detail": 1280
+    },
+    {
+      "name": "Readable main body 1280",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "Readable front card titles 1280",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 25,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 1280",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 25,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 1280",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 1280",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 70,
+          "y": 607,
+          "width": 700,
+          "height": 97,
+          "top": 607,
+          "right": 770,
+          "bottom": 704,
+          "left": 70
+        },
+        "companion": {
+          "x": 846,
+          "y": 581.8125,
+          "width": 410,
+          "height": 126.1875,
+          "top": 581.8125,
+          "right": 1256,
+          "bottom": 708,
+          "left": 846
+        }
+      }
+    },
+    {
+      "name": "Person navigation clears composer 1280",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 40,
+          "y": 527.640625,
+          "width": 328.796875,
+          "height": 54,
+          "top": 527.640625,
+          "right": 368.796875,
+          "bottom": 581.640625,
+          "left": 40
+        },
+        "composer": {
+          "x": 70,
+          "y": 607,
+          "width": 700,
+          "height": 97,
+          "top": 607,
+          "right": 770,
+          "bottom": 704,
+          "left": 70
+        }
+      }
+    },
+    {
+      "name": "Dossier starts after first fold 1280",
+      "passed": true,
+      "detail": 735
+    },
+    {
+      "name": "Analysis stays inside viewport 1280",
+      "passed": true
+    },
+    {
+      "name": "Sidebar reserved lane 1280",
+      "passed": true,
+      "detail": {
+        "size": [
+          1280,
+          720
+        ],
+        "scrollWidth": 1280,
+        "stage": {
+          "x": 24,
+          "y": 161.796875,
+          "width": 856,
+          "height": 433.34375,
+          "top": 161.796875,
+          "right": 880,
+          "bottom": 595.140625,
+          "left": 24
+        },
+        "controls": {
+          "x": 32,
+          "y": 544.140625,
+          "width": 261.03125,
+          "height": 51,
+          "top": 544.140625,
+          "right": 293.03125,
+          "bottom": 595.140625,
+          "left": 32
+        },
+        "composer": {
+          "x": 102,
+          "y": 607,
+          "width": 700,
+          "height": 97,
+          "top": 607,
+          "right": 802,
+          "bottom": 704,
+          "left": 102
+        },
+        "companion": {
+          "x": 846,
+          "y": 581.8125,
+          "width": 410,
+          "height": 126.1875,
+          "top": 581.8125,
+          "right": 1256,
+          "bottom": 708,
+          "left": 846
+        },
+        "panel": {
+          "x": 904,
+          "y": 98,
+          "width": 352,
+          "height": 604,
+          "top": 98,
+          "right": 1256,
+          "bottom": 702,
+          "left": 904
+        },
+        "dossier": {
+          "x": 24,
+          "y": 735.140625,
+          "width": 856,
+          "height": 3300.953125,
+          "top": 735.140625,
+          "right": 880,
+          "bottom": 4036.09375,
+          "left": 24
+        },
+        "personFont": 14,
+        "cards": [
+          {
+            "rank": "0",
+            "title": "让一句碎碎念，变成一段旅程",
+            "titleHeight": 67,
+            "lineHeight": 33.6,
+            "font": 24,
+            "bodyHeight": 216,
+            "buttonBottom": 208,
+            "surfaceHeight": 182,
+            "contentHeight": 182
+          },
+          {
+            "rank": "1",
+            "title": "不只把页面画出来，也让它顺手",
+            "titleHeight": 50,
+            "lineHeight": 25.2,
+            "font": 18,
+            "bodyHeight": 193,
+            "buttonBottom": 185,
+            "surfaceHeight": 159,
+            "contentHeight": 159
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sidebar cards retain readable content 1280",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 67,
+          "lineHeight": 33.6,
+          "font": 24,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Sidebar navigation clears composer 1280",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 32,
+          "y": 544.140625,
+          "width": 261.03125,
+          "height": 51,
+          "top": 544.140625,
+          "right": 293.03125,
+          "bottom": 595.140625,
+          "left": 32
+        },
+        "composer": {
+          "x": 102,
+          "y": 607,
+          "width": 700,
+          "height": 97,
+          "top": 607,
+          "right": 802,
+          "bottom": 704,
+          "left": 102
+        }
+      }
+    },
+    {
+      "name": "No horizontal overflow 1100",
+      "passed": true,
+      "detail": 1100
+    },
+    {
+      "name": "Readable main body 1100",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Readable front card titles 1100",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 59,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 1100",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 59,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 1100",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 1100",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 25,
+          "y": 770,
+          "width": 670,
+          "height": 108,
+          "top": 770,
+          "right": 695,
+          "bottom": 878,
+          "left": 25
+        },
+        "companion": {
+          "x": 734,
+          "y": 761.125,
+          "width": 350,
+          "height": 120.875,
+          "top": 761.125,
+          "right": 1084,
+          "bottom": 882,
+          "left": 734
+        }
+      }
+    },
+    {
+      "name": "Person navigation clears composer 1100",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 32,
+          "y": 698.9375,
+          "width": 279.59375,
+          "height": 54,
+          "top": 698.9375,
+          "right": 311.59375,
+          "bottom": 752.9375,
+          "left": 32
+        },
+        "composer": {
+          "x": 25,
+          "y": 770,
+          "width": 670,
+          "height": 108,
+          "top": 770,
+          "right": 695,
+          "bottom": 878,
+          "left": 25
+        }
+      }
+    },
+    {
+      "name": "Dossier starts after first fold 1100",
+      "passed": true,
+      "detail": 922.9375
+    },
+    {
+      "name": "Analysis stays inside viewport 1100",
+      "passed": true
+    },
+    {
+      "name": "Sidebar reserved lane 1100",
+      "passed": true,
+      "detail": {
+        "size": [
+          1100,
+          900
+        ],
+        "scrollWidth": 1100,
+        "stage": {
+          "x": 24,
+          "y": 201.796875,
+          "width": 676,
+          "height": 1064.140625,
+          "top": 201.796875,
+          "right": 700,
+          "bottom": 1265.9375,
+          "left": 24
+        },
+        "controls": {
+          "x": 164,
+          "y": 671.4375,
+          "width": 396,
+          "height": 54,
+          "top": 671.4375,
+          "right": 560,
+          "bottom": 725.4375,
+          "left": 164
+        },
+        "composer": {
+          "x": 32,
+          "y": 770,
+          "width": 660,
+          "height": 108,
+          "top": 770,
+          "right": 692,
+          "bottom": 878,
+          "left": 32
+        },
+        "companion": {
+          "x": 734,
+          "y": 761.125,
+          "width": 350,
+          "height": 120.875,
+          "top": 761.125,
+          "right": 1084,
+          "bottom": 882,
+          "left": 734
+        },
+        "panel": {
+          "x": 724,
+          "y": 108,
+          "width": 352,
+          "height": 768,
+          "top": 108,
+          "right": 1076,
+          "bottom": 876,
+          "left": 724
+        },
+        "dossier": {
+          "x": 24,
+          "y": 1435.9375,
+          "width": 676,
+          "height": 4394.875,
+          "top": 1435.9375,
+          "right": 700,
+          "bottom": 5830.8125,
+          "left": 24
+        },
+        "personFont": 15,
+        "cards": [
+          {
+            "rank": "0",
+            "title": "让一句碎碎念，变成一段旅程",
+            "titleHeight": 34,
+            "lineHeight": 33.6,
+            "font": 24,
+            "bodyHeight": 278,
+            "buttonBottom": 266,
+            "surfaceHeight": 240,
+            "contentHeight": 240
+          },
+          {
+            "rank": "1",
+            "title": "不只把页面画出来，也让它顺手",
+            "titleHeight": 50,
+            "lineHeight": 25.2,
+            "font": 18,
+            "bodyHeight": 248,
+            "buttonBottom": 236,
+            "surfaceHeight": 210,
+            "contentHeight": 210
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sidebar cards retain readable content 1100",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 34,
+          "lineHeight": 33.6,
+          "font": 24,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Sidebar navigation clears composer 1100",
+      "passed": true,
+      "detail": {
+        "controls": {
+          "x": 164,
+          "y": 671.4375,
+          "width": 396,
+          "height": 54,
+          "top": 671.4375,
+          "right": 560,
+          "bottom": 725.4375,
+          "left": 164
+        },
+        "composer": {
+          "x": 32,
+          "y": 770,
+          "width": 660,
+          "height": 108,
+          "top": 770,
+          "right": 692,
+          "bottom": 878,
+          "left": 32
+        }
+      }
+    },
+    {
+      "name": "No horizontal overflow 1024",
+      "passed": true,
+      "detail": 1024
+    },
+    {
+      "name": "Readable main body 1024",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "Readable front card titles 1024",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 1024",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 1024",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 1024",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 25,
+          "y": 655,
+          "width": 594,
+          "height": 97,
+          "top": 655,
+          "right": 619,
+          "bottom": 752,
+          "left": 25
+        },
+        "companion": {
+          "x": 658,
+          "y": 649,
+          "width": 350,
+          "height": 107,
+          "top": 649,
+          "right": 1008,
+          "bottom": 756,
+          "left": 658
+        }
+      }
+    },
+    {
+      "name": "Analysis stays inside viewport 1024",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 768",
+      "passed": true,
+      "detail": 768
+    },
+    {
+      "name": "Readable main body 768",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Readable front card titles 768",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 36,
+          "lineHeight": 36.4,
+          "font": 26,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 56,
+          "lineHeight": 28,
+          "font": 20,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 768",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 36,
+          "lineHeight": 36.4,
+          "font": 26,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 56,
+          "lineHeight": 28,
+          "font": 20,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 768",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 768",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 25,
+          "y": 894,
+          "width": 338,
+          "height": 108,
+          "top": 894,
+          "right": 363,
+          "bottom": 1002,
+          "left": 25
+        },
+        "companion": {
+          "x": 402,
+          "y": 899,
+          "width": 350,
+          "height": 107,
+          "top": 899,
+          "right": 752,
+          "bottom": 1006,
+          "left": 402
+        }
+      }
+    },
+    {
+      "name": "Analysis stays inside viewport 768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 390",
+      "passed": true,
+      "detail": 390
+    },
+    {
+      "name": "Readable main body 390",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Readable front card titles 390",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 64,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 278,
+          "buttonBottom": 268,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 48,
+          "lineHeight": 23.8,
+          "font": 17,
+          "bodyHeight": 248,
+          "buttonBottom": 238,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 390",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 64,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 278,
+          "buttonBottom": 268,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 48,
+          "lineHeight": 23.8,
+          "font": 17,
+          "bodyHeight": 248,
+          "buttonBottom": 238,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 390",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 390",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 12,
+          "y": 730,
+          "width": 366,
+          "height": 102,
+          "top": 730,
+          "right": 378,
+          "bottom": 832,
+          "left": 12
+        },
+        "companion": {
+          "x": 288,
+          "y": 636,
+          "width": 90,
+          "height": 78,
+          "top": 636,
+          "right": 378,
+          "bottom": 714,
+          "left": 288
+        }
+      }
+    },
+    {
+      "name": "Analysis stays inside viewport 390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 320",
+      "passed": true,
+      "detail": 320
+    },
+    {
+      "name": "Readable main body 320",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Readable front card titles 320",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 56,
+          "lineHeight": 28,
+          "font": 20,
+          "bodyHeight": 278,
+          "buttonBottom": 268,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 45,
+          "lineHeight": 22.4,
+          "font": 16,
+          "bodyHeight": 248,
+          "buttonBottom": 238,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Front card contents fit 320",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 56,
+          "lineHeight": 28,
+          "font": 20,
+          "bodyHeight": 278,
+          "buttonBottom": 268,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 45,
+          "lineHeight": 22.4,
+          "font": 16,
+          "bodyHeight": 248,
+          "buttonBottom": 238,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "Refresh fits its label 320",
+      "passed": true
+    },
+    {
+      "name": "Composer and companion have separate space 320",
+      "passed": true,
+      "detail": {
+        "composer": {
+          "x": 12,
+          "y": 626,
+          "width": 296,
+          "height": 102,
+          "top": 626,
+          "right": 308,
+          "bottom": 728,
+          "left": 12
+        },
+        "companion": {
+          "x": 218,
+          "y": 532,
+          "width": 90,
+          "height": 78,
+          "top": 532,
+          "right": 308,
+          "bottom": 610,
+          "left": 218
+        }
+      }
+    },
+    {
+      "name": "Analysis stays inside viewport 320",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion disables global animation toggle",
+      "passed": true
+    },
+    {
+      "name": "林小满 has six list rows",
+      "passed": true
+    },
+    {
+      "name": "林小满 has five analysis dimensions",
+      "passed": true
+    },
+    {
+      "name": "林小满 side 0 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "林小满 side 1 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "让 AI 听懂日常的小念头",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "林小满 side 2 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让 AI 听懂日常的小念头",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "你做 AI，TA 把体验接起来",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "林小满 side 3 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "你做 AI，TA 把体验接起来",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "这个周末，两天一起投入",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "林小满 side 4 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "这个周末，两天一起投入",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "你最想让 AI 听懂哪句话？",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "林小满 side 5 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "1",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        },
+        {
+          "rank": "0",
+          "title": "你最想让 AI 听懂哪句话？",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        }
+      ]
+    },
+    {
+      "name": "许知夏 has six list rows",
+      "passed": true
+    },
+    {
+      "name": "许知夏 has five analysis dimensions",
+      "passed": true
+    },
+    {
+      "name": "许知夏 side 0 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "给独居生活，多一点安心",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "从用户访谈，走到交互原型",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "许知夏 side 1 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "从用户访谈，走到交互原型",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "做一个真的有人会用的小产品",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "许知夏 side 2 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "做一个真的有人会用的小产品",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "你来实现，TA 把流程想细",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "许知夏 side 3 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "你来实现，TA 把流程想细",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "本次活动，全程参与",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "许知夏 side 4 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "本次活动，全程参与",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "独居时，你最想解决什么？",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "许知夏 side 5 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "1",
+          "title": "给独居生活，多一点安心",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        },
+        {
+          "rank": "0",
+          "title": "独居时，你最想解决什么？",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        }
+      ]
+    },
+    {
+      "name": "唐可 has six list rows",
+      "passed": true
+    },
+    {
+      "name": "唐可 has five analysis dimensions",
+      "passed": true
+    },
+    {
+      "name": "唐可 side 0 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "把城市声音，种成花园",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "把看不见的声音，做成可触碰的景观",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "唐可 side 1 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "把看不见的声音，做成可触碰的景观",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "让人愿意停一会儿的互动",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "唐可 side 2 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "让人愿意停一会儿的互动",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "你带来灵感，TA 让它动起来",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "唐可 side 3 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "你带来灵感，TA 让它动起来",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "两天活动，晚上也可以聊",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "唐可 side 4 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "0",
+          "title": "两天活动，晚上也可以聊",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "你会为这座城留下哪段声音？",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "name": "唐可 side 5 fits front cards",
+      "passed": true,
+      "detail": [
+        {
+          "rank": "1",
+          "title": "把城市声音，种成花园",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        },
+        {
+          "rank": "0",
+          "title": "你会为这座城留下哪段声音？",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        }
+      ]
+    },
+    {
+      "name": "Rear label brings selected card forward",
+      "passed": true
+    },
+    {
+      "name": "Project detail shows source and art",
+      "passed": true
+    },
+    {
+      "name": "Detail close restores trigger focus",
+      "passed": true
+    },
+    {
+      "name": "Hanging plaque opens matching detail",
+      "passed": true
+    },
+    {
+      "name": "Save toggles local state",
+      "passed": true
+    },
+    {
+      "name": "Profile button scrolls to dossier",
+      "passed": true
+    },
+    {
+      "name": "Dossier defaults to clear list",
+      "passed": true
+    },
+    {
+      "name": "List rows show sources",
+      "passed": true
+    },
+    {
+      "name": "List row opens its full details",
+      "passed": true
+    },
+    {
+      "name": "CoverFlow has six items",
+      "passed": true
+    },
+    {
+      "name": "CoverFlow advances",
+      "passed": true
+    },
+    {
+      "name": "Experience timeline shows three documented aspects",
+      "passed": true
+    },
+    {
+      "name": "Dynamic graph has six nodes",
+      "passed": true
+    },
+    {
+      "name": "Graph selection opens evidence detail",
+      "passed": true
+    },
+    {
+      "name": "Graph selection highlights analysis dimension",
+      "passed": true
+    },
+    {
+      "name": "Table selection changes insight panel",
+      "passed": true
+    },
+    {
+      "name": "Analysis has no invented percentage score",
+      "passed": true
+    },
+    {
+      "name": "Preparation checklist works",
+      "passed": true
+    },
+    {
+      "name": "Stack reveals next opening question",
+      "passed": true
+    },
+    {
+      "name": "Collaboration checklist works",
+      "passed": true
+    },
+    {
+      "name": "Collaboration state changes",
+      "passed": true
+    },
+    {
+      "name": "Composer grows for multiline text",
+      "passed": true
+    },
+    {
+      "name": "Shift Enter does not send",
+      "passed": true
+    },
+    {
+      "name": "IME Enter does not send prematurely",
+      "passed": true
+    },
+    {
+      "name": "Composer opens sidebar",
+      "passed": true
+    },
+    {
+      "name": "Thinking state appears",
+      "passed": true
+    },
+    {
+      "name": "Reply follows prompt",
+      "passed": true
+    },
+    {
+      "name": "Assistant switches person",
+      "passed": true
+    },
+    {
+      "name": "Conversation persists after switch",
+      "passed": true
+    },
+    {
+      "name": "Assistant can bring another card forward",
+      "passed": true
+    },
+    {
+      "name": "Companion opens sidebar",
+      "passed": true
+    },
+    {
+      "name": "Mobile sidebar is modal",
+      "passed": true
+    },
+    {
+      "name": "Mobile panel focuses its input",
+      "passed": true
+    },
+    {
+      "name": "Mobile dock yields to panel",
+      "passed": true
+    },
+    {
+      "name": "Mobile escape restores edge button focus",
+      "passed": true
+    },
+    {
+      "name": "Refresh starts AI progress",
+      "passed": true
+    },
+    {
+      "name": "Duplicate refresh disabled",
+      "passed": true
+    },
+    {
+      "name": "Search advances through stages",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "name": "Search can be skipped",
+      "passed": true
+    },
+    {
+      "name": "Cards rest between transitions",
+      "passed": true,
+      "detail": {
+        "pos1": {
+          "x": 445.8845520019531,
+          "y": 388.5876159667969,
+          "width": 570.3847961425781,
+          "height": 304.1037902832031
+        },
+        "pos2": {
+          "x": 445.8845520019531,
+          "y": 388.5876159667969,
+          "width": 570.3847961425781,
+          "height": 304.1037902832031
+        }
+      }
+    },
+    {
+      "name": "Cards automatically rotate",
+      "passed": true
+    },
+    {
+      "name": "Hover pauses rotation",
+      "passed": true
+    },
+    {
+      "name": "Typing pauses rotation",
+      "passed": true
+    },
+    {
+      "name": "Global motion switch pauses page",
+      "passed": true
+    },
+    {
+      "name": "Paused bubble remains readable",
+      "passed": true
+    },
+    {
+      "name": "Sidebar works while animations paused",
+      "passed": true
+    },
+    {
+      "name": "Animated card selection settles",
+      "passed": true
+    },
+    {
+      "name": "AI relationship animation advances in view",
+      "passed": true
+    },
+    {
+      "name": "Selected graph evidence stays still for reading",
+      "passed": true
+    },
+    {
+      "name": "No browser runtime or hydration errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "fonts": {
+    "chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 5
+      }
+    ],
+    "display": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 7
+      }
+    ],
+    "body": [
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ]
+  },
+  "layouts": [
+    {
+      "size": [
+        1920,
+        1080
+      ],
+      "scrollWidth": 1920,
+      "stage": {
+        "x": 260,
+        "y": 216.796875,
+        "width": 1400,
+        "height": 538.03125,
+        "top": 216.796875,
+        "right": 1660,
+        "bottom": 754.828125,
+        "left": 260
+      },
+      "controls": {
+        "x": 268,
+        "y": 700.828125,
+        "width": 384,
+        "height": 54,
+        "top": 700.828125,
+        "right": 652,
+        "bottom": 754.828125,
+        "left": 268
+      },
+      "composer": {
+        "x": 520,
+        "y": 950,
+        "width": 680,
+        "height": 108,
+        "top": 950,
+        "right": 1200,
+        "bottom": 1058,
+        "left": 520
+      },
+      "companion": {
+        "x": 1486,
+        "y": 935.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 935.8125,
+        "right": 1896,
+        "bottom": 1062,
+        "left": 1486
+      },
+      "dossier": {
+        "x": 260,
+        "y": 1101,
+        "width": 1400,
+        "height": 3276.9375,
+        "top": 1101,
+        "right": 1660,
+        "bottom": 4377.9375,
+        "left": 260
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "size": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1440,
+      "stage": {
+        "x": 32,
+        "y": 216.796875,
+        "width": 1376,
+        "height": 538.03125,
+        "top": 216.796875,
+        "right": 1408,
+        "bottom": 754.828125,
+        "left": 32
+      },
+      "controls": {
+        "x": 40,
+        "y": 700.828125,
+        "width": 376.796875,
+        "height": 54,
+        "top": 700.828125,
+        "right": 416.796875,
+        "bottom": 754.828125,
+        "left": 40
+      },
+      "composer": {
+        "x": 280,
+        "y": 770,
+        "width": 680,
+        "height": 108,
+        "top": 770,
+        "right": 960,
+        "bottom": 878,
+        "left": 280
+      },
+      "companion": {
+        "x": 1006,
+        "y": 755.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 755.8125,
+        "right": 1416,
+        "bottom": 882,
+        "left": 1006
+      },
+      "dossier": {
+        "x": 32,
+        "y": 924.828125,
+        "width": 1376,
+        "height": 3276.9375,
+        "top": 924.828125,
+        "right": 1408,
+        "bottom": 4201.765625,
+        "left": 32
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 29,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "state": "sidebar",
+      "size": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1440,
+      "stage": {
+        "x": 24,
+        "y": 206.796875,
+        "width": 1016,
+        "height": 550.03125,
+        "top": 206.796875,
+        "right": 1040,
+        "bottom": 756.828125,
+        "left": 24
+      },
+      "controls": {
+        "x": 32,
+        "y": 702.828125,
+        "width": 289.109375,
+        "height": 54,
+        "top": 702.828125,
+        "right": 321.109375,
+        "bottom": 756.828125,
+        "left": 32
+      },
+      "composer": {
+        "x": 182,
+        "y": 770,
+        "width": 700,
+        "height": 108,
+        "top": 770,
+        "right": 882,
+        "bottom": 878,
+        "left": 182
+      },
+      "companion": {
+        "x": 1006,
+        "y": 755.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 755.8125,
+        "right": 1416,
+        "bottom": 882,
+        "left": 1006
+      },
+      "panel": {
+        "x": 1064,
+        "y": 108,
+        "width": 352,
+        "height": 768,
+        "top": 108,
+        "right": 1416,
+        "bottom": 876,
+        "left": 1064
+      },
+      "dossier": {
+        "x": 24,
+        "y": 926.828125,
+        "width": 1016,
+        "height": 3234.578125,
+        "top": 926.828125,
+        "right": 1040,
+        "bottom": 4161.40625,
+        "left": 24
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 34,
+          "lineHeight": 33.6,
+          "font": 24,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "size": [
+        1366,
+        768
+      ],
+      "scrollWidth": 1366,
+      "stage": {
+        "x": 32,
+        "y": 181.796875,
+        "width": 1302,
+        "height": 419.84375,
+        "top": 181.796875,
+        "right": 1334,
+        "bottom": 601.640625,
+        "left": 32
+      },
+      "controls": {
+        "x": 40,
+        "y": 547.640625,
+        "width": 354.59375,
+        "height": 54,
+        "top": 547.640625,
+        "right": 394.59375,
+        "bottom": 601.640625,
+        "left": 40
+      },
+      "composer": {
+        "x": 113,
+        "y": 655,
+        "width": 700,
+        "height": 97,
+        "top": 655,
+        "right": 813,
+        "bottom": 752,
+        "left": 113
+      },
+      "companion": {
+        "x": 932,
+        "y": 629.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 629.8125,
+        "right": 1342,
+        "bottom": 756,
+        "left": 932
+      },
+      "dossier": {
+        "x": 32,
+        "y": 779,
+        "width": 1302,
+        "height": 3232.828125,
+        "top": 779,
+        "right": 1334,
+        "bottom": 4011.828125,
+        "left": 32
+      },
+      "personFont": 14,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 25,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "size": [
+        1280,
+        720
+      ],
+      "scrollWidth": 1280,
+      "stage": {
+        "x": 32,
+        "y": 161.796875,
+        "width": 1216,
+        "height": 419.84375,
+        "top": 161.796875,
+        "right": 1248,
+        "bottom": 581.640625,
+        "left": 32
+      },
+      "controls": {
+        "x": 40,
+        "y": 527.640625,
+        "width": 328.796875,
+        "height": 54,
+        "top": 527.640625,
+        "right": 368.796875,
+        "bottom": 581.640625,
+        "left": 40
+      },
+      "composer": {
+        "x": 70,
+        "y": 607,
+        "width": 700,
+        "height": 97,
+        "top": 607,
+        "right": 770,
+        "bottom": 704,
+        "left": 70
+      },
+      "companion": {
+        "x": 846,
+        "y": 581.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 581.8125,
+        "right": 1256,
+        "bottom": 708,
+        "left": 846
+      },
+      "dossier": {
+        "x": 32,
+        "y": 735,
+        "width": 1216,
+        "height": 3226.796875,
+        "top": 735,
+        "right": 1248,
+        "bottom": 3961.796875,
+        "left": 32
+      },
+      "personFont": 14,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 25,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "state": "sidebar",
+      "size": [
+        1280,
+        720
+      ],
+      "scrollWidth": 1280,
+      "stage": {
+        "x": 24,
+        "y": 161.796875,
+        "width": 856,
+        "height": 433.34375,
+        "top": 161.796875,
+        "right": 880,
+        "bottom": 595.140625,
+        "left": 24
+      },
+      "controls": {
+        "x": 32,
+        "y": 544.140625,
+        "width": 261.03125,
+        "height": 51,
+        "top": 544.140625,
+        "right": 293.03125,
+        "bottom": 595.140625,
+        "left": 32
+      },
+      "composer": {
+        "x": 102,
+        "y": 607,
+        "width": 700,
+        "height": 97,
+        "top": 607,
+        "right": 802,
+        "bottom": 704,
+        "left": 102
+      },
+      "companion": {
+        "x": 846,
+        "y": 581.8125,
+        "width": 410,
+        "height": 126.1875,
+        "top": 581.8125,
+        "right": 1256,
+        "bottom": 708,
+        "left": 846
+      },
+      "panel": {
+        "x": 904,
+        "y": 98,
+        "width": 352,
+        "height": 604,
+        "top": 98,
+        "right": 1256,
+        "bottom": 702,
+        "left": 904
+      },
+      "dossier": {
+        "x": 24,
+        "y": 735.140625,
+        "width": 856,
+        "height": 3300.953125,
+        "top": 735.140625,
+        "right": 880,
+        "bottom": 4036.09375,
+        "left": 24
+      },
+      "personFont": 14,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 67,
+          "lineHeight": 33.6,
+          "font": 24,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "size": [
+        1100,
+        900
+      ],
+      "scrollWidth": 1100,
+      "stage": {
+        "x": 24,
+        "y": 209.296875,
+        "width": 1052,
+        "height": 543.640625,
+        "top": 209.296875,
+        "right": 1076,
+        "bottom": 752.9375,
+        "left": 24
+      },
+      "controls": {
+        "x": 32,
+        "y": 698.9375,
+        "width": 279.59375,
+        "height": 54,
+        "top": 698.9375,
+        "right": 311.59375,
+        "bottom": 752.9375,
+        "left": 32
+      },
+      "composer": {
+        "x": 25,
+        "y": 770,
+        "width": 670,
+        "height": 108,
+        "top": 770,
+        "right": 695,
+        "bottom": 878,
+        "left": 25
+      },
+      "companion": {
+        "x": 734,
+        "y": 761.125,
+        "width": 350,
+        "height": 120.875,
+        "top": 761.125,
+        "right": 1084,
+        "bottom": 882,
+        "left": 734
+      },
+      "dossier": {
+        "x": 24,
+        "y": 922.9375,
+        "width": 1052,
+        "height": 3240.796875,
+        "top": 922.9375,
+        "right": 1076,
+        "bottom": 4163.734375,
+        "left": 24
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 39,
+          "lineHeight": 39.2,
+          "font": 28,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 59,
+          "lineHeight": 29.4,
+          "font": 21,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "state": "sidebar",
+      "size": [
+        1100,
+        900
+      ],
+      "scrollWidth": 1100,
+      "stage": {
+        "x": 24,
+        "y": 201.796875,
+        "width": 676,
+        "height": 1064.140625,
+        "top": 201.796875,
+        "right": 700,
+        "bottom": 1265.9375,
+        "left": 24
+      },
+      "controls": {
+        "x": 164,
+        "y": 671.4375,
+        "width": 396,
+        "height": 54,
+        "top": 671.4375,
+        "right": 560,
+        "bottom": 725.4375,
+        "left": 164
+      },
+      "composer": {
+        "x": 32,
+        "y": 770,
+        "width": 660,
+        "height": 108,
+        "top": 770,
+        "right": 692,
+        "bottom": 878,
+        "left": 32
+      },
+      "companion": {
+        "x": 734,
+        "y": 761.125,
+        "width": 350,
+        "height": 120.875,
+        "top": 761.125,
+        "right": 1084,
+        "bottom": 882,
+        "left": 734
+      },
+      "panel": {
+        "x": 724,
+        "y": 108,
+        "width": 352,
+        "height": 768,
+        "top": 108,
+        "right": 1076,
+        "bottom": 876,
+        "left": 724
+      },
+      "dossier": {
+        "x": 24,
+        "y": 1435.9375,
+        "width": 676,
+        "height": 4394.875,
+        "top": 1435.9375,
+        "right": 700,
+        "bottom": 5830.8125,
+        "left": 24
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 34,
+          "lineHeight": 33.6,
+          "font": 24,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "size": [
+        1024,
+        768
+      ],
+      "scrollWidth": 1024,
+      "stage": {
+        "x": 24,
+        "y": 181.796875,
+        "width": 976,
+        "height": 419.84375,
+        "top": 181.796875,
+        "right": 1000,
+        "bottom": 601.640625,
+        "left": 24
+      },
+      "controls": {
+        "x": 32,
+        "y": 547.640625,
+        "width": 301.828125,
+        "height": 54,
+        "top": 547.640625,
+        "right": 333.828125,
+        "bottom": 601.640625,
+        "left": 32
+      },
+      "composer": {
+        "x": 25,
+        "y": 655,
+        "width": 594,
+        "height": 97,
+        "top": 655,
+        "right": 619,
+        "bottom": 752,
+        "left": 25
+      },
+      "companion": {
+        "x": 658,
+        "y": 649,
+        "width": 350,
+        "height": 107,
+        "top": 649,
+        "right": 1008,
+        "bottom": 756,
+        "left": 658
+      },
+      "dossier": {
+        "x": 24,
+        "y": 779,
+        "width": 976,
+        "height": 3236.578125,
+        "top": 779,
+        "right": 1000,
+        "bottom": 4015.578125,
+        "left": 24
+      },
+      "personFont": 14,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 32,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 216,
+          "buttonBottom": 208,
+          "surfaceHeight": 182,
+          "contentHeight": 182
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 50,
+          "lineHeight": 25.2,
+          "font": 18,
+          "bodyHeight": 193,
+          "buttonBottom": 185,
+          "surfaceHeight": 159,
+          "contentHeight": 159
+        }
+      ]
+    },
+    {
+      "size": [
+        768,
+        1024
+      ],
+      "scrollWidth": 768,
+      "stage": {
+        "x": 24,
+        "y": 206.796875,
+        "width": 720,
+        "height": 1065.140625,
+        "top": 206.796875,
+        "right": 744,
+        "bottom": 1271.9375,
+        "left": 24
+      },
+      "controls": {
+        "x": 186,
+        "y": 677.4375,
+        "width": 396,
+        "height": 54,
+        "top": 677.4375,
+        "right": 582,
+        "bottom": 731.4375,
+        "left": 186
+      },
+      "composer": {
+        "x": 25,
+        "y": 894,
+        "width": 338,
+        "height": 108,
+        "top": 894,
+        "right": 363,
+        "bottom": 1002,
+        "left": 25
+      },
+      "companion": {
+        "x": 402,
+        "y": 899,
+        "width": 350,
+        "height": 107,
+        "top": 899,
+        "right": 752,
+        "bottom": 1006,
+        "left": 402
+      },
+      "dossier": {
+        "x": 24,
+        "y": 1441.9375,
+        "width": 720,
+        "height": 4324.796875,
+        "top": 1441.9375,
+        "right": 744,
+        "bottom": 5766.734375,
+        "left": 24
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 36,
+          "lineHeight": 36.4,
+          "font": 26,
+          "bodyHeight": 278,
+          "buttonBottom": 266,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 56,
+          "lineHeight": 28,
+          "font": 20,
+          "bodyHeight": 248,
+          "buttonBottom": 236,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "size": [
+        390,
+        844
+      ],
+      "scrollWidth": 390,
+      "stage": {
+        "x": 16,
+        "y": 402.375,
+        "width": 358,
+        "height": 1121.140625,
+        "top": 402.375,
+        "right": 374,
+        "bottom": 1523.515625,
+        "left": 16
+      },
+      "controls": {
+        "x": 28,
+        "y": 890.015625,
+        "width": 334,
+        "height": 54,
+        "top": 890.015625,
+        "right": 362,
+        "bottom": 944.015625,
+        "left": 28
+      },
+      "composer": {
+        "x": 12,
+        "y": 730,
+        "width": 366,
+        "height": 102,
+        "top": 730,
+        "right": 378,
+        "bottom": 832,
+        "left": 12
+      },
+      "companion": {
+        "x": 288,
+        "y": 636,
+        "width": 90,
+        "height": 78,
+        "top": 636,
+        "right": 378,
+        "bottom": 714,
+        "left": 288
+      },
+      "dossier": {
+        "x": 16,
+        "y": 1573.515625,
+        "width": 358,
+        "height": 5105.5625,
+        "top": 1573.515625,
+        "right": 374,
+        "bottom": 6679.078125,
+        "left": 16
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 64,
+          "lineHeight": 32.2,
+          "font": 23,
+          "bodyHeight": 278,
+          "buttonBottom": 268,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 48,
+          "lineHeight": 23.8,
+          "font": 17,
+          "bodyHeight": 248,
+          "buttonBottom": 238,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    },
+    {
+      "size": [
+        320,
+        740
+      ],
+      "scrollWidth": 320,
+      "stage": {
+        "x": 14,
+        "y": 393.96875,
+        "width": 292,
+        "height": 1151.140625,
+        "top": 393.96875,
+        "right": 306,
+        "bottom": 1545.109375,
+        "left": 14
+      },
+      "controls": {
+        "x": 26,
+        "y": 908.609375,
+        "width": 268,
+        "height": 54,
+        "top": 908.609375,
+        "right": 294,
+        "bottom": 962.609375,
+        "left": 26
+      },
+      "composer": {
+        "x": 12,
+        "y": 626,
+        "width": 296,
+        "height": 102,
+        "top": 626,
+        "right": 308,
+        "bottom": 728,
+        "left": 12
+      },
+      "companion": {
+        "x": 218,
+        "y": 532,
+        "width": 90,
+        "height": 78,
+        "top": 532,
+        "right": 308,
+        "bottom": 610,
+        "left": 218
+      },
+      "dossier": {
+        "x": 14,
+        "y": 1595.109375,
+        "width": 292,
+        "height": 5332.578125,
+        "top": 1595.109375,
+        "right": 306,
+        "bottom": 6927.6875,
+        "left": 14
+      },
+      "personFont": 15,
+      "cards": [
+        {
+          "rank": "0",
+          "title": "让一句碎碎念，变成一段旅程",
+          "titleHeight": 56,
+          "lineHeight": 28,
+          "font": 20,
+          "bodyHeight": 278,
+          "buttonBottom": 268,
+          "surfaceHeight": 240,
+          "contentHeight": 240
+        },
+        {
+          "rank": "1",
+          "title": "不只把页面画出来，也让它顺手",
+          "titleHeight": 45,
+          "lineHeight": 22.4,
+          "font": 16,
+          "bodyHeight": 248,
+          "buttonBottom": 238,
+          "surfaceHeight": 210,
+          "contentHeight": 210
+        }
+      ]
+    }
+  ],
+  "motion": [],
+  "video": "docs/videos/v3/recommendation-v3.webm",
+  "passed": 166,
+  "failed": 0
+}

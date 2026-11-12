@@ -30,6 +30,9 @@ export function ProfilePage(){
   const lastFocus=useRef<HTMLElement|null>(null);
   const sparse=scenario==='sparse';
   const profile=visibleEntries(sparse);
+  // Changing the simulated visitor or visibility projection invalidates its draft.
+  const changeViewer=(next:Viewer)=>{setViewer(next);setDraft('');setSaved(false);};
+  const changeScenario=(next:Scenario)=>{if((next==='sparse')!==sparse){setDraft('');setSaved(false);}setScenario(next);};
   const openPanel=(next:Panel)=>{lastFocus.current=document.activeElement as HTMLElement;setPanel(next);setMenuOpen(false);};
   const openDetail=(detail:Detail)=>openPanel({kind:'detail',detail});
   const greet=(manual=false)=>{if(!draft&&!manual)setDraft(requestVariants(viewer,profile)[0].body);openPanel({kind:'request'});};
@@ -70,14 +73,14 @@ export function ProfilePage(){
         </div>
       </section>
       <div className="body-container">
-        <ViewerInsights entries={profile} sparse={sparse} onOpen={entry=>openDetail(toDetail(entry))} onGreet={()=>greet()} viewer={viewer} onViewerChange={setViewer}/>
+        <ViewerInsights entries={profile} sparse={sparse} onOpen={entry=>openDetail(toDetail(entry))} onGreet={()=>greet()} viewer={viewer} onViewerChange={changeViewer}/>
         <ProfileDetails entries={profile} sparse={sparse} open={openDetail} onRequest={()=>greet()}/>
         <ProfileWork entries={profile} open={openDetail} sparse={sparse} long={scenario==='long'} noPhoto={scenario==='no-photo'}/>
         <ConnectionCTA onRequest={()=>greet()} onManual={()=>greet(true)} saved={saved} noPhoto={scenario==='no-photo'}/>
       </div>
     </main>
-    <footer className="site-footer"><a href="#about" className="footer-brand"><Radio size={20}/>同频<span>让有趣的人，相遇。</span></a><p>独立设计预览 · 人物、资料、关系与 AI 解读均为演示</p><a href="#about" className="back-top">回到顶部<ArrowUpRight size={14}/></a><details className="preview-settings"><summary>预览设置</summary><label htmlFor="scenario">内容状态</label><select id="scenario" value={scenario} onChange={e=>setScenario(e.target.value as Scenario)}><option value="full">完整资料</option><option value="sparse">少量资料 / 无关系</option><option value="long">长姓名与长条目</option><option value="no-photo">尚未上传照片</option></select><span>仅切换本地示例，刷新重置。</span></details></footer>
-    <Dialog open={panel!==null} onOpenChange={open=>{if(!open)setPanel(null);}}><DialogContent className="profile-modal" showCloseButton={false} onCloseAutoFocus={e=>{e.preventDefault();lastFocus.current?.focus({preventScroll:true});}}><DialogClose asChild><button className="modal-close" aria-label="关闭详情"><X size={20}/></button></DialogClose>
+    <footer className="site-footer"><a href="#about" className="footer-brand"><Radio size={20}/>同频<span>让有趣的人，相遇。</span></a><p>独立设计预览 · 人物、资料、关系与 AI 解读均为演示</p><a href="#about" className="back-top">回到顶部<ArrowUpRight size={14}/></a><details className="preview-settings"><summary>预览设置</summary><label htmlFor="scenario">内容状态</label><select id="scenario" value={scenario} onChange={e=>changeScenario(e.target.value as Scenario)}><option value="full">完整资料</option><option value="sparse">少量资料 / 无关系</option><option value="long">长姓名与长条目</option><option value="no-photo">尚未上传照片</option></select><span>仅切换本地示例，刷新重置。</span></details></footer>
+    <Dialog open={panel!==null} onOpenChange={open=>{if(!open)setPanel(null);}}><DialogContent className="profile-modal" showCloseButton={false} onEscapeKeyDown={e=>{if(panel?.kind==='request'&&e.target instanceof HTMLTextAreaElement)e.preventDefault();}} onCloseAutoFocus={e=>{e.preventDefault();lastFocus.current?.focus({preventScroll:true});}}><DialogClose asChild><button className="modal-close" aria-label="关闭详情"><X size={20}/></button></DialogClose>
       {panel?.kind==='detail'&&<><DialogHeader><span className="eyebrow">{panel.detail.eyebrow}</span><DialogTitle>{panel.detail.title}</DialogTitle><DialogDescription>林知夏 · 对当前观看者可见的演示内容</DialogDescription></DialogHeader><div className="dialog-scroll detail-reading"><p>{panel.detail.body}</p>{panel.detail.tags&&<div className="tag-list">{panel.detail.tags.map(tag=><span key={tag}>{tag}</span>)}</div>}</div><div className="modal-note"><Sparkles size={14}/>虚构示例{panel.detail.field&&<span>资料字段 · {panel.detail.field}</span>}</div></>}
       {panel?.kind==='request'&&<><DialogHeader><span className="eyebrow">A THOUGHTFUL FIRST HELLO</span><DialogTitle>让第一句，更像你。</DialogTitle><DialogDescription>AI 帮你起草好友申请，你来确认和修改。</DialogDescription></DialogHeader><FriendRequestDraft initialBody={draft} tones={requestVariants(viewer,profile)} onDraftChange={body=>{setDraft(body);setSaved(false);}} onSave={body=>{setDraft(body);setSaved(true);}}/><p className="request-demo-note">本地演示采用预写文案。保存不会发送申请，也不会解锁好友资料。</p></>}
     </DialogContent></Dialog>

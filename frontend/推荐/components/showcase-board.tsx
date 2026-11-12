@@ -26,8 +26,8 @@ export function HangingTags({ person, onOpen, paused }: { person: Person; paused
 }
 
 const slots = [
-  {left:'0%',top:92,width:'60%',height:300,rotate:-2.5,z:7,opacity:1},
-  {left:'61%',top:130,width:'39%',height:260,rotate:3.5,z:6,opacity:1},
+  {left:'0%',top:72,width:'60%',height:280,rotate:-2.5,z:7,opacity:1},
+  {left:'61%',top:110,width:'39%',height:250,rotate:3.5,z:6,opacity:1},
   {left:'4%',top:16,width:'30.5%',height:220,rotate:-6,z:3,opacity:1},
   {left:'35%',top:2,width:'30.5%',height:220,rotate:1.5,z:2,opacity:1},
   {left:'66%',top:28,width:'30.5%',height:210,rotate:7,z:1,opacity:1},
@@ -38,7 +38,7 @@ export function ShowcaseBoard({ person, index, onSelect, onOpen, paused, reduced
   return <div className="showcase-board" data-paused={paused} data-index={index} data-person={person.id}>
     <div className="board-heading"><span><Sparkles size={14}/>TA 的世界，比一张简历丰富</span><span><NumberTicker value={index+1} locale="en-US" duration={400}/> / {items.length}</span></div>
     <div className="project-deck" onFocusCapture={()=>onReading(true)} onBlurCapture={(e)=>{if(!e.currentTarget.contains(e.relatedTarget as Node))onReading(false);}} aria-label="双排动态项目卡">
-      <AnimatePresence initial={false}>{items.map((item,i)=>{const rank=(i-index+items.length)%items.length;const slot=slots[rank];return <motion.article key={person.id+item.id} className={'showcase-card rank-'+rank} data-rank={rank} data-item={item.id} aria-hidden={rank===5||undefined} inert={rank===5||undefined} layout={!reduced} style={{left:slot.left,top:slot.top*(compact?.83:1),width:slot.width,height:slot.height*(compact?.83:1),zIndex:slot.z}} initial={reduced?false:{opacity:0,x:-85,y:35,scale:.8,rotate:-8}} animate={{rotate:reduced?0:slot.rotate,opacity:slot.opacity,x:0,y:0,scale:rank===5?.9:1}} exit={{opacity:0,scale:.9,y:20}} transition={reduced?{duration:0}:{type:'spring',stiffness:145,damping:23,mass:.85}} onMouseEnter={()=>{if(rank<2)onReading(true);}} onMouseLeave={(e)=>onReading(e.currentTarget.closest(".project-deck")?.contains(document.activeElement)??false)}>
+      <AnimatePresence initial={false}>{items.map((item,i)=>{const rank=(i-index+items.length)%items.length;const slot=slots[rank];return <motion.article key={person.id+item.id} className={'showcase-card rank-'+rank} data-rank={rank} data-item={item.id} aria-hidden={rank===5||undefined} inert={rank===5||undefined} layout={!reduced} style={{left:slot.left,top:slot.top*(compact?.78:1),width:slot.width,height:slot.height*(compact?.78:1),zIndex:slot.z}} initial={reduced?false:{opacity:0,x:-85,y:35,scale:.8,rotate:-8}} animate={{rotate:reduced?0:slot.rotate,opacity:slot.opacity,x:0,y:0,scale:rank===5?.9:1}} exit={{opacity:0,scale:.9,y:20}} transition={reduced?{duration:0}:{type:'spring',stiffness:145,damping:23,mass:.85}} onMouseEnter={()=>{if(rank<2)onReading(true);}} onMouseLeave={(e)=>onReading(e.currentTarget.closest(".project-deck")?.contains(document.activeElement)??false)}>
         <button className="project-label" onClick={()=>onSelect(i)} tabIndex={rank===5?-1:0} aria-label={'把'+item.kind+'切到前排'} aria-pressed={rank===0}><span className="project-label-dot"/>{item.kind}{rank>1?<ArrowUpRight size={13}/>:<span className="card-sequence">0{i+1}</span>}</button>
         <div className="project-surface" aria-hidden={rank>1||undefined} inert={rank>1||undefined}><ProjectArt kind={item.art} compact={rank===1}/><div className="project-copy"><p>{item.subtitle}</p><h3>{item.title}</h3><div className="project-card-bottom"><div>{item.tags.map(tag=><Badge variant="secondary" key={tag}>{tag}</Badge>)}</div><button aria-label={'展开项目：'+item.title} onClick={(e)=>onOpen(item,e.currentTarget)}><ArrowUpRight size={17}/></button></div></div></div>
       </motion.article>;})}</AnimatePresence>
