@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "checks": [
+    "recovery changes no messages or read state",
+    "prior data and queue preserved",
+    "three original/new recovery keys safely staged"
+  ],
+  "cases": [
+    {
+      "status": "passed",
+      "mode": "recover-storage-reservation",
+      "checks": 216,
+      "result": {
+        "existing_reservation_recovered": true,
+        "same_key": true,
+        "same_native_file": true,
+        "recovery_in_new_process": true
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "storage-failure-retry-v2",
+      "checks": 219,
+      "result": {
+        "failure_injected": true,
+        "durable_uploading_reservation": true,
+        "same_key_recovered": true,
+        "same_native_file": true,
+        "same_process_recovery": true,
+        "transaction_released_after_failure": true,
+        "success_quota_only_after_completion": true
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "sql-finalize-failure-retry",
+      "checks": 223,
+      "result": {
+        "failure_injected": true,
+        "durable_uploading_reservation": true,
+        "same_key_recovered": true,
+        "same_native_file": true,
+        "same_process_recovery": true,
+        "transaction_released_after_failure": true,
+        "success_quota_only_after_completion": true
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    }
+  ],
+  "completed_prior_cases": [
+    {
+      "status": "passed",
+      "mode": "prepare",
+      "checks": 107,
+      "result": {
+        "new_uploads": 0,
+        "fixed_uploads": 3
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "hold-upload",
+      "checks": 114,
+      "result": {
+        "replayed": false,
+        "single_upload_record": true,
+        "attachment_id": "e94bbf22-329c-471d-8fb2-d2687c7eb271"
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "dedupe-upload",
+      "checks": 113,
+      "result": {
+        "replayed": true,
+        "single_upload_record": true,
+        "attachment_id": "e94bbf22-329c-471d-8fb2-d2687c7eb271"
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "hold-bind",
+      "checks": 114,
+      "result": {
+        "replayed": false,
+        "seq": 7,
+        "bound": true
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "try-cancel",
+      "checks": 113,
+      "result": {
+        "error_code": "ATTACHMENT_ALREADY_BOUND",
+        "http_status": 409
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "hold-cancel",
+      "checks": 114,
+      "result": {
+        "state": "cancelled"
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "try-bind",
+      "checks": 115,
+      "result": {
+        "error_code": "ATTACHMENT_UNAVAILABLE",
+        "http_status": 410,
+        "no_send_receipt": true,
+        "rollback_verified": false
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    },
+    {
+      "status": "passed",
+      "mode": "rollback-bind",
+      "checks": 113,
+      "result": {
+        "error_code": "C05B_TEST_ROLLBACK",
+        "http_status": 409,
+        "no_send_receipt": true,
+        "rollback_verified": true
+      },
+      "credentials_returned": false,
+      "notifications_sent": false
+    }
+  ],
+  "legacy_preserved": true,
+  "new_messages": 0,
+  "credentials_returned": false,
+  "limitations": [
+    "Pre-write and pre-finalization SQL failures injected, not an actual lost MySQL commit reply.",
+    "Original failed key5 resumed, never deleted or recreated."
+  ]
+}

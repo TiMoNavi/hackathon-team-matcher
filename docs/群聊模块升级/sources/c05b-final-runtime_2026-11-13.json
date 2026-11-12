@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "date": "2026-11-13",
+  "database": "humhub_chat_c02_20261112",
+  "port": 8124,
+  "server_stopped": true,
+  "five_settings_off": true,
+  "ui_total_enabled": true,
+  "mail_and_protection_retained": true,
+  "repeated_upgrade_preserved": true,
+  "nonempty_restore_refused": true,
+  "fixture": {
+    "status": "passed",
+    "action": "snapshot",
+    "fixture": "chat-c05b-attachment-v1",
+    "database": "humhub_chat_c02_20261112",
+    "synthetic_ids": {
+      "actors": {
+        "a": 6,
+        "b": 7,
+        "outsider": 8
+      },
+      "conversation_id": 5
+    },
+    "legacy_preserved": true,
+    "legacy_hash": "5ab9353e5b8ccc863d069ada7ac72b7f29c973a96fb1d39b952dcf637fb20513",
+    "terminal_revocation": true,
+    "managed_status": "revoked",
+    "message_count": 9,
+    "total_message_count": 28,
+    "file_count": 16,
+    "messages_hash": "be3207022ecce85b17faf6564884b94b7a14d241f18e82a8f4d148f379e44d27",
+    "last_seq": 9,
+    "read_state": [],
+    "native_seen": [
+      {
+        "user_id": 6,
+        "last_viewed": null
+      }
+    ],
+    "friendship_rows": 2,
+    "blocked_rows": 0,
+    "queue_count": 1,
+    "credentials_returned": false
+  },
+  "counts": {
+    "user": 8,
+    "profile": 8,
+    "space": 0,
+    "space_membership": 0,
+    "user_auth": 0,
+    "message": 5,
+    "user_message": 9,
+    "message_entry": 28,
+    "file": 16,
+    "matcher_chat_conversation": 4,
+    "matcher_chat_entry_sequence": 28,
+    "matcher_chat_member": 8,
+    "matcher_chat_read_state": 3,
+    "matcher_chat_viewer_revision": 8,
+    "matcher_chat_send_receipt": 20,
+    "matcher_chat_attachment": 43,
+    "queue": 1,
+    "module_enabled": 3,
+    "migration": 233
+  },
+  "modules": {
+    "mail": {
+      "enabled": true,
+      "code_version": "3.4.6",
+      "installed_version": "3.4.6"
+    },
+    "matcher-chat-ui": {
+      "enabled": true,
+      "code_version": "0.3.0",
+      "installed_version": "0.3.0"
+    },
+    "matcher-chat": {
+      "enabled": true,
+      "code_version": "0.3.0",
+      "installed_version": "0.3.0"
+    }
+  },
+  "attachment_state_counts": {
+    "bound": 11,
+    "cancelled": 26,
+    "expired": 1,
+    "staged": 5
+  },
+  "native_files": 16,
+  "stored_files": 16,
+  "protected_hashes_unchanged": {
+    "AGENTS.md": true,
+    "docs/首次注册与开场引导_用户原稿_冻结.md": true,
+    "backend/protected/humhub/config/common.php": true,
+    "backend/protected/modules/mail/models/Message.php": true,
+    "backend/protected/modules/mail/models/MessageEntry.php": true,
+    "docs/群聊模块升级/09_C04隔离读取接线回执.md": true,
+    "docs/群聊模块升级/11_T1T2入口接管隔离验收.md": true
+  },
+  "core_hooks_intentional": [
+    "backend/protected/humhub/modules/file/models/File.php",
+    "backend/protected/humhub/modules/file/components/StorageManager.php"
+  ],
+  "credentials_returned": false,
+  "real_ai_calls": 0,
+  "main_preview_deployed": false
+}

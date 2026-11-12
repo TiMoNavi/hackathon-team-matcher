@@ -1,13 +1,17 @@
 import { validateClientMessageId, validateMessageBody } from "./send-input.js";
+import { ATTACHMENT_MAX_BYTES, ATTACHMENT_MAX_FILES, ATTACHMENT_MIME_TYPES, validAttachmentName, validateAttachmentId } from "./attachment-input.js";
+import type { AttachmentMime } from "./attachment-input.js";
 
 /** Chat wire contracts. Importing this module has no I/O or activation effect. */
 export type Permissions = Readonly<{ read: boolean; send: boolean; invite: boolean; leave: boolean }>;
 export type ConversationType = "direct" | "group" | "discussion";
 export type Sender = Readonly<{ status: "available"; user_id: number; display_name: string; avatar_ref: string | null }>
   | Readonly<{ status: "unavailable" }>;
-type MessageContent = Readonly<{ kind: "text" | "system"; body: string }> | Readonly<{ kind: "deleted"; body: null }>;
+type MessageContent = Readonly<{ kind: "text" | "system"; body: string }> | Readonly<{ kind: "deleted"; body: null }> | Readonly<{ kind: "attachment"; body: null }>;
 export type MessageSummary = Readonly<{ id: number; seq: number; sender: Sender; created_at: string }> & MessageContent;
-export type Message = MessageSummary & Readonly<{ conversation_id: number; attachments: readonly [] }>;
+export type Attachment = Readonly<{ id: string; name: string; mime: AttachmentMime; size: number; download_path: string }>;
+export type AttachmentCapability = Readonly<{ upload_enabled: boolean; download_enabled: boolean; max_file_bytes: number; max_files_per_message: number; allowed_mime_types: readonly AttachmentMime[]; staging_ttl_seconds: number }>;
+export type Message = MessageSummary & Readonly<{ conversation_id: number; attachments: readonly Attachment[] }>;
 type ConversationKind = Readonly<{ type: "direct" | "group" }>
   | Readonly<{ type: "discussion"; space_id: number; idea_activity_id: number }>;
 export type ConversationSummary = Readonly<{
@@ -17,12 +21,15 @@ export type ConversationSummary = Readonly<{
 export type ConversationContext = Readonly<{
   conversation_id: number; version: number; authorization_version: number; authorization_revision: number;
   membership_generation: number; history_after_seq: number; permissions: Permissions;
+  attachments?: AttachmentCapability;
 }> & ConversationKind;
 export type Page<T> = Readonly<{ items: readonly T[]; next_cursor: string | null; has_more: boolean }>;
 export type ConversationPage = Page<ConversationSummary> & Readonly<{ authorization_revision: number }>;
 export type MessagePage = Page<Message> & Readonly<{ read_seq: number; unread_count: number; context: ConversationContext }>;
 export type ReadState = Readonly<{ conversation_id: number; read_seq: number; unread_count: number; context: ConversationContext }>;
 export type SendReceipt = Readonly<{ message: Message; client_message_id: string; replayed: boolean; read_seq: number; unread_count: number; context: ConversationContext }>;
+export type UploadReceipt = Readonly<{ attachment: Attachment; client_upload_id: string; replayed: boolean; expires_at: string }>;
+export type CancelReceipt = Readonly<{ attachment_id: string; state: "cancelled" | "expired" }>;
 export type Envelope<T> = Readonly<{ data: T; meta: Readonly<{ request_id: string }> }>;
 export type JsonValue = null | boolean | number | string | readonly JsonValue[] | { readonly [key: string]: JsonValue };
 export type ErrorDetails = readonly JsonValue[] | { readonly [key: string]: JsonValue };
@@ -85,6 +92,10 @@ function messageFields(object: Record<string, unknown>): MessageSummary {
     if (object.body !== null || common.sender.status !== "unavailable") return invalid();
     return Object.freeze({ ...common, kind: "deleted", body: null });
   }
+  if (object.kind === "attachment") {
+    if (object.body !== null) return invalid();
+    return Object.freeze({ ...common, kind: "attachment", body: null });
+  }
   if (object.kind !== "text" && object.kind !== "system") return invalid();
   const body = text(object.body);
   if (/^[\p{White_Space}\p{Z}]*$/u.test(body)) return invalid();
@@ -95,8 +106,28 @@ function messageSummary(value: unknown): MessageSummary {
 }
 function message(value: unknown): Message {
   const object = exact(value, ["id", "conversation_id", "seq", "kind", "sender", "body", "created_at", "attachments"]);
-  if (!Array.isArray(object.attachments) || object.attachments.length !== 0) return invalid();
-  return Object.freeze({ ...messageFields(object), conversation_id: safeInteger(object.conversation_id, 1), attachments: Object.freeze([]) as readonly [] });
+  const conversation_id = safeInteger(object.conversation_id, 1);
+  if (!Array.isArray(object.attachments) || object.attachments.length > ATTACHMENT_MAX_FILES) return invalid();
+  const attachments = Object.freeze(object.attachments.map((entry) => parseAttachment(entry, conversation_id)));
+  if (new Set(attachments.map((entry) => entry.id)).size !== attachments.length
+    || object.kind === "attachment" && attachments.length === 0 || ["deleted", "system"].includes(String(object.kind)) && attachments.length > 0) return invalid();
+  return Object.freeze({ ...messageFields(object), conversation_id, attachments });
+}
+export function parseAttachment(value: unknown, conversationId: number): Attachment {
+  const object = exact(value, ["id", "name", "mime", "size", "download_path"]);
+  let id: string; try { id = validateAttachmentId(object.id); } catch { return invalid(); }
+  if (!validAttachmentName(object.name) || !ATTACHMENT_MIME_TYPES.includes(object.mime as AttachmentMime)
+    || safeInteger(object.size, 1) > ATTACHMENT_MAX_BYTES
+    || object.download_path !== "/api/v1/conversations/" + safeInteger(conversationId, 1) + "/attachments/" + id + "/download") return invalid();
+  return Object.freeze({ id, name: object.name, mime: object.mime as AttachmentMime, size: object.size as number, download_path: object.download_path as string });
+}
+function attachmentCapability(value: unknown): AttachmentCapability {
+  const object = exact(value, ["upload_enabled", "download_enabled", "max_file_bytes", "max_files_per_message", "allowed_mime_types", "staging_ttl_seconds"]);
+  if (object.max_file_bytes !== ATTACHMENT_MAX_BYTES || object.max_files_per_message !== ATTACHMENT_MAX_FILES || object.staging_ttl_seconds !== 86400
+    || !Array.isArray(object.allowed_mime_types) || object.allowed_mime_types.length !== ATTACHMENT_MIME_TYPES.length
+    || !object.allowed_mime_types.every((entry, index) => entry === ATTACHMENT_MIME_TYPES[index])) return invalid();
+  return Object.freeze({ upload_enabled: bool(object.upload_enabled), download_enabled: bool(object.download_enabled), max_file_bytes: ATTACHMENT_MAX_BYTES,
+    max_files_per_message: ATTACHMENT_MAX_FILES, allowed_mime_types: Object.freeze([...ATTACHMENT_MIME_TYPES]), staging_ttl_seconds: 86400 });
 }
 function conversation(value: unknown): ConversationSummary {
   const object = record(value);
@@ -106,11 +137,12 @@ function conversation(value: unknown): ConversationSummary {
 }
 function context(value: unknown): ConversationContext {
   const object = record(value);
-  exact(object, ["conversation_id", "type", "version", "authorization_version", "authorization_revision", "membership_generation", "history_after_seq", "permissions", ...kindKeys(object)]);
+  exact(object, ["conversation_id", "type", "version", "authorization_version", "authorization_revision", "membership_generation", "history_after_seq", "permissions", ...kindKeys(object), ...(Object.hasOwn(object, "attachments") ? ["attachments"] : [])]);
   if (object.type === "direct" && object.history_after_seq !== 0) return invalid();
   return Object.freeze({ ...kind(object), conversation_id: safeInteger(object.conversation_id, 1), version: safeInteger(object.version, 1),
     authorization_version: safeInteger(object.authorization_version, 1), authorization_revision: safeInteger(object.authorization_revision, 1), membership_generation: safeInteger(object.membership_generation, 1),
-    history_after_seq: safeInteger(object.history_after_seq), permissions: permissions(object.permissions) });
+    history_after_seq: safeInteger(object.history_after_seq), permissions: permissions(object.permissions),
+    ...(Object.hasOwn(object, "attachments") ? { attachments: attachmentCapability(object.attachments) } : {}) });
 }
 function meta(value: unknown): Readonly<{ request_id: string }> {
   const object = exact(value, ["request_id"]);
@@ -149,7 +181,7 @@ export function parseMessagePage(value: unknown, mode: HistoryMode = "history"):
   const entries = items(data.items, message); uniqueIds(entries);
   let previous = authority.history_after_seq;
   for (const entry of entries) {
-    if (entry.conversation_id !== authority.conversation_id || entry.seq <= previous) return invalid();
+    if (entry.conversation_id !== authority.conversation_id || entry.seq <= previous || entry.attachments.length > 0 && authority.attachments === undefined) return invalid();
     previous = entry.seq;
   }
   return Object.freeze({ data: Object.freeze({ items: entries, ...pagination(data, entries.length, mode), read_seq: safeInteger(data.read_seq),
@@ -170,12 +202,27 @@ export function parseSendReceipt(value: unknown): Envelope<SendReceipt> {
   const envelope = exact(value, ["data", "meta"]);
   const data = exact(envelope.data, ["message", "client_message_id", "replayed", "read_seq", "unread_count", "context"]);
   const authority = context(data.context); const entry = message(data.message); const replayed = bool(data.replayed);
-  if (authority.type !== "direct" || (entry.kind !== "text" && !(replayed && entry.kind === "deleted")) || entry.conversation_id !== authority.conversation_id
+  if (authority.type !== "direct" || (!["text", "attachment"].includes(entry.kind) && !(replayed && entry.kind === "deleted")) || entry.conversation_id !== authority.conversation_id
+    || entry.attachments.length > 0 && authority.attachments === undefined
     || entry.seq <= authority.history_after_seq || safeInteger(data.read_seq) < authority.history_after_seq) return invalid();
   let key: string;
-  try { key = validateClientMessageId(data.client_message_id); if (!replayed) validateMessageBody(entry.body); } catch { return invalid(); }
+  try { key = validateClientMessageId(data.client_message_id); if (!replayed && entry.kind !== "attachment") validateMessageBody(entry.body); } catch { return invalid(); }
   return Object.freeze({ data: Object.freeze({ message: entry, client_message_id: key, replayed,
     read_seq: safeInteger(data.read_seq), unread_count: safeInteger(data.unread_count), context: authority }), meta: meta(envelope.meta) });
+}
+
+export function parseUploadReceipt(value: unknown, conversationId: number): Envelope<UploadReceipt> {
+  const envelope = exact(value, ["data", "meta"]);
+  const data = exact(envelope.data, ["attachment", "client_upload_id", "replayed", "expires_at"]);
+  let key: string; try { key = validateAttachmentId(data.client_upload_id); } catch { return invalid(); }
+  return Object.freeze({ data: Object.freeze({ attachment: parseAttachment(data.attachment, conversationId), client_upload_id: key,
+    replayed: bool(data.replayed), expires_at: utc(data.expires_at) }), meta: meta(envelope.meta) });
+}
+export function parseCancelReceipt(value: unknown): Envelope<CancelReceipt> {
+  const envelope = exact(value, ["data", "meta"]); const data = exact(envelope.data, ["attachment_id", "state"]);
+  let id: string; try { id = validateAttachmentId(data.attachment_id); } catch { return invalid(); }
+  if (data.state !== "cancelled" && data.state !== "expired") return invalid();
+  return Object.freeze({ data: Object.freeze({ attachment_id: id, state: data.state }), meta: meta(envelope.meta) });
 }
 
 function json(value: unknown, ancestors: Set<object>, depth = 0): JsonValue {

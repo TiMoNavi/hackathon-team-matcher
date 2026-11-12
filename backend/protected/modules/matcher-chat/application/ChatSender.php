@@ -26,7 +26,8 @@ final class ChatSender
             } else {
                 $this->writes->assertQuota($viewerId);
                 $message = $this->writes->append($viewerId, $conversationId, $text);
-                if ($message->kind !== 'text' || $message->body !== $text->body) { throw new ChatException('INVALID_SEND_PROJECTION', 'The persisted text differs from the command.', 503); }
+                if ($message->kind !== ($text->body === '' ? 'attachment' : 'text') || $message->body !== ($text->body === '' ? null : $text->body)
+                    || array_map(static fn ($file): string => $file->id, $message->attachments) !== $text->attachmentIds) { throw new ChatException('INVALID_SEND_PROJECTION', 'The persisted message differs from the command.', 503); }
                 $this->writes->remember($viewerId, $conversationId, $text, $message);
             }
             if (!$message instanceof Message || $message->conversationId !== $conversationId || ($message->kind !== 'deleted' && $message->senderId !== $viewerId)) {

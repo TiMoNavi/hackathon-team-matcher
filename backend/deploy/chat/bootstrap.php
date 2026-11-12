@@ -79,6 +79,19 @@ $config['components']['assetManager']['baseUrl'] = '/assets';
 $config['components']['assetManager']['linkAssets'] = false;
 $config['components']['fs']['mounts']['assets']['path'] = $chatRuntime . '/assets';
 $config['components']['fs']['mounts']['data']['path'] = $chatRuntime . '/uploads';
+// C05B owns a separate non-webroot native data mount; no existing file relocation.
+$privateFiles = $backend . '/.runtime/chat-upgrade-files';
+if (file_exists($privateFiles) || is_link($privateFiles)) {
+    chatPrivatePath($privateFiles, 0700, true);
+    chatPrivatePath($privateFiles . '/data', 0700, true);
+    chatPrivatePath($privateFiles . '/marker.json', 0600);
+    $filesMarker = json_decode(file_get_contents($privateFiles . '/marker.json'), true, 8, JSON_THROW_ON_ERROR);
+    if ($filesMarker !== ['spec' => 'chat-c05b-files-v1', 'database' => $chatConfig['database'], 'nonce' => $chatConfig['nonce']]) {
+        throw new RuntimeException('Private attachment mount provenance mismatch.');
+    }
+    $config['components']['fs']['mounts']['data']['path'] = $privateFiles . '/data';
+}
+
 $config['components']['urlManager']['enablePrettyUrl'] = true;
 $config['components']['urlManager']['showScriptName'] = false;
 $config['components']['urlManager']['baseUrl'] = '';
@@ -87,6 +100,7 @@ if ($chatInstalled) {
     $config['modules']['matcher-chat']['integrationReady'] = true;
     $config['modules']['matcher-chat']['cursorSecret'] = hash_hkdf('sha256', $chatConfig['cookie_key'], 32, 'chat-c04-cursor-v1', $chatConfig['nonce']);
     $config['modules']['matcher-chat']['nativeTimeZone'] = 'UTC';
+    $config['modules']['matcher-chat']['attachmentsEnabled'] = true; // Fixed C05B isolation only; stored opt-in stays off.
     $config['modules']['matcher-chat']['sendEnabled'] = true; // Fixed C05 isolation only; stored opt-in remains off.
     $config['modules']['matcher-chat']['entryTakeoverEnabled'] = true; // Fixed isolated target; stored opt-in stays off.
     $config['modules']['matcher-chat-ui']['readUiEnabled'] = true;

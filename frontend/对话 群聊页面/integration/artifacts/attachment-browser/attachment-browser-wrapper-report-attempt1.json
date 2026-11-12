@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "fixture": "chat-c05b-attachment-v1",
+  "target": "http://127.0.0.1:8124",
+  "synthetic_only": true,
+  "credentials_returned": false,
+  "credentials_transport": "anonymous-child-stdin",
+  "real_ai_calls": 0,
+  "legacy_preserved": true,
+  "gates_restored": true,
+  "child": {
+    "passed": false,
+    "checks": 4,
+    "normalNativeFormLogins": 2,
+    "newMessages": 0,
+    "sendPosts": 1,
+    "uploadPosts": 1,
+    "cancelDeletes": 0,
+    "failedStage": "peer-download",
+    "report": "integration/artifacts/attachment-browser/attachment-browser-report.json"
+  },
+  "queue_preserved": true,
+  "native_seen_unchanged": true,
+  "new_messages": 1,
+  "fixture_messages": 4,
+  "read_state_before": [],
+  "read_state_after": [],
+  "failed_stage": "browser",
+  "reason": "Browser send checks failed."
+}

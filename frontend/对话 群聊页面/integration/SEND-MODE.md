@@ -1,5 +1,7 @@
 # C06-T 文字发送与公共客户端
 
+后续 C06-A 0.3.0 扩展为可选 attachmentIds 与授权附件 helper，见 [ATTACHMENT-MODE.md](ATTACHMENT-MODE.md)。本文保留 C06-T 文字阶段原合同/97项回执；其中“附件未交付”是原阶段边界，不覆盖新响应协商能力。
+
 2026-11-12。本文记录聊天 integration 源码与离线验证；真实 SQL/HTTP/浏览器和资源发布由主集成人另行验收。原 C04/T1/T2 浏览器产物未改写。入口仍为 v2/read 十字段 bootstrap，不新增用户身份、好友或会话事实。
 
 ## 资格与交互

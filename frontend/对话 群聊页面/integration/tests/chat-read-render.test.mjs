@@ -33,6 +33,58 @@ const { parseReadBootstrap } = await import("../src/chat/read-bootstrap.ts");
 const links = { home: "/dashboard", login: "/user/auth/login" };
 const config = parseReadBootstrap({ schema_version: 2, integration_stage: "read", base_path: "/matcher/chat", api_base: "/api/v1", native_home_url: links.home, native_login_url: links.login, native_chat_url: "/mail/mail/index", csrf_header: "X-CSRF-Token", csrf_token: "synthetic-render-csrf", actor_id: 7 }, "https://same-origin.invalid");
 const render = (controller, pathname = "/matcher/chat") => renderToStaticMarkup(createElement(ReadEntry, { controller, links, pathname }));
+const attachmentId = "11234567-89ab-4cde-8fab-0123456789ab";
+const attachmentPermissions = { read: true, send: true, invite: false, leave: false };
+const attachmentCapability = { upload_enabled: true, download_enabled: true, max_file_bytes: 5242880, max_files_per_message: 3,
+  allowed_mime_types: ["image/jpeg", "image/png", "application/pdf", "text/plain"], staging_ttl_seconds: 86400 };
+const attachmentDto = { id: attachmentId, name: "synthetic <file>.txt", mime: "text/plain", size: 5,
+  download_path: "/api/v1/conversations/1/attachments/" + attachmentId + "/download" };
+const attachmentContext = context(1, { permissions: attachmentPermissions, attachments: attachmentCapability });
+const attachmentHistory = (entries = []) => messagePage(1, entries, { context: attachmentContext });
+
+test("attachment picker appears only for response capability and selection remains local with accessible upload action", async () => {
+  let writes = 0; const controller = createReadController(config, async (url, init) => { if (init.method !== "GET") writes++; return response(url.includes("messages") ? attachmentHistory() : conversationPage([summary(1, { permissions: attachmentPermissions })])); });
+  await controller.start("/matcher/chat/conversations/1"); let html = render(controller);
+  assert.match(html, /id="chat-attachment-input"[^>]*multiple=""/); assert.match(html, /aria-label="添加附件"/);
+  assert.ok(html.includes("附件与文字已开放")); assert.ok(html.includes("最多暂存 20 件")); assert.ok(html.includes("24 小时后失效"));
+  controller.selectAttachments([new File(["hello"], attachmentDto.name, { type: "text/plain" })]); html = render(controller);
+  assert.ok(html.includes('data-upload-state="selected"')); assert.ok(html.includes("synthetic &lt;file&gt;.txt")); assert.ok(html.includes("尚未上传"));
+  assert.ok(html.includes("上传附件 synthetic &lt;file&gt;.txt")); assert.equal(writes, 0); assert.ok(!html.includes("blob:"));
+});
+
+test("attachment upload error is announced with explicit same-upload recovery and no fake sent message", async () => {
+  const controller = createReadController(config, async (url, init) => {
+    if (init.method === "POST") throw new Error("synthetic lost upload");
+    return response(url.includes("messages") ? attachmentHistory() : conversationPage([summary(1, { permissions: attachmentPermissions })]));
+  });
+  await controller.start("/matcher/chat/conversations/1"); controller.selectAttachments([new File(["hello"], attachmentDto.name)]);
+  await controller.uploadAttachment(controller.snapshot().attachments[0].clientUploadId); const html = render(controller);
+  assert.ok(html.includes('data-upload-state="upload_unknown"')); assert.ok(html.includes('role="alert"')); assert.ok(html.includes("上传结果待确认"));
+  assert.ok(html.includes("重试上传 synthetic &lt;file&gt;.txt")); assert.ok(html.includes("放弃上传重试 synthetic &lt;file&gt;.txt"));
+  assert.ok(!html.includes("data-message-id")); assert.ok(!html.includes("已发送。此状态不代表对方已收到或已读。"));
+  assert.ok(!html.includes("读取失败，请检查连接"));
+});
+
+test("authorized message attachments render escaped names and buttons without naked server download URLs", async () => {
+  let downloads = 0; const controller = createReadController(config, async (url) => { if (url.endsWith("/download")) downloads++;
+    return response(url.includes("messages") ? attachmentHistory([message(1, 1, { kind: "attachment", body: null, attachments: [attachmentDto] })]) : conversationPage([summary(1, { permissions: attachmentPermissions })])); });
+  await controller.start("/matcher/chat/conversations/1"); const html = render(controller);
+  assert.ok(html.includes('data-attachment-id="' + attachmentId + '"')); assert.ok(html.includes("下载附件 synthetic &lt;file&gt;.txt"));
+  assert.ok(!html.includes('href="' + attachmentDto.download_path)); assert.ok(!html.includes("<img")); assert.equal(downloads, 0);
+});
+
+test("download presentation exposes only owned blob after valid bytes and clears it on navigation", async () => {
+  const historical = messagePage(1, [message(1, 1, { kind: "attachment", body: null, attachments: [attachmentDto] })],
+    { context: context(1, { permissions: { ...attachmentPermissions, send: false }, attachments: { ...attachmentCapability, upload_enabled: false } }) });
+  const revoked = []; const controller = createReadController(config, async (url) => {
+    if (url.endsWith("/download")) return new Response("hello", { status: 200, headers: { "content-type": "text/plain", "content-disposition": "attachment", "cache-control": "private, no-store", "x-content-type-options": "nosniff" } });
+    return response(url.includes("messages") ? historical : conversationPage([summary(1, { permissions: { ...attachmentPermissions, send: false } })]));
+  }, { create: () => "blob:synthetic-authorized", revoke: (url) => revoked.push(url) });
+  await controller.start("/matcher/chat/conversations/1"); await controller.downloadAttachment(attachmentId); const html = render(controller);
+  assert.ok(html.includes('href="blob:synthetic-authorized"')); assert.ok(html.includes("保存附件 synthetic &lt;file&gt;.txt")); assert.ok(html.includes("关闭下载"));
+  assert.ok(html.includes("新附件上传暂不可用；已有附件可按权限下载")); assert.ok(!html.includes("附件与群聊尚未开放"));
+  await controller.navigate("/matcher/chat"); assert.ok(!render(controller).includes("blob:synthetic-authorized")); assert.deepEqual(revoked, ["blob:synthetic-authorized"]);
+});
 
 test("actual read component is inert when idle and keeps send, attachments and group controls disabled", () => {
   let calls = 0; const controller = createReadController(config, async () => { calls++; return response(conversationPage()); });

@@ -1,13 +1,17 @@
 import { ChatApiError } from "./http.js";
 import type { ChatApi } from "./http.js";
 import { ChatContractError, parseConversationPage, parseMessagePage, parseReadState, parseSendReceipt, safeInteger } from "./contracts.js";
-import type { ConversationContext, ConversationSummary, Message, MessagePage, ReadState, SendReceipt } from "./contracts.js";
-import type { SendOptions } from "./http.js";
+import type { ConversationContext, ConversationSummary, Message, MessagePage, ReadState, SendReceipt, UploadReceipt, CancelReceipt } from "./contracts.js";
+import type { SendOptions, UploadOptions, CancelOptions, DownloadOptions, DownloadedAttachment } from "./http.js";
 
 export type OperationResult = "applied" | "ignored" | "aborted" | "failed";
 export type OperationOptions = Readonly<{ signal?: AbortSignal; limit?: number }>;
 type Phase = "idle" | "loading" | "ready" | "error";
-type ActiveOperation = "history" | "older" | "increment" | "read-state" | "send";
+type ReadOperation = "history" | "older" | "increment" | "read-state";
+type AttachmentOperation = "attachment-upload" | "attachment-cancel" | "attachment-download";
+type ActiveOperation = ReadOperation | "send" | AttachmentOperation;
+export type AttachmentOperationResult<T> = Readonly<{ status: "applied"; value: T }>
+  | Readonly<{ status: "failed"; error: ChatApiError }> | Readonly<{ status: "ignored" | "aborted" }>;
 export type SendOperationResult = Readonly<{ status: "applied"; receipt: SendReceipt }>
   | Readonly<{ status: "failed"; error: ChatApiError }> | Readonly<{ status: "ignored" | "aborted" }>;
 export type ConversationListState = Readonly<{
@@ -34,6 +38,9 @@ export interface ChatState {
   loadNewer(options?: OperationOptions): Promise<OperationResult>;
   markRead(readSeq: number, options?: Pick<OperationOptions, "signal">): Promise<OperationResult>;
   sendText(options: SendOptions): Promise<SendOperationResult>;
+  uploadAttachment(options: UploadOptions): Promise<AttachmentOperationResult<UploadReceipt>>;
+  cancelAttachment(options: CancelOptions): Promise<AttachmentOperationResult<CancelReceipt>>;
+  downloadAttachment(options: DownloadOptions): Promise<AttachmentOperationResult<DownloadedAttachment>>;
   /** Use after a known server permission change; never infer this from switching Space. */
   invalidateConversation(id: number): void;
   abort(): void;
@@ -52,7 +59,7 @@ function contextKey(value: ConversationContext | null): string | null {
   if (value === null) return null;
   return JSON.stringify([value.conversation_id, value.type, value.version, value.authorization_version, value.authorization_revision, value.membership_generation, value.history_after_seq,
     value.permissions.read, value.permissions.send, value.permissions.invite, value.permissions.leave,
-    value.type === "discussion" ? value.space_id : null, value.type === "discussion" ? value.idea_activity_id : null]);
+    value.type === "discussion" ? value.space_id : null, value.type === "discussion" ? value.idea_activity_id : null, value.attachments ?? null]);
 }
 function failure(error: unknown): ChatApiError {
   if (error instanceof ChatApiError) return error;
@@ -216,7 +223,7 @@ export function createChatState(): ChatState {
     }
     return Object.freeze([...bySeq.values()].sort((a, b) => a.seq - b.seq));
   }
-  async function loadActive(operation: Exclude<ActiveOperation, "send">, value: OperationOptions = {}, requestedReadSeq?: number): Promise<OperationResult> {
+  async function loadActive(operation: ReadOperation, value: OperationOptions = {}, requestedReadSeq?: number): Promise<OperationResult> {
     checkedOptions(value); const port = requireSession(); const selected = requireActive();
     if (activeTask) return inputError();
     if (operation !== "history" && (!selected.context || !selected.context.permissions.read)) return inputError();
@@ -277,13 +284,16 @@ export function createChatState(): ChatState {
     const port = requireSession(); const selected = requireActive();
     if (activeTask || selected.phase !== "ready" || !selected.context || selected.context.type !== "direct"
       || selected.context.permissions.send !== true || typeof port.sendText !== "function") return inputError();
+    if ((value.attachmentIds?.length ?? 0) > 0 && selected.context.attachments?.upload_enabled !== true) return inputError();
     const work = task(value.signal, true); activeTask = work;
     publish({ active: Object.freeze({ ...selected, operation: "send", error: null }) });
     try {
       const data = parseSendReceipt(await port.sendText(selected.id, { ...value, signal: work.controller.signal })).data;
       if (!matches(work)) return { status: "ignored" };
       if (work.controller.signal.aborted) { finishAborted(work); return { status: "aborted" }; }
-      if (data.context.conversation_id !== selected.id || data.client_message_id !== value.clientMessageId || !data.replayed && data.message.body !== value.body) throw new ChatContractError();
+      if (data.context.conversation_id !== selected.id || data.client_message_id !== value.clientMessageId
+        || !data.replayed && (data.message.body !== (value.body === "" ? null : value.body)
+          || JSON.stringify(data.message.attachments.map((entry) => entry.id)) !== JSON.stringify(value.attachmentIds ?? []))) throw new ChatContractError();
       if (authorizationRevision !== null && data.context.authorization_revision !== authorizationRevision) {
         throw new ChatApiError(409, "AUTHORIZATION_CHANGED", "Chat access changed while sending.");
       }
@@ -291,6 +301,8 @@ export function createChatState(): ChatState {
       if (data.read_seq < selected.readSeq!) throw new ChatContractError();
       // The receipt confirms persistence, not delivery or reading. Do not append
       // its message and skip concurrent seqs: the caller explicitly reloads GET.
+      // A pre-replay list response must not restore a summary we just cleared.
+      if (data.replayed) { endTask(listTask); listTask = null; }
       publish({ active: Object.freeze({ ...selected, operation: null, messages: data.replayed ? Object.freeze([]) : selected.messages,
         readSeq: data.read_seq, unreadCount: data.unread_count, error: null }),
         conversations: data.replayed ? emptyList() : Object.freeze({ ...current.conversations, items: Object.freeze(current.conversations.items.map((entry) => entry.id === selected.id
@@ -305,6 +317,31 @@ export function createChatState(): ChatState {
         && matches(work) && !work.controller.signal.aborted && current.active) {
         publish({ active: Object.freeze({ ...current.active, operation: null, error: problem }) });
         return { status: "failed", error: problem };
+      }
+      const result = rejectTask(work, problem);
+      return result === "failed" ? { status: "failed", error: problem } : { status: result === "aborted" ? "aborted" : "ignored" };
+    } finally { release(work); }
+  }
+  async function transfer<T>(operation: AttachmentOperation, signal: AbortSignal | undefined,
+    execute: (port: ChatApi, id: number, signal: AbortSignal) => Promise<T>): Promise<AttachmentOperationResult<T>> {
+    const port = requireSession(); const selected = requireActive(); const capability = selected.context?.attachments;
+    if (activeTask || selected.phase !== "ready" || selected.context?.type !== "direct"
+      || (operation === "attachment-download" ? capability?.download_enabled !== true
+        : capability?.upload_enabled !== true || selected.context.permissions.send !== true)) return inputError();
+    const work = task(signal, true); activeTask = work; publish({ active: Object.freeze({ ...selected, operation, error: null }) });
+    try {
+      const value = await execute(port, selected.id, work.controller.signal);
+      if (!matches(work)) return { status: "ignored" };
+      if (work.controller.signal.aborted) { finishAborted(work); return { status: "aborted" }; }
+      publish({ active: Object.freeze({ ...selected, operation: null, error: null }) });
+      return { status: "applied", value };
+    } catch (error) {
+      const problem = failure(error);
+      if (problem.status !== 401 && (!invalidatesAuthorization(problem) || operation !== "attachment-download" && problem.code === "INVALID_RESPONSE" && ![403, 404].includes(problem.status))
+        && matches(work) && !work.controller.signal.aborted && current.active) {
+        // The owning attachment control presents its failure; it is not a
+        // failed history read. Authorization failures still clear state below.
+        publish({ active: Object.freeze({ ...current.active, operation: null, error: null }) }); return { status: "failed", error: problem };
       }
       const result = rejectTask(work, problem);
       return result === "failed" ? { status: "failed", error: problem } : { status: result === "aborted" ? "aborted" : "ignored" };
@@ -333,6 +370,17 @@ export function createChatState(): ChatState {
     loadNewer: (value: OperationOptions = {}) => loadActive("increment", value),
     markRead: (readSeq: number, value: Pick<OperationOptions, "signal"> = {}) => loadActive("read-state", value, readSeq),
     sendText,
+    uploadAttachment(value: UploadOptions) {
+      return transfer("attachment-upload", value.signal, async (port, id, signal) => (await port.uploadAttachment(id, { ...value, signal })).data);
+    },
+    cancelAttachment(value: CancelOptions) {
+      return transfer("attachment-cancel", value.signal, async (port, id, signal) => (await port.cancelAttachment(id, { ...value, signal })).data);
+    },
+    downloadAttachment(value: DownloadOptions) {
+      const selected = requireActive();
+      if (!selected.messages.some((entry) => entry.attachments.some((attachment) => JSON.stringify(attachment) === JSON.stringify(value.attachment)))) return inputError();
+      return transfer("attachment-download", value.signal, (port, id, signal) => port.downloadAttachment(id, { ...value, signal }));
+    },
     invalidateConversation(id: number) { requireSession(); try { safeInteger(id, 1); } catch { return inputError(); } revoke(id, null); },
     abort() {
       if (current.status === "disposed") return;

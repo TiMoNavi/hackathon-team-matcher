@@ -20,6 +20,7 @@ final class AccessGrant
         public readonly bool $leaveAllowed = false,
         public readonly ?int $spaceId = null,
         public readonly ?int $ideaActivityId = null,
+        public readonly ?array $attachments = null,
     ) {
         SafeInteger::positive($viewerId, 'viewer_id');
         SafeInteger::positive($conversationId, 'conversation_id');
@@ -57,6 +58,6 @@ final class AccessGrant
     public function context(Conversation $conversation, int $authorizationRevision): array
     {
         SafeInteger::positive($authorizationRevision, 'authorization_revision');
-        return ['conversation_id' => $conversation->id, 'type' => $conversation->type, 'version' => $conversation->version, 'authorization_version' => $this->authorizationVersion, 'authorization_revision' => $authorizationRevision, 'membership_generation' => $this->generation, 'history_after_seq' => $this->joinSeq, 'permissions' => $this->permissions()] + $conversation->activityFields();
+        return ['conversation_id' => $conversation->id, 'type' => $conversation->type, 'version' => $conversation->version, 'authorization_version' => $this->authorizationVersion, 'authorization_revision' => $authorizationRevision, 'membership_generation' => $this->generation, 'history_after_seq' => $this->joinSeq, 'permissions' => $this->permissions()] + $conversation->activityFields() + ($this->attachments === null ? [] : ['attachments' => $this->attachments]);
     }
 }

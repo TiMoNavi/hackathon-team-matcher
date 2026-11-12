@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-if (PHP_SAPI !== 'cli' || !in_array($argv[1] ?? '', ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off'], true)) {
+if (PHP_SAPI !== 'cli' || !in_array($argv[1] ?? '', ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off', 'chat-attachments-on', 'chat-attachments-off'], true)) {
     fwrite(STDERR, 'Use a fixed chat harness action.' . PHP_EOL); exit(2);
 }
 ob_start();
@@ -95,10 +95,18 @@ try {
         $app->moduleManager->flushCache();
         if ($chat->isSendingEnabled() !== ($action === 'chat-send-on')) { throw new RuntimeException('Send intention did not change.'); }
     }
+    if (in_array($action, ['chat-attachments-on', 'chat-attachments-off'], true)) {
+        if ($chatConfig['modules'] !== ['mail', 'matcher-chat-ui', 'matcher-chat']) { throw new RuntimeException('Fixed modules absent.'); }
+        $chat = $app->moduleManager->getModule('matcher-chat', false);
+        if (!$chat || !$chat->isEnabled || !method_exists($chat, 'isAttachmentsEnabled')) { throw new RuntimeException('Attachment contract absent.'); }
+        $chat->settings->set('attachmentsEnabled', $action === 'chat-attachments-on' ? '1' : '0');
+        $app->moduleManager->flushCache();
+        if ($chat->isAttachmentsEnabled() !== ($action === 'chat-attachments-on')) { throw new RuntimeException('Attachment intention did not change.'); }
+    }
     $counts = [];
     $business = ['user', 'profile', 'space', 'space_membership', 'user_auth', 'message', 'user_message', 'message_entry', 'file'];
     if (in_array('matcher-chat', $chatConfig['modules'], true)) {
-        $business = array_merge($business, ['matcher_chat_conversation', 'matcher_chat_entry_sequence', 'matcher_chat_member', 'matcher_chat_read_state', 'matcher_chat_viewer_revision', 'matcher_chat_send_receipt']);
+        $business = array_merge($business, ['matcher_chat_conversation', 'matcher_chat_entry_sequence', 'matcher_chat_member', 'matcher_chat_read_state', 'matcher_chat_viewer_revision', 'matcher_chat_send_receipt', 'matcher_chat_attachment']);
     }
     foreach (array_merge($business, ['queue', 'module_enabled', 'migration']) as $table) {
         $schema = $db->schema->getTableSchema('{{%' . $table . '}}', true);
@@ -124,7 +132,7 @@ try {
             && $module['installed_version'] === $module['code_version'];
     }
     if (in_array('matcher-chat', $chatConfig['modules'], true)) {
-        foreach (['matcher_chat_lock', 'matcher_chat_conversation', 'matcher_chat_entry_sequence', 'matcher_chat_member', 'matcher_chat_read_state', 'matcher_chat_viewer_revision', 'matcher_chat_send_receipt'] as $table) {
+        foreach (['matcher_chat_lock', 'matcher_chat_conversation', 'matcher_chat_entry_sequence', 'matcher_chat_member', 'matcher_chat_read_state', 'matcher_chat_viewer_revision', 'matcher_chat_send_receipt', 'matcher_chat_attachment'] as $table) {
             if ($db->schema->getTableSchema('{{%' . $table . '}}', true) === null) { $result['baseline_installed'] = false; $result['empty_business_data'] = false; }
         }
     }
@@ -135,6 +143,7 @@ try {
     }
     if (in_array('matcher-chat', $chatConfig['modules'], true)) {
         $chat = $app->moduleManager->getModule('matcher-chat', false);
+        $result['chat_attachments_enabled'] = $chat !== null && $chat->isEnabled && method_exists($chat, 'isAttachmentsEnabled') && $chat->isAttachmentsEnabled();
         $result['chat_send_enabled'] = $chat !== null && $chat->isEnabled && method_exists($chat, 'isSendingEnabled') && $chat->isSendingEnabled();
         $result['chat_read_enabled'] = $chat !== null && $chat->isEnabled && method_exists($chat, 'isReadingEnabled') && $chat->isReadingEnabled();
         $result['chat_entry_takeover_enabled'] = $chat !== null && $chat->isEnabled && method_exists($chat, 'isEntryTakeoverEnabled') && $chat->isEntryTakeoverEnabled();

@@ -11,7 +11,7 @@ final class SqlSendStore implements SendRepository, ConsistencyBoundary
     private bool $active = false;
     private ?int $now = null;
     private array $invalidate = [];
-    public function __construct(private readonly SqlState $sql, private readonly SqlReadStore $reads, private readonly int $viewerId) {}
+    public function __construct(private readonly SqlState $sql, private readonly SqlReadStore $reads, private readonly int $viewerId, private readonly ?SqlAttachmentStore $attachments = null) {}
 
     public function run(callable $operation): mixed
     {
@@ -69,6 +69,10 @@ final class SqlSendStore implements SendRepository, ConsistencyBoundary
             'type' => 0, 'content' => self::nativeText($text->body), 'created_at' => $nativeTime, 'created_by' => $viewerId,
             'updated_at' => $nativeTime, 'updated_by' => $viewerId])->execute();
         $id = SafeInteger::native($this->sql->db->getLastInsertID(), 'entry_id');
+        if ($text->attachmentIds !== []) {
+            if ($this->attachments === null) { throw new ChatException('CHAT_ATTACHMENTS_UNAVAILABLE', 'Attachment sending is unavailable.', 503); }
+            $this->attachments->bind($conversationId, $id, $text->attachmentIds);
+        }
         $this->sql->db->createCommand()->update('{{%message}}', ['updated_at' => $nativeTime, 'updated_by' => $viewerId], ['id' => $conversationId])->execute();
         $state = $this->sql->synchronize($conversationId);
         $seq = SafeInteger::native($state['last_seq'], 'seq');

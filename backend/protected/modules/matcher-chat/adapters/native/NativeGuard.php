@@ -33,13 +33,20 @@ final class NativeGuard
     public function fileManaged(mixed $guid): bool
     {
         if (!is_string($guid) || $guid === '' || strlen($guid) > 128) { return false; }
-        $file = $this->sql->one('SELECT object_model,object_id FROM {{%file}} WHERE guid=:guid', [':guid' => $guid]);
-        return $file !== null && $this->fileAssociationManaged($file['object_model'], $file['object_id']);
+        $file = $this->sql->one('SELECT id,object_model,object_id FROM {{%file}} WHERE guid=:guid', [':guid' => $guid]);
+        return $this->sql->registeredFile($file['id'] ?? null, $guid) || ($file !== null && $this->fileAssociationManaged($file['object_model'], $file['object_id']));
+    }
+    public function fileIdManaged(mixed $id): bool
+    {
+        $id = $this->id($id); if ($id === null) { return false; }
+        $file = $this->sql->one('SELECT guid,object_model,object_id FROM {{%file}} WHERE id=:id', [':id' => $id]);
+        return $this->sql->registeredFile($id, $file['guid'] ?? null) || ($file !== null && $this->fileAssociationManaged($file['object_model'], $file['object_id']));
     }
     public function fileAssociationManaged(mixed $model, mixed $id): bool
     {
         if (!is_string($model)) { return false; }
         $model = strtolower(ltrim($model, '\\'));
+        if (str_starts_with($model, 'humhub\\modules\\matcherchat\\models\\')) { return true; }
         if (!in_array($model, ['humhub\\modules\\mail\\models\\messageentry', 'humhub\\modules\\mail\\models\\abstractmessageentry', 'humhub\\modules\\mail\\models\\states\\messageuserjoined', 'humhub\\modules\\mail\\models\\states\\messageuserleft'], true)) { return false; }
         if ($this->id($id) === null) { $this->deny(); }
         return $this->entryManaged($id);
@@ -49,6 +56,9 @@ final class NativeGuard
     public function request(string $route, array $query, array $body, ?int $viewerId, bool $pollProtected = false): void
     {
         $route = trim($route, '/');
+        if ($route === 'rest/file/file/download') {
+            if ($this->id($query['id'] ?? $body['id'] ?? null) === null || $this->fileIdManaged($query['id'] ?? $body['id'] ?? null)) { $this->deny(); }
+        }
         if ($route === 'file' || str_starts_with($route, 'file/')) {
             foreach ([$query, $body] as $input) {
                 if (array_key_exists('guid', $input) && (!is_string($input['guid']) || !preg_match('/^[A-Za-z0-9][A-Za-z0-9-]{0,63}$/D', $input['guid']))) { $this->deny(); }
@@ -56,6 +66,11 @@ final class NativeGuard
         }
         if ($route === 'file' || str_starts_with($route, 'file/')) {
             foreach ([$query['guid'] ?? null, $body['guid'] ?? null] as $guid) { if ($this->fileManaged($guid)) { $this->deny(); } }
+            foreach ([$query, $body] as $input) {
+                if (!array_key_exists('fileList', $input)) { continue; }
+                if (!is_array($input['fileList']) || count($input['fileList']) > 100) { $this->deny(); }
+                foreach ($input['fileList'] as $guid) { if (!is_string($guid) || $this->fileManaged($guid)) { $this->deny(); } }
+            }
         }
         // REST replaces the session actor later. Fail closed for its entire mail surface.
         if (str_starts_with($route, 'mail/rest/') && $this->hasAny()) { $this->deny(); }
@@ -98,6 +113,8 @@ final class NativeGuard
                 if ($id !== null && ($this->id($id) === null || $this->managed($id))) { $this->deny(); }
             }
         } elseif ($record instanceof \humhub\modules\file\models\File) {
+            foreach ([$record->id, $record->getOldAttribute('id')] as $id) { if ($this->fileIdManaged($id)) { $this->deny(); } }
+            foreach ([$record->guid, $record->getOldAttribute('guid')] as $guid) { if ($this->fileManaged($guid)) { $this->deny(); } }
             if ($this->fileAssociationManaged($record->object_model, $record->object_id) || $this->fileAssociationManaged($record->getOldAttribute('object_model'), $record->getOldAttribute('object_id'))) { $this->deny(); }
         }
     }

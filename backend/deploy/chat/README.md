@@ -147,3 +147,19 @@ router对Yii测试模式下已经发送完毕的成功ExitException保留原响�
 - 没有 cleanup 或数据模块卸载入口；使用后可 stop 保留验证现场。未来需要清理时另行明确审核固定目标和数据归属。
 - 不调用主预览脚本、overnight 工具或主服务 stop/start；新 UI 撤回绝不 disable mail。
 - 所有真实命令和结果由主agent追加到 [聊天实施记录](../../../docs/群聊模块升级/02_实施记录.md)。离线测试回执与真实安装/HTTP/恢复回执必须分别记录。
+
+
+### C05-B 固定附件验证（0.3.0）
+
+本轮以 [15 附件合同与回执](../../../docs/群聊模块升级/15_C05附件接线与验收.md) 为当前入口。三新虚构账号和一个新 direct 使用独立 c05b-fixture.json / _chat_c05b_fixture 归属；此前 C04/C05-A 共19条消息及关系/已读保持哈希一致。不要再运行期望旧全库计数的 c05-inspect。
+
+- c05b-prepare / c05b-inspect 只准固定8124/原聊天库；新增附件后保留旧观察器原合同，不放宽旧测试以冒充兼容。
+- 原生 data mount 改为本工具专属 backend/.runtime/chat-upgrade-files/data，位于本实例 Web 根之外，父级0700及nonce标记校验。没有移动其他实例文件。attachment开关以chat-attachments-on/off独立控制；默认关闭，停新上传不等于删除已获准历史文件。
+- verify_attachments.py 正常原生登录后走 multipart、JSON和授权二进制HTTP，固定上传/消息键。取消及过期墓碑复跑只核对已有终态；首次与后续回执分开保留。c05b-attachment-probe.php 仅固定合成附件/目录观察和原生拒绝测试，不提供任意ID/SQL/路径。
+- verify_attachment_browser.py 是唯一浏览器运行入口；匿名stdin传两个固定账号，内部verify-attachment-browser.mjs限定同源、会话和显式上传/取消/发送/下载。截图只保存合成资料。每次成功运行新增2条消息，不为截图无故重跑。
+- verify_attachment_concurrency.py 使用独立PHP进程和实际锁后握手。成功的一次性hold/failure键不得重置重跑；遇失败保留原键和字节，通过明确的新固定恢复模式继续。
+- verify_attachment_revocation.py 是最终不可复用阶段：真实下载先持原生成员锁，另进程删除本轮B的成员行并写显式terminal marker；后续旧附件URL、HEAD、Range、历史、列表与上传都必须拒绝。测试只代表固定原生表删除，不代表全部AR成员工作流或所有反向锁序。绝不重建成员/恢复准入来迎合旧脚本。
+- 原生文件中性保护补丁及升级复验见 [17补丁登记](../../../docs/群聊模块升级/17_原生文件存储前置保护补丁.md)。test_attachment_core.php 为真实Yii类/内存FS与AR边界离线检查；不访问数据库或物理文件。
+- 功能收尾关闭attachments/send/takeover/read API/read UI五设置，保留UI总开关和必要守卫，停止自有8124；不disable/remove mail，不碰8113，不部署主预览。
+
+最终数据计数、真实证据和未验范围以15及专项实施记录为准；旧章节数值仍是对应历史批次的事实。

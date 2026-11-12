@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "date": "2026-11-13",
+  "database_access": false,
+  "real_http": false,
+  "checks": {
+    "kernel": {
+      "status": "passed",
+      "checks": 228,
+      "scope": "C04-P synthetic domain/application/ports only",
+      "database_connections": 0,
+      "http_requests": 0,
+      "model_calls": 0
+    },
+    "native": {
+      "status": "passed",
+      "checks": 109,
+      "sql_guard_lookups": 81,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "pure native projection/request/guard seams; not SQL or HTTP acceptance"
+    },
+    "takeover": {
+      "status": "passed",
+      "checks": 102,
+      "native_checks": 109,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "pure navigation/readiness/live filtering; no installation or HTTP acceptance"
+    },
+    "send": {
+      "status": "passed",
+      "checks": 67,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "synthetic send use case, idempotency, quota and rollback; not SQL/HTTP acceptance"
+    },
+    "send_native": {
+      "status": "passed",
+      "checks": 70,
+      "native_checks": 109,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "real adapter SQL seams, encoding and static effect boundaries; not MySQL locks"
+    },
+    "attachments": {
+      "status": "passed",
+      "checks": 84,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "pure validation, DTO, send identity, lifecycle, quota and application memory port"
+    },
+    "attachments_native": {
+      "status": "passed",
+      "checks": 39,
+      "native_checks": 109,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "actual adapter SQL seams, known-file matching and native route registry guards; no DB/storage race acceptance"
+    },
+    "transactions": {
+      "status": "passed",
+      "checks": 30,
+      "native_checks": 109,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "actual Yii transaction level semantics with memory PDO protocol; not MySQL acceptance"
+    },
+    "ui": {
+      "status": "passed",
+      "checks": 215,
+      "scope": "offline fixtures, not real HTTP",
+      "database_access": false,
+      "network_access": false,
+      "secrets_read": false
+    },
+    "read_bootstrap": {
+      "status": "passed",
+      "checks": 12,
+      "database_access": false,
+      "network_access": false
+    },
+    "core": {
+      "status": "passed",
+      "checks": 126,
+      "real_yii_core": true,
+      "database_access": false,
+      "physical_storage_access": false,
+      "application_bootstrap": false,
+      "product_authorization_tested": false
+    },
+    "isolation": {
+      "status": "passed",
+      "python_checks": 112,
+      "php_guard_checks": 64,
+      "yii_header_checks": 5,
+      "database_access": false,
+      "real_credentials_read": false,
+      "service_started": false
+    },
+    "frontend": {
+      "passed": true,
+      "summary": [
+        "ℹ tests 130",
+        "ℹ pass 130",
+        "ℹ fail 0"
+      ]
+    },
+    "typecheck": {
+      "passed": true,
+      "summary": []
+    },
+    "cross_contract": {
+      "passed": true,
+      "summary": "{\"status\":\"passed\",\"mode\":\"offline-php-usecases-to-typescript-parser\",\"positive_cases\":29,\"negative_cases\":15,\"positive_names\":[\"empty-list\",\"authorized-list\",\"list-first\",\"list-older\",\"history-latest\",\"history-older\",\"history-empty\",\"group-history\",\"discussion-history\",\"increment-truncated\",\"increment-empty\",\"read-initial\",\"read-forward\",\"read-lower\",\"read-group-baseline\",\"increment-before-profile-change\",\"increment-after-profile-change\",\"list-after-profile-change\",\"read-after-profile-change\",\"read-hole-error\",\"missing-error\",\"cursor-limit-error\",\"cursor-expired-error\",\"revoked-error\",\"native-overflow-error\",\"projection-before-list\",\"projection-before-history\",\"projection-after-increment\",\"projection-after-list\"],\"negative_names\":[\"unsafe native identifier\",\"unknown private projection\",\"untyped legacy conversation\",\"cross-conversation message\",\"duplicate sequence\",\"unsorted history\",\"unsafe sequence\",\"history boundary exposure\",\"unavailable attachment capability\",\"increment cannot reuse backward cursor\",\"negative read position\",\"missing request id\",\"error retry flag is not a string\",\"missing list projection revision\",\"missing message projection revision\"],\"projection_invalidation\":\"passed\",\"projection_downgrade_rejection\":\"passed\",\"synthetic_client_requests\":8,\"real_http_requests\":0,\"database_connections\":0,\"real_authentication\":false}"
+    }
+  },
+  "php_lint_count": 84
+}

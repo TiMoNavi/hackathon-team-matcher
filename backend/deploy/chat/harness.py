@@ -20,6 +20,7 @@ import time
 HERE = Path(__file__).resolve().parent
 BACKEND = HERE.parents[1]
 RUNTIME = BACKEND / '.runtime/chat-upgrade'
+PRIVATE_FILES = BACKEND / '.runtime/chat-upgrade-files'
 DB = 'humhub_chat_c02_20261112'
 USER = 'chat_c02'
 HOST = '127.0.0.1'
@@ -171,7 +172,7 @@ def port_free():
 def php_command():
     return [str(BACKEND / '.runtime/php-mysql/bin/php'), '-n', '-d', 'extension=mysqlnd.so', '-d', 'extension=pdo_mysql.so',
             '-d', 'extension=gd.so', '-d', 'allow_url_fopen=0', '-d', 'disable_functions=' + BLOCKED_FUNCTIONS,
-            '-d', 'display_errors=0', '-d', 'log_errors=0']
+            '-d', 'display_errors=0', '-d', 'log_errors=0', '-d', 'upload_max_filesize=6M', '-d', 'post_max_size=8M']
 
 def parse_control_output(output, action):
     require(output.count(CONTROL_MARKER) == 1, 'Missing or ambiguous control result; diagnostics suppressed.')
@@ -206,7 +207,7 @@ def require_stopped():
     require(owned_server() is None and port_free(), 'Stop the owned chat HTTP server before mutation.')
 
 def control(action):
-    require(action in ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off'], 'Unsupported control action.')
+    require(action in ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off', 'chat-attachments-on', 'chat-attachments-off'], 'Unsupported control action.')
     config = runtime_guard()
     database_guard(config)
     if action in ['install', 'upgrade-ui', 'upgrade-chat']:
@@ -289,6 +290,26 @@ def c05_fixture(action):
     if action == 'prepare':
         require_stopped()
     return parse_control_output(run(php_command() + [str(HERE / 'c05-fixture.php'), action], timeout=60), action)
+
+def prepare_private_files(config):
+    require_stopped()
+    require(not PRIVATE_FILES.is_symlink(), 'Private attachment mount symlink refused.')
+    marker = {'spec': 'chat-c05b-files-v1', 'database': DB, 'nonce': config['nonce']}
+    if not PRIVATE_FILES.exists():
+        PRIVATE_FILES.mkdir(mode=0o700)
+        (PRIVATE_FILES / 'data').mkdir(mode=0o700)
+        write_private(PRIVATE_FILES / 'marker.json', json.dumps(marker))
+    checked_path(PRIVATE_FILES, directory=True, mode=0o700)
+    checked_path(PRIVATE_FILES / 'data', directory=True, mode=0o700)
+    checked_path(PRIVATE_FILES / 'marker.json', mode=0o600)
+    require(json.loads((PRIVATE_FILES / 'marker.json').read_text()) == marker, 'Private attachment mount provenance mismatch.')
+
+def c05b_fixture(action):
+    require(action in ['prepare', 'snapshot'], 'Unsupported C05B fixture action.')
+    config = runtime_guard(); database_guard(config)
+    require(config['modules'] == CHAT_MODULES, 'Fixed chat module set required.')
+    if action == 'prepare': prepare_private_files(config)
+    return parse_control_output(run(php_command() + [str(HERE / 'c05b-fixture.php'), action], timeout=60), action)
 
 def start():
     require(control('inspect').get('baseline_installed') is True, 'Install the fixed chat baseline before starting HTTP.')
@@ -463,7 +484,7 @@ def locked():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off', 'fixture-prepare', 'fixture-inspect', 'c05-prepare', 'c05-inspect', 'backup-restore', 'start', 'stop'])
+    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off', 'chat-send-on', 'chat-send-off', 'chat-attachments-on', 'chat-attachments-off', 'fixture-prepare', 'fixture-inspect', 'c05-prepare', 'c05-inspect', 'c05b-prepare', 'c05b-inspect', 'backup-restore', 'start', 'stop'])
     action = parser.parse_args().action
     if action == 'probe':
         result = probe()
@@ -475,8 +496,10 @@ def main():
                           'chat-ui-read-on': lambda: control('chat-ui-read-on'), 'chat-ui-read-off': lambda: control('chat-ui-read-off'),
                           'chat-takeover-on': lambda: control('chat-takeover-on'), 'chat-takeover-off': lambda: control('chat-takeover-off'),
                           'chat-send-on': lambda: control('chat-send-on'), 'chat-send-off': lambda: control('chat-send-off'),
+                          'chat-attachments-on': lambda: control('chat-attachments-on'), 'chat-attachments-off': lambda: control('chat-attachments-off'),
                           'fixture-prepare': lambda: fixture('fixture-prepare'), 'fixture-inspect': lambda: fixture('fixture-inspect'),
                           'c05-prepare': lambda: c05_fixture('prepare'), 'c05-inspect': lambda: c05_fixture('snapshot'),
+                          'c05b-prepare': lambda: c05b_fixture('prepare'), 'c05b-inspect': lambda: c05b_fixture('snapshot'),
                           'backup-restore': backup_restore, 'start': start, 'stop': stop}
             result = operations[action]()
     print(json.dumps(result, ensure_ascii=False, indent=2))

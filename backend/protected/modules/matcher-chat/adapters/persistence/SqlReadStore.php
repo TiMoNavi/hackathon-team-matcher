@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace humhub\modules\matcherChat\adapters\persistence;
 
 use humhub\modules\matcherChat\adapters\native\{NativeProjection, NativeSendEligibility};
-use humhub\modules\matcherChat\domain\{AccessGrant, ChatException, Conversation, Message, SafeInteger, Sender};
+use humhub\modules\matcherChat\domain\{AccessGrant, Attachment, ChatException, Conversation, Message, SafeInteger, Sender};
 use humhub\modules\matcherChat\domain\ports\{AccessReader, ConsistencyBoundary, ReadRepository};
 
 final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBoundary
@@ -13,7 +13,7 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
     private array $states = [];
     private array $sendFacts = [];
 
-    public function __construct(private readonly SqlState $sql, private readonly int $viewerId, private readonly ?NativeSendEligibility $sending = null)
+    public function __construct(private readonly SqlState $sql, private readonly int $viewerId, private readonly ?NativeSendEligibility $sending = null, private readonly ?bool $attachmentsEnabled = null, private readonly bool $downloadEnabled = false)
     {
         SafeInteger::positive($viewerId, 'viewer_id');
     }
@@ -29,8 +29,24 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
                 // Authorization observation is durable even if an old cursor/read position fails.
                 // Only the requested read-state mutation is rolled back to this savepoint.
                 $unit = $this->sql->db->beginTransaction();
-                try { $result = $operation(); $unit->commit(); return $result; }
-                catch (ChatException $error) { $unit->rollBack(); $failure = $error; return null; }
+                $unitLevel = $unit->getLevel();
+                $committing = false;
+                try {
+                    $result = $operation();
+                    if ($unit->getLevel() !== $unitLevel) { throw new \LogicException('Chat operation left an unexpected nested transaction.'); }
+                    $committing = true; $unit->commit(); return $result;
+                } catch (\Throwable $error) {
+                    $restored = false;
+                    try {
+                        for ($attempt = 0; $attempt < 16 && $unit->getIsActive() && $unit->getLevel() >= $unitLevel; ++$attempt) {
+                            $before = $unit->getLevel(); $unit->rollBack();
+                            if ($unit->getLevel() >= $before) { break; }
+                        }
+                        $restored = $unit->getIsActive() && $unit->getLevel() === $unitLevel - 1;
+                    } catch (\Throwable) { /* The owned outer boundary discards uncertain state; retain the original error. */ }
+                    if ($error instanceof ChatException && !$committing && $restored) { $failure = $error; return null; }
+                    throw $error;
+                }
             });
         } finally { $this->active = false; $this->states = []; $this->sendFacts = []; $this->currentRevision = 0; }
         if ($failure !== null) { throw $failure; }
@@ -86,7 +102,12 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
             if ($facts !== $this->sendFacts[$conversationId]) { throw new ChatException('AUTHORIZATION_CHANGED', 'The send authority changed.', 409); }
             $send = $facts['allowed'];
         }
-        return new AccessGrant($viewerId, $conversationId, 'direct', SafeInteger::native($state['version'], 'authorization_version'), 1, 0, true, 'active', true, $send, false, false);
+        $attachmentCapability = null;
+        if ($this->attachmentsEnabled !== null) {
+            $settings = $this->sql->all('SELECT value FROM {{%setting}} WHERE module_id=:module AND name=:name FOR UPDATE', [':module' => 'matcher-chat', ':name' => 'attachmentsEnabled']);
+            $attachmentCapability = Attachment::capability($send && $this->attachmentsEnabled && count($settings) === 1 && in_array($settings[0]['value'], ['1', 'true'], true), $this->downloadEnabled);
+        }
+        return new AccessGrant($viewerId, $conversationId, 'direct', SafeInteger::native($state['version'], 'authorization_version'), 1, 0, true, 'active', true, $send, false, false, null, null, $attachmentCapability);
     }
 
     public function sender(int $viewerId, int $conversationId, ?int $senderId): Sender
@@ -156,8 +177,10 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
         $deleted = (int)$row['deleted'] === 1;
         if (!$deleted && $row['native_id'] === null) { throw new ChatException('CHAT_NATIVE_CHANGED', 'The native message changed during reading.', 409); }
         $kind = $deleted ? 'deleted' : ((int)$row['native_type'] === 0 ? 'text' : 'system');
-        $body = $deleted ? null : ($kind === 'text' ? NativeProjection::text($row['content']) : ((int)$row['native_type'] === 1 ? 'A participant joined the conversation.' : 'A participant left the conversation.'));
-        return new Message(SafeInteger::native($row['entry_id'], 'entry_id'), SafeInteger::native($row['message_id'], 'conversation_id'), SafeInteger::native($row['seq'], 'seq'), $row['sender_id'] === null ? null : SafeInteger::native($row['sender_id'], 'sender_id'), $kind, $body, $row['created_at_utc']);
+        $attachments = $deleted ? [] : $this->sql->attachmentsAt((int)$row['message_id'], (int)$row['entry_id']);
+        if ($kind === 'text' && $row['content'] === '' && $attachments !== []) { $kind = 'attachment'; }
+        $body = in_array($kind, ['deleted', 'attachment'], true) ? null : ($kind === 'text' ? NativeProjection::text($row['content']) : ((int)$row['native_type'] === 1 ? 'A participant joined the conversation.' : 'A participant left the conversation.'));
+        return new Message(SafeInteger::native($row['entry_id'], 'entry_id'), SafeInteger::native($row['message_id'], 'conversation_id'), SafeInteger::native($row['seq'], 'seq'), $row['sender_id'] === null ? null : SafeInteger::native($row['sender_id'], 'sender_id'), $kind, $body, $row['created_at_utc'], $attachments);
     }
     private function viewer(int $viewer): void { $this->guard(); if ($viewer !== $this->viewerId) { throw ChatException::unavailable(); } }
     private function guard(): void { if (!$this->active) { throw new \LogicException('SQL reads require the chat consistency boundary.'); } }

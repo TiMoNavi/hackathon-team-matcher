@@ -155,7 +155,9 @@ test("replayed edited or deleted message clears stale body and refreshes current
     await controller.retryDraft(); stop();
     assert.equal(controller.snapshot().draft.phase, "sent"); assert.deepEqual(controller.snapshot().chat.active.messages, [current]);
     assert.ok(seen.every((items) => !items.includes("old stored"))); assert.equal(urls.filter((url) => url.includes("after_seq")).length, 0);
-    assert.equal(controller.snapshot().chat.conversations.items.length, 0);
+    assert.equal(controller.snapshot().chat.conversations.items.length, 1);
+    assert.equal(controller.snapshot().chat.conversations.phase, "ready");
+    assert.equal(urls.filter((url) => !url.includes("/messages")).length, 2);
   }
 });
 
@@ -168,6 +170,54 @@ test("explicit failures retain original attempt; re-edit sends different body wi
   await controller.retryDraft(); assert.deepEqual(posts[0], posts[1]);
   controller.editFailedDraft(); controller.editDraft("second"); await controller.submitDraft();
   assert.notEqual(posts[2].client_message_id, posts[0].client_message_id); assert.equal(posts[2].body, "second");
+});
+
+test("same-key replay refills authorized summaries once and rejects a late pre-replay list response", async () => {
+  const oldList = deferred(); const requests = []; let listGets = 0; let posts = 0; const attempts = [];
+  const currentMessage = message(1, 1, { body: "current edited text" });
+  const controller = await load(async (url, init) => {
+    requests.push([url, init.method]);
+    if (init.method === "POST") { posts++; const request = JSON.parse(init.body); attempts.push(request);
+      if (posts === 1) throw new Error("synthetic loss"); return response(receipt(request.body, { client_message_id: request.client_message_id, replayed: true, message: currentMessage }), 200); }
+    if (url.includes("messages")) return response(history(posts >= 2 ? [currentMessage] : []));
+    listGets++; if (listGets === 2) return oldList.promise;
+    return response(conversationPage([summary(1, { permissions: sendPermissions, title: listGets === 1 ? "old title" : "fresh authorized title" })]));
+  });
+  controller.editDraft("original"); await controller.submitDraft(); const staleRead = controller.refreshList();
+  await controller.retryDraft(); assert.equal(controller.snapshot().draft.phase, "sent");
+  assert.equal(controller.snapshot().chat.conversations.phase, "ready"); assert.equal(controller.snapshot().chat.conversations.items[0].title, "fresh authorized title");
+  oldList.resolve(response(conversationPage([summary(1, { permissions: sendPermissions, title: "stale private title" })]))); await staleRead;
+  assert.equal(controller.snapshot().chat.conversations.items[0].title, "fresh authorized title"); assert.deepEqual(attempts[0], attempts[1]);
+  assert.equal(listGets, 3); assert.deepEqual(requests.slice(-2).map(([url]) => url), ["/api/v1/conversations/1/messages?limit=24", "/api/v1/conversations?limit=24"]);
+  assert.equal(requests.filter(([, method]) => method === "POST").length, 2); assert.equal(requests.filter(([, method]) => method === "PUT").length, 0);
+});
+
+test("replay list refill failure remains a visible list error without resending; 401 still clears identity", async () => {
+  for (const status of [503, 401]) {
+    let posts = 0; let listGets = 0; const controller = await load(async (url, init) => {
+      if (init.method === "POST") { posts++; const request = JSON.parse(init.body); if (posts === 1) throw new Error("synthetic loss"); return response(receipt(request.body, { client_message_id: request.client_message_id, replayed: true }), 200); }
+      if (url.includes("messages")) return response(history());
+      return ++listGets === 1 ? response(list()) : response(errorEnvelope(status === 401 ? "SESSION_CHANGED" : "UNAVAILABLE"), status);
+    });
+    controller.editDraft("original"); await controller.submitDraft(); await controller.retryDraft(); assert.equal(posts, 2); assert.equal(listGets, 2);
+    if (status === 503) { assert.equal(controller.snapshot().draft.phase, "sent"); assert.equal(controller.snapshot().chat.conversations.phase, "error"); assert.equal(controller.snapshot().chat.conversations.error.status, 503); }
+    else { assert.equal(controller.snapshot().status, "signed-out"); assert.equal(controller.snapshot().chat.actorId, null); assert.equal(controller.snapshot().chat.conversations.items.length, 0); }
+  }
+});
+
+test("navigation or suspension during replay history prevents its follow-up list request", async () => {
+  for (const action of ["navigate", "suspend"]) {
+    const later = deferred(); let posts = 0; let listGets = 0;
+    const controller = await load(async (url, init) => {
+      if (init.method === "POST") { posts++; const request = JSON.parse(init.body); if (posts === 1) throw new Error("synthetic loss"); return response(receipt(request.body, { client_message_id: request.client_message_id, replayed: true }), 200); }
+      if (url.includes("messages")) return posts >= 2 ? later.promise : response(history());
+      listGets++; return response(list());
+    });
+    controller.editDraft("original"); await controller.submitDraft(); const retry = controller.retryDraft();
+    while (controller.snapshot().chat.active?.operation !== "history") await new Promise((resolve) => setImmediate(resolve));
+    if (action === "navigate") await controller.navigate("/matcher/chat"); else controller.suspend();
+    later.resolve(response(history())); await retry; assert.equal(listGets, 1); assert.equal(posts, 2); assert.equal(controller.snapshot().chat.active, null);
+  }
 });
 
 test("auth denial during send clears drafts, keys, titles and messages", async () => {

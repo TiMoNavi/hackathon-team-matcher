@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "checks": [
+    "two normal native form logins",
+    "selecting a file does not upload",
+    "real page uploaded and bound one native attachment",
+    "history does not automatically download",
+    "closing download revokes visible Blob link",
+    "peer explicitly downloaded identical bytes",
+    "saving download revokes Blob link",
+    "selecting a file does not upload",
+    "explicit cancel reaches backend",
+    "selecting a file does not upload",
+    "lost committed response retries same key and bound attachment",
+    "replay safely refills authorized conversation list",
+    "four desktop/mobile day/night layouts"
+  ],
+  "normalNativeFormLogins": 2,
+  "newMessages": 2,
+  "sendPosts": 3,
+  "uploadPosts": 3,
+  "cancelDeletes": 1,
+  "downloadGets": 2,
+  "receiptWrites": 0,
+  "blockedReceiptWrites": 0,
+  "blockedExternalRequests": 0,
+  "unexpectedRequests": 0,
+  "syntheticOnly": true,
+  "credentialsReturned": false,
+  "responseLoss": {
+    "committedBeforeAbort": true,
+    "sameKeyAndAttachments": true
+  },
+  "screenshots": [
+    "attachment-1440-day.png",
+    "attachment-1440-night.png",
+    "attachment-320-day.png",
+    "attachment-320-night.png"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "dark": false
+    },
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "dark": true
+    },
+    {
+      "width": 320,
+      "scroll": 320,
+      "dark": false
+    },
+    {
+      "width": 320,
+      "scroll": 320,
+      "dark": true
+    }
+  ],
+  "stage": "complete"
+}

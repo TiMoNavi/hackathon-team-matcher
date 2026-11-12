@@ -13,6 +13,7 @@ final class SqlState
     public const MAX_ENTRIES = 10000;
     public const MAX_CONVERSATIONS = 512;
     private bool $storageVerified = false;
+    private ?bool $attachmentSchemaVerified = null;
 
     public function __construct(public readonly Connection $db, public readonly string $nativeTimeZone = 'UTC') {}
 
@@ -39,9 +40,22 @@ final class SqlState
         try {
             if ($this->one('SELECT id FROM {{%matcher_chat_lock}} WHERE id=1 FOR UPDATE') === null) { throw new ChatException('CHAT_DEPENDENCY_UNAVAILABLE', 'The chat lock is unavailable.', 503); }
             $result = $operation();
+            if ($tx->getLevel() !== 1) { throw new \LogicException('Chat must close every owned nested transaction.'); }
             $tx->commit();
             return $result;
-        } catch (\Throwable $error) { if ($tx->getIsActive()) { $tx->rollBack(); } throw $error; }
+        } catch (\Throwable $error) {
+            // Yii reuses one Transaction and decrements its nesting level before PDO
+            // commit/rollback. One rollback is insufficient after an inner Throwable.
+            for ($attempt = 0; $attempt < 16 && $tx->getIsActive(); ++$attempt) {
+                $before = $tx->getLevel();
+                try { $tx->rollBack(); } catch (\Throwable) { /* Keep the initiating error. */ }
+                if ($tx->getLevel() >= $before) { break; }
+            }
+            // A failed PDO commit/rollback may leave level=0 while PDO is still in a
+            // transaction. Discard this owned connection even if Yii says inactive.
+            try { $this->db->close(); } catch (\Throwable) { /* Never mask the original failure. */ }
+            throw $error;
+        }
     }
 
     public function one(string $sql, array $params = []): ?array
@@ -66,6 +80,44 @@ final class SqlState
         return $row !== null;
     }
 
+    public function attachmentsReady(): bool
+    {
+        if ($this->attachmentSchemaVerified !== null) { return $this->attachmentSchemaVerified; }
+        $table = $this->db->schema->getTableSchema('{{%matcher_chat_attachment}}');
+        if ($table === null || $table->primaryKey !== ['attachment_id']) { return $this->attachmentSchemaVerified = false; }
+        $engine = $this->one('SELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=:table', [':table' => $this->db->tablePrefix . 'matcher_chat_attachment']);
+        return $this->attachmentSchemaVerified = $engine !== null && strtoupper((string)$engine['ENGINE']) === 'INNODB';
+    }
+    public function registeredFile(mixed $id, mixed $guid): bool
+    {
+        if (!$this->attachmentsReady()) { return false; }
+        return $this->one('SELECT attachment_id FROM {{%matcher_chat_attachment}} WHERE file_id=:id OR file_guid=:guid LIMIT 1', [':id' => is_numeric($id) ? (int)$id : 0, ':guid' => is_string($guid) ? $guid : '']) !== null;
+    }
+    /** Unknown native files remain a permanent revocation trigger. */
+    private function attachmentRows(int $id): ?array
+    {
+        $files = $this->all('SELECT f.* FROM {{%file}} f INNER JOIN {{%message_entry}} e ON e.id=f.object_id WHERE e.message_id=:id AND LOWER(TRIM(LEADING CHAR(92) FROM f.object_model)) IN (:entry,:abstract,:joined,:left) FOR UPDATE', [':id' => $id,
+            ':entry' => 'humhub\\modules\\mail\\models\\messageentry', ':abstract' => 'humhub\\modules\\mail\\models\\abstractmessageentry', ':joined' => 'humhub\\modules\\mail\\models\\states\\messageuserjoined', ':left' => 'humhub\\modules\\mail\\models\\states\\messageuserleft']);
+        if (!$this->attachmentsReady()) { return $files === [] ? [] : null; }
+        $rows = $this->all('SELECT a.* FROM {{%matcher_chat_attachment}} a INNER JOIN {{%message_entry}} e ON e.id=a.entry_id AND e.message_id=a.message_id WHERE a.message_id=:id AND a.state=:state ORDER BY a.entry_id,a.position FOR UPDATE', [':id' => $id, ':state' => 'bound']);
+        $byFile = []; $byEntry = [];
+        foreach ($rows as $row) {
+            if ((int)$row['position'] < 0 || (int)$row['position'] >= 3 || $row['uploaded_at'] === null) { return null; }
+            $byFile[(int)$row['file_id']] = $row; $byEntry[(int)$row['entry_id']][] = $row;
+        }
+        if (count($files) !== count($rows)) { return null; }
+        foreach ($files as $file) { $row = $byFile[(int)$file['id']] ?? null; if ($row === null || !SqlAttachmentStore::matches($row, $file, true)) { return null; } }
+        foreach ($byEntry as $entryRows) { if (array_map(static fn ($row): int => (int)$row['position'], $entryRows) !== range(0, count($entryRows) - 1)) { return null; } }
+        return $byEntry;
+    }
+    public function attachmentsAt(int $conversationId, int $entryId): array
+    {
+        if (!$this->attachmentsReady()) { return []; }
+        $rows = $this->all('SELECT * FROM {{%matcher_chat_attachment}} WHERE message_id=:message AND entry_id=:entry AND state=:state ORDER BY position LIMIT 4 FOR UPDATE', [':message' => $conversationId, ':entry' => $entryId, ':state' => 'bound']);
+        if (count($rows) > 3) { throw new ChatException('INVALID_ATTACHMENT_PROJECTION', 'The file association is invalid.', 503); }
+        return array_map(static fn ($row) => SqlAttachmentStore::project($row), $rows);
+    }
+
     public function exactMembers(array $members, array $pair): bool
     {
         return count($members) === 2 && array_map(static fn ($row): int => SafeInteger::native($row['user_id'], 'native_member_id'), $members) === $pair;
@@ -79,8 +131,9 @@ final class SqlState
         if ($state['type'] !== 'direct') { throw new ChatException('UNADMITTED_CONVERSATION', 'Only explicitly admitted direct conversations are supported.', 503); }
         $native = $this->nativeMessage($id);
         $members = $this->nativeMembers($id);
+        $attachments = $this->attachmentRows($id);
         $pair = [SafeInteger::native($state['pair_low'], 'pair_low'), SafeInteger::native($state['pair_high'], 'pair_high')];
-        if ($native === null || !$this->exactMembers($members, $pair) || !hash_equals($state['native_members_hash'], NativeProjection::membershipHash($members)) || !$this->pairEnabled($pair) || $this->hasFiles($id)) {
+        if ($native === null || !$this->exactMembers($members, $pair) || !hash_equals($state['native_members_hash'], NativeProjection::membershipHash($members)) || !$this->pairEnabled($pair) || $attachments === null) {
             $this->revoke($id, 'native-authority-changed');
             return $this->state($id);
         }
@@ -96,9 +149,13 @@ final class SqlState
             $senderId = SafeInteger::native($entry['user_id'], 'sender_id');
             $type = SafeInteger::native($entry['type'], 'native_type', true);
             if (!in_array($senderId, $pair, true) || !in_array($type, [0, 1, 2], true)) { throw new ChatException('UNSUPPORTED_NATIVE_MESSAGE', 'A native message needs an explicit migration decision.', 503); }
-            if ($type === 0) { NativeProjection::text($entry['content']); }
+            $entryAttachments = $attachments[$entryId] ?? [];
+            foreach ($entryAttachments as $attachment) { if ((int)$attachment['user_id'] !== $senderId || $type !== 0) { throw new ChatException('INVALID_ATTACHMENT_PROJECTION', 'The attachment author changed.', 503); } }
+            if ($type === 0 && !($entry['content'] === '' && $entryAttachments !== [])) { NativeProjection::text($entry['content']); }
             $utc = NativeProjection::utc($entry['created_at'], $this->nativeTimeZone);
-            $hash = hash('sha256', json_encode([$senderId, $type, $entry['content'], $utc], JSON_THROW_ON_ERROR));
+            $facts = [$senderId, $type, $entry['content'], $utc];
+            if ($entryAttachments !== []) { $facts[] = array_map(static fn ($a): array => [$a['attachment_id'], $a['file_id'], $a['file_guid'], $a['name'], $a['mime'], (int)$a['size'], $a['sha256'], (int)$a['position']], $entryAttachments); }
+            $hash = hash('sha256', json_encode($facts, JSON_THROW_ON_ERROR));
             if (isset($byId[$entryId])) {
                 $old = $byId[$entryId];
                 if ((int)$old['deleted'] === 1) { throw new ChatException('NATIVE_ENTRY_ID_REUSED', 'A deleted entry identifier cannot be reused.', 503); }

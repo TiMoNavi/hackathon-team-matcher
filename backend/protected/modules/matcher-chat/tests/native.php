@@ -28,6 +28,12 @@ function domainError(callable $operation, string $code, string $label): void
 final class GuardSqlConnection extends \yii\db\Connection
 {
     public int $lookups = 0;
+    public function getSchema()
+    {
+        return new class(['db' => $this]) extends \yii\db\Schema {
+            protected function loadTableSchema($name) { return null; }
+        };
+    }
     public function createCommand($sql = null, $params = [])
     {
         return new class($this, $sql, $params) {

@@ -4,7 +4,7 @@ namespace humhub\modules\matcherChat;
 
 use humhub\modules\matcherChat\adapters\http\RequestBoundary;
 use humhub\modules\matcherChat\adapters\http\{EntryTakeoverEvent, SessionActor};
-use humhub\modules\matcherChat\adapters\native\{GuardedPollController, NativeGuard};
+use humhub\modules\matcherChat\adapters\native\{GuardedPollController, NativeGuard, NativeFileStore};
 use humhub\modules\matcherChat\application\EntryPolicy;
 use humhub\modules\matcherChat\domain\{ChatException, PageRequest, SafeInteger};
 use Yii;
@@ -57,6 +57,7 @@ final class Events
         elseif ($controller instanceof \humhub\modules\mail\controllers\MailController) { $route = 'mail/mail/' . $event->action->id; }
         elseif ($controller instanceof \humhub\modules\mail\controllers\InboxController) { $route = 'mail/inbox/' . $event->action->id; }
         elseif (str_starts_with($class, 'humhub\\modules\\file\\controllers\\')) { $route = 'file/file/' . $event->action->id; }
+        elseif ($class === 'humhub\\modules\\rest\\controllers\\file\\filecontroller') { $route = 'rest/file/file/' . $event->action->id; }
         elseif ($controller instanceof \humhub\modules\live\controllers\PollController) { $route = 'live/poll/' . $event->action->id; }
         if (self::takeover($module, $route, $request->queryParams)) { $event->isValid = false; return; }
         $protectedPoll = $controller instanceof GuardedPollController;
@@ -65,9 +66,24 @@ final class Events
     }
     public static function beforeNativeWrite($event): void
     {
-        if ($event->sender instanceof \humhub\modules\file\models\File
-            && !self::mailFileModel($event->sender->object_model) && !self::mailFileModel($event->sender->getOldAttribute('object_model'))) { return; }
+        if ($event->sender instanceof \humhub\modules\file\models\File && !self::protectedFileRecord($event->sender)) { return; }
         self::guard()?->nativeWrite($event->sender);
+    }
+    public static function beforeStorageMutation($event): void
+    {
+        if (!$event->sender instanceof \humhub\modules\file\models\File || NativeFileStore::permits($event->sender)) { return; }
+        if (self::protectedFileRecord($event->sender)) { self::guard()?->nativeWrite($event->sender); }
+    }
+    public static function beforeStorageRead($event): void
+    {
+        if (!$event->sender instanceof \humhub\modules\file\models\File || NativeFileStore::permitsRead($event->sender)) { return; }
+        if (self::protectedFileRecord($event->sender)) { self::guard()?->nativeWrite($event->sender); }
+    }
+    private static function protectedFileRecord($file): bool
+    {
+        if (self::mailFileModel($file->object_model) || self::mailFileModel($file->getOldAttribute('object_model'))) { return true; }
+        $module = Yii::$app->getModule('matcher-chat');
+        return $module instanceof Module && $module->isEnabled && ($module->sql()->registeredFile($file->id, $file->guid) || $module->sql()->registeredFile($file->getOldAttribute('id'), $file->getOldAttribute('guid')));
     }
     public static function beforeIdentityChange($event): void
     {
@@ -97,6 +113,7 @@ final class Events
     private static function needsGuard(string $route, array $query, array $body, bool $protectedPoll): bool
     {
         if (str_starts_with($route, 'mail/')) { return true; }
+        if ($route === 'rest/file/file/download') { return true; }
         if ($route === 'meta-search/index') {
             $provider = $body['provider'] ?? null;
             return !is_string($provider) || ltrim($provider, '\\') === ''
@@ -105,11 +122,14 @@ final class Events
         if ($route === 'live/poll/index') { return !$protectedPoll; }
         if ($route === 'file' || str_starts_with($route, 'file/')) {
             foreach ([$query, $body] as $input) {
+                if (array_key_exists('fileList', $input)) { return true; }
                 if (!array_key_exists('guid', $input)) { continue; }
                 $guid = $input['guid'];
                 if (!is_string($guid) || preg_match('/^[A-Za-z0-9][A-Za-z0-9-]{0,63}$/D', $guid) !== 1) { throw new \yii\web\NotFoundHttpException('File unavailable.'); }
                 $row = Yii::$app->db->createCommand('SELECT object_model FROM {{%file}} WHERE guid=:guid', [':guid' => $guid])->queryOne();
                 if ($row !== false && self::mailFileModel($row['object_model'])) { return true; }
+                $module = Yii::$app->getModule('matcher-chat');
+                if ($module instanceof Module && $module->sql()->registeredFile(null, $guid)) { return true; }
             }
         }
         return false;
@@ -117,7 +137,7 @@ final class Events
 
     private static function mailFileModel(mixed $model): bool
     {
-        return is_string($model) && str_starts_with(strtolower(ltrim($model, '\\')), 'humhub\\modules\\mail\\');
+        return is_string($model) && (str_starts_with(strtolower(ltrim($model, '\\')), 'humhub\\modules\\mail\\') || str_starts_with(strtolower(ltrim($model, '\\')), 'humhub\\modules\\matcherchat\\models\\'));
     }
 
     /** Intercept known navigation before native show() can call seen(). */

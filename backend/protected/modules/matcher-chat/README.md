@@ -1,8 +1,41 @@
-# matcher-chat 0.2.0 隔离私聊读取与文字发送
+# matcher-chat 0.3.0 隔离私聊读取、消息与附件
 
-本目录包含 C04 读取、T1/T2 入口适配，以及新增的 C05-A 既有受管好友私聊文字发送实现，**默认关闭，不表示 C04/C05 完整完成或允许生产启用**。N04/N05 旧阻塞已由[新交接](../../../../docs/睡前全自动运行/10_聊天C04前置交接_20261112.md)解除；真实数据库、HTTP、并发及旧入口验收由主集成人另记。文字发送仅允许单独开关下的窄范围隔离验证；附件、群、讨论、真实姓名/头像投影未开放。原生 mail/core 源码未修改。
+本目录包含 C04 读取、T1/T2 入口适配、C05-A 既有受管好友私聊文字发送及 C05-B 私有附件实现，**发送与附件默认关闭，不表示 C04/C05 完整完成或允许生产启用**。N04/N05 旧阻塞已由[新交接](../../../../docs/睡前全自动运行/10_聊天C04前置交接_20261112.md)解除；真实数据库、HTTP、并发及旧入口验收由主集成人另记。群、讨论、真实姓名/头像投影未开放。C05-B 依赖原生 File/StorageManager 的中性存储读写前置事件补丁；补丁由主集成人独占制作，不能省略后仍宣称完整保护。
 
-本批遵循[聊天实施合同](../../../../docs/群聊模块升级/03_C01_聊天实施合同.md)、[真实接线计划](../../../../docs/群聊模块升级/07_真实接线推进计划.md)、[共享契约](../../../../docs/共享数据与接口契约.md)与项目 architecture-patterns Skill。原生 mail、好友、Space、想法绑定继续拥有各自事实。本目录没有当前活动选择器、好友状态表、消息正文镜像或发送/邀请用例。UI 关闭不解除受管对象保护，不得以禁用原生 mail 回退。
+本批遵循[聊天实施合同](../../../../docs/群聊模块升级/03_C01_聊天实施合同.md)、[真实接线计划](../../../../docs/群聊模块升级/07_真实接线推进计划.md)、[共享契约](../../../../docs/共享数据与接口契约.md)与项目 architecture-patterns Skill。原生 mail、好友、Space、想法绑定继续拥有各自事实。本目录没有当前活动选择器、好友状态表、消息正文镜像或邀请用例。UI 关闭不解除受管对象保护，不得以禁用原生 mail 回退。
+
+## C05-B 私有附件
+
+attachmentsEnabled=false 属性与同名持久设置双闸控制新上传和绑定；还要求发送、读取、附件 InnoDB schema 及原生存储保护就绪。Module::attachments(viewerId) 返回纯应用边界 ChatAttachments，经 AttachmentRepository 端口调用 SQL/原生存储适配。AttachmentLifecycle 管理无 SQL 的永久键、暂存状态、期限和配额规则。迁移 m261113_010000_chat_attachments 只保存原生 file 引用、所有者、会话、指纹及状态，不保存文件或消息正文副本。
+
+本批实施选择为单文件 5 MiB、单消息最多 3 件、固定 24 小时暂存；JPEG/PNG/PDF/UTF-8 TXT。文件名 1–180 UTF-8 字节，拒绝路径、Cc/Cf、空白名及点目录，扩展名与实际字节检测匹配；客户端 MIME 不作为依据。图片检查类型/签名/尾标记和 4000 万像素上限，PDF 检查签名与 EOF，TXT 检查 UTF-8 和控制字符。此边界不是恶意软件扫描或完整 PDF 内容审计，下载始终强制 attachment。
+
+| 操作 | 合同 |
+|---|---|
+| 上传 | POST /api/v1/conversations/{id}/attachments，multipart 仅 client_upload_id 小写 UUIDv4 与一个 file；201 新建、200 同键重放 |
+| 上传成功 | data={attachment,client_upload_id,replayed,expires_at}，meta={request_id}；expires_at 为 UTC |
+| 取消 | DELETE /api/v1/conversations/{id}/attachments/{uuid}，无正文；200 data={attachment_id,state:cancelled/expired}；已绑定 409 |
+| 下载 | GET /api/v1/conversations/{id}/attachments/{uuid}/download；当前 session、读授权、历史范围及当前关联均验证；仅原文件，拒绝 token/variant/inline/Range |
+| Attachment DTO | {id,name,mime,size,download_path}，不含 native file id/GUID/token；路径仅固定同源插件下载地址 |
+| 发送扩展 | 原 JSON 增加可选 attachment_ids，有序、去重、最多 3 个 UUID；body 仍为 string，只有存在附件才允许空字符串 |
+| 纯附件 | 明确 Message.kind=attachment,body=null,attachments=[...]；有文字附件仍 kind=text，deleted 不返回附件 |
+| 能力 | context 可选 attachments={upload_enabled,download_enabled,max_file_bytes,max_files_per_message,allowed_mime_types,staging_ttl_seconds}；旧缺失视为关闭 |
+| 配额 | 每用户跨会话最多 20 个有效 uploading/staged（自然最多 100 MiB）；滚动 60 秒最多 20 次成功新上传，重放与失败不计、取消不退历史速率 |
+| 错误 | 领域输入422；超大413；类型415；错 owner/会话404；绑定/异载荷409；过期或取消键重放410；限流429+正 Retry-After；依赖503 |
+
+上传键永久唯一范围为 conversation+owner+client_upload_id；同键的文件名、检测 MIME、字节数和 SHA-256 必须一致。绑定只允许当前发送者在该会话的有效 staged 文件；有序附件 ID 参与发送 payload hash，原有纯文字 hash 保持不变。已绑定上传重放不受暂存 TTL 影响；发送重放仍返回当前获准消息投影，删除墓碑不会重生附件。
+
+上传先在独立事务持久登记 uploading 与私有原生 File，再写原生 storage，验证字节和 hash 后在第二事务改 staged；崩溃/SQL 完成失败最多留下可恢复的登记记录和受保护字节。同 key 显式重试复用原 File；只有最终成功才写 uploaded_at/计速率。取消/到期先持久墓碑，再删字节和原生 file；删除失败不恢复授权，cleaned_at 保持空供重试。绑定与 native message_entry、序号和永久 receipt 同事务提交，失败回滚后仍为原 staged 文件。
+
+新上传前显式回收本人到期暂存；没有自动后台定时器。运维可运行 yii chat-attachment/cleanup --limit=100，每批最多100条，系统路径也回收已禁用/已删除上传者的终态未绑定记录。取消即使已失去会话发送资格也仅允许启用的本人清理同会话暂存；已经绑定内容不由暂存清理删除。绑定附件下载沿用当前历史读取资格，解除好友或屏蔽仅关闭本批新发送/新上传，不冒造新的历史撤权规则；成员/账号/准入实际撤权后下载拒绝。
+
+原生 file 始终 public=0,standalone=1。暂存绑定 ProtectedAttachment（native canView/Edit/Delete 全拒绝），发出后绑定原生 MessageEntry；只有完整登记关联可通过 SqlState 同步，未知旧附件仍永久撤销准入。NativeGuard 按原生 id/GUID 与永久登记保护暂存、绑定、已回收墓碑，涵盖 native GUID/token、REST numeric-id、share-intend fileList 与旧新关联；存储前置事件阻断 File::beforeDelete 先删物理字节及 updateAttributes 绕过 AR 事件的问题。插件仅在已校验当前事务和具体 file id/GUID 的窄 scope 放行自己的原生存储操作。
+
+本批只接受明确原生 StorageManager 与非 Webroot 的本地 private data mount，不接受公开 baseUrl、对象临时 URL 或未经审查的第三方 storage 类。下载在锁内读取最多5 MiB并核对 SHA-256 后才返回字节，设置真实 MIME、attachment、nosniff、private/no-store，不生成预览或公开资源。受信任 PHP 直接操作原始 fs/SQL、部署将私有目录另行映射为静态目录、已发出的历史外部 URL 不在这些事件的拦截能力内。
+
+离线 attachments.php 验纯规则与内存端口，attachments-native.php 验实际 adapter seam，export-attachments.php 输出8份生产 Receipt/ChatSender/ChatReader 的合成合同供 TypeScript 对齐；不等于真实 HTTP/SQL 验收。isolated-attachments.php 只供主集成人固定 harness 的十个枚举模式，固定 d05b/e05b key，验证 nonce、旧完整 hash、新合成归属与数量上限，使用真实锁后 READY/continue 握手，禁止普通 php 执行或任意 ID/SQL/正文输入。
+
+下列 C05-A 描述保留文字基线；其中“无附件/两字段”限定该批原始范围，当前附件扩展以本节为准。
 
 ## 当前装配合同
 
@@ -15,9 +48,9 @@
 - 宿主在 ModuleAutoLoader 后、LanguageSelector 前安装 ChatRequestBootstrap，仅为本模块 PUT JSON 设置空 form body；rawBody 和 Yii CSRF 校验保留。模块 beforeRequest 有同样范围的兜底，但不能代替更早宿主解析阶段验证。
 - 新增迁移 m261112_230000_chat_reading：matcher_chat_lock、conversation、entry_sequence、member、read_state、viewer_revision（均带 matcher_chat_ 前缀）。只存引用、序号、权限、哈希与时间元数据，不存正文/姓名/头像。迁移回退拒绝自动删除。
 
-读取 API 为 GET /api/v1/conversations、GET /api/v1/conversations/{id}/messages、PUT /api/v1/conversations/{id}/read-state；新增 POST 同一 messages 路径提供单独受控文字发送。使用原生 session 和 Yii CSRF；GET 不标原生 seen。actor 只取启用原生身份，拒绝 sessionless REST 身份和受限 impersonation。可选 X-Matcher-Chat-Actor 仅为前端缓存预期，须是与 session 一致的规范正安全整数，否则401 SESSION_CHANGED；它永不授予身份。跨源 Origin/Sec-Fetch-Site 拒绝，响应 private,no-store。严格限制 query 与 JSON 字段，错误使用既有 envelope；不提供上传、通知偏好或管理端点。
+读取 API 为 GET /api/v1/conversations、GET /api/v1/conversations/{id}/messages、PUT /api/v1/conversations/{id}/read-state；新增 POST 同一 messages 路径提供单独受控文字发送。使用原生 session 和 Yii CSRF；GET 不标原生 seen。actor 只取启用原生身份，拒绝 sessionless REST 身份和受限 impersonation。可选 X-Matcher-Chat-Actor 仅为前端缓存预期，须是与 session 一致的规范正安全整数，否则401 SESSION_CHANGED；它永不授予身份。跨源 Origin/Sec-Fetch-Site 拒绝，响应 private,no-store。严格限制 query 与 JSON 字段，错误使用既有 envelope；上传/取消/下载按 C05-B 节开放；不提供通知偏好或管理端点。
 
-SQL 适配仅准入 direct：sender 始终 unavailable，attachments=[]，permissions.invite/leave 均 false。permissions.send 仅在下述文字发送双闸及当前原生资格同时满足时为 true，读取和历史资格独立保留。没有获准姓名/头像投影时不返回假姓名；仍不代表完整私聊能力已经交付。
+SQL 适配仅准入 direct：sender 始终 unavailable，附件仅返回本模块已绑定获准摘要，permissions.invite/leave 均 false。permissions.send 仅在下述文字发送双闸及当前原生资格同时满足时为 true，读取和历史资格独立保留。没有获准姓名/头像投影时不返回假姓名；仍不代表完整私聊能力已经交付。
 
 ## C05-A 既有私聊文字发送
 
@@ -89,13 +122,13 @@ SqlState 在 MySQL/InnoDB 中持有独立 chat 锁行，以 REPEATABLE READ + �
 | 受管对象原生 mail HTML/写动作 | 除上述 opt-in 完整覆盖的已验权 GET 导航外仍拒绝；非受管 show/edit-title 也会混全局 count/widget，mixed 不直接放行。无害 id、数组和 MySQL 宽松数字形式不能豁免 |
 | mail REST | 只要存在任何受管记录，就拒绝整个 mail REST；不能依赖其认证前的旧 session actor |
 | 原生搜索/通知下拉/live | 受管用户的 mail 元搜索、下拉继续拒绝/抑制；已适配 Poll 仅过滤 mail 事件，保留非聊天事件；其他 driver/映射未完成 |
-| 文件入口 | beforeRequest 先 resolve 路由，在 DownloadAction::init 和 token 解析前检查 managed 文件；文件 guid 数组/非规范值拒绝，controller 事件再复核。无附件准入，附件能力未开放 |
+| 文件入口 | beforeRequest 先 resolve 路由，在 DownloadAction::init 和 token 解析前检查 managed 文件；文件 guid 数组/非规范值拒绝，controller 事件再复核。首次准入仍拒绝未知旧附件；新登记附件按 C05-B 合同开放 |
 | 原生模型写 | Message/AbstractMessageEntry/UserMessage/File 的 before 事件阻止受管对象未覆盖修改；API/readEnabled/UI 开关关闭后仍保护 |
 | 业务模块撤回 | 只要有受管记录或 schema 不完整，Module.disable 拒绝；不允许卸载保护留下原生旁路 |
 
 这些拒绝**不代表原生兼容完成**。受管用户原生合法聊天回退尚未恢复，不能宣称“撤UI后全部原生读写正常”。不受管用户访问不受管 web 会话保持原生；其指向受管对象也拒绝。beforeRequest/beforeAction 先按相关路由筛选，再读取聊天 schema；非聊天页面、非 mail 搜索、普通文件和非聊天 live 不因聊天元数据故障而整体返回 503。不能把任意页面的 guid 查询参数当作聊天文件入口。原生 NotificationInbox 在保护依赖失败时只停止该聊天 widget。
 
-仍未覆盖或未证明的路径必须保留：直接 updateAll/deleteAll/手写 SQL 绕过 AR 事件，尤其两次读取之间的 A→B→A 原生状态变更；主动构造 MessageNotification 或已在途邮件/推送；第三方自定义控制器/模型读取；先取得的外部临时文件URL；File::beforeDelete 在父事件前删除物理文件，单个 AR hook 无法提前保护程序调用的存储副作用；native 写入在显式准入前已开始的竞态。隔离夹具可受控造漂移测试，但不能把漂移检测等同事件路径全面保护。无核心修改情况下需要后续窄适配/公共补丁及真实回执，生产开关必须保持关闭。
+仍未覆盖或未证明的路径必须保留：直接 updateAll/deleteAll/手写 SQL 绕过 AR 事件，尤其两次读取之间的 A→B→A 原生状态变更；主动构造 MessageNotification 或已在途邮件/推送；第三方自定义控制器/模型读取；先取得的外部临时文件URL；绕过原生 File/StorageManager 前置事件的直接 filesystem 操作；native 写入在显式准入前已开始的竞态。隔离夹具可受控造漂移测试，但不能把漂移检测等同事件路径全面保护。C05-B 中性原生存储读写补丁与真实回执必须同时保留，生产开关仍默认关闭。
 
 ## 分层与真实接入边界
 
@@ -117,9 +150,9 @@ AccessReader.revision 是 viewer 维度持久、单调递增的正 JavaScript �
 
 群与讨论仅返回 seq > join_seq，active + 真实原生成员 + 业务读取资格必须同时有效。受邀未接受和离开均不可读，重入使用新的 generation 与起点，旧 generation 的 read-state 不复用。详情无权和不存在统一 CONVERSATION_UNAVAILABLE/404；未取得资格前不取正文。每个获准序号独立于全局 message_entry.id，空洞不代表消息，删除必须保留 seq 墓碑。
 
-初始历史取最新 limit 条，再按 seq 升序返回；cursor 只向旧页。after_seq 升序补拉，与 cursor 互斥。默认 limit=24，最大 48，返回页底层最多取49条判定 has_more（原生同步上限另列）。列表和历史 GET 不标 seen。NativeProjection 将原生HTML保守投影为UTF-8纯文本，移除执行型标签内容并保留换行，不截断旧正文、不把未来发送4000码点限额用于删截历史；空/纯附件内容拒绝。attachments 固定为空数组，不伪造下载资格。
+初始历史取最新 limit 条，再按 seq 升序返回；cursor 只向旧页。after_seq 升序补拉，与 cursor 互斥。默认 limit=24，最大 48，返回页底层最多取49条判定 has_more（原生同步上限另列）。列表和历史 GET 不标 seen。NativeProjection 将原生HTML保守投影为UTF-8纯文本，移除执行型标签内容并保留换行，不截断旧正文、不把未来发送4000码点限额用于删截历史；未登记的空/纯附件内容拒绝；本模块登记纯附件使用显式 attachment kind，仅返回当前获准摘要。
 
-有效 read_seq 为 max(本 generation 已存位置, join_seq)。0 与 join_seq 是无副作用基准；其他提交位置以及仓储返回的已存/合并位置都必须对应当前获准的真实消息/墓碑，空洞和超前位置拒绝。read-state 只能单调前进；本进程模拟边界在末端撤权或坏适配器异常时回滚写入。未读逐条计数获准范围内 kind=text、非本人且 seq>有效 read_seq 的消息；不计 system/deleted，也不用 last_seq-read_seq 相减。
+有效 read_seq 为 max(本 generation 已存位置, join_seq)。0 与 join_seq 是无副作用基准；其他提交位置以及仓储返回的已存/合并位置都必须对应当前获准的真实消息/墓碑，空洞和超前位置拒绝。read-state 只能单调前进；本进程模拟边界在末端撤权或坏适配器异常时回滚写入。未读逐条计数获准范围内原生 type=0 的文字或附件、非本人且 seq>有效 read_seq 的消息；不计 system/deleted，也不用 last_seq-read_seq 相减。
 
 ## DTO v1
 
@@ -128,8 +161,8 @@ AccessReader.revision 是 viewer 维度持久、单调递增的正 JavaScript �
 | DTO | 完整字段 |
 |---|---|
 | ConversationSummary | id,type,title:string/null,version,last_message:MessageSummary/null,unread_count,permissions |
-| MessageSummary | id,seq,kind:text/system/deleted,sender,body:string/null,created_at |
-| Message | MessageSummary + conversation_id,attachments:[] |
+| MessageSummary | id,seq,kind:text/attachment/system/deleted,sender,body:string/null,created_at |
+| Message | MessageSummary + conversation_id,attachments:获准摘要数组 |
 | sender | {status:available,user_id,display_name,avatar_ref:string/null} 或 {status:unavailable} |
 | permissions | read,send,invite,leave 四个明确 bool；成功读取的 read=true |
 | context | conversation_id,type,version,authorization_version,authorization_revision,membership_generation,history_after_seq,permissions |
@@ -137,7 +170,7 @@ AccessReader.revision 是 viewer 维度持久、单调递增的正 JavaScript �
 | 消息页 data | items,next_cursor,has_more,read_seq,unread_count,context |
 | 已读 data | conversation_id,read_seq,unread_count,context |
 
-仅 discussion 的 summary/context 额外带获准 space_id 和 idea_activity_id，其他类型不带该字段。deleted 的 body=null 且 sender=unavailable；其余 body 为文本。created_at 使用 UTC 的 YYYY-MM-DDTHH:mm:ssZ 并校验真实日期；avatar_ref 是不透明引用，不能直接当任意 URL。
+仅 discussion 的 summary/context 额外带获准 space_id 和 idea_activity_id，其他类型不带该字段。deleted 的 body=null 且 sender=unavailable；attachment 的 body=null 且至少一个附件；text/system 的 body 为文本。created_at 使用 UTC 的 YYYY-MM-DDTHH:mm:ssZ 并校验真实日期；avatar_ref 是不透明引用，不能直接当任意 URL。
 
 列表/初始或旧历史页 has_more=true 当且仅当 next_cursor 非空。**增量页 next_cursor 恒 null，has_more 可为 true**，客户端使用最后返回 seq 显式继续 after_seq，不能拿旧页 cursor 当前向翻页。没有自动重试/循环请求契约。
 
@@ -153,6 +186,9 @@ AccessReader.revision 是 viewer 维度持久、单调递增的正 JavaScript �
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/takeover.php
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/send.php
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/send-native.php
+    backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/attachments.php
+    backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/attachments-native.php
+    backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/export-attachments.php
 
 run.php 覆盖真实用例输出、合法/拒绝成员、重复代次、join 前后、私聊历史/send 分离、摘要/头像撤权、空列表/空会话、seq 空洞、自己的/system/deleted 未读排除、分页/增量、HMAC 篡改/过期/跨对象/未来时间/超 TTL、末端撤权、已读单调和坏仓储位置回滚。输出是计数汇总，不打印密钥、配置或用户资料。
 
@@ -170,4 +206,4 @@ send.php 使用内存适配验证真实 ChatSender 用例的原文、消息回�
 
 isolated-send.php 是主集成人独占执行的固定 C05 探针，只接收 hold-send/dedupe-send/changed-send/delete-friend/hold-unfriend/hold-block/try-send/rollback-send/quota-rollback 枚举。固定 bootstrap 和 _chat_c05_fixture nonce/两个合成账号/唯一准入会话都验证后才执行；不接受 ID、正文、SQL、凭据或时间参数。竞争进程在实际边界前输出固定 ATTEMPTING 标记；持锁进程取得真实锁后输出 READY 并等待精确 continue 换行，固定30秒超时，不靠 sleep 宣称重叠。关系变更仅限拥有的合成两人且由 root 恢复；rollback-send 验永久回执之后的整体回滚，quota-rollback 的最多60条真实临时原生 entry/receipt 与配额拒绝全部回滚，不遗留虚构引用。不执行该文件不能宣称真实并发/配额已经通过。
 
-C05-A 的窄文字代码存在不等于完整 C05 交付；附件、通知偏好和 C07 群邀请/接受/退出仍未实现。C04/C05 完整验收及旧入口收敛仍受本页明确缺口限制，不能据源码或隔离安装把其标记为全部 done。
+C05-A/C05-B 的窄文字与附件代码存在不等于完整 C05 交付；通知偏好和 C07 群邀请/接受/退出仍未实现。C04/C05 完整验收及旧入口收敛仍受本页明确缺口限制，不能据源码或隔离安装把其标记为全部 done。

@@ -98,6 +98,38 @@ class File extends ActiveRecord implements ViewableInterface
      */
     public const EVENT_AFTER_NEW_STORED_FILE = 'afterNewStoredFile';
 
+    /** Storage/association mutation veto before physical I/O or event-bypassing updates. */
+    public const EVENT_BEFORE_STORAGE_MUTATION = 'beforeStorageMutation';
+
+    /** Read authorization before resolving a native storage path, including exports. */
+    public const EVENT_BEFORE_STORAGE_READ = 'beforeStorageRead';
+
+    public function assertStorageReadAllowed(): void
+    {
+        $this->trigger(self::EVENT_BEFORE_STORAGE_READ);
+    }
+
+
+    public function assertStorageMutationAllowed(): void
+    {
+        $this->trigger(self::EVENT_BEFORE_STORAGE_MUTATION);
+    }
+
+    /** @inheritdoc */
+    public function updateAttributes($attributes)
+    {
+        $this->assertStorageMutationAllowed();
+        $proposed = clone $this;
+        foreach ($attributes as $name => $value) {
+            if (is_string($name) && $proposed->hasAttribute($name)) {
+                $proposed->setAttribute($name, $value);
+            }
+        }
+        $proposed->assertStorageMutationAllowed();
+        return parent::updateAttributes($attributes);
+    }
+
+
     /**
      * The numeric value of the published state is not yet finalized. Use with caution and expect a change of value in later versions.
      *
@@ -220,6 +252,7 @@ class File extends ActiveRecord implements ViewableInterface
      */
     public function beforeDelete()
     {
+        $this->assertStorageMutationAllowed();
         $this->getStore()->delete();
         FileHistory::deleteAll(['file_id' => $this->id]);
 
@@ -517,6 +550,7 @@ class File extends ActiveRecord implements ViewableInterface
      */
     private function beforeNewStoredFile(bool $skipHistoryEntry)
     {
+        $this->assertStorageMutationAllowed();
         if ($this->isNewRecord) {
             throw new Exception('File Record must be saved before setting a new file content.');
         }

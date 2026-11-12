@@ -4,6 +4,7 @@ import type { ChatApiError } from "./http.js";
 export function conversationTitle(value: ConversationSummary | undefined): string { return value?.title?.trim() || "私聊会话"; }
 export function messagePreview(value: MessageSummary | null): string {
   if (!value) return "暂无消息";
+  if (value.kind === "attachment") return "附件消息";
   return value.kind === "deleted" ? "此消息已删除" : value.kind === "system" ? `系统消息：${value.body}` : value.body;
 }
 export function messageAuthor(value: MessageSummary, actorId: number | null): string {

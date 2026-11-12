@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "stage": "prepare",
+  "reason": "SQL probe fixed handshake mismatch.",
+  "checks": [
+    "attachment write gates ready"
+  ],
+  "child_transcripts": [
+    {
+      "mode": "prepare",
+      "lines": [
+        "{\"status\":\"passed\",\"mode\":\"prepare\",\"checks\":107,\"result\":{\"new_uploads\":3,\"fixed_uploads\":3},\"credentials_returned\":false,\"notifications_sent\":false}"
+      ]
+    }
+  ],
+  "credentials_returned": false
+}

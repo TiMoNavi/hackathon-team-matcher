@@ -58,8 +58,9 @@ class StorageManager extends Component implements StorageManagerInterface
 
     public function mimeType(?string $variant = null): string
     {
+        $path = $this->get($variant);
         try {
-            return $this->fs->mimeType($this->get($variant));
+            return $this->fs->mimeType($path);
         } catch (\Exception) {
             return (!empty($this->file->mime_type))
                 ? $this->file->mime_type
@@ -112,8 +113,10 @@ class StorageManager extends Component implements StorageManagerInterface
 
     public function setContent($content, ?string $variant = null): void
     {
+        $this->file->assertStorageMutationAllowed();
+        $path = $this->get($variant);
         try {
-            $this->fs->write($this->get($variant), $content, $this->filesystemOptions);
+            $this->fs->write($path, $content, $this->filesystemOptions);
         } catch (\Exception $ex) {
             Yii::error("Could  not write: " . $ex->getMessage());
         }
@@ -121,11 +124,13 @@ class StorageManager extends Component implements StorageManagerInterface
 
     public function setByPath(string $path, ?string $variant = null): void
     {
+        $this->file->assertStorageMutationAllowed();
         $this->fs->writeStream($this->get($variant), fopen($path, 'r'), $this->filesystemOptions);
     }
 
     public function delete($variant = null, array $except = []): void
     {
+        $this->file->assertStorageMutationAllowed();
         $cleanedExcept = array_map(fn($e) => str_replace('*', '', $e), $except);
 
         $files = $this->fs->listContents($this->getPath(), false)
@@ -157,6 +162,7 @@ class StorageManager extends Component implements StorageManagerInterface
 
     protected function getPath(): string
     {
+        $this->file->assertStorageReadAllowed();
         if ($this->file->guid == '') {
             throw new Exception('File GUID empty!');
         }

@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "checks": [
+    "two normal native form logins",
+    "selecting a file does not upload",
+    "real page uploaded and bound one native attachment",
+    "history does not automatically download"
+  ],
+  "normalNativeFormLogins": 2,
+  "newMessages": 0,
+  "sendPosts": 1,
+  "uploadPosts": 1,
+  "cancelDeletes": 0,
+  "downloadGets": 1,
+  "receiptWrites": 0,
+  "blockedReceiptWrites": 0,
+  "blockedExternalRequests": 0,
+  "unexpectedRequests": 0,
+  "syntheticOnly": true,
+  "credentialsReturned": false,
+  "responseLoss": {
+    "committedBeforeAbort": false,
+    "sameKeyAndAttachments": false
+  },
+  "screenshots": [],
+  "viewports": [],
+  "failedStage": "peer-download",
+  "failureType": "TimeoutError",
+  "stage": "peer-download"
+}

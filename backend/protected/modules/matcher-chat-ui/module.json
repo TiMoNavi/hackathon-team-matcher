@@ -1,9 +1,19 @@
 {
   "id": "matcher-chat-ui",
   "name": "对话与群聊界面",
-  "description": "同源聊天界面：获准私聊读取与受控文字发送；附件、群邀请及活动讨论尚未开放。",
-  "version": "0.2.0",
-  "humhub": {"minVersion": "1.19.4"},
-  "keywords": ["chat", "messenger", "ui"],
-  "authors": [{"name": "Hackathon Team Matcher"}]
+  "description": "同源聊天界面：获准私聊读取、受控文字与附件发送；群邀请及活动讨论尚未开放。",
+  "version": "0.3.0",
+  "humhub": {
+    "minVersion": "1.19.4"
+  },
+  "keywords": [
+    "chat",
+    "messenger",
+    "ui"
+  ],
+  "authors": [
+    {
+      "name": "Hackathon Team Matcher"
+    }
+  ]
 }
