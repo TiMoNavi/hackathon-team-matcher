@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-12T08:05:38.988Z",
+  "passed": true,
+  "checks": [
+    "Real unauthenticated /me 401 renders login without identity or cards",
+    "No identity/activity/CSRF/browser preference persistence",
+    "Bricolage and Inter render; Chinese platform font captured separately",
+    "Four viewport widths and day/night have no horizontal clipping or undersized actions",
+    "Keyboard skip link focuses main content",
+    "Plugin deep link reload, back and forward revalidate authorization",
+    "Explicit retry performs another real read",
+    "Reduced-motion context has no running animation",
+    "All requests same-origin GET; no application exceptions or unexpected HTTP errors"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "dark": false,
+      "scrollWidth": 1440,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "width": 1440,
+      "dark": true,
+      "scrollWidth": 1440,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(22, 18, 43)"
+    },
+    {
+      "width": 768,
+      "dark": false,
+      "scrollWidth": 768,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "width": 768,
+      "dark": true,
+      "scrollWidth": 768,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(22, 18, 43)"
+    },
+    {
+      "width": 390,
+      "dark": false,
+      "scrollWidth": 390,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "width": 390,
+      "dark": true,
+      "scrollWidth": 390,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(22, 18, 43)"
+    },
+    {
+      "width": 320,
+      "dark": false,
+      "scrollWidth": 320,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "width": 320,
+      "dark": true,
+      "scrollWidth": 320,
+      "clipped": [],
+      "smallTargets": [],
+      "background": "rgb(22, 18, 43)"
+    }
+  ],
+  "fonts": {
+    ".webapp-brand .font-heading > span": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 12
+      }
+    ],
+    ".webapp-footer": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 21
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 15
+      }
+    ],
+    "h1": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 10
+      }
+    ]
+  },
+  "pageErrors": [],
+  "unexpectedNetwork": [],
+  "expectedUnauthorized": 10,
+  "screenshots": [
+    "signed-out-1440-day.png",
+    "signed-out-1440-night.png",
+    "signed-out-768-day.png",
+    "signed-out-768-night.png",
+    "signed-out-390-day.png",
+    "signed-out-390-night.png",
+    "signed-out-320-day.png",
+    "signed-out-320-night.png"
+  ]
+}
