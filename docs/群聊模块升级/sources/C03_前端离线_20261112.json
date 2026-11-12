@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "scope": "local typecheck, synthetic tests, produced asset verification and original Next typecheck; not real chat",
+  "results": [
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "integration/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "exit_code": 0,
+      "output": "",
+      "errors": ""
+    },
+    {
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "integration/tests/bootstrap.test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "✔ accepts only the fixed eight-field shell contract and freezes its projection (2.065182ms)\n✔ accepts server-generated pretty and front-controller links (0.530023ms)\n✔ rejects absent, inherited, unknown and changed-version bootstrap fields (0.748191ms)\n✔ rejects changed roots and malformed CSRF without exposing values (0.711738ms)\n✔ rejects external, redirected, ambiguous and traversal native links (0.70909ms)\n✔ shell deep links validate decimal bounds without returning conversation facts (0.468481ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 215.775859\n",
+      "errors": ""
+    },
+    {
+      "command": [
+        "node",
+        "integration/scripts/verify-build.mjs"
+      ],
+      "exit_code": 0,
+      "output": "{\"verification\":\"passed\",\"manifestNodes\":3,\"assets\":4,\"fonts\":2,\"shellOnly\":true,\"businessApiCalls\":0,\"realSessionVerified\":false,\"browserVerified\":false}\n",
+      "errors": ""
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "exit_code": 0,
+      "output": "",
+      "errors": ""
+    }
+  ]
+}

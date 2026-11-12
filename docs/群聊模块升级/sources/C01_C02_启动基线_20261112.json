@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-12",
+  "scope": "C01/C02 preflight metadata only; no database connection",
+  "git_base": "f9b04342b9ea6959295fafe34fdece62e0e7c5f7",
+  "reference_sha256": {
+    "AGENTS.md": "c729b06e91f1fe425aed525620ca717bc938fce1c8c2057a0492ee06e76aef58",
+    "README.md": "30805c70d1cc0b1f8ee073f0e5af459d23246d6ffc981258d3aed705af0df69e",
+    "docs/首次注册与开场引导_用户原稿_冻结.md": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+    "docs/睡前全自动运行/原始情况描述禁止修改.md": "ae7de67357827ace01227adf9243996f99399debc96d1b2f790ffa7f6370f7f1",
+    "backend/protected/modules/mail/Module.php": "dbd9be35fec20815f5b089d83b44f2ba693285a800d3d659be32c668857b2e55",
+    "frontend/对话 群聊页面/package.json": "f3c686a569370524f84f3630c0a3c9dee61215630f7fbba738fc0a13c562b285",
+    "frontend/对话 群聊页面/pnpm-lock.yaml": "33af8fb487b8695827b51b49033037f3d2cbdfb7d6d2a23521a9812fb34c4ac6"
+  },
+  "existing_listener_pids": {
+    "8090": [
+      14152
+    ],
+    "8113": [],
+    "4200": [
+      76600
+    ],
+    "4202": []
+  },
+  "agents": [
+    {
+      "thread_id": "01a1cebe-1ef7-79f1-9aeb-af6fd1328d43",
+      "agent_path": null,
+      "provider": "timo",
+      "model": "gpt-6-astra",
+      "effort": "high"
+    },
+    {
+      "thread_id": "01a1cebe-dc0c-7d70-9705-6060d350c9d1",
+      "agent_path": "/root/chat_backend_audit",
+      "provider": "timo",
+      "model": "gpt-6-astra",
+      "effort": "ultra"
+    },
+    {
+      "thread_id": "01a1cebf-0dc8-79e3-a37b-7868f8bdcb65",
+      "agent_path": "/root/chat_frontend_audit",
+      "provider": "timo",
+      "model": "gpt-6-astra",
+      "effort": "ultra"
+    },
+    {
+      "thread_id": "01a1cee7-fe0b-7a72-9a7a-9e9c1e5ecc35",
+      "agent_path": "/root/chat_isolation_audit",
+      "provider": "timo",
+      "model": "gpt-6-astra",
+      "effort": "high"
+    }
+  ],
+  "context_tier_verified": false,
+  "private_data_read": false
+}

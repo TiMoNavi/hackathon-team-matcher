@@ -1,0 +1,196 @@
+{
+  "stage": "C02 native empty baseline",
+  "target": "humhub_chat_c02_20261112",
+  "operations": [
+    {
+      "label": "provision-first",
+      "exit_code": 0,
+      "seconds": 1.06,
+      "result": {
+        "status": "passed",
+        "action": "provision",
+        "created_empty_target": true,
+        "global_grants": false,
+        "spec": "chat-c02-v1",
+        "database": "humhub_chat_c02_20261112",
+        "username": "chat_c02",
+        "host": "127.0.0.1",
+        "port": 8124,
+        "socket": "/Users/550m/code/hackathon-team-matcher/backend/.runtime/mysql.sock",
+        "runtime": "/Users/550m/code/hackathon-team-matcher/backend/.runtime/chat-upgrade"
+      }
+    },
+    {
+      "label": "provision-repeat",
+      "exit_code": 0,
+      "seconds": 0.34,
+      "result": {
+        "status": "passed",
+        "action": "provision",
+        "reused_owned_target": true,
+        "spec": "chat-c02-v1",
+        "database": "humhub_chat_c02_20261112",
+        "username": "chat_c02",
+        "host": "127.0.0.1",
+        "port": 8124,
+        "socket": "/Users/550m/code/hackathon-team-matcher/backend/.runtime/mysql.sock",
+        "runtime": "/Users/550m/code/hackathon-team-matcher/backend/.runtime/chat-upgrade"
+      }
+    },
+    {
+      "label": "install-first",
+      "exit_code": 0,
+      "seconds": 13.63,
+      "result": {
+        "status": "passed",
+        "action": "install",
+        "database": "humhub_chat_c02_20261112",
+        "php": "8.5.12",
+        "mysql": "9.7.4",
+        "humhub": "1.19.4",
+        "counts": {
+          "user": 0,
+          "profile": 0,
+          "space": 0,
+          "space_membership": 0,
+          "user_auth": 0,
+          "message": 0,
+          "user_message": 0,
+          "message_entry": 0,
+          "file": 0,
+          "queue": 1,
+          "module_enabled": 1,
+          "migration": 230
+        },
+        "modules": {
+          "mail": {
+            "enabled": true,
+            "code_version": "3.4.6",
+            "installed_version": "3.4.6"
+          }
+        },
+        "empty_business_data": true,
+        "mail_transport": "file",
+        "outbound_transports_blocked": true,
+        "real_ai_calls": 0,
+        "worker_started": false,
+        "cron_started": false,
+        "seeded_users": false,
+        "baseline_installed": true
+      }
+    },
+    {
+      "label": "install-repeat",
+      "exit_code": 0,
+      "seconds": 1.06,
+      "result": {
+        "status": "passed",
+        "action": "install",
+        "database": "humhub_chat_c02_20261112",
+        "php": "8.5.12",
+        "mysql": "9.7.4",
+        "humhub": "1.19.4",
+        "counts": {
+          "user": 0,
+          "profile": 0,
+          "space": 0,
+          "space_membership": 0,
+          "user_auth": 0,
+          "message": 0,
+          "user_message": 0,
+          "message_entry": 0,
+          "file": 0,
+          "queue": 1,
+          "module_enabled": 1,
+          "migration": 230
+        },
+        "modules": {
+          "mail": {
+            "enabled": true,
+            "code_version": "3.4.6",
+            "installed_version": "3.4.6"
+          }
+        },
+        "empty_business_data": true,
+        "mail_transport": "file",
+        "outbound_transports_blocked": true,
+        "real_ai_calls": 0,
+        "worker_started": false,
+        "cron_started": false,
+        "seeded_users": false,
+        "baseline_installed": true
+      }
+    },
+    {
+      "label": "inspect",
+      "exit_code": 0,
+      "seconds": 0.7,
+      "result": {
+        "status": "passed",
+        "action": "inspect",
+        "database": "humhub_chat_c02_20261112",
+        "php": "8.5.12",
+        "mysql": "9.7.4",
+        "humhub": "1.19.4",
+        "counts": {
+          "user": 0,
+          "profile": 0,
+          "space": 0,
+          "space_membership": 0,
+          "user_auth": 0,
+          "message": 0,
+          "user_message": 0,
+          "message_entry": 0,
+          "file": 0,
+          "queue": 1,
+          "module_enabled": 1,
+          "migration": 230
+        },
+        "modules": {
+          "mail": {
+            "enabled": true,
+            "code_version": "3.4.6",
+            "installed_version": "3.4.6"
+          }
+        },
+        "empty_business_data": true,
+        "mail_transport": "file",
+        "outbound_transports_blocked": true,
+        "real_ai_calls": 0,
+        "worker_started": false,
+        "cron_started": false,
+        "seeded_users": false,
+        "baseline_installed": true
+      }
+    },
+    {
+      "label": "backup-restore",
+      "exit_code": 0,
+      "seconds": 6.17,
+      "result": {
+        "status": "passed",
+        "action": "backup-restore",
+        "database": "humhub_chat_c02_20261112",
+        "empty_baseline_only": true,
+        "probe_restored": true,
+        "inspection_equal": true,
+        "backup_fingerprint": {
+          "raw_sha256": "e156356a291eb4e311607d6b19ea66550e4c123073e1d9dbd39f1cf034fab96a",
+          "canonical_sha256": "b57a43784c954a8c90de55a148b35009ba72a675ab586e2eaa3b7dc35da19318",
+          "canonicalization": "redundant-column-charset-v1",
+          "redundant_charset_clauses": 2
+        },
+        "restored_fingerprint": {
+          "raw_sha256": "15a392f91d0205c6fedc059f4e6c056c5c1e4b791c6742a8f759a306cb7c8c9d",
+          "canonical_sha256": "b57a43784c954a8c90de55a148b35009ba72a675ab586e2eaa3b7dc35da19318",
+          "canonicalization": "redundant-column-charset-v1",
+          "redundant_charset_clauses": 143
+        },
+        "raw_dumps_equal": false,
+        "canonical_schema_data_equal": true
+      }
+    }
+  ],
+  "passed": true,
+  "real_messages_tested": false
+}

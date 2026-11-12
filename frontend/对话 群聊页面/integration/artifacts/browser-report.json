@@ -1,0 +1,123 @@
+{
+  "stage": "C03-shell-only",
+  "passed": true,
+  "checks": [
+    "Real isolated shell has eight-field bootstrap and no private chat data",
+    "Four viewport widths, day/night and controls have no overflow",
+    "Mobile list/details and return preserve the honest shell state",
+    "Only theme preference persists; no identity, activity, message or CSRF browser storage",
+    "Conversation-position deep link, reload and history remain data-free shells",
+    "Keyboard skip link focuses main content",
+    "Custom Bricolage renders and local Inter loads; Chinese glyph evidence recorded separately",
+    "Reduced motion leaves no running animations",
+    "No-JavaScript fallback is visible",
+    "Zero business API calls, writes, cross-origin requests or page errors"
+  ],
+  "viewports": [
+    {
+      "dark": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(255, 255, 255)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": true,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(16, 14, 24)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "background": "rgb(255, 255, 255)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": true,
+      "width": 768,
+      "scrollWidth": 768,
+      "background": "rgb(16, 14, 24)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "background": "rgb(255, 255, 255)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": true,
+      "width": 390,
+      "scrollWidth": 390,
+      "background": "rgb(16, 14, 24)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "background": "rgb(255, 255, 255)",
+      "clipped": [],
+      "smallTargets": []
+    },
+    {
+      "dark": true,
+      "width": 320,
+      "scrollWidth": 320,
+      "background": "rgb(16, 14, 24)",
+      "clipped": [],
+      "smallTargets": []
+    }
+  ],
+  "fonts": {
+    "#matcher-chat-root .font-heading > span": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 12
+      }
+    ],
+    "#chat-shell-title": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 9
+      }
+    ],
+    "#matcher-chat-root .demo-footnote": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Regular",
+        "isCustomFont": false,
+        "glyphCount": 15
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 3
+      }
+    ]
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "unexpectedNetwork": [],
+  "businessRequests": 0,
+  "screenshots": [
+    "shell-1440-day.png",
+    "shell-390-night.png",
+    "shell-390-night-details.png"
+  ]
+}

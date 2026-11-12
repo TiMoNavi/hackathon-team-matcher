@@ -1,0 +1,9 @@
+{
+  "id": "matcher-chat-ui",
+  "name": "对话与群聊界面",
+  "description": "独立同源聊天页面壳；当前仅接入中状态，不读取或写入聊天业务数据。",
+  "version": "0.1.0",
+  "humhub": {"minVersion": "1.19.4"},
+  "keywords": ["chat", "messenger", "ui"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

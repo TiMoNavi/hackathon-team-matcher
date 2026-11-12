@@ -1,0 +1,45 @@
+{
+  "reference_files_unchanged": {
+    "AGENTS.md": true,
+    "README.md": true,
+    "docs/首次注册与开场引导_用户原稿_冻结.md": true,
+    "docs/睡前全自动运行/原始情况描述禁止修改.md": true,
+    "backend/protected/modules/mail/Module.php": true,
+    "frontend/对话 群聊页面/package.json": true,
+    "frontend/对话 群聊页面/pnpm-lock.yaml": true
+  },
+  "listener_comparison": {
+    "8090": {
+      "baseline": [
+        14152
+      ],
+      "current": [
+        14152
+      ],
+      "same": true
+    },
+    "8113": {
+      "baseline": [],
+      "current": [
+        52150
+      ],
+      "same": false
+    },
+    "4200": {
+      "baseline": [
+        76600
+      ],
+      "current": [
+        76600
+      ],
+      "same": true
+    },
+    "4202": {
+      "baseline": [],
+      "current": [],
+      "same": true
+    }
+  },
+  "chat_task_did_not_signal_other_services": true,
+  "main_database_read": false
+}

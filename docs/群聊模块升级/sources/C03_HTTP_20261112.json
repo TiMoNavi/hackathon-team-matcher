@@ -1,0 +1,319 @@
+{
+  "stage": "C03-shell-only",
+  "passed": true,
+  "checks": [
+    {
+      "path": "/matcher/chat",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/matcher/chat/conversations/1",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/matcher/chat/conversations/9223372036854775807",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/matcher-chat-ui/app/index",
+      "method": "GET",
+      "status": 302,
+      "expected": 302
+    },
+    {
+      "path": "/matcher-chat-ui/app/index?path=conversations%2F1",
+      "method": "GET",
+      "status": 302,
+      "expected": 302
+    },
+    {
+      "path": "/matcher-chat-ui/app/index?returnUrl=https%3A%2F%2Fexample.invalid",
+      "method": "GET",
+      "status": 302,
+      "expected": 302
+    },
+    {
+      "path": "/matcher/chat/unknown",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/conversations/0",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/conversations/-1",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/conversations/01",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/conversations/9223372036854775808",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/conversations/1/extra",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/../private.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/%2e%2e/private.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher-chat-ui/app/index?path=conversations%2F0",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher-chat-ui/app/index?path%5B%5D=x",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "POST",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "PUT",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "PATCH",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "DELETE",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "OPTIONS",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "HEAD",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/matcher-chat-ui/app/index",
+      "method": "POST",
+      "status": 405,
+      "expected": 405
+    },
+    {
+      "path": "/private.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/marker.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/mysql.cnf",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/server.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/backups/file.sql",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/sessions/a",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/uploads/a",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/runtime/a",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/modules/mail/module.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/.env",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/protected/config/common.php",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/deploy/chat/control.php",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "GET",
+      "status": 503,
+      "expected": 503
+    },
+    {
+      "path": "/assets/1fbb7097/assets/index-DhcpXFvH.css",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/assets/1fbb7097/assets/index-DA5t_4zc.js",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/assets/1fbb7097/manifest.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/assets/1fbb7097/index.html",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/assets/1fbb7097/private.json",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/assets/1fbb7097/assets/source.js.map",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/assets/1fbb7097/assets/hidden.php",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "operation": "install",
+      "while_running": "refused before mutation"
+    },
+    {
+      "operation": "backup-restore",
+      "while_running": "refused before mutation"
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "GET",
+      "status": 503,
+      "expected": 503
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat/conversations/1",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher-chat-ui/app/index",
+      "method": "GET",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "path": "/matcher/chat",
+      "method": "GET",
+      "status": 200,
+      "expected": 200
+    }
+  ],
+  "real_chat_tested": false,
+  "response_headers": {
+    "private_no_store": true,
+    "nosniff": true,
+    "csp_present": true,
+    "cookie_names": [
+      "_chat_c02_csrf"
+    ]
+  },
+  "data_counts_unchanged": true,
+  "mail_stays_enabled": true
+}

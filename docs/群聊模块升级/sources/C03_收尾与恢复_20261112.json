@@ -1,0 +1,116 @@
+{
+  "stage": "C03 isolated finalization",
+  "passed": true,
+  "operations": [
+    {
+      "action": "start",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "action": "start",
+        "pid": 53588,
+        "already_running": true
+      }
+    },
+    {
+      "action": "stop",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "action": "stop",
+        "owned_pid_stopped": 53588,
+        "port": 8124
+      }
+    },
+    {
+      "action": "stop",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "action": "stop",
+        "owned_pid_stopped": null,
+        "port": 8124
+      }
+    },
+    {
+      "action": "backup-restore",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "action": "backup-restore",
+        "database": "humhub_chat_c02_20261112",
+        "empty_baseline_only": true,
+        "probe_restored": true,
+        "inspection_equal": true,
+        "backup_fingerprint": {
+          "raw_sha256": "ef41ccff548b9c19600f4c7df98b4b8bf965ac0cddcc3cace1baeaa1678ab5dd",
+          "canonical_sha256": "273f4be6fe89ef048dad273d8f3d85d0813a16e70e56461e419b4c29ec200322",
+          "canonicalization": "redundant-column-charset-v1",
+          "redundant_charset_clauses": 143
+        },
+        "restored_fingerprint": {
+          "raw_sha256": "ef41ccff548b9c19600f4c7df98b4b8bf965ac0cddcc3cace1baeaa1678ab5dd",
+          "canonical_sha256": "273f4be6fe89ef048dad273d8f3d85d0813a16e70e56461e419b4c29ec200322",
+          "canonicalization": "redundant-column-charset-v1",
+          "redundant_charset_clauses": 143
+        },
+        "raw_dumps_equal": true,
+        "canonical_schema_data_equal": true
+      }
+    },
+    {
+      "action": "inspect",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "action": "inspect",
+        "database": "humhub_chat_c02_20261112",
+        "php": "8.5.12",
+        "mysql": "9.7.4",
+        "humhub": "1.19.4",
+        "counts": {
+          "user": 0,
+          "profile": 0,
+          "space": 0,
+          "space_membership": 0,
+          "user_auth": 0,
+          "message": 0,
+          "user_message": 0,
+          "message_entry": 0,
+          "file": 0,
+          "queue": 1,
+          "module_enabled": 2,
+          "migration": 230
+        },
+        "modules": {
+          "mail": {
+            "enabled": true,
+            "code_version": "3.4.6",
+            "installed_version": "3.4.6"
+          },
+          "matcher-chat-ui": {
+            "enabled": true,
+            "code_version": "0.1.0",
+            "installed_version": "0.1.0"
+          }
+        },
+        "empty_business_data": true,
+        "mail_transport": "file",
+        "outbound_transports_blocked": true,
+        "real_ai_calls": 0,
+        "worker_started": false,
+        "cron_started": false,
+        "seeded_users": false,
+        "baseline_installed": true,
+        "ui_enabled": true
+      }
+    }
+  ],
+  "final_browser_console_check_exit_code": 0,
+  "final_stop": {
+    "status": "passed",
+    "action": "stop",
+    "owned_pid_stopped": 55478,
+    "port": 8124
+  }
+}
