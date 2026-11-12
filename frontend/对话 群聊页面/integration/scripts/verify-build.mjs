@@ -5,9 +5,12 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const integrationRoot = fileURLToPath(new URL("../", import.meta.url));
+const args = process.argv.slice(2);
+assert.ok(args.length === 0 || args.length === 1 && args[0] === "--read");
+const reading = args[0] === "--read";
 const chatRoot = path.resolve(integrationRoot, "..");
 const projectRoot = path.resolve(chatRoot, "../..");
-const root = path.join(projectRoot, "backend/protected/modules/matcher-chat-ui/resources/app");
+const root = path.join(projectRoot, "backend/protected/modules/matcher-chat-ui/resources", reading ? "read-app" : "app");
 assert.equal((await fs.lstat(root)).isSymbolicLink(), false, "symlink output root");
 const manifestFile = path.join(root, "manifest.json");
 assert.ok((await fs.stat(manifestFile)).size <= 1024 * 1024, "oversized manifest");
@@ -72,13 +75,19 @@ for (const file of assets) {
   }
 }
 assert.ok(js && css);
-assert.ok(js.includes("matcher-chat-bootstrap") && js.includes("尚未读取会话"));
+assert.ok(js.includes("matcher-chat-bootstrap"));
+if (!reading) assert.ok(js.includes("尚未读取会话"));
 for (const fixture of ["周末 AI 创造营", "林小满", "陈序", "已添加到本地演示会话", "initialConversations", "initialFriendRequests"]) assert.ok(!js.includes(fixture), "fixture content in shell");
-assert.ok(!/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\s*\(/.test(js), "network API invocation in shell bundle");
+if (!reading) assert.ok(!/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\s*\(/.test(js), "network API invocation in shell bundle");
+else {
+  assert.ok(js.includes("/api/v1") && js.includes("/conversations"), "read client missing");
+  assert.ok(!/\b(?:XMLHttpRequest|WebSocket|EventSource)\s*\(/.test(js), "unreviewed realtime transport");
+  assert.ok(!js.includes("/me/current-event"), "read client must not bind private chat to current event");
+}
 assert.ok(!/@import\s+(?:url\()?\s*["']?(?:https?:)?\/\//i.test(css), "external CSS import");
 for (const match of css.matchAll(/url\(([^)]+)\)/gi)) {
   const value = match[1].replace(/^["']|["']$/g, "");
   assert.ok(!/^(?:https?:|\/\/|data:)/i.test(value), "nonlocal CSS asset");
 }
-assert.ok(!(await fs.readFile(path.join(integrationRoot, "index.html"), "utf8")).includes("matcher-chat-bootstrap"), "build HTML must not contain synthetic bootstrap");
-console.log(JSON.stringify({ verification: "passed", manifestNodes: visited.size, assets: assets.size, fonts: fonts.length, shellOnly: true, businessApiCalls: 0, realSessionVerified: false, browserVerified: false }));
+assert.ok(!(await fs.readFile(path.join(integrationRoot, reading ? "read/index.html" : "index.html"), "utf8")).includes("matcher-chat-bootstrap"), "build HTML must not contain synthetic bootstrap");
+console.log(JSON.stringify({ verification: "passed", manifestNodes: visited.size, assets: assets.size, fonts: fonts.length, shellOnly: !reading, businessApiCalls: reading ? "build validation does not measure runtime calls" : 0, realSessionVerified: false, browserVerified: false }));

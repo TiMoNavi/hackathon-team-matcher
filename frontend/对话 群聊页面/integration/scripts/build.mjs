@@ -4,10 +4,13 @@ import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const integrationRoot = fileURLToPath(new URL("../", import.meta.url));
+const args = process.argv.slice(2);
+if (!(args.length === 0 || args.length === 1 && args[0] === "--read")) throw new Error("Unsupported build stage.");
+const reading = args[0] === "--read";
 const chatRoot = path.resolve(integrationRoot, "..");
 const projectRoot = path.resolve(chatRoot, "../..");
 const sharedRoot = path.join(projectRoot, "frontend/integration");
-const outputRoot = path.join(projectRoot, "backend/protected/modules/matcher-chat-ui/resources/app");
+const outputRoot = path.join(projectRoot, "backend/protected/modules/matcher-chat-ui/resources", reading ? "read-app" : "app");
 const contract = JSON.parse(await fs.readFile(new URL("../toolchain.json", import.meta.url), "utf8"));
 if (Number(process.versions.node.split(".")[0]) !== contract.nodeMajor) throw new Error("This build requires Node 24.");
 
@@ -38,7 +41,7 @@ const audit = {
     moduleCount = ids.length;
     for (const id of ids) {
       const normalized = id.replaceAll("\\", "/");
-      if (normalized.startsWith(integrationRoot.replaceAll("\\", "/") + "src/chat/")) {
+      if (!reading && normalized.startsWith(integrationRoot.replaceAll("\\", "/") + "src/chat/")) {
         this.error("Shell build must not import the unconnected C04 preparation client.");
       }
       const match = normalized.match(/^(.*\/node_modules\/react)\//);
@@ -52,7 +55,7 @@ const audit = {
 };
 
 await build({
-  root: integrationRoot,
+  root: reading ? path.join(integrationRoot, "read") : integrationRoot,
   configFile: false,
   envDir: false,
   cacheDir: path.join(integrationRoot, ".cache/vite"),
@@ -80,4 +83,4 @@ await build({
     sourcemap: false,
   },
 });
-console.log(JSON.stringify({ build: "passed", stage: "shell", businessApiCalls: 0, modules: moduleCount, react: "19.2.4", output: "backend/protected/modules/matcher-chat-ui/resources/app", envFiles: "disabled", sharedCacheWrites: "disabled by explicit config" }));
+console.log(JSON.stringify({ build: "passed", stage: reading ? "read" : "shell", businessApiCalls: reading ? "explicit authorized read client only; runtime not verified" : 0, modules: moduleCount, react: "19.2.4", output: path.relative(projectRoot, outputRoot), envFiles: "disabled", sharedCacheWrites: "disabled by explicit config" }));

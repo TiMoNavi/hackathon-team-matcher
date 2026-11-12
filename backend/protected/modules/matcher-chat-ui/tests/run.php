@@ -43,7 +43,7 @@ namespace {
     use humhub\modules\matcherChatUi\controllers\AppController;
 
     define('CHAT_TEST_MODULE_ROOT', dirname(__DIR__));
-    foreach (['application/ShellPolicy.php', 'application/Bootstrap.php', 'adapters/assets/Manifest.php', 'Module.php', 'controllers/AppController.php', 'adapters/ui/Navigation.php'] as $file) { require CHAT_TEST_MODULE_ROOT . '/' . $file; }
+    foreach (['application/ShellPolicy.php', 'application/Bootstrap.php', 'application/ReadBootstrap.php', 'adapters/assets/Manifest.php', 'Module.php', 'controllers/AppController.php', 'adapters/ui/Navigation.php'] as $file) { require CHAT_TEST_MODULE_ROOT . '/' . $file; }
     $checks = [];
     function check(string $name, bool $condition): void { global $checks; if (!$condition) { throw new \LogicException($name); } $checks[] = $name; }
     function rejects(string $name, callable $operation, string $expected = \RuntimeException::class): void {
@@ -120,18 +120,18 @@ namespace {
         foreach (['https://example.invalid/a', '//example.invalid/a', '/assets/../a', '/assets/%2e/a', '/assets/a?x=1', '/assets/.hidden'] as $url) { check('invalid asset base ' . $url, !ShellPolicy::allowsAssetBase($url)); }
 
         $module = new Module(); $module->basePath = $temporary;
-        $module->settings = new class { public mixed $value = null; public function get(string $key): mixed { if ($key !== 'uiEnabled') { throw new \LogicException('Unexpected setting.'); } return $this->value; } };
+        $module->settings = new class { public mixed $value = null; public mixed $readValue = null; public function get(string $key): mixed { return match ($key) { 'uiEnabled' => $this->value, 'readUiEnabled' => $this->readValue, default => throw new \LogicException('Unexpected setting.') }; } };
         check('UI default enabled', $module->isUiEnabled());
         foreach ([false, 0, '0', '', 'false', 'unknown', [], 1.0] as $value) { $module->settings->value = $value; check('stored switch fails closed ' . count($checks), !$module->isUiEnabled()); }
         foreach ([true, 1, '1', 'true', null] as $value) { $module->settings->value = $value; check('stored permitted switch ' . count($checks), $module->isUiEnabled()); }
         $module->uiEnabled = false; $module->settings->value = true; check('configuration dominates setting', !$module->isUiEnabled()); $module->uiEnabled = true; $module->settings->value = null;
 
         Yii::$app = new class {
-            public object $request; public object $response; public object $assetManager; public object $user; public ?object $controller = null; public ?object $chatModule = null;
-            public function getModule(string $id): ?object { if ($id !== 'matcher-chat-ui') { throw new \LogicException('Unexpected module dependency.'); } return $this->chatModule; }
+            public object $request; public object $response; public object $assetManager; public object $user; public ?object $controller = null; public ?object $chatModule = null; public ?object $backendModule = null;
+            public function getModule(string $id): ?object { return match ($id) { 'matcher-chat-ui' => $this->chatModule, 'matcher-chat' => $this->backendModule, default => throw new \LogicException('Unexpected module dependency.') }; }
         };
         Yii::$app->chatModule = $module;
-        Yii::$app->request = new class($csrf) { public string $method = 'GET'; public string $pathInfo = 'matcher/chat'; public string $baseUrl = ''; public array $queryParams = []; public function __construct(private string $csrf) {} public function getCsrfToken(): string { return $this->csrf; } };
+        Yii::$app->request = new class($csrf) { public string $method = 'GET'; public string $pathInfo = 'matcher/chat'; public string $baseUrl = ''; public array $queryParams = []; public function __construct(private string $csrf) {} public function getCsrfToken(): string { return $this->csrf; } public function getQueryParam(string $key): mixed { return $this->queryParams[$key] ?? null; } };
         Yii::$app->response = new class { public int $statusCode = 200; public object $headers; public function __construct() { $this->headers = new class { public array $values = []; public function set(string $key, string $value): void { $this->values[$key] = $value; } }; } };
         Yii::$app->assetManager = new class { public bool $linkAssets = false; public string $baseUrl = '/assets/chat-fixture'; public int $publications = 0; public function publish(string $path, array $options): array { $this->publications++; if (!$options['beforeCopy']($path . '/assets/main.js', '/unused')) { throw new \LogicException('Publication filter rejected fixture.'); } return ['/unused', $this->baseUrl]; } };
         Yii::$app->user = (object) ['isGuest' => true];
@@ -153,6 +153,13 @@ namespace {
         check('native redirect discards untrusted query parameters', !str_contains($redirect->headers->values['Location'], '?') && !str_contains($redirect->headers->values['Location'], 'example.invalid'));
         $controller->runAction('index', ['path' => 'conversations/12']);
         check('native deep link redirects only after validation', Yii::$app->response->headers->values['Location'] === '/matcher/chat/conversations/12');
+        Yii::$app->request->pathInfo = '';
+        Yii::$app->request->queryParams['r'] = 'matcher-chat-ui/app/index';
+        $controller->runAction('index', ['path' => 'conversations/12']);
+        check('front controller alias redirects canonically', Yii::$app->response->headers->values['Location'] === '/matcher/chat/conversations/12');
+        check('front controller alias publishes no assets', Yii::$app->assetManager->publications === $beforePublications);
+        Yii::$app->request->pathInfo = 'matcher-chat-ui/app/index';
+        unset(Yii::$app->request->queryParams['r']);
         Yii::$app->request->baseUrl = '/mounted'; $controller->runAction('index', ['path' => 'conversations/12']);
         check('canonical redirect keeps the configured base URL', Yii::$app->response->headers->values['Location'] === '/mounted/matcher/chat/conversations/12');
         foreach (['//example.invalid', 'https://example.invalid', '/mounted/../other'] as $baseUrl) {
@@ -181,6 +188,32 @@ namespace {
         Yii::$app->assetManager->linkAssets = true; $controller->runAction('index'); check('linkAssets configuration fails with 503', Yii::$app->response->statusCode === 503); Yii::$app->assetManager->linkAssets = false;
         Yii::$app->assetManager->baseUrl = '//example.invalid/assets'; $controller->runAction('index'); check('external asset publication fails with 503', Yii::$app->response->statusCode === 503); Yii::$app->assetManager->baseUrl = '/assets/chat-fixture';
         check('failure logs are generic', count(array_unique(array_map(static fn(array $warning) => $warning[0], Yii::$warnings))) === 1);
+
+        $readRelease = $temporary . '/resources/read-app'; mkdir($readRelease . '/assets', 0700, true);
+        foreach (['index.html', 'manifest.json', 'assets/main.js', 'assets/shared.mjs', 'assets/lazy.js', 'assets/main.css', 'assets/shared.css', 'assets/lazy.css', 'assets/icon.svg', 'assets/font.woff2', 'assets/photo.webp'] as $file) { copy($release . '/' . $file, $readRelease . '/' . $file); }
+        check('read UI defaults closed', !$module->isReadUiEnabled());
+        $module->readUiEnabled = true;
+        foreach ([null, false, 0, '0', '', 'false', [], 1.0] as $value) { $module->settings->readValue = $value; check('read UI stored gate closed ' . count($checks), !$module->isReadUiEnabled()); }
+        $module->settings->readValue = true;
+        check('read UI requires backend', !$module->isReadUiEnabled());
+        Yii::$app->backendModule = new class { public bool $isEnabled = false; public bool $ready = false; public function isReadingEnabled(): bool { return $this->ready; } };
+        check('read UI requires enabled backend', !$module->isReadUiEnabled());
+        Yii::$app->backendModule->isEnabled = true;
+        check('read UI requires reading backend', !$module->isReadUiEnabled());
+        Yii::$app->backendModule->ready = true;
+        foreach ([true, 1, '1', 'true'] as $value) { $module->settings->readValue = $value; check('read UI explicit setting accepted ' . count($checks), $module->isReadUiEnabled()); }
+        Yii::$app->response->statusCode = 200;
+        check('guest remains shell with read gate on', str_contains($controller->runAction('index'), '聊天接入中，尚未读取会话。'));
+        Yii::$app->user = (object) ['isGuest' => false, 'id' => 23];
+        $readHtml = $controller->runAction('index');
+        check('native session supplies read actor', str_contains($readHtml, '"actor_id":23') && str_contains($readHtml, '"integration_stage":"read"'));
+        check('read host preserves script escaping', !str_contains($readHtml, '<script>alert('));
+        rename($readRelease . '/manifest.json', $readRelease . '/manifest.absent');
+        $controller->runAction('index'); check('read manifest failure has safe 503', Yii::$app->response->statusCode === 503);
+        rename($readRelease . '/manifest.absent', $readRelease . '/manifest.json');
+        $module->readUiEnabled = false;
+        check('read configuration off returns shell', str_contains($controller->runAction('index'), '聊天接入中，尚未读取会话。'));
+        Yii::$app->user->isGuest = true;
 
         $menu = new class { public array $entries = []; public function addEntry(object $entry): void { $this->entries[] = $entry; } };
         $event = new \yii\base\Event(); $event->sender = $menu; Navigation::accountMenu($event); check('guest has no added navigation', count($menu->entries) === 0);

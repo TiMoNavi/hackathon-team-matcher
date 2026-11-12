@@ -48,6 +48,8 @@ $identity = $probe->query('SELECT spec,nonce FROM _chat_c02_guard WHERE id=1')->
 if (!$identity || $identity['spec'] !== $chatConfig['spec'] || !hash_equals($chatConfig['nonce'], $identity['nonce'])) {
     throw new RuntimeException('Database provenance mismatch.');
 }
+$chatInstalled = in_array('matcher-chat', $chatConfig['modules'], true)
+    && (int)$probe->query("SELECT COUNT(*) FROM module_enabled WHERE module_id='matcher-chat'")->fetchColumn() === 1;
 $probe = null;
 defined('YII_DEBUG') || define('YII_DEBUG', false);
 defined('YII_ENV') || define('YII_ENV', 'test');
@@ -80,6 +82,15 @@ $config['components']['fs']['mounts']['data']['path'] = $chatRuntime . '/uploads
 $config['components']['urlManager']['enablePrettyUrl'] = true;
 $config['components']['urlManager']['showScriptName'] = false;
 $config['components']['urlManager']['baseUrl'] = '';
+if ($chatInstalled) {
+    // A separate derivation domain; never expose this value in a report or DTO.
+    $config['modules']['matcher-chat']['integrationReady'] = true;
+    $config['modules']['matcher-chat']['cursorSecret'] = hash_hkdf('sha256', $chatConfig['cookie_key'], 32, 'chat-c04-cursor-v1', $chatConfig['nonce']);
+    $config['modules']['matcher-chat']['nativeTimeZone'] = 'UTC';
+    $config['modules']['matcher-chat-ui']['readUiEnabled'] = true;
+    $config['timeZone'] = 'UTC';
+    if ($web) { $config['bootstrap'] = chatWebBootstrap($config['bootstrap']); }
+}
 if ($web) {
     $config['components']['request']['cookieValidationKey'] = $chatConfig['cookie_key'];
     $config['components']['request']['csrfParam'] = '_chat_c02_csrf';

@@ -12,7 +12,7 @@ export interface ChatApi {
   readState(conversationId: number, options: ReadOptions): Promise<Envelope<ReadState>>;
   dispose(): void;
 }
-export type ChatApiConfig = Readonly<{ apiBase: "/api/v1"; csrfToken: string; fetcher?: ChatFetcher }>;
+export type ChatApiConfig = Readonly<{ apiBase: "/api/v1"; csrfToken: string; fetcher?: ChatFetcher; expectedActorId?: number }>;
 
 export class ChatApiError extends Error {
   readonly status: number;
@@ -49,10 +49,11 @@ function pageQuery(value: Record<string, unknown>): URLSearchParams {
  * This does not authenticate an actor or enable a capability: the server does so
  * on every request. Dispose the client when its owning session is discarded. */
 export function createChatApi(config: ChatApiConfig): ChatApi {
-  const input = options(config, ["apiBase", "csrfToken", "fetcher"]);
+  const input = options(config, ["apiBase", "csrfToken", "fetcher", "expectedActorId"]);
   if (input.apiBase !== "/api/v1" || typeof input.csrfToken !== "string" || !input.csrfToken || input.csrfToken.length > 4096
     || /[\r\n\0]/.test(input.csrfToken) || (input.fetcher !== undefined && typeof input.fetcher !== "function")) return invalidInput();
   let csrfToken = input.csrfToken;
+  const expectedActorId = input.expectedActorId === undefined ? null : checkId(input.expectedActorId);
   let disposed = false;
   const pending = new Set<AbortController>();
   const fetcher: ChatFetcher = config.fetcher ?? ((url, init) => globalThis.fetch(url, init));
@@ -72,6 +73,9 @@ export function createChatApi(config: ChatApiConfig): ChatApi {
     try {
       checkActive();
       const headers: Record<string, string> = { Accept: "application/json" };
+      // Cache-partition consistency only. The server authenticates its native
+      // session and rejects a mismatch; this header never selects the actor.
+      if (expectedActorId !== null) headers["X-Matcher-Chat-Actor"] = String(expectedActorId);
       if (body !== undefined) { headers["Content-Type"] = "application/json"; headers["X-CSRF-Token"] = csrfToken; }
       let response: Response;
       try {

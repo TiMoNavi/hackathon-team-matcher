@@ -4,7 +4,7 @@ import { registerHooks } from "node:module";
 // runtime TypeScript compatible with both the existing Next preview and Vite;
 // this test-only resolver maps exactly these local pure modules, without a build.
 const chatRoot = new URL("../src/chat/", import.meta.url);
-const localImports = new Set(["./contracts.js", "./http.js", "./state.js"]);
+const localImports = new Set(["./contracts.js", "./http.js", "./state.js", "./read-bootstrap.js", "./read-controller.js", "./read-lifecycle.js", "./navigation.js", "./read-presentation.js"]);
 registerHooks({ resolve(specifier, context, nextResolve) {
   if (context.parentURL?.startsWith(chatRoot.href) && localImports.has(specifier)) {
     return nextResolve(new URL(specifier.replace(/\.js$/, ".ts"), context.parentURL).href, context);

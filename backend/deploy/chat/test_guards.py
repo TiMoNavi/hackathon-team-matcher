@@ -31,6 +31,7 @@ def rejects(name, operation):
 config = {**h.spec(), 'password': 'a' * 64, 'cookie_key': 'b' * 64, 'nonce': 'c' * 64, 'modules': list(h.BASE_MODULES)}
 check('baseline config', h.validate_config(config) == config)
 check('UI config', h.validate_config({**config, 'modules': list(h.UI_MODULES)})['modules'] == h.UI_MODULES)
+check('chat config', h.validate_config({**config, 'modules': list(h.CHAT_MODULES)})['modules'] == h.CHAT_MODULES)
 for key, value in [('database', 'humhub_preview'), ('username', 'root'), ('host', '0.0.0.0'), ('port', 8113),
                    ('port', '8124'), ('socket', '/tmp/mysql.sock'), ('runtime', '/tmp/arbitrary'), ('spec', 'other'), ('nonce', 'bad')]:
     with patch.object(h, 'mysql', side_effect=AssertionError('Database touched')):
@@ -79,9 +80,16 @@ for pid, free in [(1234, True), (None, False)]:
     with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard'), patch.object(h, 'owned_server', return_value=pid), patch.object(h, 'port_free', return_value=free), patch.object(h, 'run', side_effect=AssertionError('PHP launched')):
         rejects('install requires stopped target', lambda: h.control('install'))
         rejects('UI migration requires stopped target', lambda: h.control('upgrade-ui'))
+        rejects('chat migration requires stopped target', lambda: h.control('upgrade-chat'))
 for before in [{'baseline_installed': False, 'empty_business_data': True}, {'baseline_installed': True, 'empty_business_data': False}]:
     with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard'), patch.object(h, 'require_stopped'), patch.object(h, 'control', return_value=before), patch.object(h, 'dump_database', side_effect=AssertionError('Unsafe dump')):
         rejects('restore refuses incomplete or nonempty baseline', h.backup_restore)
+for action in ['fixture-prepare', 'fixture-inspect']:
+    with patch.object(h, 'runtime_guard', return_value={**config, 'modules': list(h.CHAT_MODULES)}), patch.object(h, 'database_guard'), patch.object(h, 'owned_server', return_value=1234), patch.object(h, 'run', side_effect=AssertionError('Fixture launched')):
+        rejects('fixed fixture needs stopped server ' + action, lambda action=action: h.fixture(action))
+with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard', side_effect=AssertionError('DB touched')):
+    rejects('fixture needs chat configuration', lambda: h.fixture('fixture-prepare'))
+rejects('no arbitrary fixture action', lambda: h.fixture('login-as-user'))
 with patch.dict(os.environ, {'HUMHUB_DB_PASSWORD': 'synthetic', 'MATCHER_KEY': 'synthetic', 'MYSQL_PWD': 'synthetic', 'OPENAI_API_KEY': 'synthetic', 'PHPRC': '/synthetic', 'PHP_INI_SCAN_DIR': '/synthetic'}):
     env = h.clean_environment()
     check('inherited service environment scrubbed', not any(k.startswith(('HUMHUB_', 'MATCHER_', 'MYSQL_', 'OPENAI_')) or k == 'PHPRC' for k in env))
@@ -91,7 +99,8 @@ with tempfile.TemporaryDirectory(prefix='chat-offline-') as temporary:
     base = Path(temporary); runtime = base / '.runtime/chat-upgrade'
     (base / '.runtime').mkdir(mode=0o700); runtime.mkdir(mode=0o700)
     for name in h.SUBDIRS: (runtime / name).mkdir(mode=0o700)
-    for name in h.UI_MODULES: (base / 'protected/modules' / name).mkdir(parents=True)
+    for name in h.CHAT_MODULES: (base / 'protected/modules' / name).mkdir(parents=True)
+    for name in ['Module.php', 'config.php', 'module.json']: (base / 'protected/modules/matcher-chat' / name).write_text('synthetic')
     binaries = base / '.runtime/php-mysql/bin'; binaries.mkdir(parents=True)
     for name in ['php', 'mysql', 'mysqldump']:
         (binaries / name).write_text('synthetic never executed'); (binaries / name).chmod(0o700)
@@ -128,6 +137,12 @@ with tempfile.TemporaryDirectory(prefix='chat-offline-') as temporary:
             ui_link.unlink(); ui_link.symlink_to(base / 'protected/modules/mail')
             rejects('incorrect UI source link', lambda: h.runtime_guard(allow_add=True))
             ui_link.unlink(); ui_link.symlink_to(base / 'protected/modules/matcher-chat-ui')
+            chat_link = runtime / 'modules/matcher-chat'; chat_link.symlink_to(base / 'protected/modules/matcher-chat')
+            rejects('normal guard rejects pending chat link', h.runtime_guard)
+            with patch.object(h, 'database_guard'), patch.object(h, 'require_stopped'), patch.object(h, 'control', side_effect=lambda action: {'status': 'passed', 'action': action, 'database': h.DB}):
+                check('chat upgrade resumes interrupted link', h.upgrade_chat()['configuration_upgraded'] is True)
+                check('chat upgrade repeat idempotent', h.upgrade_chat()['configuration_upgraded'] is False)
+                check('UI upgrade never downgrades chat config', h.upgrade_ui()['configuration_upgraded'] is False and h.runtime_guard()['modules'] == h.CHAT_MODULES)
             identity = str(os.geteuid()) + ' synthetic-start ' + str(base / '.runtime/php-mysql/bin/php') + ' -S 127.0.0.1:8124 ' + str(HERE / 'router.php')
             h.write_private(runtime / 'server.json', json.dumps({'pid': 1234, 'nonce': fixture['nonce'], 'port': h.PORT, 'process_identity': identity}))
             with patch.object(h, 'run', return_value=identity): check('owned process identity', h.owned_server() == 1234)

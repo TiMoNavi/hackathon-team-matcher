@@ -258,7 +258,10 @@ $validConcurrent = new ChatReader($store, new WrongMessages($store, [], mergedRe
 same(8, $validConcurrent->markRead(1, 10, 2, 'valid-higher-merge')['data']['read_seq'], 'higher merged read accepted only when position exists');
 error(fn () => (new Message(1, 10, 1, 2, 'text', 'Synthetic text', '2026-11-12T00:00:00Z'))->summary(Sender::available(3, 'Wrong author')), 'INVALID_PROJECTION', 503, 'sender projection cannot change native author');
 
-foreach (['Module.php', 'config.php', 'module.json', 'migrations', 'controllers'] as $forbidden) {
-    same(false, file_exists(dirname(__DIR__) . '/' . $forbidden), 'not installable: ' . $forbidden);
-}
+same(false, method_exists(ChatReader::class, 'send'), 'reading kernel does not send');
+same(false, method_exists(ChatReader::class, 'invite'), 'reading kernel does not invite');
+same(false, method_exists(ChatReader::class, 'upload'), 'reading kernel does not upload');
+$applicationSource = file_get_contents(dirname(__DIR__) . '/application/ChatReader.php');
+same(false, str_contains($applicationSource, 'Yii::'), 'reading application stays independent from Yii');
+same(false, str_contains($applicationSource, '\\adapters\\'), 'reading application depends only on domain ports');
 echo json_encode(['status' => 'passed', 'checks' => $checks, 'scope' => 'C04-P synthetic domain/application/ports only', 'database_connections' => 0, 'http_requests' => 0, 'model_calls' => 0], JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES) . PHP_EOL;

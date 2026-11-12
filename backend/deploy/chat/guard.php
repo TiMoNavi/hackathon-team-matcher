@@ -17,7 +17,7 @@ function chatValidateConfig(array $config, string $backend): void
             throw new RuntimeException('Invalid private configuration shape.');
         }
     }
-    if (!in_array($config['modules'], [['mail'], ['mail', 'matcher-chat-ui']], true)) {
+    if (!in_array($config['modules'], [['mail'], ['mail', 'matcher-chat-ui'], ['mail', 'matcher-chat-ui', 'matcher-chat']], true)) {
         throw new RuntimeException('Fixed module allowlist mismatch.');
     }
 }
@@ -26,6 +26,19 @@ function chatValidateRequest(array $server): void
 {
     if (($server['HTTP_HOST'] ?? '') !== '127.0.0.1:8124' || (string)($server['SERVER_PORT'] ?? '') !== '8124'
         || ($server['REMOTE_ADDR'] ?? '') !== '127.0.0.1') { throw new RuntimeException('Isolated HTTP target refused.'); }
+}
+
+function chatWebBootstrap(array $bootstrap): array
+{
+    $loader = 'humhub\components\bootstrap\ModuleAutoLoader';
+    $language = 'humhub\components\bootstrap\LanguageSelector';
+    $chat = 'humhub\modules\matcherChat\adapters\http\ChatRequestBootstrap';
+    if (count(array_keys($bootstrap, $loader, true)) !== 1 || count(array_keys($bootstrap, $language, true)) !== 1
+        || in_array($chat, $bootstrap, true)) { throw new RuntimeException('Unexpected chat bootstrap contract.'); }
+    $loadIndex = array_search($loader, $bootstrap, true); $languageIndex = array_search($language, $bootstrap, true);
+    if ($loadIndex >= $languageIndex) { throw new RuntimeException('Invalid bootstrap order.'); }
+    array_splice($bootstrap, $languageIndex, 0, [$chat]);
+    return $bootstrap;
 }
 
 function chatPrivatePath(string $path, int $mode, bool $directory = false): void

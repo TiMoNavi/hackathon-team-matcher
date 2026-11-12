@@ -17,7 +17,9 @@ try {
         }
         http_response_code(404); exit;
     }
-    if (preg_match('~^/(?:private[.]json|marker[.]json|mysql[.]cnf|server[.]json|runtime|sessions|uploads|mail|cache|themes|modules|backups|protected|deploy|[.])(?:/|$)~', $path)) {
+    // Native routes are dispatched by Yii; this never serves the private mail directory.
+    $nativeMailRoute = preg_match('~^/mail/mail(?:/[a-z][a-z-]*)?$~D', $path) === 1;
+    if (!$nativeMailRoute && preg_match('~^/(?:private[.]json|marker[.]json|c04-fixture[.]json|mysql[.]cnf|server[.]json|runtime|sessions|uploads|mail|cache|themes|modules|backups|protected|deploy|[.])(?:/|$)~', $path)) {
         http_response_code(404); exit;
     }
     $app = require __DIR__ . '/bootstrap.php'; $app->run();

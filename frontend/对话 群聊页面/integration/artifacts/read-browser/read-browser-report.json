@@ -1,0 +1,171 @@
+{
+  "stage": "C06-R-isolated-read-browser",
+  "passed": true,
+  "checks": [
+    "Anonymous page remains a shell and makes no chat requests",
+    "Native synthetic account a reads list, history and explicit increment without implicit writes",
+    "Desktop/320px day/night, mobile navigation, genuine empty conversation and refreshed deep link pass",
+    "Local fonts and Chinese glyph evidence recorded; chat adds only theme storage",
+    "Native synthetic account b reads list, history and explicit increment without implicit writes"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(255, 255, 255)",
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "dark": false,
+      "view": "history"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(16, 14, 24)",
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "dark": true,
+      "view": "history"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "background": "rgb(255, 255, 255)",
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "dark": false,
+      "view": "history"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "background": "rgb(16, 14, 24)",
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "dark": true,
+      "view": "history"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "background": "rgb(255, 255, 255)",
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "dark": false,
+      "view": "list"
+    }
+  ],
+  "fonts": {
+    "brand": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "isCustomFont": true,
+        "glyphCount": 12
+      }
+    ],
+    "chinese-title": [
+      {
+        "familyName": "Inter",
+        "isCustomFont": true,
+        "glyphCount": 21
+      }
+    ],
+    "body": [
+      {
+        "familyName": "PingFang SC",
+        "isCustomFont": false,
+        "glyphCount": 23
+      },
+      {
+        "familyName": "Inter",
+        "isCustomFont": true,
+        "glyphCount": 2
+      }
+    ]
+  },
+  "screenshots": [
+    "read-1440-day-history.png",
+    "read-1440-night-history.png",
+    "read-320-day-history.png",
+    "read-320-night-history.png",
+    "read-320-day-list.png"
+  ],
+  "normalNativeFormLogins": 2,
+  "realProviderAuthentication": false,
+  "realUserDataUsed": false,
+  "credentialsReturned": false,
+  "cookieExported": false,
+  "rawMessageBodiesLogged": false,
+  "screenshotsSyntheticOnly": true,
+  "apiRequests": {
+    "list": 3,
+    "history": 5,
+    "increment": 2,
+    "readState": 1
+  },
+  "receipt": {
+    "observedWrites": 1,
+    "alreadyReadNoWrite": 1
+  },
+  "pageErrors": 0,
+  "consoleErrors": 0,
+  "blockedExternalRequests": 0,
+  "blockedUnexpectedWrites": 0,
+  "limitations": [
+    "Headless Chromium did not produce a real focus/visibility transition on tab switch; focus cleanup/resume is not certified by this run.",
+    "No provider login, group authorization, sending, attachments or complete native rollback is certified."
+  ],
+  "focusLifecycle": {
+    "status": "not-exercised-headless-no-transition",
+    "snapshots": [
+      {
+        "label": "before-tab-switch",
+        "visibility": "visible",
+        "focused": true,
+        "rootHidden": false,
+        "state": "read",
+        "messageCount": 7,
+        "conversationCount": 2,
+        "events": {
+          "blur": 0,
+          "focus": 0,
+          "hidden": 0,
+          "visible": 0,
+          "pagehide": 0
+        }
+      },
+      {
+        "label": "after-tab-switch",
+        "visibility": "visible",
+        "focused": true,
+        "rootHidden": false,
+        "state": "read",
+        "messageCount": 7,
+        "conversationCount": 2,
+        "events": {
+          "blur": 0,
+          "focus": 0,
+          "hidden": 0,
+          "visible": 0,
+          "pagehide": 0
+        }
+      },
+      {
+        "label": "unchanged-after-no-transition",
+        "visibility": "visible",
+        "focused": true,
+        "rootHidden": false,
+        "state": "read",
+        "messageCount": 7,
+        "conversationCount": 2,
+        "events": {
+          "blur": 0,
+          "focus": 0,
+          "hidden": 0,
+          "visible": 0,
+          "pagehide": 0
+        }
+      }
+    ]
+  }
+}

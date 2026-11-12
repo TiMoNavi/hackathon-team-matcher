@@ -28,6 +28,7 @@ SPEC = 'chat-c02-v1'
 GUARD = '_chat_c02_guard'
 BASE_MODULES = ['mail']
 UI_MODULES = ['mail', 'matcher-chat-ui']
+CHAT_MODULES = ['mail', 'matcher-chat-ui', 'matcher-chat']
 SUBDIRS = ['runtime', 'sessions', 'assets', 'uploads', 'mail', 'cache', 'themes', 'modules', 'backups']
 BLOCKED_FUNCTIONS = 'curl_exec,curl_multi_exec,fsockopen,pfsockopen,stream_socket_client,mail'
 CONTROL_MARKER = chr(10) + '__CHAT_CONTROL_RESULT__' + chr(10)
@@ -49,7 +50,7 @@ def validate_config(config):
     require(all(type(config.get(k)) is type(v) and config[k] == v for k, v in spec().items()), 'Isolation target mismatch before connection.')
     for key in ['password', 'cookie_key', 'nonce']:
         require(isinstance(config.get(key), str) and re.fullmatch('[a-f0-9]{64}', config[key]), 'Invalid private value shape.')
-    require(config.get('modules') in [BASE_MODULES, UI_MODULES], 'Fixed module allowlist mismatch.')
+    require(config.get('modules') in [BASE_MODULES, UI_MODULES, CHAT_MODULES], 'Fixed module allowlist mismatch.')
     return config
 
 def checked_path(path, *, directory=False, mode=None):
@@ -67,7 +68,7 @@ def validate_modules(modules, *, allow_add=False):
     folder = RUNTIME / 'modules'
     if folder.exists():
         names = {p.name for p in folder.iterdir()}
-        expected = set(UI_MODULES if allow_add else modules)
+        expected = set(CHAT_MODULES if allow_add else modules)
         require(names.issubset(expected), 'Unexpected isolated module tree.')
         require(set(modules).issubset(names), 'Isolated module link is missing.')
     for name in sorted(names) if folder.exists() else modules:
@@ -205,10 +206,10 @@ def require_stopped():
     require(owned_server() is None and port_free(), 'Stop the owned chat HTTP server before mutation.')
 
 def control(action):
-    require(action in ['install', 'inspect', 'upgrade-ui', 'ui-on', 'ui-off'], 'Unsupported control action.')
+    require(action in ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off'], 'Unsupported control action.')
     config = runtime_guard()
     database_guard(config)
-    if action in ['install', 'upgrade-ui']:
+    if action in ['install', 'upgrade-ui', 'upgrade-chat']:
         require_stopped()
     output = run(php_command() + [str(HERE / 'control.php'), action], timeout=300)
     return parse_control_output(output, action)
@@ -254,10 +255,30 @@ def upgrade_ui():
     target = RUNTIME / 'modules/matcher-chat-ui'
     if not target.is_symlink():
         target.symlink_to(BACKEND / 'protected/modules/matcher-chat-ui', target_is_directory=True)
-    changed = config['modules'] != UI_MODULES
+    changed = config['modules'] == BASE_MODULES
     if changed:
         write_private(RUNTIME / 'private.json', json.dumps({**config, 'modules': list(UI_MODULES)}), replace=True)
     result = control('upgrade-ui')
+    result['configuration_upgraded'] = changed
+    return result
+
+def upgrade_chat():
+    # Exactly one additional owned data module; no arbitrary module parameter.
+    source = BACKEND / 'protected/modules/matcher-chat'
+    require(source.is_dir() and not source.is_symlink(), 'Fixed chat module source unavailable.')
+    for name in ['Module.php', 'config.php', 'module.json']:
+        checked_path(source / name)
+    config = runtime_guard(allow_add=True)
+    require(config['modules'] in [UI_MODULES, CHAT_MODULES], 'Install the UI baseline before chat.')
+    database_guard(config)
+    require_stopped()
+    target = RUNTIME / 'modules/matcher-chat'
+    if not target.is_symlink():
+        target.symlink_to(source, target_is_directory=True)
+    changed = config['modules'] != CHAT_MODULES
+    if changed:
+        write_private(RUNTIME / 'private.json', json.dumps({**config, 'modules': list(CHAT_MODULES)}), replace=True)
+    result = control('upgrade-chat')
     result['configuration_upgraded'] = changed
     return result
 
@@ -289,6 +310,14 @@ def start():
             except subprocess.TimeoutExpired:
                 pass
         raise
+
+def fixture(action):
+    require(action in ['fixture-prepare', 'fixture-inspect'], 'Unknown fixed fixture action.')
+    config = runtime_guard()
+    require(config['modules'] == CHAT_MODULES, 'The fixed chat upgrade is required.')
+    database_guard(config)
+    require_stopped()
+    return parse_control_output(run(php_command() + [str(HERE / 'fixture.php'), action], timeout=300), action)
 
 def stop():
     runtime_guard()
@@ -426,14 +455,17 @@ def locked():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'upgrade-ui', 'ui-on', 'ui-off', 'backup-restore', 'start', 'stop'])
+    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'fixture-prepare', 'fixture-inspect', 'backup-restore', 'start', 'stop'])
     action = parser.parse_args().action
     if action == 'probe':
         result = probe()
     else:
         with locked():
             operations = {'provision': provision, 'install': lambda: control('install'), 'inspect': lambda: control('inspect'),
-                          'upgrade-ui': upgrade_ui, 'ui-on': lambda: control('ui-on'), 'ui-off': lambda: control('ui-off'),
+                          'upgrade-ui': upgrade_ui, 'upgrade-chat': upgrade_chat, 'ui-on': lambda: control('ui-on'), 'ui-off': lambda: control('ui-off'),
+                          'chat-read-on': lambda: control('chat-read-on'), 'chat-read-off': lambda: control('chat-read-off'),
+                          'chat-ui-read-on': lambda: control('chat-ui-read-on'), 'chat-ui-read-off': lambda: control('chat-ui-read-off'),
+                          'fixture-prepare': lambda: fixture('fixture-prepare'), 'fixture-inspect': lambda: fixture('fixture-inspect'),
                           'backup-restore': backup_restore, 'start': start, 'stop': stop}
             result = operations[action]()
     print(json.dumps(result, ensure_ascii=False, indent=2))

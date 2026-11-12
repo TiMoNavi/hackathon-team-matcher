@@ -89,3 +89,15 @@ test("aborted transports still propagate observed 401, and disposal is explicit 
   api.dispose(); api.dispose();
   await assert.rejects(api.list(), (error) => error.code === "CLIENT_DISPOSED");
 });
+
+test("optional actor consistency header is validated and accompanies every endpoint without becoming authentication", async () => {
+  const calls = []; const api = createChatApi({ ...config(async (url, init) => {
+    calls.push([url, init]);
+    return response(url.includes("read-state") ? readState(1, 1) : url.includes("messages") ? messagePage(1, [message(1)]) : conversationPage());
+  }), expectedActorId: 7 });
+  await api.list(); await api.history(1); await api.increment(1, { afterSeq: 0 }); await api.readState(1, { readSeq: 1 });
+  assert.equal(calls.length, 4);
+  for (const [, init] of calls) { assert.equal(init.headers["X-Matcher-Chat-Actor"], "7"); assert.equal(init.credentials, "same-origin"); assert.equal(init.headers.Authorization, undefined); }
+  assert.equal(calls[3][1].body, '{"read_seq":1}');
+  for (const id of [0, -1, 1.5, "7", Number.MAX_SAFE_INTEGER + 1, null]) assert.throws(() => createChatApi({ ...config(async () => {}), expectedActorId: id }), ChatApiError);
+});

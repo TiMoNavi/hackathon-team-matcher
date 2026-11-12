@@ -21,16 +21,23 @@ namespace {
         'cookie_key' => str_repeat('b', 64), 'nonce' => str_repeat('c', 64), 'modules' => ['mail']];
     chatValidateConfig($config, $backend); $check(true);
     chatValidateConfig([...$config, 'modules' => ['mail', 'matcher-chat-ui']], $backend); $check(true);
+    chatValidateConfig([...$config, 'modules' => ['mail', 'matcher-chat-ui', 'matcher-chat']], $backend); $check(true);
     foreach (['database' => 'humhub_preview', 'username' => 'root', 'host' => '0.0.0.0', 'port' => 8113,
         'socket' => '/tmp/mysql.sock', 'runtime' => '/tmp/another', 'spec' => 'overnight-n01-v1', 'nonce' => 'bad'] as $key => $value) {
         $reject(static fn() => chatValidateConfig([...$config, $key => $value], $backend));
     }
-    foreach ([[], ['matcher-chat-ui'], ['matcher-chat-ui', 'mail'], ['mail', 'matcher-auth']] as $modules) {
+    foreach ([[], ['matcher-chat-ui'], ['matcher-chat-ui', 'mail'], ['mail', 'matcher-auth'], ['mail', 'matcher-chat'], ['mail', 'matcher-chat-ui', 'matcher-chat', 'matcher-auth']] as $modules) {
         $reject(static fn() => chatValidateConfig([...$config, 'modules' => $modules], $backend));
     }
     $reject(static fn() => chatValidateConfig([...$config, 'port' => '8124'], $backend));
     $reject(static fn() => chatValidateConfig([...$config, 'auth_mode' => true], $backend));
     $request = ['HTTP_HOST' => '127.0.0.1:8124', 'SERVER_PORT' => '8124', 'REMOTE_ADDR' => '127.0.0.1'];
+    $loader = 'humhub\components\bootstrap\ModuleAutoLoader'; $language = 'humhub\components\bootstrap\LanguageSelector';
+    $chat = 'humhub\modules\matcherChat\adapters\http\ChatRequestBootstrap';
+    $check(chatWebBootstrap(['log', $loader, 'other', $language]) === ['log', $loader, 'other', $chat, $language]);
+    foreach ([[], [$language, $loader], [$loader, $loader, $language], [$loader, $chat, $language], [$loader, $language, $language]] as $boot) {
+        $reject(static fn() => chatWebBootstrap($boot));
+    }
     chatValidateRequest($request); $check(true);
     foreach (['HTTP_HOST' => 'localhost:8124', 'SERVER_PORT' => '8113', 'REMOTE_ADDR' => '192.0.2.1'] as $key => $value) {
         $reject(static fn() => chatValidateRequest([...$request, $key => $value]));

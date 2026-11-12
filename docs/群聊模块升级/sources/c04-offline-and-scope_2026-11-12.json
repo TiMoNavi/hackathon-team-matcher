@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-12",
+  "scope": "C04/C06 isolated read subset",
+  "php_lint": {
+    "backend/protected/modules/matcher-chat": 36,
+    "backend/protected/modules/matcher-chat-ui": 12,
+    "backend/deploy/chat": 7
+  },
+  "offline": {
+    "kernel": {
+      "status": "passed",
+      "checks": 228,
+      "scope": "C04-P synthetic domain/application/ports only",
+      "database_connections": 0,
+      "http_requests": 0,
+      "model_calls": 0
+    },
+    "native": {
+      "status": "passed",
+      "checks": 105,
+      "sql_guard_lookups": 80,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "pure native projection/request/guard seams; not SQL or HTTP acceptance"
+    },
+    "ui": {
+      "status": "passed",
+      "checks": 197,
+      "scope": "offline fixtures, not real HTTP",
+      "database_access": false,
+      "network_access": false,
+      "secrets_read": false
+    },
+    "read_bootstrap": {
+      "status": "passed",
+      "checks": 12,
+      "database_access": false,
+      "network_access": false
+    },
+    "isolation": {
+      "status": "passed",
+      "python_checks": 106,
+      "php_guard_checks": 64,
+      "yii_header_checks": 5,
+      "database_access": false,
+      "real_credentials_read": false,
+      "service_started": false
+    }
+  },
+  "frontend_tests": {
+    "passed": 66,
+    "total": 66,
+    "integration_typecheck": true,
+    "original_next_typecheck": true
+  },
+  "cross_language": {
+    "positive": 29,
+    "negative": 15,
+    "synthetic_transport_calls": 8
+  },
+  "shell_build_matches_previous_release": true,
+  "read_bundle": {
+    "index.html": "9124e82d04a8c17a616125d59a2300b4767512e97b6901718681fd4f591acdd9",
+    "manifest.json": "f6f66a2d72e1202a46929ff25b9e2e3e0770cdc93e2113dcae2a2323a4e0e9d9",
+    "assets/bricolage-grotesque-latin-CtikI8OQ.woff2": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+    "assets/inter-latin-8kRkwJBP.woff2": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "assets/index-C91-4jRY.js": "390c6b589441df9975cfa1ee507a87e9da12484e7b1a93727a28cbded3dc2393",
+    "assets/index-CVaaFQXz.css": "4468ff4eb5c4e19f72404b38dd6ff61c9d7f9f03ca708ecaabde3c39b67942e5"
+  },
+  "protected": {
+    "count": 7,
+    "changed": [],
+    "shared_branch": "feat/overnight-integration-20261112",
+    "branch_unchanged": true,
+    "shared_index_unchanged": true
+  },
+  "production_ready": false,
+  "modules_complete": false
+}

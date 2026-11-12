@@ -1,6 +1,6 @@
-# 聊天 C02/C03 专用隔离工具
+# 聊天 C02–C04 专用隔离工具
 
-任务入口为 [群聊模块升级 task](../../../docs/群聊模块升级/task.md)。本工具只用于独立空业务库与聊天 UI 接入验证，不提供生产部署、真实认证、消息种子或任意 SQL 执行入口。工具存在、离线检查通过不代表真实聊天或隔离安装已经验收。
+任务入口为 [群聊模块升级 task](../../../docs/群聊模块升级/task.md)。本工具用于独立空业务库、聊天 UI 与有限虚构私聊的读取验证，不提供生产部署、真实用户导入、通用消息种子或任意 SQL 执行入口。C04 的正常原生密码登录仅验证合成账号，不替代 GitHub/邮箱验证码提供者验收。
 
 ## 固定目标
 
@@ -13,7 +13,7 @@
 | 私有运行目录 | backend/.runtime/chat-upgrade，0700 |
 | 固定客户端配置 | 新生成的 chat-upgrade/mysql.cnf，0600 |
 | 初始化管理员配置 | 既有 backend/.runtime/mysql-root.cnf，仅由客户端在必要创建时读取，不复制或打印 |
-| 模块 | C02 仅 mail；C03 的唯一允许升级为 mail + matcher-chat-ui |
+| 模块 | C02 仅 mail；C03 增加 matcher-chat-ui；C04 固定增加 matcher-chat |
 
 父目录、配置、运行子目录检查 owner、权限、非符号链接；模块链接只允许指向固定源码。Python 和 PHP 分别校验固定配置、文件标记及数据库 guard 表的 nonce。发现已有同名库或账号但没有本工具归属证据，立即拒绝，不接管、不覆盖、不自动清理。
 
@@ -75,11 +75,44 @@ ui-off/ui-on 仅改 matcher-chat-ui 的 uiEnabled 设置，允许 HTTP 运行时
 
 PHP 使用 -n，清除继承的服务环境变量，禁止 URL streams 与常用 curl/socket/mail 外呼函数；mailer 为 file transport，worker/cron/模型不存在启动路径。HTTP 日志及 PHP 诊断关闭，避免请求或异常携带凭据。此限制不是操作系统网络沙箱。
 
+## C04 固定读取接线
+
+读取仍默认关闭。首次升级与重复升级均须停服；只装配固定模块及元数据迁移，不迁移或复制正文。
+
+    python3 -B backend/deploy/chat/harness.py stop
+    python3 -B backend/deploy/chat/harness.py upgrade-chat
+    python3 -B backend/deploy/chat/harness.py fixture-prepare
+    python3 -B backend/deploy/chat/harness.py fixture-inspect
+    python3 -B backend/deploy/chat/harness.py chat-read-on
+    python3 -B backend/deploy/chat/harness.py chat-ui-read-on
+    python3 -B backend/deploy/chat/harness.py start
+
+fixture-prepare 只准在本工具所有的空业务基线首次创建三个固定虚构用户、三个原生会话和七条虚构消息。两个会话显式准入读取，第三个不准入；重复操作验证精确归属，不覆盖已有数据。密码随机生成，仅保存在0700 runtime内的0600文件；HTTP脚本内部读取，正常提交原生两步表单，不伪造session。
+
+read-probe.php 是固定夹具的只读观察器，拒绝任意ID/SQL参数。verify_reading.py 核对已拥有的8124后验证列表、分页、权限、已读及原生入口；verify_read_switches.py 验证三个功能开关并恢复初始设置。回执只含检查名、计数与限制，不包含凭据、Cookie或正文。
+
+    python3 -B backend/deploy/chat/verify_reading.py
+    python3 -B backend/deploy/chat/verify_read_switches.py
+    python3 -B backend/deploy/chat/verify_native_search.py
+    python3 -B backend/deploy/chat/verify_read_browser.py
+
+浏览器只通过verify_read_browser.py包装器运行。它持有harness锁，核验进程、数据库、fixture nonce与开关后调用固定脚本；不单独运行Node入口。截图和报告只有已核对归属的虚构资料，输出目录/文件拒绝符号链接。
+
+固定SQL探针由verify_read_concurrency.py先验证B的低位已读合并，再跑浏览器。verify_read_transitions.py最后追加唯一第八条虚构消息并永久撤销empty准入，原生消息和成员保留；它不调用发送API，也不代表好友关系或真实撤权竞态已经完成。SQL变体的归属记录只允许sql_probe.spec及append_entry_id两个字段。
+
+上述变体执行后，原始七条/两个active会话的fixture-inspect、fixture-prepare与初始HTTP/浏览器脚本会拒绝或不再满足前置，这是有意的基线保护。不要删数据或重置已读来重跑。变体的持久状态可用固定isolated-sql.php snapshot及read-probe观察，重复append-once/revoke-empty不会重复写入；完整HTTP transition脚本的旧cursor基线只适用于首次撤销。
+
+verify_read_shutdown.py关闭本隔离read API/UI设置，停止本工具8124进程，验证带数据重复升级及非空backup-restore拒绝；不卸载mail/chat、不清理库。未来新一轮夹具须另设明确版本，不偷偷复用或重置该现场。
+
+读取页构建使用聊天integration的npm run build:read，独立输出resources/read-app；原shell仍由npm run build产生。宿主原生session给出v2 bootstrap，三个API继续逐次授权。PUT已读保留CSRF与JSON边界；新增bootstrap须放在ModuleAutoLoader之后、LanguageSelector之前。
+
+**目前只准隔离试验。** 受管用户的原生mail和live入口采取保守拒绝；因此UI关闭虽保留数据、读取API与保护，也不能让这些用户恢复完整原版聊天。手动/在途通知、第三方与bulk/raw SQL入口等尚未完整覆盖。禁止以mail::disable/remove撤回，禁止据此启用生产或群聊/发送/附件。
+
 ## 状态与限制
 
 主agent新增 verify_http.py 固定验证运行中的8124。它校验路由、方法、私有路径和资产，暂移本专项manifest验证503后在finally恢复，并切换UI开关后恢复开启；不写用户或消息。必须在子agent停止构建产物写入、实例由本专项所有时运行。命令为 python3 backend/deploy/chat/verify_http.py；结束仍须运行harness.py stop。
 
-- 本工具不自动创建用户，不执行 GitHub/邮箱验证码，不证明 N04/N05 或双用户聊天通过。
+- C02/C03不创建用户；C04只允许上述显式、有限、有归属的虚构夹具。不执行GitHub/邮箱验证码，不证明N04/N05或双用户收发已完成。
 - 没有 cleanup 或数据模块卸载入口；使用后可 stop 保留验证现场。未来需要清理时另行明确审核固定目标和数据归属。
 - 不调用主预览脚本、overnight 工具或主服务 stop/start；新 UI 撤回绝不 disable mail。
 - 所有真实命令和结果由主agent追加到 [聊天实施记录](../../../docs/群聊模块升级/02_实施记录.md)。离线测试回执与真实安装/HTTP/恢复回执必须分别记录。

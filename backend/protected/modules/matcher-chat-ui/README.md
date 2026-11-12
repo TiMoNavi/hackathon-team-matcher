@@ -1,12 +1,12 @@
 # matcher-chat-ui 0.1.0
 
-C03 的独立同源聊天页面壳，要求 HumHub 1.19.4 或以上。此模块不依赖 matcher-webapp、matcher-chat 或原生 mail 的运行时类；不查询或保存用户、会话、成员、消息、附件或邀请。
+C03独立同源页面壳及C04/C06可选读取宿主，要求HumHub1.19.4或以上。默认shell不依赖matcher-webapp或matcher-chat；可选read模式显式检查matcher-chat读取开关。UI模块只消费原生session和读取API，不拥有消息、成员、附件或邀请记录。
 
-当前阶段是 `shell`。页面必须显示“聊天接入中，尚未读取会话”，不得把尚未接通业务当成真实空会话。没有 conversations、联系人、邀请或 capabilities API，也没有模型、邮件或社交写入。生产连接态由后续任务另行启用。
+默认阶段仍为shell，显示“聊天接入中，尚未读取会话”。read模式已实现，仅在固定8124隔离验证：原生session、模块属性readUiEnabled、设置readUiEnabled、UI总开关和业务模块读取就绪共同允许时才装配。当前并未满足生产原生兼容条件，不能据此启用主预览。
 
 ## 页面与开关
 
-- GET `/matcher/chat` 与 `/matcher/chat/conversations/{id}` 返回同一无业务数据页面。深链仅接受不超过 PHP_INT_MAX 的正整数，不读取该会话。
+- GET `/matcher/chat` 与 `/matcher/chat/conversations/{id}` 默认返回无业务数据shell；read模式才由客户端逐次授权读取。深链须为规范正整数，读取合同进一步要求JS安全整数。
 - 未登录可以查看静态壳，这不代表身份/聊天读取验收通过。登录和首页是服务端生成的明确原生链接，不接任意 returnUrl。
 - 非 GET 返回405并带 `Allow: GET`；非法深链或关闭UI返回404，直接 `/matcher-chat-ui/app/index` 入口同样受限。runAction先捕获Yii尚未绑定的路径，beforeAction在parent之前校验；没有关闭默认CSRF。
 - 开启时直接Yii action的合法GET返回302，Location为服务端baseUrl加固定 `/matcher/chat` 及已验证深链；不转发returnUrl或其他查询参数，也不读取会话/发布资产。浏览器只在规范入口初始化。
@@ -16,11 +16,11 @@ C03 的独立同源聊天页面壳，要求 HumHub 1.19.4 或以上。此模块�
 
 ## Bootstrap与资源
 
-根为 `matcher-chat-root`，JSON节点为 `matcher-chat-bootstrap`。bootstrap仅包含 schema_version=1、integration_stage=shell、base_path=/matcher/chat、api_base=/api/v1、native_home_url、native_login_url、csrf_header=X-CSRF-Token、csrf_token 八个字段。
+根为matcher-chat-root，JSON节点为matcher-chat-bootstrap。shell bootstrap为schema_version=1、integration_stage=shell、base_path=/matcher/chat、api_base=/api/v1、native_home_url、native_login_url、csrf_header=X-CSRF-Token、csrf_token八字段。read bootstrap为v2/read，另加原生session的actor_id和固定native_chat_url，共十字段；actor只用于客户端分区和一致性断言，不授予读取权。
 
 CSRF使用当前请求的掩码值，只在页面内存使用。JSON按HTML安全方式编码；脚本沿用HumHub nonce和宿主CSP；页面使用private,no-store和nosniff。未知字段/类型不应被前端当作有效bootstrap。
 
-前端在原固定目录的 `integration/` 构建，独占写入本模块 `resources/app/`。后端不生成示例产物，不触碰前端构建文件。发布合同如下。
+前端在原固定目录的integration构建，默认输出resources/app，build:read单独输出resources/read-app。宿主按服务端开关选择固定资源根，不接受用户query切换。两种产物均遵守如下发布合同。
 
 - 固定 `resources/app/index.html` 与 `manifest.json`；manifest采用Vite结构，入口键为index.html且isEntry必须为布尔true，构建资源基址为 `./`。PHP不直接渲染构建HTML。
 - 递归验证静态imports、dynamicImports、CSS、字体/图片等资源，按静态依赖顺序加载CSS；动态资源由构建入口按需加载。
@@ -42,11 +42,11 @@ backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat-ui/
 
 覆盖内容包括manifest完整资源图/白名单/动态导入、大小与深度限制、symlink、bootstrap注入/字段类型、全部常见HTTP方法、路径与开关、菜单、503及原生链接。控制器替身验证dispatch与beforeAction顺序，不等于真实Yii HTTP验收。
 
-当前离线回执：PHP 8.5.12 CLI、174项检查通过，原10个PHP文件语法检查通过，本次重定向变更的controller和tests再次通过语法检查。上述离线检查不包含安装、迁移、真实HTTP或浏览器；真实回执由集成人另行记录，不据离线检查将C03或聊天业务标为通过。
+当前离线回执为197项宿主/manifest检查及12项read-bootstrap检查通过，包含read开关、匿名shell、服务端actor、前控规范跳转及缺失read manifest的503。上述替身检查不代替真实HTTP。实际接线与限制见[本批回执](../../../../docs/群聊模块升级/09_C04隔离读取接线回执.md)。
 
 ## 文件边界
 
 - 后端所有者维护本目录的PHP/metadata/测试/本README。
-- 前端所有者维护原聊天目录构建桥及本模块resources/app产物。
+- 前端所有者维护原聊天目录构建桥及本模块resources/app和resources/read-app产物。
 - 实施合同和进展位于仓库 `docs/群聊模块升级/`；本模块不能自行修改N04/N05/N08/N09状态。
-- C04以后真实API仍须普通用户同源session+CSRF、逐对象权限、消息序号/幂等/历史及旧入口保护，本阶段不提供这些业务能力。
+- C04读取API由独立matcher-chat提供，UI仍不提供发送、附件、群邀请等能力。受管用户原生mail入口当前保守拒绝，关闭UI不撤回业务保护；这不代表完整原版回退已通过。

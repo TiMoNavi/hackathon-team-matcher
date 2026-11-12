@@ -6,6 +6,7 @@ use humhub\components\access\ControllerAccess;
 use humhub\modules\matcherChatUi\Module;
 use humhub\modules\matcherChatUi\adapters\assets\Manifest;
 use humhub\modules\matcherChatUi\application\Bootstrap;
+use humhub\modules\matcherChatUi\application\ReadBootstrap;
 use humhub\modules\matcherChatUi\application\ShellPolicy;
 use Yii;
 use yii\helpers\Url;
@@ -17,7 +18,7 @@ final class AppController extends \humhub\components\Controller
     public $access = ControllerAccess::class;
     private mixed $requestedPath = '';
 
-    /** Public static shell only. No actor or business record is read. */
+    /** Guests receive the static shell; the gated read host binds the native session. */
     protected function getAccessRules() { return []; }
 
     public function runAction($id, $params = [])
@@ -41,7 +42,8 @@ final class AppController extends \humhub\components\Controller
     {
         $this->assertRequest($path);
         $request = Yii::$app->request;
-        if ($request->pathInfo === 'matcher-chat-ui/app/index') {
+        if ($request->pathInfo === 'matcher-chat-ui/app/index'
+            || $request->getQueryParam('r') === 'matcher-chat-ui/app/index') {
             $baseUrl = $request->baseUrl;
             if (!is_string($baseUrl) || ($baseUrl !== '' && !ShellPolicy::allowsAssetBase($baseUrl))) {
                 throw new NotFoundHttpException('Page not found.');
@@ -52,9 +54,12 @@ final class AppController extends \humhub\components\Controller
             Yii::$app->response->statusCode = 302;
             return Yii::$app->response;
         }
-        $bootstrap = Bootstrap::data(Yii::$app->request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']));
+        $reading = $this->module instanceof Module && $this->module->isReadUiEnabled() && !Yii::$app->user->isGuest;
+        $bootstrap = $reading
+            ? ReadBootstrap::data($request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']), (int)Yii::$app->user->id)
+            : Bootstrap::data($request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']));
         try {
-            $release = $this->module->getBasePath() . '/resources/app';
+            $release = $this->module->getBasePath() . ($reading ? '/resources/read-app' : '/resources/app');
             $manifest = new Manifest($release);
             $assets = $manifest->load();
             $manager = Yii::$app->assetManager;

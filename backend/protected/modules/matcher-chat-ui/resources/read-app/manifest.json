@@ -1,0 +1,23 @@
+{
+  "../../app/fonts/bricolage-grotesque-latin.woff2": {
+    "file": "assets/bricolage-grotesque-latin-CtikI8OQ.woff2",
+    "src": "../../app/fonts/bricolage-grotesque-latin.woff2"
+  },
+  "../../app/fonts/inter-latin.woff2": {
+    "file": "assets/inter-latin-8kRkwJBP.woff2",
+    "src": "../../app/fonts/inter-latin.woff2"
+  },
+  "index.html": {
+    "file": "assets/index-C91-4jRY.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/index-CVaaFQXz.css"
+    ],
+    "assets": [
+      "assets/inter-latin-8kRkwJBP.woff2",
+      "assets/bricolage-grotesque-latin-CtikI8OQ.woff2"
+    ]
+  }
+}
