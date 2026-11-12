@@ -4,10 +4,10 @@ namespace humhub\modules\matcherChat;
 
 use humhub\modules\matcherChat\adapters\http\SessionActor;
 use humhub\modules\matcherChat\adapters\native\{DirectAdmission, EntryCoverage, GuardedPollController, NativeSendEligibility, NativeFileStore};
-use humhub\modules\matcherChat\adapters\persistence\{SqlReadStore, SqlSendStore, SqlState, SqlAttachmentStore};
+use humhub\modules\matcherChat\adapters\persistence\{SqlReadStore, SqlSendStore, SqlState, SqlAttachmentStore, SqlGroupStore};
 use humhub\modules\matcherChat\adapters\security\{HmacCursorCodec, SystemClock};
-use humhub\modules\matcherChat\application\{ChatReader, ChatSender, ChatAttachments, EntryPolicy};
-use humhub\modules\matcherChat\domain\{ChatException, PageRequest};
+use humhub\modules\matcherChat\application\{ChatReader, ChatSender, ChatAttachments, ChatGroups, EntryPolicy};
+use humhub\modules\matcherChat\domain\{ChatException, GroupPolicy, PageRequest};
 use Yii;
 
 final class Module extends \humhub\components\Module
@@ -17,6 +17,7 @@ final class Module extends \humhub\components\Module
     public bool $entryTakeoverEnabled = false;
     public bool $sendEnabled = false;
     public bool $attachmentsEnabled = false;
+    public bool $groupsEnabled = false;
     public string $cursorSecret = '';
     public string $nativeTimeZone = 'UTC';
     private ?SqlState $sql = null;
@@ -28,6 +29,20 @@ final class Module extends \humhub\components\Module
         return $this->integrationReady && in_array($this->settings->get('readEnabled'), [true, 1, '1', 'true'], true) && strlen($this->cursorSecret) >= 32 && $this->schemaReady();
     }
     public function admission(): DirectAdmission { return new DirectAdmission($this->sql()); }
+    /** Group lifecycle is independent of direct-message read/send switches. */
+    public function isGroupsEnabled(): bool
+    {
+        return $this->groupsEnabled && in_array($this->settings->getUncached('groupsEnabled'), ['1', 'true'], true)
+            && Yii::$app instanceof \yii\web\Application && Yii::$app->hasModule('mail') && $this->pollProtectionReady();
+    }
+    public function groups(int $viewerId): ChatGroups
+    {
+        SessionActor::requireSelf($viewerId);
+        if (!$this->isGroupsEnabled()) { throw new ChatException('CHAT_GROUPS_UNAVAILABLE', 'Group lifecycle is unavailable.', 503); }
+        $store = new SqlGroupStore($this->sql(), $viewerId, $this->groupsEnabled);
+        if (!$store->ready()) { throw new ChatException('CHAT_GROUPS_UNAVAILABLE', 'Group storage is unavailable.', 503); }
+        return new ChatGroups($store, $store, $store, new GroupPolicy(259200, 50, 50));
+    }
     public function isSendingEnabled(): bool
     {
         return $this->sendEnabled && in_array($this->settings->getUncached('sendEnabled'), ['1', 'true'], true)

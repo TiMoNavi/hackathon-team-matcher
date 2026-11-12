@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "database": "humhub_chat_c02_20261112",
+  "http_requests_for_fixture": 11,
+  "http_new_fixture_writes": 6,
+  "checks": 50,
+  "assertions": [
+    "owned server running",
+    "group opt-in and direct read enabled",
+    "fixed friends initially valid",
+    "owned native credentials",
+    "request same origin 1",
+    "bounded HTTP body 1",
+    "native login form",
+    "native login CSRF",
+    "request same origin 2",
+    "bounded HTTP body 2",
+    "native identity redirect",
+    "request same origin 3",
+    "bounded HTTP body 3",
+    "native password form",
+    "request same origin 4",
+    "bounded HTTP body 4",
+    "native password accepted",
+    "request same origin 5",
+    "bounded HTTP body 5",
+    "authenticated chat host",
+    "native CSRF bootstrap",
+    "request same origin 6",
+    "bounded HTTP body 6",
+    "dedicated group created 20",
+    "request same origin 7",
+    "bounded HTTP body 7",
+    "dedicated invitation pending 20",
+    "request same origin 8",
+    "bounded HTTP body 8",
+    "dedicated group created 30",
+    "request same origin 9",
+    "bounded HTTP body 9",
+    "dedicated invitation pending 30",
+    "request same origin 10",
+    "bounded HTTP body 10",
+    "dedicated group created 40",
+    "request same origin 11",
+    "bounded HTTP body 11",
+    "dedicated invitation pending 40",
+    "rollback-create full database rollback",
+    "rollback-accept full database rollback",
+    "create persistent quota and rollback",
+    "invite persistent quota and rollback",
+    "one acceptance and one replay",
+    "unfriend commits before rejected accept",
+    "block commits before rejected accept",
+    "only one accepted membership and receipt persisted",
+    "rollback leaves group and invite counts",
+    "legacy revoked data messages files and queue preserved",
+    "fixed friendship and block restored"
+  ],
+  "cases": [
+    {
+      "status": "passed",
+      "mode": "rollback-create",
+      "checks": 19,
+      "result": {
+        "full_rollback": true
+      },
+      "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+    },
+    {
+      "status": "passed",
+      "mode": "rollback-accept",
+      "checks": 24,
+      "result": {
+        "full_rollback": true
+      },
+      "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+    },
+    {
+      "status": "passed",
+      "mode": "quota-rollback",
+      "checks": 35,
+      "result": {
+        "create": {
+          "new_commands_rolled_back": 5,
+          "existing_in_window_at_limit": 0,
+          "quota_observed": true
+        },
+        "invite": {
+          "new_commands_rolled_back": 17,
+          "existing_in_window_at_limit": 3,
+          "quota_observed": true
+        }
+      },
+      "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-accept",
+        "checks": 24,
+        "result": {
+          "replayed": false,
+          "conversation_id": 9,
+          "membership_generation": 1,
+          "invitation_status": "accepted"
+        },
+        "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "try-accept",
+        "checks": 23,
+        "result": {
+          "replayed": true,
+          "conversation_id": 9,
+          "membership_generation": 1,
+          "invitation_status": "accepted"
+        },
+        "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-unfriend",
+        "checks": 24,
+        "result": {
+          "native_change_committed": true
+        },
+        "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "try-unfriend",
+        "checks": 24,
+        "result": {
+          "authorization_denied": "GROUP_TARGET_UNAVAILABLE",
+          "membership_added": false
+        },
+        "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    },
+    {
+      "holder": {
+        "status": "passed",
+        "mode": "hold-block",
+        "checks": 24,
+        "result": {
+          "native_change_committed": true
+        },
+        "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+      },
+      "peer": {
+        "status": "passed",
+        "mode": "try-block",
+        "checks": 24,
+        "result": {
+          "authorization_denied": "GROUP_TARGET_UNAVAILABLE",
+          "membership_added": false
+        },
+        "scope": "Fixed synthetic C07A native SQL transaction probe; no group message or attachment delivery."
+      },
+      "independent_processes": true,
+      "peer_pending_until_holder_release": true
+    }
+  ],
+  "group_count": 5,
+  "invitation_count": 7,
+  "receipt_count": 18,
+  "legacy_preserved": true,
+  "credentials_returned": false,
+  "real_ai_calls": 0,
+  "limitations": [
+    "SQL overlaps use independent processes with held-lock barriers, not concurrent HTTP requests.",
+    "Native relation mutations use real SQL rows; native AR hooks, reverse lock ordering and deadlock recovery are not claimed.",
+    "Quota and rollback can advance auto-increment allocations; no sequence reset or fixture data deletion.",
+    "Group messages, attachments, browser UI and activity discussions remain outside C07-A1."
+  ]
+}

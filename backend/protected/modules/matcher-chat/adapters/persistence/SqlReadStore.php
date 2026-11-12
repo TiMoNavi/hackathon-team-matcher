@@ -57,7 +57,9 @@ final class SqlReadStore implements AccessReader, ReadRepository, ConsistencyBou
     {
         $actor = $this->sql->one('SELECT id,status FROM {{%user}} WHERE id=:viewer FOR UPDATE', [':viewer' => $this->viewerId]);
         if ($actor === null || (int)$actor['status'] !== 1) { throw new ChatException('ACCOUNT_UNAVAILABLE', 'The account is unavailable.', 403); }
-        $rows = $this->sql->all('SELECT c.* FROM {{%matcher_chat_conversation}} c INNER JOIN {{%matcher_chat_member}} m ON m.message_id=c.message_id WHERE m.user_id=:viewer ORDER BY c.message_id LIMIT ' . (SqlState::MAX_CONVERSATIONS + 1) . ' FOR UPDATE', [':viewer' => $this->viewerId]);
+        // Group lifecycle is installed independently; its membership generations
+        // must not enter this direct-only reader or consume duplicate scope slots.
+        $rows = $this->sql->all('SELECT c.* FROM {{%matcher_chat_conversation}} c INNER JOIN {{%matcher_chat_member}} m ON m.message_id=c.message_id WHERE m.user_id=:viewer AND c.type=:type AND m.generation=1 ORDER BY c.message_id LIMIT ' . (SqlState::MAX_CONVERSATIONS + 1) . ' FOR UPDATE', [':viewer' => $this->viewerId, ':type' => 'direct']);
         if (count($rows) > SqlState::MAX_CONVERSATIONS) { throw new ChatException('CHAT_SCOPE_MIGRATION_REQUIRED', 'This scope requires a separately reviewed migration.', 503); }
         foreach ($rows as $row) {
             $id = SafeInteger::native($row['message_id'], 'conversation_id');

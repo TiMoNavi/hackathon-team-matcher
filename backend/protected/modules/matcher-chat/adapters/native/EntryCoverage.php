@@ -24,8 +24,14 @@ final class EntryCoverage
             $revoked = 0;
             foreach ($managed as $row) {
                 $id = SafeInteger::native($row['message_id'], 'conversation_id');
-                $state = $this->sql->synchronize($id);
-                if ($state === null || $state['type'] !== 'direct') { throw new ChatException('CHAT_SCOPE_MIGRATION_REQUIRED', 'The scope requires review.', 503); }
+                $state = $this->sql->state($id);
+                if ($state !== null && $state['type'] === 'direct') { $state = $this->sql->synchronize($id); }
+                elseif ($state === null || $state['type'] !== 'group' || !$this->sql->groupsReady()
+                    || $state['owner_id'] === null || $state['pair_low'] !== null || $state['pair_high'] !== null) {
+                    throw new ChatException('CHAT_SCOPE_MIGRATION_REQUIRED', 'The scope requires review.', 503);
+                }
+                // Registered groups remain covered by native guards, but the
+                // direct-only reader and EntryPolicy still advertise no group capability.
                 $managedIds[] = $id;
                 if ($state['status'] !== 'active') { ++$revoked; }
             }

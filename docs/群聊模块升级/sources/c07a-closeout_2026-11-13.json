@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "database": "humhub_chat_c02_20261112",
+  "port": 8124,
+  "actions": [
+    {
+      "action": "chat-groups-off",
+      "status": "passed"
+    },
+    {
+      "action": "chat-attachments-off",
+      "status": "passed"
+    },
+    {
+      "action": "chat-send-off",
+      "status": "passed"
+    },
+    {
+      "action": "chat-takeover-off",
+      "status": "passed"
+    },
+    {
+      "action": "chat-ui-read-off",
+      "status": "passed"
+    },
+    {
+      "action": "chat-read-off",
+      "status": "passed"
+    }
+  ],
+  "stop": {
+    "status": "passed",
+    "action": "stop",
+    "owned_pid_stopped": 25170,
+    "port": 8124
+  },
+  "repeat_upgrade": [
+    {
+      "status": "passed",
+      "action": "upgrade-chat"
+    },
+    {
+      "status": "passed",
+      "action": "upgrade-chat"
+    }
+  ],
+  "gates": {
+    "chat_groups_opt_in": false,
+    "chat_groups_enabled": false,
+    "chat_attachments_enabled": false,
+    "chat_send_enabled": false,
+    "chat_entry_takeover_enabled": false,
+    "chat_ui_read_enabled": false,
+    "chat_read_enabled": false
+  },
+  "fixture_identical": true,
+  "legacy_hash": "c7d9c150e7fcd2bc0e938084bf0096afbe9bada57e0b02a8e7c06e5ec65ed404",
+  "legacy_preserved": true,
+  "old_terminal_revoked": true,
+  "groups": 5,
+  "invitations": 7,
+  "receipts": 18,
+  "native_group_members": 7,
+  "membership_generations": 8,
+  "original_messages": 28,
+  "files": 16,
+  "queue": 1,
+  "friendship_rows": 2,
+  "blocked_rows": 0,
+  "nonempty_restore_refused": true,
+  "worker_started": false,
+  "main_preview_touched": false,
+  "credentials_returned": false,
+  "note": "CLI chat_groups_enabled is web-only readiness and is never evidence of web availability; persistent opt-in is also false."
+}

@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "changed_paths_before_report": 34,
+  "php_lint": 17,
+  "python_ast": 4,
+  "relative_links": 84,
+  "markdown_tables": 14,
+  "protected_paths_equal_baseline": 11,
+  "harness_offline": {
+    "python": 119,
+    "php": 64,
+    "yii": 5
+  },
+  "scope_only": true,
+  "main_branch_unchanged": true,
+  "source_sha256": {
+    "backend/protected/modules/matcher-chat/adapters/persistence/SqlGroupStore.php": "9a1d049d4a35fb25f0bacd6f48847adf225c807feca4df7f3cdbc7626d5fe98d",
+    "backend/protected/modules/matcher-chat/adapters/persistence/SqlState.php": "bf8395689b561c354be6eaff73280bc5e9c31fc1a310f890ce98cd0b24cfbc78",
+    "backend/protected/modules/matcher-chat/adapters/persistence/SqlReadStore.php": "078045df7b9f443d9e39885696782305744c09a1f1e147dad40b1c37b569a4d7",
+    "backend/protected/modules/matcher-chat/adapters/native/NativeGroupAuthority.php": "723ffb84bcb3a512d572b04a24d3d809d4a59152a9ac9bf6fdd686f589b43d27",
+    "backend/protected/modules/matcher-chat/adapters/native/NativeGuard.php": "501a132ac4408ea46f1ff439fd14843a1be3c93e2c49b600a8ae849ca60e3b1b",
+    "backend/protected/modules/matcher-chat/adapters/native/EntryCoverage.php": "2d894dfa50c9015a67b7d7c9ea8858c91ff8f24d51a948308129c064d26722f7",
+    "backend/protected/modules/matcher-chat/migrations/m261113_020000_chat_groups.php": "f0c20e2a17a037b340702eb58853605874f7d36328e7e06f3688ac2e536f97e8",
+    "backend/protected/modules/matcher-chat/tests/groups-native.php": "b37b808b60f127843cbb95be9e12da0180cc4a1ca85fe59368973080fb0fce1b",
+    "backend/protected/modules/matcher-chat/tests/isolated-groups.php": "4800a20be8a792c665a494260e1790dd18ef8370bb2797879f044e78f20b9b6e",
+    "backend/protected/modules/matcher-chat/Module.php": "5de5aa09126493e4d1ad693ded2b3b15761876a80f03d5b15a8cda12353ee3db",
+    "backend/protected/modules/matcher-chat/config.php": "e18a50f6aa1cb9791e21747280f07a39a352eec06471ceed0a98d90103a90a3c",
+    "backend/protected/modules/matcher-chat/adapters/http/RequestBoundary.php": "33b7c004257336e31aae9dcceda9111fb1fde626159a437285b9ff6c24265440",
+    "backend/protected/modules/matcher-chat/controllers/GroupController.php": "9050be2d3714ec75acc6b104676761a54e34b07d85cc96d7a5028a3a99b1d593",
+    "backend/protected/modules/matcher-chat/tests/groups-http.php": "729aa28281b32cad6659cb142d561170e19c511c72ea59519383d3710eaea661",
+    "backend/protected/modules/matcher-chat/module.json": "37205f10de38c91d5bea21ee77c2cbfd83bea6c86557244cb06a87f3e0145213",
+    "frontend/对话 群聊页面/integration/src/chat/group-http.ts": "06f164f8ef8d4c62049bc82180a0877814deb45307a89ba2571cbe3cc9b8a43a",
+    "frontend/对话 群聊页面/integration/tests/chat-group-http.test.mjs": "24eee8ebcb7662624daf21359db1cf0688b3765fe98ef714cbc37fbad1f02a92",
+    "backend/deploy/chat/harness.py": "00521fa5d188358091a7446afe146e7a9596a843814abd80be33a424f3586bca",
+    "backend/deploy/chat/control.php": "eb6ec581d642e6932be1e76cea4903003622ec215b96b8fc51bf312ed8bd619f",
+    "backend/deploy/chat/bootstrap.php": "30e9e9256b3fe232625a7f9bb9d9b93531fa1ab5db9bd6fd871a46ed858d0f7f",
+    "backend/deploy/chat/c07a-fixture.php": "913e264aad6f948eadc9dcacfe091afb782e4b8ac11935aba3dade3173a66ef9",
+    "backend/deploy/chat/verify_groups.py": "4507b7a15066e4ef2f5a4301fd3b7f57861a45b0c1eb19ab7fdb44fe689e4945",
+    "backend/deploy/chat/verify_group_concurrency.py": "c91ac6f2a2924f7c827d49934ee36b21bf14e2e924ce33517e62ca24614fb699",
+    "backend/deploy/chat/test_guards.py": "e6722d2210d72e9ae053c14b0cf4ae648b7324d7ad6c80615115468815566936"
+  }
+}

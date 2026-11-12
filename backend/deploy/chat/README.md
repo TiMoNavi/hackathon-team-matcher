@@ -163,3 +163,17 @@ router对Yii测试模式下已经发送完毕的成功ExitException保留原响�
 - 功能收尾关闭attachments/send/takeover/read API/read UI五设置，保留UI总开关和必要守卫，停止自有8124；不disable/remove mail，不碰8113，不部署主预览。
 
 最终数据计数、真实证据和未验范围以15及专项实施记录为准；旧章节数值仍是对应历史批次的事实。
+
+### C07-A1 固定空群生命周期验证（后端0.4.0）
+
+当前入口为[20运行合同](../../../docs/群聊模块升级/20_C07A群生命周期持久化与API.md)。新增三个虚构账号、一个专属空direct；原C05B末态撤权保持。新c07a-fixture.json／_chat_c07a_fixture保存独立归属，旧数据hash只规范化本迁移新增且值合法的owner_id／version列，不跳过旧业务字段。禁止重跑旧prepare来重建被撤成员。
+
+- c07a-prepare要求停服；c07a-inspect只观察固定归属。群由实际七条API创建，不由fixture伪造成员或群消息。
+- chat-groups-on/off只控制本固定实例的持久意图；配置也须允许。chat_groups_opt_in与chat_groups_enabled分开报告，后者要求web／mail／受保护poll，CLI false不说明Web失败。
+- verify_groups.py通过原生登录完成首轮80请求／290检查，11个新增命令；成功证据已存在时拒绝覆写。后续重放必须另定范围、另存回执，不能覆盖首轮pending／首次写断言。
+- verify_group_concurrency.py先通过HTTP创建固定20／30／40键的三个空群与邀请，再执行tests/isolated-groups.php固定9模式。真实进程握手覆盖重复接受、撤好友／屏蔽先提交、创建／接受失败回滚及持久配额。成功后禁止重跑已接受的一次性夹具；不重置收据或自增序号。
+- SQL清理逐项尝试自己的子进程与refriend／unblock，汇总错误；即使一个恢复失败也尝试另一个。两种关系恢复仅处理固定虚构pair，不能用作产品好友API。
+- 本批保留5空群／7邀请／18收据、7原生成员／8成员期；旧28消息／16文件／queue1和C05B永久撤权保持。没有群正文、群附件或通知写入。
+- 收尾六项设置groups／attachments／send／takeover／read API／read UI关闭，自有8124停止；带数据重复升级两次保持快照，非空恢复拒绝。UI总开关与业务保护仍保留，无mail卸载、worker、模型或主预览操作。
+
+真实SQL证据仅证明所列行锁交错，不代表并发HTTP、全部原生AR、反向锁序或死锁恢复。群消息／附件／浏览器与活动讨论继续另批；UI和integration仍0.3.0，没有重建正式资源。

@@ -90,6 +90,31 @@ for action in ['fixture-prepare', 'fixture-inspect']:
 with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard', side_effect=AssertionError('DB touched')):
     rejects('fixture needs chat configuration', lambda: h.fixture('fixture-prepare'))
 rejects('no arbitrary fixture action', lambda: h.fixture('login-as-user'))
+rejects('no arbitrary C07A fixture action', lambda: h.c07a_fixture('login-as-user'))
+with patch.object(h, 'runtime_guard', return_value={**config, 'modules': list(h.CHAT_MODULES)}), patch.object(h, 'database_guard'), patch.object(h, 'owned_server', return_value=1234), patch.object(h, 'run', side_effect=AssertionError('Fixture launched')):
+    rejects('C07A prepare requires stopped server', lambda: h.c07a_fixture('prepare'))
+with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard'), patch.object(h, 'run', side_effect=AssertionError('Fixture launched')):
+    rejects('C07A fixture requires chat module set', lambda: h.c07a_fixture('snapshot'))
+sys.path.insert(0, str(HERE))
+import verify_group_concurrency as group_probe
+from types import SimpleNamespace
+cleanup_actions = []
+def failing_restore(action):
+    cleanup_actions.append(action)
+    if action == 'refriend': raise RuntimeError('synthetic restoration failure')
+def failed_poll():
+    raise RuntimeError('synthetic child cleanup failure')
+with patch.object(group_probe, 'children', [SimpleNamespace(p=SimpleNamespace(poll=failed_poll))]), patch.object(group_probe.g, 'fixture', side_effect=failing_restore):
+    try:
+        group_probe.cleanup()
+    except group_probe.h.Refusal as error:
+        check('group cleanup reports child and restore failures', 'owned child cleanup' in str(error) and 'refriend' in str(error))
+    else:
+        raise AssertionError('Group cleanup failure was hidden')
+check('group unblock attempted despite prior cleanup failures', cleanup_actions == ['refriend', 'unblock'])
+with patch.object(group_probe, 'children', []), patch.object(group_probe.g, 'fixture') as restored:
+    group_probe.cleanup()
+    check('group cleanup restores both fixed relations', [call.args[0] for call in restored.call_args_list] == ['refriend', 'unblock'])
 with patch.dict(os.environ, {'HUMHUB_DB_PASSWORD': 'synthetic', 'MATCHER_KEY': 'synthetic', 'MYSQL_PWD': 'synthetic', 'OPENAI_API_KEY': 'synthetic', 'PHPRC': '/synthetic', 'PHP_INI_SCAN_DIR': '/synthetic'}):
     env = h.clean_environment()
     check('inherited service environment scrubbed', not any(k.startswith(('HUMHUB_', 'MATCHER_', 'MYSQL_', 'OPENAI_')) or k == 'PHPRC' for k in env))

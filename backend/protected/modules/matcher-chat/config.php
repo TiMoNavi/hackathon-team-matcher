@@ -8,6 +8,13 @@ return [
     'namespace' => 'humhub\modules\matcherChat',
     'consoleControllerMap' => ['chat-attachment' => \humhub\modules\matcherChat\commands\ChatAttachmentController::class],
     'urlManagerRules' => [
+        'api/v1/conversations/groups' => 'matcher-chat/group/create',
+        'api/v1/conversations/<id:\d+>/invitations' => 'matcher-chat/group/invite',
+        'api/v1/conversations/<id:\d+>/leave' => 'matcher-chat/group/leave',
+        'api/v1/group-invitations/<id:\d+>' => 'matcher-chat/group/invitation',
+        'api/v1/group-invitations/<id:\d+>/accept' => 'matcher-chat/group/accept',
+        'api/v1/group-invitations/<id:\d+>/decline' => 'matcher-chat/group/decline',
+        'api/v1/group-invitations/<id:\d+>/withdraw' => 'matcher-chat/group/withdraw',
         'api/v1/conversations' => 'matcher-chat/api/conversations',
         'api/v1/conversations/<id:\d+>/messages' => 'matcher-chat/api/messages',
         'api/v1/conversations/<id:\d+>/read-state' => 'matcher-chat/api/read-state',

@@ -101,6 +101,7 @@ if ($chatInstalled) {
     $config['modules']['matcher-chat']['cursorSecret'] = hash_hkdf('sha256', $chatConfig['cookie_key'], 32, 'chat-c04-cursor-v1', $chatConfig['nonce']);
     $config['modules']['matcher-chat']['nativeTimeZone'] = 'UTC';
     $config['modules']['matcher-chat']['attachmentsEnabled'] = true; // Fixed C05B isolation only; stored opt-in stays off.
+    $config['modules']['matcher-chat']['groupsEnabled'] = true; // Fixed C07A isolation only; stored opt-in stays off.
     $config['modules']['matcher-chat']['sendEnabled'] = true; // Fixed C05 isolation only; stored opt-in remains off.
     $config['modules']['matcher-chat']['entryTakeoverEnabled'] = true; // Fixed isolated target; stored opt-in stays off.
     $config['modules']['matcher-chat-ui']['readUiEnabled'] = true;

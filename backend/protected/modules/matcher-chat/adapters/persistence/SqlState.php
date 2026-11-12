@@ -14,6 +14,7 @@ final class SqlState
     public const MAX_CONVERSATIONS = 512;
     private bool $storageVerified = false;
     private ?bool $attachmentSchemaVerified = null;
+    private ?bool $groupSchemaVerified = null;
 
     public function __construct(public readonly Connection $db, public readonly string $nativeTimeZone = 'UTC') {}
 
@@ -92,6 +93,32 @@ final class SqlState
     {
         if (!$this->attachmentsReady()) { return false; }
         return $this->one('SELECT attachment_id FROM {{%matcher_chat_attachment}} WHERE file_id=:id OR file_guid=:guid LIMIT 1', [':id' => is_numeric($id) ? (int)$id : 0, ':guid' => is_string($guid) ? $guid : '']) !== null;
+    }
+    /** Group migrations are additive; old direct installations remain readable. */
+    public function groupsReady(): bool
+    {
+        if ($this->groupSchemaVerified !== null) { return $this->groupSchemaVerified; }
+        if (!$this->ready()) { return $this->groupSchemaVerified = false; }
+        $expected = [
+            'matcher_chat_group_invitation' => [['id'], ['id', 'message_id', 'inviter_id', 'invitee_id', 'pending_invitee_id', 'status', 'version', 'created_at', 'expires_at', 'resolved_at']],
+            'matcher_chat_group_receipt' => [['actor_id', 'operation', 'client_command_id'], ['actor_id', 'operation', 'client_command_id', 'payload_hash', 'message_id', 'invitation_id', 'created_at']],
+        ];
+        foreach ($expected as $name => [$key, $columns]) {
+            $schema = $this->db->schema->getTableSchema('{{%' . $name . '}}');
+            if ($schema === null || $schema->primaryKey !== $key || array_diff($columns, array_keys($schema->columns)) !== []) { return $this->groupSchemaVerified = false; }
+            $engine = $this->one('SELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=:table', [':table' => $this->db->tablePrefix . $name]);
+            if ($engine === null || strtoupper((string)$engine['ENGINE']) !== 'INNODB') { return $this->groupSchemaVerified = false; }
+        }
+        $conversation = $this->db->schema->getTableSchema('{{%matcher_chat_conversation}}');
+        $member = $this->db->schema->getTableSchema('{{%matcher_chat_member}}');
+        foreach (['pair_low', 'pair_high', 'owner_id'] as $name) {
+            if (!isset($conversation->columns[$name]) || !$conversation->columns[$name]->allowNull) { return $this->groupSchemaVerified = false; }
+        }
+        if (!isset($member->columns['version']) || $member->columns['version']->allowNull) { return $this->groupSchemaVerified = false; }
+        $index = $this->all('SELECT COLUMN_NAME,NON_UNIQUE FROM information_schema.STATISTICS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=:table AND INDEX_NAME=:index ORDER BY SEQ_IN_INDEX',
+            [':table' => $this->db->tablePrefix . 'matcher_chat_group_invitation', ':index' => 'uq_matcher_chat_group_pending']);
+        return $this->groupSchemaVerified = count($index) === 2 && array_column($index, 'COLUMN_NAME') === ['message_id', 'pending_invitee_id']
+            && array_map('intval', array_column($index, 'NON_UNIQUE')) === [0, 0];
     }
     /** Unknown native files remain a permanent revocation trigger. */
     private function attachmentRows(int $id): ?array

@@ -119,12 +119,13 @@ final class NativeGuard
         }
     }
 
-    /** Any status/delete transition permanently revokes admitted direct history for that pair. */
+    /** Direct keeps its historical-pair policy. A group is conservatively revoked
+     * only for a currently active member; a former member cannot pause the group. */
     public function invalidateIdentity(int $userId): void
     {
         $operation = function () use ($userId): void {
             $this->sql->one('SELECT id FROM {{%matcher_chat_lock}} WHERE id=1 FOR UPDATE');
-            $rows = $this->sql->all('SELECT message_id FROM {{%matcher_chat_member}} WHERE user_id=:user ORDER BY message_id FOR UPDATE', [':user' => $userId]);
+            $rows = $this->sql->all('SELECT c.message_id FROM {{%matcher_chat_conversation}} c WHERE EXISTS (SELECT 1 FROM {{%matcher_chat_member}} m WHERE m.message_id=c.message_id AND m.user_id=:user AND (c.type=:direct OR (c.type=:group AND m.status=:active))) ORDER BY c.message_id FOR UPDATE', [':user' => $userId, ':direct' => 'direct', ':group' => 'group', ':active' => 'active']);
             foreach ($rows as $row) { $this->sql->revoke(SafeInteger::native($row['message_id'], 'conversation_id'), 'native-identity-changed'); }
         };
         if ($this->sql->db->getTransaction()?->getIsActive()) { $operation(); }
