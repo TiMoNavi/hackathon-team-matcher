@@ -8,6 +8,7 @@
     "typecheck": "node ../node_modules/typescript/bin/tsc -p tsconfig.json --noEmit --incremental false",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "build": "npm run typecheck && node scripts/build.mjs && node scripts/verify-build.mjs",
-    "verify:build": "node scripts/verify-build.mjs"
+    "verify:build": "node scripts/verify-build.mjs",
+    "verify:contract": "node --experimental-strip-types scripts/verify-contract.mjs"
   }
 }

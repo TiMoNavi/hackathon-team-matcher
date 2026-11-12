@@ -1,0 +1,215 @@
+{
+  "task": "C04-P",
+  "date": "2026-11-12",
+  "timezone": "Asia/Shanghai",
+  "scope": "unwired offline chat read kernel and frontend client",
+  "status": "verified",
+  "backend": {
+    "checks": 228,
+    "test_exit_code": 0,
+    "php_lint_files": 20,
+    "php_lint_errors": [],
+    "registration_absent": true
+  },
+  "frontend": {
+    "tests": 44,
+    "passed": 44,
+    "failed": 0,
+    "typecheck_exit_code": 0,
+    "original_next_typecheck_exit_code": 0,
+    "build_exit_code": 0,
+    "manifest_nodes": 3,
+    "assets": 4,
+    "fonts": 2,
+    "shell_only": true,
+    "assets_identical_to_C03": true,
+    "asset_sha256": {
+      "index.html": "afd03643852fea4942535eeaeaf0649a4d08c6538713327be90a8bad34bc1af5",
+      "manifest.json": "34529c4ff8d4c1cf0e2dc4b1f282ca79b49138da6e67f295cf3955676abf3b75",
+      "assets/bricolage-grotesque-latin-CtikI8OQ.woff2": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+      "assets/inter-latin-8kRkwJBP.woff2": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "assets/index-DA5t_4zc.js": "2a0e223adbf56a3864e49c137ac4e85b70749a1416ad0a8b0cee26a3c4fa4996",
+      "assets/index-DhcpXFvH.css": "3557c9ee8f089ba162bdbf350ee8b5561e211f3027f8da70cacb1603f085e31f"
+    },
+    "build_correction": "Excluded new offline client and chat-*.mjs tests from Tailwind scans; intermediate extra utility removed; all six published files unchanged."
+  },
+  "cross_language": {
+    "status": "passed",
+    "mode": "offline-php-usecases-to-typescript-parser",
+    "positive_cases": 29,
+    "negative_cases": 15,
+    "positive_names": [
+      "empty-list",
+      "authorized-list",
+      "list-first",
+      "list-older",
+      "history-latest",
+      "history-older",
+      "history-empty",
+      "group-history",
+      "discussion-history",
+      "increment-truncated",
+      "increment-empty",
+      "read-initial",
+      "read-forward",
+      "read-lower",
+      "read-group-baseline",
+      "increment-before-profile-change",
+      "increment-after-profile-change",
+      "list-after-profile-change",
+      "read-after-profile-change",
+      "read-hole-error",
+      "missing-error",
+      "cursor-limit-error",
+      "cursor-expired-error",
+      "revoked-error",
+      "native-overflow-error",
+      "projection-before-list",
+      "projection-before-history",
+      "projection-after-increment",
+      "projection-after-list"
+    ],
+    "negative_names": [
+      "unsafe native identifier",
+      "unknown private projection",
+      "untyped legacy conversation",
+      "cross-conversation message",
+      "duplicate sequence",
+      "unsorted history",
+      "unsafe sequence",
+      "history boundary exposure",
+      "unavailable attachment capability",
+      "increment cannot reuse backward cursor",
+      "negative read position",
+      "missing request id",
+      "error retry flag is not a string",
+      "missing list projection revision",
+      "missing message projection revision"
+    ],
+    "projection_invalidation": "passed",
+    "projection_downgrade_rejection": "passed",
+    "synthetic_client_requests": 8,
+    "real_http_requests": 0,
+    "database_connections": 0,
+    "real_authentication": false,
+    "php_export_exit_code": 0,
+    "typescript_check_exit_code": 0
+  },
+  "independent_review": {
+    "report": "../06_C04P独立审查.md",
+    "reported_backend_extra_checks": 5,
+    "reported_frontend_extra_scenarios": 7,
+    "reported_extra_synthetic_transport_calls": 19,
+    "report_owner": "chat_isolation_audit"
+  },
+  "protection": {
+    "files": {
+      "AGENTS.md": true,
+      "README.md": true,
+      "docs/首次注册与开场引导_用户原稿_冻结.md": true,
+      "docs/睡前全自动运行/原始情况描述禁止修改.md": true,
+      "backend/protected/modules/mail/Module.php": true,
+      "frontend/对话 群聊页面/package.json": true,
+      "frontend/对话 群聊页面/integration/src/main.tsx": true,
+      "frontend/对话 群聊页面/integration/src/chat-entry.tsx": true,
+      "backend/protected/modules/matcher-chat-ui/resources/app/manifest.json": true
+    },
+    "shared_branch": "feat/overnight-integration-20261112",
+    "shared_index_used": false,
+    "published_assets_unchanged": true
+  },
+  "source_sha256": {
+    "backend/protected/modules/matcher-chat/README.md": "597656b43ca808e62b6ca9c828f21173d94a3f64a71d79a6d2b710097e6d065b",
+    "backend/protected/modules/matcher-chat/adapters/memory/FrozenClock.php": "6c96c6a1f364d43f170ee954418d482f83ecc4f73dfbce6f4706513ff2813d1d",
+    "backend/protected/modules/matcher-chat/adapters/memory/InMemoryChatStore.php": "89c17db8c718a6f98b6bf8e833c9032dffc526a17c3d7ccc597f8906366e693e",
+    "backend/protected/modules/matcher-chat/adapters/security/HmacCursorCodec.php": "bcd4580be59f5815983b2e0923b0636b03a4df8df1f0c130b53d889882e03be2",
+    "backend/protected/modules/matcher-chat/application/ChatReader.php": "ac9f4eea4daf0e5a4643a61fc18b34c8a6e5eebb355072e73373a49b8778a8fd",
+    "backend/protected/modules/matcher-chat/domain/AccessGrant.php": "3bf5377388a33920124ce0fe1ef829383a6bfccaddaa52f4abb35c48f0f4a74c",
+    "backend/protected/modules/matcher-chat/domain/ChatException.php": "c528a6f0c7c579f88faed45094d7748c408ba4bdd219592f588ed3619cb60535",
+    "backend/protected/modules/matcher-chat/domain/Conversation.php": "fb8a5f34c861bbe3c441fb04dce036494a53185c8236063b85c5473340b589d9",
+    "backend/protected/modules/matcher-chat/domain/Message.php": "1ec2510454958375b9ed31a86998c51ad6dc34f659025c7d16690594f4aa4bbf",
+    "backend/protected/modules/matcher-chat/domain/PageRequest.php": "f70ee055498381d2b8fb2e120e3687f877206dee89edfeeadcfbc2f2e667bb5f",
+    "backend/protected/modules/matcher-chat/domain/SafeInteger.php": "66cda4219635e5380d83577b0a258ce035fa068789cad05abe5502fdf2b9dd3b",
+    "backend/protected/modules/matcher-chat/domain/Sender.php": "e252ce938ac733090714436c49839c24e059422b7cfd9bb7370984b3ca09dbbd",
+    "backend/protected/modules/matcher-chat/domain/ports/AccessReader.php": "3479ac9e7b15ccd7f853b8777fa712c1ae4aa8c4b59a5dd260e3b744d74a88ce",
+    "backend/protected/modules/matcher-chat/domain/ports/Clock.php": "7d2d48f0633422e991b0850e8b803efd441ba82cbe35529087e1346ba4b50b07",
+    "backend/protected/modules/matcher-chat/domain/ports/ConsistencyBoundary.php": "66d23d8a3c65a63d32c4a3b9af0ec6c89d4e354ce962fdac31c70672d8a564d9",
+    "backend/protected/modules/matcher-chat/domain/ports/CursorCodec.php": "2d62daa5bc54e6d91bc814be1371d4f71ed99454116d3a164f22c9841d9578e0",
+    "backend/protected/modules/matcher-chat/domain/ports/ReadRepository.php": "d9e21f5adf13fe8186215869f17fd903e1621d56f41c01efd581ccc060018154",
+    "backend/protected/modules/matcher-chat/tests/bootstrap.php": "00a24ea25729b1213a5d0ed4017f58636029e72577cb9460e2ebe0257a1232c9",
+    "backend/protected/modules/matcher-chat/tests/export-contract.php": "e00cf85f3d4b0ccb4fd33cd89aa0d7676bd16007a2c93a3a6722a420550ab63d",
+    "backend/protected/modules/matcher-chat/tests/fixtures.php": "d15d8df9e222033e23eb254a9b40f0ee78e921921b773e3255f71b8aabdadb2b",
+    "backend/protected/modules/matcher-chat/tests/run.php": "320390e371c95175ce16dc43348c7395cc83d024a9895b12e39f049bd922a1bd",
+    "frontend/对话 群聊页面/integration/scripts/build.mjs": "45f413a9d2d436810a12180d8d8423137871c5c3091fc37a49fc15c350e8ac36",
+    "frontend/对话 群聊页面/integration/scripts/verify-contract.mjs": "2fd7ad4006afd75545228faa8e1c0204b5b1ab43d05bf22979cff3afe20940c3",
+    "frontend/对话 群聊页面/integration/src/chat/contracts.ts": "6af8d0fbbffdb2bdf25db34103fd36e23d47d8e8a3257cb4ee434eb157e0ad83",
+    "frontend/对话 群聊页面/integration/src/chat/http.ts": "b73d37f8c3441d1a380dc0b053e8052872f49ef5dbdaa438324a7034ae394e57",
+    "frontend/对话 群聊页面/integration/src/chat/state.ts": "43789bafe2410981e1f0b42f7beda04b034c6b8e64f50c44f826d4e16fb96fdf",
+    "frontend/对话 群聊页面/integration/src/styles.css": "941adab8cde273cf7f1a1b085f6846c17bdb3742d9361ce466d76c4e2228a8a1",
+    "frontend/对话 群聊页面/integration/tests/chat-contracts.test.mjs": "7292836e44a6aed2bdcbf9a5c8f27f3e292fd34af5e05d856e5c56dd40caa4ba",
+    "frontend/对话 群聊页面/integration/tests/chat-http.test.mjs": "8c84eb3afbe8196707b8461d1c661ebd3b93f0d8e6fd607e9b637127342bf389",
+    "frontend/对话 群聊页面/integration/tests/chat-state.test.mjs": "6859865931c914196eb9c05bbf9e8566955fa20976036a69fef8553b39a52e52",
+    "frontend/对话 群聊页面/integration/tests/chat-test-helpers.mjs": "9c760c859874dabbf60d2caacae240567020022e81a62d175904eee6bd3c5bf9"
+  },
+  "external_gates": {
+    "N04_real_login_verified": false,
+    "N05_released": false,
+    "C04": "blocked"
+  },
+  "side_effects": {
+    "real_http_requests": 0,
+    "database_connections": 0,
+    "model_calls": 0,
+    "services_started_or_stopped": 0,
+    "real_messages_read": 0,
+    "application_business_routes_registered": 0
+  },
+  "not_verified": [
+    "real authentication",
+    "current activity eligibility",
+    "SQL concurrency and persistence",
+    "native mail/file/search/notification protection",
+    "real message send/receive",
+    "group invitations",
+    "connected UI and rollback with message data"
+  ],
+  "publication": "pending independent branch commit and remote verification",
+  "commands": [
+    {
+      "cwd": ".",
+      "command": "backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/run.php",
+      "exit_code": 0
+    },
+    {
+      "cwd": ".",
+      "command": "PHP -n -l for each matcher-chat/**/*.php",
+      "exit_code": 0
+    },
+    {
+      "cwd": "frontend/对话 群聊页面/integration",
+      "command": "npm test",
+      "exit_code": 0
+    },
+    {
+      "cwd": "frontend/对话 群聊页面/integration",
+      "command": "npm run build (includes typecheck and verify-build)",
+      "exit_code": 0
+    },
+    {
+      "cwd": "frontend/对话 群聊页面",
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit_code": 0
+    },
+    {
+      "cwd": ".",
+      "command": "PHP -n tests/export-contract.php output piped via subprocess to node --experimental-strip-types integration/scripts/verify-contract.mjs",
+      "exit_code": 0
+    }
+  ],
+  "documentation_check": {
+    "files": 9,
+    "relative_links": 110,
+    "tables": 24,
+    "errors": []
+  }
+}

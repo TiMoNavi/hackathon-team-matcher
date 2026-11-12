@@ -3,6 +3,8 @@
 @import "../../app/themes.css";
 @import "../../app/friend-requests.css";
 @import "../../app/polish.css";
+@source not "./chat";
+@source not "../tests/chat-*.mjs";
 @source "./chat-entry.tsx";
 @source "./theme.tsx";
 @source "../../components/brand.tsx";

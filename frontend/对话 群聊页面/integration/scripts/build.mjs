@@ -38,6 +38,9 @@ const audit = {
     moduleCount = ids.length;
     for (const id of ids) {
       const normalized = id.replaceAll("\\", "/");
+      if (normalized.startsWith(integrationRoot.replaceAll("\\", "/") + "src/chat/")) {
+        this.error("Shell build must not import the unconnected C04 preparation client.");
+      }
       const match = normalized.match(/^(.*\/node_modules\/react)\//);
       if (match) roots.add(match[1]);
       if (/\/(?:lib\/(?:conversations|friend-requests)|components\/chat\/(?:conversation-app|friend-requests))\./.test(normalized) || /\/node_modules\/(?:\.pnpm\/[^/]+\/node_modules\/)?next\//.test(normalized)) {
