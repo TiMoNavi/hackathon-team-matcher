@@ -1,0 +1,288 @@
+{
+  "status": "passed",
+  "date": "2026-11-12",
+  "task": "N03",
+  "module": "matcher-webapp",
+  "version": "0.1.0",
+  "offline": {
+    "module_checks": 89,
+    "python_guard_checks": 95,
+    "php_guard_checks": 38,
+    "client_tests": 9,
+    "typecheck": true,
+    "build": true,
+    "single_react_runtime": true
+  },
+  "http_enabled": {
+    "status": "passed",
+    "task": "N03",
+    "mode": "ui-enabled",
+    "origin": "http://127.0.0.1:8113",
+    "checks": [
+      {
+        "name": "page status /matcher/app",
+        "passed": true,
+        "actual": 200,
+        "expected": 200
+      },
+      {
+        "name": "single root /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "single JSON bootstrap /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "bootstrap field whitelist /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "bootstrap constants /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "CSRF present /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "native fallbacks /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "published assets present /matcher/app",
+        "passed": true
+      },
+      {
+        "name": "same-origin asset",
+        "passed": true
+      },
+      {
+        "name": "asset readable",
+        "passed": true,
+        "status": 200,
+        "bytes": 44169,
+        "sha256": "ff81ca9172a618c05d9eab9073c03bce2ac6440d7d2a296a100597c534656024"
+      },
+      {
+        "name": "same-origin asset",
+        "passed": true
+      },
+      {
+        "name": "asset readable",
+        "passed": true,
+        "status": 200,
+        "bytes": 273430,
+        "sha256": "fc02d37c49bcebc027ad4688bac570c2a5fe95d557bbb515566971bfacc70253"
+      },
+      {
+        "name": "page status /matcher/app/home",
+        "passed": true,
+        "actual": 200,
+        "expected": 200
+      },
+      {
+        "name": "single root /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "single JSON bootstrap /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "bootstrap field whitelist /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "bootstrap constants /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "CSRF present /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "native fallbacks /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "published assets present /matcher/app/home",
+        "passed": true
+      },
+      {
+        "name": "same-origin asset",
+        "passed": true
+      },
+      {
+        "name": "asset readable",
+        "passed": true,
+        "status": 200,
+        "bytes": 44169,
+        "sha256": "ff81ca9172a618c05d9eab9073c03bce2ac6440d7d2a296a100597c534656024"
+      },
+      {
+        "name": "same-origin asset",
+        "passed": true
+      },
+      {
+        "name": "asset readable",
+        "passed": true,
+        "status": 200,
+        "bytes": 273430,
+        "sha256": "fc02d37c49bcebc027ad4688bac570c2a5fe95d557bbb515566971bfacc70253"
+      },
+      {
+        "name": "unauthenticated /api/v1/me",
+        "passed": true,
+        "status": 401,
+        "error_code": "AUTHENTICATION_REQUIRED"
+      },
+      {
+        "name": "unauthenticated /api/v1/me/current-event",
+        "passed": true,
+        "status": 401,
+        "error_code": "AUTHENTICATION_REQUIRED"
+      },
+      {
+        "name": "native stale CSRF returns fresh login",
+        "passed": true,
+        "status": 302
+      },
+      {
+        "name": "shell CSRF rejects missing token",
+        "passed": true,
+        "status": 400
+      },
+      {
+        "name": "API checks authentication before CSRF",
+        "passed": true,
+        "status": 401
+      },
+      {
+        "name": "private path denied /private.json",
+        "passed": true,
+        "status": 404
+      },
+      {
+        "name": "private path denied /mysql.cnf",
+        "passed": true,
+        "status": 404
+      },
+      {
+        "name": "private path denied /runtime/php-errors.log",
+        "passed": true,
+        "status": 404
+      }
+    ],
+    "real_login_verified": false,
+    "business_writes": 0,
+    "external_calls": 0
+  },
+  "http_disabled": {
+    "status": "passed",
+    "task": "N03",
+    "mode": "ui-disabled",
+    "origin": "http://127.0.0.1:8113",
+    "checks": [
+      {
+        "name": "page status /matcher/app",
+        "passed": true,
+        "actual": 404,
+        "expected": 404
+      },
+      {
+        "name": "page status /matcher/app/home",
+        "passed": true,
+        "actual": 404,
+        "expected": 404
+      },
+      {
+        "name": "unauthenticated /api/v1/me",
+        "passed": true,
+        "status": 401,
+        "error_code": "AUTHENTICATION_REQUIRED"
+      },
+      {
+        "name": "unauthenticated /api/v1/me/current-event",
+        "passed": true,
+        "status": 401,
+        "error_code": "AUTHENTICATION_REQUIRED"
+      },
+      {
+        "name": "native stale CSRF returns fresh login",
+        "passed": true,
+        "status": 302
+      },
+      {
+        "name": "shell CSRF rejects missing token",
+        "passed": true,
+        "status": 400
+      },
+      {
+        "name": "API checks authentication before CSRF",
+        "passed": true,
+        "status": 401
+      },
+      {
+        "name": "private path denied /private.json",
+        "passed": true,
+        "status": 404
+      },
+      {
+        "name": "private path denied /mysql.cnf",
+        "passed": true,
+        "status": 404
+      },
+      {
+        "name": "private path denied /runtime/php-errors.log",
+        "passed": true,
+        "status": 404
+      }
+    ],
+    "real_login_verified": false,
+    "business_writes": 0,
+    "external_calls": 0
+  },
+  "toggle": {
+    "status": "passed",
+    "counts_unchanged": true,
+    "all_modules_remain_enabled": true,
+    "ui_off_verified": true,
+    "ui_on_restored": true,
+    "final_http_checks": 32
+  },
+  "backup_restore": {
+    "status": "passed",
+    "action": "backup-restore",
+    "database": "humhub_overnight_n01_20261112",
+    "sha256": "9e3704f2873f027ca04998091d1f0ff67ec1e3440b52525a65f112a91365f1e7",
+    "mutation_and_restore_verified": true,
+    "application_inspection_equal": true,
+    "backup_fingerprint": {
+      "raw_sha256": "9e3704f2873f027ca04998091d1f0ff67ec1e3440b52525a65f112a91365f1e7",
+      "canonical_sha256": "4d6d4ebce40aa69c2db906f6f747ddaa02c87050fe1e71c46d1801e245409c00",
+      "canonicalization": "redundant-column-charset-v1",
+      "redundant_charset_clauses": 248
+    },
+    "restored_fingerprint": {
+      "raw_sha256": "9e3704f2873f027ca04998091d1f0ff67ec1e3440b52525a65f112a91365f1e7",
+      "canonical_sha256": "4d6d4ebce40aa69c2db906f6f747ddaa02c87050fe1e71c46d1801e245409c00",
+      "canonicalization": "redundant-column-charset-v1",
+      "redundant_charset_clauses": 248
+    },
+    "raw_dumps_equal": true,
+    "canonical_schema_data_equal": true
+  },
+  "browser_report": "../../../frontend/integration/artifacts/browser-report.json",
+  "main_preserved": {
+    "service_pids_unchanged": true,
+    "accounts": 103,
+    "spaces": 4,
+    "frozen_hashes_unchanged": true
+  },
+  "real_login_verified": false,
+  "real_ai_calls": 0,
+  "emails_sent": 0,
+  "oauth_calls": 0,
+  "isolated_http_stopped": true
+}

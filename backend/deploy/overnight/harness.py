@@ -27,8 +27,9 @@ HOST = '127.0.0.1'
 PORT = 8113
 SPEC = 'overnight-n01-v1'
 GUARD = '_overnight_n01_guard'
-MODULES = ['auth-github', 'mail', 'matcher-user-profile', 'matcher-profile-privacy',
-           'matcher-onboarding', 'matcher-resume-import', 'matcher-recommendation', 'matcher-ideas']
+LEGACY_MODULES = ['auth-github', 'mail', 'matcher-user-profile', 'matcher-profile-privacy',
+                  'matcher-onboarding', 'matcher-resume-import', 'matcher-recommendation', 'matcher-ideas']
+MODULES = LEGACY_MODULES + ['matcher-webapp']
 SUBDIRS = ['runtime', 'sessions', 'assets', 'uploads', 'mail', 'cache', 'themes', 'modules', 'backups']
 BLOCKED_FUNCTIONS = 'curl_exec,curl_multi_exec,fsockopen,pfsockopen,stream_socket_client,mail'
 
@@ -48,7 +49,7 @@ def validate_config(config):
     require(all(config.get(k) == v for k, v in spec().items()), 'Isolation target mismatch; refusing before database access.')
     for key in ['password', 'cookie_key', 'nonce']:
         require(isinstance(config.get(key), str) and re.fullmatch('[a-f0-9]{64}', config[key]), 'Invalid private configuration shape.')
-    require(config.get('modules') == MODULES, 'Module allowlist mismatch.')
+    require(config.get('modules') in [LEGACY_MODULES, MODULES], 'Module allowlist mismatch.')
     return config
 
 
@@ -169,6 +170,22 @@ def write_private(path, value):
         stream.write(value)
     os.chmod(path, 0o600)
 
+def replace_private(path, value):
+    """Atomically replace an already validated owned file; preserve 0600 mode."""
+    private_file(path)
+    temporary = path.with_name(path.name + '.pending-' + secrets.token_hex(16))
+    descriptor = os.open(temporary, os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, 'O_NOFOLLOW', 0), 0o600)
+    try:
+        with os.fdopen(descriptor, 'w') as stream:
+            stream.write(value)
+            stream.flush()
+            os.fsync(stream.fileno())
+        private_file(path)
+        os.replace(temporary, path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
 def clean_environment():
     env = dict(os.environ)
     for key in list(env):
@@ -231,10 +248,10 @@ def parse_control_output(output, action):
     return result
 
 def control(action):
-    require(action in ['install', 'inspect'], 'Unsupported PHP control action.')
+    require(action in ['install', 'inspect', 'sync-modules', 'ui-on', 'ui-off'], 'Unsupported PHP control action.')
     config = runtime_guard()
     database_guard(config)
-    if action == 'install':
+    if action in ['install', 'sync-modules']:
         require(owned_server() is None and port_free(), 'Stop the isolated web server before installation or migration.')
     result = subprocess.run(php_command() + [str(HERE / 'control.php'), action],
                             capture_output=True, text=True, timeout=300, env=clean_environment())
@@ -248,6 +265,38 @@ def control(action):
             pass
         raise Refusal('Isolated PHP control failed (' + category + '); raw diagnostics suppressed.')
     return parse_control_output(result.stdout, action)
+
+def sync_modules():
+    """One fixed additive N01-to-N03 transition, safely retryable after interruption."""
+    config = runtime_guard()
+    database_guard(config)
+    require(owned_server() is None and port_free(), 'Stop the isolated web server before module synchronization.')
+    folder = RUNTIME / 'modules'
+    names = {path.name for path in folder.iterdir()}
+    require(set(LEGACY_MODULES).issubset(names) and names.issubset(set(MODULES)), 'Unexpected isolated module tree.')
+    for name in MODULES:
+        source = BACKEND / 'protected/modules' / name
+        require(source.is_dir() and not source.is_symlink(), 'Required fixed module source is unavailable.')
+        target = folder / name
+        if target.is_symlink():
+            require(target.resolve(strict=True) == source.resolve(strict=True), 'Isolated module link mismatch.')
+        elif target.exists():
+            raise Refusal('Unexpected non-link isolated module path.')
+        else:
+            require(name == 'matcher-webapp', 'Existing isolated module link is missing.')
+    # All provenance, target and source checks precede the first mutation.
+    new_link = folder / 'matcher-webapp'
+    if not new_link.is_symlink():
+        new_link.symlink_to(BACKEND / 'protected/modules/matcher-webapp', target_is_directory=True)
+    upgraded = config['modules'] != MODULES
+    if upgraded:
+        replacement = {**config, 'modules': list(MODULES)}
+        validate_config(replacement)
+        replace_private(RUNTIME / 'private.json', json.dumps(replacement))
+    result = control('sync-modules')
+    result['configuration_upgraded'] = upgraded
+    result['fixed_added_modules'] = ['matcher-webapp']
+    return result
 
 def provision():
     require(port_free(), 'Port 8113 is occupied; refusing provision.')
@@ -400,13 +449,14 @@ def locked():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'backup-restore', 'start', 'stop', 'cleanup'])
+    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'sync-modules', 'ui-on', 'ui-off', 'backup-restore', 'start', 'stop', 'cleanup'])
     args = parser.parse_args()
     if args.action == 'probe':
         result = {'status': 'passed', 'action': 'probe', 'port_free': port_free(), 'php_available': (BACKEND / '.runtime/php-mysql/bin/php').is_file(), **spec()}
     else:
         with locked():
             operations = {'provision': provision, 'install': lambda: control('install'), 'inspect': lambda: control('inspect'),
+                          'sync-modules': sync_modules, 'ui-on': lambda: control('ui-on'), 'ui-off': lambda: control('ui-off'),
                           'backup-restore': backup_restore, 'start': start, 'stop': stop, 'cleanup': cleanup}
             result = operations[args.action]()
     print(json.dumps(result, ensure_ascii=False, indent=2))

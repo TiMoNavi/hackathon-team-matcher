@@ -1,6 +1,14 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/guard.php';
+$replyError = static function (Throwable $error): void {
+    $response = overnightErrorResponse($error);
+    http_response_code($response['status']);
+    header('Content-Type: application/json; charset=UTF-8');
+    header('Cache-Control: no-store');
+    header('X-Content-Type-Options: nosniff');
+    echo json_encode($response['body'], JSON_THROW_ON_ERROR);
+};
 try {
     overnightValidateRequest($_SERVER);
     $runtime = dirname(__DIR__, 2) . '/.runtime/overnight-integration';
@@ -23,9 +31,8 @@ try {
     }
     $app = require __DIR__ . '/bootstrap.php';
     $app->run();
+} catch (\yii\web\HttpException $error) {
+    $replyError($error);
 } catch (Throwable $error) {
-    http_response_code(503);
-    header('Content-Type: application/json');
-    header('Cache-Control: no-store');
-    echo json_encode(['error' => ['code' => 'ISOLATED_HARNESS_UNAVAILABLE', 'message' => 'The isolated harness refused this request.']]);
+    $replyError($error);
 }

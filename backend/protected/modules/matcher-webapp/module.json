@@ -1,0 +1,9 @@
+{
+  "id": "matcher-webapp",
+  "name": "活动队友应用",
+  "description": "同源 React 页壳；身份、当前活动和业务资料继续由现有 API 管理。",
+  "version": "0.1.0",
+  "humhub": {"minVersion": "1.19.4"},
+  "keywords": ["team-matching", "webapp"],
+  "authors": [{"name": "Hackathon Team Matcher"}]
+}

@@ -10,6 +10,7 @@ import re
 import socket
 import subprocess
 import sys
+import tempfile
 from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
@@ -35,6 +36,10 @@ def rejects(name, operation):
 
 config = {**h.spec(), 'password': 'a' * 64, 'cookie_key': 'b' * 64, 'nonce': 'c' * 64, 'modules': list(h.MODULES)}
 check('valid fixed target accepted', h.validate_config(config) == config)
+legacy = {**config, 'modules': list(h.LEGACY_MODULES)}
+check('exact legacy module target remains valid for guarded upgrade', h.validate_config(legacy) == legacy)
+for modules in [list(reversed(h.MODULES)), ['matcher-webapp'], h.LEGACY_MODULES[:-1] + ['matcher-webapp'], h.MODULES + ['arbitrary-plugin']]:
+    rejects('reject incomplete reordered or extended module list', lambda modules=modules: h.validate_config({**config, 'modules': modules}))
 for key, wrong in [('database', 'humhub'), ('username', 'root'), ('host', '0.0.0.0'), ('port', 8090),
                    ('socket', '/tmp/mysql.sock'), ('runtime', '/tmp/elsewhere'), ('spec', 'unknown'),
                    ('nonce', 'invalid'), ('password', "unsafe'password"), ('modules', h.MODULES + ['matcher-onboarding-ai'])]:
@@ -66,6 +71,39 @@ for statement in ["INSERT INTO safe VALUES ('DROP TABLE synthetic_other.demo; CR
 for pid, available, label in [(123, True, 'owned server'), (None, False, 'occupied port')]:
     with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard'), patch.object(h, 'owned_server', return_value=pid), patch.object(h, 'port_free', return_value=available), patch.object(h.subprocess, 'run', side_effect=AssertionError('PHP control was launched')):
         rejects('install refuses ' + label + ' before PHP', lambda: h.control('install'))
+        rejects('sync control refuses ' + label + ' before PHP', lambda: h.control('sync-modules'))
+        rejects('sync config refuses ' + label + ' before mutation', h.sync_modules)
+for action in ['ui-on', 'ui-off']:
+    output = h.CONTROL_MARKER + json.dumps({'status': 'passed', 'action': action, 'database': h.DB})
+    with patch.object(h, 'runtime_guard', return_value=config), patch.object(h, 'database_guard'), patch.object(h, 'owned_server', side_effect=AssertionError('UI toggle checked service shutdown')), patch.object(h.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, output, '')):
+        check('fixed ' + action + ' allowed while HTTP is running', h.control(action)['action'] == action)
+with tempfile.TemporaryDirectory(prefix='overnight-n03-offline-') as temporary:
+    base = Path(temporary)
+    runtime = base / '.runtime/overnight-integration'
+    modules = runtime / 'modules'
+    modules.mkdir(parents=True)
+    for name in h.MODULES:
+        (base / 'protected/modules' / name).mkdir(parents=True)
+    for name in h.LEGACY_MODULES:
+        (modules / name).symlink_to(base / 'protected/modules' / name, target_is_directory=True)
+    with patch.object(h, 'BACKEND', base), patch.object(h, 'RUNTIME', runtime):
+        fixture = {**h.spec(), 'password': 'a' * 64, 'cookie_key': 'b' * 64, 'nonce': 'c' * 64, 'modules': list(h.LEGACY_MODULES)}
+        private = runtime / 'private.json'
+        h.write_private(private, json.dumps(fixture))
+        with patch.object(h, 'runtime_guard', side_effect=lambda: h.validate_config(json.loads(private.read_text()))), patch.object(h, 'database_guard'), patch.object(h, 'owned_server', return_value=None), patch.object(h, 'port_free', return_value=True), patch.object(h, 'control', side_effect=lambda action: {'status': 'passed', 'action': action, 'database': h.DB}):
+            first = h.sync_modules()
+            check('sync performs fixed additive transition', first['configuration_upgraded'] and json.loads(private.read_text())['modules'] == h.MODULES)
+            check('sync creates only fixed source link', (modules / 'matcher-webapp').resolve() == (base / 'protected/modules/matcher-webapp').resolve())
+            check('sync preserves private file mode', (private.stat().st_mode & 0o777) == 0o600)
+            check('repeat sync is idempotent', h.sync_modules()['configuration_upgraded'] is False)
+            (modules / 'arbitrary-plugin').mkdir()
+            rejects('sync rejects unexpected module tree', h.sync_modules)
+            (modules / 'arbitrary-plugin').rmdir()
+            (modules / 'matcher-webapp').unlink()
+            (modules / 'matcher-webapp').symlink_to(base / 'protected/modules/mail')
+            rejects('sync rejects mismatched existing source link', h.sync_modules)
+            with patch.object(h, 'database_guard', side_effect=h.Refusal('Synthetic nonce mismatch.')), patch.object(h, 'replace_private', side_effect=AssertionError('Configuration mutated')):
+                rejects('sync verifies database provenance before mutation', h.sync_modules)
 h.validate_dump('CREATE TABLE safe (id INT);\nINSERT INTO safe VALUES (1);')
 check('safe single database dump allowed', True)
 rejects('empty dump rejected', lambda: h.validate_dump(''))

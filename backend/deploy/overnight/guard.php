@@ -14,8 +14,9 @@ function overnightValidateConfig(array $config, string $backend): void
             throw new RuntimeException('Invalid private configuration shape.');
         }
     }
-    if (($config['modules'] ?? null) !== ['auth-github', 'mail', 'matcher-user-profile', 'matcher-profile-privacy',
-        'matcher-onboarding', 'matcher-resume-import', 'matcher-recommendation', 'matcher-ideas']) {
+    $legacy = ['auth-github', 'mail', 'matcher-user-profile', 'matcher-profile-privacy',
+        'matcher-onboarding', 'matcher-resume-import', 'matcher-recommendation', 'matcher-ideas'];
+    if (!in_array($config['modules'] ?? null, [$legacy, [...$legacy, 'matcher-webapp']], true)) {
         throw new RuntimeException('Module allowlist mismatch.');
     }
 }
@@ -23,4 +24,18 @@ function overnightValidateRequest(array $server): void
 {
     if (($server['HTTP_HOST'] ?? '') !== '127.0.0.1:8113' || (string)($server['SERVER_PORT'] ?? '') !== '8113'
         || ($server['REMOTE_ADDR'] ?? '') !== '127.0.0.1') { throw new RuntimeException('Isolated HTTP target refused.'); }
+}
+
+/** Preserve only an already loaded Yii HTTP error; never expose exception diagnostics. */
+function overnightErrorResponse(Throwable $error): array
+{
+    if (class_exists(\yii\web\HttpException::class, false) && $error instanceof \yii\web\HttpException
+        && is_int($error->statusCode) && $error->statusCode >= 400 && $error->statusCode <= 599) {
+        return ['status' => $error->statusCode, 'body' => ['error' => [
+            'code' => 'ISOLATED_HTTP_ERROR', 'message' => 'The isolated application rejected this request.',
+        ]]];
+    }
+    return ['status' => 503, 'body' => ['error' => [
+        'code' => 'ISOLATED_HARNESS_UNAVAILABLE', 'message' => 'The isolated harness refused this request.',
+    ]]];
 }

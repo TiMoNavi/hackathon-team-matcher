@@ -1,0 +1,44 @@
+@import "../../首页/app/globals.css";
+@source "../../首页/components/brand.tsx";
+@source "../../首页/components/ui/button.tsx";
+@source "../../首页/integration/webapp-entry.tsx";
+
+@font-face { font-family: "Matcher Inter"; src: url("../../首页/app/fonts/inter-latin.woff2") format("woff2"); font-style: normal; font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Matcher Bricolage"; src: url("../../首页/app/fonts/bricolage-grotesque-latin.woff2") format("woff2"); font-style: normal; font-weight: 500 700; font-display: swap; }
+:root { --font-body: "Matcher Inter"; --font-display: "Matcher Bricolage"; }
+html.dark { --background: var(--night); --foreground: #ffffff; --card: var(--night); --card-foreground: #ffffff; --muted: color-mix(in srgb, var(--night), white 6%); --muted-foreground: color-mix(in srgb, var(--night), white 76%); --secondary: color-mix(in srgb, var(--night), white 10%); --secondary-foreground: #ffffff; --accent: var(--secondary); --accent-foreground: #ffffff; --border: color-mix(in srgb, var(--night), white 22%); --body: var(--muted-foreground); }
+body { margin: 0; }
+.webapp-page { min-height: 100svh; display: flex; flex-direction: column; background: var(--background); color: var(--foreground); }
+.webapp-header { width: calc(100% - 32px); max-width: 1248px; margin: 16px auto 0; padding: 14px 20px; border: 1px solid var(--border); border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--card); }
+.webapp-brand { display: inline-flex; min-height: 44px; align-items: center; text-decoration: none; }
+.webapp-header-actions { display: flex; align-items: center; gap: 12px; }
+.webapp-theme-toggle { min-width: 44px; height: 44px; gap: 8px; padding: 0 12px; }
+.webapp-native-link { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; min-width: 44px; font-size: 14px; text-decoration: none; color: var(--body); }
+.webapp-native-link svg { width: 16px; height: 16px; }
+.webapp-tabs { display: flex; gap: 4px; justify-content: center; margin: 28px 16px 0; }
+.webapp-tabs a { min-height: 44px; padding: 12px 20px; border-radius: 12px; font-size: 15px; line-height: 20px; color: var(--body); text-decoration: none; }
+.webapp-tabs a[aria-current=page] { background: var(--secondary); color: var(--secondary-foreground); font-weight: 600; }
+.webapp-main { width: min(100% - 40px, 960px); margin: 0 auto; flex: 1; display: grid; align-content: center; padding: 64px 0 80px; outline-offset: 4px; }
+.webapp-state, .webapp-introduction { text-align: center; }
+.webapp-state { max-width: 640px; margin: 0 auto; width: 100%; }
+.webapp-state h1, .webapp-introduction h1, .webapp-bootstrap-error h1 { font-family: var(--font-display), "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 44px); line-height: 1.18; margin: 24px 0 16px; overflow-wrap: anywhere; }
+.webapp-state p, .webapp-introduction p { font-size: 17px; line-height: 1.8; color: var(--body); margin: 0 auto; max-width: 560px; }
+.webapp-state-icon { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 20px; background: var(--secondary); color: var(--secondary-foreground); }
+.webapp-state-icon svg { width: 28px; height: 28px; }
+.webapp-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 32px; }
+.webapp-state .webapp-note, .webapp-note { color: var(--muted-foreground); font-size: 14px; line-height: 1.7; text-align: center; margin: 24px auto 0; max-width: 640px; overflow-wrap: anywhere; }
+.webapp-details { margin: 40px auto 0; max-width: 760px; border: 1px solid var(--border); border-radius: 24px; padding: 8px 32px; background: var(--muted); }
+.webapp-detail { display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; }
+.webapp-detail + .webapp-detail { border-top: 1px solid var(--border); }
+.webapp-detail-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; color: var(--secondary-foreground); }
+.webapp-detail h2 { font-family: var(--font-display), "PingFang SC", sans-serif; font-size: 20px; line-height: 1.4; font-weight: 600; margin: 0 0 8px; }
+.webapp-detail p { font-size: 16px; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
+.webapp-caption { display: block; color: var(--body); font-size: 14px; line-height: 1.7; margin-top: 5px; overflow-wrap: anywhere; }
+.webapp-footer { display: flex; align-items: flex-start; justify-content: center; gap: 8px; max-width: 680px; margin: 0 auto; padding: 0 24px 24px; font-size: 13px; line-height: 1.7; color: var(--muted-foreground); text-align: center; }
+.webapp-footer svg { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; }
+.webapp-bootstrap-error { padding: 48px 24px; max-width: 640px; margin: 0 auto; line-height: 1.8; }
+.webapp-bootstrap-error button { margin-top: 24px; border: 1px solid var(--border); border-radius: 12px; min-height: 48px; padding: 8px 20px; }
+.webapp-loading svg { animation: webapp-spin 1.2s linear infinite; }
+@keyframes webapp-spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) { .webapp-header { padding: 10px 12px; gap: 8px; } .webapp-header-actions { gap: 4px; } .webapp-theme-toggle { padding: 0 8px; } .webapp-theme-toggle span { display: none; } .webapp-main { padding: 48px 0 56px; } .webapp-tabs a { padding: 12px 16px; } .webapp-state p, .webapp-introduction p { font-size: 16px; } .webapp-details { padding: 0 20px; } .webapp-detail { gap: 14px; } .webapp-state h1, .webapp-introduction h1 { font-size: 30px; } .webapp-actions { flex-direction: column; align-items: stretch; } .webapp-footer { font-size: 13px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .webapp-loading svg { animation: none; } .webapp-page *, .webapp-page *::before, .webapp-page *::after { transition-duration: 0ms !important; animation: none !important; } }

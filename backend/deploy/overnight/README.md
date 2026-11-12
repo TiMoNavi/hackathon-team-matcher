@@ -9,7 +9,7 @@
 - 私有运行目录为 backend/.runtime/overnight-integration/，目录 0700，凭据、标记和备份文件 0600。session、cache、uploads、assets、themes、mail 与日志均独立。
 - provision 通过本机现有 MySQL socket 和 root 客户端配置创建全新空库；不读取或复制主库数据。root 凭据不输出、不复制到子进程参数或报告；专用账号使用新生成的密码。
 - bootstrap 仅合并 HumHub 自带 common 与 web/console 配置，绝不加载主预览 .env、protected/config 的 dynamic 配置或 deploy/app.php。PHP 使用 -n，清除继承的配置扫描路径和相关服务环境变量。
-- 启用模块仅为 auth-github、mail、matcher-user-profile、matcher-profile-privacy、matcher-onboarding、matcher-resume-import、matcher-recommendation、matcher-ideas。不初始化测试用户，不启用 GitHub／网页导入和 AI 插件，不注册任何模型 provider。
+- N01 原名单为 auth-github、mail、matcher-user-profile、matcher-profile-privacy、matcher-onboarding、matcher-resume-import、matcher-recommendation、matcher-ideas；N03 仅固定追加 matcher-webapp。双端仅接受完整旧名单或完整新名单，拒绝乱序、缺项、额外插件。不初始化测试用户，不启用 GitHub／网页导入和 AI 插件，不注册任何模型 provider。
 - 邮件强制 file transport；PHP 启动参数阻止常见 HTTP/socket/mail 外发函数及 URL stream。没有 queue worker、cron 或模型运行入口。这是验证环境的明确装配约束，不声称是操作系统级网络沙箱。
 - start/stop 只管理本工具记录并再次核对命令行身份的 PHP PID；不会停止 8090 或任何其他已有服务。端口探测设置 SO_REUSEADDR 处理已关闭连接的 TIME_WAIT，不设置 SO_REUSEPORT；仍拒绝同地址上的真实监听。
 - cleanup 删除本工具拥有的固定库、固定用户及私有运行目录，包括其中的备份。先由主执行者保存脱敏验证结果，再清理。
@@ -36,6 +36,21 @@ test_guards 包含 Python 语法、PHP lint、双端目标/HTTP护栏、主库/r
 
 provision 第二次只复用 nonce 验证成功的本工具目标；发现没有归属证据的已有库或用户则停止，不接管或覆盖。install 使用原生核心及模块迁移，第二次执行用于实际检查幂等。运行迁移、恢复前先停止本工具 Web 服务；install 与 backup-restore 都在服务 PID 或端口仍被占用时硬拒绝，不仅依赖操作约定。
 
+N01 旧环境追加 N03 时，不手改私有配置。先停止本工具 Web，再执行固定升级两次：
+
+    python3 backend/deploy/overnight/harness.py stop
+    python3 backend/deploy/overnight/harness.py sync-modules
+    python3 backend/deploy/overnight/harness.py sync-modules
+
+sync-modules 在任何写入前验证固定库／nonce、完整旧或新名单、模块目录与每个固定来源链接；仅补 matcher-webapp 链接，以 0600 原子替换所属 private.json，然后仅注册／启用／迁移该新模块。不重跑核心安装、不卸载其他模块、不接受任意模块参数。中途失败可安全重试；第二次不会再次变更已升级配置。首次 provision 则直接使用新名单。
+
+N03 UI 撤回仅更改 matcher-webapp 自身 uiEnabled 设置，并刷新模块缓存。允许本工具 HTTP 服务运行时调用：
+
+    python3 backend/deploy/overnight/harness.py ui-off
+    python3 backend/deploy/overnight/harness.py ui-on
+
+两个动作都要求模块已纳入固定名单且已启用，只切换页面与新导航；不调用 disable/remove，不关闭隐私层、不修改业务记录。每次返回安全状态、模块状态和计数供 HTTP 404／200 与不变性核验。N03 构建发布要求 linkAssets=false；当前隔离 bootstrap 已使用复制发布，不为页面修改宿主 CSP。
+
 backup-restore 在没有 Web 监听时导出固定库，校验文件 SHA-256，修改专用 guard 表的 probe，再恢复该快照；恢复后必须找回旧 probe，并使应用计数/模块状态一致。原始备份 SHA-256 仍逐字节校验；另外分别记录恢复前后 raw_sha256 和 canonical_sha256。MySQL 9.7 首次恢复可能把已带 COLLATE 的字符串列补成显式 CHARACTER SET，canonical 仅在 CREATE TABLE 的 char/varchar/text 系列列定义中、字符集与显式排序规则前缀匹配时删除这个冗余声明。INSERT、字符串值、默认值、实际排序规则、表选项和其他结构差异均保留；必须得到相同 canonical SHA-256 才通过，raw_dumps_equal 会如实报告原始字节是否一致。规范化版本和移除条数同时留证，不把逻辑一致伪称为原始文件完全相同。快照和验证结果只写入私有 backups 子目录。没有接受任意 SQL 路径或数据库名的入口。dump 防御会处理可执行注释、SCHEMA 别名及限定表名，并避开引号中的普通数据；它不是完整 SQL 解析器或安全沙箱。主要隔离仍是固定自生成快照、专用账号的库级权限与双端 provenance 验证，不接受任意来源的 SQL。
 
 如需临时 HTTP 检查：
@@ -57,5 +72,5 @@ backup-restore 在没有 Web 监听时导出固定库，校验文件 SHA-256，�
 
 - 原生迁移可能通过 fwrite(STDOUT) 输出进度，工具只接受唯一最终标记后的完整结果并核对 action/database/status，原生输出不展示。命令失败时输出安全错误类别；不输出 SQL、连接串、密码、原始响应或私有日志。保留专用目录供主执行者定向诊断，禁止把整个目录提交或发送给代理。
 - 某次操作部分成功不触发自动清库。只在明确验证固定目标和 provenance 后重试；缺失归属证据时需要定向检查，不关闭护栏。
-- 目前限定固定八模块；新增 webapp 或后续认证接入必须作为新批次显式更新双端 allowlist 和测试，不能编辑 private.json 绕过名单。
+- 目前只接受固定 N01 八模块或追加 matcher-webapp 的 N03 九模块。后续认证接入仍须新批次显式更新双端 allowlist 和测试，不能编辑 private.json 绕过名单。
 - 本工具未对生产数据运行 down migration 或模块 disable/remove。数据回退用专用库快照；UI 撤回属于后续插件验收。
