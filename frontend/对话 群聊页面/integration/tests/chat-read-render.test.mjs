@@ -30,8 +30,8 @@ registerHooks({
 const { ReadEntry } = await import("../src/chat/read-entry.tsx");
 const { createReadController } = await import("../src/chat/read-controller.ts");
 const { parseReadBootstrap } = await import("../src/chat/read-bootstrap.ts");
-const links = { home: "/dashboard", login: "/user/auth/login", nativeChat: "/mail/mail/index" };
-const config = parseReadBootstrap({ schema_version: 2, integration_stage: "read", base_path: "/matcher/chat", api_base: "/api/v1", native_home_url: links.home, native_login_url: links.login, native_chat_url: links.nativeChat, csrf_header: "X-CSRF-Token", csrf_token: "synthetic-render-csrf", actor_id: 7 }, "https://same-origin.invalid");
+const links = { home: "/dashboard", login: "/user/auth/login" };
+const config = parseReadBootstrap({ schema_version: 2, integration_stage: "read", base_path: "/matcher/chat", api_base: "/api/v1", native_home_url: links.home, native_login_url: links.login, native_chat_url: "/mail/mail/index", csrf_header: "X-CSRF-Token", csrf_token: "synthetic-render-csrf", actor_id: 7 }, "https://same-origin.invalid");
 const render = (controller, pathname = "/matcher/chat") => renderToStaticMarkup(createElement(ReadEntry, { controller, links, pathname }));
 
 test("actual read component is inert when idle and keeps send, attachments and group controls disabled", () => {
@@ -70,4 +70,65 @@ test("actual read errors remain errors and signing out renders no old list or pr
   assert.ok(signedOut.includes("登录已失效")); assert.ok(!signedOut.includes(privateText)); assert.ok(!signedOut.includes("SYNTHETIC_PRIVATE_TITLE"));
   const failing = createReadController(config, async () => response(errorEnvelope("UNAVAILABLE"), 503));
   await failing.start("/matcher/chat"); const html = render(failing); assert.ok(html.includes('role="alert"')); assert.ok(!html.includes("目前没有获准的私聊会话"));
+});
+
+test("read exits never link to a taken-over native chat route in any page state", async () => {
+  const states = [];
+  const controller = createReadController(config, async () => response(conversationPage()));
+  states.push(render(controller));
+  await controller.start("/matcher/chat"); states.push(render(controller));
+  controller.suspend(); states.push(render(controller));
+  const signedOut = createReadController(config, async () => response(errorEnvelope("AUTH_REQUIRED"), 401));
+  await signedOut.start("/matcher/chat"); states.push(render(signedOut));
+  const unavailable = createReadController(config, async () => response(errorEnvelope("DEPENDENCY_UNAVAILABLE"), 503));
+  await unavailable.start("/matcher/chat/conversations/1"); states.push(render(unavailable, "/matcher/chat/conversations/1"));
+  for (const html of states) {
+    const destinations = [...html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/g)].map((match) => match[1]);
+    assert.ok(destinations.includes(links.home));
+    assert.ok(destinations.every((value) => [links.home, links.login, "#conversation-main"].includes(value)));
+    assert.doesNotMatch(html, /原版入口|原版聊天入口|\/mail\/mail\/index/);
+    assert.match(html, /<textarea[^>]*disabled=""/);
+    assert.match(html, /<button[^>]*disabled=""[^>]*aria-label="添加附件/);
+    assert.match(html, /<button[^>]*disabled=""[^>]*aria-label="群聊/);
+  }
+  const signedOutHtml = render(signedOut);
+  assert.ok(signedOutHtml.includes('data-chat-open="true"'));
+  assert.ok(signedOutHtml.includes('href="/user/auth/login"'));
+});
+
+test("failed deep-link list loading exposes honest recovery within the mobile conversation pane", async () => {
+  const controller = createReadController(config, async () => response(errorEnvelope("DEPENDENCY_UNAVAILABLE"), 503));
+  await controller.start("/matcher/chat/conversations/99");
+  const html = render(controller, "/matcher/chat/conversations/99");
+  const thread = html.slice(html.indexOf("<section"));
+  assert.ok(html.includes('data-chat-open="true"'));
+  assert.ok(thread.includes("暂时无法读取会话"));
+  assert.ok(thread.includes('role="alert"')); assert.ok(thread.includes("重试读取"));
+  assert.equal([...html.matchAll(/role="alert"/g)].length, 1);
+  assert.ok(thread.includes("聊天读取暂不可用")); assert.ok(thread.includes('href="/dashboard"'));
+  assert.doesNotMatch(thread, /选择一段私聊|目前没有获准的私聊会话|这段会话还没有消息|已暂停/);
+});
+
+test("denied deep-link history clears prior titles and bodies without native fallback", async () => {
+  for (const status of [403, 404]) {
+    let historyCalls = 0;
+    const controller = createReadController(config, async (url) => {
+      if (!url.includes("messages")) return response(conversationPage([summary(1, { title: "SYNTHETIC_REVOKED_TITLE" })]));
+      return historyCalls++ === 0 ? response(messagePage(1, [message(1, 1, { body: "SYNTHETIC_REVOKED_BODY" })])) : response(errorEnvelope("NOT_AVAILABLE"), status);
+    });
+    await controller.start("/matcher/chat/conversations/1");
+    assert.ok(render(controller).includes("SYNTHETIC_REVOKED_BODY"));
+    await controller.newer(); const html = render(controller, "/matcher/chat/conversations/1");
+    assert.ok(html.includes("此会话暂不可访问"));
+    assert.doesNotMatch(html, /SYNTHETIC_REVOKED_TITLE|SYNTHETIC_REVOKED_BODY|原版聊天入口/);
+    assert.ok(html.includes("返回会话列表"));
+  }
+});
+
+test("list denial uses list recovery copy and never claims that a particular conversation exists", async () => {
+  const controller = createReadController(config, async () => response(errorEnvelope("NOT_AVAILABLE"), 403));
+  await controller.start("/matcher/chat/conversations/99");
+  const html = render(controller, "/matcher/chat/conversations/99");
+  assert.ok(html.includes("会话列表暂不可访问"));
+  assert.doesNotMatch(html, /此会话暂不可访问|会话 99|原版聊天入口/);
 });

@@ -1,6 +1,6 @@
 # C06-P 私聊读取界面
 
-2026-11-12。本批是独立连接态准备；是否允许真实读取由聊天后端 C04 验收及 PHP 宿主开关决定。`src/main.tsx` 仍为 C03 shell，未导入本批的连接态入口。本文不代表 C06-R、浏览器、完整原生回退或主预览部署已经通过。
+2026-11-12。本批是独立连接态准备；是否允许真实读取由聊天后端 C04 验收及 PHP 宿主开关决定。`src/main.tsx` 仍为 C03 shell，未导入本批的连接态入口。本文不代表完整 C06-R、真实焦点生命周期、完整原生回退或主预览部署已经通过。
 
 ## 装配边界
 
@@ -8,7 +8,7 @@
 - `src/chat/read-bootstrap.ts` 接受严格十字段合同：`schema_version=2`、`integration_stage=read`、`base_path=/matcher/chat`、`api_base=/api/v1`、`native_home_url`、`native_login_url`、`native_chat_url`、`csrf_header=X-CSRF-Token`、`csrf_token`、`actor_id`。
 - `actor_id` 由 PHP 当前 HumHub session 输出，仅用于内存分区及已有获准 sender 的本人标识，不是会话授权证明。guest 继续 shell 或原生登录入口，不伪造 actor。
 - 连接态所有 GET/PUT 携带固定 `X-Matcher-Chat-Actor` 一致性头。服务端先以原生 session 确定本人，再比对该值；不一致返回401 `SESSION_CHANGED`并清前端状态，不能按请求头选择用户。它覆盖页面持续聚焦时其他窗口改变账号的情况，不是认证凭据或完整 session nonce 回执。同账号重新登录的旧 CSRF 仍由服务端检验，失败要求刷新，不自动重试。
-- 原版入口只接受 `/mail/mail/index` 或仅有合法 `r=mail/mail/index` 的 `/index.php` 链接。它是导航入口，不承诺受管会话的原生读写已全部验收。
+- `native_chat_url` 保留在原十字段合同中，并继续只接受 `/mail/mail/index` 或仅有合法 `r=mail/mail/index` 的 `/index.php` 链接。T1/T2 读取页不再把该字段传给展示组件或渲染成回退入口，避免返回已接管的旧路由形成循环；正常与失效状态的退出均使用已校验的 `native_home_url`，登录恢复使用 `native_login_url`。
 - 不请求 `/me`、current-event、画像、推荐或 AI；不建立第二套身份、活动或好友事实。聊天后端对每次 API 请求重新验证用户和对象。
 - 构建、manifest、服务端 stage/开关与资源选择由主集成人处理。正式默认壳不得根据 query、localStorage 或浏览器修改切换能力。连接态 JS 本身不授予 API 权限。
 
@@ -49,4 +49,25 @@ python3 -B backend/deploy/chat/verify_read_browser.py
 
 禁止独立直接运行 Node 浏览器入口。包装器先持锁核验 runtime、数据库、受管服务、虚构 fixture 的权限与 nonce，以及后端读取和 UI 读取开关，再启动固定脚本；不支持任意目标地址。执行边界见 [后端聊天隔离 harness 说明](../../../backend/deploy/chat/README.md)。
 
-该回执仅证明本次隔离读取实验，不能扩展为完整 C06-R、主预览部署或生产完成。真实身份提供商登录、真实焦点切换、群授权、发送、附件和完整原生回退仍未获本次浏览器认证。受管用户的原生 mail/live 入口目前保守拒绝；关闭 UI 保留数据、API 和业务保护，不等于恢复完整原生聊天。未通过相应后端与群保护验收的能力继续关闭。
+该回执仅证明本次隔离读取实验，不能扩展为完整 C06-R、主预览部署或生产完成。真实身份提供商登录、真实焦点切换、群授权、发送、附件和完整原生回退仍未获本次浏览器认证。该回执执行时，受管用户的原生 mail/live 入口保守拒绝；关闭 UI 保留数据、API 和业务保护，不等于恢复完整原生聊天。后续入口接管以 [T1/T2 方案](../../../docs/群聊模块升级/10_聊天入口接管与恢复方案.md) 及其新回执为准，不反写本次历史证据。未通过相应后端与群保护验收的能力继续关闭。
+
+## T1/T2 读取入口承接（离线）
+
+2026-11-12，本次只修改 integration 源码、离线测试与本文；没有改动原型、原 C03 shell、共享 DTO、十字段 bootstrap、PHP 宿主、构建产物或既有浏览器脚本与产物。
+
+- 读取页移除两处原生聊天回退链接，保留首页退出和原生登录恢复；所有页面状态继续关闭发送、附件、新会话、群与好友申请，未替代完整聊天能力。
+- 初次深链的列表失败，在手机会话面板显示错误和显式重试，不伪装成空会话或“请选择”。手动重试成功后保留原深链，并重新调用会话接口验权；返回列表、改选会话、暂停或登录失效后，旧请求不能恢复原深链。不存在或撤权的会话不能保留旧标题与正文。
+- 未登录/失效提示在手机列表路径同样可见。列表权限失败使用列表文案；运行中 HTTP 503 只显示“聊天读取暂不可用”，不将未知原因推断成管理员暂停或依赖故障，也不自动重试或跳转旧聊天。
+- 装配前暂停、依赖不可用由主集成人的 PHP 宿主显示诚实不可用页面，不发读取 bootstrap。本次没有新建返回合同或错误码，未知字段/版本/阶段继续拒绝。
+
+本次完整读取并应用 ui-ux-pro-max 的错误恢复与错误播报指引，定向查询 `error recovery navigation --domain ux` 命中 Error Recovery / Error Messages；React 查询仅核对异步错误反馈。Signalry 主题、字体和 Soho 布局保持原规范；复用已有 Shadcn UI Kit 组件，不修改 `components/ui`。接口边界另按项目 architecture-patterns 约定检查，未增加身份或授权事实。
+
+本次离线回执为 `npm test` **74/74 通过**、`npm run typecheck` **通过**。新增覆盖无原生入口、未知 bootstrap 与非法退出地址拒绝、深链手动恢复/离开/暂停竞态、失败与空态区分、手机错误展示、未交付能力关闭和撤权标题/正文清理。渲染测试使用真实组件的服务端静态渲染，transport 为内存合成；不能作为真实 HTTP 或浏览器导航认证。
+
+本次没有运行构建、浏览器、服务、数据库、HTTP 或 Git，也没有读取凭据。既有浏览器脚本与回执未变，真实 focus/visibility 缺口继续保留；模拟 EventTarget 单测不算真实焦点验收。接管跳转、暂停/缺依赖宿主、重复切换、手机实际显示及其他业务入口是否正常，仍由主集成人在固定 8124 harness 中取得新证据。
+
+## T1/T2 主集成追加验收（2026-11-12）
+
+主agent通过固定verify_entry_browser.py在8124执行两次普通合成账号登录，验证原生index/show一跳进入插件、深链刷新、1440/320日夜、手机返回及mixed新页面明确503，共5组通过。新证据仅在[entry-browser报告](artifacts/entry-browser/entry-browser-report.json)与[包装器报告](artifacts/entry-browser/entry-browser-wrapper-report.json)，历史read-browser保持不变。
+
+本轮禁止所有PUT且未点击已读，A/B read_seq均保持7，native_seen和完整快照不变。Headless未产生真实focus/visibility切换，仍不能称焦点恢复/真实已读通过。读取包已由root构建，原C03包保持原样；完整范围及停服结果见[11回执](../../../docs/群聊模块升级/11_T1T2入口接管隔离验收.md)。

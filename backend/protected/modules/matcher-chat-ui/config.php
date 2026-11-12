@@ -11,6 +11,12 @@ return [
         'matcher/chat/<path:.*>' => 'matcher-chat-ui/app/index',
     ],
     'events' => [
+        ['humhub\modules\matcherChat\Module', 'entryReadiness',
+            [\humhub\modules\matcherChatUi\adapters\ui\EntryBridge::class, 'readiness']],
+        [\humhub\widgets\TopMenu::class, \humhub\modules\ui\menu\widgets\Menu::EVENT_RUN,
+            [\humhub\modules\matcherChatUi\adapters\ui\Navigation::class, 'topMenu']],
+        [\humhub\widgets\NotificationArea::class, \humhub\widgets\NotificationArea::EVENT_RUN,
+            [\humhub\modules\matcherChatUi\adapters\ui\Navigation::class, 'notificationArea']],
         [\humhub\modules\user\widgets\AccountProfileMenu::class, \humhub\modules\ui\menu\widgets\Menu::EVENT_RUN,
             [\humhub\modules\matcherChatUi\adapters\ui\Navigation::class, 'accountMenu']],
     ],

@@ -106,9 +106,26 @@ verify_read_shutdown.py关闭本隔离read API/UI设置，停止本工具8124进
 
 读取页构建使用聊天integration的npm run build:read，独立输出resources/read-app；原shell仍由npm run build产生。宿主原生session给出v2 bootstrap，三个API继续逐次授权。PUT已读保留CSRF与JSON边界；新增bootstrap须放在ModuleAutoLoader之后、LanguageSelector之前。
 
-**目前只准隔离试验。** 受管用户的原生mail和live入口采取保守拒绝；因此UI关闭虽保留数据、读取API与保护，也不能让这些用户恢复完整原版聊天。手动/在途通知、第三方与bulk/raw SQL入口等尚未完整覆盖。禁止以mail::disable/remove撤回，禁止据此启用生产或群聊/发送/附件。
+**目前只准隔离试验。** C04原先整面拒绝受管用户的mail/live；T1/T2在下节限定范围接管读取入口并恢复已适配Poll的非聊天事件。UI关闭仍保留数据、读取API与保护，不承诺恢复完整原版聊天。手动/在途通知、第三方与bulk/raw SQL入口等尚未完整覆盖。禁止以mail::disable/remove撤回，禁止据此启用生产或群聊/发送/附件。
 
 ## 状态与限制
+
+### T1/T2 固定入口接管验证
+
+本批保留C04的8条消息、empty已撤权、A/B已读位置7或8现场，不运行fixture-prepare重置。固定配置允许entryTakeoverEnabled属性；同名持久设置默认关闭，使用chat-takeover-on/chat-takeover-off临时切换。关闭接管不关闭业务保护，也不代表原生聊天已全面恢复。
+
+在本工具8124已运行、UI/read API/read UI开启且takeover关闭时，可依次运行：
+
+    python3 -B backend/deploy/chat/verify_entry_takeover.py
+    python3 -B backend/deploy/chat/verify_entry_browser.py
+
+HTTP脚本验证正常原生登录、固定302、旧写不重放、混合覆盖503、业务API独立及真实/live/poll。它调用固定entry-live-probe.php，仅为既有合成账号新增3条live记录并保存0600归属marker；重复验证只刷新这3条自己的时间戳，不调用notify或消费原队列，不修改消息/已读。DB提交后marker写盘失败时保留现场并拒绝重复生成，不自动删除或重新seed。
+
+浏览器包装器持锁并通过stdin传递有限合成凭据，所有PUT被阻止，前后快照必须一致；不能将这轮浏览器结果称为真实已读或焦点已读验收。新产物只写integration/artifacts/entry-browser，旧read-browser证据保持原样。两个脚本结束恢复接管关闭；测试结束由主agent关闭read API/UI并停止自有服务。
+
+router对Yii测试模式下已经发送完毕的成功ExitException保留原响应，避免把合法302误报500；其他异常仍走脱敏失败处理。该修正仅限本专项固定路由器，不改全局或原生源码。
+
+已适配的原生Poll可以保留非聊天事件；第三方controllerMap冲突、Push/Mercure、主动通知/邮件/FCM及原生REST缩窄仍未交付。导航/新页面暂停与已获准业务API分开，不能把页面503表述为撤权或所有客户端立即停用。
 
 主agent新增 verify_http.py 固定验证运行中的8124。它校验路由、方法、私有路径和资产，暂移本专项manifest验证503后在finally恢复，并切换UI开关后恢复开启；不写用户或消息。必须在子agent停止构建产物写入、实例由本专项所有时运行。命令为 python3 backend/deploy/chat/verify_http.py；结束仍须运行harness.py stop。
 

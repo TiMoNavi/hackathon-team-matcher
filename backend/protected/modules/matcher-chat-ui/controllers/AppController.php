@@ -5,6 +5,7 @@ namespace humhub\modules\matcherChatUi\controllers;
 use humhub\components\access\ControllerAccess;
 use humhub\modules\matcherChatUi\Module;
 use humhub\modules\matcherChatUi\adapters\assets\Manifest;
+use humhub\modules\matcherChatUi\adapters\ui\EntryBridge;
 use humhub\modules\matcherChatUi\application\Bootstrap;
 use humhub\modules\matcherChatUi\application\ReadBootstrap;
 use humhub\modules\matcherChatUi\application\ShellPolicy;
@@ -54,10 +55,22 @@ final class AppController extends \humhub\components\Controller
             Yii::$app->response->statusCode = 302;
             return Yii::$app->response;
         }
-        $reading = $this->module instanceof Module && $this->module->isReadUiEnabled() && !Yii::$app->user->isGuest;
+        $shellBootstrap = Bootstrap::data($request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']));
+        $entryStatus = EntryBridge::status();
+        if (in_array($entryStatus['state'] ?? '', ['paused', 'unsupported_coverage'], true)) {
+            Yii::$app->response->statusCode = 503;
+            return $this->renderPartial('unavailable', ['bootstrap' => $shellBootstrap, 'entryState' => $entryStatus['state']]);
+        }
+        try {
+            $actorId = EntryBridge::actorId();
+            $reading = $this->module instanceof Module && $actorId !== null && $this->module->isReadUiEnabled();
+        } catch (\Throwable $error) {
+            Yii::$app->response->statusCode = 503;
+            return $this->renderPartial('unavailable', ['bootstrap' => $shellBootstrap, 'entryState' => 'paused']);
+        }
         $bootstrap = $reading
-            ? ReadBootstrap::data($request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']), (int)Yii::$app->user->id)
-            : Bootstrap::data($request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']));
+            ? ReadBootstrap::data($request->getCsrfToken(), Url::to(['/dashboard/dashboard']), Url::to(['/user/auth/login']), $actorId)
+            : $shellBootstrap;
         try {
             $release = $this->module->getBasePath() . ($reading ? '/resources/read-app' : '/resources/app');
             $manifest = new Manifest($release);

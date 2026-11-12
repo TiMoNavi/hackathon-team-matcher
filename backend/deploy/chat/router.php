@@ -24,6 +24,12 @@ try {
     }
     $app = require __DIR__ . '/bootstrap.php'; $app->run();
 } catch (Throwable $error) {
+    // Yii test mode throws ExitException even after end() has sent its response.
+    // Preserve that completed response; never turn an intentional 302 into a 500.
+    if ($error instanceof \yii\base\ExitException && $error->statusCode === 0
+        && class_exists(\Yii::class, false) && \Yii::$app instanceof \yii\web\Application
+        && \Yii::$app->state === \yii\base\Application::STATE_END
+        && \Yii::$app->has('response', true) && \Yii::$app->get('response', false)->isSent) { return; }
     $allowHeaderValues = [];
     // Do not create a response component or invent a policy for another route.
     if ($error instanceof \yii\web\HttpException && $error->statusCode === 405

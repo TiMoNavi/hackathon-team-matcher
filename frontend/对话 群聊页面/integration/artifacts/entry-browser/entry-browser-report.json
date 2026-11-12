@@ -1,0 +1,128 @@
+{
+  "stage": "T1-T2-isolated-entry-browser",
+  "passed": true,
+  "checks": [
+    "Native index redirects once to a fully covered read-only plugin list",
+    "Native show redirects once to freshly authorized plugin history; the parent separately checks native seen timestamps",
+    "1440px and 320px day/night retain layout, disabled writes, safe exit links and mobile back navigation",
+    "Refreshed canonical deep link reauthorizes eight synthetic messages without a native fallback",
+    "Normally authenticated mixed-coverage account receives explicit 503 on list and deep link with no partial list or chat API call"
+  ],
+  "redirects": [
+    {
+      "from": "native-index",
+      "to": "plugin-list",
+      "hops": 1,
+      "status": 302
+    },
+    {
+      "from": "native-show-history",
+      "to": "plugin-history",
+      "hops": 1,
+      "status": 302
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "dark": false,
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "view": "history"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "dark": true,
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "view": "history"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "dark": false,
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "view": "history"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "dark": true,
+      "clippedCount": 0,
+      "smallTargetCount": 0,
+      "view": "history"
+    }
+  ],
+  "screenshots": [
+    "entry-1440-day-history.png",
+    "entry-1440-night-history.png",
+    "entry-320-day-history.png",
+    "entry-320-night-history.png",
+    "entry-mixed-unavailable.png"
+  ],
+  "normalNativeFormLogins": 2,
+  "realProviderAuthentication": false,
+  "realUserDataUsed": false,
+  "credentialsReturned": false,
+  "cookieExported": false,
+  "rawMessageBodiesLogged": false,
+  "screenshotsSyntheticOnly": true,
+  "apiRequests": {
+    "list": 3,
+    "history": 3,
+    "readState": 0
+  },
+  "receiptWrites": 0,
+  "receiptWriteVerification": "not-exercised-all-put-blocked",
+  "blockedExternalRequests": 0,
+  "blockedUnexpectedWrites": 0,
+  "blockedReadStatePuts": 0,
+  "pageErrors": 0,
+  "readConsoleErrors": 0,
+  "mixedCoverageDocuments": 2,
+  "focusLifecycle": {
+    "status": "not-exercised-headless-no-transition",
+    "snapshots": [
+      {
+        "label": "before-tab-switch",
+        "visibility": "visible",
+        "focused": true,
+        "rootHidden": false,
+        "state": "read",
+        "messages": 8,
+        "conversations": 1,
+        "events": {
+          "blur": 0,
+          "focus": 0,
+          "hidden": 0,
+          "visible": 0,
+          "pagehide": 0
+        }
+      },
+      {
+        "label": "after-tab-switch",
+        "visibility": "visible",
+        "focused": true,
+        "rootHidden": false,
+        "state": "read",
+        "messages": 8,
+        "conversations": 1,
+        "events": {
+          "blur": 0,
+          "focus": 0,
+          "hidden": 0,
+          "visible": 0,
+          "pagehide": 0
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "No real focus/visibility transition occurred; cleanup and resume remain unverified.",
+    "All PUT requests are blocked and no read receipt is clicked; real read-state updates and focus/read transitions are not certified.",
+    "No provider login, sending, attachments, group authorization, complete native rollback or production deployment is certified."
+  ]
+}

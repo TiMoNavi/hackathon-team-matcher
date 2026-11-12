@@ -10,7 +10,7 @@ const origin = "https://same-origin.invalid";
 const bootstrap = (change = {}) => ({ schema_version: 2, integration_stage: "read", base_path: "/matcher/chat", api_base: "/api/v1", native_home_url: "/dashboard", native_login_url: "/user/auth/login", native_chat_url: "/mail/mail/index", csrf_header: "X-CSRF-Token", csrf_token: "synthetic-read-csrf", actor_id: 7, ...change });
 const client = (fetcher) => createReadController(parseReadBootstrap(bootstrap(), origin), fetcher);
 
-test("read bootstrap is a distinct ten-field version with native actor partition and exact fallback links", () => {
+test("read bootstrap is a distinct ten-field version with native actor partition and exact native route fields", () => {
   const value = parseReadBootstrap(bootstrap(), origin);
   assert.ok(Object.isFrozen(value)); assert.equal(Object.keys(value).length, 10); assert.equal(value.actor_id, 7);
   const front = parseReadBootstrap(bootstrap({ native_home_url: "/index.php?r=dashboard%2Fdashboard", native_login_url: "/index.php?r=user%2Fauth%2Flogin", native_chat_url: "/index.php?r=mail%2Fmail%2Findex" }), origin);
@@ -51,6 +51,62 @@ test("list failure is an error, never fixture fallback, empty success or a hidde
   await page.start("/matcher/chat/conversations/1");
   assert.equal(page.snapshot().chat.conversations.phase, "error"); assert.equal(page.snapshot().chat.conversations.hasMore, null);
   assert.equal(page.snapshot().chat.active, null); assert.equal(count, 1);
+});
+
+test("manual list recovery resumes the requested deep link with fresh object authorization", async () => {
+  const calls = []; let lists = 0;
+  const page = client(async (url, init) => {
+    calls.push([url, init.method]);
+    if (url.includes("/messages")) return response(messagePage(19));
+    return lists++ === 0 ? response(errorEnvelope("DEPENDENCY_UNAVAILABLE"), 503) : response(conversationPage());
+  });
+  await page.start("/matcher/chat/conversations/19");
+  assert.equal(calls.length, 1); assert.equal(page.snapshot().chat.active, null);
+  await page.refreshList();
+  assert.deepEqual(calls, [["/api/v1/conversations?limit=24", "GET"], ["/api/v1/conversations?limit=24", "GET"], ["/api/v1/conversations/19/messages?limit=24", "GET"]]);
+  assert.equal(page.snapshot().chat.active.id, 19); assert.equal(page.snapshot().chat.active.phase, "ready");
+  assert.equal(page.snapshot().chat.conversations.items.length, 0);
+});
+
+test("leaving a deep link during manual recovery cannot reopen the old conversation", async () => {
+  const wait = deferred(); const calls = []; let lists = 0;
+  const page = client(async (url) => {
+    calls.push(url);
+    return lists++ === 0 ? response(errorEnvelope("DEPENDENCY_UNAVAILABLE"), 503) : wait.promise;
+  });
+  await page.start("/matcher/chat/conversations/19");
+  const pending = page.refreshList(); await page.navigate("/matcher/chat");
+  wait.resolve(response(conversationPage())); await pending;
+  assert.equal(page.snapshot().chat.active, null); assert.equal(calls.length, 2);
+  assert.ok(calls.every((url) => !url.includes("/messages")));
+});
+
+test("deep-link recovery cannot revive a suspended session or a denied conversation", async () => {
+  const wait = deferred(); let calls = 0;
+  const suspended = client(async () => calls++ === 0 ? response(errorEnvelope("DEPENDENCY_UNAVAILABLE"), 503) : wait.promise);
+  await suspended.start("/matcher/chat/conversations/19");
+  const pending = suspended.refreshList(); suspended.suspend();
+  wait.resolve(response(conversationPage())); await pending;
+  assert.equal(suspended.snapshot().status, "suspended"); assert.equal(suspended.snapshot().chat.active, null); assert.equal(calls, 2);
+  let lists = 0; let histories = 0;
+  const denied = client(async (url) => {
+    if (url.includes("/messages")) { histories++; return response(errorEnvelope("NOT_AVAILABLE"), 404); }
+    return lists++ === 0 ? response(errorEnvelope("DEPENDENCY_UNAVAILABLE"), 503) : response(conversationPage());
+  });
+  await denied.start("/matcher/chat/conversations/19"); await denied.refreshList();
+  assert.equal(histories, 1); assert.equal(denied.snapshot().chat.active.phase, "revoked");
+  assert.equal(denied.snapshot().chat.active.messages.length, 0); assert.equal(denied.snapshot().chat.conversations.items.length, 0);
+});
+
+test("bootstrap exit routes cannot be repointed to native chat, the plugin, or arbitrary return targets", () => {
+  for (const field of ["native_home_url", "native_login_url"]) {
+    for (const value of ["/matcher/chat", "/mail/mail/index", "/index.php?r=mail%2Fmail%2Findex", "//outside.invalid/dashboard", "/dashboard?returnUrl=/matcher/chat"]) {
+      assert.throws(() => parseReadBootstrap(bootstrap({ [field]: value }), origin));
+    }
+  }
+  for (const change of [{ takeover_state: "paused" }, { schema_version: 3 }, { integration_stage: "paused" }]) {
+    assert.throws(() => parseReadBootstrap(bootstrap(change), origin));
+  }
 });
 
 test("group and discussion responses cannot enter the read UI even with otherwise valid DTOs", async () => {

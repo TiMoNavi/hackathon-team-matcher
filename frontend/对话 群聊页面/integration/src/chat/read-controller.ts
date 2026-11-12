@@ -37,6 +37,7 @@ export function createReadController(bootstrap: ReadBootstrap, fetcher?: ChatFet
   const store = createChatState();
   let status: ReadPageSnapshot["status"] = "idle";
   let revision = 0;
+  let requestedConversationId: number | null = null;
   let api: ChatApi | null = directOnly(createChatApi({ apiBase: bootstrap.api_base, csrfToken: bootstrap.csrf_token, expectedActorId: bootstrap.actor_id, fetcher }));
   const actorId = bootstrap.actor_id;
   const listeners = new Set<() => void>();
@@ -46,28 +47,37 @@ export function createReadController(bootstrap: ReadBootstrap, fetcher?: ChatFet
     for (const listener of listeners) { try { listener(); } catch { /* View errors cannot retain an old session. */ } }
   }
   const unsubscribe = store.subscribe((chat) => {
-    if (chat.status === "signed-out") { status = "signed-out"; revision++; api = null; }
+    if (chat.status === "signed-out") { status = "signed-out"; revision++; requestedConversationId = null; api = null; }
     publish();
   });
   function active(): void { if (status !== "ready") return unavailable(); }
+  // Explicit list recovery may finish the original deep link. A failed list
+  // never starts history, and later navigation/session changes cancel that intent.
+  async function loadListAndOpenRequested(): Promise<OperationResult> {
+    const epoch = revision;
+    const result = await store.loadConversations();
+    if (revision !== epoch || status !== "ready") return "ignored";
+    if (result === "applied" && requestedConversationId !== null && store.snapshot().active === null) {
+      store.selectConversation(requestedConversationId);
+      return store.loadHistory();
+    }
+    return result;
+  }
   return Object.freeze<ReadController>({
     snapshot: () => snapshot,
     subscribe(listener: () => void) { if (status === "disposed") return unavailable(); listeners.add(listener); return () => { listeners.delete(listener); }; },
     async start(pathname: string) {
       const route = parseReadPath(pathname);
       if (status !== "idle" || api === null) return unavailable();
-      const epoch = ++revision; status = "ready"; store.activateSession(actorId, api);
-      const result = await store.loadConversations();
-      if (revision !== epoch || status !== "ready") return "ignored";
-      if (result === "applied" && route.conversationId !== null) { store.selectConversation(route.conversationId); return store.loadHistory(); }
-      return result;
+      revision++; requestedConversationId = route.conversationId; status = "ready"; store.activateSession(actorId, api);
+      return loadListAndOpenRequested();
     },
     async navigate(pathname: string) {
-      const route = parseReadPath(pathname); active(); revision++;
+      const route = parseReadPath(pathname); active(); revision++; requestedConversationId = route.conversationId;
       store.selectConversation(route.conversationId);
       return route.conversationId === null ? "applied" : store.loadHistory();
     },
-    refreshList() { active(); return store.loadConversations(); },
+    refreshList() { active(); return loadListAndOpenRequested(); },
     moreConversations() { active(); return store.loadMoreConversations(); },
     refreshHistory() {
       active(); const id = store.snapshot().active?.id; if (id === undefined) return unavailable();
@@ -84,11 +94,11 @@ export function createReadController(bootstrap: ReadBootstrap, fetcher?: ChatFet
     },
     suspend() {
       if (status === "disposed" || status === "suspended") return;
-      status = "suspended"; revision++; api?.dispose(); api = null; store.reset(); publish();
+      status = "suspended"; revision++; requestedConversationId = null; api?.dispose(); api = null; store.reset(); publish();
     },
     dispose() {
       if (status === "disposed") return;
-      status = "disposed"; revision++; api?.dispose(); api = null; store.dispose(); unsubscribe(); publish(); listeners.clear();
+      status = "disposed"; revision++; requestedConversationId = null; api?.dispose(); api = null; store.dispose(); unsubscribe(); publish(); listeners.clear();
     },
   });
 }

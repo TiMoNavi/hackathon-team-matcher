@@ -80,13 +80,17 @@ foreach ([[], ['provider' => null], ['provider' => []], ['provider' => ['class' 
 $guard->request('meta-search/index', [], ['provider' => 'humhub\\modules\\space\\search\\SpaceSearchProvider'], 1); check(true, 'other search provider unchanged');
 $guard->request('meta-search/index', ['provider' => 'humhub\\modules\\mail\\search\\SearchProvider'], ['provider' => 'humhub\\modules\\space\\search\\SpaceSearchProvider'], 1); check(true, 'native POST provider remains authoritative');
 $guard->request('meta-search/index', [], ['provider' => 'humhub\\modules\\mail\\search\\searchprovider'], 9); check(true, 'unrelated viewer native search unchanged');
-denied(fn () => $guard->request('live/live/poll', [], [], 1), 'managed viewer live aggregate denied');
-$guard->request('live/live/poll', [], [], 9); check(true, 'unrelated live unchanged');
+denied(fn () => $guard->request('live/poll/index', [], [], 1), 'unprotected native poll remains denied');
+$guard->request('live/poll/index', [], [], 1, true); check(true, 'filtered poll admits non-chat event processing');
+$guard->request('live/poll/index', [], [], 9); check(true, 'unrelated native poll unchanged');
+$guard->request('live/legitimation/index', [], [], 1); check(true, 'unrelated live route no longer globally denied');
+$guard->request('dashboard/dashboard', ['guid' => 'synthetic-managed-file'], [], 1); check(true, 'arbitrary non-file guid is not a chat route');
 foreach (['file/file/download', 'file/view/index'] as $route) {
     denied(fn () => $guard->request($route, ['guid' => 'synthetic-managed-file', 'token' => 'synthetic-token', 'variant' => 'preview'], [], null), 'token does not bypass managed file guard');
     foreach ([['synthetic-managed-file'], 'synthetic-managed-file ', str_repeat('x', 65), null] as $guid) { denied(fn () => $guard->request($route, ['guid' => $guid], [], null), 'file guid has strict shape'); }
 }
 denied(fn () => $guard->fileAssociationManaged('humhub\\modules\\mail\\models\\MessageEntry', '0001001'), 'file association rejects coercive ids');
+check($guard->fileAssociationManaged('\\HuMhUb\\MoDuLeS\\MaIl\\MoDeLs\\MeSsAgEeNtRy', 1001), 'file model class spelling cannot bypass managed association');
 check(!$guard->fileAssociationManaged('humhub\\modules\\content\\models\\Content', 1001), 'unrelated file association unchanged');
 
 ActorExpectation::assert(null, 1); check(true, 'actor header optional for older caller');

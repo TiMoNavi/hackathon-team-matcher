@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-if (PHP_SAPI !== 'cli' || !in_array($argv[1] ?? '', ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off'], true)) {
+if (PHP_SAPI !== 'cli' || !in_array($argv[1] ?? '', ['install', 'inspect', 'upgrade-ui', 'upgrade-chat', 'ui-on', 'ui-off', 'chat-read-on', 'chat-read-off', 'chat-ui-read-on', 'chat-ui-read-off', 'chat-takeover-on', 'chat-takeover-off'], true)) {
     fwrite(STDERR, 'Use a fixed chat harness action.' . PHP_EOL); exit(2);
 }
 ob_start();
@@ -79,6 +79,14 @@ try {
         $app->moduleManager->flushCache();
         if ($ui->isReadUiEnabled() !== ($action === 'chat-ui-read-on')) { throw new RuntimeException('Read UI capability did not change.'); }
     }
+    if (in_array($action, ['chat-takeover-on', 'chat-takeover-off'], true)) {
+        if ($chatConfig['modules'] !== ['mail', 'matcher-chat-ui', 'matcher-chat']) { throw new RuntimeException('Fixed chat module set absent.'); }
+        $chat = $app->moduleManager->getModule('matcher-chat', false);
+        if (!$chat || !$chat->isEnabled || !method_exists($chat, 'isEntryTakeoverEnabled')) { throw new RuntimeException('Entry takeover contract absent.'); }
+        $chat->settings->set('entryTakeoverEnabled', $action === 'chat-takeover-on' ? '1' : '0');
+        $app->moduleManager->flushCache();
+        if ($chat->isEntryTakeoverEnabled() !== ($action === 'chat-takeover-on')) { throw new RuntimeException('Entry takeover intention did not change.'); }
+    }
     $counts = [];
     $business = ['user', 'profile', 'space', 'space_membership', 'user_auth', 'message', 'user_message', 'message_entry', 'file'];
     if (in_array('matcher-chat', $chatConfig['modules'], true)) {
@@ -120,6 +128,7 @@ try {
     if (in_array('matcher-chat', $chatConfig['modules'], true)) {
         $chat = $app->moduleManager->getModule('matcher-chat', false);
         $result['chat_read_enabled'] = $chat !== null && $chat->isEnabled && method_exists($chat, 'isReadingEnabled') && $chat->isReadingEnabled();
+        $result['chat_entry_takeover_enabled'] = $chat !== null && $chat->isEnabled && method_exists($chat, 'isEntryTakeoverEnabled') && $chat->isEntryTakeoverEnabled();
     }
     ob_end_clean();
     echo PHP_EOL, '__CHAT_CONTROL_RESULT__', PHP_EOL, json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), PHP_EOL;

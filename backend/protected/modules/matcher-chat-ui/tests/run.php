@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace humhub\components {
     // Offline host doubles only; no application, credentials, database or network is booted.
-    class Module { public object $settings; public string $basePath; public string $id = 'matcher-chat-ui'; public function getBasePath(): string { return $this->basePath; } }
+    class Module { public object $settings; public string $basePath; public string $id = 'matcher-chat-ui'; public bool $isEnabled = true; public function getBasePath(): string { return $this->basePath; } }
     class Controller {
         public object $module; public int $parentRuns = 0; public int $parentBeforeActions = 0;
         public function runAction($id, $params = []) {
@@ -22,8 +22,9 @@ namespace yii\web {
     class NotFoundHttpException extends \RuntimeException { public int $statusCode = 404; }
     class MethodNotAllowedHttpException extends \RuntimeException { public int $statusCode = 405; }
 }
-namespace humhub\modules\ui\menu { class MenuLink { public function __construct(public array $options) {} } }
+namespace humhub\modules\ui\menu { class MenuLink { public function __construct(public array $options) {} public function getUrl(): string { $u = $this->options['url']; return is_array($u) ? $u[0] : $u; } public function setUrl(array $url): void { $this->options['url'] = $url; } public function setLabel(string $label): void { $this->options['label'] = $label; } } }
 namespace humhub\modules\ui\menu\widgets { class Menu { public const EVENT_RUN = 'run'; } }
+namespace humhub\widgets { class NotificationArea { public const EVENT_RUN = 'run'; } }
 namespace humhub\helpers {
     class Html {
         private static function encode(string $value): string { return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
@@ -38,12 +39,13 @@ namespace {
     use humhub\modules\matcherChatUi\Module;
     use humhub\modules\matcherChatUi\adapters\assets\Manifest;
     use humhub\modules\matcherChatUi\adapters\ui\Navigation;
+    use humhub\modules\matcherChatUi\adapters\ui\EntryBridge;
     use humhub\modules\matcherChatUi\application\Bootstrap;
     use humhub\modules\matcherChatUi\application\ShellPolicy;
     use humhub\modules\matcherChatUi\controllers\AppController;
 
     define('CHAT_TEST_MODULE_ROOT', dirname(__DIR__));
-    foreach (['application/ShellPolicy.php', 'application/Bootstrap.php', 'application/ReadBootstrap.php', 'adapters/assets/Manifest.php', 'Module.php', 'controllers/AppController.php', 'adapters/ui/Navigation.php'] as $file) { require CHAT_TEST_MODULE_ROOT . '/' . $file; }
+    foreach (['application/ShellPolicy.php', 'application/Bootstrap.php', 'application/ReadBootstrap.php', 'adapters/assets/Manifest.php', 'Module.php', 'adapters/ui/EntryBridge.php', 'controllers/AppController.php', 'adapters/ui/Navigation.php'] as $file) { require CHAT_TEST_MODULE_ROOT . '/' . $file; }
     $checks = [];
     function check(string $name, bool $condition): void { global $checks; if (!$condition) { throw new \LogicException($name); } $checks[] = $name; }
     function rejects(string $name, callable $operation, string $expected = \RuntimeException::class): void {
@@ -196,7 +198,12 @@ namespace {
         foreach ([null, false, 0, '0', '', 'false', [], 1.0] as $value) { $module->settings->readValue = $value; check('read UI stored gate closed ' . count($checks), !$module->isReadUiEnabled()); }
         $module->settings->readValue = true;
         check('read UI requires backend', !$module->isReadUiEnabled());
-        Yii::$app->backendModule = new class { public bool $isEnabled = false; public bool $ready = false; public function isReadingEnabled(): bool { return $this->ready; } };
+        Yii::$app->backendModule = new class {
+            public bool $isEnabled = false; public bool $ready = false; public bool $takeover = false; public bool $failStatus = false; public string $state = 'takeover';
+            public function isReadingEnabled(): bool { return $this->ready; }
+            public function isEntryTakeoverEnabled(): bool { return $this->takeover; }
+            public function entryStatus(int $viewer, bool $uiReady): array { if ($this->failStatus) { throw new \RuntimeException('Synthetic metadata failure.'); } return ['enabled' => $this->takeover, 'state' => $uiReady ? $this->state : 'paused']; }
+        };
         check('read UI requires enabled backend', !$module->isReadUiEnabled());
         Yii::$app->backendModule->isEnabled = true;
         check('read UI requires reading backend', !$module->isReadUiEnabled());
@@ -204,7 +211,7 @@ namespace {
         foreach ([true, 1, '1', 'true'] as $value) { $module->settings->readValue = $value; check('read UI explicit setting accepted ' . count($checks), $module->isReadUiEnabled()); }
         Yii::$app->response->statusCode = 200;
         check('guest remains shell with read gate on', str_contains($controller->runAction('index'), '聊天接入中，尚未读取会话。'));
-        Yii::$app->user = (object) ['isGuest' => false, 'id' => 23];
+        Yii::$app->user = (object) ['isGuest' => false, 'id' => 23, 'impersonation' => new class { public bool $allowed = true; public function canAccessPrivateContent(): bool { return $this->allowed; } }];
         $readHtml = $controller->runAction('index');
         check('native session supplies read actor', str_contains($readHtml, '"actor_id":23') && str_contains($readHtml, '"integration_stage":"read"'));
         check('read host preserves script escaping', !str_contains($readHtml, '<script>alert('));
@@ -219,6 +226,48 @@ namespace {
         $event = new \yii\base\Event(); $event->sender = $menu; Navigation::accountMenu($event); check('guest has no added navigation', count($menu->entries) === 0);
         Yii::$app->user->isGuest = false; Navigation::accountMenu($event); check('logged-in navigation is local and pending', count($menu->entries) === 1 && $menu->entries[0]->options['label'] === '聊天（接入中）' && $menu->entries[0]->options['url'] === ['/matcher-chat-ui/app/index']);
         $module->uiEnabled = false; Navigation::accountMenu($event); check('disabled module adds no navigation', count($menu->entries) === 1);
+
+        $module->uiEnabled = true; $module->readUiEnabled = true; $module->settings->readValue = true;
+        check('bridge keeps optional backend gate closed', EntryBridge::status() === null);
+        $readiness = new class extends \yii\base\Event { public int $viewerId = 23; public bool $uiReady = false; };
+        EntryBridge::readiness($readiness); check('server actor and valid assets make UI ready', $readiness->uiReady);
+        $readiness->viewerId = 24; EntryBridge::readiness($readiness); check('readiness cannot approve another actor', !$readiness->uiReady);
+        $readiness->viewerId = 23; Yii::$app->user->impersonation->allowed = false;
+        EntryBridge::readiness($readiness); check('impersonation refuses readiness', !$readiness->uiReady && EntryBridge::actorId() === null);
+        check('impersonation does not emit private bootstrap', !str_contains($controller->runAction('index'), '"actor_id"'));
+        Yii::$app->user->impersonation->allowed = true;
+        Yii::$app->backendModule->takeover = true;
+        check('enabled bridge gets backend decision', EntryBridge::status()['state'] === 'takeover');
+        $takeoverHtml = $controller->runAction('index'); check('ready takeover still uses read bootstrap', str_contains($takeoverHtml, '"actor_id":23'));
+        Yii::$app->backendModule->state = 'unsupported_coverage';
+        $before = Yii::$app->assetManager->publications; $coverageHtml = $controller->runAction('index');
+        check('mixed coverage has explicit 503 without partial list', Yii::$app->response->statusCode === 503 && str_contains($coverageHtml, '尚未被插件覆盖') && !str_contains($coverageHtml, 'matcher-chat-bootstrap'));
+        check('coverage pause publishes no assets or old chat URL', Yii::$app->assetManager->publications === $before && !str_contains($coverageHtml, '/mail/mail'));
+        check('mixed deep link cannot bypass coverage pause', str_contains($controller->runAction('index', ['path' => 'conversations/1']), '尚未被插件覆盖'));
+        Yii::$app->backendModule->state = 'takeover'; $module->readUiEnabled = false;
+        $paused = $controller->runAction('index'); check('paused takeover does not silently become shell', Yii::$app->response->statusCode === 503 && str_contains($paused, '接管已暂停') && !str_contains($paused, 'matcher-chat-bootstrap'));
+        $module->readUiEnabled = true;
+        rename($readRelease . '/manifest.json', $readRelease . '/manifest.absent');
+        EntryBridge::readiness($readiness); check('missing assets refuse redirect readiness', !$readiness->uiReady);
+        rename($readRelease . '/manifest.absent', $readRelease . '/manifest.json');
+        Yii::$app->backendModule->failStatus = true;
+        check('backend failure is contained in chat status', EntryBridge::status()['state'] === 'paused');
+        Yii::$app->backendModule->failStatus = false;
+        $original = new \humhub\modules\ui\menu\MenuLink(['url' => ['/mail/mail/index'], 'label' => 'Native message']);
+        $other = new \humhub\modules\ui\menu\MenuLink(['url' => ['/dashboard/dashboard'], 'label' => 'Dashboard']);
+        $top = new class($original, $other) { public array $entries; public function __construct(...$items) { $this->entries = $items; } public function getEntries(): array { return $this->entries; } public function removeEntry($entry): void { $this->entries = array_values(array_filter($this->entries, static fn($e) => $e !== $entry)); } };
+        $event->sender = $top; Navigation::topMenu($event); Navigation::topMenu($event);
+        check('exact native inbox entry replaced once', count($top->entries) === 2 && $original->getUrl() === '/matcher-chat-ui/app/index' && $original->options['label'] === '聊天（只读）');
+        check('unrelated menu entry unchanged', $other->getUrl() === '/dashboard/dashboard' && $other->options['label'] === 'Dashboard');
+        $area = new class { public array $widgets = ['humhub\modules\mail\widgets\NotificationInbox', 'humhub\modules\notification\widgets\Overview']; public function removeWidget(string $class): void { $this->widgets = array_values(array_diff($this->widgets, [$class])); } };
+        $event->sender = $area; Navigation::notificationArea($event);
+        check('only mail widget removed', $area->widgets === ['humhub\modules\notification\widgets\Overview']);
+        Yii::$app->backendModule->state = 'native';
+        $original->setUrl(['/mail/mail/index']); $event->sender = $top; Navigation::topMenu($event);
+        check('native scope leaves mail entry untouched', $original->getUrl() === '/mail/mail/index');
+        Yii::$app->backendModule->state = 'takeover'; $module->uiEnabled = false; Navigation::topMenu($event);
+        check('disabled UI removes only broken managed menu', $top->entries === [$other]);
+        Yii::$app->backendModule->takeover = false; $module->uiEnabled = true;
         $config = require CHAT_TEST_MODULE_ROOT . '/config.php';
         check('only local page routes registered', array_keys($config['urlManagerRules']) === ['matcher/chat', 'matcher/chat/<path:.*>']);
         $metadata = json_decode(file_get_contents(CHAT_TEST_MODULE_ROOT . '/module.json'), true, 64, JSON_THROW_ON_ERROR);

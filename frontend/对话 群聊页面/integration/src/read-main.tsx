@@ -17,7 +17,7 @@ if (element) {
     const bootstrap = parseReadBootstrap(JSON.parse(data.textContent || ""), location.origin);
     parseReadPath(location.pathname);
     const controller = createReadController(bootstrap);
-    const links = Object.freeze({ home: bootstrap.native_home_url, login: bootstrap.native_login_url, nativeChat: bootstrap.native_chat_url });
+    const links = Object.freeze({ home: bootstrap.native_home_url, login: bootstrap.native_login_url });
     // Do not keep bootstrap identity/CSRF copies in DOM after parsing.
     data.textContent = "";
     const detach = attachReadLifecycle(controller, window, document, () => { element.hidden = true; }, () => location.reload());

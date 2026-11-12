@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "results": {
+    "kernel": {
+      "status": "passed",
+      "checks": 228,
+      "scope": "C04-P synthetic domain/application/ports only",
+      "database_connections": 0,
+      "http_requests": 0,
+      "model_calls": 0
+    },
+    "native": {
+      "status": "passed",
+      "checks": 109,
+      "sql_guard_lookups": 81,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "pure native projection/request/guard seams; not SQL or HTTP acceptance"
+    },
+    "takeover": {
+      "status": "passed",
+      "checks": 102,
+      "native_checks": 109,
+      "database_connections": 0,
+      "http_requests": 0,
+      "scope": "pure navigation/readiness/live filtering; no installation or HTTP acceptance"
+    },
+    "ui": {
+      "status": "passed",
+      "checks": 215,
+      "scope": "offline fixtures, not real HTTP",
+      "database_access": false,
+      "network_access": false,
+      "secrets_read": false
+    },
+    "bootstrap": {
+      "status": "passed",
+      "checks": 12,
+      "database_access": false,
+      "network_access": false
+    },
+    "isolation": {
+      "status": "passed",
+      "python_checks": 107,
+      "php_guard_checks": 64,
+      "yii_header_checks": 5,
+      "database_access": false,
+      "real_credentials_read": false,
+      "service_started": false
+    }
+  },
+  "php_lint_files": 64,
+  "scope": {
+    "AGENTS.md": false,
+    "docs/首次注册与开场引导_用户原稿_冻结.md": true,
+    "docs/睡前全自动运行/task.md": false,
+    "docs/睡前全自动运行/原始情况描述禁止修改.md": true,
+    "backend/protected/modules/mail/Module.php": true,
+    "backend/protected/config/common.php": true,
+    "docs/群聊模块升级/08_C04真实接线审查.md": true,
+    "docs/群聊模块升级/09_C04隔离读取接线回执.md": true
+  },
+  "concurrent_external_updates": {
+    "commit": "da3af9a3d57ee6b680f3b61019dfdeff35f8568d",
+    "paths": [
+      "AGENTS.md",
+      "docs/睡前全自动运行/task.md"
+    ],
+    "chat_did_not_modify_or_publish": true
+  },
+  "c03_assets_unchanged": {
+    "backend/protected/modules/matcher-chat-ui/resources/app/index.html": true,
+    "backend/protected/modules/matcher-chat-ui/resources/app/manifest.json": true,
+    "backend/protected/modules/matcher-chat-ui/resources/app/assets/bricolage-grotesque-latin-CtikI8OQ.woff2": true,
+    "backend/protected/modules/matcher-chat-ui/resources/app/assets/inter-latin-8kRkwJBP.woff2": true,
+    "backend/protected/modules/matcher-chat-ui/resources/app/assets/index-DA5t_4zc.js": true,
+    "backend/protected/modules/matcher-chat-ui/resources/app/assets/index-DhcpXFvH.css": true
+  },
+  "frontend_tests": 74,
+  "frontend_typecheck": "passed; independent repeat passed",
+  "read_build": "passed",
+  "shell_build_validation": "passed",
+  "cross_language": {
+    "positive": 29,
+    "negative": 15,
+    "synthetic_requests": 8,
+    "real_http": 0
+  }
+}

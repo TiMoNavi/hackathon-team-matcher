@@ -1,0 +1,36 @@
+{
+  "stage": "T1-T2-isolated-entry-browser-wrapper",
+  "passed": true,
+  "target": "http://127.0.0.1:8124",
+  "fixture": "eight-messages-empty-revoked",
+  "normalNativeFormLogins": 2,
+  "readState": {
+    "before": {
+      "a": 7,
+      "b": 7
+    },
+    "after": {
+      "a": 7,
+      "b": 7
+    },
+    "unchanged": true
+  },
+  "snapshotUnchanged": true,
+  "nativeSeenUnchanged": true,
+  "gatesRestored": true,
+  "credentialsTransport": "private-memory-to-child-stdin",
+  "credentialsReturned": false,
+  "receiptWrites": 0,
+  "receiptWriteVerification": "not-exercised-all-put-blocked",
+  "messageSendAttempted": false,
+  "dataResetAttempted": false,
+  "childReport": "integration/artifacts/entry-browser/entry-browser-report.json",
+  "child": {
+    "passed": true,
+    "checks": 5,
+    "normalNativeFormLogins": 2,
+    "receiptWrites": 0,
+    "failedStage": null,
+    "report": "integration/artifacts/entry-browser/entry-browser-report.json"
+  }
+}

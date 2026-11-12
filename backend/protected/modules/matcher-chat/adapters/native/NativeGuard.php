@@ -39,14 +39,14 @@ final class NativeGuard
     public function fileAssociationManaged(mixed $model, mixed $id): bool
     {
         if (!is_string($model)) { return false; }
-        $model = ltrim($model, '\\');
-        if (!in_array($model, ['humhub\\modules\\mail\\models\\MessageEntry', 'humhub\\modules\\mail\\models\\AbstractMessageEntry', 'humhub\\modules\\mail\\models\\states\\MessageUserJoined', 'humhub\\modules\\mail\\models\\states\\MessageUserLeft'], true)) { return false; }
+        $model = strtolower(ltrim($model, '\\'));
+        if (!in_array($model, ['humhub\\modules\\mail\\models\\messageentry', 'humhub\\modules\\mail\\models\\abstractmessageentry', 'humhub\\modules\\mail\\models\\states\\messageuserjoined', 'humhub\\modules\\mail\\models\\states\\messageuserleft'], true)) { return false; }
         if ($this->id($id) === null) { $this->deny(); }
         return $this->entryManaged($id);
     }
 
     /** Run before action construction: DownloadAction::init may already load/token-authorize a file. */
-    public function request(string $route, array $query, array $body, ?int $viewerId): void
+    public function request(string $route, array $query, array $body, ?int $viewerId, bool $pollProtected = false): void
     {
         $route = trim($route, '/');
         if ($route === 'file' || str_starts_with($route, 'file/')) {
@@ -54,7 +54,9 @@ final class NativeGuard
                 if (array_key_exists('guid', $input) && (!is_string($input['guid']) || !preg_match('/^[A-Za-z0-9][A-Za-z0-9-]{0,63}$/D', $input['guid']))) { $this->deny(); }
             }
         }
-        foreach ([$query['guid'] ?? null, $body['guid'] ?? null] as $guid) { if ($this->fileManaged($guid)) { $this->deny(); } }
+        if ($route === 'file' || str_starts_with($route, 'file/')) {
+            foreach ([$query['guid'] ?? null, $body['guid'] ?? null] as $guid) { if ($this->fileManaged($guid)) { $this->deny(); } }
+        }
         // REST replaces the session actor later. Fail closed for its entire mail surface.
         if (str_starts_with($route, 'mail/rest/') && $this->hasAny()) { $this->deny(); }
         if (str_starts_with($route, 'mail/')) {
@@ -80,9 +82,9 @@ final class NativeGuard
             $provider = ltrim($provider, '\\');
             if ($provider === '' || strcasecmp($provider, 'humhub\\modules\\mail\\search\\SearchProvider') === 0) { $this->deny(); }
         }
-        // No per-conversation queue projection exists yet. This also suppresses other live
-        // notifications for these isolated users; it is an explicit production blocker.
-        if (str_starts_with($route, 'live/') && $this->viewerManaged($viewerId)) { $this->deny(); }
+        // The audited native poll subclass filters mail before getData(). No other live
+        // service is denied here. Conflicting poll adapters remain unsupported/fail closed.
+        if (in_array($route, ['live/poll', 'live/poll/index'], true) && !$pollProtected && $this->viewerManaged($viewerId)) { $this->deny(); }
     }
 
     public function nativeWrite(object $record): void

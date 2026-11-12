@@ -12,14 +12,14 @@ export function messageAuthor(value: MessageSummary, actorId: number | null): st
   if (value.sender.status === "unavailable") return "发送者信息未提供";
   return value.sender.user_id === actorId ? "你" : value.sender.display_name;
 }
-export function errorMessage(error: ChatApiError): string {
+export function errorMessage(error: ChatApiError, scope: "list" | "conversation" = "conversation"): string {
   if (error.status === 401) return "登录已失效，请重新登录后打开聊天。";
-  if ([403, 404].includes(error.status)) return "此会话暂不可访问，可能已不存在或访问资格已改变。";
+  if ([403, 404].includes(error.status)) return scope === "list" ? "会话列表暂不可访问，请重新读取或返回首页。" : "此会话暂不可访问，可能已不存在或访问资格已改变。";
   if (["AUTHORIZATION_CHANGED", "CURSOR_CONTEXT_CHANGED", "CONTEXT_CHANGED"].includes(error.code)) return "访问范围已改变，旧内容已清除。请重新读取。";
   if (error.status === 410) return "这次分页已过期，请重新读取会话。";
   if (error.status === 429) return "请求较多，请稍后手动重试。";
   if (error.status === 400) return "页面校验已失效，请刷新后继续。";
-  if (error.status === 503) return "聊天读取暂不可用，请稍后手动重试。";
+  if (error.status === 503) return "聊天读取暂不可用，请稍后手动重试，或返回首页。";
   return "读取失败，请检查连接后重试。当前没有自动重试。";
 }
 export function shortTimestamp(utc: string): string {

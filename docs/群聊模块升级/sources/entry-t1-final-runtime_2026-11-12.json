@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "target": "127.0.0.1:8124",
+  "database": "humhub_chat_c02_20261112",
+  "actions": [
+    "chat-takeover-off",
+    "chat-ui-read-off",
+    "chat-read-off"
+  ],
+  "server_stopped": true,
+  "entry_gate_off": true,
+  "read_gates_off": true,
+  "snapshot_unchanged": true,
+  "nonempty_restore_refused": true,
+  "repeat_upgrade_preserves_counts": true,
+  "final": {
+    "status": "passed",
+    "action": "inspect",
+    "database": "humhub_chat_c02_20261112",
+    "php": "8.5.12",
+    "mysql": "9.7.4",
+    "humhub": "1.19.4",
+    "counts": {
+      "user": 3,
+      "profile": 3,
+      "space": 0,
+      "space_membership": 0,
+      "user_auth": 0,
+      "message": 3,
+      "user_message": 6,
+      "message_entry": 8,
+      "file": 0,
+      "matcher_chat_conversation": 2,
+      "matcher_chat_entry_sequence": 8,
+      "matcher_chat_member": 4,
+      "matcher_chat_read_state": 2,
+      "matcher_chat_viewer_revision": 3,
+      "queue": 1,
+      "module_enabled": 3,
+      "migration": 231
+    },
+    "modules": {
+      "mail": {
+        "enabled": true,
+        "code_version": "3.4.6",
+        "installed_version": "3.4.6"
+      },
+      "matcher-chat-ui": {
+        "enabled": true,
+        "code_version": "0.1.0",
+        "installed_version": "0.1.0"
+      },
+      "matcher-chat": {
+        "enabled": true,
+        "code_version": "0.1.0",
+        "installed_version": "0.1.0"
+      }
+    },
+    "empty_business_data": false,
+    "mail_transport": "file",
+    "outbound_transports_blocked": true,
+    "real_ai_calls": 0,
+    "worker_started": false,
+    "cron_started": false,
+    "seeded_users": null,
+    "baseline_installed": true,
+    "ui_enabled": true,
+    "chat_ui_read_enabled": false,
+    "chat_read_enabled": false,
+    "chat_entry_takeover_enabled": false
+  },
+  "no_mail_disable_or_cleanup": true
+}

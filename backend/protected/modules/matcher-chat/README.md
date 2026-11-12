@@ -19,6 +19,34 @@ API 仅 GET /api/v1/conversations、GET /api/v1/conversations/{id}/messages、PU
 
 SQL 适配仅准入 direct：sender 始终 unavailable，attachments=[]，permissions 的 send/invite/leave 均 false。这表示缺少获准画像/写入合同，不是假姓名，也不是已完成完整私聊读写。
 
+## T1/T2 入口适配
+
+入口接管由 public bool entryTakeoverEnabled=false 与 settings.entryTakeoverEnabled 两道闸控制；后者只接受 true/1/'1'/'true'。安装文件、打开读取或打开 UI 均不自动开启接管。这个开关只选择已有受管用户的导航，不准入会话，不开放发送，不删除或禁用 mail。开关关闭后的 native 状态不表示受管数据已经恢复原生读写；既有保护继续存在。
+
+Module::EVENT_ENTRY_READINESS 固定为 entryReadiness；EntryTakeoverEvent 位于 adapters/http，构造参数 viewerId 是 readonly 正整数，uiReady 默认 false。UI 宿主只报告当前身份、开关与实际资源就绪，不能提供跳转 URL 或授权。业务插件不依赖 UI 类。后端在自身 beforeRequest/beforeAction 的 guard 前统一决定导航，不依赖 UI 与 guard 事件注册的先后顺序。
+
+Module::entryStatus(int viewerId,bool uiReady) 固定返回 enabled、state、list_url、coverage、capabilities。state 为 native/takeover/paused/unsupported_coverage；list_url 仅 takeover 时返回固定同源 /matcher/chat（允许受信任站点 baseUrl），其余为 null。capabilities 为 read/send/group/attachments 四个布尔，只有 takeover 的 read 为 true，其余能力关闭。调用只接受当前启用原生 session 的本人，并检查 impersonation.canAccessPrivateContent；依赖或身份失败返回 paused，不抛错使菜单所在页面失效。
+
+coverage={native_total,managed_total,unmanaged_total,revoked_total}：前三项按当前原生成员关系计数，native_total=managed_total+unmanaged_total；revoked_total 是该用户当前或历史受管关联中的已撤销数，可能包含原生成员关系已移除的记录。撤销属于受管保护事实，不按“未管理”恢复权限。统计在真实锁事务内重新同步准入；就绪状态另外调用真实 ChatReader 列表授权。任何未管原生会话都会使该受影响用户的接管变为 unsupported_coverage，不自动准入，不把子集列表宣称完整收件箱。新加入未管关系会在下次状态/导航检查时暂停。未知群、附件或其他依赖失败同样不扩大权限。
+
+本批暂停明确限于原生导航与新页面装配，API 业务授权保持独立。entryTakeoverEnabled/UI 关闭或变为 mixed 不自动撤销 readEnabled；已打开页面仍可在 readEnabled 开启且真实授权有效时读取获准 managed 会话及更新本人已读，实际撤权仍由 reader 拒绝。当前不声称“所有请求即时暂停”，也未新增暂停错误 DTO 或以 UI 故障伪造业务撤权。需要停用业务读取时使用现有 readEnabled；这是与入口接管不同的开关。
+
+| 原生路由 | 本批行为 |
+|---|---|
+| GET mail、mail/mail、mail/mail/index、mail/inbox、mail/inbox/index | 仅受管、完整覆盖、有效身份且 UI/读取/Poll 适配就绪时 302 到固定列表；可选规范 id 先走详情授权后到固定深链 |
+| GET mail/mail/show?id=… | 在原生 actionShow 调用 seen() 前截获；真实 reader 验权后 302 到 /matcher/chat/conversations/{id}；撤权/外人/不存在不跳转 |
+| mixed 用户的上述 GET | 返回 503 和 unsupported_coverage，不静默隐藏未管会话，不声称已有安全原生 mixed 路径 |
+| UI/读取/适配不可用 | 返回 503/paused，保护保留，不放开原生入口 |
+| POST/PUT/PATCH/DELETE/HEAD 等，及 reply/seen/create/编辑/邀请/离开 | 不重定向、不重放；已有受管旧写保护继续拒绝 |
+| load-more/update、列表碎片、计数、通知、搜索/API/文件 | 不将数据请求重定向为 HTML；沿独立保护，不因导航成功而放行 |
+| 未涉及任何受管会话的用户 | 保留其原生入口；指向受管对象仍拒绝 |
+
+已登记入口允许忽略 returnUrl 等无关参数，但跳转仅拼接经过验证的会话 ID；不使用输入 URL，也不使用 307/308。受管且 UI 就绪不构成正文授权，每个导航仍由原生 session、真实 reader 与目标页面再次验权。导航本身不更新原生 seen 或插件 read-state。边界检查允许实际身份和权限变化后返回不可用，不承诺跨两个 HTTP 请求保留同一授权快照。
+
+Poll 适配由本模块 GuardedPollController 继承原生 PollController，通过 checkVisibility 在 getData 前逐项处理。只在 controllerMap.poll 为空或精确原生类时装配，不覆盖第三方/自定义配置；重复装配幂等。受影响用户的全部原生 mail live 事件均过滤，因为 NewUserMessage/UserMessageDeleted 即使关联未管会话也包含全收件箱 count。已删除目标保留元数据关联检查；未知 mail 子类按继承链识别并拒绝未知投影。非 mail 事件直接保留，聊天 schema 故障也不影响同次 poll 的非聊天事件。实际路由为 /live/poll；无关 live 路由不再整面封锁。
+
+接管就绪仅支持当前已审的 Poll driver；第三方 controllerMap 冲突或 Push/Mercure 均 paused，不替换 driver、不宣称这些路径受保护。发生 poll map 冲突时，受管用户的未适配原生 poll 仍拒绝，属于未支持安装条件，不是已验证的无损兼容。第三方事件、主动 notify、邮件、Push/FCM 等残余风险见下节，Poll 过滤不等于所有通知都已获授权。
+
 ## 原生持久化边界
 
 SqlState 在 MySQL/InnoDB 中持有独立 chat 锁行，以 REPEATABLE READ + 当前 FOR UPDATE 锁定原生 message、UserMessage 范围、账户和 entries，再读写聊天元数据。范围 next-key 锁用于阻止并发成员/消息插入幻读，不能把普通快照当锁。每个 viewer 最多装配512个已准入会话，每会话同步最多10000条；超过明确503等待专门迁移，不静默截断历史。
@@ -31,14 +59,14 @@ SqlState 在 MySQL/InnoDB 中持有独立 chat 锁行，以 REPEATABLE READ + �
 
 | 入口 | 当前隔离行为 |
 |---|---|
-| 受管对象原生 mail HTML/写动作 | 拒绝；受管用户的所有 mail web 动作均拒绝，因为非受管 show/edit-title 也会混全局 count/widget。无害 id、数组和 MySQL 宽松数字形式不能豁免 |
+| 受管对象原生 mail HTML/写动作 | 除上述 opt-in 完整覆盖的已验权 GET 导航外仍拒绝；非受管 show/edit-title 也会混全局 count/widget，mixed 不直接放行。无害 id、数组和 MySQL 宽松数字形式不能豁免 |
 | mail REST | 只要存在任何受管记录，就拒绝整个 mail REST；不能依赖其认证前的旧 session actor |
-| 原生搜索/通知下拉/live | 受管用户的 mail 元搜索、下拉及 live 请求拒绝/抑制；live 聚合限制也影响其非聊天即时通知，是生产阻塞项 |
+| 原生搜索/通知下拉/live | 受管用户的 mail 元搜索、下拉继续拒绝/抑制；已适配 Poll 仅过滤 mail 事件，保留非聊天事件；其他 driver/映射未完成 |
 | 文件入口 | beforeRequest 先 resolve 路由，在 DownloadAction::init 和 token 解析前检查 managed 文件；文件 guid 数组/非规范值拒绝，controller 事件再复核。无附件准入，附件能力未开放 |
 | 原生模型写 | Message/AbstractMessageEntry/UserMessage/File 的 before 事件阻止受管对象未覆盖修改；API/readEnabled/UI 开关关闭后仍保护 |
 | 业务模块撤回 | 只要有受管记录或 schema 不完整，Module.disable 拒绝；不允许卸载保护留下原生旁路 |
 
-这些拒绝**不代表原生兼容完成**。受管用户原生合法聊天回退尚未恢复，不能宣称“撤UI后全部原生读写正常”。不受管用户访问不受管 web 会话保持原生；其指向受管对象也拒绝。
+这些拒绝**不代表原生兼容完成**。受管用户原生合法聊天回退尚未恢复，不能宣称“撤UI后全部原生读写正常”。不受管用户访问不受管 web 会话保持原生；其指向受管对象也拒绝。beforeRequest/beforeAction 先按相关路由筛选，再读取聊天 schema；非聊天页面、非 mail 搜索、普通文件和非聊天 live 不因聊天元数据故障而整体返回 503。不能把任意页面的 guid 查询参数当作聊天文件入口。原生 NotificationInbox 在保护依赖失败时只停止该聊天 widget。
 
 仍未覆盖或未证明的路径必须保留：直接 updateAll/deleteAll/手写 SQL 绕过 AR 事件，尤其两次读取之间的 A→B→A 原生状态变更；主动构造 MessageNotification 或已在途邮件/推送；第三方自定义控制器/模型读取；先取得的外部临时文件URL；File::beforeDelete 在父事件前删除物理文件，单个 AR hook 无法提前保护程序调用的存储副作用；native 写入在显式准入前已开始的竞态。隔离夹具可受控造漂移测试，但不能把漂移检测等同事件路径全面保护。无核心修改情况下需要后续窄适配/公共补丁及真实回执，生产开关必须保持关闭。
 
@@ -95,12 +123,15 @@ AccessReader.revision 是 viewer 维度持久、单调递增的正 JavaScript �
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/run.php
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/export-contract.php
     backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/native.php
+    backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat/tests/takeover.php
 
 run.php 覆盖真实用例输出、合法/拒绝成员、重复代次、join 前后、私聊历史/send 分离、摘要/头像撤权、空列表/空会话、seq 空洞、自己的/system/deleted 未读排除、分页/增量、HMAC 篡改/过期/跨对象/未来时间/超 TTL、末端撤权、已读单调和坏仓储位置回滚。输出是计数汇总，不打印密钥、配置或用户资料。
 
 export-contract.php 输出 schema_version=1、kind=matcher-chat-c04p-synthetic-contract、cases 数组；每项有 name、kind、status、完整 payload。场景为 conversations/history/increment/read-state/error，供主 agent 的 PHP→TypeScript 解析交叉验证。fixture 由用例实时计算，不能当生产数据或真实 HTTP 验收回执。
 
 native.php 仅使用无连接的 SQL seam 验 guard、纯文本/时间投影、actor预期头和JSON请求边界；0数据库连接/HTTP请求，不代替真实SQL/HTTP回执。既有run.php保留228条内核检查，原“目录不可安装”五条断言已替换为读取用例不含send/invite/upload和不依赖外层的检查；不改写旧C04-P报告。
+
+takeover.php 验双闸、冻结状态字段、完整/混合/撤销覆盖语义、规范 ID 与固定导航、所有旧非 GET 不重放、mail 事件及继承链/墓碑拒绝、非 mail 不触发聊天 SQL、真实 Poll 子类的依赖失败隔离、controllerMap 冲突与幂等、非聊天路由先行排除。使用未启动的应用测试替身与无连接 SQL seam，0数据库连接/HTTP，不冒充真实入口、恢复、并发切换或浏览器验收。
 
 isolated-sql.php 只能由主集成人用 deploy/chat 的固定 harness PHP 命令执行；普通 php -n 缺少网络禁用等前置条件会被 bootstrap 拒绝。它只接受一个枚举参数 snapshot、read-low-b、read-high-b、read-high-b-hold、append-once 或 revoke-empty，不接受 ID、SQL、正文、路径、凭据或等待时长。先验证固定数据库与 fixture nonce，再核对三名虚构用户、三个会话、成员及七条原生合成消息的精确归属。snapshot 只同步读取；low/high 固定推进 B 至 1/3，既存位置大于 3 时拒绝，无重置。high-hold 在真实读取事务内固定持锁 750ms，并只向 stderr 输出固定就绪标记。
 

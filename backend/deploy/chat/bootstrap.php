@@ -87,6 +87,7 @@ if ($chatInstalled) {
     $config['modules']['matcher-chat']['integrationReady'] = true;
     $config['modules']['matcher-chat']['cursorSecret'] = hash_hkdf('sha256', $chatConfig['cookie_key'], 32, 'chat-c04-cursor-v1', $chatConfig['nonce']);
     $config['modules']['matcher-chat']['nativeTimeZone'] = 'UTC';
+    $config['modules']['matcher-chat']['entryTakeoverEnabled'] = true; // Fixed isolated target; stored opt-in stays off.
     $config['modules']['matcher-chat-ui']['readUiEnabled'] = true;
     $config['timeZone'] = 'UTC';
     if ($web) { $config['bootstrap'] = chatWebBootstrap($config['bootstrap']); }

@@ -11,10 +11,20 @@ C03独立同源页面壳及C04/C06可选读取宿主，要求HumHub1.19.4或以�
 - 非 GET 返回405并带 `Allow: GET`；非法深链或关闭UI返回404，直接 `/matcher-chat-ui/app/index` 入口同样受限。runAction先捕获Yii尚未绑定的路径，beforeAction在parent之前校验；没有关闭默认CSRF。
 - 开启时直接Yii action的合法GET返回302，Location为服务端baseUrl加固定 `/matcher/chat` 及已验证深链；不转发returnUrl或其他查询参数，也不读取会话/发布资产。浏览器只在规范入口初始化。
 - `Module::$uiEnabled` 默认true。模块设置项 `uiEnabled` 缺省允许；仅true、1、`1`、`true`为开启，其他已配置值关闭。最终结果与模块属性取逻辑与。
-- 关闭UI撤回新页面及本模块账户菜单。菜单只对已登录且UI开启者显示“聊天（接入中）”，不替换全站导航或原生mail入口。
+- 未启用入口接管时，关闭UI撤回新页面及本模块账户菜单，原生导航不由UI插件改动。T1/T2显式接管时，仅替换原生聊天菜单项；具体范围见下节。
 - 不调用 mail 的 disable/remove，不删除消息或任何业务模块。此模块没有业务迁移、保护策略或消息数据所有权。
 
-## Bootstrap与资源
+## T1/T2 可选入口接管
+
+后端matcher-chat的entryTakeoverEnabled属性与同名持久设置必须同时开启，生产默认关闭。UI通过EntryBridge响应entryReadiness事件，只声明当前session/impersonation、读取开关和read-app manifest是否就绪，不提供目标URL、不授予会话权限。事件用类名字符串注册，未安装后端时C03静态壳仍可独立使用。
+
+- TopMenu在EVENT_RUN精确匹配原生收件箱URL并改到本插件；保留其他项。NotificationArea仅移除原生NotificationInbox，普通通知不动，不虚构新的未读角标。未交付发送/建群入口不包装成可用功能。
+- 完整覆盖的受管用户显示“聊天（只读）”。有未覆盖会话或依赖故障时显示“聊天（暂不可用）”；新页面返回503静态说明，不装配read bootstrap、不把部分会话列表当全部。
+- 暂停接管/关闭UI与业务API授权分开。已经打开的读取客户端仍可访问readEnabled允许且真实授权有效的API；通用503不会被当作撤权。业务撤权仍由读取内核判定，关闭UI不自动恢复旧聊天入口。
+- 读取前端不再把保留的native_chat_url字段用作返回链接，退出统一指向首页，避免新旧入口循环。v2/read十字段合同保持不变。
+- 受管原生GET的实际导航由后端在seen副作用前处理。UI只消费状态，业务保护保留；本批没有完成混合收件箱、发送/附件/群、完整原生恢复或生产开放。
+
+## Bootstrap与资源合同
 
 根为matcher-chat-root，JSON节点为matcher-chat-bootstrap。shell bootstrap为schema_version=1、integration_stage=shell、base_path=/matcher/chat、api_base=/api/v1、native_home_url、native_login_url、csrf_header=X-CSRF-Token、csrf_token八字段。read bootstrap为v2/read，另加原生session的actor_id和固定native_chat_url，共十字段；actor只用于客户端分区和一致性断言，不授予读取权。
 
@@ -42,7 +52,7 @@ backend/.runtime/php-mysql/bin/php -n backend/protected/modules/matcher-chat-ui/
 
 覆盖内容包括manifest完整资源图/白名单/动态导入、大小与深度限制、symlink、bootstrap注入/字段类型、全部常见HTTP方法、路径与开关、菜单、503及原生链接。控制器替身验证dispatch与beforeAction顺序，不等于真实Yii HTTP验收。
 
-当前离线回执为197项宿主/manifest检查及12项read-bootstrap检查通过，包含read开关、匿名shell、服务端actor、前控规范跳转及缺失read manifest的503。上述替身检查不代替真实HTTP。实际接线与限制见[本批回执](../../../../docs/群聊模块升级/09_C04隔离读取接线回执.md)。
+T1/T2离线回执为215项宿主/manifest检查及12项read-bootstrap检查通过，增加就绪事件、impersonation、覆盖不足/暂停页面和精确菜单替换。上述替身检查不代替真实HTTP。历史读取接线与限制见[读取回执](../../../../docs/群聊模块升级/09_C04隔离读取接线回执.md)，新接管结果另见专项实施记录。
 
 ## 文件边界
 
