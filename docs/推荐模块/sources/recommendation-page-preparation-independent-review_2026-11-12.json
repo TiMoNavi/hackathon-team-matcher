@@ -1,0 +1,233 @@
+{
+  "reviewed_at": "2026-11-12T16:08:07.435015+08:00",
+  "reviewer": "recommendation_contract_rp0",
+  "status": "passed_after_fix",
+  "scope": "本轮新增、未装配的纯五维内核及普通发现GET准备层；独立离线审查。不是页面、正式HTTP、权限服务或生产验收。",
+  "independent_pre_fix": {
+    "detail_failures": 3,
+    "additional_list_failures": 1,
+    "total_failures": 4,
+    "detail_results": [
+      {
+        "case": "AUTHENTICATION_REQUIRED",
+        "same_activity_epoch": true,
+        "context_retained": true,
+        "old_A_card_retained": true,
+        "ignored": true
+      },
+      {
+        "case": "CANDIDATE_ACCESS_REVOKED",
+        "same_activity_epoch": true,
+        "context_retained": true,
+        "old_A_card_retained": true,
+        "ignored": true
+      },
+      {
+        "case": "DISCOVERY_PERSON_NOT_FOUND",
+        "same_activity_epoch": true,
+        "context_retained": true,
+        "old_A_card_retained": true,
+        "ignored": true
+      },
+      {
+        "case": "old epoch 403 must not clear new context",
+        "correctly_ignored": true
+      }
+    ],
+    "list_result": {
+      "case": "old query 403 after new query succeeds, same epoch",
+      "context_retained": true,
+      "current_list_retained": 1,
+      "ignored": true
+    },
+    "snapshot": "独立临时目录中修前TypeScript编译产物，未用修后源码覆盖。",
+    "compiled_state_sha256": "5779c94f255254f8d83fede05eb023b4abc3b2442a6f946c121e5541cc07731d"
+  },
+  "findings": [
+    {
+      "id": "RP-PREP-REVIEW-01",
+      "severity": "P1",
+      "status": "fixed_and_independently_retested",
+      "file": "frontend/推荐/lib/recommendation-runtime/state.ts",
+      "pre_fix_lines": [
+        98,
+        123
+      ],
+      "description": "旧ticket检查优先于同epoch/context的授权失效处理，详情A迟到401/403/404及旧列表403被忽略，保留已知不可访问卡片。",
+      "reproduction": "在同活动列表A/B中打开A后打开B，再完成A失败；列表版本为旧筛选pending、新筛选成功后旧请求失败。",
+      "expected": "同上下文明确失效优先清相应展示/上下文；旧成功、普通网络失败及跨新epoch旧错误不能覆盖新状态。",
+      "pre_fix_actual": "4个失败场景均忽略错误并保留旧上下文/列表。",
+      "post_fix_actual": "7项定向独立检查通过；401/403清上下文及卡片，404清列表/详情但保留活动，跨epoch旧403仍忽略。"
+    }
+  ],
+  "independent_post_fix": {
+    "backend": {
+      "status": "passed",
+      "checks": 15,
+      "labels": [
+        "missing evidence yields five unknown dimensions",
+        "unmapped content never appears in explanations",
+        "skill without willingness is partial",
+        "willingness without capability is partial",
+        "one-way coverage never becomes reciprocal",
+        "partial time overlap cannot assert hard compliance",
+        "empty collections cannot reveal hidden facts",
+        "global need cannot become event commitment",
+        "wrong self owner rejected",
+        "known value cannot lack evidence",
+        "local time without offset rejected",
+        "intersection invariant when subject windows swap",
+        "same inputs remain deterministic",
+        "activity access/policy change changes analysis basis",
+        "context basis does not grant authority or alter absent evidence"
+      ]
+    },
+    "frontend_base": {
+      "status": "passed",
+      "checks": 16,
+      "labels": [
+        "SQL UTC microsecond timestamps decode without invention",
+        "friends attributes rejected at discovery boundary",
+        "same-Space selection change rejects old request ticket",
+        "late old-filter response cannot replace new query",
+        "late A detail cannot replace selected B",
+        "exhausted list does not create a repeated batch",
+        "duplicate across pages invalidates mixed list",
+        "cursor loop rejected",
+        "403 removes context and all projections",
+        "new detail permission version invalidates old list",
+        "network failure never becomes empty or exhausted",
+        "ordinary discovery traverses 400 entries beyond AI recall cap",
+        "authority read catches same-Space ABA after data read",
+        "only two read requests and no AI/write route",
+        "HTML fallback is a protocol error",
+        "dependency failure is distinct from empty results"
+      ]
+    },
+    "frontend_late_revocation": {
+      "status": "passed",
+      "checks": 7,
+      "labels": [
+        "same-context late detail 401 invalidates displayed data",
+        "same-context late detail 403 invalidates displayed data",
+        "same-context late detail 404 invalidates displayed data",
+        "old epoch 403 does not clear new context",
+        "old query late 403 clears same-context display",
+        "old ordinary network error does not clear new detail request",
+        "old detail success still ignored after error-priority fix"
+      ],
+      "details": [
+        {
+          "case": "AUTHENTICATION_REQUIRED",
+          "old_A_card_retained": false,
+          "context_retained": false,
+          "passed": true
+        },
+        {
+          "case": "CANDIDATE_ACCESS_REVOKED",
+          "old_A_card_retained": false,
+          "context_retained": false,
+          "passed": true
+        },
+        {
+          "case": "DISCOVERY_PERSON_NOT_FOUND",
+          "old_A_card_retained": false,
+          "context_retained": true,
+          "passed": true
+        }
+      ]
+    },
+    "checks_total": 38,
+    "snapshot": "前端从修后源码重新transpile到独立临时目录；PHP直接加载当前源码。"
+  },
+  "implementation_suite_counts_not_merged": {
+    "note": "实现者/主agent报告的后端112项、前端64项与本报告独立检查有覆盖重叠，不相加；实现者修前6项失败与本报告修前4项分别记录。"
+  },
+  "document_correction": {
+    "path": "docs/推荐模块/21_推荐页面合同与实施边界.md",
+    "reason": "普通discovery的scope最终只有revision/permission_version/attributes，不强制overview的扩展metadata；last_confirmed_at保留SQL UTC字符串。",
+    "relative_links_checked": 32,
+    "link_errors": []
+  },
+  "source_hashes": [
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php",
+      "sha256": "71a06a18bb43b41baf9bb58ddd624b816d40279cbf5cfe47ee54f1b37e9ce788"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php",
+      "sha256": "e3c4f5895d69a4d45806a37b8d4768582bee71c4943dcd6b94328b752bd0d11e"
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis/run.php",
+      "sha256": "ee5438cdf352128192706c2e0221cecdd84215990adcb976307e3bbfd3b6228c"
+    },
+    {
+      "path": "frontend/推荐/lib/recommendation-runtime/client.ts",
+      "sha256": "cfce8d78cdd2f69e16371e51ad23f667e576a24c8181c60e01512d8b9174ec7c"
+    },
+    {
+      "path": "frontend/推荐/lib/recommendation-runtime/contracts.ts",
+      "sha256": "c13d3c481db3c7563ff99ab161a5b2950b82423baf821f5a732c151cf268d69f"
+    },
+    {
+      "path": "frontend/推荐/lib/recommendation-runtime/decode.ts",
+      "sha256": "5a1f3db314b7a2362c01f482e8adcb97b583cfa0d1ef4ae0c3ffac3abf20ca05"
+    },
+    {
+      "path": "frontend/推荐/lib/recommendation-runtime/query.ts",
+      "sha256": "eedfcb540ba674d4c18c567990237838bde66b9535481ef77e4978898f7627fc"
+    },
+    {
+      "path": "frontend/推荐/lib/recommendation-runtime/state.ts",
+      "sha256": "515065fd07def880610b383cef7167161e16a16516babfd3d18309de33cfdffa"
+    },
+    {
+      "path": "frontend/推荐/scripts/verify-recommendation-runtime.mjs",
+      "sha256": "b2f2fc625e69cb8ca4afadbc6fdc42bba58508f5b06adc0d68b73cbb7a157bc8"
+    },
+    {
+      "path": "docs/推荐模块/21_推荐页面合同与实施边界.md",
+      "sha256": "025f8d5377e3d2dec2546f78fb469671ff902abdc4753b4c09a7c1ba464a9f72"
+    }
+  ],
+  "review_tradeoffs": [
+    "同context的旧409等集合失效保守清列表，可能要求重新读取；不会伪造仍有效的旧cursor。",
+    "内核hard_conditions_checked=false，规则解释不替代资格/硬约束判定。",
+    "独立GET transport只注入虚构响应，无真实网络请求；只读接口不能证明未来宿主实现已正确使用同源会话。"
+  ],
+  "unverified": [
+    "N03/N04真实宿主与双登录",
+    "P1/P8真实投影到五维内核装配及用途重验",
+    "浏览器页面、真实跨用户撤权与移动交互",
+    "MySQL/HTTP/真实模型及提供者预算装配",
+    "公共focus/恢复/五维API与社交写入",
+    "生产性能、推荐准确率、完整RP0-RP6验收"
+  ],
+  "database_connections": 0,
+  "network_requests": 0,
+  "model_calls": 0,
+  "production_code_modified_by_reviewer": false,
+  "reproduction_commands": [
+    [
+      "/Users/550m/code/hackathon-team-matcher/backend/.runtime/php-mysql/bin/php",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-backend-v9_emnle/review.php"
+    ],
+    [
+      "node",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-frontend-fixed-BCyzB0/review.js"
+    ],
+    [
+      "node",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-frontend-fixed-BCyzB0/late-revocation-fixed.js"
+    ],
+    [
+      "node",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-frontend-BNfL2y/late-revocation.js"
+    ],
+    [
+      "node",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-frontend-BNfL2y/late-list-revocation.js"
+    ]
+  ]
+}

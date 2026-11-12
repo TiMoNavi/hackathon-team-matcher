@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-11-12T08:42:20.339Z",
+  "scope": "主执行者复跑未挂载事实展示映射、既有只读状态层及静态检查；无页面/HTTP/数据库/模型验收",
+  "cwd": "frontend/推荐",
+  "results": [
+    {
+      "command": "node scripts/verify-recommendation-presentation.mjs",
+      "exit_code": 0,
+      "result": {
+        "scope": "offline discovery fact presentation",
+        "passed": 47,
+        "sourceCatalog": {
+          "schema_version": 2,
+          "policy_version": "s3-2026-11-11:discovery-fields-v2",
+          "field_count": 19
+        },
+        "realHttpRequests": 0,
+        "modelCalls": 0,
+        "databaseConnections": 0,
+        "uiMounted": false
+      }
+    },
+    {
+      "command": "node scripts/verify-recommendation-runtime.mjs",
+      "exit_code": 0,
+      "result": {
+        "scope": "offline ordinary-discovery preparation layer",
+        "passed": 64,
+        "realHttpRequests": 0,
+        "modelCalls": 0,
+        "uiMounted": false,
+        "successfulPageOrPersonTransportCalls": 2
+      }
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit_code": 0
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js lib/recommendation-runtime/person-presentation.ts scripts/verify-recommendation-presentation.mjs",
+      "exit_code": 0
+    }
+  ],
+  "limitations": [
+    "源字段互验仅加载纯PHP定义和虚构资料，不等于运行服务端鉴权。",
+    "没有挂载4203页面、注册公共API或调用模型。"
+  ]
+}

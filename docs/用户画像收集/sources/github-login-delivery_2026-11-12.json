@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-12",
+  "documentation_links_checked": 11,
+  "broken_links": [],
+  "retained_logic_fingerprints_match": [
+    "backend/protected/modules/matcher-auth/adapters/native/GithubImportCoordinator.php",
+    "frontend/integration/src/auth.ts"
+  ],
+  "php_checks": {
+    "github_import": 33,
+    "auth_run": 59,
+    "binding": 16,
+    "events": 10,
+    "p4_github": 61
+  },
+  "typescript_tests": 27,
+  "browser_groups": 13,
+  "browser_screenshots": 10,
+  "real_oauth_calls": 0,
+  "real_model_calls": 0,
+  "real_mail_sent": 0,
+  "runtime_status_check": "one GET returned 404; no runtime mutation or retry",
+  "files": {
+    "backend/protected/modules/matcher-auth/domain/GithubImportStatus.php": "1555a2c77f80ea83b7774034ea2afde9a6e8f294908a11dc861cd2ea330d8124",
+    "backend/protected/modules/matcher-auth/adapters/native/GithubImportStatusReader.php": "08071d1dedfd9f09fc642f0e59be3b8434cafadba61348bb3a4968d2c82ce4ef",
+    "backend/protected/modules/matcher-auth/controllers/GithubImportStatusController.php": "c0db50e49452ca674a32dcb2b7787e1d0f15b67f73fb3825318b7c918a9ae77e",
+    "backend/protected/modules/matcher-auth/tests/github_import.php": "e7669ed4450cd3d7dffaee224312e82221bd81f84c0f35302100c87f3460fbf1",
+    "frontend/integration/src/github-import.ts": "a66464abd1c7089fe5c6d4c10d8b1dddd7c2a90ebc6f846c11b71178e5c9797f",
+    "frontend/integration/tests/github-import.test.ts": "6a4db8df04e6ed06ce9643e7e3dc62927e3a242ba86c4524a3cf57c9320dd806",
+    "frontend/首页/integration/auth-panel.tsx": "a34ab95920f66ef55334ca4be6c98ecc5ac10e8978c272e7390c440564676514",
+    "frontend/首页/integration/auth-showcase.tsx": "0e52b4ca603a7532e2905fbbec514807ca9b74566b35693613f94245772360a5",
+    "frontend/首页/integration/auth-presentation.css": "b16beb6f36ce1b8809b340218fa97e6498febb06014782bd1d17dc20c92645bd",
+    "frontend/首页/integration/github-import-notice.tsx": "1b59b628060bce24a4c07cffbec600d2ed1837ec2b2433f3b9597018fedd87d3",
+    "frontend/首页/scripts/verify-github-login.mjs": "14aa327ef14b5b1ccf104ce1cbc815553d7b9dbb293f7af9c7f4f6bf9f9238c1"
+  }
+}

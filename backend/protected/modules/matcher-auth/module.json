@@ -1,0 +1,25 @@
+{
+    "id": "matcher-auth",
+    "name": "活动应用认证适配",
+    "description": "复用 HumHub 身份与会话的邮箱验证码、GitHub 安全关联和首次公开来源登记。",
+    "version": "0.1.1",
+    "humhub": {
+        "minVersion": "1.19.4",
+        "modules": {
+            "auth-github": {
+                "minVersion": "1.1.1"
+            },
+            "matcher-user-profile": {
+                "minVersion": "0.10.0"
+            },
+            "matcher-github-import": {
+                "minVersion": "0.1.1"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Hackathon Team Matcher"
+        }
+    ]
+}

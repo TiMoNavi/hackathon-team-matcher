@@ -45,6 +45,8 @@ final class SqlDiscoveryProfileBatchSource implements DiscoveryProfileBatchSourc
 
     private function attributes(DiscoveryProfileBatchRequest $request): array
     {
+        // Empty explicit selection is metadata-only; do not execute an attribute-value SELECT.
+        if ($request->sourceKeys === [] || $request->attributeIds === []) { return []; }
         $columns = ['owner_id' => 's.user_id', 'state_id' => 's.id', 'scope_key' => 's.scope_key',
             'attribute_id' => 'a.attribute_id', 'key' => 'a.field_key', 'storage_kind' => 'a.storage_kind', 'native_binding' => 'a.native_binding',
             'value_json' => new Expression("CASE WHEN [[a.storage_kind]] = 'inline' THEN [[a.value_json]] ELSE NULL END"),
@@ -71,6 +73,7 @@ final class SqlDiscoveryProfileBatchSource implements DiscoveryProfileBatchSourc
                 'a.field_key' => $request->sourceKeys, 'a.confirmation' => 'confirmed', 'a.visibility' => 'authenticated'])
             ->andWhere(['not', ['a.last_confirmed_at' => null]])
             ->orderBy(['s.user_id' => SORT_ASC, 's.scope_key' => SORT_ASC, 'a.sort_order' => SORT_ASC, 'a.attribute_id' => SORT_ASC]);
+        if ($request->attributeIds !== null) { $query->andWhere(['a.attribute_id' => $request->attributeIds]); }
         foreach ($joins as $alias => $table) {
             $query->leftJoin([$alias => '{{%' . $table . '}}'], '[[' . $alias . '.' . ($table === 'profile' ? 'user_id' : 'id') . ']] = [[s.user_id]]');
         }

@@ -1,0 +1,299 @@
+{
+  "reviewed_at": "2026-11-12T16:40:45.482403+08:00",
+  "report_written_at": "2026-11-12T16:42:42.500803+08:00",
+  "reviewer": "/root/recommendation_contract_rp0",
+  "status": "passed_with_explicit_scope_limits",
+  "scope": {
+    "backend": "未装配的 AnalyzeCooperation 应用用例、显式本人选择窄 port 与相关 contracts；纯内存独立反例。",
+    "frontend": "未挂载的 DiscoveryPerson 到可选事实切片纯展示映射；真实 PHP 字段合同与当前 TypeScript 源码互验。",
+    "independence": "独立脚本由审查者编写；后端未复用实现者 Fixtures；不将实现者 108/47 等自测项目累加为本报告独立检查。",
+    "current_delivery_gate": "本轮读到全站任务 N00–N03 done、N04 active，N05 及其依赖未放行。本报告不发布推荐分析/focus 公共接口，不代表页面或生产接入完成。",
+    "repository_writes": [
+      "docs/推荐模块/sources/recommendation-analysis-usecase-independent-review_2026-11-12.json"
+    ]
+  },
+  "independent_checks": {
+    "total": 62,
+    "passed": 62,
+    "failed": 0,
+    "backend_application_usecase": {
+      "status": "passed",
+      "checks": 20,
+      "labels": [
+        "normal explicit selection returns bounded verified result",
+        "both projections reread and selection independently checked twice",
+        "empty selection validates metadata without any self value read",
+        "empty self selection creates no invented relationship facts",
+        "omitted candidate is failure not unknown success",
+        "multiple returned subjects rejected",
+        "wrong candidate owner rejected",
+        "wrong self owner rejected",
+        "missing selected self reference rejected",
+        "mixed evidence bundle cannot include unselected reference",
+        "extra mapped self feature cannot expose unselected source",
+        "unmapped candidate feature rejected",
+        "candidate value change without revision still rejected",
+        "self value change without revision still rejected",
+        "selection withdrawal at final assertion rejected",
+        "final activity failure aborts output and strips exception chain",
+        "candidate dependency failure sanitized",
+        "same-schema shape drift already present at entry is not self-approved",
+        "catalog changes during use case rejected",
+        "empty selection cannot bypass unavailable metadata authority"
+      ]
+    },
+    "frontend_php_typescript_interop": {
+      "status": "passed",
+      "checks": 42,
+      "labels": [
+        "actual PHP composed policy matches TS pinned mapping",
+        "all 19 P8 fields validate in real PHP and exist in TS support inventory",
+        "PHP-valid direction maps exactly one factual slice",
+        "PHP-valid interest maps exactly one factual slice",
+        "PHP-valid event_goal maps exactly one factual slice",
+        "PHP-valid headline maps exactly one factual slice",
+        "PHP-valid bio maps exactly one factual slice",
+        "PHP-valid seeking maps exactly one factual slice",
+        "PHP-valid role maps exactly one factual slice",
+        "PHP-valid skill maps exactly one factual slice",
+        "PHP-valid project maps exactly one factual slice",
+        "PHP-valid event_role maps exactly one factual slice",
+        "PHP-valid event_contribution maps exactly one factual slice",
+        "PHP-valid event_seeking maps exactly one factual slice",
+        "PHP-valid mbti maps exactly one factual slice",
+        "PHP-valid personality maps exactly one factual slice",
+        "PHP-valid collaboration_preference maps exactly one factual slice",
+        "PHP-valid communication_preference maps exactly one factual slice",
+        "PHP-valid event_contact_preference maps exactly one factual slice",
+        "PHP-valid event_collaboration_mode maps exactly one factual slice",
+        "PHP-valid event_availability maps exactly one factual slice",
+        "PHP-valid empty event_goal creates no invented slice",
+        "PHP-valid empty event_contribution creates no invented slice",
+        "PHP-valid empty event_seeking creates no invented slice",
+        "PHP-valid empty collaboration_preference creates no invented slice",
+        "PHP-valid empty communication_preference creates no invented slice",
+        "PHP-valid empty event_contact_preference creates no invented slice",
+        "full legal projection does not truncate to six slices",
+        "legal 9000-character biography and newline preserved exactly",
+        "partial project dates retain year/month precision",
+        "project tech codes do not invent contribution or outcome",
+        "project links remain inert plain text",
+        "title-only project is displayed without fabricated facts",
+        "unknown schema produces no source values in data or diagnostics",
+        "unmapped field cannot infer facts or disclose its source value",
+        "policy drift cannot silently use reviewed field meanings",
+        "activity fact in global scope is not displayed",
+        "contact field cannot appear as unsupported disclosure",
+        "markup-like source preserved only as declared plain text",
+        "unsafe project link is not emitted; whole-item omission recorded as UX tradeoff",
+        "cross-activity presentation rejected",
+        "mapping is deterministic and does not mutate its source"
+      ],
+      "php_policy": "s3-2026-11-11:discovery-fields-v2",
+      "php_field_count": 19,
+      "empty_optional_count": 6,
+      "tradeoff": "A single unsafe project link omits the whole project slice, including its valid title/contribution. It does not emit unsafe link text or execute/fetch it."
+    },
+    "frontend_execution_method": {
+      "status": "transpiled",
+      "files": 6,
+      "typescript_version": "5.9.3"
+    },
+    "frontend_typecheck_claimed": false,
+    "note": "TypeScript 当前源码重新转译后执行独立测试。transpileModule 不是完整类型检查；主集成人另行执行 tsc/eslint，不计入本报告。"
+  },
+  "real_contract_interop": {
+    "profile_catalog": "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php",
+    "value_validator": "backend/protected/modules/matcher-user-profile/domain/ValueValidator.php",
+    "discovery_field_policy": "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php",
+    "discovery_batch_policy": "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php",
+    "schema_version": 2,
+    "privacy_policy_version": "s3-2026-11-11:discovery-fields-v2",
+    "field_count": 19,
+    "fields": [
+      "direction",
+      "interest",
+      "event_goal",
+      "headline",
+      "bio",
+      "seeking",
+      "role",
+      "skill",
+      "project",
+      "event_role",
+      "event_contribution",
+      "event_seeking",
+      "mbti",
+      "personality",
+      "collaboration_preference",
+      "communication_preference",
+      "event_contact_preference",
+      "event_collaboration_mode",
+      "event_availability"
+    ],
+    "legal_empty_optional_object_count": 6,
+    "legal_empty_optional_object_keys": [
+      "event_goal",
+      "event_contribution",
+      "event_seeking",
+      "collaboration_preference",
+      "communication_preference",
+      "event_contact_preference"
+    ],
+    "fixture_provenance": "全部样本人工虚构，由真实 FieldCatalog::validate 验证为合法后输出 PHP JSON；全可选空对象保持 PHP 的 [] 序列化。未读取任何真实用户资料。",
+    "observed_compatibility": [
+      "19 种真实 discovery 字段均可映射一条事实切片。",
+      "6 类合法空 [] 不生成虚构事实，不被误报为不支持。",
+      "9000 字级合法长文及换行完整保留。",
+      "项目支持 title-only，年份/月精度保留，不从 tech_codes 推导贡献或成果。",
+      "SQL UTC last_confirmed_at 与 ISO updated_at 合法形态可进入映射。",
+      "未知 schema、policy、字段或错误 scope 不输出来源值；diagnostics 只保留引用和原因。",
+      "输出声明为 plain_text；链接无 href、无动作、无自动预览、抓取或执行。"
+    ]
+  },
+  "contract_findings": [
+    {
+      "id": "P1-candidate-is-not-owner-selection",
+      "conclusion": "P1CandidateProjectionReader 排除 viewer，本人 getProfile 可含 private、legacy_candidates、editing_draft。新增 SelectedSelfProjectionReader 是未来授权适配契约；不得复用候选读取或传入完整本人详情。"
+    },
+    {
+      "id": "explicit-empty-selection",
+      "conclusion": "显式空选择执行元数据授权检查但 0 次本人值读取，不解释成全选；后端独立反例验证。"
+    },
+    {
+      "id": "complete-evidence-membership",
+      "conclusion": "每个 self feature 的全部 evidence 必须属于已选集合，混合证据束夹带未选引用被拒绝；引用结构本身不是授权证明。"
+    },
+    {
+      "id": "reviewed-directory-pin",
+      "conclusion": "构造时注入经审核的 catalog fingerprint，入口和尾部均核对，目录同 schema 的 shape 漂移不能动态自批准。"
+    },
+    {
+      "id": "bounded-revalidation",
+      "conclusion": "计算前后重读完整最小投影并核对值、版本、选择元数据、当前活动；独立验证无版本变化的值改变和最后撤回均拒绝。双读仅检测被观测到的变化，不承诺跨域事务原子性。"
+    },
+    {
+      "id": "dependency-errors",
+      "conclusion": "候选消失返回 candidate_unavailable，不伪装 unknown 成功；依赖错误只保留有界 reason，不保留原始异常链或来源内容。"
+    },
+    {
+      "id": "capability-not-experience",
+      "conclusion": "现有 project.tech_codes 推荐用途仅 capability，不能当贡献/项目经历的证明；event_seeking 推荐用途 grant 仍须未来审核，未在本轮偷偷扩权。"
+    }
+  ],
+  "blocking_findings": [],
+  "pre_fix_failures": [],
+  "history_note": "本轮独立检查未出现需修改实现的失败。前轮迟到 401/403/404 处理缺陷及修复证据保留在 recommendation-page-preparation-independent-review_2026-11-12.json，不混入或覆盖本轮结果。",
+  "ux_tradeoffs": [
+    {
+      "id": "unsafe-project-link-omits-whole-slice",
+      "severity": "non_blocking_ux_tradeoff",
+      "observed": "单个不安全项目链接导致整条项目切片省略，包括其中合法的 title/contribution。",
+      "security_effect": "不输出不安全链接，不执行、不抓取；只留下不含来源值的 unsafe_link 诊断。",
+      "product_impact": "可能少展示有用的已确认项目事实。未来可在既定授权内单独考虑逐链接省略；本轮不因该取舍扩大实施范围。"
+    }
+  ],
+  "limitations": [
+    "SelectedSelfProjectionReader 尚无生产 selection authority/授权值读取适配；不能宣称真实本人授权、选择持久化或撤销流程已接通。",
+    "CandidateProjection/EvidenceRef 的结构和版本检查不能证明 feature.value 来自对应引用；未来 P1 适配器必须逐条映射并验证授权，不能借一个合法引用携带其他资料。",
+    "当前用例和展示适配仍未装配/未挂载，未新增公共 HTTP 路由、UI 操作或数据库表。",
+    "该独立测试使用内存端口及真实字段定义类，没有启动 HumHub，也没有页面、HTTP、数据库、模型或真实多用户接入测试。",
+    "plain_text 和 interaction:none 是纯映射输出合同；本轮未测试未来 React 渲染器，挂载时仍须按纯文本渲染并遵守链接边界。",
+    "本报告只覆盖该增量与所列源码/合同，不是整个仓库的完整安全审计或生产上线验收。"
+  ],
+  "boundary_counts": {
+    "database_connections": 0,
+    "http_requests": 0,
+    "external_network_requests": 0,
+    "model_calls": 0,
+    "real_profile_reads": 0,
+    "credential_reads": 0,
+    "reviewer_production_code_writes": 0,
+    "commits": 0,
+    "pushes": 0
+  },
+  "baseline_comparison": {
+    "source": "docs/推荐模块/sources/recommendation-analysis-usecase-baseline_2026-11-12.json",
+    "meaning": "本轮基线显式记录的既有文件指纹比对；不冒充全仓库状态证明，也不阻止其他 agent 的授权改动。",
+    "total": 502,
+    "unchanged": 502,
+    "changed": [],
+    "missing": []
+  },
+  "reviewed_source_hashes_sha256": {
+    "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999",
+    "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php": "19536e10bdfd27b37a076e144a2f7a14745ad8392aed5ab4023071fa935a9fa7",
+    "backend/protected/modules/matcher-profile-privacy/domain/VisibilityPolicy.php": "ba0d3136bb228696e48ae988911cf369cd1be973c8d4d13479e4503f51803a84",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CandidateProjectionReader.php": "218311531b308794b085c456019c7f5bb80ace3353bd139894929b96aedecfa6",
+    "backend/protected/modules/matcher-recommendation/application/analysis/AnalyzeCooperation.php": "96289e50a3e91098f125a2adfcaa8f3de03501b834cca621532c62eeaa211e55",
+    "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php": "d1747bf334798551c2392ab8fa9a87c6ad3b2bb99b696cb0715c0647e764dcf9",
+    "backend/protected/modules/matcher-recommendation/contracts/CandidateRequest.php": "332d18b999fcd8c4dfeed5f8863960a55d8638972beb3693cc977bada7acfb7a",
+    "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php": "ba99b81d94a2cb5ef2bdc27b934470b51e445a14e7ee6b700df712990ccc01a3",
+    "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php": "2fad64568663587c896b811f5a089b56f003e037786286ec398a6d86214c1b55",
+    "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php": "c3599d0b00cbf5543d99d1c646de71d904d1725ae6938b26f9d158afcfc4cbbc",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisException.php": "47ab998c4427d51d9ec0e50d708d5d30b31ce8faf7462d3f537eeec27c26b305",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisRequest.php": "eb06981f8f4f44839196f009e0bc270cdac19e3e4b7f1f02bd630407a1c03296",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/SelectedSelfAttributes.php": "4d93ac8216264b2099617c2f6bf73e1a8945a6ed2ad1388189d07f8607590bd8",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/CandidateProjectionReader.php": "f745b33212fa4ba6f475f39ff5a84ea75e47f069726d5a6c989c7ed3c3e641ae",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/CurrentEventAccess.php": "eae43c8748b0eea1f737bf836b9f89bf98a81f3768371548845188392a1c572d",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/ProfileFieldCatalog.php": "a04be6f1b03e585f1293bd9968825cf191459910cd57e094fcec31b1b8aff4ee",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelectedSelfProjectionReader.php": "5527d57dc9c1d153d299905c160f5fff502fb2faf3fa361282e6b7a8c69f7597",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php": "71a06a18bb43b41baf9bb58ddd624b816d40279cbf5cfe47ee54f1b37e9ce788",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php": "e3c4f5895d69a4d45806a37b8d4768582bee71c4943dcd6b94328b752bd0d11e",
+    "backend/protected/modules/matcher-recommendation/domain/config/Fingerprint.php": "ef0f601e6e26d3b2eed55ed052a99edf812a9c9eab172ff8be1edfd6b66c2458",
+    "backend/protected/modules/matcher-recommendation/domain/config/PolicyValidator.php": "fb2716da827a018dca9501e9c20d3e37f1a42a514cbd717a3e225f433ea72f86",
+    "backend/protected/modules/matcher-recommendation/domain/config/ProfileProjectionMapper.php": "b699aee9cf6cf3bf1ebc7993aafd82093aa4284dee2a433553030af627839e5e",
+    "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/Fixtures.php": "3390ef512dc998676ffeeb229a4d7d52c044536ad8f9323bb14435dc6eb45ec6",
+    "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/run.php": "cf529017b43fd17d3f8bf2410df770f58f4ef54b94a69d70cf4e3c216351b883",
+    "backend/protected/modules/matcher-recommendation/tests/support/autoload.php": "8de94996a9980d884f821c097829bb76437580399319d1d9c15a905955be0d31",
+    "backend/protected/modules/matcher-user-profile/application/ProfileService.php": "e36c89d8a15c569619d017c73418dd28d1ae43d68a8f9f97160e24bcc968d58d",
+    "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php": "1cf5cca85451d391d719e786b2b34e9c040e9984c7ebc626b31c66b0163d1b36",
+    "backend/protected/modules/matcher-user-profile/domain/ValueValidator.php": "253f88d757b4681217a2db9384580241dfd11edd86c7dec5d0a8e2699dcf055f",
+    "frontend/推荐/lib/recommendation-runtime/client.ts": "cfce8d78cdd2f69e16371e51ad23f667e576a24c8181c60e01512d8b9174ec7c",
+    "frontend/推荐/lib/recommendation-runtime/contracts.ts": "c13d3c481db3c7563ff99ab161a5b2950b82423baf821f5a732c151cf268d69f",
+    "frontend/推荐/lib/recommendation-runtime/decode.ts": "5a1f3db314b7a2362c01f482e8adcb97b583cfa0d1ef4ae0c3ffac3abf20ca05",
+    "frontend/推荐/lib/recommendation-runtime/person-presentation.ts": "21668ccc3d265bf2a15c670983340d193ffbe5dbe4b6c8c747531f3280a6ef37",
+    "frontend/推荐/lib/recommendation-runtime/query.ts": "eedfcb540ba674d4c18c567990237838bde66b9535481ef77e4978898f7627fc",
+    "frontend/推荐/lib/recommendation-runtime/state.ts": "515065fd07def880610b383cef7167161e16a16516babfd3d18309de33cfdffa",
+    "frontend/推荐/scripts/verify-recommendation-presentation.mjs": "f246dfa1883319b83303229e5a2f0969c3e80fdd5dfa24ffc46909edafe2a47b"
+  },
+  "source_stability": {
+    "before_after_independent_runs_equal": true,
+    "rechecked_before_report_write": true
+  },
+  "reproduction": {
+    "environment": "已安装的本机 PHP 与 TypeScript 5.9.3；未安装依赖、未联网。",
+    "working_directory": "/Users/550m/code/hackathon-team-matcher",
+    "steps": [
+      "使用下方 embedded_independent_test_sources 重建临时脚本；路径依赖当前本机工作区，可在复现时显式调整。",
+      "先运行 catalog.php，把输出保存为其目录下 catalog.json。",
+      "将当前 frontend/推荐/lib/recommendation-runtime/*.ts 用仓库已有 TypeScript transpileModule 转译为 CommonJS/ES2022 到 review.js 同目录，再执行 review.js。",
+      "使用 backend/.runtime/php-mysql/bin/php 执行独立 review.php；预期后端 20、前端 42。"
+    ],
+    "commands": [
+      [
+        "/Users/550m/code/hackathon-team-matcher/backend/.runtime/php-mysql/bin/php",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-contract-interop-o8vvmlmm/catalog.php"
+      ],
+      [
+        "/Users/550m/code/hackathon-team-matcher/backend/.runtime/php-mysql/bin/php",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-usecase-review-vsk9lb4w/review.php"
+      ],
+      [
+        "node",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-presentation-review-OGtD21/review.js"
+      ]
+    ],
+    "temporary_files_notice": "执行脚本位于本机临时目录，未来可能被清理；以下保存脚本内容与 SHA256，避免把临时路径当成永久测试入口。",
+    "test_script_hashes_sha256": {
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-contract-interop-o8vvmlmm/catalog.php": "3fc7ff5475559d8a4aaa6cd2fb5ef66c307a242f513e60d33252f443f3b233ac",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-usecase-review-vsk9lb4w/review.php": "81ea902dd4a11e84ee3be3b2755ec044d09aed5009c3d496218a5fd4438bed0e",
+      "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-presentation-review-OGtD21/review.js": "60f89e1c31b596c8559c78d64da0ee0cd4422b484561ae2c536b3ca4fc6c0944"
+    }
+  },
+  "embedded_independent_test_sources": {
+    "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-contract-interop-o8vvmlmm/catalog.php": "<?php\ndeclare(strict_types=1);\n$root='/Users/550m/code/hackathon-team-matcher/backend/protected/modules/';\nspl_autoload_register(static function(string $class)use($root):void{foreach(['matcherProfile'=>'matcher-user-profile','matcherPrivacy'=>'matcher-profile-privacy'] as $ns=>$dir){$prefix=implode(chr(92),['humhub','modules',$ns]).chr(92);if(str_starts_with($class,$prefix)){require $root.$dir.'/'.str_replace(chr(92),'/',substr($class,strlen($prefix))).'.php';return;}}});\n$catalog=implode(chr(92),['humhub','modules','matcherProfile','domain','FieldCatalog']);\n$policy=implode(chr(92),['humhub','modules','matcherPrivacy','application','DiscoveryBatchService']);\n$keys=implode(chr(92),['humhub','modules','matcherPrivacy','domain','DiscoveryFieldPolicy']);\n$values=[\n'direction'=>['code'=>'robotics','label'=>'机器人'],\n'interest'=>['code'=>'music','label'=>'音乐'],\n'event_goal'=>['codes'=>['prototype'],'free_text'=>\"做一个原型\n先验证需求\"],\n'headline'=>'虚构用户的已确认介绍',\n'bio'=>str_repeat('长文事实。',1800).\"\n保留最后一行\",\n'seeking'=>'寻找可以共同推进的项目',\n'role'=>['code'=>'product','label'=>'产品'],\n'skill'=>['code'=>'php','label'=>'PHP','self_level'=>'working'],\n'project'=>['title'=>'虚构项目','tech_codes'=>['php'],'links'=>['https://example.org/project'],'start'=>['value'=>'2024','precision'=>'year'],'end'=>['value'=>'2026-10','precision'=>'month']],\n'event_role'=>['code'=>'product','label'=>'本次产品'],\n'event_contribution'=>['skill_codes'=>['interview'],'free_text'=>'愿意承担访谈'],\n'event_seeking'=>['role_codes'=>['engineering'],'skill_codes'=>['backend'],'free_text'=>'希望有后端伙伴'],\n'mbti'=>'INTJ',\n'personality'=>['self_description'=>'本人自述做事偏好'],\n'collaboration_preference'=>['codes'=>['async']],\n'communication_preference'=>['free_text'=>'每周同步一次'],\n'event_contact_preference'=>['codes'=>['text']],\n'event_collaboration_mode'=>['mode'=>'online'],\n'event_availability'=>['starts_at'=>'2026-11-14T09:00:00+08:00','ends_at'=>'2026-11-14T10:30:00+08:00','timezone'=>'Asia/Shanghai'],\n];\n$rows=[];foreach($keys::KEYS as $key){$value=$values[$key];$rows[]=['key'=>$key,'scope'=>$catalog::get($key)['scope'],'schema_version'=>$catalog::VERSION,'value'=>$value,'errors'=>$catalog::validate($key,$value)];}\n$empty=[];foreach(['event_goal','event_contribution','event_seeking','collaboration_preference','communication_preference','event_contact_preference'] as $key)$empty[]=['key'=>$key,'scope'=>$catalog::get($key)['scope'],'value'=>[],'errors'=>$catalog::validate($key,[])];\necho json_encode(['policy'=>$policy::POLICY_VERSION,'schema_version'=>$catalog::VERSION,'rows'=>$rows,'empty_optional_objects'=>$empty],JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT),PHP_EOL;\n",
+    "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-usecase-review-vsk9lb4w/review.php": "<?php\ndeclare(strict_types=1);\nrequire '/Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/tests/support/autoload.php';\nuse humhub\\modules\\matcherRecommendation\\contracts\\{CandidateProjection,CandidateRequest,CurrentEventContext,EvidenceRef,ProjectionVersions};\nuse humhub\\modules\\matcherRecommendation\\contracts\\analysis\\{CooperationAnalysisRequest,SelectedSelfAttributes,CooperationAnalysisException};\nuse humhub\\modules\\matcherRecommendation\\contracts\\ports\\{CandidateProjectionReader,CurrentEventAccess,ProfileFieldCatalog,SelectedSelfProjectionReader};\nuse humhub\\modules\\matcherRecommendation\\domain\\analysis\\AnalysisMapping;\nuse humhub\\modules\\matcherRecommendation\\domain\\config\\PolicyValidator;\nuse humhub\\modules\\matcherRecommendation\\application\\analysis\\AnalyzeCooperation;\nfunction versions(int $schema=2,int $revision=1):ProjectionVersions{return new ProjectionVersions(['global'=>['revision'=>$revision,'permission_version'=>1],'space:7'=>['revision'=>$revision,'permission_version'=>1]],$schema,'review-profile-policy',1);}\nfunction ref(string $id,string $source,string $scope='space:7',int $revision=1):EvidenceRef{return new EvidenceRef('person',$id,'profile_attribute',$source,$scope,$revision,1);}\nfunction projection(string $id,array $spec,int $schema=2,int $revision=1):CandidateProjection{$features=[];foreach($spec as $key=>$pair){$features[$key]=['value'=>$pair[0],'evidence'=>$pair[1]];}return new CandidateProjection('person',$id,7,versions($schema,$revision),$features);}\nfunction harness(bool $empty=false):array{\n $ctx=new CurrentEventContext(1,7,'review-access','review-event-policy');\n $mapping=new AnalysisMapping('review-mapping',2,['topics'=>['topic'],'needed_skills'=>['need'],'capability_skills'=>['skill'],'offered_skills'=>['offer']]);\n $selection=new SelectedSelfAttributes(1,7,'review-selection',1,versions(),$empty?[]:[ref('1','selected-need')]);\n $self=projection('1',$empty?[]:['need'=>[['php'],[ref('1','selected-need')]]]);\n $candidate=projection('2',['skill'=>[['php'],[ref('2','candidate-skill','global')]],'offer'=>[['php'],[ref('2','candidate-offer')]]]);\n $events=new class($ctx) implements CurrentEventAccess{public int $calls=0;public ?Closure $hook=null;public function __construct(public CurrentEventContext $context){}public function resolve(int $viewerId,?int $requestedSpaceId=null):CurrentEventContext{return $this->context;}public function assertCurrent(CurrentEventContext $ctx):void{$this->calls++;if($this->hook)($this->hook)($this->calls);if($ctx!=$this->context)throw new RuntimeException('synthetic-secret-event');}};\n $reader=new class($candidate) implements CandidateProjectionReader{public int $calls=0;public ?Closure $hook=null;public function __construct(public CandidateProjection $projection){}public function read(CandidateRequest $r):array{$this->calls++;return $this->hook?($this->hook)($this->calls,$r):[$this->projection];}};\n $selfReader=new class($self) implements SelectedSelfProjectionReader{public int $reads=0;public int $asserts=0;public ?Closure $readHook=null;public ?Closure $assertHook=null;public function __construct(public CandidateProjection $projection){}public function assertCurrent(CurrentEventContext $ctx,SelectedSelfAttributes $s):void{$this->asserts++;if($this->assertHook)($this->assertHook)($this->asserts,$s);}public function read(CurrentEventContext $ctx,SelectedSelfAttributes $s):CandidateProjection{$this->reads++;return $this->readHook?($this->readHook)($this->reads):$this->projection;}};\n $catalog=new class implements ProfileFieldCatalog{public int $calls=0;public ?Closure $hook=null;public array $value=['schema_version'=>2,'fields'=>['skill'=>['key'=>'skill','scope'=>'global','cardinality'=>'many','value_schema'=>['type'=>'string','maxLength'=>64]]]];public function read():array{$this->calls++;return $this->hook?($this->hook)($this->calls):$this->value;}};\n $fingerprint=PolicyValidator::catalogFingerprint($catalog->value);\n $service=new AnalyzeCooperation($events,$reader,$selfReader,$catalog,$mapping,$fingerprint);\n $request=new CooperationAnalysisRequest($ctx,'2',versions(),$selection,$mapping->fingerprint());\n return compact('ctx','mapping','selection','self','candidate','events','reader','selfReader','catalog','service','request');\n}\n$checks=[];function check(bool $ok,string $label):void{global $checks;if(!$ok)throw new RuntimeException('FAIL '.$label);$checks[]=$label;}\nfunction rejects(array $h,string $reason,string $label):void{try{$h['service']->execute(1,$h['request']);}catch(CooperationAnalysisException $e){check($e->reason===$reason&&$e->getPrevious()===null&&!str_contains($e->getMessage(),'synthetic-secret'),$label);return;}throw new RuntimeException('FAIL accepted '.$label);}\n$h=harness();$result=$h['service']->execute(1,$h['request']);check($result['verification']==='internal_ports_rechecked','normal explicit selection returns bounded verified result');check($h['reader']->calls===2&&$h['selfReader']->reads===2&&$h['selfReader']->asserts===2,'both projections reread and selection independently checked twice');\n$h=harness(true);$result=$h['service']->execute(1,$h['request']);check($h['selfReader']->reads===0&&$h['selfReader']->asserts===2,'empty selection validates metadata without any self value read');check(count(array_unique(array_column($result['dimensions'],'status')))===1&&$result['dimensions'][0]['status']==='unknown','empty self selection creates no invented relationship facts');\n$h=harness();$h['reader']->hook=fn()=>[];rejects($h,'candidate_unavailable','omitted candidate is failure not unknown success');\n$h=harness();$h['reader']->hook=fn()=>[$h['candidate'],$h['candidate']];rejects($h,'projection_changed','multiple returned subjects rejected');\n$h=harness();$h['reader']->hook=fn()=>[projection('3',[])];rejects($h,'projection_changed','wrong candidate owner rejected');\n$h=harness();$h['selfReader']->readHook=fn()=>projection('3',[]);rejects($h,'projection_changed','wrong self owner rejected');\n$h=harness();$h['selfReader']->readHook=fn()=>projection('1',[]);rejects($h,'selection_unavailable','missing selected self reference rejected');\n$h=harness();$h['selfReader']->readHook=fn()=>projection('1',['need'=>[['php'],[ref('1','selected-need'),ref('1','unselected-need')]]]);rejects($h,'selection_unavailable','mixed evidence bundle cannot include unselected reference');\n$h=harness();$h['selfReader']->readHook=fn()=>projection('1',['need'=>[['php'],[ref('1','selected-need')]],'topic'=>[['hidden-sentinel'],[ref('1','unselected-topic','global')]]]);rejects($h,'selection_unavailable','extra mapped self feature cannot expose unselected source');\n$h=harness();$h['reader']->hook=fn()=>[projection('2',['not_mapped'=>[['sentinel'],[ref('2','extra')]]])];rejects($h,'projection_changed','unmapped candidate feature rejected');\n$h=harness();$h['reader']->hook=fn(int $n)=>[$n===1?$h['candidate']:projection('2',['skill'=>[['different'],[ref('2','candidate-skill','global')]],'offer'=>[['php'],[ref('2','candidate-offer')]]])];rejects($h,'projection_changed','candidate value change without revision still rejected');\n$h=harness();$h['selfReader']->readHook=fn(int $n)=>$n===1?$h['self']:projection('1',['need'=>[['changed'],[ref('1','selected-need')]]]);rejects($h,'projection_changed','self value change without revision still rejected');\n$h=harness();$h['selfReader']->assertHook=function(int $n):void{if($n===2)throw new CooperationAnalysisException('selection_unavailable');};rejects($h,'selection_unavailable','selection withdrawal at final assertion rejected');\n$h=harness();$h['events']->hook=function(int $n):void{if($n===3)throw new RuntimeException('synthetic-secret-event');};rejects($h,'dependency_unavailable','final activity failure aborts output and strips exception chain');\n$h=harness();$h['reader']->hook=fn()=>throw new RuntimeException('synthetic-secret-candidate');rejects($h,'dependency_unavailable','candidate dependency failure sanitized');\n$h=harness();$h['catalog']->value['fields']['skill']['value_schema']['maxLength']=65;rejects($h,'mapping_changed','same-schema shape drift already present at entry is not self-approved');\n$h=harness();$original=$h['catalog']->value;$changed=$original;$changed['fields']['skill']['value_schema']['maxLength']=65;$h['catalog']->hook=fn(int $n)=>$n===1?$original:$changed;rejects($h,'mapping_changed','catalog changes during use case rejected');\n$h=harness(true);$h['selfReader']->assertHook=fn()=>throw new CooperationAnalysisException('selection_unavailable');rejects($h,'selection_unavailable','empty selection cannot bypass unavailable metadata authority');\necho json_encode(['status'=>'passed','checks'=>count($checks),'labels'=>$checks],JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT),PHP_EOL;\n",
+    "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-presentation-review-OGtD21/review.js": "const fs=require('fs');const {presentDiscoveryPerson:present,PERSON_PRESENTATION_POLICY_VERSION:policy,PERSON_PRESENTATION_SUPPORT:support}=require('./person-presentation.js');\nconst fixture=JSON.parse(fs.readFileSync('/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-contract-interop-o8vvmlmm/catalog.json','utf8'));\nconst checks=[];const check=(v,l)=>{if(!v)throw Error(l);checks.push(l)};const ctx={space_id:7,selection_revision:'selection-'+'a'.repeat(32),access_version:'review-access'};\nfunction card(rows=[]){const attrs=rows.map((r,i)=>({attribute_id:'fixture-attribute-'+i,key:r.key,value:r.value,visibility:'authenticated',confirmation:'confirmed',last_confirmed_at:'2026-11-12 00:00:00.123456',schema_version:r.schema_version??fixture.schema_version,scope:r.scope}));return{owner_id:2,space_id:7,display_name:'虚构用户',identity_version:1,avatar_ref:null,global:{revision:1,permission_version:1,attributes:attrs.filter(x=>x.scope==='global').map(({scope,...a})=>a)},space:{revision:1,permission_version:1,attributes:attrs.filter(x=>x.scope==='event').map(({scope,...a})=>a)},updated_at:'2026-11-12T00:00:00.000000Z',relationship:{state:'none',friend:false,pending_out:false,pending_in:false,version:'review-relation'},discovery_version:1,privacy_policy_version:fixture.policy};}\ncheck(policy===fixture.policy,'actual PHP composed policy matches TS pinned mapping');\ncheck(support.length===19&&fixture.rows.length===19&&fixture.rows.every(x=>x.errors.length===0&&support.some(v=>v.key===x.key)),'all 19 P8 fields validate in real PHP and exist in TS support inventory');\nfor(const row of fixture.rows){const result=present(card([row]),ctx);check(result.ok&&result.data.status==='ready'&&result.data.slices.length===1&&result.diagnostics.length===0,'PHP-valid '+row.key+' maps exactly one factual slice');}\nfor(const row of fixture.empty_optional_objects){const result=present(card([row]),ctx);check(row.errors.length===0&&result.ok&&result.data.status==='empty'&&result.data.slices.length===0&&result.diagnostics.length===0,'PHP-valid empty '+row.key+' creates no invented slice');}\nlet result=present(card(fixture.rows),ctx);check(result.ok&&result.data.slices.length===19,'full legal projection does not truncate to six slices');\nconst bio=result.data.slices.find(x=>x.reference.field_key==='bio');check(bio.facts[0].text===fixture.rows.find(x=>x.key==='bio').value,'legal 9000-character biography and newline preserved exactly');\nconst project=result.data.slices.find(x=>x.reference.field_key==='project');check(project.title==='虚构项目'&&project.facts.some(x=>x.text==='2024')&&project.facts.some(x=>x.text==='2026-10'),'partial project dates retain year/month precision');\ncheck(project.facts.every(x=>!x.label.includes('贡献')&&!x.label.includes('结果')),'project tech codes do not invent contribution or outcome');\ncheck(project.links.length===1&&project.links[0].interaction==='none'&&!('href' in project.links[0]),'project links remain inert plain text');\nresult=present(card([{key:'project',scope:'global',value:{title:'只有项目名称'}}]),ctx);check(result.ok&&result.data.slices.length===1&&result.data.slices[0].facts.length===0,'title-only project is displayed without fabricated facts');\nconst unreviewed=card([{key:'bio',scope:'global',schema_version:3,value:'UNKNOWN-SCHEMA-SENTINEL'}]);result=present(unreviewed,ctx);check(result.ok&&result.data.slices.length===0&&result.diagnostics[0].reason==='unsupported_schema'&&!JSON.stringify(result).includes('UNKNOWN-SCHEMA-SENTINEL'),'unknown schema produces no source values in data or diagnostics');\nconst other=card([{key:'new_profile_field',scope:'global',value:'UNKNOWN-FIELD-SENTINEL'}]);result=present(other,ctx);check(result.ok&&result.data.slices.length===0&&result.diagnostics[0].reason==='unknown_field'&&!JSON.stringify(result).includes('UNKNOWN-FIELD-SENTINEL'),'unmapped field cannot infer facts or disclose its source value');\nconst stalePolicy=card(fixture.rows);stalePolicy.privacy_policy_version='changed-policy';result=present(stalePolicy,ctx);check(result.ok&&result.data.slices.length===0&&result.data.status==='unsupported','policy drift cannot silently use reviewed field meanings');\nresult=present(card([{key:'event_goal',scope:'global',value:{free_text:'WRONG-SCOPE-SENTINEL'}}]),ctx);check(result.ok&&result.diagnostics[0].reason==='scope_mismatch'&&!JSON.stringify(result).includes('WRONG-SCOPE-SENTINEL'),'activity fact in global scope is not displayed');\nresult=present(card([{key:'contact_email',scope:'global',value:'PRIVATE-CONTACT-SENTINEL'}]),ctx);check(!result.ok&&result.error==='invalid_projection','contact field cannot appear as unsupported disclosure');\nconst injected=card([{key:'bio',scope:'global',value:'<script>fake()</script>\\n保留原文'}]);result=present(injected,ctx);check(result.ok&&result.data.slices[0].facts[0].format==='plain_text'&&result.data.slices[0].facts[0].text===injected.global.attributes[0].value,'markup-like source preserved only as declared plain text');\nresult=present(card([{key:'project',scope:'global',value:{title:'有用的项目',contribution:'有效贡献',links:['javascript:alert(1)']}}]),ctx);check(result.ok&&result.data.slices.length===0&&result.diagnostics[0].reason==='unsafe_link'&&!JSON.stringify(result).includes('alert(1)'),'unsafe project link is not emitted; whole-item omission recorded as UX tradeoff');\nresult=present(card(fixture.rows),{...ctx,space_id:8});check(!result.ok&&result.error==='context_mismatch','cross-activity presentation rejected');\nconst a=card(fixture.rows);const saved=JSON.stringify(a);const one=present(a,ctx),two=present(a,ctx);check(JSON.stringify(a)===saved&&JSON.stringify(one)===JSON.stringify(two),'mapping is deterministic and does not mutate its source');\nconsole.log(JSON.stringify({status:'passed',checks:checks.length,labels:checks,php_policy:fixture.policy,php_field_count:fixture.rows.length,empty_optional_count:fixture.empty_optional_objects.length,tradeoff:'A single unsafe project link omits the whole project slice, including its valid title/contribution. It does not emit unsafe link text or execute/fetch it.'},null,2));\n"
+  }
+}

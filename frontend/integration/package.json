@@ -7,7 +7,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "build": "npm run typecheck && vite build && node scripts/verify-build.mjs",
-    "verify:browser": "node scripts/verify-browser.mjs"
+    "verify:browser": "node scripts/verify-browser.mjs",
+    "verify:auth-browser": "node scripts/verify-auth-browser.mjs"
   },
   "dependencies": {
     "class-variance-authority": "0.7.1",

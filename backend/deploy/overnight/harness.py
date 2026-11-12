@@ -29,7 +29,9 @@ SPEC = 'overnight-n01-v1'
 GUARD = '_overnight_n01_guard'
 LEGACY_MODULES = ['auth-github', 'mail', 'matcher-user-profile', 'matcher-profile-privacy',
                   'matcher-onboarding', 'matcher-resume-import', 'matcher-recommendation', 'matcher-ideas']
-MODULES = LEGACY_MODULES + ['matcher-webapp']
+N03_MODULES = LEGACY_MODULES + ['matcher-webapp']
+MODULES = N03_MODULES + ['matcher-github-import', 'matcher-auth']
+N05_MODULES = MODULES + ['matcher-event-access']
 SUBDIRS = ['runtime', 'sessions', 'assets', 'uploads', 'mail', 'cache', 'themes', 'modules', 'backups']
 BLOCKED_FUNCTIONS = 'curl_exec,curl_multi_exec,fsockopen,pfsockopen,stream_socket_client,mail'
 
@@ -49,7 +51,9 @@ def validate_config(config):
     require(all(config.get(k) == v for k, v in spec().items()), 'Isolation target mismatch; refusing before database access.')
     for key in ['password', 'cookie_key', 'nonce']:
         require(isinstance(config.get(key), str) and re.fullmatch('[a-f0-9]{64}', config[key]), 'Invalid private configuration shape.')
-    require(config.get('modules') in [LEGACY_MODULES, MODULES], 'Module allowlist mismatch.')
+    require(config.get('modules') in [LEGACY_MODULES, N03_MODULES, MODULES, N05_MODULES], 'Module allowlist mismatch.')
+    require(type(config.get('auth_mode', False)) is bool, 'Invalid authentication mode.')
+    require(not config.get('auth_mode', False) or config.get('modules') in [MODULES, N05_MODULES], 'Authentication requires the fixed N04 or N05 modules.')
     return config
 
 
@@ -228,11 +232,12 @@ def port_free():
     except OSError:
         return False
 
-def php_command():
+def php_command(auth_mode=False):
+    require(type(auth_mode) is bool, 'Invalid PHP authentication mode.')
     return [str(BACKEND / '.runtime/php-mysql/bin/php'), '-n', '-d', 'extension=mysqlnd.so',
             '-d', 'extension=pdo_mysql.so', '-d', 'extension=gd.so', '-d', 'allow_url_fopen=0',
-            '-d', 'disable_functions=' + BLOCKED_FUNCTIONS, '-d', 'display_errors=0',
-            '-d', 'log_errors=1', '-d', 'error_log=' + str(RUNTIME / 'runtime/php-errors.log')]
+            '-d', 'disable_functions=' + ('mail' if auth_mode else BLOCKED_FUNCTIONS), '-d', 'display_errors=0',
+            '-d', 'log_errors=' + ('0' if auth_mode else '1'), '-d', 'error_log=' + str(RUNTIME / 'runtime/php-errors.log')]
 
 CONTROL_MARKER = chr(10) + '__OVERNIGHT_CONTROL_RESULT__' + chr(10)
 
@@ -248,12 +253,12 @@ def parse_control_output(output, action):
     return result
 
 def control(action):
-    require(action in ['install', 'inspect', 'sync-modules', 'ui-on', 'ui-off'], 'Unsupported PHP control action.')
+    require(action in ['install', 'inspect', 'sync-modules', 'upgrade-n05', 'ui-on', 'ui-off', 'auth-configure'], 'Unsupported PHP control action.')
     config = runtime_guard()
     database_guard(config)
-    if action in ['install', 'sync-modules']:
+    if action in ['install', 'sync-modules', 'upgrade-n05', 'auth-configure']:
         require(owned_server() is None and port_free(), 'Stop the isolated web server before installation or migration.')
-    result = subprocess.run(php_command() + [str(HERE / 'control.php'), action],
+    result = subprocess.run(php_command(config.get('auth_mode', False)) + [str(HERE / 'control.php'), action],
                             capture_output=True, text=True, timeout=300, env=clean_environment())
     if result.returncode != 0:
         category = 'unknown'
@@ -267,7 +272,7 @@ def control(action):
     return parse_control_output(result.stdout, action)
 
 def sync_modules():
-    """One fixed additive N01-to-N03 transition, safely retryable after interruption."""
+    """Fixed additive N01/N03-to-N04 transition, safely retryable after interruption."""
     config = runtime_guard()
     database_guard(config)
     require(owned_server() is None and port_free(), 'Stop the isolated web server before module synchronization.')
@@ -283,11 +288,12 @@ def sync_modules():
         elif target.exists():
             raise Refusal('Unexpected non-link isolated module path.')
         else:
-            require(name == 'matcher-webapp', 'Existing isolated module link is missing.')
+            require(name in MODULES[len(LEGACY_MODULES):], 'Existing isolated module link is missing.')
     # All provenance, target and source checks precede the first mutation.
-    new_link = folder / 'matcher-webapp'
-    if not new_link.is_symlink():
-        new_link.symlink_to(BACKEND / 'protected/modules/matcher-webapp', target_is_directory=True)
+    for name in MODULES[len(LEGACY_MODULES):]:
+        new_link = folder / name
+        if not new_link.is_symlink():
+            new_link.symlink_to(BACKEND / 'protected/modules' / name, target_is_directory=True)
     upgraded = config['modules'] != MODULES
     if upgraded:
         replacement = {**config, 'modules': list(MODULES)}
@@ -295,7 +301,32 @@ def sync_modules():
         replace_private(RUNTIME / 'private.json', json.dumps(replacement))
     result = control('sync-modules')
     result['configuration_upgraded'] = upgraded
-    result['fixed_added_modules'] = ['matcher-webapp']
+    result['fixed_added_modules'] = MODULES[len(LEGACY_MODULES):]
+    return result
+
+def auth_configure():
+    config = runtime_guard()
+    database_guard(config)
+    require(config['modules'] == MODULES, 'Synchronize the fixed N04 modules first.')
+    require(owned_server() is None and port_free(), 'Stop the isolated web server before configuring authentication.')
+    input_path = BACKEND / '.runtime/overnight-auth-input.json'
+    private_file(input_path)
+    run(['git', '-C', str(BACKEND.parent), 'check-ignore', '-q', str(input_path)])
+    # Validate without printing any configuration value or making an external request.
+    validator = 'require ' + json.dumps(str(HERE / 'auth_runtime.php')) + '; try { overnightReadAuthInput(' + json.dumps(str(BACKEND)) + '); echo "valid"; } catch (Throwable $e) { exit(1); }'
+    require(run(php_command() + ['-r', validator]) == 'valid', 'Authentication private input validation failed.')
+    key_path = RUNTIME / 'auth-hmac.key'
+    if key_path.exists():
+        private_file(key_path)
+        require(re.fullmatch('[a-f0-9]{64}', key_path.read_text()) is not None, 'Authentication key shape refused.')
+    else:
+        write_private(key_path, secrets.token_hex(32))
+    replacement = {**config, 'auth_mode': True}
+    validate_config(replacement)
+    replace_private(RUNTIME / 'private.json', json.dumps(replacement))
+    result = control('auth-configure')
+    result['credentials_printed'] = False
+    result['external_calls_during_configuration'] = 0
     return result
 
 def provision():
@@ -353,8 +384,10 @@ def start():
     if pid:
         return {'status': 'passed', 'action': 'start', 'already_running': True, 'pid': pid, 'port': PORT}
     require(port_free(), 'Port 8113 is occupied by another process.')
-    with open(RUNTIME / 'runtime/server.log', 'ab') as log:
-        process = subprocess.Popen(php_command() + ['-S', HOST + ':' + str(PORT), '-t', str(RUNTIME), str(HERE / 'router.php')],
+    auth_mode = runtime_guard().get('auth_mode', False)
+    # OAuth callbacks carry one-time credentials in their query string. Do not persist server request logs in this mode.
+    with open(os.devnull if auth_mode else RUNTIME / 'runtime/server.log', 'ab') as log:
+        process = subprocess.Popen(php_command(runtime_guard().get('auth_mode', False)) + ['-S', HOST + ':' + str(PORT), '-t', str(RUNTIME), str(HERE / 'router.php')],
                                    stdout=log, stderr=log, env=clean_environment(), start_new_session=True)
     write_private(RUNTIME / 'server.json', json.dumps({'pid': process.pid, 'nonce': runtime_guard()['nonce'], 'port': PORT}))
     for _ in range(50):
@@ -427,6 +460,9 @@ def cleanup():
         return {'status': 'passed', 'action': 'cleanup', 'already_removed': True, 'port_free': True}
     config = runtime_guard()
     database_guard(config)
+    require(not config.get('auth_mode', False), 'Authentication validation data cannot be removed by the N01 cleanup command.')
+    has_user = mysql("SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA='" + DB + "' AND TABLE_NAME='user';") == '1'
+    require(not has_user or mysql('SELECT COUNT(*) FROM user;') == '0', 'Nonempty account data requires a separate reviewed cleanup.')
     stop()
     require(mysql("SELECT COUNT(*) FROM mysql.user WHERE User='" + USER + "' AND Host='localhost';", root=True) == '1', 'Owned database user is missing.')
     mysql('DROP DATABASE `' + DB + "`; DROP USER '" + USER + "'@'localhost';", root=True)
@@ -449,14 +485,14 @@ def locked():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'sync-modules', 'ui-on', 'ui-off', 'backup-restore', 'start', 'stop', 'cleanup'])
+    parser.add_argument('action', choices=['probe', 'provision', 'install', 'inspect', 'sync-modules', 'ui-on', 'ui-off', 'auth-configure', 'backup-restore', 'start', 'stop', 'cleanup'])
     args = parser.parse_args()
     if args.action == 'probe':
         result = {'status': 'passed', 'action': 'probe', 'port_free': port_free(), 'php_available': (BACKEND / '.runtime/php-mysql/bin/php').is_file(), **spec()}
     else:
         with locked():
             operations = {'provision': provision, 'install': lambda: control('install'), 'inspect': lambda: control('inspect'),
-                          'sync-modules': sync_modules, 'ui-on': lambda: control('ui-on'), 'ui-off': lambda: control('ui-off'),
+                          'sync-modules': sync_modules, 'ui-on': lambda: control('ui-on'), 'ui-off': lambda: control('ui-off'), 'auth-configure': auth_configure,
                           'backup-restore': backup_restore, 'start': start, 'stop': stop, 'cleanup': cleanup}
             result = operations[args.action]()
     print(json.dumps(result, ensure_ascii=False, indent=2))

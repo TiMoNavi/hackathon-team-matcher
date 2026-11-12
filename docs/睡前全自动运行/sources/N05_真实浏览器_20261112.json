@@ -1,0 +1,20 @@
+{
+  "kind": "n05-real-http-browser-v1",
+  "status": "passed",
+  "checks": [
+    "Recovered native member opens real current-event discovery",
+    "Real membership list removes revoked A and retains B",
+    "Real revoked target stays empty without discovery or refresh loop",
+    "Browser explicit selection writes to real native session with CSRF and CAS",
+    "Real activity page fits mobile viewport",
+    "Native guest cannot mount protected activity or discovery",
+    "No browser errors, external requests, or unapproved writes"
+  ],
+  "http_requests": 30,
+  "unexpected_writes": 0,
+  "external_requests": 0,
+  "page_errors": 0,
+  "synthetic_native_sessions": true,
+  "real_provider_authentication": false,
+  "screenshots": false
+}

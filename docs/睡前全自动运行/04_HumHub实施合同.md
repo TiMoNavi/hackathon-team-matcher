@@ -26,12 +26,12 @@
 | P1 / P8 / P2及来源、AI插件 | 资料事实／授权投影／引导编排 | 不代用户执行社交写入 |
 | 原生 friendship / mail | user_friendship、message、user_message、message_entry事实 | 社交适配不复制另一套好友／消息真相 |
 | matcher-ideas | 正式想法、Space发布、永久Messenger绑定 | 想法、Space、聊天会话保持独立 |
-| matcher-webapp 0.1.0 | N03拟新增页面、资产、导航宿主 | 不保存身份／画像／当前活动副本 |
-| 认证适配 N04 | 复用原生GitHub并补真实邮箱验证码 | 配置已具备，应用接入待验收；实际模块名随代码批次锁定 |
+| matcher-webapp 0.1.0 | N03已交付页面、资产、导航宿主 | 不保存身份／画像／当前活动副本 |
+| matcher-auth 0.1.1 | N04原生GitHub与邮箱验证码适配、显式关联、注册收据 | 已在隔离库安装，用户确认双登录；原生事实与观察器缺口见09验收，不建立平行用户体系 |
 | 邀请适配 N05 | 拟新增凭据、有效期、次数、兑换收据 | 调用原生成员与既有选择ports，不重建membership |
 | 社交适配 N08/N09 | 拟新增来源证明、版本、幂等、发出历史、邀请状态 | 经原生授权写好友／成员／消息；模块id随代码批次锁定 |
 
-认证资源已由用户另派agent保存，其报告仅为 Gmail SMTP AUTH235、未发送邮件；主执行者只核对字段存在性、0600与Git忽略，0外呼。外部agent已完成配置交接，后续N04由本队在N03后实施。真实GitHub回调、验证码投递及兑换均未验收；G3为“配置已准备，应用验证待执行”，子agent不读取私有配置。
+认证资源已由用户另派agent保存，其报告为 Gmail SMTP AUTH235、未发送邮件。N04已在独立空库完成固定模块升级、重复迁移、受限认证配置和无外呼HTTP联调；具体合同见第9节。真实GitHub回调、验证码投递及兑换仍须本人验收；子agent不读取私有配置。SMTP认证、能力可用和合成UI结果均不能替代真实双登录回执。
 
 R03继续覆盖发现、筛选、分页、搜索、随机浏览、推荐、详情、缓存和晚到结果，真实不足不跨活动补人。authenticated是登录用户经合法入口可见，friends对所有当前有效好友动态生效，private仅本人；Space字段再与实际资格取交集。公开帖作者可跨活动合法联系，但不是全站人物搜索。切活动不删除合法好友／私聊，同想法跨Space讨论不能串成员或消息。
 
@@ -128,7 +128,7 @@ P1他人详情当前基于entry_type、space_id、post_id和动态原生关系�
 
 ## 7. N03 同源外壳合同
 
-拟新增matcher-webapp@0.1.0，路由`/matcher/app`及`/matcher/app/<path>`只承载本插件深链，不接任意returnUrl或转发后端路径。根为div#matcher-webapp-root，bootstrap为script[type=application/json]#matcher-webapp-bootstrap：
+已交付matcher-webapp@0.1.0，路由`/matcher/app`及`/matcher/app/<path>`只承载本插件深链，不接任意returnUrl或转发后端路径。根为div#matcher-webapp-root，bootstrap为script[type=application/json]#matcher-webapp-bootstrap：
 
 | 字段 | 固定类型／来源 |
 |---|---|
@@ -150,3 +150,60 @@ P1他人详情当前基于entry_type、space_id、post_id和动态原生关系�
 N03验构建、资源／字体、深链、未登录401和CSRF负例；已登录正向读取及真实双登录随N04验收。N05之后才推进画像和社交依赖；不能用N01空库、原生登录页或SMTP235替代正向业务证据。新旧UI均必须守住原生目录／Mail搜索不得成为全站人物发现旁路的规则。
 
 每批单写者维护限定模块，集成人维护共享API、迁移顺序和lock；不纳入并发认证／推荐／前端外部改动。隔离验证首次／重复迁移、权限、并发、恢复与UI撤回，优先开关回退，不盲目卸载数据所有者。本文只做文档链接、源码锚点、结构和合同核对；真实业务测试由对应批次补回执。状态／提交由[实施记录](03_实施记录.md)登记；必需认证、群聊、讨论或真实推荐任一未验收，仍须声明“最低闭环未完成”。
+
+## 9. N04 认证适配合同与验收边界
+
+实际实现为 [matcher-auth](../../backend/protected/modules/matcher-auth/) 0.1.1；复用 HumHub user、user_auth、session。新增表仅记录验证码、失败计数、事务锁、一次性收据、身份所有权保护和首次导入意图，不替代原生身份事实。每次登录与关联都重新检查原生映射、账户状态、来源政策及必要的审批／维护限制。
+
+| 路由 | 请求与准确成功条件 |
+|---|---|
+| GET /api/v1/auth/capabilities | data={email_available:boolean,github_available:boolean}；配置／传输可用不表示真实认证成功 |
+| POST /api/v1/auth/email-codes | JSON email、purpose=login或bind、return_to=/matcher/app；202返回challenge_id=challenge-加48位小写hex、expires_in=600、resend_after=60 |
+| POST /api/v1/auth/email/verify | JSON challenge_id、code为6位数字；只有原生会话实际建立或本人关联完成，才200返回authenticated=true、bound:boolean、next_url=/matcher/app |
+| POST /api/v1/auth/logout | JSON {}，原生退出完成后200返回authenticated=false |
+| GET /api/v1/auth/github/start | 显式intent=login或bind、return_to=/matcher/app；建立服务器收据后重定向至原生GitHub入口 |
+| GET /user/auth/external?authclient=github | 保留已配置原生OAuth回调；验证state与一次性收据，经受限GitHub端点取得本人身份和已验证主邮箱 |
+
+三条POST即使未登录也要求同源Yii CSRF；只接收application/json对象、限定字段和最多4096字节正文。认证JSON使用既有成功／错误包络，request_id为24位小写hex，错误retryable=false，Cache-Control为private, no-store。无效方法405、CSRF或输入400、媒体类型415、过大413、能力缺失503、频率限制429分别返回；前端不得自动重试。
+
+新用户缺少原生必填字段时，验证码兑换返回409 REGISTRATION_REQUIRED与details.next_url=/user/registration；这不是登录成功。前端仅在精确状态／错误码／固定路径匹配时提供主动继续按钮。原生注册保留字段验证和审批策略，凭服务器收据完成register(null)、安全关联和原生登录，不伪造姓名、不使用原生可能移动身份的add／邮箱自动合并。相同邮箱但身份不匹配返回冲突；新增登录方式要求已登录本人显式选择bind。
+
+验证码绑定用途、浏览器和actor，以HMAC存储；有效期10分钟、重发间隔60秒、每码最多5次错误、每邮箱10分钟最多3次发送、15分钟最多5次失败。重发使旧码失效，原子消费使并发兑换仅一次成功。测试阶段另外注入唯一指定邮箱、强制Gmail TLS、总计最多3次真实尝试的适配器；预算在SMTP前持久预留，失败也计入。
+
+首次GitHub注册或本人显式关联产生持久的一次导入意图，经现有matcher-github-import读取本人公开来源。已有来源历史则不替换；失败如实记录，普通再次登录不重抓、不自动重试，不启动AI、不公开未确认资料。GitHub授权取消／失败只回固定登录页错误标记，不反射provider响应。
+
+本地前端已通过21项客户端单测、构建及真实页面／合成交互分列验收，见[N04前端记录](../../frontend/integration/N04_验证记录.md)。真实邮箱收信、兑换、GitHub本人授权、两次登录为同一原生账户、插件已登录读取及首次导入不重复，均由主执行者另记真实回执；未完成前N04不标done，N05不放行。
+
+### 9.1 本人 GitHub 首次导入状态补充（2026-11-12）
+
+用户单独授权登录与首次画像导入补缺、首页风格呈现。本条合同已锁定，实现和验收进行中，不代表真实 OAuth 通过。新增 GET `/api/v1/auth/github/import-status`，无 query/body，当前原生会话本人读取；成功包络 `data={state,source_id},meta={request_id}`。state 仅为 not_requested、pending、running、succeeded、failed、skipped_existing、revoked、unavailable；source_id 为本人当前仍获准且未删除来源的 UUID 或 null。unavailable 必须返回 null，不下发 provider_subject、request_key、凭据、原文或异常详情。
+
+succeeded 仅说明首次公开来源读取成功，不代表 AI 画像完成或用户已确认；有 source_id 时，页面复用既有 `/api/v1/me/profile/sources/{id}/progress` 读取来源当前状态。解绑、身份不一致及来源删除优先于旧成功回执。端点不调用首次导入协调器，不写状态、不调度、不重试、不调用模型；没有来源时的 pending/failed/revoked 由认证自己的持久回执投影，不另建画像真相。
+
+未登录401、账户不可用403、非GET 405、任何非路由query参数400；未知异常只返回固定500错误。沿用private/no-store成功与错误包络。普通再次登录、读取状态及刷新页面不能触发重新抓取；用户主动重新编辑/刷新仍走画像既有业务入口。
+
+## 10. 推荐页本人选择与规则分析补充（2026-11-12）
+
+用户随后明确授权多个 agent 补齐本人选择、候选用途和公共合同，并接原推荐页。本节登记本批真实代码接线，整体 OAuth、活动邀请及 N10/N11 验收结论不变。页面复用已允许的同源 `/matcher/app/discover`，独立4203缺少宿主身份时显示未连接，演示仅在显式 `/demo`；不能跨源搬运登录令牌或用演示人物补业务成功。
+
+| 路由 | 输入与成功投影 |
+|---|---|
+| GET `/api/v1/events/{spaceId}/recommendation-analysis/self-selection` | 无query/body；data={space_id,selection_version,selection_current,selected_attribute_ids,options} |
+| PUT 同路径 | JSON恰好attribute_ids:string[]、expected_selection_version:非负整数、expected_current_event；200返回与GET同形 |
+| POST `/api/v1/events/{spaceId}/recommendation-analysis/people/{ownerId}` | JSON恰好expected_selection_version、expected_candidate、expected_current_event；200返回规则五维解释，不创建推荐run或AIJob |
+
+本人选择初始version=0仅表示该账号/会话从未有记录，不能直接分析；版本跨活动上下文单调递增，不重置。用户可显式保存空数组，代表本次不使用本人资料值。选项每项只有attribute_id、source_key、scope（global或space:数字）、facts（semantic、values）；只含该规则分析用途获准的codes或时段，不含private、来源原文、项目叙事或未确认内容。源版本变化时selection_current=false，要求显式替换；GET不改选择。
+
+选择权威由推荐自有SQL表保存，actor和原生session_hash绑定，记录引用、版本和当前活动上下文，不保存资料值或原始session ID。PUT使用条件UPDATE/唯一约束实现CAS，不能依赖HumHub DbSession的整包写入保证并发。只承诺当前登录会话，不承诺跨设备恢复；切活动、权限变化和退出后旧选择不能复活。新增表经独立迁移创建，缺表返回不可用，HTTP不自动建表。
+
+两条写请求的expected_current_event恰好为{selection_revision,access_version}，取已验证当前活动响应。后端在写入用例内核对原生选择与活动授权，A→B→A之后的旧请求仍拒绝；单靠相同spaceId或前端abort不够。该前置不赋予权限。
+
+expected_candidate是当前普通发现卡的严格版本快照：global和space各为{revision,permission_version}，另含identity_version、discovery_version、privacy_policy_version。它不包含owner/permission grant或本人值；后端重新校验当前活动、合法候选、用途、资料及授权前后版本，按已审核用途函数转换分析policy版本，不能把浏览器版本当授权。
+
+结果仅含space_id、candidate_id（整数）、selection_version、explanation_source=rules、hard_conditions_checked=false及dimensions。固定五维为contribution_capability、project_direction、role_complementarity、availability、collaboration_arrangements；status为supported/partial/unknown/conflict。每维含conclusion_code、question_codes、evidence和facts。evidence只含subject、owner_id、attribute_id、scope、profile_revision、permission_version，不下发selection_id、内部授权hash、context或mapping fingerprint。
+
+facts按维度分别为：能力的capability/current_contribution、角色的candidate_to_self/self_to_candidate（各含status、matched、uncovered_recorded_needs）；方向的shared_codes；时段的shared_windows及hard_condition_check=not_performed；协作的collaboration_modes/communication_preferences（各含status、shared_codes）。代码枚举及精确白名单见[CooperationAnalyzer](../../backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php)与[HTTP投影](../../backend/protected/modules/matcher-recommendation/adapters/analysis/CooperationHttpView.php)。这不是人格分数、成功概率、硬条件资格判定或排序分。
+
+全部入口使用原生登录、当前活动和private/no-store包络；PUT/POST沿用Yii CSRF、application/json对象与16KiB上限，禁止额外字段/查询参数。401/403失效当前授权；409 ANALYSIS_SELECTION_CHANGED、ANALYSIS_CONTEXT_CHANGED、ANALYSIS_PROJECTION_CHANGED要求显式重读；404 ANALYSIS_CANDIDATE_UNAVAILABLE移除失效人物；503 ANALYSIS_UNAVAILABLE不能显示为无候选，均不自动重试。普通发现、选择读取/保存和规则分析为0次模型调用。
+
+AI对话、好友、收藏和跨设备恢复仍按各自真实依赖接通，页面不能把未开放动作显示为已完成。生产字段映射与P1本人最小条目读取的实际验证见[推荐实施记录24](../推荐模块/24_候选分析用途适配与登录协同.md)，仅按真实运行证据更新完成状态。

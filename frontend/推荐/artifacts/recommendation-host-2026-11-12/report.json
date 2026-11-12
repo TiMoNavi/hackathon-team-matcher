@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-12T09:35:46.231Z",
+  "status": "passed",
+  "scope": "Actual final build plus synthetic same-origin API; not real user authentication or DB acceptance",
+  "checks": [
+    "Guest discover deep link renders native-session login gate with zero discovery requests",
+    "Signed-in account without current event cannot mount discovery",
+    "Actual compiled host mounts the connected recommendation entry and calls same-origin discovery",
+    "Compiled discover host fits 1440px without horizontal overflow",
+    "Compiled discover host fits 390px without horizontal overflow",
+    "Compiled discover host fits 320px without horizontal overflow",
+    "Host theme update does not recreate the controller or silently reload discovery",
+    "Login plus discover navigation fits 1440px",
+    "Login plus discover navigation fits 390px",
+    "Login plus discover navigation fits 320px",
+    "Host rendering performs no mutations, external requests, or model calls"
+  ],
+  "counts": {
+    "me": 4,
+    "currentEvent": 4,
+    "discovery": 1,
+    "mutations": 0,
+    "models": 0
+  },
+  "errors": [],
+  "external": [],
+  "failure": null,
+  "screenshots": [
+    "discover-host-1440.png",
+    "discover-host-390.png",
+    "discover-host-320.png",
+    "login-host-1440.png",
+    "login-host-390.png",
+    "login-host-320.png"
+  ],
+  "assets": {
+    "file": "assets/index-Cmu7akBO.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/index-CRn39Ts2.css"
+    ],
+    "assets": [
+      "assets/inter-latin-8kRkwJBP.woff2",
+      "assets/bricolage-grotesque-latin-CtikI8OQ.woff2"
+    ]
+  }
+}

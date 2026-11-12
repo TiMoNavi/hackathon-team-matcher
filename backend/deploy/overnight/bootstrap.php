@@ -28,7 +28,8 @@ if ($web) {
     $_SERVER['PHP_SELF'] = '/index.php';
     $_SERVER['SCRIPT_FILENAME'] = $isolatedRuntime . '/index.php';
 } elseif (PHP_SAPI !== 'cli') { throw new RuntimeException('Unsupported isolated runtime.'); }
-foreach (['curl_exec', 'curl_multi_exec', 'fsockopen', 'pfsockopen', 'stream_socket_client', 'mail'] as $function) {
+$authMode = $isolatedConfig['auth_mode'] ?? false;
+foreach ($authMode ? ['mail'] : ['curl_exec', 'curl_multi_exec', 'fsockopen', 'pfsockopen', 'stream_socket_client', 'mail'] as $function) {
     if (function_exists($function)) { throw new RuntimeException('Use harness.py to apply the isolated network restrictions.'); }
 }
 if (filter_var(ini_get('allow_url_fopen'), FILTER_VALIDATE_BOOLEAN)) { throw new RuntimeException('URL streams must be disabled.'); }
@@ -84,6 +85,21 @@ if ($web) {
     $config['components']['user']['enableAutoLogin'] = false;
     $config['components']['user']['identityCookie']['name'] = 'overnight_n01_identity';
 }
+if ($authMode) {
+    require_once __DIR__ . '/auth_runtime.php';
+    $authInput = overnightReadAuthInput($backend);
+    overnightAuthConfigureApplication($config, $authInput, $isolatedRuntime);
+    if ($web) { $config['bootstrap'] = overnightAuthWebBootstrap($config['bootstrap']); }
+}
+if ($web && in_array('matcher-event-access', $isolatedConfig['modules'], true)) {
+    require_once __DIR__ . '/event_runtime.php';
+    $config['bootstrap'] = overnightEventAccessWebBootstrap($config['bootstrap']);
+}
 $app = $web ? new humhub\components\Application($config) : new humhub\components\console\Application($config);
 if ($app->db->createCommand('SELECT DATABASE()')->queryScalar() !== $isolatedConfig['database']) { throw new RuntimeException('Application database mismatch.'); }
+if ($authMode) { overnightAuthAttachMailer($app, $authInput, $isolatedRuntime); }
+if ($authMode && $web) {
+    require_once __DIR__ . '/auth_evidence.php';
+    overnightAttachAuthEvidence($app, $isolatedRuntime, overnightAuthSecret($isolatedRuntime));
+}
 return $app;

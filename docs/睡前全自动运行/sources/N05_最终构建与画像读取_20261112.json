@@ -1,0 +1,25 @@
+{
+  "kind": "root_final_build_verification",
+  "date": "2026-11-12",
+  "status": "passed",
+  "integration_tests": 55,
+  "profile_read_tests": 21,
+  "profile_read_typescript": "passed",
+  "typecheck": "passed",
+  "manifest_check": "passed",
+  "assets": 4,
+  "fonts": 2,
+  "single_react": "enforced by Vite runtime audit",
+  "source_and_asset_sha256": {
+    "frontend/首页/integration/webapp-entry.tsx": "1c95c8de2662d278ff3b52286b5784c586cee0942d3637b9b9c1a6f2b2af0597",
+    "frontend/integration/src/event-access.ts": "d3a8e031b917ed0d8f9be7ffbbed0dd437a8add2e45c679997b82727d0b61d4d",
+    "frontend/首页/integration/event-access-panel.tsx": "889a2716b22b529230e253c1ce6652d884873608fca91b1844659434d018b40b",
+    "backend/protected/modules/matcher-webapp/resources/app/manifest.json": "7558dd395cc18ac92c180069f340544fc00e4d59871d4d483ced22a4e7fc2db8",
+    "backend/protected/modules/matcher-webapp/resources/app/assets/index-0DWKCLLk.js": "c68fef1499f0b029448dbcf71356a85ea55402e93ce77a6a668eb0cb3d432d30",
+    "backend/protected/modules/matcher-webapp/resources/app/assets/index-C25M2v5F.css": "c9c468f39655a6902e0a540e41b61f52d87660a5a4eb9fba1a98345f34afbdfb"
+  },
+  "main_preview_deployed": false,
+  "profile_ui_mounted": false,
+  "profile_cross_language_checks": 28,
+  "profile_contract_audit": "docs/用户画像收集/43_N06本人读取接线与剩余合同.md"
+}

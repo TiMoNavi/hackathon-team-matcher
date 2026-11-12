@@ -1,0 +1,112 @@
+{
+  "checked_at": "2026-11-12T16:45:48.238163+08:00",
+  "status": "passed",
+  "scope": "本批新增9个源码/测试文件、3份文档、基线与独立审查指纹核对；非页面或生产接入验收",
+  "baseline_comparison": {
+    "total": 502,
+    "unchanged": 502,
+    "changed": [],
+    "missing": []
+  },
+  "independent_review_source_comparison": {
+    "total": 35,
+    "unchanged": 35,
+    "changed": [],
+    "missing": []
+  },
+  "independent_report_sha256": "b486394747fced62fc4603a187d18df9574b7029ede9c3b3a70212d98d1dff39",
+  "new_file_hashes_sha256": {
+    "backend/protected/modules/matcher-recommendation/application/analysis/AnalyzeCooperation.php": "96289e50a3e91098f125a2adfcaa8f3de03501b834cca621532c62eeaa211e55",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/SelectedSelfAttributes.php": "4d93ac8216264b2099617c2f6bf73e1a8945a6ed2ad1388189d07f8607590bd8",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisRequest.php": "eb06981f8f4f44839196f009e0bc270cdac19e3e4b7f1f02bd630407a1c03296",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisException.php": "47ab998c4427d51d9ec0e50d708d5d30b31ce8faf7462d3f537eeec27c26b305",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelectedSelfProjectionReader.php": "5527d57dc9c1d153d299905c160f5fff502fb2faf3fa361282e6b7a8c69f7597",
+    "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/Fixtures.php": "3390ef512dc998676ffeeb229a4d7d52c044536ad8f9323bb14435dc6eb45ec6",
+    "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/run.php": "cf529017b43fd17d3f8bf2410df770f58f4ef54b94a69d70cf4e3c216351b883",
+    "frontend/推荐/lib/recommendation-runtime/person-presentation.ts": "21668ccc3d265bf2a15c670983340d193ffbe5dbe4b6c8c747531f3280a6ef37",
+    "frontend/推荐/scripts/verify-recommendation-presentation.mjs": "f246dfa1883319b83303229e5a2f0969c3e80fdd5dfa24ffc46909edafe2a47b"
+  },
+  "php_syntax": [
+    {
+      "file": "backend/protected/modules/matcher-recommendation/application/analysis/AnalyzeCooperation.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/application/analysis/AnalyzeCooperation.php"
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/contracts/analysis/SelectedSelfAttributes.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/contracts/analysis/SelectedSelfAttributes.php"
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisRequest.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisRequest.php"
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisException.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisException.php"
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/contracts/ports/SelectedSelfProjectionReader.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/contracts/ports/SelectedSelfProjectionReader.php"
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/Fixtures.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/Fixtures.php"
+    },
+    {
+      "file": "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/run.php",
+      "exit_code": 0,
+      "output": "No syntax errors detected in backend/protected/modules/matcher-recommendation/tests/cooperation_analysis_usecase/run.php"
+    }
+  ],
+  "documentation": {
+    "checked_files": [
+      "docs/推荐模块/23_授权分析用例与事实展示映射.md",
+      "docs/推荐模块/task.md",
+      "docs/推荐模块/00_README.md"
+    ],
+    "local_links_checked": 108,
+    "broken_local_links": [],
+    "fences": [
+      {
+        "file": "docs/推荐模块/23_授权分析用例与事实展示映射.md",
+        "fence_count": 0
+      },
+      {
+        "file": "docs/推荐模块/task.md",
+        "fence_count": 4
+      },
+      {
+        "file": "docs/推荐模块/00_README.md",
+        "fence_count": 0
+      }
+    ],
+    "whitespace_issues": [],
+    "frozen_manuscript_unchanged": true
+  },
+  "git_diff_check": {
+    "exit_code": 0,
+    "output": ""
+  },
+  "counts": {
+    "new_php_files": 7,
+    "new_frontend_files": 2,
+    "database_connections": 0,
+    "http_requests": 0,
+    "model_calls": 0,
+    "credential_reads": 0,
+    "commits": 0,
+    "pushes": 0
+  },
+  "not_completed": [
+    "production SelectedSelfProjectionReader authority adapter",
+    "candidate recommendation-purpose event_seeking approval",
+    "new public DTO/API contracts",
+    "4203 page wiring",
+    "production AI assembly or semantic acceptance"
+  ]
+}

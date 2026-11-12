@@ -1,0 +1,382 @@
+{
+  "task": "N04",
+  "status": "in_progress_pending_real_dual_login",
+  "recorded_at": "2026-11-12T09:03:40.942894+00:00",
+  "branch": "feat/overnight-integration-20261112",
+  "scope": "isolated local integration; no merge or production deployment",
+  "backend_module": "matcher-auth@0.1.0",
+  "backend_offline_checks": {
+    "challenge_and_boundary": 59,
+    "binding": 16,
+    "events": 10,
+    "imports": 12,
+    "real_login_proven": false
+  },
+  "runtime_offline_checks": {
+    "python": 110,
+    "php_guard": 42,
+    "auth_runtime": 78
+  },
+  "independent_audit": {
+    "identity_and_native_gates": "passed",
+    "budget_interruption_reproduction_fixed": true,
+    "concurrent_budget_requests": 15,
+    "synthetic_sends": 3,
+    "real_transport_used": false
+  },
+  "migration": {
+    "module_upgrade_runs": 2,
+    "modules_enabled": 11,
+    "migration_rows": 248,
+    "idempotent": true
+  },
+  "http_preflight": {
+    "task": "N04",
+    "status": "passed",
+    "mode": "real-local-http-no-external-auth",
+    "checks": [
+      {
+        "name": "login shell available",
+        "passed": true,
+        "status": 200
+      },
+      {
+        "name": "capabilities status",
+        "passed": true,
+        "actual": 200,
+        "expected": 200
+      },
+      {
+        "name": "capabilities envelope",
+        "passed": true
+      },
+      {
+        "name": "capabilities uncached",
+        "passed": true
+      },
+      {
+        "name": "both configured transports available",
+        "passed": true
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/email-codes status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/email-codes envelope",
+        "passed": true
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/email-codes uncached",
+        "passed": true
+      },
+      {
+        "name": "wrong method /api/v1/auth/email-codes status",
+        "passed": true,
+        "actual": 405,
+        "expected": 405
+      },
+      {
+        "name": "wrong method /api/v1/auth/email-codes envelope",
+        "passed": true
+      },
+      {
+        "name": "wrong method /api/v1/auth/email-codes uncached",
+        "passed": true
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/email/verify status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/email/verify envelope",
+        "passed": true
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/email/verify uncached",
+        "passed": true
+      },
+      {
+        "name": "wrong method /api/v1/auth/email/verify status",
+        "passed": true,
+        "actual": 405,
+        "expected": 405
+      },
+      {
+        "name": "wrong method /api/v1/auth/email/verify envelope",
+        "passed": true
+      },
+      {
+        "name": "wrong method /api/v1/auth/email/verify uncached",
+        "passed": true
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/logout status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/logout envelope",
+        "passed": true
+      },
+      {
+        "name": "guest missing CSRF /api/v1/auth/logout uncached",
+        "passed": true
+      },
+      {
+        "name": "wrong method /api/v1/auth/logout status",
+        "passed": true,
+        "actual": 405,
+        "expected": 405
+      },
+      {
+        "name": "wrong method /api/v1/auth/logout envelope",
+        "passed": true
+      },
+      {
+        "name": "wrong method /api/v1/auth/logout uncached",
+        "passed": true
+      },
+      {
+        "name": "invalid JSON body status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "invalid JSON body envelope",
+        "passed": true
+      },
+      {
+        "name": "invalid JSON body uncached",
+        "passed": true
+      },
+      {
+        "name": "unexpected JSON property status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "unexpected JSON property envelope",
+        "passed": true
+      },
+      {
+        "name": "unexpected JSON property uncached",
+        "passed": true
+      },
+      {
+        "name": "non-allowlisted mailbox status",
+        "passed": true,
+        "actual": 503,
+        "expected": 503
+      },
+      {
+        "name": "non-allowlisted mailbox envelope",
+        "passed": true
+      },
+      {
+        "name": "non-allowlisted mailbox uncached",
+        "passed": true
+      },
+      {
+        "name": "unknown challenge status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "unknown challenge envelope",
+        "passed": true
+      },
+      {
+        "name": "unknown challenge uncached",
+        "passed": true
+      },
+      {
+        "name": "missing explicit OAuth intent status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "missing explicit OAuth intent envelope",
+        "passed": true
+      },
+      {
+        "name": "missing explicit OAuth intent uncached",
+        "passed": true
+      },
+      {
+        "name": "external OAuth return rejected status",
+        "passed": true,
+        "actual": 400,
+        "expected": 400
+      },
+      {
+        "name": "external OAuth return rejected envelope",
+        "passed": true
+      },
+      {
+        "name": "external OAuth return rejected uncached",
+        "passed": true
+      },
+      {
+        "name": "guest bind rejected status",
+        "passed": true,
+        "actual": 401,
+        "expected": 401
+      },
+      {
+        "name": "guest bind rejected envelope",
+        "passed": true
+      },
+      {
+        "name": "guest bind rejected uncached",
+        "passed": true
+      },
+      {
+        "name": "unauthenticated identity status",
+        "passed": true,
+        "actual": 401,
+        "expected": 401
+      },
+      {
+        "name": "unauthenticated identity envelope",
+        "passed": true
+      },
+      {
+        "name": "unauthenticated identity uncached",
+        "passed": true
+      },
+      {
+        "name": "unauthenticated current activity status",
+        "passed": true,
+        "actual": 401,
+        "expected": 401
+      },
+      {
+        "name": "unauthenticated current activity envelope",
+        "passed": true
+      },
+      {
+        "name": "unauthenticated current activity uncached",
+        "passed": true
+      },
+      {
+        "name": "registration requires verified receipt",
+        "passed": true,
+        "status": 302
+      },
+      {
+        "name": "registration failure returns local login",
+        "passed": true
+      },
+      {
+        "name": "finite send ledger unchanged",
+        "passed": true
+      }
+    ],
+    "http_requests": 18,
+    "real_mail_send_requests": 0,
+    "oauth_authorizations": 0,
+    "real_login_verified": false
+  },
+  "frontend": {
+    "unit_checks": 21,
+    "typecheck": "passed",
+    "build": "passed",
+    "auth_browser_check_groups": 13,
+    "n03_browser_regression_groups": 9,
+    "final_pass_real_api_gets": 14,
+    "including_failed_script_run_real_api_gets": 18,
+    "final_synthetic_posts": 13,
+    "final_synthetic_oauth_navigations": 1,
+    "real_mutations_by_frontend_checks": 0
+  },
+  "main_preview_protection": {
+    "preview_user_count": 103,
+    "preview_space_count": 4,
+    "main_counts_unchanged": true,
+    "main_service_pids_unchanged": true,
+    "frozen_hashes_unchanged": true
+  },
+  "actual_authentication_snapshot": {
+    "smtp": {
+      "attempted": 0,
+      "accepted": 0
+    },
+    "native": {
+      "native_provider_counts": {
+        "email-code": 0,
+        "github": 0
+      },
+      "dual_provider_accounts": 0,
+      "github_import_states": {
+        "pending": 0,
+        "running": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "revoked": 0,
+        "skipped_existing": 0
+      },
+      "github_source_states": {
+        "running": 0,
+        "ready": 0,
+        "failed": 0,
+        "deleted": 0
+      },
+      "github_sources_total": 0,
+      "otp_consumed_challenges": 0
+    },
+    "sessions": {
+      "available": false,
+      "login": {
+        "email-code": 0,
+        "github": 0
+      },
+      "me_read": {
+        "email-code": 0,
+        "github": 0
+      },
+      "distinct_accounts": 0,
+      "same_account_verified": false
+    },
+    "dedicated_browser": {
+      "emails_accepted": 0,
+      "email_verifications": [],
+      "github_intents": [
+        {
+          "intent": "login",
+          "status": 302
+        }
+      ],
+      "github_callbacks": 0,
+      "successful_me_reads": 0,
+      "explicit_logouts": 0
+    },
+    "normal_browser_offered_after_user_reported_google_login_refusal": true,
+    "user_confirmation_pending": true
+  },
+  "limits": {
+    "real_mail_attempts_total": 3,
+    "recipient_allowlist_size": 1,
+    "ai_calls": 0,
+    "queue_worker_started": false,
+    "cron_started": false
+  },
+  "next_gate": "Real email and GitHub logins must establish the same native account and authenticated plugin reads before N05.",
+  "publication": {
+    "code_committed": false,
+    "push_completed": false,
+    "blocked_by_uncoordinated_changes_in_owned_directories": true,
+    "our_staging_removed": true,
+    "working_files_preserved": true,
+    "last_published_commit": "f9b04342b9ea6959295fafe34fdece62e0e7c5f7"
+  }
+}

@@ -16,8 +16,14 @@ function overnightValidateConfig(array $config, string $backend): void
     }
     $legacy = ['auth-github', 'mail', 'matcher-user-profile', 'matcher-profile-privacy',
         'matcher-onboarding', 'matcher-resume-import', 'matcher-recommendation', 'matcher-ideas'];
-    if (!in_array($config['modules'] ?? null, [$legacy, [...$legacy, 'matcher-webapp']], true)) {
+    $n03 = [...$legacy, 'matcher-webapp'];
+    $n04 = [...$n03, 'matcher-github-import', 'matcher-auth'];
+    $n05 = [...$n04, 'matcher-event-access'];
+    if (!in_array($config['modules'] ?? null, [$legacy, $n03, $n04, $n05], true)) {
         throw new RuntimeException('Module allowlist mismatch.');
+    }
+    if (!is_bool($config['auth_mode'] ?? false) || (($config['auth_mode'] ?? false) && !in_array($config['modules'], [$n04, $n05], true))) {
+        throw new RuntimeException('Authentication mode requires the fixed module set.');
     }
 }
 function overnightValidateRequest(array $server): void

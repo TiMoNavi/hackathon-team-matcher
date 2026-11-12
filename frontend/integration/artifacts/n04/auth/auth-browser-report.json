@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-12T08:46:00.497Z",
+  "passed": true,
+  "realReads": [
+    {
+      "path": "/api/v1/me",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/auth/capabilities",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/auth/capabilities",
+      "status": 200
+    }
+  ],
+  "checks": [
+    "Real 401 and capabilities 200 render a blank login form with native fallback and no persisted data",
+    "Blank login passes four viewport widths, day/night, 44px controls and 16px mobile inputs",
+    "Keyboard skip link reaches login content",
+    "Synthetic invalid input, duplicate click, cooldown, code clearing and rate-limit lock send no extra requests",
+    "Leaving and returning discards ephemeral email and code without retrying",
+    "Synthetic registration-required shows only the explicit approved link, without successful-login navigation",
+    "Synthetic unapproved registration target is never rendered or followed",
+    "Synthetic unsafe successful receipt remains an error and cannot navigate",
+    "Synthetic valid receipt performs full app-root navigation to refresh bootstrap",
+    "GitHub starts only on explicit click with login intent; destination is intercepted locally",
+    "Synthetic signed-in flow preserves bind intent and performs logout only after confirmation",
+    "Capability failure recovers through one explicit read and performs no mutation",
+    "No application exception, unapproved network request, real email request or external OAuth navigation"
+  ],
+  "viewports": [
+    {
+      "dark": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "15px",
+      "companionVisible": true,
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "dark": true,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "15px",
+      "companionVisible": true,
+      "background": "rgb(22, 18, 43)"
+    },
+    {
+      "dark": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "15px",
+      "companionVisible": false,
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "dark": true,
+      "width": 768,
+      "scrollWidth": 768,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "15px",
+      "companionVisible": false,
+      "background": "rgb(22, 18, 43)"
+    },
+    {
+      "dark": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "16px",
+      "companionVisible": false,
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "dark": true,
+      "width": 390,
+      "scrollWidth": 390,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "16px",
+      "companionVisible": false,
+      "background": "rgb(22, 18, 43)"
+    },
+    {
+      "dark": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "16px",
+      "companionVisible": false,
+      "background": "rgb(255, 255, 255)"
+    },
+    {
+      "dark": true,
+      "width": 320,
+      "scrollWidth": 320,
+      "undersized": [],
+      "clipped": [],
+      "emailFontSize": "16px",
+      "companionVisible": false,
+      "background": "rgb(22, 18, 43)"
+    }
+  ],
+  "screenshots": [
+    "auth-blank-1440-day.png",
+    "auth-blank-1440-night.png",
+    "auth-blank-768-day.png",
+    "auth-blank-768-night.png",
+    "auth-blank-390-day.png",
+    "auth-blank-390-night.png",
+    "auth-blank-320-day.png",
+    "auth-blank-320-night.png"
+  ],
+  "pageErrors": [],
+  "blockedNetwork": [],
+  "routeContractFailures": [],
+  "mockMutations": 13
+}

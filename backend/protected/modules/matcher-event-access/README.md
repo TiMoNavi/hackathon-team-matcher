@@ -1,0 +1,43 @@
+# matcher-event-access
+
+N05 invitation access, version 0.1.0. Domain/application code has no framework/network dependencies. Native membership remains authoritative; this module never selects the current activity or joins a chat. Source availability and offline tests are not a deployment/HTTP acceptance claim.
+
+User reports both real login methods succeeded. Root separately observes native email-code/GitHub bindings, consumed OTP and GitHub login/import evidence in 8113; a separately observed email-authenticated session is not claimed here. No authentication/source/private configuration is changed by this module.
+
+## Fixed HTTP contract
+
+All success responses are `{data,meta:{request_id}}`; errors follow `{error:{code,message,retryable,details:{}},meta:{request_id}}`. Native authentication and CSRF apply. JSON bodies reject unknown fields. Date strings use `YYYY-MM-DDTHH:mm:ssZ`. IDs are `inv-` or `receipt-` followed by 32 lowercase hex digits. Tokens are exactly 43 base64url characters from 32 random bytes; only SHA-256 digests persist.
+
+- `GET /api/v1/me/events?limit=24&cursor=...`: 200 `{items:[{space_id:int,name:string,membership_id:int,membership_role:"owner"|"admin"|"moderator"|"member"}],next_cursor:string|null,has_more:bool,limit:int}`. Default 24, maximum 48; cursor is signed and bound to owner/limit, and each page checks current membership.
+- `POST /api/v1/events/{spaceId}/invitation-codes`: `{expires_at,max_uses,confirmation_intent:"create_invitation"}` plus Idempotency-Key. Expiry must be future and within 30 days, uses 1–1000. First response 201, replay 200. Data `{invitation_id,space_id,version,status,expires_at,max_uses,uses,created_at,token,token_revealed}`. Replay returns token=null/false, not the credential.
+- `POST /api/v1/event-invitations/{id}/revoke`: `{expected_version,confirmation_intent:"revoke_invitation"}`; 200 InvitationDTO without token/token_revealed. CAS, exact repeated revocation accepted.
+- `POST /api/v1/event-invitations/redeem`: `{token,confirmation_intent:"join"}` plus Idempotency-Key; new/replay both 200 `{receipt_id,invitation_id,space_id,membership_id,outcome:"joined"|"already_member",consumed_use:bool,created_at,membership_current:bool}`. Historic receipt never restores departed/revoked membership; a different membership ID does not revive that receipt.
+- `GET /api/v1/event-invitation-receipts/{id}`: same ReceiptDTO, owner only.
+
+Idempotency-Key: 8–128 `[A-Za-z0-9._:-]` characters. Creation attempts are limited to 20/hour per actor; redemption attempts to 30/5 minutes. These counters persist outside the business transaction so failure cannot erase rate accounting.
+
+Errors: 401 AUTHENTICATION_REQUIRED; 403 ACCESS_DENIED; 404 RECEIPT_NOT_FOUND/INVITATION_NOT_FOUND; 409 INVITATION_UNAVAILABLE/INVITATION_VERSION_CONFLICT/IDEMPOTENCY_CONFLICT/CONTEXT_CHANGED/EVENT_CURSOR_INVALID; 410 EVENT_CURSOR_EXPIRED; 422 INVALID_REQUEST/INVALID_ID/INVALID_INVITATION_EXPIRY; 400 IDEMPOTENCY_KEY_REQUIRED; 405 METHOD_NOT_ALLOWED; 413 REQUEST_TOO_LARGE; 415 UNSUPPORTED_MEDIA_TYPE; 429 RATE_LIMITED; 503 MEMBERSHIP_UNAVAILABLE/DEPENDENCY_UNAVAILABLE/NATIVE_LIFECYCLE_UNSUPPORTED. Unknown/expired/revoked/unusable-exhausted credentials share INVITATION_UNAVAILABLE. A malformed credential body is INVALID_REQUEST. JSON maximum is 8 KiB. Existing formal members need no remaining use, but the invitation must still be active and unexpired before a first receipt is created.
+
+Joining and selecting are separate user actions. Keep the existing recommendation-owned GET/PUT `/api/v1/me/current-event` with `{space_id,expected_revision}`; only an actual 409 CURRENT_EVENT_REQUIRED permits initial expected_revision=null. Other network/context failures do not. This module defines no duplicate selection endpoint/table.
+
+## Installation boundary
+
+Module-owned migration `m261112_230000_event_access` adds exactly six tables: matcher_event_invitation, matcher_event_receipt, matcher_event_idempotency, matcher_event_lock, matcher_event_attempt and matcher_event_outbox. It does not alter core membership, identity, profile, selection or Messenger storage. The migration's down action is deliberately unavailable without a reviewed receipt retention plan. Host enable/upgrade is root-owned isolation work.
+
+The host must insert `humhub\modules\matcherEventAccess\adapters\http\EventAccessRequestBootstrap` after ModuleAutoLoader and before HumHub LanguageSelector. It only sets bodyParams=[] for this module's exact JSON POST routes, leaves rawBody untouched, and retains Yii CSRF header validation. config.php has no runtime execution side effects. Missing early host wiring can allow HumHub to parse malformed JSON before this controller; controller-level protection alone is not sufficient.
+
+## Transactions, permission and native lifecycle
+
+Each write uses a SERIALIZABLE unit of work and a module lock, with current row/range locks on native account, Space, membership and block facts. LockedInvitePermission follows the native InviteUsers class's permission ID/module/default rules, checks explicit container permission before stored Space default before class/config default, and reads both native permission ranges FOR UPDATE. It avoids PermissionManager's process/shared caches. This must be tested against the deployed MySQL isolation/indices; serialized in-memory tests do not prove revoke races.
+
+Native Space::addMember(actor,1,false,member) is the membership writer, retaining normal leave capability. There is no direct SQL membership INSERT. During that call only, NativeMembershipLifecycle captures known MemberEvent, membership activity, FollowRemoved and native acceptance notification queue pushes. Changes to membership, old notification cleanup, invitation quota, receipt and the new outbox commit together. Original cache invalidations run; userSpaces/userSpaceIds and member/live caches are invalidated again after commit to prevent stale concurrent refill. Failure clears only request-local model cache plus those relevant shared membership cache keys.
+
+Class wildcard hooks execute ahead of exact Yii handlers; instance hooks execute ahead of class hooks. LifecycleGuard rejects unreviewed wildcard, membership validation/save/init/afterFind and Follow delete hooks. Three native generic Follow cleanup handlers are accepted only when no associated external File or RecordMap would recurse. Other unknown queue jobs fail closed. This adapter targets the reviewed native lifecycle, not arbitrary third-party mutation hooks. It never disables notifications globally. Outbox replay reconstructs native events/notifications using trusted IDs after commit, with current account/Space/membership checks.
+
+Outbox states are pending → dispatching → dispatched/failed/skipped. Dispatch uses a CAS claim. Redeem completion and its idempotent replay flush the actor's bounded pending items. A process crash after claim has uncertain external delivery; dispatching/failed rows are retained and are **not automatically resent**. Operators must inspect uncertain delivery before any explicit recovery. Membership remains committed if post-commit side effects fail; a successful membership receipt does not claim every notification was delivered.
+
+Native membership currently has an id primary key without a reviewed unique Space/user constraint. This module serializes its own writes and fails closed on duplicate native rows. Cross-entry concurrency with pre-existing native membership writers must be independently checked; this module does not claim to repair or silently migrate core invariants. No current-event reader/writer is nested inside this transaction; selection remains a separate user action.
+
+## Verification
+
+`php -n tests/run.php` passed 34 pure in-memory checks; `php -n tests/boundaries.php` passed 19 cursor/lifecycle-hook/early-body/native-role checks; `php -n tests/sql_compilation.php` passed 43 compiled MySQL placeholder/parameter/current-read checks on 2026-11-12. Twenty-one PHP files passed syntax checks. Native role normalization matches Space::getUserGroup: only Space.created_by grants owner; other unassignable stored roles become member. The compilation suite uses Yii's real MySQL query compiler and Command parameter binding against a recording connection that rejects database opening; the synthetic server version is only a compiler fixture. The final SQL, including FOR UPDATE, is constructed before parameters bind, so Command::setSql cannot erase them. These runs used the explicitly provided PHP binary without ini, no database and no network. Native SQL/HTTP/lifecycle checks are separate root-owned isolation work; pure tests do not establish runtime acceptance. No module has been enabled or migrated by this author.

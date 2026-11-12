@@ -105,6 +105,14 @@ final class Module extends \humhub\components\Module
         );
     }
 
+    /** Explicit owner-authorized minimal analysis reads; never the full editor profile. */
+    public function getSelectedSelfProfileReader(): \humhub\modules\matcherProfile\application\SelectedSelfProfileReader
+    {
+        return new \humhub\modules\matcherProfile\application\SelectedSelfProfileReader(
+            $this->getAccessPolicy(), $this->getDiscoveryProfileBatchReader(),
+        );
+    }
+
     public function getReadPolicy(): ?\humhub\modules\matcherProfile\domain\ports\ProfileReadPolicy
     {
         if (!Yii::$app->hasModule('matcher-profile-privacy')) { return null; }

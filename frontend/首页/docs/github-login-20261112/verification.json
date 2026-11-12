@@ -1,0 +1,192 @@
+{
+  "passed": true,
+  "evidence": "Fully intercepted local build; synthetic API responses only",
+  "realNetworkCalls": 0,
+  "realOAuthCalls": 0,
+  "realEmails": 0,
+  "modelCalls": 0,
+  "checks": [
+    "Four viewport widths, day/night, 44px controls, no overflow and 400px form",
+    "Actual rendered Chinese and Latin font families recorded via Chromium",
+    "OTP input focus, explicit synthetic send/verify, error display; guests never read import status",
+    "Cancelled OAuth feedback and explicit safe GitHub navigation",
+    "Stored pending receipt is visible; explicit refresh remains read-only",
+    "Stored running receipt is visible; explicit refresh remains read-only",
+    "Stored failed receipt is visible; explicit refresh remains read-only",
+    "Stored skipped_existing receipt is visible; explicit refresh remains read-only",
+    "Stored revoked receipt is visible; explicit refresh remains read-only",
+    "Stored unavailable receipt is visible; explicit refresh remains read-only",
+    "Home source state succeeded uses existing P1 progress",
+    "Home source state revoked uses existing P1 progress",
+    "Lost session hides prior source actions"
+  ],
+  "layouts": [
+    {
+      "dark": false,
+      "viewport": 1440,
+      "scroll": 1440,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": true,
+      "inputFontSize": "15px",
+      "inputHeight": 44,
+      "formWidth": 400,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": true,
+      "viewport": 1440,
+      "scroll": 1440,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": true,
+      "inputFontSize": "15px",
+      "inputHeight": 44,
+      "formWidth": 400,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": false,
+      "viewport": 768,
+      "scroll": 768,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": false,
+      "inputFontSize": "15px",
+      "inputHeight": 44,
+      "formWidth": 400,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": true,
+      "viewport": 768,
+      "scroll": 768,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": false,
+      "inputFontSize": "15px",
+      "inputHeight": 44,
+      "formWidth": 400,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": false,
+      "viewport": 390,
+      "scroll": 390,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": false,
+      "inputFontSize": "16px",
+      "inputHeight": 44,
+      "formWidth": 342,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": true,
+      "viewport": 390,
+      "scroll": 390,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": false,
+      "inputFontSize": "16px",
+      "inputHeight": 44,
+      "formWidth": 342,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": false,
+      "viewport": 320,
+      "scroll": 320,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": false,
+      "inputFontSize": "16px",
+      "inputHeight": 44,
+      "formWidth": 272,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    },
+    {
+      "dark": true,
+      "viewport": 320,
+      "scroll": 320,
+      "undersized": 0,
+      "overflow": 0,
+      "companionVisible": false,
+      "inputFontSize": "16px",
+      "inputHeight": 44,
+      "formWidth": 272,
+      "fontFilesLoaded": [
+        "Matcher Inter",
+        "Matcher Bricolage"
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "selector": ".webapp-auth-heading h1",
+      "fonts": [
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Semibold",
+          "isCustomFont": false,
+          "glyphCount": 6
+        }
+      ]
+    },
+    {
+      "selector": ".webapp-auth-github",
+      "fonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        },
+        {
+          "familyName": "PingFang SC",
+          "postScriptName": "PingFangSC-Semibold",
+          "isCustomFont": false,
+          "glyphCount": 4
+        }
+      ]
+    },
+    {
+      "selector": ".webapp-brand",
+      "fonts": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "login-1440-day.png",
+    "login-1440-night.png",
+    "login-768-day.png",
+    "login-768-night.png",
+    "login-390-day.png",
+    "login-390-night.png",
+    "login-320-day.png",
+    "login-320-night.png",
+    "import-succeeded-synthetic.png",
+    "import-revoked-synthetic.png"
+  ]
+}

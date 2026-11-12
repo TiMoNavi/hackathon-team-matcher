@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "action": "inspect",
+  "database": "humhub_overnight_n01_20261112",
+  "php": "8.5.12",
+  "mysql": "9.7.4",
+  "humhub": "1.19.4",
+  "counts": {
+    "user": 7,
+    "profile": 7,
+    "space": 2,
+    "space_membership": 6,
+    "user_auth": 2,
+    "module_enabled": 12,
+    "migration": 250,
+    "queue": 3,
+    "message": 0,
+    "message_entry": 0,
+    "matcher_profile_draft": 0,
+    "matcher_profile_attribute": 0,
+    "matcher_onboarding_session": 0,
+    "matcher_recommendation_current_selection": 3,
+    "matcher_idea": 0
+  },
+  "modules": {
+    "auth-github": {
+      "enabled": true,
+      "code_version": "1.1.1",
+      "installed_version": "1.1.1"
+    },
+    "mail": {
+      "enabled": true,
+      "code_version": "3.4.6",
+      "installed_version": "3.4.6"
+    },
+    "matcher-user-profile": {
+      "enabled": true,
+      "code_version": "0.10.1",
+      "installed_version": "0.10.1"
+    },
+    "matcher-profile-privacy": {
+      "enabled": true,
+      "code_version": "0.2.0",
+      "installed_version": "0.2.0"
+    },
+    "matcher-onboarding": {
+      "enabled": true,
+      "code_version": "0.4.0",
+      "installed_version": "0.4.0"
+    },
+    "matcher-resume-import": {
+      "enabled": true,
+      "code_version": "0.1.1",
+      "installed_version": "0.1.1"
+    },
+    "matcher-recommendation": {
+      "enabled": true,
+      "code_version": "0.4.1",
+      "installed_version": "0.4.1"
+    },
+    "matcher-ideas": {
+      "enabled": true,
+      "code_version": "0.1.0",
+      "installed_version": "0.1.0"
+    },
+    "matcher-webapp": {
+      "enabled": true,
+      "code_version": "0.1.0",
+      "installed_version": "0.1.0"
+    },
+    "matcher-github-import": {
+      "enabled": true,
+      "code_version": "0.1.1",
+      "installed_version": "0.1.1"
+    },
+    "matcher-auth": {
+      "enabled": true,
+      "code_version": "0.1.1",
+      "installed_version": "0.1.1"
+    },
+    "matcher-event-access": {
+      "enabled": true,
+      "code_version": "0.1.0",
+      "installed_version": "0.1.0"
+    }
+  },
+  "mail_transport": "file",
+  "outbound_transports_blocked": false,
+  "real_ai_calls": 0,
+  "queue_worker_started": false,
+  "cron_started": false,
+  "seeded_users": false,
+  "authentication_mode": true,
+  "otp_transport": "designated-gmail-tls-max-three-attempts",
+  "oauth_scope": "github-user-email",
+  "authentication_evidence": {
+    "native_provider_counts": {
+      "email-code": 1,
+      "github": 1
+    },
+    "dual_provider_accounts": 1,
+    "github_import_states": {
+      "pending": 0,
+      "running": 0,
+      "succeeded": 1,
+      "failed": 0,
+      "revoked": 0,
+      "skipped_existing": 0
+    },
+    "github_source_states": {
+      "running": 0,
+      "ready": 1,
+      "failed": 0,
+      "deleted": 0
+    },
+    "github_sources_total": 1,
+    "otp_consumed_challenges": 1
+  },
+  "authentication_session_evidence": {
+    "available": true,
+    "login": {
+      "email-code": 0,
+      "github": 1
+    },
+    "me_read": {
+      "email-code": 0,
+      "github": 3
+    },
+    "distinct_accounts": 1,
+    "same_account_verified": false
+  },
+  "ui_enabled": true
+}

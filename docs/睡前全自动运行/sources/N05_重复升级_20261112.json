@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "action": "upgrade-n05",
+  "database": "humhub_overnight_n01_20261112",
+  "configuration_upgraded": false,
+  "versions": {
+    "matcher-user-profile": "0.10.1",
+    "matcher-auth": "0.1.1",
+    "matcher-recommendation": "0.4.1",
+    "matcher-event-access": "0.1.0"
+  },
+  "before_counts": {
+    "user": 1,
+    "profile": 1,
+    "space": 0,
+    "space_membership": 0,
+    "user_auth": 2,
+    "module_enabled": 12,
+    "migration": 250,
+    "queue": 1,
+    "message": 0,
+    "message_entry": 0,
+    "matcher_profile_draft": 0,
+    "matcher_profile_attribute": 0,
+    "matcher_onboarding_session": 0,
+    "matcher_recommendation_current_selection": 0,
+    "matcher_idea": 0
+  },
+  "after_counts": {
+    "user": 1,
+    "profile": 1,
+    "space": 0,
+    "space_membership": 0,
+    "user_auth": 2,
+    "module_enabled": 12,
+    "migration": 250,
+    "queue": 1,
+    "message": 0,
+    "message_entry": 0,
+    "matcher_profile_draft": 0,
+    "matcher_profile_attribute": 0,
+    "matcher_onboarding_session": 0,
+    "matcher_recommendation_current_selection": 0,
+    "matcher_idea": 0
+  },
+  "backup_sha256": "fa5a87b9b72858ed5fd1717acc5bb992f456f2c8935919a6d3e0f6ba8beaf944",
+  "backup_verified": true,
+  "restored": false,
+  "seeded_users": false,
+  "existing_auth_and_source_aggregates_preserved": true,
+  "external_calls": 0
+}

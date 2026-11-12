@@ -1,0 +1,26 @@
+{
+  "kind": "n05-native-role-followup-v1",
+  "status": "passed",
+  "checks": 4,
+  "cases": [
+    {
+      "case_id": "registered_synthetic_member_exists",
+      "pass": true
+    },
+    {
+      "case_id": "noncreator_stored_owner_normalizes_to_member",
+      "pass": true
+    },
+    {
+      "case_id": "stored_owner_cannot_escalate_invitation_permission",
+      "pass": true
+    },
+    {
+      "case_id": "original_membership_restored_after_rollback",
+      "pass": true
+    }
+  ],
+  "all_mutations_rolled_back": true,
+  "synthetic_only": true,
+  "external_calls": 0
+}

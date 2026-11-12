@@ -1,0 +1,396 @@
+{
+  "kind": "n05-independent-http-audit-v1",
+  "phase": "initial",
+  "status": "passed",
+  "checks": 73,
+  "http_requests": 56,
+  "cases": [
+    {
+      "case_id": "guest_denied",
+      "pass": true,
+      "http_status": 401,
+      "safe_error_code": "AUTHENTICATION_REQUIRED"
+    },
+    {
+      "case_id": "owner_native_session",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "member_native_session",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "target_native_session",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "outsider_native_session",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "racer_a_native_session",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "racer_b_native_session",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "synthetic_membership_baseline",
+      "pass": true
+    },
+    {
+      "case_id": "member_initially_unselected",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "CURRENT_EVENT_REQUIRED"
+    },
+    {
+      "case_id": "target_initially_unselected",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "CURRENT_EVENT_REQUIRED"
+    },
+    {
+      "case_id": "member_first_page",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "member_second_page",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "pagination_exact_memberships",
+      "pass": true
+    },
+    {
+      "case_id": "foreign_cursor_denied",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "EVENT_CURSOR_INVALID"
+    },
+    {
+      "case_id": "invalid_limit_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "unknown_query_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "read_method_denied",
+      "pass": true,
+      "http_status": 405,
+      "safe_error_code": "METHOD_NOT_ALLOWED"
+    },
+    {
+      "case_id": "missing_csrf_denied",
+      "pass": true,
+      "http_status": 400,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "missing_key_denied",
+      "pass": true,
+      "http_status": 400,
+      "safe_error_code": "IDEMPOTENCY_KEY_REQUIRED"
+    },
+    {
+      "case_id": "invalid_token_unavailable",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "INVITATION_UNAVAILABLE"
+    },
+    {
+      "case_id": "malformed_token_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "unconfirmed_join_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "role_injection_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "target_injection_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "array_body_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "invalid_json_denied",
+      "pass": true,
+      "http_status": 422,
+      "safe_error_code": "INVALID_REQUEST"
+    },
+    {
+      "case_id": "non_json_denied",
+      "pass": true,
+      "http_status": 415,
+      "safe_error_code": "UNSUPPORTED_MEDIA_TYPE"
+    },
+    {
+      "case_id": "oversized_body_denied",
+      "pass": true,
+      "http_status": 413,
+      "safe_error_code": "REQUEST_TOO_LARGE"
+    },
+    {
+      "case_id": "primary_created",
+      "pass": true,
+      "http_status": 201
+    },
+    {
+      "case_id": "primary_one_time_token",
+      "pass": true
+    },
+    {
+      "case_id": "outsider_cannot_issue",
+      "pass": true,
+      "http_status": 403,
+      "safe_error_code": "ACCESS_DENIED"
+    },
+    {
+      "case_id": "create_replay",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "create_replay_no_token",
+      "pass": true
+    },
+    {
+      "case_id": "create_key_conflict",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "IDEMPOTENCY_CONFLICT"
+    },
+    {
+      "case_id": "target_joined",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "target_join_effect",
+      "pass": true
+    },
+    {
+      "case_id": "join_does_not_select",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "CURRENT_EVENT_REQUIRED"
+    },
+    {
+      "case_id": "join_same_key_replay",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "join_same_key_same_receipt",
+      "pass": true
+    },
+    {
+      "case_id": "join_new_key_replay",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "join_new_key_same_receipt",
+      "pass": true
+    },
+    {
+      "case_id": "redeem_key_conflict",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "IDEMPOTENCY_CONFLICT"
+    },
+    {
+      "case_id": "receipt_owner_read",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "receipt_third_party_denied",
+      "pass": true,
+      "http_status": 404,
+      "safe_error_code": "RECEIPT_NOT_FOUND"
+    },
+    {
+      "case_id": "existing_member_receipt",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "existing_member_zero_use",
+      "pass": true
+    },
+    {
+      "case_id": "primary_usage_read",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "primary_exactly_one_use",
+      "pass": true
+    },
+    {
+      "case_id": "revocable_created",
+      "pass": true,
+      "http_status": 201
+    },
+    {
+      "case_id": "revocable_one_time_token",
+      "pass": true
+    },
+    {
+      "case_id": "outsider_cannot_revoke",
+      "pass": true,
+      "http_status": 403,
+      "safe_error_code": "ACCESS_DENIED"
+    },
+    {
+      "case_id": "revoke_stale_cas",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "INVITATION_VERSION_CONFLICT"
+    },
+    {
+      "case_id": "revoke_success",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "revoke_safe_dto",
+      "pass": true
+    },
+    {
+      "case_id": "revoke_replay",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "revoked_token_unavailable",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "INVITATION_UNAVAILABLE"
+    },
+    {
+      "case_id": "last_allowance_created",
+      "pass": true,
+      "http_status": 201
+    },
+    {
+      "case_id": "last_allowance_one_time_token",
+      "pass": true
+    },
+    {
+      "case_id": "last_allowance_exactly_one_winner",
+      "pass": true
+    },
+    {
+      "case_id": "racer_a_race_response",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "INVITATION_UNAVAILABLE"
+    },
+    {
+      "case_id": "racer_a_loser_unavailable",
+      "pass": true
+    },
+    {
+      "case_id": "racer_b_race_response",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "racer_b_winner_joined",
+      "pass": true
+    },
+    {
+      "case_id": "race_usage_read",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "race_exactly_one_use",
+      "pass": true
+    },
+    {
+      "case_id": "exhausted_token_unavailable",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "INVITATION_UNAVAILABLE"
+    },
+    {
+      "case_id": "nonmember_select_denied",
+      "pass": true,
+      "http_status": 403,
+      "safe_error_code": "ACCESS_DENIED"
+    },
+    {
+      "case_id": "member_select_a",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "member_select_b",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "member_select_a_again",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "selection_revision_changes_on_aba",
+      "pass": true
+    },
+    {
+      "case_id": "aba_old_request_rejected",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "CONTEXT_CHANGED"
+    },
+    {
+      "case_id": "target_explicit_select",
+      "pass": true,
+      "http_status": 200
+    }
+  ],
+  "synthetic_native_sessions": true,
+  "real_provider_authentication": false,
+  "database_access": false,
+  "external_network_calls": 0,
+  "limits": [
+    "DB atomicity and durable native side effects require root assertions.",
+    "Concurrent HTTP submissions do not prove transaction overlap on a single-worker server.",
+    "No real user, OAuth, mail, model or chat acceptance."
+  ]
+}

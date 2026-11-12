@@ -1,0 +1,162 @@
+{
+  "kind": "n05-overlapping-concurrency-report-v1",
+  "status": "passed",
+  "checks": 25,
+  "phases": [
+    {
+      "kind": "n05-concurrency-action-v1",
+      "action": "prepare",
+      "status": "passed",
+      "checks": 5,
+      "cases": [
+        {
+          "case_id": "racer_a_has_no_a_membership",
+          "pass": true
+        },
+        {
+          "case_id": "racer_a_has_no_a_receipt_or_outbox",
+          "pass": true
+        },
+        {
+          "case_id": "racer_b_has_no_a_membership",
+          "pass": true
+        },
+        {
+          "case_id": "racer_b_has_no_a_receipt_or_outbox",
+          "pass": true
+        },
+        {
+          "case_id": "fresh_one_use_invitation_created",
+          "pass": true
+        }
+      ],
+      "synthetic_registry_only": true,
+      "http_calls": 0,
+      "external_calls": 0,
+      "native_cross_entry_race_tested": false
+    },
+    {
+      "kind": "n05-concurrency-action-v1",
+      "action": "contender",
+      "status": "passed",
+      "checks": 3,
+      "cases": [
+        {
+          "case_id": "race_actor_still_not_a_member",
+          "pass": true
+        },
+        {
+          "case_id": "winner_join_or_contender_exhaustion",
+          "pass": true
+        },
+        {
+          "case_id": "race_action_closes_sql_transaction",
+          "pass": true
+        }
+      ],
+      "synthetic_registry_only": true,
+      "http_calls": 0,
+      "external_calls": 0,
+      "native_cross_entry_race_tested": false
+    },
+    {
+      "kind": "n05-concurrency-action-v1",
+      "action": "winner",
+      "status": "passed",
+      "checks": 3,
+      "cases": [
+        {
+          "case_id": "race_actor_still_not_a_member",
+          "pass": true
+        },
+        {
+          "case_id": "winner_join_or_contender_exhaustion",
+          "pass": true
+        },
+        {
+          "case_id": "race_action_closes_sql_transaction",
+          "pass": true
+        }
+      ],
+      "synthetic_registry_only": true,
+      "http_calls": 0,
+      "external_calls": 0,
+      "native_cross_entry_race_tested": false
+    },
+    {
+      "kind": "n05-concurrency-action-v1",
+      "action": "verify",
+      "status": "passed",
+      "checks": 14,
+      "cases": [
+        {
+          "case_id": "result_processes_match_private_manifest",
+          "pass": true
+        },
+        {
+          "case_id": "distinct_processes_and_mysql_connections",
+          "pass": true
+        },
+        {
+          "case_id": "contender_attempt_occurs_while_winner_transaction_held",
+          "pass": true
+        },
+        {
+          "case_id": "winner_holds_after_contender_attempt_at_least_1_4_seconds",
+          "pass": true
+        },
+        {
+          "case_id": "contender_waits_for_winner_commit",
+          "pass": true
+        },
+        {
+          "case_id": "exactly_one_join_and_one_unavailable",
+          "pass": true
+        },
+        {
+          "case_id": "one_use_recorded",
+          "pass": true
+        },
+        {
+          "case_id": "one_receipt_for_invitation",
+          "pass": true
+        },
+        {
+          "case_id": "one_native_membership_no_duplicate_or_loser",
+          "pass": true
+        },
+        {
+          "case_id": "outbox_is_nonempty_and_sequences_unique",
+          "pass": true
+        },
+        {
+          "case_id": "outbox_all_dispatched_for_winner_membership",
+          "pass": true
+        },
+        {
+          "case_id": "loser_has_no_outbox_or_receipt",
+          "pass": true
+        },
+        {
+          "case_id": "same_key_replay_same_receipt",
+          "pass": true
+        },
+        {
+          "case_id": "same_key_replay_no_new_native_or_module_effects",
+          "pass": true
+        }
+      ],
+      "synthetic_registry_only": true,
+      "http_calls": 0,
+      "external_calls": 0,
+      "native_cross_entry_race_tested": false
+    }
+  ],
+  "winner_hold_after_contender_ms": 1512,
+  "contender_elapsed_ms": 1563,
+  "synthetic_registry_only": true,
+  "http_calls": 0,
+  "external_calls": 0,
+  "native_cross_entry_race_tested": false,
+  "limit": "Real separate MySQL requests overlap while the winner holds its native join transaction. The contender waits at the shared N05 rate-attempt/unit-of-work serialization gate. This does not test legacy native cross-entry same-user uniqueness."
+}

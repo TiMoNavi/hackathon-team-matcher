@@ -1,0 +1,1263 @@
+{
+  "reviewed_at": "2026-11-12T17:38:12.200823+08:00",
+  "status": "passed",
+  "total_independent_checks": 130,
+  "suite_checks": {
+    "risk_fix_regressions": 5,
+    "purpose_and_sql_ports": 32,
+    "isolated_http": 62,
+    "login_browser": 14,
+    "recommendation_browser": 17
+  },
+  "suites": {
+    "risk_fix_regressions": {
+      "database": "private sqlite memory",
+      "network_calls": 0,
+      "model_calls": 0,
+      "status": "passed",
+      "checks_detail": [
+        {
+          "name": "unlink_during_source_progress",
+          "expected": "revoked_without_source_reference",
+          "actual": {
+            "state": "revoked",
+            "source_id": null
+          },
+          "binding_rows_after": "0",
+          "passed": true
+        },
+        {
+          "name": "stale_zero_cannot_reset_after_context_switch",
+          "passed": true
+        },
+        {
+          "name": "context_switch_retains_monotonic_selection_version",
+          "passed": true
+        },
+        {
+          "name": "stale_selection_write_after_activity_context_version_reuse",
+          "expected": "reject_old_context_version",
+          "late_request_accepted": false,
+          "stored_references": [],
+          "passed": true
+        },
+        {
+          "name": "manager_expected_context_rejects_late_write_before_mutation",
+          "passed": true
+        }
+      ],
+      "checks": 5
+    },
+    "purpose_and_sql_ports": {
+      "status": "passed",
+      "checks": 32,
+      "checks_detail": [
+        {
+          "name": "actual 37-field catalog matches pinned production fingerprint",
+          "passed": true
+        },
+        {
+          "name": "cooperation exposes exactly ten explicit source purposes",
+          "passed": true
+        },
+        {
+          "name": "personality and interests grant no cooperation semantic",
+          "passed": true
+        },
+        {
+          "name": "project technology cannot be rebound to current willingness",
+          "passed": true
+        },
+        {
+          "name": "capability cannot be rebound as current need",
+          "passed": true
+        },
+        {
+          "name": "same-version changed project schema loses its reviewed grant",
+          "passed": true
+        },
+        {
+          "name": "project technology only produces capability feature",
+          "passed": true
+        },
+        {
+          "name": "raw project prose is absent from reduced projection",
+          "passed": true
+        },
+        {
+          "name": "project capability preserves exact profile evidence reference",
+          "passed": true
+        },
+        {
+          "name": "current need splits reviewed role and skill semantics",
+          "passed": true
+        },
+        {
+          "name": "free-text need is not silently interpreted",
+          "passed": true
+        },
+        {
+          "name": "empty optional event need stays unknown",
+          "passed": true
+        },
+        {
+          "name": "wrong-scope event attribute is rejected",
+          "passed": true
+        },
+        {
+          "name": "private candidate item is rejected",
+          "passed": true
+        },
+        {
+          "name": "unconfirmed candidate item is rejected",
+          "passed": true
+        },
+        {
+          "name": "non-purpose personality item is rejected",
+          "passed": true
+        },
+        {
+          "name": "timezone and offset mismatch is rejected",
+          "passed": true
+        },
+        {
+          "name": "explicit empty selection executes no attribute-value SQL",
+          "passed": true
+        },
+        {
+          "name": "selected IDs are constrained within actual SQL",
+          "passed": true
+        },
+        {
+          "name": "selected self projection contains only explicitly selected source",
+          "passed": true
+        },
+        {
+          "name": "owner projection omits editor/storage metadata",
+          "passed": true
+        },
+        {
+          "name": "explicit unavailable self item rejected: private",
+          "passed": true
+        },
+        {
+          "name": "explicit unavailable self item rejected: draft",
+          "passed": true
+        },
+        {
+          "name": "explicit unavailable self item rejected: absent",
+          "passed": true
+        },
+        {
+          "name": "post-write authorization failure aborts successful receipt",
+          "passed": true
+        },
+        {
+          "name": "failed write retains version tombstone and no authority",
+          "passed": true
+        },
+        {
+          "name": "tombstone cannot reset to stale expected zero",
+          "passed": true
+        },
+        {
+          "name": "explicit recovery continues monotonically after tombstone",
+          "passed": true
+        },
+        {
+          "name": "concurrent newer version wins conditional update",
+          "passed": true
+        },
+        {
+          "name": "losing stale write does not overwrite newer tombstone",
+          "passed": true
+        },
+        {
+          "name": "different actor cannot read prior owner selection",
+          "passed": true
+        },
+        {
+          "name": "selection read refuses ambient transaction snapshot",
+          "passed": true
+        }
+      ],
+      "database": "private in-memory SQLite",
+      "network_calls": 0,
+      "model_calls": 0
+    },
+    "isolated_http": {
+      "status": "passed",
+      "checks": 62,
+      "passed": 62,
+      "failed": 0,
+      "checks_detail": [
+        {
+          "name": "auth status route resolves through source config and guest receives 401",
+          "passed": true
+        },
+        {
+          "name": "auth status response is private no-store",
+          "passed": true
+        },
+        {
+          "name": "guest 401 /api/v1/events/7/recommendation-analysis/self-selection",
+          "passed": true
+        },
+        {
+          "name": "guest 401 /api/v1/events/7/recommendation-analysis/people/2",
+          "passed": true
+        },
+        {
+          "name": "status rejects POST with actual HTTP 405",
+          "passed": true
+        },
+        {
+          "name": "status rejects PUT with actual HTTP 405",
+          "passed": true
+        },
+        {
+          "name": "status rejects DELETE with actual HTTP 405",
+          "passed": true
+        },
+        {
+          "name": "status rejects OPTIONS with actual HTTP 405",
+          "passed": true
+        },
+        {
+          "name": "status rejects HEAD with actual HTTP 405",
+          "passed": true
+        },
+        {
+          "name": "owner status GET reads saved success without any SQL change",
+          "passed": true
+        },
+        {
+          "name": "owner receipt has only state and source_id",
+          "passed": true
+        },
+        {
+          "name": "caller-supplied import owner rejected",
+          "passed": true
+        },
+        {
+          "name": "different actor cannot read first owner receipt",
+          "passed": true
+        },
+        {
+          "name": "selection GET has zero database writes",
+          "passed": true
+        },
+        {
+          "name": "picker excludes private and draft values and retains legitimate actual IDs",
+          "passed": true
+        },
+        {
+          "name": "selection query owner rejected",
+          "passed": true
+        },
+        {
+          "name": "different requested activity cannot read picker",
+          "passed": true
+        },
+        {
+          "name": "actual Yii CSRF rejects missing token",
+          "passed": true
+        },
+        {
+          "name": "actual Yii CSRF rejects wrong token",
+          "passed": true
+        },
+        {
+          "name": "analysis GET rejected",
+          "passed": true
+        },
+        {
+          "name": "selection DELETE rejected",
+          "passed": true
+        },
+        {
+          "name": "selection requires JSON content type",
+          "passed": true
+        },
+        {
+          "name": "body over 16 KiB rejected",
+          "passed": true
+        },
+        {
+          "name": "client owner field is rejected by real input parser",
+          "passed": true
+        },
+        {
+          "name": "duplicate source ids is rejected by real input parser",
+          "passed": true
+        },
+        {
+          "name": "client-supplied values is rejected by real input parser",
+          "passed": true
+        },
+        {
+          "name": "missing context is rejected by real input parser",
+          "passed": true
+        },
+        {
+          "name": "private attribute cannot become self analysis consent",
+          "passed": true
+        },
+        {
+          "name": "unconfirmed attribute cannot become self analysis consent",
+          "passed": true
+        },
+        {
+          "name": "foreign owner attribute cannot become self analysis consent",
+          "passed": true
+        },
+        {
+          "name": "missing attribute cannot become self analysis consent",
+          "passed": true
+        },
+        {
+          "name": "authorized explicit selection persists through production factory",
+          "passed": true
+        },
+        {
+          "name": "SQL selection persists references and versions but no profile values",
+          "passed": true
+        },
+        {
+          "name": "stale zero version cannot replace a saved selection",
+          "passed": true
+        },
+        {
+          "name": "rule analysis succeeds via real controller and production composition without SQL writes",
+          "passed": true
+        },
+        {
+          "name": "public analysis is five dimensions with rules attribution and no hard-condition claim",
+          "passed": true
+        },
+        {
+          "name": "public serializer omits internal context and authority tokens",
+          "passed": true
+        },
+        {
+          "name": "self visibility revocation invalidates analysis before public output",
+          "passed": true
+        },
+        {
+          "name": "picker clears stale selection after self permission change",
+          "passed": true
+        },
+        {
+          "name": "candidate profile revision change rejects stale card precondition",
+          "passed": true
+        },
+        {
+          "name": "candidate policy drift rejects stale expected snapshot",
+          "passed": true
+        },
+        {
+          "name": "missing selection migration fails closed without runtime DDL",
+          "passed": true
+        },
+        {
+          "name": "self-as-candidate rejected",
+          "passed": true
+        },
+        {
+          "name": "cross-activity candidate rejected instead of filling a card",
+          "passed": true
+        },
+        {
+          "name": "stale candidate version rejected",
+          "passed": true
+        },
+        {
+          "name": "ordinary discovery removal denies analysis despite visible profile values",
+          "passed": true
+        },
+        {
+          "name": "native block denies candidate analysis",
+          "passed": true
+        },
+        {
+          "name": "account switch reads no previous actor consent",
+          "passed": true
+        },
+        {
+          "name": "context changed GET invalidates authority without deleting or writing",
+          "passed": true
+        },
+        {
+          "name": "selection version is retained across activity context changes",
+          "passed": true
+        },
+        {
+          "name": "HTTP late write from prior activity revision rejected without intermediate consent write",
+          "passed": true
+        },
+        {
+          "name": "HTTP late analysis from prior activity revision rejected",
+          "passed": true
+        },
+        {
+          "name": "explicit empty replacement uses monotonically next version",
+          "passed": true
+        },
+        {
+          "name": "old consent version cannot resurrect references after explicit clear",
+          "passed": true
+        },
+        {
+          "name": "empty self selection remains valid unknown-only explanation without writes",
+          "passed": true
+        },
+        {
+          "name": "inactive native session cannot read saved consent",
+          "passed": true
+        },
+        {
+          "name": "disabled owner import status is 403",
+          "passed": true
+        },
+        {
+          "name": "disabled account selection is 403",
+          "passed": true
+        },
+        {
+          "name": "administrator group label does not bypass formal membership",
+          "passed": true
+        },
+        {
+          "name": "source deletion overrides old successful import receipt",
+          "passed": true
+        },
+        {
+          "name": "unlinked GitHub identity hides previous source reference",
+          "passed": true
+        },
+        {
+          "name": "unexpected storage error is fixed 500 without SQL or values",
+          "passed": true
+        }
+      ],
+      "http_requests": 58,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 0,
+          "http_status": 401,
+          "error_code": "AUTHENTICATION_REQUIRED"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 0,
+          "http_status": 401,
+          "error_code": "AUTHENTICATION_REQUIRED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 0,
+          "http_status": 401,
+          "error_code": "AUTHENTICATION_REQUIRED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 0,
+          "http_status": 405,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 0,
+          "http_status": 405,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 0,
+          "http_status": 405,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "OPTIONS",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 0,
+          "http_status": 405,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 0,
+          "http_status": 405,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/__review/bootstrap",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status?owner_id=2",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 2,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection?owner_id=2",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_ANALYSIS_REQUEST"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/8/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 503,
+          "error_code": "ANALYSIS_UNAVAILABLE"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_REQUEST"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 405,
+          "error_code": "METHOD_NOT_ALLOWED"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 405,
+          "error_code": "METHOD_NOT_ALLOWED"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 415,
+          "error_code": "UNSUPPORTED_MEDIA_TYPE"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 413,
+          "error_code": "REQUEST_TOO_LARGE"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_ANALYSIS_REQUEST"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_ANALYSIS_REQUEST"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_ANALYSIS_REQUEST"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_ANALYSIS_REQUEST"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_PROJECTION_CHANGED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_PROJECTION_CHANGED"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 503,
+          "error_code": "ANALYSIS_UNAVAILABLE"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/1",
+          "synthetic_actor": 1,
+          "http_status": 400,
+          "error_code": "INVALID_ANALYSIS_REQUEST"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/3",
+          "synthetic_actor": 1,
+          "http_status": 404,
+          "error_code": "ANALYSIS_CANDIDATE_UNAVAILABLE"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_PROJECTION_CHANGED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 404,
+          "error_code": "ANALYSIS_CANDIDATE_UNAVAILABLE"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 404,
+          "error_code": "ANALYSIS_CANDIDATE_UNAVAILABLE"
+        },
+        {
+          "method": "GET",
+          "path": "/__review/bootstrap",
+          "synthetic_actor": 2,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 2,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_CONTEXT_CHANGED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_CONTEXT_CHANGED"
+        },
+        {
+          "method": "GET",
+          "path": "/__review/bootstrap",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 409,
+          "error_code": "ANALYSIS_SELECTION_CHANGED"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/events/7/recommendation-analysis/people/2",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 503,
+          "error_code": "ANALYSIS_UNAVAILABLE"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 1,
+          "http_status": 403,
+          "error_code": "ACCOUNT_UNAVAILABLE"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 403,
+          "error_code": "ACCESS_DENIED"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/events/7/recommendation-analysis/self-selection",
+          "synthetic_actor": 1,
+          "http_status": 503,
+          "error_code": "ANALYSIS_UNAVAILABLE"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 1,
+          "http_status": 200,
+          "error_code": null
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/github/import-status",
+          "synthetic_actor": 1,
+          "http_status": 500,
+          "error_code": "INTERNAL_ERROR"
+        }
+      ],
+      "scope": "actual PHP HTTP/Yii routing/controllers/CSRF + temporary SQLite + production analysis composition/P1 SQL/P8/current-event/session stores; synthetic actor and ordinary card adapter",
+      "external_network_requests": 0,
+      "model_calls": 0,
+      "real_oauth": false,
+      "main_preview_connections": 0,
+      "server_stopped": true
+    },
+    "login_browser": {
+      "status": "passed",
+      "checks": 14,
+      "passed": 14,
+      "failed": 0,
+      "checks_detail": [
+        {
+          "name": "live component reads saved receipt then source using exactly two GETs",
+          "passed": true
+        },
+        {
+          "name": "manual refresh clears previous success when receipt is revoked",
+          "passed": true
+        },
+        {
+          "name": "late receipt from old account does not render after session refresh switches account",
+          "passed": true
+        },
+        {
+          "name": "late old receipt does not start a source lookup for the new account",
+          "passed": true
+        },
+        {
+          "name": "late source progress from old account cannot restore prior success",
+          "passed": true
+        },
+        {
+          "name": "source 404 overrides old receipt success",
+          "passed": true
+        },
+        {
+          "name": "source permission failure shows session recovery and no success",
+          "passed": true
+        },
+        {
+          "name": "server diagnostics are not rendered",
+          "passed": true
+        },
+        {
+          "name": "unavailable receipt never reads historical source",
+          "passed": true
+        },
+        {
+          "name": "unknown receipt fails closed without echoing server text",
+          "passed": true
+        },
+        {
+          "name": "disabled account refresh unmounts import notice",
+          "passed": true
+        },
+        {
+          "name": "all intercepted operations remained GET-only",
+          "passed": true
+        },
+        {
+          "name": "no browser request escaped local interception",
+          "passed": true
+        },
+        {
+          "name": "no browser page errors",
+          "passed": true
+        }
+      ],
+      "scope": "actual current Vite build, Chromium, all requests intercepted; no production login or server connection",
+      "intercepted_browser_requests": 77,
+      "external_network_requests": 0,
+      "model_calls": 0,
+      "real_oauth": false,
+      "page_errors": []
+    },
+    "recommendation_browser": {
+      "status": "passed",
+      "checks": 17,
+      "passed": 17,
+      "failed": 0,
+      "checks_detail": [
+        {
+          "name": "new list succeeds while old analysis pending 401 refresh",
+          "passed": true
+        },
+        {
+          "name": "late analysis 401 invalidates active controller after refresh",
+          "passed": true
+        },
+        {
+          "name": "analysis sends explicit current activity precondition 401 refresh",
+          "passed": true
+        },
+        {
+          "name": "new list succeeds while old analysis pending 401 filter",
+          "passed": true
+        },
+        {
+          "name": "late analysis 401 invalidates active controller after filter",
+          "passed": true
+        },
+        {
+          "name": "analysis sends explicit current activity precondition 401 filter",
+          "passed": true
+        },
+        {
+          "name": "new list succeeds while old analysis pending 403 refresh",
+          "passed": true
+        },
+        {
+          "name": "late analysis 403 invalidates active controller after refresh",
+          "passed": true
+        },
+        {
+          "name": "analysis sends explicit current activity precondition 403 refresh",
+          "passed": true
+        },
+        {
+          "name": "new list succeeds while old analysis pending 403 filter",
+          "passed": true
+        },
+        {
+          "name": "late analysis 403 invalidates active controller after filter",
+          "passed": true
+        },
+        {
+          "name": "analysis sends explicit current activity precondition 403 filter",
+          "passed": true
+        },
+        {
+          "name": "late candidate A 404 clears stale same-list projection after focus moves to B",
+          "passed": true
+        },
+        {
+          "name": "candidate 404 does not trigger account-authority refresh",
+          "passed": true
+        },
+        {
+          "name": "disposed old controller denial cannot invalidate newly mounted activity",
+          "passed": true
+        },
+        {
+          "name": "race tests never access external network",
+          "passed": true
+        },
+        {
+          "name": "race tests have no browser page errors",
+          "passed": true
+        }
+      ],
+      "scope": "real built React page/controller/API client with fully intercepted synthetic responses; no server or OAuth",
+      "intercepted_browser_requests": 161,
+      "external_network_requests": 0,
+      "model_calls": 0,
+      "errors": []
+    }
+  },
+  "http_requests": 58,
+  "source_hashes_before": {
+    "backend/protected/modules/matcher-auth/Module.php": "7841a34be55791d541170704d6783a29e0e26833672b7fdb1c64cc0e0ef42f45",
+    "backend/protected/modules/matcher-auth/adapters/native/GithubImportStatusReader.php": "cd089fb21a867141ea29a9107c3f75496a7049368de98bbe9752238e23d6c965",
+    "backend/protected/modules/matcher-auth/config.php": "e48cb17bc559ce7b7e3a8b1f9f5c9d6540bc039fe5486f73487f192055fed240",
+    "backend/protected/modules/matcher-auth/controllers/GithubImportStatusController.php": "c0db50e49452ca674a32dcb2b7787e1d0f15b67f73fb3825318b7c918a9ae77e",
+    "backend/protected/modules/matcher-auth/domain/GithubImportStatus.php": "1555a2c77f80ea83b7774034ea2afde9a6e8f294908a11dc861cd2ea330d8124",
+    "backend/protected/modules/matcher-auth/module.json": "097d549346ec89b75924987012553b4601e6f89fd56f58abfb3c74c7401a9b7d",
+    "backend/protected/modules/matcher-profile-privacy/Module.php": "5233d7bef0596cb547016615fe0cadc99454f816a621eec71a3e84925f500082",
+    "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeDiscoveryRelations.php": "26424a3074ae3322fd0979687a9fd726ca50d7634fd51f8e03b2f5b4d245a7f4",
+    "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999",
+    "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php": "19536e10bdfd27b37a076e144a2f7a14745ad8392aed5ab4023071fa935a9fa7",
+    "backend/protected/modules/matcher-profile-privacy/module.json": "96374f6a90f9e5e05337cceb040c25c4130534b439d3ec1862b5d5bb5abb2933",
+    "backend/protected/modules/matcher-recommendation/Module.php": "3cc35aab982dcd4d6e009e7ca5f9aab4909e61bfa334008dd99cd7ab64701f23",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/CooperationHttpInput.php": "636b8d9335705807633bc96d937ca09033d9172dbc33a79fc00895defb9ea54b",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/CooperationHttpView.php": "b4eeeb3a85f74f95c079d03d42c4ad05194024a0eead67ff304c1e8cc63afcbe",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/SelfAnalysisSelectionSchema.php": "9575eb0655b7ac325d09116924ba7fe1affff0e742091446bea45d7666ad7266",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/SqlSelfSelectionStore.php": "4ef8d239bd191a1bc3d05fb39aa1516e39d9428f596a23c24113016fb09df1d3",
+    "backend/protected/modules/matcher-recommendation/adapters/composition/NativeCooperationFactory.php": "8ff6c15553b590f03390a01672f243a7ffa5de7f9fa5881519b0804b2bfca476",
+    "backend/protected/modules/matcher-recommendation/adapters/composition/ReviewedCooperationConfiguration.php": "dbd22d09bbdfd406e33d82ca304b52cf07677deae95ad5b559735d343416a982",
+    "backend/protected/modules/matcher-recommendation/adapters/native/CurrentEventSelectionSchema.php": "0cf36e019f2a4717319aa3e55d9b39656926a7a3178b215eb0098cc0ee2adf76",
+    "backend/protected/modules/matcher-recommendation/adapters/native/NativeCurrentEventAccess.php": "e423f8cfaf8a0465e9fe936ea17da066446833e3168b26f5aa4bffe63768cd7f",
+    "backend/protected/modules/matcher-recommendation/adapters/native/NativeEligibilityQuery.php": "25a0d0b5f2bbc933394362194f6acc5953e2d2dd824d71753a881b2b93e8c7a2",
+    "backend/protected/modules/matcher-recommendation/adapters/native/SqlCurrentEventSelectionStore.php": "2cd0a61c0311a0a960d9ee5f506879d80ddf9aa7b66f69bbee4621ff3b64ce23",
+    "backend/protected/modules/matcher-recommendation/adapters/native/YiiActorSessionSource.php": "cf44d86e1cd3afb68bddc3e04bfd3d655c23e39f68629e5fb186bd452fbbb4e2",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CooperationProjectionMapper.php": "d3f0c92777c77592411ac009a5b2a9a14c40aa5f319064181767a1a6642c8c03",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CooperationProjectionReader.php": "e02a7410d7662afe47573ca4829a1d86741597096849709b6ccf1d46c22173f8",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CooperationPurposePolicy.php": "859a4657febf64abdc040d60d0f7a671f4ce3df9c0ecd9a2c8d60c5d539af2f0",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1FieldCatalogAdapter.php": "091c831a8912a3aec7e90282305d016898e085af50bb726ffd09513952030e64",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1SelectedSelfProjectionReader.php": "36151014aa598d0a0874711f76d72608a95010f5decf3e6be245c6e2eb918f27",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1SelfAnalysisProfileReader.php": "64732292594a8194b1b5e1eb4b1c0765cb5e428f2a81857fd69e227c54e2c152",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1SourcePurposePolicy.php": "99139594cbd05da4c382193fbae96e6887aa3b2c49b2fb0a577a13f36140822c",
+    "backend/protected/modules/matcher-recommendation/application/analysis/AnalyzeCooperation.php": "96289e50a3e91098f125a2adfcaa8f3de03501b834cca621532c62eeaa211e55",
+    "backend/protected/modules/matcher-recommendation/application/analysis/ManageSelfAnalysisSelection.php": "95c7f698afdab65c3f31f10e2895b37d124319db4f402033063a3cf2ad192e46",
+    "backend/protected/modules/matcher-recommendation/config.php": "a1f2200cbc256a14307c13b50e891db7cda88c6d50f60d59d95cc8667eedc0ec",
+    "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php": "d1747bf334798551c2392ab8fa9a87c6ad3b2bb99b696cb0715c0647e764dcf9",
+    "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php": "fdb54ede239dd1e2238a9510b4a9dd36e2c150fa1542831e8f77314febb930c2",
+    "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php": "ba99b81d94a2cb5ef2bdc27b934470b51e445a14e7ee6b700df712990ccc01a3",
+    "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php": "2fad64568663587c896b811f5a089b56f003e037786286ec398a6d86214c1b55",
+    "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php": "c3599d0b00cbf5543d99d1c646de71d904d1725ae6938b26f9d158afcfc4cbbc",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisException.php": "47ab998c4427d51d9ec0e50d708d5d30b31ce8faf7462d3f537eeec27c26b305",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisRequest.php": "eb06981f8f4f44839196f009e0bc270cdac19e3e4b7f1f02bd630407a1c03296",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/SelectedSelfAttributes.php": "4d93ac8216264b2099617c2f6bf73e1a8945a6ed2ad1388189d07f8607590bd8",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelectedSelfProjectionReader.php": "5527d57dc9c1d153d299905c160f5fff502fb2faf3fa361282e6b7a8c69f7597",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelfAnalysisProfileReader.php": "64478254bb71aa5421053bca10b14c236a9fc0fafc6ec4d11331f2ca122a4a0a",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelfSelectionStore.php": "a89f198b7f8319ba12263b85268a58549a21e2106d6559766f8cba3a0e844105",
+    "backend/protected/modules/matcher-recommendation/controllers/AnalysisController.php": "23f07a112b0bcaebdd1eba3720525c19cc2223496379bd7fb3930d843741b170",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php": "71a06a18bb43b41baf9bb58ddd624b816d40279cbf5cfe47ee54f1b37e9ce788",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php": "e3c4f5895d69a4d45806a37b8d4768582bee71c4943dcd6b94328b752bd0d11e",
+    "backend/protected/modules/matcher-recommendation/domain/config/Fingerprint.php": "ef0f601e6e26d3b2eed55ed052a99edf812a9c9eab172ff8be1edfd6b66c2458",
+    "backend/protected/modules/matcher-recommendation/domain/config/PolicyValidator.php": "fb2716da827a018dca9501e9c20d3e37f1a42a514cbd717a3e225f433ea72f86",
+    "backend/protected/modules/matcher-recommendation/domain/config/ValueSchema.php": "f8b6001baaa1ddfee433185af9bfd4d1851c734b4ef013441a8e34014680d659",
+    "backend/protected/modules/matcher-recommendation/migrations/m261112_220000_self_analysis_selection.php": "d9cfe170bfaa06845c0d284bdd6b21eeeded963cabb05eb39eb3924f35ddb647",
+    "backend/protected/modules/matcher-recommendation/module.json": "fd6d608084db00a7f42a6917ab02af916fc776c89715fbb86a627cb56f8ef70a",
+    "backend/protected/modules/matcher-user-profile/Module.php": "7ab00053e8a1ab134eef3b5cbabb982a8ba28210e695bd42b76e9148c916a90a",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/NativeProfileAccessPolicy.php": "5239d9520b4cfaed9d3f23e6244d14b6c79950e7783d35a296237b42f1aa4d5c",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlDiscoveryProfileBatchSource.php": "387f00172adca85aa0a8b5c62a45c711fa8c62b920f9887b655ec6c15ed20e5f",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfileSourceRepository.php": "6ebceaaf60f79b97dc7c53498eb2969448e3954ab9afc25ce92fd7dc3b82495c",
+    "backend/protected/modules/matcher-user-profile/application/DiscoveryProfileBatchReader.php": "344ecd20626e7cc44455e5ee5fdd7eb20f786642566d25ddab19fa7c7d7d427d",
+    "backend/protected/modules/matcher-user-profile/application/ProfileSourceService.php": "9b1b3af5423cfc85ded89f66a84a47a2d0a41f4b01a093371f9772ccc62ef295",
+    "backend/protected/modules/matcher-user-profile/application/SelectedSelfProfileReader.php": "69e7d441bbfda095346c0c4d7b0d78dc51c9ef2f299e95bf90cf2e69b3f1ff57",
+    "backend/protected/modules/matcher-user-profile/domain/DiscoveryProfileBatchRequest.php": "17ed243356e8871c87fd56cfa43b879ef094ab989c3d831ff3dc74975afbaf84",
+    "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php": "1cf5cca85451d391d719e786b2b34e9c040e9984c7ebc626b31c66b0163d1b36",
+    "backend/protected/modules/matcher-user-profile/domain/ValueValidator.php": "253f88d757b4681217a2db9384580241dfd11edd86c7dec5d0a8e2699dcf055f",
+    "backend/protected/modules/matcher-user-profile/module.json": "a0d4ac94ecce9352695d417cc1bd347c5f735de9e5bfa3a6cfc457375e4e8b06",
+    "frontend/integration/src/contracts.ts": "5832b263a1b691f6019ee1db50b1bfd59b66f631f9c616c3c8b342abfc65247e",
+    "frontend/integration/src/github-import.ts": "a66464abd1c7089fe5c6d4c10d8b1dddd7c2a90ebc6f846c11b71178e5c9797f",
+    "frontend/integration/src/http.ts": "59c815c10dbd06953aa312e0008ebe7ab52b26ac2853740e3eca43ca58d85631",
+    "frontend/integration/src/session.ts": "34cb6fd98f6569c2af7df5f11abdada89eadcc41adc3cecabe40782cfff8b47e",
+    "frontend/推荐/components/recommendation-analysis.tsx": "2379b53bfa47485547f7f65dfe2c3cfed1a9482346b58aff59d98428dcddf747",
+    "frontend/推荐/components/recommendation-connected.tsx": "4afc9c5db7d4abf0d17176798cc9dfa636978eaad44f08715260e9e8a97242a2",
+    "frontend/推荐/integration/recommendation-entry.tsx": "8af15a20782ffc83082034542b6ab8e7a43d714fadacf4ad753f02c8767bbfeb",
+    "frontend/推荐/lib/recommendation-runtime/analysis.ts": "5a06ef95ec52567f951205ce8533d04e8b29377431966dd63a95800a6651b271",
+    "frontend/推荐/lib/recommendation-runtime/browser-transport.ts": "e62bdd9b0c29181478b4b1e6953e068686075bb8d0ddf526308ae967022c475e",
+    "frontend/推荐/lib/recommendation-runtime/client.ts": "cfce8d78cdd2f69e16371e51ad23f667e576a24c8181c60e01512d8b9174ec7c",
+    "frontend/推荐/lib/recommendation-runtime/contracts.ts": "798a1c554f163c7be56d422183a21ce8ed630e6deb8000ff5472460ab76a91b7",
+    "frontend/推荐/lib/recommendation-runtime/controller.ts": "057e1a6764cc1d398b771d1b0fefb0a63b3b365d1e2d23c6e7a66a672726e0f7",
+    "frontend/推荐/lib/recommendation-runtime/decode.ts": "5a1f3db314b7a2362c01f482e8adcb97b583cfa0d1ef4ae0c3ffac3abf20ca05",
+    "frontend/推荐/lib/recommendation-runtime/person-presentation.ts": "21668ccc3d265bf2a15c670983340d193ffbe5dbe4b6c8c747531f3280a6ef37",
+    "frontend/推荐/lib/recommendation-runtime/query.ts": "eedfcb540ba674d4c18c567990237838bde66b9535481ef77e4978898f7627fc",
+    "frontend/推荐/lib/recommendation-runtime/state.ts": "515065fd07def880610b383cef7167161e16a16516babfd3d18309de33cfdffa",
+    "frontend/首页/integration/auth-panel.tsx": "a34ab95920f66ef55334ca4be6c98ecc5ac10e8978c272e7390c440564676514",
+    "frontend/首页/integration/github-import-notice.tsx": "0d87c6a0b9e9e8942d7cfd1249fe17e6ba3774540853da059446c58d5270a0ac",
+    "frontend/首页/integration/webapp-entry.tsx": "ca595af44763f01614758f1b8a844956e029aba50cb149978dd65f19d41f5186"
+  },
+  "source_hashes_after": {
+    "backend/protected/modules/matcher-auth/Module.php": "7841a34be55791d541170704d6783a29e0e26833672b7fdb1c64cc0e0ef42f45",
+    "backend/protected/modules/matcher-auth/adapters/native/GithubImportStatusReader.php": "cd089fb21a867141ea29a9107c3f75496a7049368de98bbe9752238e23d6c965",
+    "backend/protected/modules/matcher-auth/config.php": "e48cb17bc559ce7b7e3a8b1f9f5c9d6540bc039fe5486f73487f192055fed240",
+    "backend/protected/modules/matcher-auth/controllers/GithubImportStatusController.php": "c0db50e49452ca674a32dcb2b7787e1d0f15b67f73fb3825318b7c918a9ae77e",
+    "backend/protected/modules/matcher-auth/domain/GithubImportStatus.php": "1555a2c77f80ea83b7774034ea2afde9a6e8f294908a11dc861cd2ea330d8124",
+    "backend/protected/modules/matcher-auth/module.json": "097d549346ec89b75924987012553b4601e6f89fd56f58abfb3c74c7401a9b7d",
+    "backend/protected/modules/matcher-profile-privacy/Module.php": "5233d7bef0596cb547016615fe0cadc99454f816a621eec71a3e84925f500082",
+    "backend/protected/modules/matcher-profile-privacy/adapters/native/NativeDiscoveryRelations.php": "26424a3074ae3322fd0979687a9fd726ca50d7634fd51f8e03b2f5b4d245a7f4",
+    "backend/protected/modules/matcher-profile-privacy/application/DiscoveryBatchService.php": "a9021f4cc6a40f1a770e0baf13ba9d6101930007c18415b64dcbba15a089c999",
+    "backend/protected/modules/matcher-profile-privacy/domain/DiscoveryFieldPolicy.php": "19536e10bdfd27b37a076e144a2f7a14745ad8392aed5ab4023071fa935a9fa7",
+    "backend/protected/modules/matcher-profile-privacy/module.json": "96374f6a90f9e5e05337cceb040c25c4130534b439d3ec1862b5d5bb5abb2933",
+    "backend/protected/modules/matcher-recommendation/Module.php": "3cc35aab982dcd4d6e009e7ca5f9aab4909e61bfa334008dd99cd7ab64701f23",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/CooperationHttpInput.php": "636b8d9335705807633bc96d937ca09033d9172dbc33a79fc00895defb9ea54b",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/CooperationHttpView.php": "b4eeeb3a85f74f95c079d03d42c4ad05194024a0eead67ff304c1e8cc63afcbe",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/SelfAnalysisSelectionSchema.php": "9575eb0655b7ac325d09116924ba7fe1affff0e742091446bea45d7666ad7266",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/SqlSelfSelectionStore.php": "4ef8d239bd191a1bc3d05fb39aa1516e39d9428f596a23c24113016fb09df1d3",
+    "backend/protected/modules/matcher-recommendation/adapters/composition/NativeCooperationFactory.php": "8ff6c15553b590f03390a01672f243a7ffa5de7f9fa5881519b0804b2bfca476",
+    "backend/protected/modules/matcher-recommendation/adapters/composition/ReviewedCooperationConfiguration.php": "dbd22d09bbdfd406e33d82ca304b52cf07677deae95ad5b559735d343416a982",
+    "backend/protected/modules/matcher-recommendation/adapters/native/CurrentEventSelectionSchema.php": "0cf36e019f2a4717319aa3e55d9b39656926a7a3178b215eb0098cc0ee2adf76",
+    "backend/protected/modules/matcher-recommendation/adapters/native/NativeCurrentEventAccess.php": "e423f8cfaf8a0465e9fe936ea17da066446833e3168b26f5aa4bffe63768cd7f",
+    "backend/protected/modules/matcher-recommendation/adapters/native/NativeEligibilityQuery.php": "25a0d0b5f2bbc933394362194f6acc5953e2d2dd824d71753a881b2b93e8c7a2",
+    "backend/protected/modules/matcher-recommendation/adapters/native/SqlCurrentEventSelectionStore.php": "2cd0a61c0311a0a960d9ee5f506879d80ddf9aa7b66f69bbee4621ff3b64ce23",
+    "backend/protected/modules/matcher-recommendation/adapters/native/YiiActorSessionSource.php": "cf44d86e1cd3afb68bddc3e04bfd3d655c23e39f68629e5fb186bd452fbbb4e2",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CooperationProjectionMapper.php": "d3f0c92777c77592411ac009a5b2a9a14c40aa5f319064181767a1a6642c8c03",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CooperationProjectionReader.php": "e02a7410d7662afe47573ca4829a1d86741597096849709b6ccf1d46c22173f8",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1CooperationPurposePolicy.php": "859a4657febf64abdc040d60d0f7a671f4ce3df9c0ecd9a2c8d60c5d539af2f0",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1FieldCatalogAdapter.php": "091c831a8912a3aec7e90282305d016898e085af50bb726ffd09513952030e64",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1SelectedSelfProjectionReader.php": "36151014aa598d0a0874711f76d72608a95010f5decf3e6be245c6e2eb918f27",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1SelfAnalysisProfileReader.php": "64732292594a8194b1b5e1eb4b1c0765cb5e428f2a81857fd69e227c54e2c152",
+    "backend/protected/modules/matcher-recommendation/adapters/profile/P1SourcePurposePolicy.php": "99139594cbd05da4c382193fbae96e6887aa3b2c49b2fb0a577a13f36140822c",
+    "backend/protected/modules/matcher-recommendation/application/analysis/AnalyzeCooperation.php": "96289e50a3e91098f125a2adfcaa8f3de03501b834cca621532c62eeaa211e55",
+    "backend/protected/modules/matcher-recommendation/application/analysis/ManageSelfAnalysisSelection.php": "95c7f698afdab65c3f31f10e2895b37d124319db4f402033063a3cf2ad192e46",
+    "backend/protected/modules/matcher-recommendation/config.php": "a1f2200cbc256a14307c13b50e891db7cda88c6d50f60d59d95cc8667eedc0ec",
+    "backend/protected/modules/matcher-recommendation/contracts/CandidateProjection.php": "d1747bf334798551c2392ab8fa9a87c6ad3b2bb99b696cb0715c0647e764dcf9",
+    "backend/protected/modules/matcher-recommendation/contracts/ContractShape.php": "fdb54ede239dd1e2238a9510b4a9dd36e2c150fa1542831e8f77314febb930c2",
+    "backend/protected/modules/matcher-recommendation/contracts/CurrentEventContext.php": "ba99b81d94a2cb5ef2bdc27b934470b51e445a14e7ee6b700df712990ccc01a3",
+    "backend/protected/modules/matcher-recommendation/contracts/EvidenceRef.php": "2fad64568663587c896b811f5a089b56f003e037786286ec398a6d86214c1b55",
+    "backend/protected/modules/matcher-recommendation/contracts/ProjectionVersions.php": "c3599d0b00cbf5543d99d1c646de71d904d1725ae6938b26f9d158afcfc4cbbc",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisException.php": "47ab998c4427d51d9ec0e50d708d5d30b31ce8faf7462d3f537eeec27c26b305",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/CooperationAnalysisRequest.php": "eb06981f8f4f44839196f009e0bc270cdac19e3e4b7f1f02bd630407a1c03296",
+    "backend/protected/modules/matcher-recommendation/contracts/analysis/SelectedSelfAttributes.php": "4d93ac8216264b2099617c2f6bf73e1a8945a6ed2ad1388189d07f8607590bd8",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelectedSelfProjectionReader.php": "5527d57dc9c1d153d299905c160f5fff502fb2faf3fa361282e6b7a8c69f7597",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelfAnalysisProfileReader.php": "64478254bb71aa5421053bca10b14c236a9fc0fafc6ec4d11331f2ca122a4a0a",
+    "backend/protected/modules/matcher-recommendation/contracts/ports/SelfSelectionStore.php": "a89f198b7f8319ba12263b85268a58549a21e2106d6559766f8cba3a0e844105",
+    "backend/protected/modules/matcher-recommendation/controllers/AnalysisController.php": "23f07a112b0bcaebdd1eba3720525c19cc2223496379bd7fb3930d843741b170",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php": "71a06a18bb43b41baf9bb58ddd624b816d40279cbf5cfe47ee54f1b37e9ce788",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php": "e3c4f5895d69a4d45806a37b8d4768582bee71c4943dcd6b94328b752bd0d11e",
+    "backend/protected/modules/matcher-recommendation/domain/config/Fingerprint.php": "ef0f601e6e26d3b2eed55ed052a99edf812a9c9eab172ff8be1edfd6b66c2458",
+    "backend/protected/modules/matcher-recommendation/domain/config/PolicyValidator.php": "fb2716da827a018dca9501e9c20d3e37f1a42a514cbd717a3e225f433ea72f86",
+    "backend/protected/modules/matcher-recommendation/domain/config/ValueSchema.php": "f8b6001baaa1ddfee433185af9bfd4d1851c734b4ef013441a8e34014680d659",
+    "backend/protected/modules/matcher-recommendation/migrations/m261112_220000_self_analysis_selection.php": "d9cfe170bfaa06845c0d284bdd6b21eeeded963cabb05eb39eb3924f35ddb647",
+    "backend/protected/modules/matcher-recommendation/module.json": "fd6d608084db00a7f42a6917ab02af916fc776c89715fbb86a627cb56f8ef70a",
+    "backend/protected/modules/matcher-user-profile/Module.php": "7ab00053e8a1ab134eef3b5cbabb982a8ba28210e695bd42b76e9148c916a90a",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/NativeProfileAccessPolicy.php": "5239d9520b4cfaed9d3f23e6244d14b6c79950e7783d35a296237b42f1aa4d5c",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlDiscoveryProfileBatchSource.php": "387f00172adca85aa0a8b5c62a45c711fa8c62b920f9887b655ec6c15ed20e5f",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlProfileSourceRepository.php": "6ebceaaf60f79b97dc7c53498eb2969448e3954ab9afc25ce92fd7dc3b82495c",
+    "backend/protected/modules/matcher-user-profile/application/DiscoveryProfileBatchReader.php": "344ecd20626e7cc44455e5ee5fdd7eb20f786642566d25ddab19fa7c7d7d427d",
+    "backend/protected/modules/matcher-user-profile/application/ProfileSourceService.php": "9b1b3af5423cfc85ded89f66a84a47a2d0a41f4b01a093371f9772ccc62ef295",
+    "backend/protected/modules/matcher-user-profile/application/SelectedSelfProfileReader.php": "69e7d441bbfda095346c0c4d7b0d78dc51c9ef2f299e95bf90cf2e69b3f1ff57",
+    "backend/protected/modules/matcher-user-profile/domain/DiscoveryProfileBatchRequest.php": "17ed243356e8871c87fd56cfa43b879ef094ab989c3d831ff3dc74975afbaf84",
+    "backend/protected/modules/matcher-user-profile/domain/FieldCatalog.php": "1cf5cca85451d391d719e786b2b34e9c040e9984c7ebc626b31c66b0163d1b36",
+    "backend/protected/modules/matcher-user-profile/domain/ValueValidator.php": "253f88d757b4681217a2db9384580241dfd11edd86c7dec5d0a8e2699dcf055f",
+    "backend/protected/modules/matcher-user-profile/module.json": "a0d4ac94ecce9352695d417cc1bd347c5f735de9e5bfa3a6cfc457375e4e8b06",
+    "frontend/integration/src/contracts.ts": "5832b263a1b691f6019ee1db50b1bfd59b66f631f9c616c3c8b342abfc65247e",
+    "frontend/integration/src/github-import.ts": "a66464abd1c7089fe5c6d4c10d8b1dddd7c2a90ebc6f846c11b71178e5c9797f",
+    "frontend/integration/src/http.ts": "59c815c10dbd06953aa312e0008ebe7ab52b26ac2853740e3eca43ca58d85631",
+    "frontend/integration/src/session.ts": "34cb6fd98f6569c2af7df5f11abdada89eadcc41adc3cecabe40782cfff8b47e",
+    "frontend/推荐/components/recommendation-analysis.tsx": "2379b53bfa47485547f7f65dfe2c3cfed1a9482346b58aff59d98428dcddf747",
+    "frontend/推荐/components/recommendation-connected.tsx": "4afc9c5db7d4abf0d17176798cc9dfa636978eaad44f08715260e9e8a97242a2",
+    "frontend/推荐/integration/recommendation-entry.tsx": "8af15a20782ffc83082034542b6ab8e7a43d714fadacf4ad753f02c8767bbfeb",
+    "frontend/推荐/lib/recommendation-runtime/analysis.ts": "5a06ef95ec52567f951205ce8533d04e8b29377431966dd63a95800a6651b271",
+    "frontend/推荐/lib/recommendation-runtime/browser-transport.ts": "e62bdd9b0c29181478b4b1e6953e068686075bb8d0ddf526308ae967022c475e",
+    "frontend/推荐/lib/recommendation-runtime/client.ts": "cfce8d78cdd2f69e16371e51ad23f667e576a24c8181c60e01512d8b9174ec7c",
+    "frontend/推荐/lib/recommendation-runtime/contracts.ts": "798a1c554f163c7be56d422183a21ce8ed630e6deb8000ff5472460ab76a91b7",
+    "frontend/推荐/lib/recommendation-runtime/controller.ts": "057e1a6764cc1d398b771d1b0fefb0a63b3b365d1e2d23c6e7a66a672726e0f7",
+    "frontend/推荐/lib/recommendation-runtime/decode.ts": "5a1f3db314b7a2362c01f482e8adcb97b583cfa0d1ef4ae0c3ffac3abf20ca05",
+    "frontend/推荐/lib/recommendation-runtime/person-presentation.ts": "21668ccc3d265bf2a15c670983340d193ffbe5dbe4b6c8c747531f3280a6ef37",
+    "frontend/推荐/lib/recommendation-runtime/query.ts": "eedfcb540ba674d4c18c567990237838bde66b9535481ef77e4978898f7627fc",
+    "frontend/推荐/lib/recommendation-runtime/state.ts": "515065fd07def880610b383cef7167161e16a16516babfd3d18309de33cfdffa",
+    "frontend/首页/integration/auth-panel.tsx": "a34ab95920f66ef55334ca4be6c98ecc5ac10e8978c272e7390c440564676514",
+    "frontend/首页/integration/github-import-notice.tsx": "0d87c6a0b9e9e8942d7cfd1249fe17e6ba3774540853da059446c58d5270a0ac",
+    "frontend/首页/integration/webapp-entry.tsx": "ca595af44763f01614758f1b8a844956e029aba50cb149978dd65f19d41f5186"
+  },
+  "sources_stable_during_run": true,
+  "script_hashes_sha256": {
+    "bootstrap.php": "fa266f3399686f3f6acec7e4763d4f665b7b78fc768efdd2d359a7d72d702451",
+    "browser-review.mjs": "06a6e31ed44a4c443f62b35897dd2182f52895287ca4f287a216e92f266c5916",
+    "historical-pre-fix-probes.php": "977feb41a9f126f26432a06fd66572736aae0dfcf507a8f1346b98d9319d1865",
+    "http-review.py": "06d55619a5155bfa22466627f6e246d8524b7d9d5a79a61f8ac5dc0ba2b2e035",
+    "init.php": "78ea551eaf4cb047f8878a60ed30a4ebaef950c9f9e4d8b08e38142ea8c8511b",
+    "ports-review.php": "3de67d0261c6bbe6e5594f4e08d6723adaff53ea68d1c15326fd5d8b53cadbaf",
+    "pre-fix-risk-results.json": "b5205c85a85cb3e3c7a5f487c9b45d1fc3b22f6be0832dae9df508c515220acf",
+    "recommendation-browser-races.mjs": "4cb3d164a795a77fd90fed601a184169b3817ab7b7058cc18729df3ea9635a48",
+    "risk-probes-fixed.php": "bd1c1d3ab57125ada41f4e89041bf6b8639c78a51a381a69a4f3c43ab8cc2028",
+    "router.php": "44ecdb58164a43d718dec78fcda071210ddeb7ff8038991b8bce333a3d310cb5",
+    "run.py": "3c72911acbb5391be5ec5137357e5738d40f61cfdfe0e8163d6f8e4fe92fba25"
+  },
+  "build_hashes_sha256": {
+    "assets/bricolage-grotesque-latin-CtikI8OQ.woff2": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+    "assets/index-CRn39Ts2.css": "4447daa0755410c4156ce5de58c4077827d8740806f4824ce3f576a225f40752",
+    "assets/index-Cmu7akBO.js": "e986b50be2cc4ff0742673bc26326ebb8adfacdee2f133164397042804cd4a9a",
+    "assets/inter-latin-8kRkwJBP.woff2": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "index.html": "4321514a5349fe4cd9f355622045fdf762da8cf163aaccc068a50915fb555c4a",
+    "manifest.json": "e549366fcc9609f7003e4e7b0ae456f7c11e13e18cb54d858e67831b7501c3e5"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/550m/code/hackathon-team-matcher/backend/.runtime/php-mysql/bin/php",
+        "-n",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2/risk-probes-fixed.php"
+      ],
+      "cwd": "/Users/550m/code/hackathon-team-matcher",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Users/550m/code/hackathon-team-matcher/backend/.runtime/php-mysql/bin/php",
+        "-n",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2/ports-review.php"
+      ],
+      "cwd": "/Users/550m/code/hackathon-team-matcher",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2/http-review.py"
+      ],
+      "cwd": "/Users/550m/code/hackathon-team-matcher",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "node_modules/vite/bin/vite.js",
+        "build",
+        "--outDir",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2/browser-build",
+        "--emptyOutDir"
+      ],
+      "cwd": "/Users/550m/code/hackathon-team-matcher/frontend/integration",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2/browser-review.mjs"
+      ],
+      "cwd": "/Users/550m/code/hackathon-team-matcher",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "node",
+        "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2/recommendation-browser-races.mjs"
+      ],
+      "cwd": "/Users/550m/code/hackathon-team-matcher",
+      "exit_code": 0
+    }
+  ],
+  "work_directory": "/var/folders/4x/x6g2djx57dx68wj8p_1rh4ch0000gn/T/recommendation-independent-replay-i_p_gdw2",
+  "external_network_requests": 0,
+  "model_calls": 0,
+  "real_oauth": false,
+  "main_preview_connections": 0
+}

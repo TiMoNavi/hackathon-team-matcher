@@ -1,0 +1,35 @@
+{
+  "scope": "本轮最终源码静态检查；不是浏览器或后端真实装配验收",
+  "results": [
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js lib/recommendation-runtime scripts/verify-recommendation-runtime.mjs",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "backend/.runtime/php-mysql/bin/php -l backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php",
+      "exit_code": 0,
+      "stdout": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php\n",
+      "stderr": ""
+    },
+    {
+      "command": "backend/.runtime/php-mysql/bin/php -l backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php",
+      "exit_code": 0,
+      "stdout": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php\n",
+      "stderr": ""
+    },
+    {
+      "command": "backend/.runtime/php-mysql/bin/php -l backend/protected/modules/matcher-recommendation/tests/cooperation_analysis/run.php",
+      "exit_code": 0,
+      "stdout": "No syntax errors detected in /Users/550m/code/hackathon-team-matcher/backend/protected/modules/matcher-recommendation/tests/cooperation_analysis/run.php\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -12,7 +12,8 @@ assert.ok(base, "Set MATCHER_WEBAPP_TEST_URL to the approved isolated page.");
 const address = new URL(base);
 assert.ok(["127.0.0.1", "localhost"].includes(address.hostname) && address.port === "8113", "Only the approved isolated port 8113 is allowed.");
 assert.equal(address.pathname, "/matcher/app");
-const out = fileURLToPath(new URL("../artifacts/", import.meta.url));
+const runDirectory = process.env.MATCHER_WEBAPP_RUN === "n04" ? "artifacts/n04/n03-regression" : "artifacts";
+const out = fileURLToPath(new URL(`../${runDirectory}/`, import.meta.url));
 await fs.mkdir(out, { recursive: true });
 const report = { date: new Date().toISOString(), passed: false, checks: [], viewports: [], fonts: {}, pageErrors: [], unexpectedNetwork: [], expectedUnauthorized: 0, screenshots: [] };
 const browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_EXECUTABLE ? { executablePath: process.env.CHROMIUM_EXECUTABLE } : {}) });
@@ -33,7 +34,7 @@ function observe(page) {
 }
 async function signedOut(page) {
   await page.locator('[data-state="signed-out"]').waitFor();
-  assert.equal(await page.getByRole("link", { name: "前往登录", exact: true }).getAttribute("href"), "/user/auth/login");
+  assert.equal(await page.getByRole("link", { name: "前往登录", exact: true }).getAttribute("href"), "/matcher/app/login");
   assert.equal(await page.locator("#matcher-webapp-root [data-state=ready]").count(), 0);
 }
 async function viewport(page, width, dark) {
@@ -88,4 +89,4 @@ try {
   assert.deepEqual(report.pageErrors, []); assert.deepEqual(report.unexpectedNetwork, []); record("All requests same-origin GET; no application exceptions or unexpected HTTP errors");
   report.passed = true;
 } catch (error) { report.failure = error.message; throw error; }
-finally { await browser.close(); await fs.writeFile(path.join(out, "browser-report.json"), JSON.stringify(report, null, 2)); console.log(JSON.stringify({ passed: report.passed, checks: report.checks.length, real401: report.expectedUnauthorized, report: "artifacts/browser-report.json" })); }
+finally { await browser.close(); await fs.writeFile(path.join(out, "browser-report.json"), JSON.stringify(report, null, 2)); console.log(JSON.stringify({ passed: report.passed, checks: report.checks.length, real401: report.expectedUnauthorized, report: `${runDirectory}/browser-report.json` })); }

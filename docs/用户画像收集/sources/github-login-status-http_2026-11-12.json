@@ -1,0 +1,11 @@
+{
+  "endpoint": "/api/v1/auth/github/import-status",
+  "purpose": "Unauthenticated read-only isolated endpoint check",
+  "requests": 1,
+  "real_oauth": false,
+  "real_imports": 0,
+  "status": 404,
+  "cache_control": "no-store",
+  "error_code": "ISOLATED_HTTP_ERROR",
+  "data_present": false
+}

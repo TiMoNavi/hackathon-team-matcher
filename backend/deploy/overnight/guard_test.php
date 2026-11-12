@@ -12,6 +12,13 @@ $checks = 0;
 overnightValidateConfig($config, $backend); $checks++;
 $upgraded = $config; $upgraded['modules'][] = 'matcher-webapp';
 overnightValidateConfig($upgraded, $backend); $checks++;
+$authConfig = $upgraded; $authConfig['modules'] = [...$upgraded['modules'], 'matcher-github-import', 'matcher-auth'];
+$authConfig['auth_mode'] = true;
+overnightValidateConfig($authConfig, $backend); $checks++;
+foreach ([['modules' => $upgraded['modules'], 'auth_mode' => true], ['auth_mode' => 'true'], ['auth_mode' => 1]] as $change) {
+    try { overnightValidateConfig(array_replace($authConfig, $change), $backend); throw new LogicException('Invalid auth mode accepted.'); }
+    catch (RuntimeException) { $checks++; }
+}
 foreach ([array_reverse($upgraded['modules']), [...$upgraded['modules'], 'matcher-onboarding-ai'],
     ['matcher-webapp'], [...$config['modules'], 'arbitrary-plugin']] as $modules) {
     $bad = $config; $bad['modules'] = $modules;

@@ -1,0 +1,129 @@
+[
+  {
+    "suite": "matcher-auth/run.php",
+    "exit_code": 0,
+    "result": {
+      "status": "passed",
+      "checks": 59,
+      "temporary_sqlite": true,
+      "concurrent_processes": 2,
+      "real_database_access": false,
+      "network_access": false,
+      "real_mail_sent": 0,
+      "secrets_read": false
+    }
+  },
+  {
+    "suite": "matcher-auth/binding.php",
+    "exit_code": 0,
+    "result": {
+      "status": "passed",
+      "checks": 16,
+      "temporary_sqlite": true,
+      "concurrent_processes": 2,
+      "real_database_access": false,
+      "network_access": false,
+      "real_login_proven": false
+    }
+  },
+  {
+    "suite": "matcher-auth/events.php",
+    "exit_code": 0,
+    "result": {
+      "status": "passed",
+      "checks": 10,
+      "foreign_map_clients_removed": true,
+      "network_access": false,
+      "database_access": false
+    }
+  },
+  {
+    "suite": "matcher-auth/imports.php",
+    "exit_code": 0,
+    "result": {
+      "status": "passed",
+      "checks": 12,
+      "temporary_sqlite": true,
+      "real_database_access": false,
+      "network_access": false,
+      "real_source_reads": 0
+    }
+  },
+  {
+    "suite": "matcher-auth/github_import.php",
+    "exit_code": 0,
+    "result": {
+      "passed": true,
+      "checks": [
+        "no_receipt_does_not_import",
+        "receipt_schedule_is_idempotent",
+        "pending_is_visible_without_source_or_network",
+        "first_import_uses_existing_p1_once_despite_reentry",
+        "ready_receipt_exposes_only_compact_owner_reference",
+        "automatic_import_never_confirms_profile",
+        "candidate_is_in_private_source",
+        "repeat_login_and_status_reads_never_refetch",
+        "explicit_candidate_selection_uses_existing_draft",
+        "draft_selection_still_does_not_publish",
+        "deleted_source_overrides_old_success",
+        "deleted_source_is_not_restored_on_login",
+        "read_failure_is_durable_and_visible",
+        "failed_import_does_not_retry_on_login",
+        "failure_does_not_change_session",
+        "status_never_contains_source_or_provider_diagnostics",
+        "existing_history_is_preserved",
+        "deleted_history_still_prevents_implicit_import",
+        "unlink_before_attempt_revokes_receipt",
+        "changed_stable_identity_revokes_old_receipt",
+        "disabled_module_hides_source_reference",
+        "reader_rejects_foreign_owner",
+        "guest_cannot_attempt_import",
+        "endpoint_guest_401",
+        "endpoint_caller_supplied_owner_rejected",
+        "endpoint_post_405",
+        "endpoint_is_compact_and_no_store",
+        "endpoint_read_has_no_durable_side_effects",
+        "disabled_account_403",
+        "missing_ambiguous_or_changed_subject_revokes",
+        "missing_ambiguous_or_changed_subject_revokes",
+        "missing_ambiguous_or_changed_subject_revokes",
+        "malformed_success_has_no_usable_reference"
+      ],
+      "check_count": 33,
+      "storage": "sqlite memory + existing P1 memory adapters",
+      "network_calls": 0,
+      "model_calls": 0,
+      "real_oauth_proven": false
+    }
+  },
+  {
+    "suite": "matcher-event-access/run.php",
+    "exit_code": 0,
+    "result": {
+      "checks": 34,
+      "passed": true,
+      "network_calls": 0,
+      "database_calls": 0
+    }
+  },
+  {
+    "suite": "matcher-event-access/boundaries.php",
+    "exit_code": 0,
+    "result": {
+      "checks": 19,
+      "passed": true,
+      "network_calls": 0,
+      "database_calls": 0
+    }
+  },
+  {
+    "suite": "matcher-event-access/sql_compilation.php",
+    "exit_code": 0,
+    "result": {
+      "checks": 43,
+      "passed": true,
+      "network_calls": 0,
+      "database_calls": 0
+    }
+  }
+]

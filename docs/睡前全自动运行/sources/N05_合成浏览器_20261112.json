@@ -1,0 +1,223 @@
+{
+  "checked_at": "2026-11-12T11:06:19.683Z",
+  "status": "passed",
+  "scope": "Actual compiled host and synthetic same-origin API; not real authentication, database or membership acceptance",
+  "assets": {
+    "entry": "assets/index-0DWKCLLk.js",
+    "css": [
+      "assets/index-C25M2v5F.css"
+    ],
+    "sha256": {
+      "manifest": "7558dd395cc18ac92c180069f340544fc00e4d59871d4d483ced22a4e7fc2db8",
+      "js": "c68fef1499f0b029448dbcf71356a85ea55402e93ce77a6a668eb0cb3d432d30"
+    }
+  },
+  "checks": [
+    {
+      "scenario": "join_then_explicit_selection",
+      "check": "Explicit join is duplicate-locked, clears its input, persists nothing and never selects"
+    },
+    {
+      "scenario": "join_then_explicit_selection",
+      "check": "Only explicit selection changes the server selection and refreshes the host"
+    },
+    {
+      "scenario": "join_then_explicit_selection",
+      "check": "Selected-event discovery still mounts the real recommendation entry"
+    },
+    {
+      "scenario": "unknown403_members",
+      "check": "Unknown403 stops remount/read loops without weakening authorization"
+    },
+    {
+      "scenario": "unknown403_members",
+      "check": "Explicit reload releases the denial latch and revalidates memberships"
+    },
+    {
+      "scenario": "unknown403_current",
+      "check": "Unknown403 stops remount/read loops without weakening authorization"
+    },
+    {
+      "scenario": "unknown403_current",
+      "check": "Explicit reload releases the denial latch and revalidates memberships"
+    },
+    {
+      "scenario": "precise_revoked_revision",
+      "check": "Exact revoked metadata reveals no old event and keeps discovery closed"
+    },
+    {
+      "scenario": "precise_revoked_revision",
+      "check": "Explicit legal-Space switch uses the observed revoked revision and refreshes parent context"
+    },
+    {
+      "scenario": "old_receipt_new_membership",
+      "check": "Old failed receipt cannot authorize an old member or block a new legal incarnation"
+    },
+    {
+      "scenario": "layout_keyboard_labels",
+      "check": "Activity controls fit 1440/390/320px with 44px targets, 16px mobile input and associated labels"
+    },
+    {
+      "scenario": "layout_keyboard_labels",
+      "check": "Keyboard skip, tab, submit and labelled error focus work without accidental writes"
+    },
+    {
+      "scenario": "unselected_discovery_gate",
+      "check": "Membership alone cannot open discovery before current-event selection"
+    },
+    {
+      "scenario": "guest_discovery_gate",
+      "check": "Guest cannot read memberships, resolve an event or mount discovery"
+    },
+    {
+      "scenario": "guest_discovery_gate",
+      "check": "Only local synthetic traffic, no unexpected writes, external calls or page errors"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "join_then_explicit_selection",
+      "counts": {
+        "me": 3,
+        "current": 9,
+        "members": 4,
+        "join": 1,
+        "select": 1,
+        "discovery": 1,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    },
+    {
+      "name": "unknown403_members",
+      "counts": {
+        "me": 3,
+        "current": 5,
+        "members": 2,
+        "join": 0,
+        "select": 0,
+        "discovery": 0,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    },
+    {
+      "name": "unknown403_current",
+      "counts": {
+        "me": 3,
+        "current": 5,
+        "members": 2,
+        "join": 0,
+        "select": 0,
+        "discovery": 0,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    },
+    {
+      "name": "precise_revoked_revision",
+      "counts": {
+        "me": 2,
+        "current": 5,
+        "members": 2,
+        "join": 0,
+        "select": 1,
+        "discovery": 1,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": true
+    },
+    {
+      "name": "old_receipt_new_membership",
+      "counts": {
+        "me": 2,
+        "current": 6,
+        "members": 4,
+        "join": 1,
+        "select": 1,
+        "discovery": 0,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    },
+    {
+      "name": "layout_keyboard_labels",
+      "counts": {
+        "me": 3,
+        "current": 6,
+        "members": 3,
+        "join": 0,
+        "select": 0,
+        "discovery": 0,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    },
+    {
+      "name": "unselected_discovery_gate",
+      "counts": {
+        "me": 1,
+        "current": 2,
+        "members": 1,
+        "join": 0,
+        "select": 0,
+        "discovery": 0,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    },
+    {
+      "name": "guest_discovery_gate",
+      "counts": {
+        "me": 1,
+        "current": 0,
+        "members": 0,
+        "join": 0,
+        "select": 0,
+        "discovery": 0,
+        "unexpectedWrites": 0
+      },
+      "selection_used_observed_revision": false
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "clipped": 0,
+      "undersized": 0,
+      "inputFontSize": "15px",
+      "labelled": true,
+      "described": true
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "clipped": 0,
+      "undersized": 0,
+      "inputFontSize": "16px",
+      "labelled": true,
+      "described": true
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "clipped": 0,
+      "undersized": 0,
+      "inputFontSize": "16px",
+      "labelled": true,
+      "described": true
+    }
+  ],
+  "screenshots": [
+    "event-access-1440.png",
+    "event-access-390.png",
+    "event-access-320.png"
+  ],
+  "page_error_count": 0,
+  "blocked_external_count": 0,
+  "fixture_contract_failures": 0,
+  "unexpected_route_count": 0,
+  "model_requests": 0,
+  "failure": null
+}

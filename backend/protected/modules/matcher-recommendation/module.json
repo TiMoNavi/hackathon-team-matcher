@@ -2,14 +2,25 @@
     "id": "matcher-recommendation",
     "name": "团队匹配推荐",
     "description": "当前活动内的规则推荐主模块，AI 通过可选扩展接入。",
-    "version": "0.3.0",
+    "version": "0.4.1",
     "humhub": {
         "minVersion": "1.19.4",
         "modules": {
-            "matcher-user-profile": {"minVersion": "0.8.0"},
-            "matcher-profile-privacy": {"minVersion": "0.1.0"}
+            "matcher-user-profile": {
+                "minVersion": "0.10.1"
+            },
+            "matcher-profile-privacy": {
+                "minVersion": "0.2.0"
+            }
         }
     },
-    "keywords": ["recommendation", "team-matching"],
-    "authors": [{"name": "Hackathon Team Matcher"}]
+    "keywords": [
+        "recommendation",
+        "team-matching"
+    ],
+    "authors": [
+        {
+            "name": "Hackathon Team Matcher"
+        }
+    ]
 }

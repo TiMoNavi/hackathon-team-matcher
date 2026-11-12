@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-11-12T17:42:02.547181+08:00",
+  "existing_baseline_files": 469,
+  "changed_existing_files": [
+    "backend/protected/modules/matcher-recommendation/Module.php",
+    "backend/protected/modules/matcher-recommendation/config.php",
+    "backend/protected/modules/matcher-recommendation/module.json",
+    "backend/protected/modules/matcher-user-profile/Module.php",
+    "backend/protected/modules/matcher-user-profile/adapters/persistence/SqlDiscoveryProfileBatchSource.php",
+    "backend/protected/modules/matcher-user-profile/application/DiscoveryProfileBatchReader.php",
+    "backend/protected/modules/matcher-user-profile/domain/DiscoveryProfileBatchRequest.php",
+    "backend/protected/modules/matcher-user-profile/module.json",
+    "docs/共享数据与接口契约.md",
+    "docs/睡前全自动运行/04_HumHub实施合同.md"
+  ],
+  "missing_baseline_files": [],
+  "reviewed_source_count": 82,
+  "review_source_hash_mismatches": [],
+  "relative_link_failures": [],
+  "markdown_fence_failures": [],
+  "php_lint_files": 67,
+  "php_lint_failures": [],
+  "diff_check_exit_code": 0,
+  "diff_check_output": "",
+  "checked_documents": [
+    "docs/推荐模块/24_候选分析用途适配与登录协同.md",
+    "docs/推荐模块/00_README.md",
+    "docs/推荐模块/task.md",
+    "docs/共享数据与接口契约.md",
+    "docs/睡前全自动运行/04_HumHub实施合同.md",
+    "docs/用户画像收集/42_推荐本人选择窄读取增量.md",
+    "docs/用户画像收集/task.md",
+    "docs/用户画像收集/GitHub登录首次导入与首页呈现_2026-11-12.md",
+    "frontend/推荐/README.md",
+    "frontend/integration/README.md"
+  ],
+  "real_oauth": false,
+  "main_preview_migrated": false,
+  "model_calls": 0,
+  "tracked_core_vendor_and_frozen_diff": [],
+  "protected_diff_exit_code": 0,
+  "protected_baseline_file_count": 86,
+  "protected_baseline_unchanged": true,
+  "final_build_sha256": {
+    "backend/protected/modules/matcher-webapp/resources/app/assets/bricolage-grotesque-latin-CtikI8OQ.woff2": "4fd48b2c1ab27220e71f15f990550261b35245c3bdfd8d8025b4bdac0459ee2d",
+    "backend/protected/modules/matcher-webapp/resources/app/assets/index-CRn39Ts2.css": "4447daa0755410c4156ce5de58c4077827d8740806f4824ce3f576a225f40752",
+    "backend/protected/modules/matcher-webapp/resources/app/assets/index-Cmu7akBO.js": "e986b50be2cc4ff0742673bc26326ebb8adfacdee2f133164397042804cd4a9a",
+    "backend/protected/modules/matcher-webapp/resources/app/assets/inter-latin-8kRkwJBP.woff2": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "backend/protected/modules/matcher-webapp/resources/app/index.html": "4321514a5349fe4cd9f355622045fdf762da8cf163aaccc068a50915fb555c4a",
+    "backend/protected/modules/matcher-webapp/resources/app/manifest.json": "e549366fcc9609f7003e4e7b0ae456f7c11e13e18cb54d858e67831b7501c3e5"
+  },
+  "independent_root_rerun": {
+    "file": "recommendation-page-wiring-main-independent-rerun_2026-11-12.json",
+    "status": "passed",
+    "checks": 130,
+    "http_requests": 58,
+    "source_hash_count": 82
+  },
+  "host_browser": {
+    "file": "frontend/推荐/artifacts/recommendation-host-2026-11-12/report.json",
+    "checks": 11,
+    "status": "passed",
+    "visual_review": [
+      "discover-host-390.png",
+      "login-host-390.png",
+      "recommendation-connected-2026-11-12/rules-desktop.png"
+    ]
+  },
+  "frontend_browser": {
+    "file": "frontend/推荐/artifacts/recommendation-connected-2026-11-12/report.json",
+    "checks": 45,
+    "source_component_sha256": "4afc9c5db7d4abf0d17176798cc9dfa636978eaad44f08715260e9e8a97242a2"
+  },
+  "status": "passed",
+  "final_document_sha256": {
+    "docs/推荐模块/24_候选分析用途适配与登录协同.md": "bf1f9792164614b832280088c3c424c87a55ff054673445dbdedb083bce386c3",
+    "docs/推荐模块/00_README.md": "45fb4335b27af660acd059c3b5745818c9782fda0faba6e7c6d10f928365621c",
+    "docs/推荐模块/task.md": "69cafd9026cdae57480ba523c277ea678e2087dc68e9f7c8e481d7963d72bd79",
+    "docs/共享数据与接口契约.md": "e3abebb120394a72990af60b81150baeae18862b06de584ae0cb9b04e900c6bf",
+    "docs/睡前全自动运行/04_HumHub实施合同.md": "d34c927918e2cec54ad4967bc9b654d7ebefd8a501ba76e704b43adc1ad18a0f",
+    "docs/用户画像收集/42_推荐本人选择窄读取增量.md": "3553474c26ffe4997dfb89135561899cfd248565acfb1410f070159b546de105",
+    "docs/用户画像收集/task.md": "dd8e44b13f568d830ab3b8e6f158deba3fde1dd37ada5c08fec02612751df43d",
+    "docs/用户画像收集/GitHub登录首次导入与首页呈现_2026-11-12.md": "727cb4e633d277efa4295c651366ffea7a62849795edbcdff09950150af5558c",
+    "frontend/推荐/README.md": "a685e8dc96db34ebe9111d6bbc93543370323d683e98ce6884e5602ac8573bce",
+    "frontend/integration/README.md": "a6ee96b461274c93cafc1b8061b163a608081d46924e8a6ec12e96c88e83951b"
+  }
+}

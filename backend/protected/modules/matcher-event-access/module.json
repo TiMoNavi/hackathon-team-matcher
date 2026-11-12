@@ -1,0 +1,9 @@
+{
+  "id":"matcher-event-access",
+  "name":"活动邀请与成员接入",
+  "description":"有界邀请码、本人兑换收据与原生活动成员列表；不创建第二份当前活动或聊天关系。",
+  "version":"0.1.0",
+  "humhub":{"minVersion":"1.19.4"},
+  "keywords":["space","invitation","membership"],
+  "authors":[{"name":"Hackathon Team Matcher"}]
+}

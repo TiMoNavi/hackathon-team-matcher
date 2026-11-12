@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-11-12T15:29:39.057652+08:00",
+  "scope": "推荐页规划文档静态检查；不代表应用、接口、数据库或模型测试",
+  "status": "passed",
+  "documents": [
+    {
+      "path": "docs/推荐模块/20_推荐页真实运行方案.md",
+      "sha256": "2bba40c9dabb0355624c31007d3db2924188a2bb246a32c7f5d7bb64039f605d",
+      "lines": 331,
+      "relative_link_count": 6,
+      "relative_link_targets_exist": true,
+      "trailing_whitespace_lines": [],
+      "fences_balanced": true
+    },
+    {
+      "path": "docs/推荐模块/task.md",
+      "sha256": "1f907f05afbaac25e8299381abaf64ff63c0e5643ea915ddc9294a5ee063e04f",
+      "lines": 338,
+      "relative_link_count": 52,
+      "relative_link_targets_exist": true,
+      "trailing_whitespace_lines": [],
+      "fences_balanced": true
+    },
+    {
+      "path": "docs/推荐模块/00_README.md",
+      "sha256": "84f83666ead0fba445340518b883786734f561ddc973f83c47d9de88ca90bc88",
+      "lines": 64,
+      "relative_link_count": 30,
+      "relative_link_targets_exist": true,
+      "trailing_whitespace_lines": [],
+      "fences_balanced": true
+    }
+  ],
+  "implementation_tasks": {
+    "ids": [
+      "RP0",
+      "RP1",
+      "RP2",
+      "RP3",
+      "RP4",
+      "RP5",
+      "RP6"
+    ],
+    "all_unchecked": true
+  },
+  "protected_baselines": [
+    {
+      "path": "docs/首次注册与开场引导_用户原稿_冻结.md",
+      "baseline_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "observed_sha256": "370e3bf56aa473a60908c3f6ad49d1d573fa0bc33f848118f9fcef769894aa03",
+      "matches_baseline": true
+    },
+    {
+      "path": "docs/共享数据与接口契约.md",
+      "baseline_sha256": "12329ea43f593bf6c370e7dd217e57b3267c3ec39783909b00855c50614c1585",
+      "observed_sha256": "12329ea43f593bf6c370e7dd217e57b3267c3ec39783909b00855c50614c1585",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/推荐/components/recommendation-experience.tsx",
+      "baseline_sha256": "04eb7a8e7cd3f3443114d51eee72d9716b9ff6beabf3ad815c5398fced50c7de",
+      "observed_sha256": "04eb7a8e7cd3f3443114d51eee72d9716b9ff6beabf3ad815c5398fced50c7de",
+      "matches_baseline": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/config.php",
+      "baseline_sha256": "57f3b143c502a59d8f60b1181f02a3889c1b90a7b7f170e70ef6e84b65b10431",
+      "observed_sha256": "57f3b143c502a59d8f60b1181f02a3889c1b90a7b7f170e70ef6e84b65b10431",
+      "matches_baseline": true
+    },
+    {
+      "path": "backend/protected/modules/matcher-recommendation/Module.php",
+      "baseline_sha256": "0e3608d47f74ea8da02550c6807f494443bcd33aa36c0bf3c6fcc4f9529e62de",
+      "observed_sha256": "0e3608d47f74ea8da02550c6807f494443bcd33aa36c0bf3c6fcc4f9529e62de",
+      "matches_baseline": true
+    }
+  ],
+  "parallel_workspace_change": {
+    "path": "docs/睡前全自动运行/task.md",
+    "initial_sha256": "629b8296aaeda47b03c54ba0c08485a8ab683f611f6cb700389b9e9192c2493c",
+    "observed_sha256": "170712094e740ec826cefee13863ab57274cbd06df061088ef3f16d17ee32fee",
+    "changed_outside_this_task": true,
+    "note": "本任务未写入该文件。已复核N02/N10/N11依赖，外部并行进展不回退，不将全站任务哈希变化视为本轮文档检查失败。",
+    "relevant_task_lines": [
+      "| N02 | 锁定 HumHub 实施映射、接口、能力、错误、版本与模块所有权 | N01 | 同步共享契约和对应专项；已有／拟新增明确，单一 current-event 与原生身份关系 |",
+      "| N10 | 装配推荐历史／预算／provider，接通真实发现与推荐 | N06、N08 | 普通发现 0 LLM；边界与撤权正确；有限真实推荐成功；不足／超预算／不可用如实返回 |",
+      "| N11 | 其余固定前端目录接真实资料／活动／发现／推荐／消息群聊；收尾引导后半 | N07、N09、N10 | 不再以定时器、本地数组或浏览器状态冒充业务成功；原样式／移动交互维持 |"
+    ]
+  },
+  "application_tests_run": false,
+  "model_calls_made": false,
+  "errors": []
+}

@@ -1,0 +1,504 @@
+{
+  "mode": "synthetic browser UI, not live authorization",
+  "realBackendRequests": 0,
+  "databaseConnections": 0,
+  "modelCalls": 0,
+  "checks": [
+    {
+      "name": "Explicit synthetic label",
+      "passed": true
+    },
+    {
+      "name": "Ordinary discovery performs no writes",
+      "passed": true
+    },
+    {
+      "name": "Two people remain two",
+      "passed": true
+    },
+    {
+      "name": "Five actual attributes stay five",
+      "passed": true
+    },
+    {
+      "name": "No avatars fetched for opaque/null references",
+      "passed": true
+    },
+    {
+      "name": "No synthetic demo name or score",
+      "passed": true
+    },
+    {
+      "name": "Actual English display font loads",
+      "passed": true
+    },
+    {
+      "name": "Actual English body font loads",
+      "passed": true
+    },
+    {
+      "name": "Actual Chinese glyph font recorded",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 1440",
+      "passed": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "stage": {
+          "x": 24,
+          "y": 361.296875,
+          "width": 1392,
+          "height": 515.140625,
+          "top": 361.296875,
+          "right": 1416,
+          "bottom": 876.4375,
+          "left": 24
+        },
+        "person": {
+          "x": 32.796875,
+          "y": 361.296875,
+          "width": 380,
+          "height": 511.921875,
+          "top": 361.296875,
+          "right": 412.796875,
+          "bottom": 873.21875,
+          "left": 32.796875
+        },
+        "board": {
+          "x": 453.59375,
+          "y": 361.296875,
+          "width": 942.390625,
+          "height": 515.140625,
+          "top": 361.296875,
+          "right": 1395.984375,
+          "bottom": 876.4375,
+          "left": 453.59375
+        },
+        "bodyFont": "15px"
+      }
+    },
+    {
+      "name": "Readable body 1440",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 768",
+      "passed": true,
+      "details": {
+        "width": 768,
+        "scrollWidth": 768,
+        "stage": {
+          "x": 24,
+          "y": 348.796875,
+          "width": 720,
+          "height": 1035.671875,
+          "top": 348.796875,
+          "right": 744,
+          "bottom": 1384.46875,
+          "left": 24
+        },
+        "person": {
+          "x": 186,
+          "y": 356.796875,
+          "width": 396,
+          "height": 490.53125,
+          "top": 356.796875,
+          "right": 582,
+          "bottom": 847.328125,
+          "left": 186
+        },
+        "board": {
+          "x": 39,
+          "y": 869.328125,
+          "width": 690,
+          "height": 515.140625,
+          "top": 869.328125,
+          "right": 729,
+          "bottom": 1384.46875,
+          "left": 39
+        },
+        "bodyFont": "15px"
+      }
+    },
+    {
+      "name": "Readable body 768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 390",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390,
+        "stage": {
+          "x": 16,
+          "y": 530.28125,
+          "width": 358,
+          "height": 1065.046875,
+          "top": 530.28125,
+          "right": 374,
+          "bottom": 1595.328125,
+          "left": 16
+        },
+        "person": {
+          "x": 18,
+          "y": 538.28125,
+          "width": 354,
+          "height": 507.53125,
+          "top": 538.28125,
+          "right": 372,
+          "bottom": 1045.8125,
+          "left": 18
+        },
+        "board": {
+          "x": 18,
+          "y": 1071.8125,
+          "width": 354,
+          "height": 523.515625,
+          "top": 1071.8125,
+          "right": 372,
+          "bottom": 1595.328125,
+          "left": 18
+        },
+        "bodyFont": "15px"
+      }
+    },
+    {
+      "name": "Readable body 390",
+      "passed": true
+    },
+    {
+      "name": "Mobile person selector has its own row 390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow 320",
+      "passed": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320,
+        "stage": {
+          "x": 16,
+          "y": 612.78125,
+          "width": 288,
+          "height": 1168.046875,
+          "top": 612.78125,
+          "right": 304,
+          "bottom": 1780.828125,
+          "left": 16
+        },
+        "person": {
+          "x": 18,
+          "y": 620.78125,
+          "width": 284,
+          "height": 610.53125,
+          "top": 620.78125,
+          "right": 302,
+          "bottom": 1231.3125,
+          "left": 18
+        },
+        "board": {
+          "x": 18,
+          "y": 1257.3125,
+          "width": 284,
+          "height": 523.515625,
+          "top": 1257.3125,
+          "right": 302,
+          "bottom": 1780.828125,
+          "left": 18
+        },
+        "bodyFont": "15px"
+      }
+    },
+    {
+      "name": "Readable body 320",
+      "passed": true
+    },
+    {
+      "name": "Mobile person selector has its own row 320",
+      "passed": true
+    },
+    {
+      "name": "Project detail contains full facts",
+      "passed": true
+    },
+    {
+      "name": "Project URL remains inert text",
+      "passed": true
+    },
+    {
+      "name": "Detail returns keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "Last person does not wrap",
+      "passed": true
+    },
+    {
+      "name": "One person disables both arrows",
+      "passed": true
+    },
+    {
+      "name": "Zero people show empty state",
+      "passed": true
+    },
+    {
+      "name": "Connected rules with no candidate asks for a person, not API setup",
+      "passed": true
+    },
+    {
+      "name": "Network is not no-candidates",
+      "passed": true
+    },
+    {
+      "name": "First page has 24 people",
+      "passed": true
+    },
+    {
+      "name": "Cursor appends final person",
+      "passed": true
+    },
+    {
+      "name": "Filter clears cursor",
+      "passed": true
+    },
+    {
+      "name": "GET options never imply consent",
+      "passed": true
+    },
+    {
+      "name": "Analysis disabled before save",
+      "passed": true
+    },
+    {
+      "name": "Empty save sends exact contract with event precondition",
+      "passed": true
+    },
+    {
+      "name": "Rules show five unknown dimensions",
+      "passed": true
+    },
+    {
+      "name": "POST carries only optimistic versions",
+      "passed": true
+    },
+    {
+      "name": "Rules fit small mobile",
+      "passed": true
+    },
+    {
+      "name": "Changing selection clears analysis",
+      "passed": true
+    },
+    {
+      "name": "503 is unavailable",
+      "passed": true
+    },
+    {
+      "name": "Unknown conclusion not guessed",
+      "passed": true
+    },
+    {
+      "name": "Late analysis 404 clears same-context projections",
+      "passed": true
+    },
+    {
+      "name": "Old analysis 401 invalidates after newer list refresh",
+      "passed": true
+    },
+    {
+      "name": "Old analysis 403 invalidates after newer list refresh",
+      "passed": true
+    },
+    {
+      "name": "Changed activity clears people",
+      "passed": true
+    },
+    {
+      "name": "No real API requests",
+      "passed": true
+    },
+    {
+      "name": "No execution errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "errors": [],
+  "layouts": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "stage": {
+        "x": 24,
+        "y": 361.296875,
+        "width": 1392,
+        "height": 515.140625,
+        "top": 361.296875,
+        "right": 1416,
+        "bottom": 876.4375,
+        "left": 24
+      },
+      "person": {
+        "x": 32.796875,
+        "y": 361.296875,
+        "width": 380,
+        "height": 511.921875,
+        "top": 361.296875,
+        "right": 412.796875,
+        "bottom": 873.21875,
+        "left": 32.796875
+      },
+      "board": {
+        "x": 453.59375,
+        "y": 361.296875,
+        "width": 942.390625,
+        "height": 515.140625,
+        "top": 361.296875,
+        "right": 1395.984375,
+        "bottom": 876.4375,
+        "left": 453.59375
+      },
+      "bodyFont": "15px"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "stage": {
+        "x": 24,
+        "y": 348.796875,
+        "width": 720,
+        "height": 1035.671875,
+        "top": 348.796875,
+        "right": 744,
+        "bottom": 1384.46875,
+        "left": 24
+      },
+      "person": {
+        "x": 186,
+        "y": 356.796875,
+        "width": 396,
+        "height": 490.53125,
+        "top": 356.796875,
+        "right": 582,
+        "bottom": 847.328125,
+        "left": 186
+      },
+      "board": {
+        "x": 39,
+        "y": 869.328125,
+        "width": 690,
+        "height": 515.140625,
+        "top": 869.328125,
+        "right": 729,
+        "bottom": 1384.46875,
+        "left": 39
+      },
+      "bodyFont": "15px"
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "stage": {
+        "x": 16,
+        "y": 530.28125,
+        "width": 358,
+        "height": 1065.046875,
+        "top": 530.28125,
+        "right": 374,
+        "bottom": 1595.328125,
+        "left": 16
+      },
+      "person": {
+        "x": 18,
+        "y": 538.28125,
+        "width": 354,
+        "height": 507.53125,
+        "top": 538.28125,
+        "right": 372,
+        "bottom": 1045.8125,
+        "left": 18
+      },
+      "board": {
+        "x": 18,
+        "y": 1071.8125,
+        "width": 354,
+        "height": 523.515625,
+        "top": 1071.8125,
+        "right": 372,
+        "bottom": 1595.328125,
+        "left": 18
+      },
+      "bodyFont": "15px"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "stage": {
+        "x": 16,
+        "y": 612.78125,
+        "width": 288,
+        "height": 1168.046875,
+        "top": 612.78125,
+        "right": 304,
+        "bottom": 1780.828125,
+        "left": 16
+      },
+      "person": {
+        "x": 18,
+        "y": 620.78125,
+        "width": 284,
+        "height": 610.53125,
+        "top": 620.78125,
+        "right": 302,
+        "bottom": 1231.3125,
+        "left": 18
+      },
+      "board": {
+        "x": 18,
+        "y": 1257.3125,
+        "width": 284,
+        "height": 523.515625,
+        "top": 1257.3125,
+        "right": 302,
+        "bottom": 1780.828125,
+        "left": 18
+      },
+      "bodyFont": "15px"
+    }
+  ],
+  "fonts": {
+    "display": [
+      {
+        "familyName": "Bricolage Grotesque 96pt ExtraBold",
+        "postScriptName": "BricolageGrotesque96ptExtraBold-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 12
+      },
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 2
+      }
+    ],
+    "body": [
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular_Medium",
+        "isCustomFont": true,
+        "glyphCount": 10
+      }
+    ],
+    "chinese": [
+      {
+        "familyName": "PingFang SC",
+        "postScriptName": "PingFangSC-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 15
+      }
+    ]
+  }
+}

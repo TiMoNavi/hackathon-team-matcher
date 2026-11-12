@@ -49,7 +49,15 @@ final class ApiController extends Controller
             }
             (new SelectCurrentEvent($store))->execute($this->id($body['space_id']), $body['expected_revision']);
         }
-        $selection = $store->read(); $context = $this->module->getCurrentEventAccess()->resolve($this->actor(), $selection['space_id']);
+        $selection = $store->read();
+        try { $context = $this->module->getCurrentEventAccess()->resolve($this->actor(), $selection['space_id']); }
+        catch (NativeAccessException $error) {
+            if (Yii::$app->request->method !== 'GET' || $error->reason !== 'access_denied') { throw $error; }
+            // Expose only this actor/session's opaque CAS revision. It grants no Space access.
+            // A concurrent switch must never be represented by an older recovery receipt.
+            if ($store->read() !== $selection) { throw new NativeAccessException('context_changed'); }
+            return $this->error(403, 'CURRENT_EVENT_ACCESS_REVOKED', 'The selected activity is no longer accessible. Select an activity you can currently access.', ['selection_revision' => $selection['selection_revision']]);
+        }
         if ($store->read() !== $selection) { throw new NativeAccessException('context_changed'); }
         return $this->ok(['space_id' => $selection['space_id'], 'selection_revision' => $selection['selection_revision'], 'access_version' => $context->accessVersion]);
     }
@@ -135,9 +143,9 @@ final class ApiController extends Controller
         if (!in_array(Yii::$app->request->method, $methods, true)) { Yii::$app->response->headers->set('Allow', implode(', ', $methods)); throw new DiscoveryException('METHOD_NOT_ALLOWED', 'Unsupported request method.', 405); }
     }
     private function ok(array $data): array { return ['data' => $data, 'meta' => ['request_id' => $this->requestId]]; }
-    private function error(int $status, string $code, string $message): array
+    private function error(int $status, string $code, string $message, array $details = []): array
     {
         Yii::$app->response->statusCode = $status;
-        return ['error' => ['code' => $code, 'message' => $message, 'retryable' => $status >= 500, 'details' => []], 'meta' => ['request_id' => $this->requestId]];
+        return ['error' => ['code' => $code, 'message' => $message, 'retryable' => $status >= 500, 'details' => $details], 'meta' => ['request_id' => $this->requestId]];
     }
 }

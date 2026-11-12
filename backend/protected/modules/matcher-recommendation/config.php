@@ -11,6 +11,8 @@ return [
     'strict' => true,
     'events' => [],
     'urlManagerRules' => [
+        'api/v1/events/<spaceId:\d+>/recommendation-analysis/self-selection' => 'matcher-recommendation/analysis/self-selection',
+        'api/v1/events/<spaceId:\d+>/recommendation-analysis/people/<ownerId:\d+>' => 'matcher-recommendation/analysis/person',
         'api/v1/events/<spaceId:\d+>/recommendation-conversations' => 'matcher-recommendation/conversation/create',
         'api/v1/recommendation-conversations/<id:conversation-[a-f0-9]{32}(?:[a-f0-9]{32})?>/requirements/confirm' => 'matcher-recommendation/conversation/confirm',
         'api/v1/recommendation-conversations/<id:conversation-[a-f0-9]{32}(?:[a-f0-9]{32})?>/turns' => 'matcher-recommendation/conversation/turn',

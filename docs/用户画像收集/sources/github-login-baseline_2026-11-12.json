@@ -1,0 +1,11 @@
+{
+  "purpose": "GitHub login/profile task pre-edit fingerprints; existing parallel work preserved",
+  "files": {
+    "backend/protected/modules/matcher-auth/config.php": "264c81be8fafd0e77725f8fcb775f99da67a05f4ee2674bb869758f271753db2",
+    "backend/protected/modules/matcher-auth/adapters/native/GithubImportCoordinator.php": "ecd837f5f78fd2af79667398fbabf47a0b1f19a3c2d1d9def13398b0c664cc96",
+    "frontend/首页/integration/auth-panel.tsx": "f91d7c175b925f13db4b9228f7529459ffdf6757bc2e9350e0a3e1307d9039b3",
+    "frontend/首页/integration/webapp-entry.tsx": "f887e5cefdb3e810118b82181952f3f733d72f16b236eeecd8dfbb48fa6a48dc",
+    "frontend/integration/src/auth.ts": "af4e8ed3bbaf5d4a94cbfe7891755bc1eff995d2dcd5611c91aa671db5495fa4",
+    "frontend/integration/src/styles.css": "a22fc1ecddf521b3712f27b15713390852a363a236d74bd253cbb65fdf21a53f"
+  }
+}

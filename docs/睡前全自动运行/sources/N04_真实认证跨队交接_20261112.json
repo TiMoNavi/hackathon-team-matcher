@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-12",
+  "timezone": "Asia/Shanghai",
+  "checked_at_utc": "2026-11-12T10:31:10.101109+00:00",
+  "environment": "owned isolated 127.0.0.1:8113",
+  "user_report": "Both GitHub and email code login were verified successfully by the user.",
+  "native_account_count": 1,
+  "authentication_evidence": {
+    "native_provider_counts": {
+      "email-code": 1,
+      "github": 1
+    },
+    "dual_provider_accounts": 1,
+    "github_import_states": {
+      "pending": 0,
+      "running": 0,
+      "succeeded": 1,
+      "failed": 0,
+      "revoked": 0,
+      "skipped_existing": 0
+    },
+    "github_source_states": {
+      "running": 0,
+      "ready": 1,
+      "failed": 0,
+      "deleted": 0
+    },
+    "github_sources_total": 1,
+    "otp_consumed_challenges": 1
+  },
+  "session_observer": {
+    "available": true,
+    "login": {
+      "email-code": 0,
+      "github": 1
+    },
+    "me_read": {
+      "email-code": 0,
+      "github": 3
+    },
+    "distinct_accounts": 1,
+    "same_account_verified": false
+  },
+  "assessment": {
+    "native_authenticated_reading_prerequisite": "verified GitHub native session and protected identity read",
+    "email_binding_and_code_consumption": "verified",
+    "dual_provider_session_observation": "partial; user acceptance is recorded separately",
+    "activity_gate": "implementation and isolated membership/revocation validation in progress",
+    "chat_c04": "native identity prerequisite available; final C04 acceptance still requires its own adapters and authorization tests"
+  },
+  "scope": "Aggregate evidence only. No account IDs, names, email, source body, cookies, codes or keys."
+}

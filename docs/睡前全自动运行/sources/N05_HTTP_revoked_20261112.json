@@ -1,0 +1,133 @@
+{
+  "kind": "n05-independent-http-audit-v1",
+  "phase": "revoked",
+  "status": "passed",
+  "checks": 24,
+  "http_requests": 14,
+  "cases": [
+    {
+      "case_id": "target_revoked_list",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "target_revoked_membership_absent",
+      "pass": true
+    },
+    {
+      "case_id": "target_old_current_denied",
+      "pass": true,
+      "http_status": 403,
+      "safe_error_code": "CURRENT_EVENT_ACCESS_REVOKED"
+    },
+    {
+      "case_id": "target_revoked_response_only_own_revision",
+      "pass": true
+    },
+    {
+      "case_id": "member_revoked_list",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "member_revoked_membership_absent",
+      "pass": true
+    },
+    {
+      "case_id": "member_old_current_denied",
+      "pass": true,
+      "http_status": 403,
+      "safe_error_code": "CURRENT_EVENT_ACCESS_REVOKED"
+    },
+    {
+      "case_id": "member_revoked_response_only_own_revision",
+      "pass": true
+    },
+    {
+      "case_id": "revoked_receipt_historical_read",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "revoked_receipt_not_current",
+      "pass": true
+    },
+    {
+      "case_id": "removed_same_key_replay",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "removed_same_key_does_not_rejoin",
+      "pass": true
+    },
+    {
+      "case_id": "removed_new_key_replay",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "removed_new_key_does_not_rejoin",
+      "pass": true
+    },
+    {
+      "case_id": "removed_selection_denied",
+      "pass": true,
+      "http_status": 403,
+      "safe_error_code": "ACCESS_DENIED"
+    },
+    {
+      "case_id": "post_replay_memberships_read",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "post_replay_still_no_membership",
+      "pass": true
+    },
+    {
+      "case_id": "post_removal_invitation_read",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "post_removal_uses_unchanged",
+      "pass": true
+    },
+    {
+      "case_id": "recovery_null_revision_rejected",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "CONTEXT_CHANGED"
+    },
+    {
+      "case_id": "recovery_stale_revision_rejected",
+      "pass": true,
+      "http_status": 409,
+      "safe_error_code": "CONTEXT_CHANGED"
+    },
+    {
+      "case_id": "revoked_a_recover_to_legal_b",
+      "pass": true,
+      "http_status": 200
+    },
+    {
+      "case_id": "recovery_new_selected_context",
+      "pass": true
+    },
+    {
+      "case_id": "recovery_read_current_b",
+      "pass": true,
+      "http_status": 200
+    }
+  ],
+  "synthetic_native_sessions": true,
+  "real_provider_authentication": false,
+  "database_access": false,
+  "external_network_calls": 0,
+  "limits": [
+    "DB atomicity and durable native side effects require root assertions.",
+    "Concurrent HTTP submissions do not prove transaction overlap on a single-worker server.",
+    "No real user, OAuth, mail, model or chat acceptance."
+  ]
+}

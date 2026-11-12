@@ -87,6 +87,12 @@ final class Module extends \humhub\components\Module
             new \humhub\modules\matcherRecommendation\adapters\time\SystemClock());
     }
 
+    /** Explicit zero-model page analysis; all dependencies are checked lazily per operation. */
+    public function getCooperationFactory(): \humhub\modules\matcherRecommendation\adapters\composition\NativeCooperationFactory
+    {
+        return new \humhub\modules\matcherRecommendation\adapters\composition\NativeCooperationFactory($this);
+    }
+
     /** Trusted composition-root injection, never a public HTTP/model operation. */
     public function setDiscoveryService(DiscoverPeople $service): void
     {

@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-11-12T16:10:30.920816+08:00",
+  "status": "passed",
+  "scope": "仅本批独立准备增量及文档交付检查，非真实页面接通或生产验收",
+  "new_code_files": [
+    "backend/protected/modules/matcher-recommendation/domain/analysis/AnalysisMapping.php",
+    "backend/protected/modules/matcher-recommendation/domain/analysis/CooperationAnalyzer.php",
+    "backend/protected/modules/matcher-recommendation/tests/cooperation_analysis/run.php",
+    "frontend/推荐/lib/recommendation-runtime/state.ts",
+    "frontend/推荐/lib/recommendation-runtime/decode.ts",
+    "frontend/推荐/lib/recommendation-runtime/contracts.ts",
+    "frontend/推荐/lib/recommendation-runtime/client.ts",
+    "frontend/推荐/lib/recommendation-runtime/query.ts",
+    "frontend/推荐/scripts/verify-recommendation-runtime.mjs"
+  ],
+  "existing_baseline_file_count": 475,
+  "changed_existing_files": [],
+  "independent_review_hash_matches": true,
+  "reviewed_source_count": 10,
+  "document_checks": [
+    {
+      "path": "docs/推荐模块/00_README.md",
+      "relative_links": 34,
+      "sha256": "5ee611323bb062a6484b57d13fcb7c4b0a73655fb5ae2c93313fef3fb577bae7"
+    },
+    {
+      "path": "docs/推荐模块/task.md",
+      "relative_links": 54,
+      "sha256": "b0a801836412548e2df942a9d039df27ed12dfd5306a6ad246752351212a1476"
+    },
+    {
+      "path": "docs/推荐模块/21_推荐页面合同与实施边界.md",
+      "relative_links": 32,
+      "sha256": "025f8d5377e3d2dec2546f78fb469671ff902abdc4753b4c09a7c1ba464a9f72"
+    },
+    {
+      "path": "docs/推荐模块/22_推荐页独立内核与数据层实施.md",
+      "relative_links": 8,
+      "sha256": "ade6b51dea21dd61f45183bffb1799eeb0f61817b7826d08c1dbd9cec3bcc9bc"
+    }
+  ],
+  "full_RP_tasks_remain_unchecked": true,
+  "static_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "application_or_browser_e2e_run": false,
+  "database_connections": 0,
+  "real_model_calls": 0,
+  "commit_or_push_performed_by_this_task": false,
+  "errors": []
+}

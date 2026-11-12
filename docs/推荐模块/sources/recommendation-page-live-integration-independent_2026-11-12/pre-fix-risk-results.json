@@ -1,0 +1,36 @@
+{
+  "captured_at": "2026-11-12T17:14:44.477765",
+  "results": {
+    "checks": [
+      {
+        "name": "unlink_during_source_progress",
+        "expected": "revoked_without_source_reference",
+        "actual": {
+          "state": "succeeded",
+          "source_id": "11111111-1111-1111-1111-111111111111"
+        },
+        "binding_rows_after": "0",
+        "passed": false
+      },
+      {
+        "name": "stale_selection_write_after_activity_context_version_reuse",
+        "expected": "reject_old_context_version",
+        "old_selection_version": 1,
+        "replacement_selection_version": 1,
+        "late_request_accepted": true,
+        "stored_references": [
+          "older-approved"
+        ],
+        "passed": false
+      }
+    ],
+    "database": "private sqlite memory",
+    "network_calls": 0,
+    "model_calls": 0
+  },
+  "source_sha256": {
+    "backend/protected/modules/matcher-auth/adapters/native/GithubImportStatusReader.php": "08071d1dedfd9f09fc642f0e59be3b8434cafadba61348bb3a4968d2c82ce4ef",
+    "backend/protected/modules/matcher-recommendation/adapters/analysis/SqlSelfSelectionStore.php": "d4a5580f3d5945e74ed735f762efe061b14d7f8600b6229a6994ae79f7bd664c",
+    "backend/protected/modules/matcher-recommendation/application/analysis/ManageSelfAnalysisSelection.php": "8f9122c93ab547b51cfd400f288d36a933f33ee8b7e276c0cb9dc780d53fa82c"
+  }
+}

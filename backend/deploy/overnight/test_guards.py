@@ -38,6 +38,15 @@ config = {**h.spec(), 'password': 'a' * 64, 'cookie_key': 'b' * 64, 'nonce': 'c'
 check('valid fixed target accepted', h.validate_config(config) == config)
 legacy = {**config, 'modules': list(h.LEGACY_MODULES)}
 check('exact legacy module target remains valid for guarded upgrade', h.validate_config(legacy) == legacy)
+check('N03 target remains valid for guarded authentication upgrade', h.validate_config({**config, 'modules': h.N03_MODULES})['modules'] == h.N03_MODULES)
+check('explicit authentication mode accepts only fixed N04 module set', h.validate_config({**config, 'auth_mode': True})['auth_mode'] is True)
+for bad_mode in ['true', 1, None]:
+    rejects('authentication mode must be a boolean', lambda value=bad_mode: h.validate_config({**config, 'auth_mode': value}))
+rejects('authentication mode cannot use older module set', lambda: h.validate_config({**legacy, 'auth_mode': True}))
+check('default PHP mode retains blocked network functions', 'disable_functions=' + h.BLOCKED_FUNCTIONS in h.php_command())
+check('authentication mode permits configured transports but keeps native mail disabled', 'disable_functions=mail' in h.php_command(True))
+check('authentication mode disables PHP diagnostic logging', 'log_errors=0' in h.php_command(True))
+check('authentication mode still disables URL streams', 'allow_url_fopen=0' in h.php_command(True))
 for modules in [list(reversed(h.MODULES)), ['matcher-webapp'], h.LEGACY_MODULES[:-1] + ['matcher-webapp'], h.MODULES + ['arbitrary-plugin']]:
     rejects('reject incomplete reordered or extended module list', lambda modules=modules: h.validate_config({**config, 'modules': modules}))
 for key, wrong in [('database', 'humhub'), ('username', 'root'), ('host', '0.0.0.0'), ('port', 8090),
@@ -192,7 +201,10 @@ for file in sorted(HERE.glob('*.php')):
 result = subprocess.run([str(php), '-n', str(HERE / 'guard_test.php')], capture_output=True, text=True)
 check('PHP target/request guard behavior', result.returncode == 0)
 php_checks = json.loads(result.stdout)['checks']
+auth_result = subprocess.run([str(php), '-n', str(HERE / 'auth_runtime_test.php')], capture_output=True, text=True)
+check('designated OTP runtime uses only synthetic transports in offline test', auth_result.returncode == 0)
+auth_checks = json.loads(auth_result.stdout)['checks']
 check('PHP bootstrap excludes private application configs', "protected/config" not in (HERE / 'bootstrap.php').read_text() and "deploy/app.php" not in (HERE / 'bootstrap.php').read_text())
-check('providers excluded from allowlist', not any(x in h.MODULES for x in ['matcher-onboarding-ai', 'matcher-recommendation-ai', 'matcher-github-import', 'matcher-web-import']))
+check('AI providers and arbitrary web reader excluded from allowlist', not any(x in h.MODULES for x in ['matcher-onboarding-ai', 'matcher-recommendation-ai', 'matcher-web-import']))
 check('no queue or cron start path', all(x not in (HERE / 'harness.py').read_text() for x in ['queue/listen', 'cron/run']))
-print(json.dumps({'status': 'passed', 'python_checks': len(checks), 'php_guard_checks': php_checks, 'checks': checks, 'database_access': False, 'service_started': False, 'secrets_read': False}, ensure_ascii=False, indent=2))
+print(json.dumps({'status': 'passed', 'python_checks': len(checks), 'php_guard_checks': php_checks, 'auth_runtime_checks': auth_checks, 'checks': checks, 'database_access': False, 'service_started': False, 'secrets_read': False}, ensure_ascii=False, indent=2))

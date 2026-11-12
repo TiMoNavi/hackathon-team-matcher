@@ -1,0 +1,97 @@
+{
+  "kind": "n05-independent-native-audit-v1",
+  "status": "failed",
+  "checks": 22,
+  "cases": [
+    {
+      "case_id": "registered_synthetic_actor_has_no_a_membership",
+      "pass": true
+    },
+    {
+      "case_id": "native_queue_table_available",
+      "pass": true
+    },
+    {
+      "case_id": "native_invitation_created",
+      "pass": true
+    },
+    {
+      "case_id": "forced_failure_occurs_after_native_join",
+      "pass": true
+    },
+    {
+      "case_id": "rollback_member_quota_receipt_outbox_queue_activity",
+      "pass": true
+    },
+    {
+      "case_id": "rollback_does_not_erase_rate_attempt",
+      "pass": true
+    },
+    {
+      "case_id": "rollback_does_not_leave_open_transaction",
+      "pass": true
+    },
+    {
+      "case_id": "rollback_current_membership_absent",
+      "pass": true
+    },
+    {
+      "case_id": "unknown_native_hook_fails_before_execution",
+      "pass": true
+    },
+    {
+      "case_id": "unknown_hook_failure_leaves_no_business_effect",
+      "pass": true
+    },
+    {
+      "case_id": "successful_retry_has_current_native_membership",
+      "pass": true
+    },
+    {
+      "case_id": "one_native_membership_quota_receipt",
+      "pass": true
+    },
+    {
+      "case_id": "outbox_durable_before_dispatch",
+      "pass": true
+    },
+    {
+      "case_id": "queue_activity_unchanged_until_explicit_flush",
+      "pass": true
+    },
+    {
+      "case_id": "stale_cache_was_seeded_before_commit",
+      "pass": true
+    },
+    {
+      "case_id": "commit_flush_clears_user_space_caches",
+      "pass": true
+    },
+    {
+      "case_id": "postcommit_native_cache_read_includes_space",
+      "pass": true
+    },
+    {
+      "case_id": "outbox_fully_dispatched_no_failed_or_uncertain",
+      "pass": true
+    },
+    {
+      "case_id": "successful_replay_same_receipt",
+      "pass": true
+    },
+    {
+      "case_id": "successful_replay_creates_no_effects",
+      "pass": true
+    },
+    {
+      "case_id": "native_mutation_never_selects_current_event",
+      "pass": true
+    },
+    {
+      "case_id": "noncreator_stored_owner_normalizes_to_native_member",
+      "pass": false
+    }
+  ],
+  "error_type": "RuntimeException",
+  "reason": "Native synthetic audit failed; private diagnostics suppressed."
+}

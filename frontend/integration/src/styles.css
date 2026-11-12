@@ -2,6 +2,8 @@
 @source "../../首页/components/brand.tsx";
 @source "../../首页/components/ui/button.tsx";
 @source "../../首页/integration/webapp-entry.tsx";
+@source "../../首页/integration/auth-panel.tsx";
+@source "../../首页/components/ui/input.tsx";
 
 @font-face { font-family: "Matcher Inter"; src: url("../../首页/app/fonts/inter-latin.woff2") format("woff2"); font-style: normal; font-weight: 400 700; font-display: swap; }
 @font-face { font-family: "Matcher Bricolage"; src: url("../../首页/app/fonts/bricolage-grotesque-latin.woff2") format("woff2"); font-style: normal; font-weight: 500 700; font-display: swap; }
@@ -15,7 +17,7 @@ body { margin: 0; }
 .webapp-theme-toggle { min-width: 44px; height: 44px; gap: 8px; padding: 0 12px; }
 .webapp-native-link { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; min-width: 44px; font-size: 14px; text-decoration: none; color: var(--body); }
 .webapp-native-link svg { width: 16px; height: 16px; }
-.webapp-tabs { display: flex; gap: 4px; justify-content: center; margin: 28px 16px 0; }
+.webapp-tabs { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin: 28px 16px 0; }
 .webapp-tabs a { min-height: 44px; padding: 12px 20px; border-radius: 12px; font-size: 15px; line-height: 20px; color: var(--body); text-decoration: none; }
 .webapp-tabs a[aria-current=page] { background: var(--secondary); color: var(--secondary-foreground); font-weight: 600; }
 .webapp-main { width: min(100% - 40px, 960px); margin: 0 auto; flex: 1; display: grid; align-content: center; padding: 64px 0 80px; outline-offset: 4px; }
@@ -42,3 +44,46 @@ body { margin: 0; }
 @keyframes webapp-spin { to { transform: rotate(360deg); } }
 @media (max-width: 600px) { .webapp-header { padding: 10px 12px; gap: 8px; } .webapp-header-actions { gap: 4px; } .webapp-theme-toggle { padding: 0 8px; } .webapp-theme-toggle span { display: none; } .webapp-main { padding: 48px 0 56px; } .webapp-tabs a { padding: 12px 16px; } .webapp-state p, .webapp-introduction p { font-size: 16px; } .webapp-details { padding: 0 20px; } .webapp-detail { gap: 14px; } .webapp-state h1, .webapp-introduction h1 { font-size: 30px; } .webapp-actions { flex-direction: column; align-items: stretch; } .webapp-footer { font-size: 13px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .webapp-loading svg { animation: none; } .webapp-page *, .webapp-page *::before, .webapp-page *::after { transition-duration: 0ms !important; animation: none !important; } }
+
+.webapp-main-auth { width: min(100% - 32px, 1248px); padding: 32px 0 48px; }
+.webapp-auth { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 640px; gap: 24px; }
+.webapp-auth-form-column { display: flex; align-items: center; justify-content: center; padding: 40px; min-width: 0; }
+.webapp-auth-form { display: flex; flex-direction: column; gap: 24px; width: 100%; max-width: 400px; }
+.webapp-auth-heading h1 { font-family: var(--font-display), "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 36px; line-height: 1.1; font-weight: 600; margin: 0 0 12px; overflow-wrap: anywhere; }
+.webapp-auth-heading p { font-size: 15px; line-height: 24px; color: var(--body); margin: 0; overflow-wrap: anywhere; }
+.webapp-auth-full { width: 100%; }
+.webapp-auth-divider { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--muted-foreground); }
+.webapp-auth-divider span { flex: 1; height: 1px; background: var(--border); }
+.webapp-auth-fields { display: grid; gap: 20px; }
+.webapp-auth-field { display: grid; gap: 8px; }
+.webapp-auth-field label { font-size: 14px; font-weight: 500; }
+.webapp-auth-input { height: 44px; border-radius: 12px; background: var(--background); padding: 0 14px; font-size: 15px; box-shadow: none; min-width: 0; }
+.webapp-auth-code { letter-spacing: .2em; font-variant-numeric: tabular-nums; }
+.webapp-auth-help { font-size: 13px; line-height: 1.7; color: var(--muted-foreground); margin: 0; overflow-wrap: anywhere; }
+.webapp-auth-form > div > .webapp-auth-help { margin-top: 8px; }
+.webapp-auth-feedback { border: 1px solid var(--border); padding: 12px 14px; border-radius: 12px; font-size: 14px; line-height: 1.7; }
+.webapp-auth-feedback p { margin: 0; }
+.webapp-auth-feedback button { margin-top: 8px; }
+.webapp-auth-error { color: var(--destructive); font-size: 14px; line-height: 1.7; margin: 0; }
+html.dark .webapp-auth-error { color: color-mix(in srgb, var(--destructive), white 50%); }
+.webapp-auth-notice { border-radius: 12px; padding: 12px 14px; background: var(--secondary); color: var(--secondary-foreground); font-size: 14px; line-height: 1.7; margin: 0; }
+.webapp-auth-secondary-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.webapp-auth-small-action { min-height: 44px; height: auto; padding: 8px 12px; white-space: normal; line-height: 1.5; }
+.webapp-auth-native { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; font-size: 14px; color: var(--body); text-decoration: underline; text-underline-offset: 4px; }
+.webapp-auth-native svg, .webapp-account-link svg { width: 16px; height: 16px; }
+.webapp-auth-logout { padding-top: 12px; border-top: 1px solid var(--border); font-size: 14px; }
+.webapp-auth-logout p { margin: 0 0 8px; }
+.webapp-account-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--secondary-foreground); font-size: 14px; line-height: 1.7; }
+.webapp-auth-aside { display: flex; position: relative; overflow: hidden; flex-direction: column; justify-content: space-between; gap: 48px; padding: 48px; border-radius: 28px; background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 16%, var(--background)), color-mix(in srgb, var(--primary) 7%, var(--background)) 55%, color-mix(in srgb, var(--lime) 30%, var(--background))); }
+.webapp-auth-aside > div:not(.webapp-auth-aside-grid) { position: relative; }
+.webapp-auth-aside-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(color-mix(in srgb, var(--primary) 8%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--primary) 8%, transparent) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent); }
+.webapp-auth-aside-icon { width: 32px; height: 32px; color: var(--secondary-foreground); margin-bottom: 32px; }
+.webapp-auth-aside h2 { font-family: var(--font-display), "PingFang SC", sans-serif; font-size: 34px; line-height: 1.35; font-weight: 600; margin: 0 0 20px; }
+.webapp-auth-aside p { font-size: 16px; line-height: 1.8; color: var(--body); margin: 0; }
+.webapp-auth-aside-note { border: 1px solid var(--border); border-radius: 20px; padding: 24px; background: var(--card); }
+.webapp-auth-aside-note h3 { font-size: 18px; line-height: 1.5; margin: 0 0 8px; font-weight: 600; }
+.webapp-auth-aside-note p { font-size: 14px; }
+.webapp-auth-spinner { animation: webapp-spin 1.2s linear infinite; }
+@media (max-width: 1023px) { .webapp-auth { display: block; min-height: 0; } .webapp-auth-aside { display: none; } .webapp-auth-form-column { padding: 24px 20px; } .webapp-auth-heading h1 { font-size: 32px; } }
+@media (max-width: 600px) { .webapp-main-auth { padding: 24px 0 40px; } .webapp-auth-form-column { padding: 16px 8px; } .webapp-auth-input { font-size: 16px; } .webapp-tabs a { padding-inline: 12px; } }
+@media (prefers-reduced-motion: reduce) { .webapp-auth-spinner { animation: none; } }

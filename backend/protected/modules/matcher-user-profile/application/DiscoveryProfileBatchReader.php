@@ -10,9 +10,9 @@ final class DiscoveryProfileBatchReader
 {
     public function __construct(private readonly DiscoveryProfileBatchSource $source) {}
 
-    public function read(array $ownerIds, int $spaceId, array $sourceKeys): array
+    public function read(array $ownerIds, int $spaceId, array $sourceKeys, ?array $attributeIds = null): array
     {
-        $request = new DiscoveryProfileBatchRequest($ownerIds, $spaceId, $sourceKeys);
+        $request = new DiscoveryProfileBatchRequest($ownerIds, $spaceId, $sourceKeys, $attributeIds);
         if ($ownerIds === []) { return ['schema_version' => FieldCatalog::VERSION, 'profiles' => []]; }
         $result = $this->source->read($request);
         if (($result['schema_version'] ?? null) !== FieldCatalog::VERSION || !is_array($result['profiles'] ?? null)) { self::invalidSource(); }
@@ -38,7 +38,7 @@ final class DiscoveryProfileBatchReader
                         || !is_string($item['last_confirmed_at'] ?? null) || $item['last_confirmed_at'] === ''
                         || !is_int($item['schema_version'] ?? null) || $item['schema_version'] < 1
                         || !is_int($item['sort_order'] ?? null) || !array_key_exists('value', $item)) { self::invalidSource(); }
-                    if (isset($seen[$item['attribute_id']])) { self::invalidSource(); }
+                    if (isset($seen[$item['attribute_id']]) || ($attributeIds !== null && !in_array($item['attribute_id'], $attributeIds, true))) { self::invalidSource(); }
                     $seen[$item['attribute_id']] = true;
                     $counts[$key] = ($counts[$key] ?? 0) + 1;
                     if ($counts[$key] > $catalog[$key]['max_items']) { self::invalidSource(); }
