@@ -67,7 +67,7 @@ R03继续覆盖发现、筛选、分页、搜索、随机浏览、推荐、详�
 | GET/DELETE /me/profile/sources/{id}；POST 同路径/refresh | 本人读取／版本化删除／刷新；DELETE提交expected_version，返回200数据，非202删除任务 |
 | POST /me/profile/extractions | rules使用source_id、expected_version、draft_id、expected_draft_version、candidate_ids，200；ai沿现有AI提交合同，202 |
 | POST /onboarding/sessions；GET/PUT /onboarding/sessions/{id} | 五阶段会话；PUT为expected_version和action白名单，非任意十步resource_refs写入口 |
-| POST /me/profile/question-batches、/syntheses | 基于session_id和实际版本；rules同步，ai为202；答案PUT为answer_type、selected_options、free_text |
+| POST /me/profile/question-batches、/syntheses | 基于session_id和实际版本；rules同步201 SessionDTO，ai为202 JobDTO；答案PUT为answer_type、selected_options、free_text |
 | GET /me/profile/ai-capabilities | generation_modes、ai.available/reason、limits、llm_calls=0；列出ai不等于provider就绪 |
 | GET /me/profile/ai-jobs/{id}；POST 同路径/cancel、/retry、/apply | 本人任务；apply采纳到草稿，不代替正式确认；未提供通用/ai-jobs别名承诺 |
 | 会话／来源／AI任务各自GET /progress | 分别在/onboarding/sessions/{id}、/me/profile/sources/{id}、/me/profile/ai-jobs/{id}后加/progress；已存状态投影、percent=null |
@@ -103,7 +103,7 @@ P1他人详情当前基于entry_type、space_id、post_id和动态原生关系�
 
 新增确认普通画像和可选联系方式默认authenticated，已有明确范围保留，第5／8步逐条预览。联系方式独立读取并沿用本人逐条范围，不能夹带于普通画像；原文／未确认候选私有，参与关系逐对象默认private，想法members_visible默认false。
 
-[现有P2 review_confirm](../../backend/protected/modules/matcher-onboarding/application/OnboardingService.php#L82)确实调用confirmDrafts；不能直接绑定新前端第3步“核对完成”。N06必须补私有核对快照和问题引用，第5步才正式确认，第8步逐对象确认；重编辑期间旧正式版本继续有效。共享契约旧正文“第3步保存首批确认资料”不再授权本轮提前公开，此差异尚未修复。
+[现有P2 review_confirm](../../backend/protected/modules/matcher-onboarding/application/OnboardingService.php#L82)确实调用confirmDrafts；不能直接绑定新前端第3步“核对完成”。N06必须补私有核对快照和问题引用，第5步才正式确认，第8步逐对象确认；重编辑期间旧正式版本继续有效。共享契约与可编辑引导设计已同步上述语义；代码层私有核对输入和待确认昵称/头像引用仍未实施，不能提前公开。
 
 每段20,000字及换行要求按Unicode字符处理，另设明确总请求／存储／AI输入限额，不能静默截断。5 MiB真实导入上限先按已有能力接线，扩容另行实施。现有五阶段不是十步跨领域旅程；N06/N07/N11补保存恢复及真实对象引用，不存平行业务事实。progress只投影已存状态；普通浏览、切活动、改可见性不得抓取或触发AI。任务superseded/revoked不得覆盖新确认资料。
 
