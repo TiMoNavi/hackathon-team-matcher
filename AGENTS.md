@@ -12,7 +12,7 @@
 ## 当前设计入口（2026-11-10）
 
 - [README.md](README.md) 是当前九份设计文档的导航。产品规则先看 [完整方案 v3](docs/完整方案设计_v3.md)，领域边界看 [系统架构与领域设计](docs/系统架构与领域设计.md)，数据、API、枚举和错误结构以 [共享契约](docs/共享数据与接口契约.md) 为统一来源。
-- 当前交付是设计文档，不得把设计接口、mock 或参考工程写成目标应用已经实现。目标技术方案为 Next.js / React / TypeScript、FastAPI 模块化单体、PostgreSQL、Redis/worker；GameBuddy 是参考代码，未经任务授权不改动。
+- 九份设计文档保留原 Next.js / React / TypeScript、FastAPI 模块化单体、PostgreSQL、Redis/worker 方案背景，不得把设计接口、mock 或参考工程写成目标应用已经实现。2026-11-12 用户已批准 [睡前全自动运行专项](docs/睡前全自动运行/task.md) 以现有 HumHub 为基座实施同源 React 插件整合；该专项按依赖、隔离和真实验证证据推进，不重建 FastAPI 后端。GameBuddy 是参考代码，未经任务授权不改动。
 - 七份标有“历史参考”的早期文档存放于 [leagcy 历史归档](leagcy/README.md)，保留正文和原目录层级，不作为实现规范；后续归档过时文档使用该目录并同步修正相对链接。已确认的后续修订写入当前衍生设计，不能反向改写冻结原稿；遇到冲突先核对用户最新明确要求与共享契约，再同步相关当前文档。
 - [frontend-research](frontend-research/README.md) 是第三方 UI 站点、组件库与模板的外部调研，记录公开事实、技术栈与组合建议，不表示目标应用已引入或已经实现；涉及页面结构、可访问性与交互的正式约束仍以 [前端主应用交互设计](docs/前端主应用交互设计.md) 为准。
 - **前端资源选择（2026-11-11 用户确认）**：使用 AffectUI 与 Shadcn UI Kit；不使用 apple-design Skill，不默认加入 Arc UI 或其他组件来源。CollectUI 镜像的操作与核验范围见 [使用说明](frontend-research/09-CollectUI使用与双库资源.md)。选择资源不等于已取得对应源码、接通 MCP 或完成应用集成。
